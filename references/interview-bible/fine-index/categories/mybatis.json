@@ -1,0 +1,1188 @@
+{
+  "id": "mybatis",
+  "name": "MyBatis",
+  "aliases": [
+    "MyBatis",
+    "Mapper",
+    "一级缓存",
+    "二级缓存",
+    "动态SQL"
+  ],
+  "count": 29,
+  "total_word_count": 16795,
+  "articles": [
+    {
+      "slug": "fzgs2m4ske91g2a3",
+      "title": "MyBatis一、二级缓存和Spring一二级缓存有什么关系。",
+      "url": "/tulingzhouyu/db22bv/fzgs2m4ske91g2a3",
+      "toc_path": [
+        "Spring",
+        "基础篇",
+        "MyBatis一、二级缓存和Spring一二级缓存有什么关系。"
+      ],
+      "toc_level": 2,
+      "toc_index": 453,
+      "word_count": 307,
+      "updated_at": "2024-06-20T08:50:59.000Z",
+      "primary_category": "mybatis",
+      "primary_category_name": "MyBatis",
+      "related_categories": [
+        "mybatis",
+        "spring-core",
+        "redis-cache",
+        "java-core",
+        "jvm-memory-gc"
+      ],
+      "question_type": "collection",
+      "question_type_name": "面经题库合集",
+      "levels": [
+        "middle",
+        "campus"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "MyBatis",
+        "一级缓存",
+        "二级缓存",
+        "Spring",
+        "Bean",
+        "循环依赖",
+        "缓存",
+        "堆"
+      ],
+      "summary": "是的， 一个八竿子打不着的东西， 今天有同学去面试被问到了。hold on hold on ,，  这个问题完全是糊弄人的啊。哈喽大家好我是徐庶， 有需要跳槽面试的小伙伴可以再评论区扣666，我给你们发一份80万字的面试资料。是的， 他们完全就没有关系！ MyBatis一、二级缓存是用来存储查...",
+      "excerpt": "是的， 一个八竿子打不着的东西， 今天有同学去面试被问到了。hold on hold on ,， 这个问题完全是糊弄人的啊。 ​ 哈喽大家好我是徐庶， 有需要跳槽面试的小伙伴可以再评论区扣666，我给你们发一份80万字的面试资料。 ​ 是的， 他们完全就没有关系！ MyBatis一、二级缓存是用来存储查询结果的， 一级缓存会在同一个SqlSession中的重复查询结果进行缓存， 二级缓存则是全局应用下的重复查询结果进行缓存。 而Spring的一、二级缓存是用来存储Bean的！ 一级缓存用来存储完整最终使用的Bean，二级缓存用来存储早期临时bean。 当然还有个三级缓存用来解决循环依赖的。 ​ 当然这个问题后面可能有一大堆雷等着你踩， 如果你把SSM的源码完整学过的话， 问这些问题都是送分题哈。 好如果视频对你有帮助可以一键三连哦， 我们下期见"
+    },
+    {
+      "slug": "epfoa791ghp50fk5",
+      "title": "mybatis使用like的时候，如何防止sql注入",
+      "url": "/tulingzhouyu/db22bv/epfoa791ghp50fk5",
+      "toc_path": [
+        "MyBatis",
+        "基础篇",
+        "mybatis使用like的时候，如何防止sql注入"
+      ],
+      "toc_level": 2,
+      "toc_index": 493,
+      "word_count": 604,
+      "updated_at": "2025-05-09T02:30:24.000Z",
+      "primary_category": "mybatis",
+      "primary_category_name": "MyBatis",
+      "related_categories": [
+        "mybatis",
+        "security-auth",
+        "java-core"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "MyBatis",
+        "安全",
+        "Java",
+        "String"
+      ],
+      "summary": "在 MyBatis 中使用 `LIKE` 查询时，错误示例： @Select(\"SELECT * FROM users WHERE name LIKE '%${name}%'\") List findUsersByName(@Param(\"name\") String name);问题...",
+      "excerpt": "​ 在 MyBatis 中使用 `LIKE` 查询时， 错误示例： ​ 问题： 使用 `${}` 会直接将参数插入到 SQL 中，而不会进行转义。 -如果用户输入了恶意内容（如 `'; DROP TABLE users; --`），可能导致 SQL 注入。 ​ 防止 SQL 注入是一个重要的安全问题。SQL 注入通常发生在用户输入的内容直接拼接到 SQL 语句中，而没有进行适当的处理。以下是防止 SQL 注入的几种方法： ​ 1. 使用 MyBatis 的参数占位符+CONCAT动态拼接 MyBatis 提供了参数占位符（`#{}`），可以自动对参数进行转义，防止 SQL 注入。 ​ Java 调用： ​ 2.手动拼接 `%` 并使用参数占位符 在 Java 代码中手动拼接 `%`，然后将拼接后的字符串作为参数传递给 MyBatis。 ​ XML 配置： ​ ​ 3. 使用 MyBatis 的 `bind` 标签 MyBatis 的 `bind` 标签可以在 SQL 中动态绑定变量，同时防止 SQL 注入。 ​ 解释： - `<bind>` 标签将用户输入的 `name` 参数动态绑定为 `pattern`，并拼接 `%`。 - `#{pattern}` 会自动转义，防止 SQL 注入。 ​ ​ 4. 使用MyBatis Plus 的 QueryWrapper 如果需要更复杂的查询，可以结合 MyBatis 和其他工具（如 MyBatis Plus 或 QueryWrapper）来构建安全的查询。 ​ 示例： ​ 解释： MyBatis Plus 的 `QueryWrapper` 会自动处理参数，防止 SQL 注入。 ​ 5. 输入校验 除了使用 MyBatis 的安全特性，还可以对用户输入进行校验，确保输入内容符合预期。 ​ 示例： - 检查输入是否包含非法字符（如 `%`、`_` 等）。 - 对输入进行长度限制，避免过长的字符串。 ​ 示例代码： ​ 通过这些方法，可以有效防止 SQL 注入，同时保证查询的安全性和可靠性。 ​"
+    },
+    {
+      "slug": "htrg9puywggpfg07",
+      "title": "什么是MyBatis?",
+      "url": "/tulingzhouyu/db22bv/htrg9puywggpfg07",
+      "toc_path": [
+        "MyBatis",
+        "基础篇",
+        "什么是MyBatis?"
+      ],
+      "toc_level": 2,
+      "toc_index": 494,
+      "word_count": 415,
+      "updated_at": "2023-08-30T03:13:39.000Z",
+      "primary_category": "mybatis",
+      "primary_category_name": "MyBatis",
+      "related_categories": [
+        "mybatis",
+        "java-core",
+        "performance-optimization"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "MyBatis",
+        "Java",
+        "性能",
+        "优化"
+      ],
+      "summary": "MyBatis呢，是Java领域中的一款持久化框架，它的主要功能是，让我们能够轻松地在Java对象和数据库之间建立联系。通过这种联系，开发者可以很方便地存储、检索和操作数据。MyBatis与其他ORM框架相比，有一些独有的特点。首先，MyBatis强调对SQL的可控性。在使用的时候，可以直接编...",
+      "excerpt": "MyBatis呢，是Java领域中的一款 持久化框架 ，它的主要功能是，让我们能够轻松地在 Java对象 和 数据库 之间建立联系。通过这种联系，开发者可以很方便地 存储 、 检索 和 操作数据 。 MyBatis 与其他 ORM 框架相比，有一些独有的特点。 ​ 首先，MyBatis强调对SQL的可控性。在使用的时候，可以 直接编写SQL语句 ，提供更精准地优化查询。还可以充分利用数据库的特性，处理各种复杂的业务逻辑。在某些情况下，这能够带来更好的 性能 。 ​ 但是，MyBatis不会自动地将 对象 和 数据库表 进行 完全的映射 ，这跟其他 ORM 框架的 做法不同 。在使用MyBatis时，你要 手动编写映射配置 ，把 Java对象 的 属性 与 数据库表的列 进行 关联 。虽然说这种方式需要更多的操作，但也正是这种方式让 映射过程更加可控 ，尤其适用于处理复杂的数据结构。 ​ 相对于其他ORM框架，MyBatis更加灵活。它允许开发者直接操控SQL语句，并手动控制对象与数据库表之间的映射关系。这使得MyBatis在需要 精细控制数据库操作 以及处理 复杂映射关系 场景中更加具有优势。而其他一些ORM框架则更适合 简化开发流程 ， 减少样板代码 的编写。"
+    },
+    {
+      "slug": "la75r7g4im6z3xmy",
+      "title": "Mybaits 的优点 & 缺点",
+      "url": "/tulingzhouyu/db22bv/la75r7g4im6z3xmy",
+      "toc_path": [
+        "MyBatis",
+        "基础篇",
+        "Mybaits 的优点 & 缺点"
+      ],
+      "toc_level": 2,
+      "toc_index": 495,
+      "word_count": 496,
+      "updated_at": "2023-08-30T03:28:27.000Z",
+      "primary_category": "mybatis",
+      "primary_category_name": "MyBatis",
+      "related_categories": [
+        "mybatis",
+        "spring-core",
+        "resume-project",
+        "os-linux",
+        "ai-llm"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "MyBatis",
+        "Spring",
+        "项目",
+        "文件"
+      ],
+      "summary": "首先，MyBatis 是使用 SQL 语句来进行编程，它非常灵活。你可以将 SQL 写在 XML 文件中，这样可以避免和代码或数据库设计产生冲突，也便于集中管理。MyBatis 还提供了 XML 标签，用来编写动态的 SQL 语句，而且可以重复使用。我们可以根据不同情况灵活地生成 SQL。和使...",
+      "excerpt": "​ 首先，MyBatis 是使用 SQL 语句来进行编程，它非常灵活。你可以将 SQL 写在 XML 文件中，这样可以避免和代码或数据库设计产生冲突，也便于集中管理。MyBatis 还提供了 XML 标签，用来编写动态的 SQL 语句，而且可以重复使用。我们可以根据不同情况灵活地生成 SQL。 ​ 和使用 JDBC 相比，MyBatis 能减少超过50%的代码，也省去了很多 JDBC 冗余的操作，不需要手动来回打开和关闭数据库连接。减轻了开发负担。 ​ MyBatis 很友好地兼容各种数据库。因为它基于 JDBC 连接数据库，只要是 JDBC 支持的数据库，MyBatis 都能支持。这使得在不同的项目中，甚至在不同类型的数据库之间切换变得非常方便。 ​ 另外，MyBatis 还能轻松地与 Spring 框架集成，给项目开发带来了很大的便利。 ​ 对于对象和数据库之间的映射，MyBatis 提供了映射标签，让你可以方便地将对象和数据库的字段关系映射起来。此外，对象关系映射标签还支持对象关系组件的维护，这是一个很有用的功能。 ​ 然而，也要注意一些缺点。虽然 MyBatis 很强大，但编写 SQL 语句可能会相对繁琐，特别是当涉及多个字段或多个关联表时。这就要求开发人员在 SQL 编写方面有一定的功底。 ​ 另一个缺点是，由于 SQL 语句依赖于特定的数据库，如果想要更换数据库，移植性就会受到影响。这意味着不能轻易地更改数据库，可能需要进行一些适应性的修改。"
+    },
+    {
+      "slug": "egf0vyufokv884hm",
+      "title": "MyBatis 与 JPA 有哪些不同？",
+      "url": "/tulingzhouyu/db22bv/egf0vyufokv884hm",
+      "toc_path": [
+        "MyBatis",
+        "基础篇",
+        "MyBatis 与 JPA 有哪些不同？"
+      ],
+      "toc_level": 2,
+      "toc_index": 496,
+      "word_count": 679,
+      "updated_at": "2023-08-30T03:38:57.000Z",
+      "primary_category": "mybatis",
+      "primary_category_name": "MyBatis",
+      "related_categories": [
+        "mybatis",
+        "java-core",
+        "redis-cache",
+        "performance-optimization",
+        "resume-project"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "middle",
+        "senior",
+        "campus"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "MyBatis",
+        "Java",
+        "注解",
+        "缓存",
+        "性能",
+        "优化",
+        "项目"
+      ],
+      "summary": "首先，我们来聊聊编程模型。MyBatis和JPA采用了不同的方式来处理数据操作。MyBatis使用基于SQL的编程模型，这意味着开发人员需要自己编写SQL语句，并将它们映射到Java方法。这给开发人员提供了更大的灵活性，可以精确地控制SQL的编写和执行过程。而JPA则采用了基于对象的编程模型，...",
+      "excerpt": "首先，我们来聊聊编程模型。MyBatis和JPA采用了不同的方式来处理数据操作。MyBatis使用基于SQL的编程模型，这意味着开发人员需要自己编写SQL语句，并将它们映射到Java方法。这给开发人员提供了更大的灵活性，可以精确地控制SQL的编写和执行过程。而JPA则采用了基于对象的编程模型，你只需定义实体类并使用注解或XML配置来将实体映射到数据库表。JPA会自动生成SQL语句，开发人员不必过多关心底层SQL的细节。 ​ 其次，我们来看一下SQL控制。在MyBatis中，你可以编写和优化SQL语句，这在需要特定优化或使用数据库特性时非常有用。而JPA则将大部分SQL细节隐藏起来，自动生成SQL语句。这使得开发人员无需深入了解底层SQL，但在某些情况下可能会影响性能或限制你的操作。 ​ 接下来是灵活性和控制。MyBatis提供了更多的灵活性，适用于需要定制化SQL查询或调用存储过程的场景。JPA则提供了更高层次的抽象，用于简化常见数据库操作。然而，这也可能会在某些高级或复杂情况下产生一些限制。 ​ 关于查询语言，MyBatis使用原生SQL作为查询语言，这要求开发人员对SQL有一定了解。而JPA则引入了JPQL作为查询语言，它更加面向对象，类似于SQL，但操作的是实体对象。 ​ 在缓存方面，MyBatis的缓存控制更精细，你可以更准确地控制缓存行为。JPA也支持缓存，但通常对缓存的控制较少，更多地由框架自动管理。 ​ 最后，学习曲线。对于熟悉SQL的开发人员来说，MyBatis上手较快，因为需要理解SQL语句和映射。而JPA的学习曲线可能会更平缓，因为它隐藏了更多细节，但一些高级特性可能需要更多时间来理解。 ​ 总的来说，选择使用MyBatis还是JPA取决于项目需求和团队技术背景。如果你需要更多的SQL控制和定制化，MyBatis可能更适合；如果你希望更快速地进行常见数据库操作，JPA可能更适合。"
+    },
+    {
+      "slug": "lo5sfldsm030vzot",
+      "title": "短视频",
+      "url": "/tulingzhouyu/db22bv/lo5sfldsm030vzot",
+      "toc_path": [
+        "MyBatis",
+        "基础篇",
+        "MyBatis 与 JPA 有哪些不同？",
+        "短视频"
+      ],
+      "toc_level": 3,
+      "toc_index": 497,
+      "word_count": 416,
+      "updated_at": "2024-06-03T07:57:51.000Z",
+      "primary_category": "mybatis",
+      "primary_category_name": "MyBatis",
+      "related_categories": [
+        "mybatis",
+        "performance-optimization",
+        "java-core",
+        "resume-project",
+        "project-system-design"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "senior",
+        "campus"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "MyBatis",
+        "性能",
+        "优化",
+        "Java",
+        "项目",
+        "方案"
+      ],
+      "summary": "又有同学在面试中被问到：MyBatis和JPA有什么区别？大家好，我是百里。如果你还在为项目选择合适的持久层框架而头疼，或者在面试中被问到这个问题时一脸懵逼，那么这期视频就是为你准备的。MyBatis，以SQL灵活性和性能著称，是半自动ORM框架的代表。它允许开发者编写精确的SQL语句，适合复...",
+      "excerpt": "又有同学在面试中被问到： MyBatis和JPA有什么区别？ ​ 大家好，我是百里。如果你还在为项目 选择合适的持久层框架而头疼 ，或者在面试中被问到这个问题时 一脸懵逼 ，那么这期视频就是为你准备的。 ​ MyBatis，以SQL灵活性和性能著称，是 半自动ORM框架 的代表。它允许开发者编写 精确的SQL语 句，适合 复杂的数据库操作和性能优化 。 ​ JPA，全称Java Persistence API，提供了一个 全自动的ORM解决方案 。 ​ 通过JPA，开发者可以使用实体类和JPQL来 简化数据库操作 ，适合快速开发和标准ORM需求。 ​ 性能上 ，MyBatis由于其对 SQL的完全控制 ，通常在大数据量操作中更胜一筹。而JPA在简单 查询中表现良好 ，但复杂查询可能会差一些。 ​ 灵活性上 ，MyBatis提供了极大的自由度，而JPA则在标准的ORM操作上更为直接。 ​ 集成性 也是选择时的关键因素： MyBatis易于集成任何框架 ，J PA则与Java EE环境紧密集成 。 ​ 最后，社区支持对开发者至关重要，但是 MyBatis和JPA都有强大的社区和文档支持。 ​ 总结来说，如果你需要精细控制SQL语句和优化性能，MyBatis是不二之选。如果你倾向于快速开发和简化数据库操作，JPA将更适合你。"
+    },
+    {
+      "slug": "zoztq2o064yi6t2n",
+      "title": "MyBatis的核心组件有哪些？",
+      "url": "/tulingzhouyu/db22bv/zoztq2o064yi6t2n",
+      "toc_path": [
+        "MyBatis",
+        "基础篇",
+        "MyBatis的核心组件有哪些？"
+      ],
+      "toc_level": 2,
+      "toc_index": 498,
+      "word_count": 467,
+      "updated_at": "2023-08-29T11:35:35.000Z",
+      "primary_category": "mybatis",
+      "primary_category_name": "MyBatis",
+      "related_categories": [
+        "mybatis",
+        "java-core",
+        "os-linux",
+        "mysql-index-transaction",
+        "devops-release"
+      ],
+      "question_type": "other",
+      "question_type_name": "其他问题",
+      "levels": [
+        "middle",
+        "campus",
+        "junior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "校招/应届生",
+        "初级/1-3年"
+      ],
+      "keywords": [
+        "MyBatis",
+        "Mapper",
+        "Java",
+        "文件",
+        "事务",
+        "回滚"
+      ],
+      "summary": "首先第一个是，SqlSessionFactory，它就像是一个会话工厂。它的任务是创建 SqlSession 对象，这个对象是我们与数据库交互的主要途径。SqlSessionFactory 的作用很重要，因为它可以帮我们配置数据库连接信息和事务管理等。一旦这个工厂被建立起来，它就会加载一些必要...",
+      "excerpt": "首先第一个是，SqlSessionFactory，它就像是一个会话工厂。它的任务是创建 SqlSession 对象，这个对象是我们与数据库交互的主要途径。SqlSessionFactory 的作用很重要，因为它可以帮我们配置数据库连接信息和事务管理等。一旦这个工厂被建立起来，它就会加载一些必要的配置和映射文件，为后续的数据库操作提供一个可靠的基础。 ​ 第二个是 SqlSession，可以理解为我们与数据库进行互动的窗口。通过它，我们能够执行 SQL 语句，提交或回滚事务，还可以获取 Mapper 接口的实例。不过需要注意的是，SqlSession 的生命周期是短暂的，通常在数据库操作完成后就应该关闭它，这样可以释放资源。 ​ 接下来是 Mapper 接口，这个概念有点像定义了一套数据库操作的规则。每个 Mapper 接口对应一个或多个映射文件，里面的方法定义了具体的 SQL 操作，比如插入、更新、删除和查询等。MyBatis 通过动态代理的方式，把接口方法和映射文件中的 SQL 语句关联起来，这样我们就可以方便地通过接口来执行数据库操作。 ​ 最后，是映射文件，它是一个用来连接 Java 对象和数据库表的桥梁。在映射文件里，我们可以定义 SQL 语句、参数映射、结果映射等等。里面的 SQL 语句可以包括增删改查等操作，MyBatis 会根据我们调用的方法来选择正确的 SQL 语句来执行。"
+    },
+    {
+      "slug": "nzu2vt1n8rcew03m",
+      "title": "MyBatis的工作流程是怎样的？",
+      "url": "/tulingzhouyu/db22bv/nzu2vt1n8rcew03m",
+      "toc_path": [
+        "MyBatis",
+        "基础篇",
+        "MyBatis的工作流程是怎样的？"
+      ],
+      "toc_level": 2,
+      "toc_index": 499,
+      "word_count": 442,
+      "updated_at": "2023-08-29T11:38:47.000Z",
+      "primary_category": "mybatis",
+      "primary_category_name": "MyBatis",
+      "related_categories": [
+        "mybatis",
+        "java-core",
+        "os-linux"
+      ],
+      "question_type": "other",
+      "question_type_name": "其他问题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "MyBatis",
+        "Java",
+        "文件"
+      ],
+      "summary": "首先，你要配置 MyBatis，就是告诉它怎么干活。你得创建一个配置文件，里面得写上数据库怎么连接，还有映射文件在哪，还有其他的一些设置。然后，你得写映射文件，这个东西定义了咱们的 Java 对象和数据库表是怎么对应的。就是告诉 MyBatis，怎么把查询结果映射到我们的 Java 对象里面去...",
+      "excerpt": "首先，你要配置 MyBatis，就是告诉它怎么干活。你得创建一个配置文件，里面得写上数据库怎么连接，还有映射文件在哪，还有其他的一些设置。 然后，你得写映射文件，这个东西定义了咱们的 Java 对象和数据库表是怎么对应的。就是告诉 MyBatis，怎么把查询结果映射到我们的 Java 对象里面去。 接下来，你得在 Java 代码里面弄一个数据访问的接口。这个接口里面定义了跟数据库打交道的方法，咱们在映射文件里面配置好对应的 SQL 语句。 咱们的应用启动的时候，MyBatis 会读咱们的配置文件和映射文件，然后它会用这些信息创建一个 SqlSessionFactory，这玩意挺重要的，是用来产生 SqlSession 实例的。 然后就是 SqlSession，咱们用 SqlSessionFactory 来创建这个东西。SqlSession 就是用来跑 SQL 操作的，你可以用它来查啊插入啊更新啊删除啊，啥都行。 然后，咱们就可以用 SqlSession 执行咱们之前写的数据访问接口里面的方法。MyBatis 会根据配置找到对应的 SQL 语句然后执行。 查询的结果会被 MyBatis 映射回咱们的 Java 对象里面。它会根据映射文件的设置，把查询结果的列和我们 Java 对象的属性对应起来，就是把数据变成对象。 最后别忘了，操作完了得关掉 SqlSession，这样数据库的连接等资源就能被释放了。"
+    },
+    {
+      "slug": "evaz5u56gss7xx7d",
+      "title": "MyBatis一二级缓存的区别？",
+      "url": "/tulingzhouyu/db22bv/evaz5u56gss7xx7d",
+      "toc_path": [
+        "MyBatis",
+        "基础篇",
+        "MyBatis一二级缓存的区别？"
+      ],
+      "toc_level": 2,
+      "toc_index": 500,
+      "word_count": 570,
+      "updated_at": "2023-08-29T08:55:06.000Z",
+      "primary_category": "mybatis",
+      "primary_category_name": "MyBatis",
+      "related_categories": [
+        "mybatis",
+        "redis-cache",
+        "performance-optimization",
+        "os-linux"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "middle",
+        "senior",
+        "campus"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "MyBatis",
+        "一级缓存",
+        "二级缓存",
+        "缓存",
+        "优化",
+        "文件"
+      ],
+      "summary": "首先，咱们说说一级缓存。在同一个会话里，MyBatis 会自动开启一级缓存。这个缓存就是为了优化查询操作的速度。一旦你执行了一个查询，MyBatis 会把结果先存起来，这样下次再查询相同的数据的时候，它就可以直接从缓存里拿，不用再去数据库查询了。只要会话不结束，这个缓存就一直有效，只在这一个会...",
+      "excerpt": "首先，咱们说说一级缓存。在同一个会话里，MyBatis 会自动开启一级缓存。这个缓存就是为了优化查询操作的速度。一旦你执行了一个查询，MyBatis 会把结果先存起来，这样下次再查询相同的数据的时候，它就可以直接从缓存里拿，不用再去数据库查询了。只要会话不结束，这个缓存就一直有效，只在这一个会话里起作用。 ​ 然后，咱们看看二级缓存。这个缓存是用来跨会话共享数据的。不同的会话也能分享同样的缓存数据，这就意味着可以减少数据库的访问次数。不过，二级缓存需要手动配置开启，然后它可以把数据存到更持久的存储地方，比如文件系统或者分布式缓存里。这样多个会话就可以共享同样的缓存数据了。 ​ 区别嘛，首先就是作用范围。一级缓存只在一个会话内部有效，而二级缓存可以在不同会话之间共享数据。其次，一级缓存默认就是开启的，不需要特别设置。但是二级缓存需要你手动配置才能生效。然后就是数据共享性，因为一级缓存只在会话内有效，所以不同的会话无法共享缓存数据。但是二级缓存可以让不同的会话共享数据，这可以减少数据库的访问次数。最后，缓存失效的机制也不一样。一级缓存在会话结束时会被清空，而二级缓存可以根据一些设置来失效和更新。 ​ 那总的来说，一级缓存适合在一个会话里共享数据，而二级缓存适合多个会话之间的数据共享。但是要记得，二级缓存需要手动设置才能使用哦。根据实际情况，我们可以选择使用不同的缓存级别。"
+    },
+    {
+      "slug": "ygm4rsmx99inqvh6",
+      "title": "短视频",
+      "url": "/tulingzhouyu/db22bv/ygm4rsmx99inqvh6",
+      "toc_path": [
+        "MyBatis",
+        "基础篇",
+        "MyBatis一二级缓存的区别？",
+        "短视频"
+      ],
+      "toc_level": 3,
+      "toc_index": 501,
+      "word_count": 555,
+      "updated_at": "2024-06-20T08:32:34.000Z",
+      "primary_category": "mybatis",
+      "primary_category_name": "MyBatis",
+      "related_categories": [
+        "mybatis",
+        "redis-cache",
+        "resume-project",
+        "performance-optimization",
+        "os-linux"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "middle",
+        "senior",
+        "campus"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "MyBatis",
+        "一级缓存",
+        "二级缓存",
+        "缓存",
+        "面试官",
+        "优化",
+        "文件"
+      ],
+      "summary": "面试官又出难题了：MyBatis一二级缓存有什么区别？ 大家好，我是JJ其实这道面试题说难也不难，说容易也不容易，主要是看大家在平常工作中有没有积累相关的 mybatis 经验，想要回答这个问题，我们得先搞清楚什么一级缓存，二级缓存。首先，一级缓存是在同一个会话里自动开启的缓存机制，它主要用于...",
+      "excerpt": "面试官又出难题了：MyBatis一二级缓存有什么区别？ 大家好，我是JJ ​ 其实这道面试题说难也不难，说容易也不容易，主要是看大家在平常工作中有没有积累相关的 mybatis 经验， ​ 想要回答这个问题，我们得先搞清楚什么一级缓存，二级缓存。 ​ 首先， 一级缓存 是在 同一个会话里自动开启的缓存机制 ，它主要用于 优化查询 操作的速度。 ​ 当你执行一次查询后，MyBatis 会把结果存起来，这样下次再查询相同的数据时，就可以直接从缓存里面获取，而不需要再次访问数据库。 ​ 只要 会话没有结束，这个缓存就一直有效 ，但它 仅在当前会话 内起作用。 ​ 而 二级缓存 是用来 跨会话共享数据 的，不同的会话也能使用同样的缓存数据，这可以进一步减少数据库的访问次数。 ​ 不过，二级缓存 需要手动配置 才能开启的，而且它可以将数据存储到文件系统或者分布式缓存中，这样多个会话就可以共享同样的缓存数据了。 ​ 现在我们在来看 一级缓存与二级缓存的区别 ​ 首先是 作用范围 ，一级缓存只在一个会话内部有效，而二级缓存则可以在不同会话之间共享数据。 ​ 其次，一级缓存是 默认开启的 ，不需要特别设置，而二级缓存 需要手动配置 才能生效。 ​ 此外，缓存失效的机制也不同，一级缓存会在 会话结束时清空 ，而二级缓存可以 根据具体的配置来失效和更新 。 ​ 总的来说，一级缓存适合在单个会话内共享数据，而二级缓存适合在多个会话之间共享数据。不过，记住二级缓存需要手动设置才能使用。"
+    },
+    {
+      "slug": "gpktsk52wkipvbmb",
+      "title": "MyBatis如何处理延迟加载？",
+      "url": "/tulingzhouyu/db22bv/gpktsk52wkipvbmb",
+      "toc_path": [
+        "MyBatis",
+        "基础篇",
+        "MyBatis如何处理延迟加载？"
+      ],
+      "toc_level": 2,
+      "toc_index": 502,
+      "word_count": 516,
+      "updated_at": "2023-08-29T11:30:41.000Z",
+      "primary_category": "mybatis",
+      "primary_category_name": "MyBatis",
+      "related_categories": [
+        "mybatis",
+        "project-system-design",
+        "performance-optimization",
+        "jvm-memory-gc",
+        "computer-network"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "MyBatis",
+        "订单",
+        "性能",
+        "优化",
+        "堆",
+        "网络"
+      ],
+      "summary": "所谓的延迟加载，其实就是一种优化方法，目标是为了在查数据库的时候，尽量不读取多余的数据，从而提高我们应用的表现和节约资源。在MyBatis里，这个延迟加载的技巧主要是用在处理对象关系映射的时候，也就是ORM。来个例子帮你理解：假设有两张表，一张是订单表，另一张是商品表。每个订单下面可能有好几个...",
+      "excerpt": "所谓的延迟加载，其实就是一种优化方法，目标是为了在查数据库的时候，尽量不读取多余的数据，从而提高我们应用的表现和节约资源。在MyBatis里，这个延迟加载的技巧主要是用在处理对象关系映射的时候，也就是ORM。 来个例子帮你理解：假设有两张表，一张是订单表，另一张是商品表。每个订单下面可能有好几个商品。用延迟加载的话，当我们查一个订单的时候，MyBatis不会马上查出这个订单的所有商品，而是等到我们真的要用商品的数据时才去查。这样做就避免了在查订单的时候额外加载了一堆没用的商品。 用延迟加载有几个好处： 性能更好：特别是在对象关系复杂或者数据多的情况下，延迟加载可以减少一次性加载大量数据，让查询更快，应答更快。 省资源：不一开始就加载所有关联数据，可以按需加载，节约了内存和网络资源。 避免不必要的查：如果有些关联数据在当前情境下用不上，用延迟加载就能避免没必要的数据库查，不累积数据库的负担。 但要注意，虽然延迟加载能提升性能，可别用得过了，免得碰上懒加载的N+1问题，就是要查很多次才能拿到关联数据，结果性能就拖垮了。所以用延迟加载的时候，得根据实际情况合理配置和使用。 总之，MyBatis的延迟加载能帮助优化数据库查询，不读取不必要的数据，提升应用的响应速度，资源利用也更高。"
+    },
+    {
+      "slug": "ctl9lgqlu10lae7n",
+      "title": "MyBatis中的动态SQL是什么？",
+      "url": "/tulingzhouyu/db22bv/ctl9lgqlu10lae7n",
+      "toc_path": [
+        "MyBatis",
+        "基础篇",
+        "MyBatis中的动态SQL是什么？"
+      ],
+      "toc_level": 2,
+      "toc_index": 503,
+      "word_count": 415,
+      "updated_at": "2023-08-25T03:36:30.000Z",
+      "primary_category": "mybatis",
+      "primary_category_name": "MyBatis",
+      "related_categories": [
+        "mybatis",
+        "java-core"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "MyBatis",
+        "动态SQL",
+        "Java"
+      ],
+      "summary": "MyBatis是一个流行的Java持久化框架，它允许你将数据库查询语句与Java代码分离，使得代码更加清晰易读。动态SQL是MyBatis中一个强大的特性，它允许你根据不同的条件在运行时构建不同的SQL查询语句。举个例子来说明动态SQL的概念。假设你有一个搜索页面，用户可以根据不同的条件来搜索...",
+      "excerpt": "MyBatis是一个流行的Java持久化框架，它允许你将数据库查询语句与Java代码分离，使得代码更加清晰易读。动态SQL是MyBatis中一个强大的特性，它允许你根据不同的条件在运行时构建不同的SQL查询语句。 举个例子来说明动态SQL的概念。假设你有一个搜索页面，用户可以根据不同的条件来搜索商品，比如商品名、价格范围和分类。使用动态SQL，你可以构建一个灵活的查询语句，只在用户提供相关条件时包含这些条件。 在MyBatis中，你可以使用 <if> 、 <choose> 、 <when> 、 <otherwise> 等标签来构建动态SQL。以下是一个简单的例子，假设你要根据用户的选择来动态构建查询语句： 在这个例子中，如果用户输入了商品名、价格范围或分类，对应的条件会被包含在查询语句中。如果用户没有提供某个条件，那么相应的 <if> 块就会被忽略，从而构建出适合的查询语句。 动态SQL使得构建灵活的、适应不同情况的查询变得非常方便。这可以减少重复代码，提高代码的可维护性和可读性。"
+    },
+    {
+      "slug": "ha8ant9tvyi5hp2v",
+      "title": "MyBatis中XML映射有哪些标签？",
+      "url": "/tulingzhouyu/db22bv/ha8ant9tvyi5hp2v",
+      "toc_path": [
+        "MyBatis",
+        "基础篇",
+        "MyBatis中XML映射有哪些标签？"
+      ],
+      "toc_level": 2,
+      "toc_index": 504,
+      "word_count": 455,
+      "updated_at": "2023-08-24T11:18:15.000Z",
+      "primary_category": "mybatis",
+      "primary_category_name": "MyBatis",
+      "related_categories": [
+        "mybatis",
+        "java-core",
+        "performance-optimization",
+        "os-linux",
+        "devops-release"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "campus",
+        "middle"
+      ],
+      "level_names": [
+        "校招/应届生",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "MyBatis",
+        "二级缓存",
+        "动态SQL",
+        "Java",
+        "文件"
+      ],
+      "summary": "除了常见的select、insert、update和delete标签，MyBatis的XML映射文件中还有一些其他标签用于更复杂的操作和配置。以下是一些常见的额外标签： resultMap： 用于定义查询结果与Java对象之间的映射关系，可以在多个查询中重复使用。  association和c...",
+      "excerpt": "除了常见的 select 、 insert 、 update 和 delete 标签，MyBatis的XML映射文件中还有一些其他标签用于更复杂的操作和配置。以下是一些常见的额外标签： resultMap： 用于定义查询结果与Java对象之间的映射关系，可以在多个查询中重复使用。 association和collection： 用于在 resultMap 中定义关联关系，用于处理一对一和一对多的关系。 discriminator： 在 resultMap 中使用，根据不同的条件选择不同的映射规则，用于处理继承关系的映射。 sql： 可以定义可重用的SQL片段，然后在其他地方引用。主要用于减少重复编写SQL语句。 include： 用于在SQL语句中引入外部定义的SQL片段，提高可维护性。 if、choose、when、otherwise： 用于在SQL语句中进行条件判断和逻辑控制，用于动态SQL的构建。 trim、where、set： 用于在SQL语句中添加固定的SQL片段，如 where 和 set 关键字，用于动态的条件构建。 foreach： 用于在SQL语句中进行集合迭代，适用于生成IN语句等。 bind： 用于在SQL语句中声明并绑定一个变量，可以在查询中重复使用。 cache： 用于配置二级缓存。 selectKey： 用于在插入操作后获取生成的主键值。 insert、update、delete的flushCache、useGeneratedKeys、keyProperty属性： 用于配置插入、更新和删除操作的一些属性。 这些标签和属性可以让你更灵活地配置和使用MyBatis，从而适应不同的需求和场景。"
+    },
+    {
+      "slug": "nb59wacg7gadhdak",
+      "title": "模糊查询 like 语句该怎么写?",
+      "url": "/tulingzhouyu/db22bv/nb59wacg7gadhdak",
+      "toc_path": [
+        "MyBatis",
+        "基础篇",
+        "模糊查询 like 语句该怎么写?"
+      ],
+      "toc_level": 2,
+      "toc_index": 505,
+      "word_count": 321,
+      "updated_at": "2023-08-24T07:25:43.000Z",
+      "primary_category": "mybatis",
+      "primary_category_name": "MyBatis",
+      "related_categories": [
+        "mybatis",
+        "resume-project"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "campus",
+        "expert"
+      ],
+      "level_names": [
+        "校招/应届生",
+        "专家/P7+"
+      ],
+      "keywords": [
+        "MyBatis",
+        "动态SQL",
+        "项目"
+      ],
+      "summary": "在MyBatis中，要执行模糊查询（使用LIKE语句），你可以使用SQL语句的字符串拼接或使用动态SQL来构建查询语句。下面我将为你展示两种常用的方式。假设你要在一个查询中执行模糊查询，搜索用户的用户名包含特定关键字的情况。字符串拼接方式：",
+      "excerpt": "在MyBatis中，要执行模糊查询（使用LIKE语句），你可以使用SQL语句的字符串拼接或使用动态SQL来构建查询语句。下面我将为你展示两种常用的方式。 假设你要在一个查询中执行模糊查询，搜索用户的用户名包含特定关键字的情况。 字符串拼接方式 ： 在这个例子中， #{keyword} 是参数占位符，表示要搜索的关键字。 CONCAT('%', #{keyword}, '%') 用于构建模糊匹配的字符串。 动态SQL方式 ： 在这个例子中，使用了 <if> 标签来创建动态条件。只有在 keyword 参数不为null时，才会添加 AND username LIKE CONCAT('%', #{keyword}, '%') 这个条件到查询语句中。 无论哪种方式，你都可以在SQL语句中使用 LIKE 关键字来实现模糊查询，然后通过 #{} 语法或动态SQL的方式将参数值插入到查询语句中。选择哪种方式取决于你的项目需求和团队的偏好。"
+    },
+    {
+      "slug": "tknazmlfcguqf4l3",
+      "title": "#{}和${}的区别是什么？",
+      "url": "/tulingzhouyu/db22bv/tknazmlfcguqf4l3",
+      "toc_path": [
+        "MyBatis",
+        "基础篇",
+        "#{}和${}的区别是什么？"
+      ],
+      "toc_level": 2,
+      "toc_index": 506,
+      "word_count": 593,
+      "updated_at": "2024-12-06T08:30:28.000Z",
+      "primary_category": "mybatis",
+      "primary_category_name": "MyBatis",
+      "related_categories": [
+        "mybatis",
+        "security-auth"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "MyBatis",
+        "安全",
+        "SQL注入"
+      ],
+      "summary": "在MyBatis中，#{}和${}都是用于参数替换的标记，用于将参数值插入到SQL语句中。然而，它们在处理参数值的方式上有一些重要的区别。 #{}（预编译）: #{}是用于预编译的参数标记。当使用#{}时，MyBatis会将参数值放入一个预编译的PreparedStatement中，并确保参数...",
+      "excerpt": "在MyBatis中， #{} 和 ${} 都是用于参数替换的标记，用于将参数值插入到SQL语句中。然而，它们在处理参数值的方式上有一些重要的区别。 #{}（预编译） : #{} 是用于预编译的参数标记。当使用 #{} 时，MyBatis会将参数值放入一个预编译的PreparedStatement中，并确保参数值被正确地转义和引用，从而防止SQL注入攻击。 #{} 适用于大多数情况，尤其是当参数值是从用户输入中获得时，因为它提供了更好的安全性和可靠性。 示例： ${}（字符串替换） : ${} 是用于字符串替换的参数标记。当使用 ${} 时，MyBatis会直接将参数值嵌入到SQL语句中，不会进行预编译或转义。这可能导致潜在的安全问题，如果不正确地处理参数值，可能会导致SQL注入攻击。 ${} 适用于一些特殊情况，例如在动态表名、列名或函数调用等情况下，但要谨慎使用，确保参数值的安全性。 示例： 总结区别： #{} 用于预编译，提供参数安全性，适合大多数情况。 ${} 用于字符串替换，潜在安全风险较高，仅在特定情况下使用，确保参数值安全。 在实际使用中，推荐优先使用 #{} 来处理参数，以确保数据库操作的安全性和可靠性。只有在确保参数值不会引发安全问题的情况下，才应该考虑使用 ${} 。 补充："
+    },
+    {
+      "slug": "gwg8m827et87mcxy",
+      "title": "短视频",
+      "url": "/tulingzhouyu/db22bv/gwg8m827et87mcxy",
+      "toc_path": [
+        "MyBatis",
+        "基础篇",
+        "#{}和${}的区别是什么？",
+        "短视频"
+      ],
+      "toc_level": 3,
+      "toc_index": 507,
+      "word_count": 403,
+      "updated_at": "2024-05-15T08:00:36.000Z",
+      "primary_category": "mybatis",
+      "primary_category_name": "MyBatis",
+      "related_categories": [
+        "mybatis",
+        "security-auth",
+        "algorithm"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "MyBatis",
+        "安全",
+        "排序"
+      ],
+      "summary": "mybatis里面#和$号的区别？这是一位工作了两年的粉丝，在面试的时候被问到的一个mybatis基础问题，但很可惜他当时并没回答出来其实在 MyBatis 中，# 和 $ 符号的差异是初学者经常被问到的问题。在面试中被问及这个问题，也是一个很好的机会来展示对 MyBatis 基础的理解。那对...",
+      "excerpt": "mybatis里面#和$号的区别？ 这是一位工作了两年的粉丝，在面试的时候被问到的一个mybatis基础问题，但很可惜他当时并没回答出来 其实在 MyBatis 中，# 和 $ 符号的差异是初学者经常被问到的问题。 在面试中被问及这个问题，也是一个很好的机会来展示对 MyBatis 基础的理解。 那对于这个问题，我会从以下几个方面来回答： 首先， MyBatis 提供了两种占位符：# 和 $ 它们都用于 动态生成 SQL 语句 ，但在内部处理和使用方式上 存在显著差异 。 # 占位符类似于 JDBC 的预编译语句中的问号占位符（?）。它会将参数 安全地设置到预编译的 SQL 语句 中，从而有效 防止 SQL 注入攻击 。这是因为在处理过程中， 特殊字符会被正确转义 。 而$ 占位符是直接将参数 拼接到原始 SQL 语句 中。虽然它在某些情况下更灵活，但也更容易 受到 SQL 注入攻击 的威胁。因为 MyBatis 不会 对这些参数 进行特殊处理或转义 。 所以，在实际应用中， 推荐 使用 # 占位符来确保 SQL 语句的安全性和可靠性。 而在一些需要动态拼接 SQL 的场景使用$ 占位符更加适合，比如动态表名或排序字段等。 ​"
+    },
+    {
+      "slug": "aex0mfigrga4llrm",
+      "title": "讲讲MyBatis中二级缓存的缺点？",
+      "url": "/tulingzhouyu/db22bv/aex0mfigrga4llrm",
+      "toc_path": [
+        "MyBatis",
+        "高级篇",
+        "讲讲MyBatis中二级缓存的缺点？"
+      ],
+      "toc_level": 2,
+      "toc_index": 509,
+      "word_count": 841,
+      "updated_at": "2023-08-29T08:45:59.000Z",
+      "primary_category": "mybatis",
+      "primary_category_name": "MyBatis",
+      "related_categories": [
+        "mybatis",
+        "redis-cache",
+        "performance-optimization",
+        "os-linux"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle",
+        "senior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "MyBatis",
+        "二级缓存",
+        "缓存",
+        "性能",
+        "内存"
+      ],
+      "summary": "二级缓存主要用来加速数据的访问。比如说，我们要从数据库中获取一些数据，但是每次都直接去数据库查询会有点慢，这时候二级缓存就能派上用场。它会把之前查询过的结果存起来，下次如果还需要同样的数据，就可以直接从缓存里拿，这样就不用再去数据库那里查询了。这样做的好处就是，我们能减少对数据库的频繁访问，提...",
+      "excerpt": "二级缓存主要用来加速数据的访问。比如说，我们要从数据库中获取一些数据，但是每次都直接去数据库查询会有点慢，这时候二级缓存就能派上用场。它会把之前查询过的结果存起来，下次如果还需要同样的数据，就可以直接从缓存里拿，这样就不用再去数据库那里查询了。这样做的好处就是，我们能减少对数据库的频繁访问，提升应用程序的运行速度。 ​ 不过呢，二级缓存也有一些问题，咱们得注意一下。 ​ 首先，可能会出现数据不一致的问题。因为如果我们在一个地方改了数据，但是缓存里的数据没有及时更新，其他地方拿到的数据就可能是过时的，这样就可能引发错误。 ​ 其次，使用二级缓存需要一些内存空间来存储缓存数据。如果我们的数据很多，就可能占用比较多的内存，这有可能会影响到应用程序的运行速度。 ​ 还有，维护成本也是个问题。我们得考虑缓存数据什么时候该更新、什么时候该删除等等。这会让代码变得复杂，可能需要更多的开发和测试工作。 ​ 但是，二级缓存也有它适用的场景。 ​ 比如说，如果我们的应用程序更多是读取数据，写操作相对较少，那么二级缓存就能够很有效地减少数据库访问的次数，提升性能。 ​ 还有，如果我们的数据变化不是很频繁，即使缓存里的数据不是最新的，也不会对应用产生太大的影响，这时候也可以考虑用二级缓存。 ​ 另外，如果某些查询的耗时比较长，但是查询结果又不怎么变化，用了二级缓存就可以加快这些查询的速度。 ​ 当然，也有些情况下我们最好不要用二级缓存。 ​ 如果我们的应用程序对数据的实时性要求很高，二级缓存可能就不太适合，因为缓存里的数据可能会有点滞后。 ​ 还有，如果我们应用里有很多频繁的写操作，可能会导致缓存一直失效，这样就得不偿失了，可能还会增加数据库的压力。 ​ 最后，如果涉及到复杂的数据模型或者数据之间的关联关系，使用缓存的维护和数据一致性可能会变得更加复杂。 ​ 所以，考虑是否要用二级缓存的时候，我们需要综合考虑应用程序的性能需求、数据变化的频率以及数据一致性的要求等等因素。有时候，我们可以把二级缓存当作提升性能的一个工具，但也要小心使用，避免引入新的问题。"
+    },
+    {
+      "slug": "fmqbh3c14eqxgrda",
+      "title": "为什么说 Mybatis 是半ORM 映射工具？",
+      "url": "/tulingzhouyu/db22bv/fmqbh3c14eqxgrda",
+      "toc_path": [
+        "MyBatis",
+        "高级篇",
+        "为什么说 Mybatis 是半ORM 映射工具？"
+      ],
+      "toc_level": 2,
+      "toc_index": 510,
+      "word_count": 423,
+      "updated_at": "2023-08-29T08:43:29.000Z",
+      "primary_category": "mybatis",
+      "primary_category_name": "MyBatis",
+      "related_categories": [
+        "mybatis",
+        "java-core",
+        "performance-optimization",
+        "os-linux",
+        "resume-project"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "MyBatis",
+        "Java",
+        "性能",
+        "优化",
+        "文件",
+        "项目"
+      ],
+      "summary": "首先，Mybatis被称为半ORM框架是因为它在数据库操作方面提供了一些对象关系映射的功能，但相对于全ORM框架，它更加灵活和轻量级。在Mybatis中，我们需要手动编写SQL来执行数据库操作，这跟传统的JDBC方式有点类似。但是，Mybatis通过映射文件来实现Java对象与数据库表之间的映...",
+      "excerpt": "首先， Mybatis 被称为 半ORM框架 是因为它在数据库操作方面提供了一些对象关系映射的功能，但相对于 全ORM 框架，它更加灵活和轻量级。在Mybatis中，我们需要手动编写SQL来执行数据库操作，这跟传统的JDBC方式有点类似。但是，Mybatis通过映射文件来实现Java对象与数据库表之间的映射，这就是它的ORM特性。 ​ 区别的话，全ORM框架通常更加自动化，它会完全代替你来生成SQL语句，进行数据库操作。这在某些情况下能够提高开发效率，因为你不需要写太多的SQL代码。但是，全ORM框架也可能在性能方面略有影响，因为它们可能会生成复杂的SQL语句，导致查询效率下降。 ​ 相比之下，Mybatis更加灵活，你可以精确地控制要执行的SQL语句，这对于需要优化查询性能的场景很有帮助。另外，Mybatis在映射文件中可以明确指定每个字段的映射关系，这样你能更好地控制数据库表和Java对象之间的对应关系。 ​ 最后再来总结一下，Mybatis被称为半ORM框架，是因为它结合了ORM的部分特性，但相对于全ORM框架，更注重灵活性和精确控制。在选择使用哪种方式时，需要根据具体的项目需求和性能要求来考虑。"
+    },
+    {
+      "slug": "nd8tzfgecwgsnqfc",
+      "title": "MyBatis如何实现动态数据源切换？",
+      "url": "/tulingzhouyu/db22bv/nd8tzfgecwgsnqfc",
+      "toc_path": [
+        "MyBatis",
+        "高级篇",
+        "MyBatis如何实现动态数据源切换？"
+      ],
+      "toc_level": 2,
+      "toc_index": 511,
+      "word_count": 660,
+      "updated_at": "2023-08-28T13:29:48.000Z",
+      "primary_category": "mybatis",
+      "primary_category_name": "MyBatis",
+      "related_categories": [
+        "mybatis",
+        "os-linux",
+        "spring-core",
+        "resume-project",
+        "java-concurrency"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "MyBatis",
+        "线程",
+        "文件",
+        "AOP",
+        "项目"
+      ],
+      "summary": "在实现动态数据源切换方面，MyBatis有几种方法，让你能够在不同的数据库之间轻松切换。比如，你可能会在开发环境和生产环境中使用不同的数据库。下面是一些可以考虑的方法：首先，我们可以通过配置文件来实现切换。具体来说，你可以在MyBatis的配置文件里配置多个数据源，然后根据需要在代码中进行切换...",
+      "excerpt": "在实现动态数据源切换方面，MyBatis有几种方法，让你能够在不同的数据库之间轻松切换。比如，你可能会在开发环境和生产环境中使用不同的数据库。下面是一些可以考虑的方法： ​ 首先，我们可以通过配置文件来实现切换。具体来说，你可以在MyBatis的配置文件里配置多个数据源，然后根据需要在代码中进行切换。这就涉及到定义多个数据源的连接信息和配置，然后在代码里通过指定数据源的标识来选择要使用哪个数据源。这种方法需要在配置文件中进行一些准备工作，但切换过程相对比较容易。 ​ 其次，我们可以运用AOP切面编程来实现切换。通过使用面向切面编程（AOP），你可以在方法调用之前进行拦截，然后根据条件来动态地切换数据源。你可以创建一个切面，将切入点设定为需要切换数据源的方法，然后在切面中实现数据源切换的逻辑。这样的做法能够将切换逻辑和业务逻辑分隔开，有助于提高代码的可维护性。 ​ 另外，我们还可以使用MyBatis提供的AbstractRoutingDataSource类。这个类允许你创建一个数据源路由器，根据特定的规则来选择数据源。你可以继承这个类，然后实现其中的determineCurrentLookupKey()方法，以返回当前应该使用的数据源标识。这种方式非常灵活，可以根据不同的条件来切换数据源。 ​ 当然，还有一种方式是使用第三方库。除了上述提到的方法，还有一些第三方库可以帮助你实现动态数据源切换，例如Druid和HikariCP等。这些库通常提供了更多的功能和配置选项，可以根据实际需求来选择合适的库。 ​ 总体来说，MyBatis为实现动态数据源切换提供了多种方法，你可以根据项目的具体需求和复杂程度来选择适合的方法。无论选择哪种方法，都要确保在切换数据源时考虑到线程安全性和性能等因素。希望这些解释对你有帮助！"
+    },
+    {
+      "slug": "gd0ut67yyz0k60ni",
+      "title": "MyBatis如何处理懒加载和预加载？",
+      "url": "/tulingzhouyu/db22bv/gd0ut67yyz0k60ni",
+      "toc_path": [
+        "MyBatis",
+        "高级篇",
+        "MyBatis如何处理懒加载和预加载？"
+      ],
+      "toc_level": 2,
+      "toc_index": 512,
+      "word_count": 472,
+      "updated_at": "2023-08-29T08:36:35.000Z",
+      "primary_category": "mybatis",
+      "primary_category_name": "MyBatis",
+      "related_categories": [
+        "mybatis",
+        "performance-optimization",
+        "os-linux"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "MyBatis",
+        "性能",
+        "优化",
+        "内存"
+      ],
+      "summary": "当谈到MyBatis中的懒加载和预加载时，我们实际上在讨论在获取数据库数据时如何处理关联对象的加载方式。懒加载是一种延迟加载技术，它在需要访问关联对象的时候才会加载相关数据。这意味着，当你从数据库中获取一个主对象时，它的关联对象并不会立即加载到内存中，只有当你实际调用访问关联对象的方法时，My...",
+      "excerpt": "当谈到MyBatis中的懒加载和预加载时，我们实际上在讨论在获取数据库数据时如何处理关联对象的加载方式。 ​ 懒加载 是一种延迟加载技术，它在需要访问关联对象的时候才会加载相关数据。这意味着，当你从数据库中获取一个主对象时，它的关联对象并不会立即加载到内存中，只有当你实际调用访问关联对象的方法时，MyBatis才会去数据库中加载并填充这些关联对象的数据。懒加载适用于关联对象较多或者关联对象数据较大的情况，这样可以减少不必要的数据库查询，提升性能。 ​ 预加载 则是一种在获取主对象时同时加载其关联对象的技术。这样一来，当你获取主对象时，它的所有关联对象也会被一并加载到内存中，避免了多次数据库查询。预加载适用于你确定在后续使用中肯定会访问关联对象，这样可以减少每次访问关联对象时的延迟。 ​ 选择懒加载还是预加载取决于你的具体需求和场景。如果你希望在尽量少的数据库查询次数下获取数据，懒加载是个不错的选择。如果你在获取主对象后会频繁地访问其关联对象，预加载可能更适合，因为它可以减少多次查询带来的性能开销。 ​ 两者都是优化数据库访问性能的手段，根据具体的使用场景选择合适的加载方式非常重要。"
+    },
+    {
+      "slug": "afgcfcyf1fmsg7zi",
+      "title": "能说说MyBatis的工作原理吗？",
+      "url": "/tulingzhouyu/db22bv/afgcfcyf1fmsg7zi",
+      "toc_path": [
+        "MyBatis",
+        "高级篇",
+        "能说说MyBatis的工作原理吗？"
+      ],
+      "toc_level": 2,
+      "toc_index": 513,
+      "word_count": 580,
+      "updated_at": "2023-08-24T06:13:32.000Z",
+      "primary_category": "mybatis",
+      "primary_category_name": "MyBatis",
+      "related_categories": [
+        "mybatis",
+        "java-core",
+        "os-linux",
+        "spring-core",
+        "java-collections"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "middle",
+        "senior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "MyBatis",
+        "Java",
+        "异常",
+        "文件",
+        "Bean",
+        "集合"
+      ],
+      "summary": "首先，我们知道MyBatis是一个优秀的持久层框架，它是用来简化数据库操作的。传统地，如果没有使用框架，我们可能需要手写大量的JDBC代码，处理很多的资源管理和异常处理。但MyBatis帮我们抽象了这一部分。好，让我们来看一下MyBatis的工作原理： 配置文件：MyBatis需要一个XML配...",
+      "excerpt": "首先，我们知道MyBatis是一个优秀的持久层框架，它是用来简化数据库操作的。传统地，如果没有使用框架，我们可能需要手写大量的JDBC代码，处理很多的资源管理和异常处理。但MyBatis帮我们抽象了这一部分。 好，让我们来看一下MyBatis的工作原理： 配置文件 ：MyBatis需要一个XML配置文件，叫做 mybatis-config.xml ，用于定义数据源、事务管理以及其他一些设置。 SQL映射文件 ：为了告诉MyBatis如何映射SQL查询到我们的对象或Java Beans，我们需要定义另一些XML文件。这些文件里，我们会写SQL语句，并定义输入和输出。 SqlSessionFactory ：当MyBatis初始化时，它会根据上面提到的配置文件创建一个SqlSessionFactory。这个工厂只会被创建一次，然后被用来生产SqlSession，这些SqlSession是应用中真正做数据库操作的对象。 SqlSession ：这是MyBatis的一个关键组件。每当我们想和数据库进行交互时，我们就从SqlSessionFactory那里拿到一个SqlSession。这个会话包含了所有执行SQL的方法，比如 insert , update , delete , select 等。 映射器 ：为了使代码更整洁，我们经常使用接口来代表SQL映射。这些接口的方法对应了之前在XML映射文件中定义的SQL语句。这样，我们就可以像调用普通的Java方法那样执行SQL语句了。 那么，当你在应用中调用一个映射器方法时，这里发生了什么？ MyBatis会找到对应的SQL语句。 使用给定的参数，MyBatis会为这条SQL语句创建一个PreparedStatement。 执行这个PreparedStatement。 如果这是一个查询操作，MyBatis会将查询结果映射到Java对象或集合中。 最后，返回这个结果。 这就是MyBatis的基本工作原理。使用MyBatis，我们可以更方便地与数据库交互，同时避免大部分重复和模板化的代码。"
+    },
+    {
+      "slug": "eyw0xl2ktv4ew1gt",
+      "title": "mybatis 是怎么跟他的 xml 之间形成映射的？",
+      "url": "/tulingzhouyu/db22bv/eyw0xl2ktv4ew1gt",
+      "toc_path": [
+        "MyBatis",
+        "高级篇",
+        "能说说MyBatis的工作原理吗？",
+        "mybatis 是怎么跟他的 xml 之间形成映射的？"
+      ],
+      "toc_level": 3,
+      "toc_index": 514,
+      "word_count": 596,
+      "updated_at": "2025-04-17T11:02:09.000Z",
+      "primary_category": "mybatis",
+      "primary_category_name": "MyBatis",
+      "related_categories": [
+        "mybatis",
+        "java-core",
+        "os-linux",
+        "algorithm"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "campus",
+        "senior"
+      ],
+      "level_names": [
+        "校招/应届生",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "MyBatis",
+        "Mapper",
+        "Java",
+        "注解",
+        "文件",
+        "查找"
+      ],
+      "summary": "1. 概述MyBatis 是一个灵活的持久层框架，核心在于通过 XML 或注解，将 Java 方法与 SQL 语句高效映射。在实际开发中，Mapper 接口和 XML 映射文件的关联是 MyBatis 的基础，也是经常被问及的核心原理。2. 基本结构与关联方式(1) Mapper 接口（Jav...",
+      "excerpt": "1. 概述 MyBatis 是一个灵活的持久层框架，核心在于通过 XML 或注解，将 Java 方法与 SQL 语句高效映射。 在实际开发中， Mapper 接口和 XML 映射文件的关联 是 MyBatis 的基础，也是经常被问及的核心原理。 2. 基本结构与关联方式 (1) Mapper 接口（Java） (2) XML 映射文件 (3) 关联方式说明 namespace ：XML 文件的 namespace 属性必须与 Mapper 接口的全限定名一致。 id ：SQL 标签的 id 属性必须与接口方法名一致。 这样，MyBatis 能自动把接口方法与 XML 中的 SQL 关联起来 。 3. MyBatis 关联底层实现原理 (1) 动态代理机制 MyBatis 为每个 Mapper 接口生成一个代理对象（使用 JDK 动态代理）。 你调用 Mapper 方法时，实际是由代理对象接管，并根据方法名和参数查找、执行对应 SQL。 示例： (2) MapperRegistry 和 MapperProxyFactory MapperRegistry ：负责注册和管理所有 Mapper 接口。 MapperProxyFactory ：为每个接口创建动态代理对象，内部由 MapperProxy 实现方法拦截和执行。 关联过程： MyBatis 通过 MapperRegistry 注册 Mapper 接口。 当调用 getMapper 方法时， MapperProxyFactory 生成相应的代理对象。 代理对象通过 MapperProxy 调用对应的 SQL 语句。 (3) XML 解析与绑定 MyBatis 启动时，用 XMLMapperBuilder 解析 XML 文件： 读取 namespace ，与接口绑定。 读取 id ，与方法名一一对应。 每个 SQL 和方法的绑定关系，生成 MappedStatement 存入 Configuration 对象。 (4) 流程图 4. 实例流程（OrderMapper 为例） 接口 ： Order selectOrderById(int id); XML ： 执行过程 ： 启动加载 XML——解析 namespace/id——方法与 SQL 关联 sqlSession.getMapper(OrderMapper.class) 创建代理 调用 selectOrderById -> 查找配置 -> 执行 SQL -> 返回 Order 对象 5. 动态 SQL 与高级映射 支持 <if>、<choose>、<foreach> 等标签，实现条件拼装动态 SQL。 提升灵活性，替换传统硬编码 SQL。 示例："
+    },
+    {
+      "slug": "hqr8yfn6600ia9bo",
+      "title": "讲讲Mybatis 的一级、二级缓存",
+      "url": "/tulingzhouyu/db22bv/hqr8yfn6600ia9bo",
+      "toc_path": [
+        "MyBatis",
+        "高级篇",
+        "讲讲Mybatis 的一级、二级缓存"
+      ],
+      "toc_level": 2,
+      "toc_index": 515,
+      "word_count": 600,
+      "updated_at": "2023-08-24T11:26:56.000Z",
+      "primary_category": "mybatis",
+      "primary_category_name": "MyBatis",
+      "related_categories": [
+        "mybatis",
+        "redis-cache",
+        "java-core",
+        "performance-optimization",
+        "os-linux"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "middle",
+        "senior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "MyBatis",
+        "一级缓存",
+        "二级缓存",
+        "缓存",
+        "序列化",
+        "性能",
+        "文件"
+      ],
+      "summary": "MyBatis提供了两种级别的缓存：一级缓存（本地缓存）和二级缓存（全局缓存）。它们分别位于不同的作用范围，有不同的特性和使用场景。一级缓存（本地缓存）： 作用范围： 一级缓存是在SqlSession的生命周期内有效，也就是说，每个SqlSession拥有独立的一级缓存。  默认开启： 一级缓...",
+      "excerpt": "MyBatis提供了两种级别的缓存：一级缓存（本地缓存）和二级缓存（全局缓存）。它们分别位于不同的作用范围，有不同的特性和使用场景。 一级缓存（本地缓存）： 作用范围： 一级缓存是在 SqlSession 的生命周期内有效，也就是说，每个 SqlSession 拥有独立的一级缓存。 默认开启： 一级缓存在MyBatis中默认是开启的，无需额外配置。 特点： 当执行查询操作时，查询的结果会被缓存在当前 SqlSession 中。如果再次执行相同的查询，MyBatis会首先尝试从缓存中获取数据，而不再访问数据库。 自动刷新： MyBatis会在执行insert、update、delete等写操作时自动清空一级缓存，以保持数据的一致性。 二级缓存（全局缓存）： 作用范围： 二级缓存是在多个 SqlSession 之间共享的，即多个 SqlSession 可以共享同一个二级缓存。 配置开启： 二级缓存需要手动配置开启，需要在映射文件的 <mapper> 标签下添加 <cache> 元素。 特点： 二级缓存能够跨 SqlSession 共享查询结果，有效减少数据库访问次数。它的数据存储在全局范围的缓存中，可以由多个 SqlSession 访问。 缓存策略： 你可以根据需求选择不同的缓存策略（例如 LRU 、 FIFO 等），以及配置缓存的大小、刷新间隔等参数。 注意事项： 二级缓存可以缓存的对象需要是可序列化的，要确保对象可以正确地序列化和反序列化。另外，对于关联数据的更新操作，需要手动清除相关的二级缓存，以避免脏数据的问题。 需要注意的是，虽然缓存可以提高查询性能，但不合理的使用缓存可能导致数据不一致等问题，特别是在分布式环境下。因此，在使用缓存时需要根据业务需求和性能测试结果进行合理的配置和管理。"
+    },
+    {
+      "slug": "gvc338obfnod0s94",
+      "title": "如何在 MyBatis 中进行分页查询？",
+      "url": "/tulingzhouyu/db22bv/gvc338obfnod0s94",
+      "toc_path": [
+        "MyBatis",
+        "高级篇",
+        "如何在 MyBatis 中进行分页查询？"
+      ],
+      "toc_level": 2,
+      "toc_index": 516,
+      "word_count": 552,
+      "updated_at": "2023-08-25T05:28:14.000Z",
+      "primary_category": "mybatis",
+      "primary_category_name": "MyBatis",
+      "related_categories": [
+        "mybatis",
+        "resume-project",
+        "java-core",
+        "performance-optimization"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "MyBatis",
+        "Java",
+        "性能"
+      ],
+      "summary": "在 MyBatis 中进行分页查询是一个常见的需求，特别是在处理大量数据时。下面我会向你解释如何进行分页查询，并提供一些常用的分页插件和技巧。基本的分页查询：MyBatis 提供了一个简单的方式来实现分页查询，主要涉及到两个参数：offset 和 limit。offset 表示从结果集的哪一行...",
+      "excerpt": "在 MyBatis 中进行分页查询是一个常见的需求，特别是在处理大量数据时。下面我会向你解释如何进行分页查询，并提供一些常用的分页插件和技巧。 基本的分页查询： MyBatis 提供了一个简单的方式来实现分页查询，主要涉及到两个参数： offset 和 limit 。 offset 表示从结果集的哪一行开始取数据，而 limit 则表示每页显示多少条数据。在 SQL 语句中，你可以使用类似于 LIMIT offset, limit 的语法来实现分页查询。 下面是一个示例 SQL 查询，展示如何在 MyBatis 中进行分页查询： 在 Java 代码中，你需要为 offset 和 limit 参数提供值。 offset 可以通过公式 (pageNum - 1) * pageSize 计算得出，其中 pageNum 表示页码，从 1 开始， pageSize 表示每页显示的记录数。 常用的分页插件和技巧： PageHelper 插件： PageHelper 是一个流行的 MyBatis 分页插件，它简化了分页查询的操作。你只需要在查询方法前调用 PageHelper.startPage(pageNum, pageSize) ，然后执行查询语句，PageHelper 就会自动处理分页逻辑。 使用 RowBounds： 在 MyBatis 中，你还可以使用 RowBounds 对象来实现分页查询。通过在查询方法中传递一个 RowBounds 对象，你可以指定从哪一行开始取数据，以及每页显示多少条数据。 自定义分页插件： 如果你有特殊的分页需求，你可以编写自己的分页插件。这可能涉及到在 MyBatis 的拦截器链中插入你自己的逻辑，以实现定制化的分页处理。 总之，MyBatis 中的分页查询并不复杂，你可以选择基本的分页方式，也可以利用一些分页插件和技巧来简化操作。记得考虑好性能问题，避免在分页查询时产生过多的数据库查询操作。"
+    },
+    {
+      "slug": "bhm90dn40rhcgp94",
+      "title": "MyBatis的插件能够在哪些地方进行拦截？",
+      "url": "/tulingzhouyu/db22bv/bhm90dn40rhcgp94",
+      "toc_path": [
+        "MyBatis",
+        "高级篇",
+        "MyBatis的插件能够在哪些地方进行拦截？"
+      ],
+      "toc_level": 2,
+      "toc_index": 517,
+      "word_count": 683,
+      "updated_at": "2023-08-25T03:53:35.000Z",
+      "primary_category": "mybatis",
+      "primary_category_name": "MyBatis",
+      "related_categories": [
+        "mybatis",
+        "redis-cache",
+        "observability-troubleshooting",
+        "security-auth",
+        "resume-project"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle",
+        "senior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "MyBatis",
+        "二级缓存",
+        "缓存",
+        "排查",
+        "故障",
+        "日志",
+        "权限",
+        "项目"
+      ],
+      "summary": "MyBatis的插件可以在MyBatis的执行过程中的多个关键点进行拦截和干预。这些关键点包括： Executor（执行器）层面的拦截： 这是SQL语句的执行层面，插件可以在SQL语句执行前后进行拦截。这包括了SQL的预处理、参数设置、查询结果的映射等。  StatementHandler（语...",
+      "excerpt": "MyBatis的插件可以在MyBatis的执行过程中的多个关键点进行拦截和干预。这些关键点包括： Executor（执行器）层面的拦截： 这是SQL语句的执行层面，插件可以在SQL语句执行前后进行拦截。这包括了SQL的预处理、参数设置、查询结果的映射等。 StatementHandler（语句处理器）层面的拦截： 这是对SQL语句的处理层面，插件可以在SQL语句被执行之前进行拦截，你可以在这里修改、替换、生成SQL语句。 ParameterHandler（参数处理器）层面的拦截： 这是处理参数的层面，插件可以在参数传递给SQL语句之前进行拦截，你可以在这里修改参数值。 ResultSetHandler（结果集处理器）层面的拦截： 这是处理查询结果的层面，插件可以在查询结果返回给调用方之前进行拦截，你可以在这里对查询结果进行修改、处理。 实际上，使用插件可以实现许多功能，下面是一些使用插件实现的实际场景示例： 日志记录： 创建一个插件，拦截Executor层的SQL执行，记录每个SQL语句的执行时间、执行情况等，以便于性能分析和故障排查。 分页支持： 编写一个拦截器，在StatementHandler层拦截SQL语句，根据传入的分页参数，动态修改SQL语句以实现数据库分页查询。 权限控制： 开发一个插件，拦截StatementHandler层的SQL执行，根据当前用户的权限动态添加查询条件，确保用户只能访问其有权限的数据。 二级缓存扩展： 创建一个插件，在ResultSetHandler层拦截查询结果，对结果进行加工处理，然后再将处理后的结果放入二级缓存，提供更加定制化的缓存机制。 自动填充字段： 编写一个拦截器，在ParameterHandler层拦截参数设置，根据需要自动填充一些字段，比如创建时间、更新时间等。 这些只是一些示例，MyBatis插件的应用非常灵活，你可以根据自己的项目需求来编写插件，实现各种定制化的功能。插件的核心思想是在关键点拦截MyBatis的执行流程，从而实现额外的功能或者改变默认行为。"
+    },
+    {
+      "slug": "znduwo5ybo3mck75",
+      "title": "如何编写一个MyBatis插件？",
+      "url": "/tulingzhouyu/db22bv/znduwo5ybo3mck75",
+      "toc_path": [
+        "MyBatis",
+        "高级篇",
+        "如何编写一个MyBatis插件？"
+      ],
+      "toc_level": 2,
+      "toc_index": 518,
+      "word_count": 555,
+      "updated_at": "2025-04-28T07:04:27.000Z",
+      "primary_category": "mybatis",
+      "primary_category_name": "MyBatis",
+      "related_categories": [
+        "mybatis",
+        "observability-troubleshooting",
+        "performance-optimization",
+        "os-linux",
+        "java-concurrency"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "MyBatis",
+        "监控",
+        "日志",
+        "性能",
+        "线程",
+        "文件"
+      ],
+      "summary": "编写一个MyBatis插件可以让你在执行SQL语句前后进行自定义的操作，比如日志记录（有自带STDOUT_LOGGING 不过功能较为简单）、性能监控等。下面我将演示一个简单的MyBatis插件，它会在执行查询SQL语句前打印一条日志。当然此功能可直接用Log4j，然后使用 PatternLa...",
+      "excerpt": "编写一个MyBatis插件可以让你在执行SQL语句前后进行自定义的操作，比如日志记录（有自带STDOUT_LOGGING 不过功能较为简单）、性能监控等。下面我将演示一个简单的MyBatis插件，它会在执行查询SQL语句前打印一条日志。当然此功能可直接用Log4j，然后使用 PatternLayout 来定义日志的输出格式，包括日期、时间、日志级别、线程名称、类名、方法名、日志消息等信息。此处主要为演示插件功能。 首先，你需要实现一个MyBatis的拦截器（Interceptor）。一个拦截器需要实现MyBatis的 Interceptor 接口，其中最重要的是 intercept 方法，它会在执行SQL语句前后被调用。 在这个例子中， LoggingInterceptor 实现了 Interceptor 接口，重写了 intercept 方法，在执行查询SQL语句前后打印日志。 接下来，你需要在MyBatis的配置文件中注册这个插件： 在配置中， interceptor 属性指定了插件的完全限定名，即 LoggingInterceptor 的类名。你还可以在插件标签内设置插件的属性，这些属性会在插件的 setProperties 方法中被接收。 最后，当你执行查询操作时，插件会自动拦截并执行你在 intercept 方法中定义的逻辑。 需要注意的是，这只是一个简单的插件示例。MyBatis插件可以实现更复杂的逻辑，比如性能分析、自定义SQL改写等。编写插件时要确保逻辑正确，不影响系统稳定性和性能。"
+    },
+    {
+      "slug": "umg4gigkhbawb55l",
+      "title": "简述 Mybatis 的插件运行原理",
+      "url": "/tulingzhouyu/db22bv/umg4gigkhbawb55l",
+      "toc_path": [
+        "MyBatis",
+        "高级篇",
+        "简述 Mybatis 的插件运行原理"
+      ],
+      "toc_level": 2,
+      "toc_index": 519,
+      "word_count": 546,
+      "updated_at": "2023-08-24T11:32:34.000Z",
+      "primary_category": "mybatis",
+      "primary_category_name": "MyBatis",
+      "related_categories": [
+        "mybatis",
+        "java-core",
+        "resume-project",
+        "os-linux"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "MyBatis",
+        "Java",
+        "包装",
+        "文件"
+      ],
+      "summary": "MyBatis的插件机制允许你在MyBatis的核心组件执行过程中插入自定义逻辑，以扩展或修改其行为。插件可以在SQL执行、结果映射、参数处理等阶段进行干预。插件运行原理是基于Java的动态代理，它可以包装MyBatis的核心组件，拦截方法调用，并在方法执行前后执行自定义逻辑。插件机制的核心是...",
+      "excerpt": "MyBatis的插件机制允许你在MyBatis的核心组件执行过程中插入自定义逻辑，以扩展或修改其行为。插件可以在SQL执行、结果映射、参数处理等阶段进行干预。插件运行原理是基于Java的动态代理，它可以包装MyBatis的核心组件，拦截方法调用，并在方法执行前后执行自定义逻辑。 插件机制的核心是 Interceptor 接口，你可以实现这个接口，编写自己的插件逻辑。一个插件主要包括以下几个步骤： 实现Interceptor接口： 创建一个类，实现MyBatis提供的 Interceptor 接口，该接口包含了 intercept 和 plugin 两个方法。 实现intercept方法： intercept 方法是插件的核心，它会在方法执行前后进行拦截。你可以在这个方法中编写自己的逻辑。 实现plugin方法： plugin 方法用于创建代理对象，将插件包装在目标对象上，使得插件逻辑能够被执行。 配置插件： 在MyBatis的配置文件中，通过 <plugins> 标签配置你的插件。通常需要指定插件类和一些参数。 以下是一个简单的插件示例： 在MyBatis的配置文件中添加插件配置： 通过实现 Interceptor 接口和配置插件，你可以在MyBatis的核心组件执行过程中插入自己的逻辑，实现各种自定义的扩展和修改。"
+    },
+    {
+      "slug": "gqenm8humo2qc0ha",
+      "title": "Mybatis 是如何进行分页的？",
+      "url": "/tulingzhouyu/db22bv/gqenm8humo2qc0ha",
+      "toc_path": [
+        "MyBatis",
+        "高级篇",
+        "Mybatis 是如何进行分页的？"
+      ],
+      "toc_level": 2,
+      "toc_index": 520,
+      "word_count": 734,
+      "updated_at": "2023-08-24T07:27:26.000Z",
+      "primary_category": "mybatis",
+      "primary_category_name": "MyBatis",
+      "related_categories": [
+        "mybatis",
+        "mysql-index-transaction"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "MyBatis",
+        "MySQL"
+      ],
+      "summary": "MyBatis在数据库查询中执行分页操作时，通常会使用分页插件来处理。分页插件能够根据数据库的不同，生成适当的分页查询语句，并将查询结果进行分页处理。下面我将解释MyBatis如何进行分页以及分页插件的一般原理。MyBatis的分页原理： 数据库方言(Dialect)：不同的数据库（如MySQ...",
+      "excerpt": "MyBatis在数据库查询中执行分页操作时，通常会使用分页插件来处理。分页插件能够根据数据库的不同，生成适当的分页查询语句，并将查询结果进行分页处理。下面我将解释MyBatis如何进行分页以及分页插件的一般原理。 MyBatis的分页原理 ： 数据库方言(Dialect) ：不同的数据库（如MySQL、Oracle、SQL Server等）在分页查询语法上有所不同。MyBatis并不直接支持所有数据库的分页语法，而是通过数据库方言来处理。数据库方言是一个抽象层，它根据数据库类型生成相应的分页查询语句。 参数传递 ：在查询方法中，你可以传递分页相关的参数，如页码（pageNumber）和每页条数（pageSize）。 分页处理 ：MyBatis会根据数据库方言生成合适的分页查询语句，然后将查询结果返回给调用者。通常，MyBatis会添加类似 LIMIT （对于MySQL）或 ROWNUM （对于Oracle）等语句来限制返回的结果行数。 分页插件的原理 ： 分页插件是一种扩展机制，它允许MyBatis在查询过程中，自动应用分页逻辑而不需要手动编写分页查询语句。分页插件的一般原理如下： 拦截器(Interceptor) ：分页插件实际上是MyBatis的一个拦截器，它可以在查询被执行之前或之后进行干预。 处理分页逻辑 ：在查询执行之前，分页插件会检测是否有分页参数传入。如果有分页参数，插件会根据数据库方言生成适当的分页查询语句。 修改查询参数 ：插件会修改查询的SQL语句，添加分页的限制条件。同时，它还会修改参数对象，将分页参数替换为实际的分页偏移量（offset）和每页条数（limit）。 执行查询 ：修改后的查询语句被执行，得到查询结果。 封装分页结果 ：插件会根据查询结果和分页参数，将查询结果进行切割，得到分页后的结果。 分页插件的使用可以大大简化代码，使得在查询中不必关注分页逻辑，只需传递分页参数即可。一些常用的分页插件包括MyBatis-Paginator、PageHelper等，它们都基于上述原理来实现分页功能。不同的插件可能有不同的配置方式和特性，具体的使用方法和配置请参考各个插件的文档。"
+    },
+    {
+      "slug": "vwkg57qvyfnitnpx",
+      "title": "【高频面试】：MyBatis是如何进行分页的？",
+      "url": "/tulingzhouyu/db22bv/vwkg57qvyfnitnpx",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "【高频面试】：MyBatis是如何进行分页的？"
+      ],
+      "toc_level": 2,
+      "toc_index": 1008,
+      "word_count": 1899,
+      "updated_at": "2025-11-07T09:05:21.000Z",
+      "primary_category": "mybatis",
+      "primary_category_name": "MyBatis",
+      "related_categories": [
+        "mybatis",
+        "java-core",
+        "mysql-index-transaction",
+        "performance-optimization",
+        "os-linux"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "MyBatis",
+        "Mapper",
+        "Java",
+        "MySQL",
+        "性能",
+        "内存",
+        "文件"
+      ],
+      "summary": "一、引言：为什么分页如此重要？在几乎所有的业务系统中，数据查询都是核心功能。当数据量只有几十、几百条时，我们可以一次性将其全部加载到前端展示。但想象一下，当一个数据表拥有上百万，甚至上千万条记录时（例如用户表、订单表），一次性查询所有数据将是一场灾难。这不仅会消耗大量的数据库资源和网络带宽，更...",
+      "excerpt": "一、引言：为什么分页如此重要？ 在几乎所有的业务系统中，数据查询都是核心功能。当数据量只有几十、几百条时，我们可以一次性将其全部加载到前端展示。但想象一下，当一个数据表拥有上百万，甚至上千万条记录时（例如用户表、订单表），一次性查询所有数据将是一场灾难。这不仅会消耗大量的数据库资源和网络带宽，更可能直接导致应用程序因内存溢出（OOM）而崩溃。 因此， 分页 （Pagination）应运而生。它是一种将海量数据拆分成小块（页）进行分批次查询和展示的技术，是所有后端开发者必须熟练掌握的基本功，也是衡量系统性能和稳定性的关键指标之一。 MyBatis作为业界主流的持久层框架，提供了多种分页实现方式。理解它们的原理和优劣，是写出高性能、高可用数据接口的前提。 二、MyBatis分页的核心思想：两种模式的对决 在深入具体实现之前，我们必须先理解分页的两种根本不同的核心思想： 逻辑分页 和 物理分页 。 逻辑分页 (Logical Pagination) ：这是一种“伪分页”。它会从数据库中查询出 所有 符合条件的数据，然后将这些数据全部加载到应用程序的内存中，最后由代码（例如Java）根据分页参数（如页码、每页大小）截取出一小部分数据返回。 物理分页 (Physical Pagination) ：这是一种“真分页”。它会利用不同数据库自身提供的原生分页语法（如MySQL的 LIMIT ，Oracle的 ROWNUM ），在执行SQL查询时就直接告诉数据库：“我只需要第X页的Y条数据”。数据库只查询、返回指定范围的数据，开销极小。 显而易见， 物理分页 在性能上远胜于逻辑分页，是处理大数据量时的唯一正确选择。 三、MyBatis分页的四种实现方式 MyBatis社区在漫长的发展中，演化出了四种主流的分页实现方式，它们体现了从原始到优雅的进化过程。 方式一：在Mapper XML中直接编写SQL 这是最原始、最直接的方式。开发者需要在Mapper.xml文件中手动编写带有具体数据库分页语法的SQL语句。 优点 ： 简单直观，易于理解。 无需任何额外配置或依赖。 缺点 ： 硬编码，维护成本高 ：SQL与特定数据库（此处为MySQL）强绑定，若要更换数据库，所有分页SQL都需重写。 参数繁琐 ：需要手动计算并传入 offset （偏移量）和 limit （每页数量）等参数。 代码重复 ：每个需要分页的查询都需要重复编写类似的分页逻辑。 方式二：使用 RowBounds 对象 MyBatis提供了一个名为 RowBounds 的内置对象，试图在不改变SQL的情况下实现分页。 优点 ： 无需在SQL中硬编码分页逻辑，实现了SQL的解耦。 缺点 ： 本质是逻辑分页 ：它会加载所有数据到内存中，然后通过 ResultSet.absolute() 和 FetchSize 等JDBC特性"
+    }
+  ]
+}

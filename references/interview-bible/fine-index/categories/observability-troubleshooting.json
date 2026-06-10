@@ -1,0 +1,1500 @@
+{
+  "id": "observability-troubleshooting",
+  "name": "线上排障与可观测性",
+  "aliases": [
+    "线上",
+    "排查",
+    "故障",
+    "监控",
+    "告警",
+    "日志",
+    "链路",
+    "CPU",
+    "OOM",
+    "死锁",
+    "堆积",
+    "变慢"
+  ],
+  "count": 32,
+  "total_word_count": 54947,
+  "articles": [
+    {
+      "slug": "rku4yegcyxo4n9gn",
+      "title": "线程池大小如何设置",
+      "url": "/tulingzhouyu/db22bv/rku4yegcyxo4n9gn",
+      "toc_path": [
+        "面试必看",
+        "大厂真题",
+        "美团面试真题",
+        "线程池大小如何设置"
+      ],
+      "toc_level": 3,
+      "toc_index": 57,
+      "word_count": 417,
+      "updated_at": "2023-08-28T14:55:39.000Z",
+      "primary_category": "observability-troubleshooting",
+      "primary_category_name": "线上排障与可观测性",
+      "related_categories": [
+        "observability-troubleshooting",
+        "os-linux",
+        "java-concurrency",
+        "java-thread-pool",
+        "java-core"
+      ],
+      "question_type": "troubleshooting",
+      "question_type_name": "故障排查题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "CPU",
+        "线程",
+        "内存",
+        "文件",
+        "线程池",
+        "IO"
+      ],
+      "summary": "线程池大小的设置需要根据具体的应用场景和系统资源进行考量。以下是一些常见的设置策略：1、CPU 密集型任务： 这种任务消耗的主要是 CPU 资源，可以将线程数设置为 N（即CPU 核心数）+1，比 CPU 核心数多出来的一个线程是为了防止线程偶发的缺页中断，或者其它原因导致的任务暂停而带来的影...",
+      "excerpt": "线程池大小的设置需要根据具体的应用场景和系统资源进行考量。以下是一些常见的设置策略： 1、 CPU 密集型任务 ： 这种任务消耗的主要是 CPU 资源，可以将线程数设置为 N（即CPU 核心数）+1 ，比 CPU 核心数多出来的一个线程是为了防止线程偶发的缺页中断，或者其它原因导致的任务暂停而带来的影响。一旦任务暂停，CPU 就会处于空闲状态，而在这种情况下多出来的一个线程就可以充分利用 CPU 的空闲时间。 2、 I/O 密集型任务 ： 这种任务应用起来，系统会用大部分的时间来处理 I/O 交互，而线程在处理I/O 的时间段内不会占用 CPU 来处理，这时就可以将 CPU 交出给其它线程使用。因此在 I/O 密集型任务的应用中，我们可以多配置一些线程，具体的计算方法是 2N 。 那如何判断是 CPU 密集任务还是 IO 密集任务？ CPU 密集型简单理解就是利用 CPU 计算能力的任务比如你在内存中对大量数据进行排序。但凡涉及到网络读取，文件读取这类都是 IO 密集型，这类任务的特点是 CPU 计算耗费时间相比于等待 IO 操作完成的时间来说很少，大部分时间都花在了等待 IO 操作完成上。"
+    },
+    {
+      "slug": "etd8gymgwyli8xnw",
+      "title": "你是如何排查线上OOM问题的",
+      "url": "/tulingzhouyu/db22bv/etd8gymgwyli8xnw",
+      "toc_path": [
+        "面试必看",
+        "大厂真题",
+        "美团面试真题",
+        "你是如何排查线上OOM问题的"
+      ],
+      "toc_level": 3,
+      "toc_index": 59,
+      "word_count": 623,
+      "updated_at": "2023-08-28T14:42:41.000Z",
+      "primary_category": "observability-troubleshooting",
+      "primary_category_name": "线上排障与可观测性",
+      "related_categories": [
+        "observability-troubleshooting",
+        "os-linux",
+        "jvm-memory-gc",
+        "java-concurrency",
+        "performance-optimization"
+      ],
+      "question_type": "troubleshooting",
+      "question_type_name": "故障排查题",
+      "levels": [
+        "middle",
+        "expert"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "专家/P7+"
+      ],
+      "keywords": [
+        "线上",
+        "排查",
+        "监控",
+        "日志",
+        "CPU",
+        "OOM",
+        "死锁",
+        "线程",
+        "内存",
+        "文件",
+        "GC",
+        "堆",
+        "性能"
+      ],
+      "summary": "排查线上OOM问题是一个复杂的过程，需要综合运维经验、日志分析和性能监控等多个方面的信息。下面是一般的排查步骤：收集信息：首先，收集与OOM问题相关的信息，包括错误日志、堆转储文件、线程转储文件等。这些信息可以帮助我们了解OOM问题发生的上下文和可能的原因。分析堆转储文件：使用工具（如MAT、...",
+      "excerpt": "排查线上OOM问题是一个复杂的过程，需要综合运维经验、日志分析和性能监控等多个方面的信息。下面是一般的排查步骤： 收集信息 ：首先，收集与OOM问题相关的信息，包括 错误日志 、 堆转储文件 、 线程转储文件 等。这些信息可以帮助我们了解OOM问题发生的上下文和可能的原因。 分析堆转储文件 ：使用工具（如MAT、VisualVM等）分析堆转储文件，查看内存使用情况、对象分布和可能的内存泄漏等。通过分析对象的引用关系，可以确定是否存在内存泄漏问题。 分析线程转储文件 ：使用工具（如jstack、VisualVM等）分析线程转储文件，查看线程状态、死锁情况和可能的死锁原因。通过分析线程的堆栈信息，可以确定是否存在死锁或线程阻塞等问题。 检查代码 ：检查应用程序的代码，查找可能导致 内存泄漏 或 内存占用过高 的地方。特别关注对大对象的创建和持有、缓存使用不当、资源未释放等问题。 监控系统资源 ：使用性能监控工具（如JMX、Grafana等）监控系统的CPU、内存、磁盘和网络等资源使用情况。查看系统的负载情况，是否存在资源瓶颈或异常情况。 优化配置和调整参数 ：根据分析结果，优化应用程序的配置和调整相关的参数。例如，调整堆内存大小、线程池大小、GC策略等，以提高系统的性能和稳定性。 预防措施 ：根据排查结果，制定预防措施，避免类似的OOM问题再次发生。例如，改进代码质量、加强内存管理、优化资源使用等。 需要注意的是，排查OOM问题需要综合运维经验和技术知识，有时需要借助专业的工具和专家的帮助。同时，也要注意及时备份和保留相关的日志和转储文件，以便后续的分析和排查。"
+    },
+    {
+      "slug": "mtggz9h1ebao5b5z",
+      "title": "多租户技术架构",
+      "url": "/tulingzhouyu/db22bv/mtggz9h1ebao5b5z",
+      "toc_path": [
+        "综合篇",
+        "多租户技术架构"
+      ],
+      "toc_level": 1,
+      "toc_index": 159,
+      "word_count": 3507,
+      "updated_at": "2024-10-09T07:55:52.000Z",
+      "primary_category": "observability-troubleshooting",
+      "primary_category_name": "线上排障与可观测性",
+      "related_categories": [
+        "observability-troubleshooting",
+        "mysql-index-transaction",
+        "security-auth",
+        "performance-optimization",
+        "devops-release"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "campus",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "校招/应届生",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "故障",
+        "监控",
+        "告警",
+        "CPU",
+        "MySQL",
+        "索引",
+        "事务",
+        "隔离级别",
+        "安全",
+        "认证",
+        "权限",
+        "性能"
+      ],
+      "summary": "一、多租户的概念多租户本质上是一种软件的技术架构，它最核心的特征是多个租户可以共享一个系统实例，并且租户间是可以实现数据和行为的隔离，这可以说是多租户技术架构里最重要的两点了。多租户架构是 SaaS 模式中的重要且常见的架构，通过共享和复用资源降低成本，提高效率和可扩展性。其中最需要关注就是：...",
+      "excerpt": "一、多租户的概念 多租户本质上是一种软件的技术架构， 它最核心的特征是 多个租户可以共享一个系统实例， 并且租户间是可以 实现数据和行为的隔离 ，这可以说是多租户技术架构里最重要的两点了。 多租户架构是 SaaS 模式中的重要且常见的架构，通过共享和复用资源降低成本，提高效率和可扩展性。其中最需要关注就是： 数据/行为的隔离、身份/角色的认证与授权、底层硬件资源管理、高性能与高可用、定制化和可扩展、数据一致性、系统安全性等。 这里就不过多赘述了，下面会将概念详细铺开。如果要找一个生活中容易理解的场景做比喻，那么多租户的概念其实就和租房子的概念类似，只不过在各自的专业领域所涉及到的术语和具体实现会不一样。 二、隔离模式 一般来说多租户常见的有3种隔离模式： 独立数据库 、 共享数据但独立数据架构 、 共享数据库且共享数据架构 。 2.1独立数据库模式 2.1.1特征 一个租户一个数据库，隔离级别最高，对系统底层所涉及到的计算、存储、网络等资源的隔离。 和传统软件模式（SaaS）的区别： 独立数据库模式有标准的租户身份识别、租户入驻流程、计费体系、运营流程等。 除此之外，本质上其提供的服务还是端到端的 SaaS 模式，某种意义上可以看作每一个租户都各自拥有一套端到端的基础设施。 2.1.2优点 满足 强隔离 需求：一些租户为了保证系统和数据的安全性，可能会提出非常严格的隔离要求，期望软件产品能够部署在一套完全独立的环境中，不和其它租户的实例、数据放在一起； 计费逻辑简单： 在这种独立数据库模式模式下，计费模型相对是比较简单的； 降低故障影响：因为每个租户的系统都部署在独立的环境中，如果一个环境出现故障，并不会影响其他租户的软件服务。 2.1.3缺点 规模化 问题：由于租户是各自独立的环境，每入驻一个租户就需要准备、创建、运营一套 SaaS 环境，如果只有少量租户还可以管理，一旦租户的数量多起来，管理和运营这些环境将会是非常大的挑战； 成本问题： 每个租户都需要单独的部署环境，那么花费在每个租户上的成本就会非常高，会大幅度降低 SaaS 软件服务的盈利能力； 敏捷迭代问题： 一般来说 SaaS 模式的优势是可以很快响应市场变化，可以迅速迭代产品功能，但是在这种独立数据库模式模式下更管理、运维这些租户的 SaaS 环境会变得非常复杂且低效； 基础设施的监控： 同样地，在这种非中心化的模式下，对每个租户的基础设施的运维与监控也是非常复杂且繁琐的。 2.2共享数据库独立数据架构 2.2.1 多个租户或者所有租户共享数据库，每个租户会拥有一个 schema 形成逻辑上的隔离，而并不是物理上的隔离（还在一个实例内）。 即多个租户共享一套基础设施，降低 Saas 软件服务的资源成本。 简单介绍下 schema： schema 就是数据对象的集合，这个集合包含了各种对象如：表、"
+    },
+    {
+      "slug": "dyzguz4rdgaxtwok",
+      "title": "线程池中核心线程数量大小怎么设置",
+      "url": "/tulingzhouyu/db22bv/dyzguz4rdgaxtwok",
+      "toc_path": [
+        "并发编程",
+        "线程池中核心线程数量大小怎么设置"
+      ],
+      "toc_level": 1,
+      "toc_index": 243,
+      "word_count": 923,
+      "updated_at": "2026-01-08T06:44:01.000Z",
+      "primary_category": "observability-troubleshooting",
+      "primary_category_name": "线上排障与可观测性",
+      "related_categories": [
+        "observability-troubleshooting",
+        "os-linux",
+        "java-concurrency",
+        "java-thread-pool",
+        "resume-project"
+      ],
+      "question_type": "troubleshooting",
+      "question_type_name": "故障排查题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "监控",
+        "CPU",
+        "线程",
+        "文件",
+        "上下文切换",
+        "并发",
+        "线程池",
+        "核心线程",
+        "面试官"
+      ],
+      "summary": "一、 标准面试回答模版（建议背诵）面试官： 线程池的核心线程数（CorePoolSize）怎么设置？Fox版标准回答：“这个问题不能一概而论，必须根据业务任务的类型来划分：CPU 密集型任务（计算型）：公式：CPU核数 + 1原理",
+      "excerpt": "一、 标准面试回答模版（建议背诵） 面试官： 线程池的核心线程数（CorePoolSize）怎么设置？ Fox版标准回答： “这个问题不能一概而论，必须根据 业务任务的类型 来划分： CPU 密集型任务（计算型）： 公式 ： CPU核数 + 1 原理 ：这种任务主要消耗 CPU 资源（如加密解密、压缩、复杂算法）。线程数应该尽量少，以减少线程上下文切换带来的开销。 为什么要 +1 ？是为了防止某个线程因为页缺失（Page Fault）或其他原因暂停时，CPU 闲置，多一个线程可以顶上去，保持 CPU 满载。 IO 密集型任务（业务型）： 公式 ： CPU核数 * 2 （或者 CPU核数 / (1 - 阻塞系数) ） 原理 ：绝大多数互联网业务都属于此类（读写数据库、调 RPC、读写文件）。 因为线程在等待 I/O 响应时是不占用 CPU 的。为了不让 CPU 闲着，我们需要配置更多的线程来‘填满’ CPU 的等待时间。 终极答案（生产环境）： 理论公式往往和实际有偏差。在实际生产中，我会 通过压测 来评估，或者使用 动态线程池 （如 Nacos + 线程池监控），支持在不重启服务的情况下动态调整参数，找到系统吞吐量和资源占用的平衡点。” 二、 代码层面对比 面试时，不要光说 N，要写出“怎么获取 N”。 三、 深度解析（Fox 杀手锏：阻塞系数公式） 如果面试官追问：“为什么有些资料说 IO 密集型是 2N？这个 2 是怎么来的？” 你要甩出这个专业公式，直接降维打击： Fox 解析： “2N 只是一个经验值。更科学的算法是看阻塞系数。 假设一个请求总耗时 100ms： CPU 计算用了 10ms ( ComputeTime ) 等待 DB 查数据用了 90ms ( WaitTime ) 带入公式： 。 你看！在这种极端 IO 阻塞的情况下，甚至需要开到 10 倍的线程数才能把 CPU 跑满。 所以，最佳实践不是背公式，而是看监控（APM），根据 CPU 利用率动态调整。” ​ 拓展视频： 接口响应时间 500ms，要扛 1 万 QPS，线程池怎么设计？需要多少台机器？ 京东二面：线程池参数怎么配？别再背N+1了"
+    },
+    {
+      "slug": "dc6f35grnp5rooqd",
+      "title": "CPU百分百问题如何排查",
+      "url": "/tulingzhouyu/db22bv/dc6f35grnp5rooqd",
+      "toc_path": [
+        "JVM",
+        "CPU百分百问题如何排查"
+      ],
+      "toc_level": 1,
+      "toc_index": 329,
+      "word_count": 481,
+      "updated_at": "2023-09-04T03:25:38.000Z",
+      "primary_category": "observability-troubleshooting",
+      "primary_category_name": "线上排障与可观测性",
+      "related_categories": [
+        "observability-troubleshooting",
+        "os-linux",
+        "performance-optimization",
+        "java-concurrency",
+        "algorithm"
+      ],
+      "question_type": "troubleshooting",
+      "question_type_name": "故障排查题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "排查",
+        "监控",
+        "日志",
+        "CPU",
+        "进程",
+        "线程",
+        "内存",
+        "文件",
+        "性能",
+        "优化",
+        "瓶颈",
+        "多线程",
+        "算法"
+      ],
+      "summary": "排查CPU百分百问题通常需要一步一步地识别并解决潜在的原因。以下是一些常见的排查步骤：查看系统负载：首先，使用系统监控工具比如top查看系统的负载情况。确定是哪个进程导致CPU高占用：查找哪个进程或应用程序的CPU占用率很高。通常，系统监控工具会列出占用CPU较多的进程。注意，有时一个进程的子...",
+      "excerpt": "排查CPU百分百问题通常需要一步一步地识别并解决潜在的原因。以下是一些常见的排查步骤： 查看系统负载 ：首先，使用系统监控工具比如top查看系统的负载情况。 确定是哪个进程导致CPU高占用 ：查找哪个进程或应用程序的CPU占用率很高。通常，系统监控工具会列出占用CPU较多的进程。注意，有时一个进程的子进程也可能引起CPU高占用。 查看日志文件 ：检查应用程序的日志文件，查找是否有异常或错误消息。 检查代码 ：如果是自己开发的应用程序，检查代码以查找是否存在性能问题，例如死循环、低效的算法、内存泄漏等。使用性能分析工具来帮助确定瓶颈。 查看数据库查询 ：如果应用程序与数据库交互，查询可能导致CPU负载高。通过检查数据库的慢查询日志和优化查询来解决问题。 监控线程 ：如果是多线程应用程序，检查是否有某些线程占用了大量CPU资源。使用线程分析工具来识别问题线程。 查看网络连接 ：有时，网络请求和连接问题也可能导致CPU高占用。查看是否有异常的网络连接或请求。 使用性能分析工具 ：使用专业的性能分析工具来检测瓶颈。例如，Java应用程序可以使用Arthas、VisualVM等工具进行分析。 应用程序优化 ：根据排查的结果，对应用程序进行优化，修复性能问题。"
+    },
+    {
+      "slug": "lghqqgdx66nydzxn",
+      "title": "数据库 cpu 飙升，你会如何处理",
+      "url": "/tulingzhouyu/db22bv/lghqqgdx66nydzxn",
+      "toc_path": [
+        "Mysql",
+        "数据库 cpu 飙升，你会如何处理"
+      ],
+      "toc_level": 1,
+      "toc_index": 422,
+      "word_count": 496,
+      "updated_at": "2023-08-28T14:27:14.000Z",
+      "primary_category": "observability-troubleshooting",
+      "primary_category_name": "线上排障与可观测性",
+      "related_categories": [
+        "observability-troubleshooting",
+        "mysql-index-transaction",
+        "java-concurrency",
+        "performance-optimization",
+        "mysql-optimization"
+      ],
+      "question_type": "troubleshooting",
+      "question_type_name": "故障排查题",
+      "levels": [
+        "middle",
+        "senior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "监控",
+        "日志",
+        "CPU",
+        "死锁",
+        "MySQL",
+        "索引",
+        "事务",
+        "锁",
+        "并发",
+        "线程",
+        "性能",
+        "优化"
+      ],
+      "summary": "当MySQL数据库的CPU使用率飙升时，可能是由于以下几个原因导致的：查询性能问题：某些查询可能没有被正确地优化，导致查询执行时间过长，从而占用大量的CPU资源。可以通过查看慢查询日志和执行计划来分析问题查询，并进行索引优化、重写查询语句或调整数据库配置等方式来改善查询性能。数据库连接问题：如...",
+      "excerpt": "当MySQL数据库的CPU使用率飙升时，可能是由于以下几个原因导致的： 查询性能问题： 某些查询可能没有被正确地优化，导致查询执行时间过长，从而占用大量的CPU资源。可以通过查看慢查询日志和执行计划来分析问题查询，并进行索引优化、重写查询语句或调整数据库配置等方式来改善查询性能。 数据库连接问题： 如果存在大量的数据库连接并发访问，可能会造成CPU负载过高。可以检查应用程序连接池的配置情况、数据库连接数限制以及是否有闲置的连接未关闭等问题，并进行相应调整。 锁和死锁问题： 并发事务之间的锁竞争或死锁可能导致CPU飙升。可以通过查看数据库的锁状态、死锁日志以及事务并发控制的设置来解决锁相关的问题。 配置问题： 不合理的数据库配置可能导致CPU资源浪费和效率低下。可以检查MySQL的配置参数，如缓冲区大小、并发连接数、线程池大小等是否合理设置，并进行相应调整。 资源竞争： 如果服务器的物理资源（如内存、磁盘I/O）不足或受限，可能会导致CPU过度使用。可以通过监控系统资源使用情况，调整或增加资源配置，以满足数据库的需求。 此外，定期进行数据库性能优化和监控也是重要的措施，可以通过数据库性能分析工具、慢查询日志、系统监控工具等来识别和解决性能问题。"
+    },
+    {
+      "slug": "bx898gexoe27o53g",
+      "title": "PostgreSQL中的WAL（预写日志）机制是什么？它如何保证数据的持久性和一致性？",
+      "url": "/tulingzhouyu/db22bv/bx898gexoe27o53g",
+      "toc_path": [
+        "PostgreSQL",
+        "PostgreSQL中的WAL（预写日志）机制是什么？它如何保证数据的持久性和一致性？"
+      ],
+      "toc_level": 1,
+      "toc_index": 432,
+      "word_count": 905,
+      "updated_at": "2025-01-25T05:20:10.000Z",
+      "primary_category": "observability-troubleshooting",
+      "primary_category_name": "线上排障与可观测性",
+      "related_categories": [
+        "observability-troubleshooting",
+        "mysql-index-transaction",
+        "performance-optimization",
+        "os-linux",
+        "java-core"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "middle",
+        "senior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "故障",
+        "日志",
+        "事务",
+        "性能",
+        "优化",
+        "操作系统",
+        "进程",
+        "内存",
+        "文件",
+        "Java"
+      ],
+      "summary": "PostgreSQL的WAL（Write-Ahead Logging）机制是数据库事务处理和持久性的核心保障机制。下面我将详细解释WAL的工作原理和重要性。PostgreSQL WAL（预写日志）机制详解1. WAL基本原理WAL（Write-Ahead Logging）是一种确保数据库事务原...",
+      "excerpt": "PostgreSQL的WAL（Write-Ahead Logging）机制是数据库事务处理和持久性的核心保障机制。下面我将详细解释WAL的工作原理和重要性。 PostgreSQL WAL（预写日志）机制详解 1. WAL基本原理 WAL（Write-Ahead Logging）是一种确保数据库事务原子性和持久性的日志记录协议。其核心思想是：在对数据文件进行任何修改之前，必须先将相应的日志写入持久存储。 关键特征： 先写日志，后修改数据 记录所有数据库状态变更 提供崩溃恢复能力 支持事务的原子性和一致性 2. WAL工作流程 3. WAL日志结构示例 4. PostgreSQL WAL配置参数 5. 崩溃恢复过程 识别未完成事务 从WAL日志重放事务 回滚未提交事务 前滚已提交事务 6. 性能优化策略 批量写入日志 异步提交 调整检查点频率 使用更快的存储介质 7. Java模拟WAL事务示例 8. WAL的关键优势 数据持久性保证 事务原子性 崩溃恢复 性能可控 支持并发事务 ​ 深入解析PostgreSQL的WAL机制： 工作原理 WAL机制的核心是&quot;先记录日志，后修改数据&quot;。当发生数据库操作时： 首先将预期的变更记录到WAL日志 然后在内存缓冲区中执行实际修改 周期性地将缓冲区内容刷新到磁盘 在事务提交时确保日志已安全持久化 持久性保证 通过WAL，PostgreSQL能够在发生以下情况时保护数据： 系统突然断电 操作系统崩溃 硬件故障 意外进程终止 性能与一致性的平衡 WAL通过以下方式优化性能： 批量日志写入 异步提交选项 可配置的检查点策略 减少随机I/O操作 关键配置参数 wal_level ：控制日志详细程度 max_wal_size ：限制WAL日志大小 checkpoint_timeout ：设置检查点间隔 应用场景 WAL适用于： 高可靠性系统 金融交易 需要精确数据恢复的应用 大规模在线事务处理系统 总的来说，WAL是PostgreSQL确保数据可靠性和一致性的关键机制，通过精细的日志记录和恢复策略，为数据库提供了强大的故障保护能力。"
+    },
+    {
+      "slug": "xe548vg93zshlqla",
+      "title": "在分布式系统中，如何确定哪些服务或组件导致了性能瓶颈？SkyWalking提供了哪些工具和技术来帮助我们进行故障排查？",
+      "url": "/tulingzhouyu/db22bv/xe548vg93zshlqla",
+      "toc_path": [
+        "SpringCloud",
+        "在分布式系统中，如何确定哪些服务或组件导致了性能瓶颈？SkyWalking提供了哪些工具和技术来帮助我们进行故障排查？"
+      ],
+      "toc_level": 1,
+      "toc_index": 568,
+      "word_count": 1175,
+      "updated_at": "2026-01-19T11:28:20.000Z",
+      "primary_category": "observability-troubleshooting",
+      "primary_category_name": "线上排障与可观测性",
+      "related_categories": [
+        "observability-troubleshooting",
+        "performance-optimization",
+        "microservices-governance",
+        "spring-cloud",
+        "project-system-design"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "排查",
+        "故障",
+        "监控",
+        "日志",
+        "链路",
+        "CPU",
+        "性能",
+        "瓶颈",
+        "链路追踪",
+        "SpringCloud",
+        "订单",
+        "支付"
+      ],
+      "summary": "一、 标准面试回答模版（建议背诵）面试官： 在分布式系统中，如何确定哪些服务或组件导致了性能瓶颈？SkyWalking 提供了哪些工具？Fox版标准回答： “在微服务架构中，如果只靠‘翻日志’或‘盯 CPU 监控’，那是‘瞎子摸象’。我对这个问题的回答是：从宏观到微观，三步走战略。 SkyWa...",
+      "excerpt": "一、 标准面试回答模版（建议背诵） 面试官： 在分布式系统中，如何确定哪些服务或组件导致了性能瓶颈？SkyWalking 提供了哪些工具？ Fox版标准回答： “在微服务架构中，如果只靠‘翻日志’或‘盯 CPU 监控’，那是‘瞎子摸象’。我对这个问题的回答是： 从宏观到微观，三步走战略。 SkyWalking 不仅仅是链路追踪，它是一个完整的 APM（应用性能监控）系统。 它提供了三个核心维度来帮我们定位瓶颈： 宏观维度（上帝视角）—— 拓扑图 (Topology)： 解决‘谁调谁慢’的问题。它能自动发现服务间的依赖关系。如果某个服务节点或者连线变红（响应时间过长），那里就是瓶颈的源头。不仅看服务，还能监控到 Database、Redis、MQ 等中间件的耗时。 微观维度（显微镜）—— 链路追踪 (Tracing)： 解决‘慢在哪里’的问题。通过 Trace ID 串联全链路，利用 甘特图 (Gantt Chart) 找出耗时最长的 Span。 这里有个关键点：要区分是 网络传输耗时 还是 自身代码逻辑耗时 (Self Duration) 。 代码维度（X光机）—— 性能剖析 (Profiling)： 解决‘哪行代码慢’的问题。这是 SkyWalking 的杀手锏。当 Trace 只能定位到某个 API 慢，但不知道慢在 SQL 还是计算时， Profile 能通过线程采样生成 火焰图 ，直接精确到代码行数，且不需要改代码或重启服务。” 二、 实战层面的体现（工具使用场景） 1. 场景一：宏观定位——拓扑图红点分析 如果用户反馈“下单慢”，你不需要去查代码，直接看拓扑图。 现象： 拓扑图中，“订单服务”指向“库存服务”的连线变成了 红色 ，且平均响应耗时显示 3000ms。 结论： 瓶颈不在订单服务，而在库存服务，或者两者之间的网络波动。 细节： SkyWalking 还能识别出 虚拟节点 （比如你的代码连了一个外部的第三方支付接口），如果那个节点红了，说明是第三方拖累了你。 2. 场景二：微观分析——Trace 甘特图抓“长条” 找到嫌疑服务后，点进去看 Trace。 操作： 在 Trace 列表中按“Duration”倒序排列，找到最慢的那条 Trace。 分析： 这是一个“找长条”的游戏。 如果发现一个紫色的条（Span）特别长，且它是 数据库操作 （比如 MySQL/Execute），说明是 慢 SQL 。 如果发现一个 Span 很长，但没有子 Span，说明耗时消耗在 当前服务的业务逻辑 里（比如复杂的循环计算）。 三、 Fox的深度解析（Profile 性能剖析） 如果面试官问：“ 如果 Trace 显示某个方法耗时 2 秒，但这个方法里既没有调数据库，也没有调 RPC，就是纯代码逻辑，你怎么知道是哪一行卡住了？ ” Fox版解析： “这就是普"
+    },
+    {
+      "slug": "uoibza45y7l0mqae",
+      "title": "请解释什么是SkyWalking，以及它为什么重要",
+      "url": "/tulingzhouyu/db22bv/uoibza45y7l0mqae",
+      "toc_path": [
+        "SpringCloud",
+        "请解释什么是SkyWalking，以及它为什么重要"
+      ],
+      "toc_level": 1,
+      "toc_index": 570,
+      "word_count": 248,
+      "updated_at": "2023-09-11T07:07:52.000Z",
+      "primary_category": "observability-troubleshooting",
+      "primary_category_name": "线上排障与可观测性",
+      "related_categories": [
+        "observability-troubleshooting",
+        "spring-cloud",
+        "performance-optimization",
+        "spring-core",
+        "java-core"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "expert"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "专家/P7+"
+      ],
+      "keywords": [
+        "故障",
+        "监控",
+        "告警",
+        "日志",
+        "SpringCloud",
+        "性能",
+        "Spring",
+        "异常"
+      ],
+      "summary": "SkyWalking是一个针对分布式系统的应用性能监控（APM）和可观测性分析平台。它提供了一种简便的方式来清晰地观测分布式系统，甚至可以观测横跨不同云的系统。具体来说，SkyWalking可以用于收集、分析、聚合以及可视化分布式系统的数据，这些数据包括分布式拓扑图、应用性能指标、Trace和...",
+      "excerpt": "SkyWalking是一个针对分布式系统的应用性能监控（APM）和可观测性分析平台。它提供了一种简便的方式来清晰地观测分布式系统，甚至可以观测横跨不同云的系统。具体来说，SkyWalking可以用于收集、分析、聚合以及可视化分布式系统的数据，这些数据包括分布式拓扑图、应用性能指标、Trace和日志等。通过使用SkyWalking，可以提高分布式系统的可靠性和性能，同时可以帮助开发者和运维团队快速定位和解决问题。此外，SkyWalking还可以设置告警规则，当系统出现异常情况时及时通知相关人员，以减少系统故障时间和提高系统的可用性。因此，SkyWalking对于分布式系统的监控和管理非常重要。"
+    },
+    {
+      "slug": "ui12454v7x9llg29",
+      "title": "说说 Zookeeper 的 CAP 问题上做的取舍",
+      "url": "/tulingzhouyu/db22bv/ui12454v7x9llg29",
+      "toc_path": [
+        "Zookeeper",
+        "说说 Zookeeper 的 CAP 问题上做的取舍"
+      ],
+      "toc_level": 1,
+      "toc_index": 646,
+      "word_count": 369,
+      "updated_at": "2023-09-04T09:07:47.000Z",
+      "primary_category": "observability-troubleshooting",
+      "primary_category_name": "线上排障与可观测性",
+      "related_categories": [
+        "observability-troubleshooting",
+        "computer-network"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "故障",
+        "网络"
+      ],
+      "summary": "Zookeeper 在 CAP 问题上选择了 CP，也就是说，在一致性和可用性之间，Zookeeper 选择了强一致性。Zookeeper 是一个分布式协调服务，它的主要职责是维护整个系统的状态，并提供一致性的服务。因此，为了保证数据的一致性，Zookeeper 必须确保在分布式节点之间进行同...",
+      "excerpt": "Zookeeper 在 CAP 问题上选择了 CP，也就是说，在一致性和可用性之间，Zookeeper 选择了强一致性。 Zookeeper 是一个分布式协调服务，它的主要职责是维护整个系统的状态，并提供一致性的服务。因此，为了保证数据的一致性，Zookeeper 必须确保在分布式节点之间进行同步的时候，不能出现不一致的情况。这就意味着，在出现网络故障或者消息丢失的情况下，Zookeeper 不能牺牲用户的体验，也就是不能出现部分节点可用而部分节点不可用的情况。 然而，这并不意味着 Zookeeper 完全牺牲了可用性。尽管它选择了一致性优先的策略，但它还是通过一些机制来尽可能地提高可用性。例如，它允许客户端在多个服务器之间进行备份，以防止单个服务器故障导致服务不可用。此外，它还提供了实时性和持久性的选择，以满足不同应用场景的需求。 总的来说，Zookeeper 在 CAP 问题上的取舍是为了保证数据的一致性，虽然在一定程度上牺牲了可用性，但通过一些机制尽可能地提高服务的可用性。"
+    },
+    {
+      "slug": "xy54cm3e0bn80edm",
+      "title": "Raft算法",
+      "url": "/tulingzhouyu/db22bv/xy54cm3e0bn80edm",
+      "toc_path": [
+        "分布式",
+        "说下Raft算法",
+        "Raft算法"
+      ],
+      "toc_level": 2,
+      "toc_index": 749,
+      "word_count": 4297,
+      "updated_at": "2024-11-25T13:28:37.000Z",
+      "primary_category": "observability-troubleshooting",
+      "primary_category_name": "线上排障与可观测性",
+      "related_categories": [
+        "observability-troubleshooting",
+        "algorithm",
+        "java-core",
+        "security-auth",
+        "redis-persistence-cluster"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "日志",
+        "算法",
+        "安全",
+        "集群"
+      ],
+      "summary": "Raft算法简介不同于Paxos算法直接从分布式一致性问题出发推导出来，Raft算法则是从多副本状态机的角度提出，用于管理多副本状态机的日志复制。Raft实现了和Paxos相同的功能，它将一致性分解为多个子问题: Leader选举(Leader election)、日志同步(Log repli...",
+      "excerpt": "Raft算法简介 不同于Paxos算法直接从分布式一致性问题出发推导出来，Raft算法则是从多副本状态机的角度提出，用于管理多副本状态机的日志复制。Raft实现了和Paxos相同的功能，它将一致性分解为多个子问题: Leader选举(Leader election)、日志同步(Log replication)、安全性(Safety)、日志压缩(Log compaction)、成员变更(Membership change)等。同时，Raft算法使用了更强的假设来减少了需要考虑的状态，使之变的易于理解和实现。 角色 Raft将系统中的角色分为 领导者(Leader) 、 跟从者(Follower) 和 候选人(Candidate) : Leader : 接受客户端请求，并向Follower同步请求日志，当日志同步到大多数节点上后告诉Follower提交日志。 Follower : 接受并持久化Leader同步的日志，在Leader告之日志可以提交之后，提交日志。 Candidate : Leader选举过程中的临时角色。 Raft要求系统在任意时刻最多只有一个Leader，正常工作期间只有Leader和Followers。 角色状态转换 Follower只响应其他服务器的请求。如果Follower超时没有收到Leader的消息，它会成为一个Candidate并且开始一次Leader选举。收到大多数服务器投票的Candidate会成为新的Leader。Leader在宕机之前会一直保持Leader的状态。 Raft算法将时间分为一个个的任期(term)，每一个term的开始都是Leader选举。在成功选举Leader之后，Leader会在整个term内管理整个集群。如果Leader选举失败，该term就会因为没有Leader而结束。 Raft算法子问题 Raft实现了和Paxos相同的功能，它将一致性分解为多个子问题: Leader选举(Leader election) 日志同步(Log replication) 安全性(Safety) 日志压缩(Log compaction) 成员变更(Membership change) Leader选举 Raft 使用心跳(heartbeat)触发Leader选举。当服务器启动时，初始化为Follower。Leader向所有Followers周期性发送heartbeat。如果Follower在选举超时时间内没有收到Leader的heartbeat，就会等待一段随机的时间后发起一次Leader选举。 Follower将其当前term加一然后转换为Candidate。它首先给自己投票并且给集群中的其他服务器发送 RequestVote RPC。 结果有以下三种情况: 赢得了多数的选票，成功选举为Leader； 收到了Leader的"
+    },
+    {
+      "slug": "fgmmd6vgdbkxeug6",
+      "title": "线上问题的排查思路",
+      "url": "/tulingzhouyu/db22bv/fgmmd6vgdbkxeug6",
+      "toc_path": [
+        "线上问题排查",
+        "线上问题的排查思路"
+      ],
+      "toc_level": 1,
+      "toc_index": 804,
+      "word_count": 1142,
+      "updated_at": "2024-08-25T12:17:15.000Z",
+      "primary_category": "observability-troubleshooting",
+      "primary_category_name": "线上排障与可观测性",
+      "related_categories": [
+        "observability-troubleshooting",
+        "os-linux",
+        "jvm-memory-gc",
+        "performance-optimization",
+        "project-system-design"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "线上",
+        "排查",
+        "监控",
+        "日志",
+        "链路",
+        "CPU",
+        "变慢",
+        "操作系统",
+        "Linux",
+        "线程",
+        "内存",
+        "JVM",
+        "性能"
+      ],
+      "summary": "线上系统问题的排查是一个常见且关键的任务。以下是一个系统化的排查思路和步骤：1. 问题确认和信息收集问题描述：明确问题的具体表现，如系统响应慢、服务不可用、数据异常等。影响范围：确定问题影响的用户群体、功能模块或服务。时间点：确定问题发生的时间，是持续性还是间歇性。环境信息：收集系统环境信息，...",
+      "excerpt": "线上系统问题的排查是一个常见且关键的任务。以下是一个系统化的排查思路和步骤： 1. 问题确认和信息收集 问题描述 ：明确问题的具体表现，如系统响应慢、服务不可用、数据异常等。 影响范围 ：确定问题影响的用户群体、功能模块或服务。 时间点 ：确定问题发生的时间，是持续性还是间歇性。 环境信息 ：收集系统环境信息，如服务器配置、JDK版本、应用版本等。 2. 快速响应 评估严重程度 ：根据影响范围和业务重要性评估问题严重程度。 应急措施 ：如果问题严重，考虑采取紧急措施，如服务降级、流量限制或回滚版本。 3. 日志分析 应用日志 ：检查应用日志中的错误信息、异常堆栈等。 系统日志 ：查看操作系统日志，如Linux的 /var/log/messages 。 中间件日志 ：检查数据库、缓存、消息队列等中间件的日志。 4. 监控数据分析 系统监控 ：查看CPU、内存、磁盘I/O、网络等系统资源使用情况。 JVM监控 ：分析GC日志、堆内存使用、线程状态等。 应用性能监控 ：检查请求响应时间、吞吐量、错误率等指标。 5. 网络分析 网络连接 ：检查网络连接状态，如防火墙设置、端口开放情况。 网络性能 ：分析网络延迟、丢包率等指标。 6. 数据库分析 慢查询日志 ：检查是否存在性能低下的SQL语句。 数据库状态 ：查看数据库连接数、锁等待情况等。 执行计划 ：分析关键SQL的执行计划是否合理。 7. 代码级别分析 线程转储 ：获取Java线程转储（Thread Dump）分析线程状态。 堆转储 ：必要时获取堆转储（Heap Dump）分析内存问题。 代码回顾 ：检查最近的代码变更，是否引入了新的bug。 8. 性能分析与监控工具使用 Profiler ：使用Arthas、JProfiler等工具进行CPU和内存分析。 监控工具 ：使用prometheus、grafana、skywalking等工具进行全链路跟踪。 9. 复现问题 在测试环境中尝试复现问题，以便更深入地分析。 模拟生产环境的负载和数据量。 10. 根因分析 基于收集到的所有信息，进行根因分析。 11. 解决方案 制定短期解决方案以快速修复问题。 规划长期优化方案以防止类似问题再次发生。 12. 验证和监控 在测试环境验证解决方案的有效性。 谨慎地将解决方案应用到生产环境。 持续监控系统，确保问题得到彻底解决。 13. 复盘和总结 编写详细的问题分析报告。 总结经验教训，更新相关文档和最佳实践。 实际案例 假设遇到一个Java应用响应变慢的问题： 问题确认 ：确认响应时间从原来的200ms增加到2000ms。 日志分析 ：应用日志显示大量GC警告。 监控数据 ：JVM监控显示老年代内存使用率高，Full GC频繁。 线程分析 ：Thread Dump显示多个线程在等待数据库连接。 数据库分析 ：发现数据库连接"
+    },
+    {
+      "slug": "xg9cvfe5n3fmv2t4",
+      "title": "CPU飙高问题如何排查",
+      "url": "/tulingzhouyu/db22bv/xg9cvfe5n3fmv2t4",
+      "toc_path": [
+        "线上问题排查",
+        "CPU飙高问题如何排查"
+      ],
+      "toc_level": 1,
+      "toc_index": 810,
+      "word_count": 598,
+      "updated_at": "2024-08-26T05:38:02.000Z",
+      "primary_category": "observability-troubleshooting",
+      "primary_category_name": "线上排障与可观测性",
+      "related_categories": [
+        "observability-troubleshooting",
+        "os-linux",
+        "java-concurrency",
+        "jvm-memory-gc",
+        "java-core"
+      ],
+      "question_type": "troubleshooting",
+      "question_type_name": "故障排查题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "线上",
+        "排查",
+        "日志",
+        "CPU",
+        "进程",
+        "线程",
+        "GC",
+        "垃圾回收",
+        "堆",
+        "栈",
+        "Java"
+      ],
+      "summary": "线上系统CPU飙高问题可以按以下步骤排查：确定问题进程首先，使用top命令找出占用CPU较高的Java进程：top找到对应的进程ID (PID)。获取线程信息使用top -Hp 命令查看该进程内各个线程的CPU占用情况：top -Hp 记录下占用CPU较高的线程ID。转换线...",
+      "excerpt": "线上系统CPU飙高问题可以按以下步骤排查： 确定问题进程 首先，使用top命令找出占用CPU较高的Java进程： 找到对应的进程ID (PID)。 获取线程信息 使用top -Hp <PID>命令查看该进程内各个线程的CPU占用情况： 记录下占用CPU较高的线程ID。 转换线程ID为十六进制 使用printf命令将线程ID 19664 转换为十六进制，结果为 0x4cd0 ： 获取线程堆栈 使用jstack命令获取进程的线程堆栈信息： 代码分析 根据堆栈信息，查看相关的Java代码。以下是一些可能导致CPU飙高的代码示例： 示例1：死循环 示例2：频繁的垃圾回收 示例3：不当的线程同步 示例4：密集的计算操作 使用性能分析工具 可以使用诸如Arthas、JProfile等Java性能分析工具进行更深入的分析。 查看GC日志 如果怀疑是GC问题，可以查看GC日志： 检查系统资源 使用vmstat、iostat等命令检查系统资源使用情况，排除是否为系统资源问题。 通过以上步骤，我们可以定位到导致CPU飙高的具体代码位置，然后进行相应的优化。常见的优化方法包括：优化算法、增加缓存、调整线程池参数、优化数据库查询等。在进行优化时，要注意进行充分的测试，以确保修改不会引入新的问题。"
+    },
+    {
+      "slug": "gn5d62blxrrrftko",
+      "title": "MySQL数据库连接池爆满如何排查",
+      "url": "/tulingzhouyu/db22bv/gn5d62blxrrrftko",
+      "toc_path": [
+        "线上问题排查",
+        "MySQL数据库连接池爆满如何排查"
+      ],
+      "toc_level": 1,
+      "toc_index": 812,
+      "word_count": 1326,
+      "updated_at": "2024-08-26T06:30:18.000Z",
+      "primary_category": "observability-troubleshooting",
+      "primary_category_name": "线上排障与可观测性",
+      "related_categories": [
+        "observability-troubleshooting",
+        "mysql-index-transaction",
+        "performance-optimization",
+        "java-core",
+        "mysql-sharding"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "middle",
+        "expert"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "专家/P7+"
+      ],
+      "keywords": [
+        "线上",
+        "排查",
+        "监控",
+        "告警",
+        "日志",
+        "CPU",
+        "MySQL",
+        "索引",
+        "性能",
+        "优化",
+        "瓶颈",
+        "Java",
+        "分库分表"
+      ],
+      "summary": "当Java应用程序面临MySQL数据库连接池爆满的问题时，通常会导致应用程序性能下降或请求被拒绝。解决这个问题需要深入分析程序的数据库连接管理。以下是具体的排查步骤和过程：1. 确认问题首先，我们需要确认连接池确实爆满了。通常可以通过以下方式：检查应用日志，查找与数据库连接相关的错误信息，如\"...",
+      "excerpt": "当Java应用程序面临MySQL数据库连接池爆满的问题时，通常会导致应用程序性能下降或请求被拒绝。解决这个问题需要深入分析程序的数据库连接管理。以下是具体的排查步骤和过程： 确认问题 首先，我们需要确认连接池确实爆满了。通常可以通过以下方式： 检查应用日志，查找与数据库连接相关的错误信息，如&quot;无法获取连接&quot;等。 查看数据库连接池的监控面板（如果有的话）。 使用数据库管理工具查看当前活跃连接数。 收集信息 收集以下信息： 连接池配置（最大连接数、最小连接数、超时时间等） 当前活跃连接数 数据库服务器资源使用情况（CPU、内存、磁盘I/O） 应用服务器资源使用情况 近期是否有代码变更或流量激增 分析连接使用情况 使用MySQL命令查看当前连接： 这会显示所有当前连接，包括它们的状态、执行的查询等。 检查慢查询 查看是否有长时间运行的查询占用连接： 关注&quot;Time&quot;列，看是否有查询执行时间过长。 分析应用代码 检查应用代码中的连接使用方式： 是否正确关闭连接 是否有连接泄露 是否有不必要的长连接 例如，以下代码可能导致连接泄露： 正确的做法应该是： 检查连接池配置 检查连接池的配置是否合理。以HikariCP为例： 确保这些参数设置合理： maximumPoolSize：最大连接数 connectionTimeout：等待连接的最大毫秒数 idleTimeout：连接允许在池中闲置的最长时间 maxLifetime：连接最长生命周期 使用监控工具 使用如JConsole或VisualVM等Java监控工具，观察连接池的使用情况。 数据库性能分析 使用MySQL的性能模式（Performance Schema）来分析数据库性能： 这可以帮助识别数据库层面的瓶颈。 解决方案 根据分析结果，可能的解决方案包括： 优化慢查询 增加连接池大小（如果服务器资源允许） 修复连接泄露的代码 使用读写分离或分库分表来分散负载 添加连接池监控和告警机制 实施和验证 实施解决方案后，持续监控连接池使用情况，确保问题得到解决。 示例： 假设我们发现了一个导致连接池爆满的问题，原因是某个查询长时间运行导致连接无法释放。 首先，我们通过 SHOW FULL PROCESSLIST 发现了一个长时间运行的查询： 分析该查询，发现是一个全表扫描的大查询： 优化这个查询： 添加适当的索引 限制返回的行数 在应用代码中，我们发现了以下问题： 修改代码以正确管理连接： 调整连接池配置： 添加监控： 使用Spring Actuator或自定义监控来跟踪连接池使用情况 设置告警，当连接使用率接近最大值时通知开发团队 通过这些步骤，我们解决了导致连接池爆满的主要问题，优化了数据库查询，修复了连接泄露，并增强了监控能力。在实施这些更改后，我们会持续监控系统，确保连接池使"
+    },
+    {
+      "slug": "cki480fe533m84ng",
+      "title": "Java进程突然挂了如何排查",
+      "url": "/tulingzhouyu/db22bv/cki480fe533m84ng",
+      "toc_path": [
+        "线上问题排查",
+        "Java进程突然挂了如何排查"
+      ],
+      "toc_level": 1,
+      "toc_index": 813,
+      "word_count": 1077,
+      "updated_at": "2024-08-26T06:53:18.000Z",
+      "primary_category": "observability-troubleshooting",
+      "primary_category_name": "线上排障与可观测性",
+      "related_categories": [
+        "observability-troubleshooting",
+        "java-core",
+        "os-linux",
+        "jvm-memory-gc",
+        "java-concurrency"
+      ],
+      "question_type": "troubleshooting",
+      "question_type_name": "故障排查题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "线上",
+        "排查",
+        "监控",
+        "日志",
+        "CPU",
+        "死锁",
+        "Java",
+        "异常",
+        "操作系统",
+        "进程",
+        "线程",
+        "内存",
+        "JVM",
+        "并发"
+      ],
+      "summary": "当Java进程突然挂掉时，可能是由于程序崩溃、资源限制、外部干扰等多种因素导致的。排查这些问题需要全面的分析，从日志、线程转储到系统资源监控。以下是一个详细的排查过程和步骤。排查步骤日志分析生成和分析Heap Dump检查系统资源分析代码和依赖环境配置检查监控和验证详细的排查过程1. 日志分析...",
+      "excerpt": "当Java进程突然挂掉时，可能是由于程序崩溃、资源限制、外部干扰等多种因素导致的。排查这些问题需要全面的分析，从日志、线程转储到系统资源监控。以下是一个详细的排查过程和步骤。 排查步骤 日志分析 生成和分析Heap Dump 检查系统资源 分析代码和依赖 环境配置检查 监控和验证 详细的排查过程 1. 日志分析 应用日志 ：查看应用程序日志（例如 application.log ），搜索异常、错误信息和未处理的异常。 系统日志 ：检查操作系统日志（如 /var/log/syslog 或 /var/log/messages ）是否有突发事件记录。 关键日志条目 ： java.lang.OutOfMemoryError ：内存不足。 java.lang.StackOverflowError ：栈溢出。 java.lang.NoClassDefFoundError ：类未找到。 2. 生成和分析Heap Dump 在应用启动时设置JVM参数，在崩溃时生成Heap Dump： 分析工具 ：使用Memory Analyzer Tool（MAT）分析Heap Dump，识别内存泄漏和占用最多内存的对象。 3. 检查系统资源 CPU使用 ： 使用 top 或 htop 监控CPU负载，查看是否有异常的负载尖峰。 内存使用 ： 使用 free -m 或 vmstat 检查内存使用情况。 确认系统是否有过度的内存消耗。 磁盘空间 ： 使用 df -h 检查磁盘空间，确认是否有磁盘写满的情况。 4. 分析代码和依赖 代码审查 ：检查最近的代码变更是否引入了错误。 外部库 ：确定是否使用了不兼容或有漏洞的第三方库。 常见问题场景 ： 未关闭的文件句柄或数据库连接。 死锁或其他并发问题导致的资源占用。 5. 环境配置检查 JVM参数 ：确认启动参数是否合适，例如 -Xmx （最大堆内存大小）和 -Xms （初始堆内存大小）的设置。 环境依赖 ：检查Java版本、操作系统版本及补丁更新等。 6. 监控和验证 监控加强 ： 使用Prometheus、Grafana等工具对系统和应用进行实时监控。 设置合适的报警阈值，在出现异常情况时及时获得通知。 验证修复 ： 针对识别问题进行修复后，在接近生产环境的测试环境中进行验证。 通过自动化测试覆盖关键功能和场景。 具体示例 问题描述 ：一个Java Web应用在运行一段时间后突然挂掉。 排查过程 ： 日志分析 ： 查看应用日志，发现出现 java.lang.StackOverflowError 错误和反复递归调用。 系统日志中没有发现内存溢出记录，但有些CPU使用率高的记录。 生成和分析Heap Dump ： 配置了 -XX:+HeapDumpOnOutOfMemoryError ，未找到堆转储，排除内存不足。 检查系统资源 ： 使用 top"
+    },
+    {
+      "slug": "niixxv18pw7a6fbb",
+      "title": "线上系统接口响应很慢如何排查",
+      "url": "/tulingzhouyu/db22bv/niixxv18pw7a6fbb",
+      "toc_path": [
+        "线上问题排查",
+        "线上系统接口响应很慢如何排查"
+      ],
+      "toc_level": 1,
+      "toc_index": 814,
+      "word_count": 758,
+      "updated_at": "2024-08-26T07:06:08.000Z",
+      "primary_category": "observability-troubleshooting",
+      "primary_category_name": "线上排障与可观测性",
+      "related_categories": [
+        "observability-troubleshooting",
+        "performance-optimization",
+        "os-linux",
+        "java-thread-pool",
+        "java-core"
+      ],
+      "question_type": "troubleshooting",
+      "question_type_name": "故障排查题",
+      "levels": [
+        "middle",
+        "senior",
+        "expert"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年",
+        "专家/P7+"
+      ],
+      "keywords": [
+        "线上",
+        "排查",
+        "监控",
+        "日志",
+        "CPU",
+        "变慢",
+        "性能",
+        "优化",
+        "吞吐",
+        "线程",
+        "内存",
+        "文件",
+        "线程池",
+        "Java"
+      ],
+      "summary": "当线上系统的接口响应变慢时，可以采取如下步骤进行排查和定位问题。这里我将结合Java技术和代码示例来说明：1. 初步确认确认范围识别受影响的接口（例如，通过用户反馈、监控报警）。验证是所有用户、特定用户还是某个环境下出现的。2. 系统资源检查检查系统资源使用工具如top、htop、vmstat...",
+      "excerpt": "当线上系统的接口响应变慢时，可以采取如下步骤进行排查和定位问题。这里我将结合Java技术和代码示例来说明： 1. 初步确认 确认范围 识别受影响的接口（例如，通过用户反馈、监控报警）。 验证是所有用户、特定用户还是某个环境下出现的。 2. 系统资源检查 检查系统资源 使用工具如 top 、 htop 、 vmstat 来检查CPU、内存和I/O使用情况。 3. 应用监控 使用APM工具 采用Skywalking或Prometheus等APM工具查看接口响应时间、吞吐量和错误率。 查看具体请求的分布式追踪结果，识别耗时操作。 4. 日志分析 添加并分析日志 在请求进入接口时记录开始时间和结束时间，计算接口的处理时长。 5. 数据库性能 分析数据库查询 使用数据库慢查询日志来分析SQL性能。 检查索引是否缺失或者查询是否可以优化。 6. 外部依赖分析 监控外部API调用 对所有外部调用添加超时控制，并记录调用的开始时间和结束时间。 7. 调整应用程序 线程池和资源 确保线程池大小合理，不要过小导致请求排队。 使用配置文件来调整线程池： 8. 监控和验证 验证修复后效果 使用压力测试工具如JMeter或者Gatling对修复后的接口进行测试。 确认响应时间符合预期，并且负载条件下也能正常运行。 9. 经验分享与知识积累 整理与分享 将问题排查、分析和解决的过程记录下来，以便未来参考和分享给团队成员。 定期回顾线上问题处理流程，不断改进和提升。 通过这些步骤，结合具体的工具和代码实现，可以系统性地排查和解决接口响应慢的问题，提高应用的健壮性和性能。"
+    },
+    {
+      "slug": "xp0otgookk80nht4",
+      "title": "线上系统突然响应缓慢如何排查",
+      "url": "/tulingzhouyu/db22bv/xp0otgookk80nht4",
+      "toc_path": [
+        "线上问题排查",
+        "线上系统突然响应缓慢如何排查"
+      ],
+      "toc_level": 1,
+      "toc_index": 815,
+      "word_count": 1044,
+      "updated_at": "2024-08-25T06:32:01.000Z",
+      "primary_category": "observability-troubleshooting",
+      "primary_category_name": "线上排障与可观测性",
+      "related_categories": [
+        "observability-troubleshooting",
+        "performance-optimization",
+        "os-linux",
+        "mysql-optimization",
+        "mysql-index-transaction"
+      ],
+      "question_type": "troubleshooting",
+      "question_type_name": "故障排查题",
+      "levels": [
+        "middle",
+        "senior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "线上",
+        "排查",
+        "监控",
+        "日志",
+        "CPU",
+        "死锁",
+        "性能",
+        "优化",
+        "调优",
+        "瓶颈",
+        "进程",
+        "线程",
+        "SQL优化",
+        "MySQL"
+      ],
+      "summary": "当线上系统突然响应缓慢时，快速而系统化的排查流程至关重要。以下是一个详细的步骤指南，帮助你快速定位并解决问题：1. 问题确认用户反馈：收集具体的用户反馈信息，包括响应缓慢的表现和时间点。初步验证：尝试从不同的客户端访问系统，确认问题是否普遍存在。2. 检查系统资源CPU使用率：使用工具如top...",
+      "excerpt": "当线上系统突然响应缓慢时，快速而系统化的排查流程至关重要。以下是一个详细的步骤指南，帮助你快速定位并解决问题： 1. 问题确认 用户反馈 ：收集具体的用户反馈信息，包括响应缓慢的表现和时间点。 初步验证 ：尝试从不同的客户端访问系统，确认问题是否普遍存在。 2. 检查系统资源 CPU使用率 ：使用工具如 top 或 htop 查看服务器的CPU使用情况。 内存使用率 ：检查内存使用情况，确认是否存在内存泄漏或不足。 磁盘I/O ：利用 iostat 或 dstat 检查磁盘读写性能。 网络流量 ：使用 netstat 、 iftop 等工具检查带宽使用情况，是否有流量异常。 3. 应用监控 APM工具 ：使用New Relic、Datadog等APM工具，查看应用的性能监控数据。 关键路径分析 ：检查关键请求路径的响应时间，找到响应缓慢的操作。 错误率分析 ：检查应用程序的错误日志，判定是否存在异常。 4. 数据库性能 慢查询日志 ：分析数据库慢查询日志，发现耗时的SQL操作。 连接池使用率 ：检查数据库连接池状态，确认是否耗尽。 锁等待 ：使用数据库管理工具（如MySQL Workbench）检查锁等待和交易阻塞情况。 5. 检查应用变更 代码变更 ：查看最近的代码或配置变更记录，是否引入了性能问题。 部署记录 ：确认是否在问题出现前进行了新的版本部署。 6. 线程和进程分析 线程转储 ：获取Java线程转储（Thread Dump），分析线程状态是否存在死锁或阻塞。 GC分析 ：检查垃圾回收日志（GC日志），确认是否频繁进行Full GC影响性能。 7. 网络分析 延迟和丢包 ：使用 ping 或 traceroute 判定网络延迟和丢包情况。 DNS分辨 ：检查DNS设置和解析时间。 8. 压力测试和负载 请求负载 ：确认Current请求量是否超过系统设计能力。 模拟测试 ：在测试环境重现实际负载，看是否复现性能问题。 9. 修复方案 问题定位后 ：针对性地实施修复，如优化查询、增加资源、回滚变更等。 性能调优 ：根据发现的瓶颈，进行代码和配置优化。 10. 验证和监控 问题修复后验证 ：测试修复效果，并观察系统性能是否恢复正常。 持续监控 ：继续监控系统性能指标，确保问题彻底解决。 实际案例 假设一个Web应用突然响应慢，问题排查如下： 确认问题 ： 初步验证发现，首页加载时间从200ms增加到5s。 检查系统资源 ： top 命令发现CPU占用率接近100%，主要是Java进程占用。 应用监控 ： 使用APM工具发现某API调用耗时过长，几乎占用大部分响应时间。 数据库性能 ： 检查慢查询日志，发现一个复杂的JOIN操作SQL查询耗时过长。 检查应用变更 ： 最近上线了一个新功能，涉及新增数据表但未建立索引。 修复方案 ： 针对慢查询日志，分析并"
+    },
+    {
+      "slug": "zlqy8guampf8k5hv",
+      "title": "线上大量错误日志如何排查",
+      "url": "/tulingzhouyu/db22bv/zlqy8guampf8k5hv",
+      "toc_path": [
+        "线上问题排查",
+        "线上大量错误日志如何排查"
+      ],
+      "toc_level": 1,
+      "toc_index": 817,
+      "word_count": 1004,
+      "updated_at": "2024-08-25T06:29:05.000Z",
+      "primary_category": "observability-troubleshooting",
+      "primary_category_name": "线上排障与可观测性",
+      "related_categories": [
+        "observability-troubleshooting",
+        "java-core",
+        "performance-optimization",
+        "jvm-memory-gc",
+        "algorithm"
+      ],
+      "question_type": "troubleshooting",
+      "question_type_name": "故障排查题",
+      "levels": [
+        "middle",
+        "expert"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "专家/P7+"
+      ],
+      "keywords": [
+        "线上",
+        "排查",
+        "监控",
+        "日志",
+        "异常",
+        "优化",
+        "堆",
+        "栈",
+        "排序"
+      ],
+      "summary": "当线上系统出现大量错误日志时，需要迅速而有条理地进行排查，以定位问题根源并进行修复。以下是一个系统化的排查思路和步骤：排查思路和步骤错误日志收集错误分类和优先级排序快速定位和分析深入调查解决问题验证和监控总结和优化详细步骤1. 错误日志收集集中日志管理：使用集中化的日志管理工具（如ELK St...",
+      "excerpt": "当线上系统出现大量错误日志时，需要迅速而有条理地进行排查，以定位问题根源并进行修复。以下是一个系统化的排查思路和步骤： 排查思路和步骤 错误日志收集 错误分类和优先级排序 快速定位和分析 深入调查 解决问题 验证和监控 总结和优化 详细步骤 1. 错误日志收集 集中日志管理 ：使用集中化的日志管理工具（如ELK Stack、Splunk）收集和存储日志。 日志格式化 ：确保日志格式统一，包含时间戳、错误级别、错误信息、异常堆栈等信息。 2. 错误分类和优先级排序 错误分类 ：根据错误类型（如NullPointerException、SQLException、TimeoutException）进行分类。 优先级排序 ：根据错误的影响范围和严重程度进行优先级排序，优先处理高优先级问题。 3. 快速定位和分析 关键字搜索 ：使用关键字在日志中搜索常见异常或错误信息。 时间窗口分析 ：查看错误日志的时间分布，确定问题发生的时间点和频率。 上下文信息 ：分析错误日志的上下文信息，了解错误发生时的系统状态。 4. 深入调查 代码审查 ：根据错误日志中的堆栈信息，定位相关代码段进行审查。 依赖检查 ：检查外部依赖（如数据库、第三方服务）的状态和配置。 配置文件 ：核对系统配置文件，确保配置正确无误。 环境差异 ：检查生产环境与开发/测试环境的差异，可能导致特定环境下的问题。 5. 解决问题 修复代码 ：根据问题根因，修复代码中的bug。 配置调整 ：调整系统配置，如超时设置、连接池大小等。 依赖更新 ：更新有问题的库或组件到稳定版本。 临时措施 ：必要时采取临时措施（如重启服务、流量限制）以缓解问题。 6. 验证和监控 测试验证 ：在测试环境中验证问题修复的有效性。 部署观察 ：在生产环境中部署修复后，密切监控系统状态和日志。 用户反馈 ：收集用户反馈，确认问题是否彻底解决。 7. 总结和优化 问题总结 ：记录问题的原因、解决方案和修复过程。 知识库更新 ：将解决经验整理到知识库中，供团队参考。 系统优化 ：根据问题暴露出的系统薄弱环节，进行长期优化。 实际案例 假设系统中出现大量的 NullPointerException 错误日志： 错误收集 ：使用ELK Stack收集所有 NullPointerException 日志。 错误分类 ：分析日志，发现大部分错误集中在某个模块。 快速定位 ：通过日志中的堆栈信息，定位到具体的代码行。 深入调查 ：检查代码，发现某个对象在特定条件下未正确初始化。 解决问题 ：修复代码，确保对象在使用前已正确初始化。 验证和监控 ：在测试环境中验证修复后，部署到生产环境并监控日志。 总结和优化 ：记录问题和解决方案，优化代码以防止类似问题再次发生。 通过系统化的排查和处理流程，可以有效地解决线上大量错误日志的问题，提升系统的稳定性和可靠性"
+    },
+    {
+      "slug": "uhlnmen9sq92nr1v",
+      "title": "线上大规模故障时如何处理与恢复",
+      "url": "/tulingzhouyu/db22bv/uhlnmen9sq92nr1v",
+      "toc_path": [
+        "线上问题排查",
+        "线上大规模故障时如何处理与恢复"
+      ],
+      "toc_level": 1,
+      "toc_index": 818,
+      "word_count": 1148,
+      "updated_at": "2024-08-25T06:33:43.000Z",
+      "primary_category": "observability-troubleshooting",
+      "primary_category_name": "线上排障与可观测性",
+      "related_categories": [
+        "observability-troubleshooting",
+        "project-system-design",
+        "performance-optimization",
+        "computer-network",
+        "microservices-governance"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "expert",
+        "middle"
+      ],
+      "level_names": [
+        "专家/P7+",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "线上",
+        "排查",
+        "故障",
+        "监控",
+        "日志",
+        "方案",
+        "订单",
+        "支付",
+        "性能",
+        "优化",
+        "网络",
+        "负载均衡"
+      ],
+      "summary": "当线上系统发生大规模故障时，恢复系统的正常运作需要迅速且有条理的行动。以下是处理和恢复大规模故障的步骤及指导原则：处理与恢复步骤紧急响应故障隔离信息收集与初步分析制定恢复计划逐步恢复服务监控与验证全面复盘与改善详细指南1. 紧急响应组建应急小组：立刻召集技术、运营等相关团队的核心成员组成应急小...",
+      "excerpt": "当线上系统发生大规模故障时，恢复系统的正常运作需要迅速且有条理的行动。以下是处理和恢复大规模故障的步骤及指导原则： 处理与恢复步骤 紧急响应 故障隔离 信息收集与初步分析 制定恢复计划 逐步恢复服务 监控与验证 全面复盘与改善 详细指南 1. 紧急响应 组建应急小组 ：立刻召集技术、运营等相关团队的核心成员组成应急小组。 通报状况 ：通过公司内部渠道（如Slack、邮件、电话）通报状况，停止一切与故障无关的操作。 启动应急机制 ：根据公司的应急响应计划，启动相关响应机制。 2. 故障隔离 隔离故障区域 ：迅速识别并隔离故障区域/模块，防止故障蔓延。 停用受影响服务 ：必要时，临时停用受影响的服务，以防问题扩大。 3. 信息收集与初步分析 日志与监控数据 ：迅速收集系统日志、错误日志和监控数据，以帮助分析故障原因。 用户反馈 ：查看用户反馈，理解问题的症状和影响范围。 版本记录 ：检查近期的代码和配置变更记录。 4. 制定恢复计划 短期修复方案 ：根据初步分析，制定可快速实施的短期修复方案，优先恢复核心功能。 沟通与审批 ：与相关利益方（如业务团队）沟通方案，并获得必要的审批和授权。 5. 逐步恢复服务 恢复核心服务 ：分阶段逐步恢复系统的核心服务，优先处理高优先级服务。 实时监控 ：在恢复过程中，实时监控系统性能和稳定性，确保恢复过程顺利。 用户通知 ：在适当的情况下，通知用户当前的进展和预计恢复时间。 6. 监控与验证 全面监控 ：在系统恢复后，继续密切监控系统性能、资源使用和错误日志，确保问题不会再次发生。 验证服务功能 ：确认所有功能模块正常运作，并满足预期的性能标准。 7. 全面复盘与改善 事件复盘 ：开展事件复盘会议，分析故障原因、响应过程中的问题，并总结经验教训。 系统优化 ：针对故障原因，进行系统优化和改进，更新应急响应计划。 提高防御能力 ：可能需要引入新的监控、备份和冗余策略，以防止类似问题再次发生。 实际案例 假设某电商平台发生大规模支付失败的故障： 紧急响应 ： 迅速召集支付、数据库、网络等相关团队。 通报问题并停止新的支付请求。 故障隔离 ： 隔离支付系统的故障模块，防止影响订单处理等其他功能。 信息收集与初步分析 ： 分析支付网关日志，发现与第三方支付服务的连接异常。 初步判断可能是网络或第三方服务问题。 制定恢复计划 ： 尝试重新建立与第三方的连接。 与第三方服务提供商联系以确认服务状态。 逐步恢复服务 ： 恢复与第三方支付的连接后，逐步开放支付功能。 监控支付成功率，确保稳定后逐步通知用户恢复正常。 监控与验证 ： 持续监控支付服务，确保没有再次出现错误。 验证其他相关交易模块的正常性。 全面复盘与改善 ： 在复盘会议中，确认网络条件是主要问题，调整负载均衡和路由策略。 更新应急响应手册，增加与第三方沟通的指引。 通过这些步骤和"
+    },
+    {
+      "slug": "lxsc9sevygcd0dyv",
+      "title": "线上偶发性问题如何处理和跟踪",
+      "url": "/tulingzhouyu/db22bv/lxsc9sevygcd0dyv",
+      "toc_path": [
+        "线上问题排查",
+        "线上偶发性问题如何处理和跟踪"
+      ],
+      "toc_level": 1,
+      "toc_index": 819,
+      "word_count": 991,
+      "updated_at": "2024-08-25T06:34:25.000Z",
+      "primary_category": "observability-troubleshooting",
+      "primary_category_name": "线上排障与可观测性",
+      "related_categories": [
+        "observability-troubleshooting",
+        "project-system-design",
+        "java-core",
+        "performance-optimization",
+        "computer-network"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "expert",
+        "campus"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "专家/P7+",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "线上",
+        "排查",
+        "故障",
+        "监控",
+        "日志",
+        "方案",
+        "异常",
+        "性能",
+        "优化",
+        "瓶颈",
+        "网络"
+      ],
+      "summary": "处理和跟踪线上偶发性问题通常具有挑战性，因为这些问题往往难以预测和重现。以下是处理这类问题的系统化方法：1. 问题识别收集信息：记录问题发生的具体时间、频率、涉及的功能模块，以及用户反馈。症状描述：确保对问题的表现有清晰的描述，比如错误信息、影响的用户群体、系统日志中的错误码等。2. 日志收集...",
+      "excerpt": "处理和跟踪线上偶发性问题通常具有挑战性，因为这些问题往往难以预测和重现。以下是处理这类问题的系统化方法： 1. 问题识别 收集信息 ：记录问题发生的具体时间、频率、涉及的功能模块，以及用户反馈。 症状描述 ：确保对问题的表现有清晰的描述，比如错误信息、影响的用户群体、系统日志中的错误码等。 2. 日志收集与分析 启用详细日志 ：确保应用在问题发生的模块上有足够的日志记录以便于诊断。 日志分析 ：利用日志分析工具（如ELK Stack、Splunk）查看异常发生前后的日志记录。 异常聚类 ：分析日志中是否有共同的特征、模式或错误信息。 3. 监控与预警 设置监控指标 ：对于问题模块设置关键性能指标（KPI）的监控（如响应时间、错误率）。 配置预警 ：设定阈值，达到阈值时发送警报，以便及时响应偶发性问题。 使用分布式跟踪 ：采用Jaeger、Zipkin等分布式跟踪工具，监控问题请求的全路径。 4. 回溯分析 回顾近期变更 ：检查问题发生前后的代码、配置或者基础设施的变更记录，找出潜在关联。 系统健康检查 ：确保涉及模块的基础设施（如服务器、网络、数据库）无资源瓶颈或异常。 5. 重现问题 收集线索 ：根据已有的信息和日志尝试提炼出固定的重现步骤。 模拟环境测试 ：在测试环境中根据重现步骤进行验证，尽量模拟生产环境条件（如流量、数据）。 6. 根因分析 深入分析 ：借助调试和分析工具，对代码行为进行细粒度分析。 团队讨论 ：召集相关开发和运维人员集体分析，寻找不同的视角和想法。 7. 制定解决方案 短期措施 ：找出临时解决方案以缓解问题影响。 长期解决方案 ：一旦根因明确，制定彻底修复计划，可能包括代码更改、架构调整或配置优化。 8. 实施和验证 实施修复 ：在受控和安全的情况下实施修复。 回归测试 ：对修改的功能进行回归测试，确保修复没有引起新的问题。 用户反馈 ：进行阶段性的用户检查和反馈，确保问题解决。 9. 监控和跟踪 持续监控 ：在问题修复后，密切监视相关指标，防止问题反弹。 建立跟踪文档 ：记录问题的详细信息、分析过程和解决办法，作为知识库案例。 10. 复盘与经验总结 故障复盘 ：进行团队复盘会，总结问题发生的原因及应对措施。 改进措施 ：针对偶发性问题提出系统和流程上的改进建议，如提升监控、增强日志、改善预警机制。 知识共享 ：将复盘结果和经验教训分享给更广泛的团队成员。 通过以上步骤，不仅可以有效处理偶发性问题，还能为团队积累丰富的经验和知识，从而提高整个组织的应变和处理能力。关键在于不断总结经验教训，并将其转化为更完善的技术和流程改进。"
+    },
+    {
+      "slug": "atg78guyg9qh3e3l",
+      "title": "京东电商大促高可用保障实践",
+      "url": "/tulingzhouyu/db22bv/atg78guyg9qh3e3l",
+      "toc_path": [
+        "项目设计场景题",
+        "京东电商大促高可用保障实践"
+      ],
+      "toc_level": 1,
+      "toc_index": 858,
+      "word_count": 6711,
+      "updated_at": "2024-07-15T14:21:19.000Z",
+      "primary_category": "observability-troubleshooting",
+      "primary_category_name": "线上排障与可观测性",
+      "related_categories": [
+        "observability-troubleshooting",
+        "project-system-design",
+        "performance-optimization",
+        "resume-project",
+        "computer-network"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "campus",
+        "expert"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "校招/应届生",
+        "专家/P7+"
+      ],
+      "keywords": [
+        "故障",
+        "监控",
+        "日志",
+        "链路",
+        "CPU",
+        "架构设计",
+        "方案",
+        "高并发",
+        "秒杀",
+        "订单",
+        "支付",
+        "限流",
+        "性能"
+      ],
+      "summary": "分享内容【知历史】电商大促的简介【清家底】电商平台的商业模式与系统【明目标】大促备战目标【定战略】大促整体备战思路【做战术】大促整体备战工作【促成长】其他一、【知历史】电商大促的简介1.1、什么是电商大促电商大促是电商平台组织的一种大型销售推广活动，目的是通过提供各种优惠、折扣等方法，提高商品...",
+      "excerpt": "分享内容 【知历史】电商大促的简介 【清家底】电商平台的商业模式与系统 【明目标】大促备战目标 【定战略】大促整体备战思路 【做战术】大促整体备战工作 【促成长】其他 一、【知历史】电商大促的简介 1.1、什么是电商大促 电商大促是电商平台组织的一种大型销售推广活动，目的是通过提供各种优惠、折扣等方法，提高商品销售额和网站流量，增加消费者的购物欲望，以实现销售目标。电商大促活动通常会在一些特定的节点或者节日举行，比如 “11.11”、“618”、“黑色星期五” 等，这些时期的电商大促极具吸引力，既有大量的商品打折优惠，又有丰富多样的活动供消费者参与，是电商平台提升销售业绩的重要手段。 电商大促活动期间，大家可以购买到平时心仪已久的商品，并且价格通常会远低于平时，而电商平台也会通过活动吸引更多的消费者流量和购买力，进一步提升其在电商行业的影响力。 电商大促不仅仅是一种营销方式，也是电商平台和消费者互动、提高用户粘性的有效方式。 1.2、典型的电商大促活动简介 618 大促： 每年 6 月是京东的店庆月，也是京东的电商促销主战场，在店庆月京东都会推出一系列的大型促销活动，从 6 月 1 日延续至 6 月 18 日（近几年开始从 5.20 日左右开启预售模式，但是整体时间依然是以 6 月 1 日开门红为准）。从 2010 年开始，以满减、优惠券等活动的方式，通过单品类、跨店铺等方式逐步蔓延到 23 年的百亿补贴，历时已经 13 年之久为整个京东零售平台的 GMV 营收带来不小的贡献。 11.11: 11.11 是指各网络购物平台在每年 11 月 11 日的大型促销活动，最早起源于中国阿里巴巴旗下购物网站在 2009 年 11 月 11 日举办的 “淘宝商城促销日”，现已演变成全行业一年一度的购物活动，及影响全球零售业的消费现象。2012 年 11 月 11 日网络购物全日销售额超过美国网路星期一，成为全球最大的互联网的购物节日。（备注：淘宝商城项目刚独立，后更名为天猫，该营销活动主打品牌商的商品，是想要模仿美国感恩节大促销这种活动，通过一个活动或一个事件，让消费者记住淘宝商城）。（参考维基百科） 黑色星期五： Black Friday 最早于 2005 年美国网络 shop.org 创造的购物节日，与 11.11 被电商炒成购物节原因相似。与之相对应的还有兴起于法国、葡萄牙与德国的 Cyber Monday。关于黑色星期五这一叫法的起源，较普遍的一种认为看法是，由于这一天是感恩节（11 月第四个星期四）后开业的第一天。再加上人们通常由此开始圣诞节大采购，很多商店都会顾客盈门从而有大额进帐。传统上商家会用不同颜色的墨水来记账：红色表示亏损即赤字；反之黑色则为有盈利。商家把这个星期五叫做黑色星期五，用以期待这一天过后，年度营收由负转正，由红字转为黑字。而商店的员工则使"
+    },
+    {
+      "slug": "ro609sf10f8igu6l",
+      "title": "美团即时物流架构落地实践",
+      "url": "/tulingzhouyu/db22bv/ro609sf10f8igu6l",
+      "toc_path": [
+        "项目设计场景题",
+        "美团即时物流架构落地实践"
+      ],
+      "toc_level": 1,
+      "toc_index": 862,
+      "word_count": 2873,
+      "updated_at": "2024-07-15T14:21:20.000Z",
+      "primary_category": "observability-troubleshooting",
+      "primary_category_name": "线上排障与可观测性",
+      "related_categories": [
+        "observability-troubleshooting",
+        "project-system-design",
+        "redis-persistence-cluster",
+        "devops-release",
+        "java-core"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "campus",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "校招/应届生",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "线上",
+        "故障",
+        "监控",
+        "告警",
+        "日志",
+        "链路",
+        "CPU",
+        "方案",
+        "高并发",
+        "订单",
+        "限流",
+        "降级",
+        "Java"
+      ],
+      "summary": "本次分享内容项目背景分布式系统实践(单IDC、多IDC、SET化)智能物流核心技术沉淀未来的挑战背景美团外卖已经发展了多年，即时物流探索也经历了3年多的时间，业务从零孵化到初具规模，在整个过程中积累了一些分布式高并发系统的建设经验。最主要的收获包括两点：即时物流业务对故障和高延迟的容忍度极低，...",
+      "excerpt": "本次分享内容 项目背景 分布式系统实践(单IDC、多IDC、SET化) 智能物流核心技术沉淀 未来的挑战 背景 美团外卖已经发展了多年，即时物流探索也经历了3年多的时间，业务从零孵化到初具规模，在整个过程中积累了一些分布式高并发系统的建设经验。最主要的收获包括两点： 即时物流业务 对故障和高延迟的容忍度极低 ，在业务复杂度提升的同时也要求系统具备分布式、可扩展、可容灾的能力。即时物流系统阶段性的逐步实施分布式系统的架构升级，最终解决了系统宕机的风险。 围绕 成本、效率、体验 核心三要素，即时物流体系大量结合AI技术，从定价、ETA、调度、运力规划、运力干预、补贴、核算、语音交互、LBS挖掘、业务运维、指标监控等方面，业务突破结合架构升级，达到促规模、保体验、降成本的效果。 注：ETA（Estimated Time of Arrival，表示预计送达时间） 主要介绍在美团即时物流分布式系统架构逐层演变的进展中，遇到的技术障碍和挑战： 本次订单、骑手规模大，供需匹配过程的 超大规模计算 问题。 遇到节假日或者恶劣天气，订单聚集效应， 流量高峰是平常的十几倍 。 物流履约是线上连接线下的关键环节，故障容忍度极低，不能宕机，不能丢单， 可用性要求极高 。 数据 实时性、准确性要求高 ，对延迟、异常非常敏感。 美团即时物流架构 美团即时物流配送平台主要围绕三件事展开： 一是面向用户提供履约的SLA，包括计算送达时间ETA、配送费定价等； 二是在多目标（成本、效率、体验）优化的背景下，匹配最合适的骑手； 三是提供骑手完整履约过程中的辅助决策，包括智能语音、路径推荐、到店提醒等。 在一系列服务背后，是美团强大的技术体系的支持，并由此沉淀出的配送业务架构体系，基于架构构建的平台、算法、系统和服务。庞大的物流系统背后离不开分布式系统架构的支撑，而且这个架构更要保证高可用和高并发。 分布式架构，是相对于集中式架构而言的一种架构体系。分布式架构适用CAP理论（Consistency 一致性，Availability 可用性，Partition Tolerance 分区容忍性）。在分布式架构中，一个服务部署在多个对等节点中，节点之间通过网络进行通信，多个节点共同组成服务集群来提供高可用、一致性的服务。 早期，美团按照业务领域划分成多个 垂直服务架构 ；随着业务的发展，从可用性的角度考虑做了 分层服务架构 。后来，业务发展越发复杂，从运维、质量等多个角度考量后，逐步演进到 微服务架构 。这里主要遵循了两个原则：不宜过早的进入到微服务架构的设计中， 好的架构是演进出来的不是提前设计出来的 。 分布式系统实践 上图是比较典型的美团技术体系下的分布式系统结构：依托了美团公共组件和服务，完成了分区扩容、容灾和监控的能力。前端流量会通过HLB来分发和负载均衡；在分区内，服务与服务会通过OCTO"
+    },
+    {
+      "slug": "vycfauld0xb8e6rm",
+      "title": "B站亿级API网关重构之路",
+      "url": "/tulingzhouyu/db22bv/vycfauld0xb8e6rm",
+      "toc_path": [
+        "项目设计场景题",
+        "B站亿级API网关重构之路"
+      ],
+      "toc_level": 1,
+      "toc_index": 868,
+      "word_count": 3140,
+      "updated_at": "2024-07-15T14:21:20.000Z",
+      "primary_category": "observability-troubleshooting",
+      "primary_category_name": "线上排障与可观测性",
+      "related_categories": [
+        "observability-troubleshooting",
+        "microservices-governance",
+        "security-auth",
+        "project-system-design",
+        "jvm-memory-gc"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "expert",
+        "senior",
+        "campus"
+      ],
+      "level_names": [
+        "专家/P7+",
+        "高级/5-8年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "线上",
+        "排查",
+        "故障",
+        "监控",
+        "日志",
+        "链路",
+        "堆积",
+        "限流",
+        "熔断",
+        "降级",
+        "超时",
+        "安全"
+      ],
+      "summary": "本次分享内容项目背景垂直BFF时代在电商和直播业务下重构API网关未来展望背景如果你在 2015 年就使用 B 站，那么你一定不会忘记那一年 B 站工作日选择性崩溃，周末必然性崩溃的一段时间。也是那一年 B 站投稿量激增，访问量随之成倍上升，而过去的 PHP 全家桶也开始逐渐展露出颓势，运维难...",
+      "excerpt": "本次分享内容 项目背景 垂直BFF时代 在电商和直播业务下重构API网关 未来展望 背景 如果你在 2015 年就使用 B 站，那么你一定不会忘记那一年 B 站工作日选择性崩溃，周末必然性崩溃的一段时间。也是那一年 B 站投稿量激增，访问量随之成倍上升，而过去的 PHP 全家桶也开始逐渐展露出颓势，运维难、监控难、排查故障难、调用路径深不见底，而也就是在这一年，B 站开始正式用 Go 重构 B 站。 B 站第一个 Go 项目：bilizone bilizone 其实还是一个大而全的应用，bilizone 在当时重构的主要意义是将谁也理不清的 PHP 逻辑梳理成了一个比较标准的 Go 应用。 bilizone 在当时最大的意义就是为用户终端提供了基本稳定的数据结构、相对可靠的接口和比较有效的监控。但因 bilizone 依旧是一个单体应用，所以它依旧继承了单体应用所具有的缺点： 代码复杂度高 方法被滥用、超时设置混乱、牵一发而动全身 一挂全挂 最常见的：超时设置不合理，Goroutine 大量堆积，雪崩 Goroutine是Go语⾔中并发的执⾏单位。 Goroutine底层是使⽤协程(coroutine)实现， coroutine 是⼀种运⾏在⽤户态的⽤户线程（参考操作系统原理：内核态，⽤户态）它可以由语⾔和框架层调度。 Go在语⾔层⾯实现了调度器，同时对⽹络， IO库进⾏了封装处理，屏蔽了操作系统层⾯的复杂的细节，在语⾔层⾯提供统⼀的关键字⽀持。 测试及维护成本高 小改动都需要测试所有 case，运维发布胆战心惊 所以此时 B 站的崩溃频率虽然已经有所降低，但一炸全炸的问题依旧是一个心腹大患。 而再接下来的一次重构，B 站微服务的全局面貌就将初具雏形。 为了实现微服务模式下的 bilibili，我们将一个 bilizone 应用拆分成多个独立业务应用，如账号、稿件、广告等等，这些业务通过 SLB 直接对外提供 API。 当时的调用模式如下图所示： 但是随着功能拆分后，我们对外暴露了一批微服务，但是因为缺乏统一的出口而面临了不少困难： 客户端与微服务直接通信，强耦合 需要多次请求，客户端聚合数据，工作量巨大，延迟高。 协议不利于统一，各个部门间有差异，反而需要通过客户端来兼容。 面向 “端” 的 API 适配，耦合到了内部服务。 多终端兼容逻辑复杂，每个服务都需要处理。 统一逻辑无法收敛，比如安全认证、限流。 基于上述问题和我们想要将对端的处理进行内聚的想法，我们自然的而然的就想到在客户端与后端服务之间加一个 app-interface 的组件，这就是接下来的 BFF（Backend for Frontend）模式。 app-interface 的工作模式如下图所示： 有了这个 BFF 之后，我们可以在该服务内进行大量的数据聚合，按照业务场景来设计粗粒度的 A"
+    },
+    {
+      "slug": "zz696v48nlgwtxk9",
+      "title": "秒杀系统瓶颈-日志",
+      "url": "/tulingzhouyu/db22bv/zz696v48nlgwtxk9",
+      "toc_path": [
+        "项目设计场景题",
+        "秒杀系统瓶颈-日志"
+      ],
+      "toc_level": 1,
+      "toc_index": 878,
+      "word_count": 636,
+      "updated_at": "2024-06-14T03:26:37.000Z",
+      "primary_category": "observability-troubleshooting",
+      "primary_category_name": "线上排障与可观测性",
+      "related_categories": [
+        "observability-troubleshooting",
+        "os-linux",
+        "project-system-design",
+        "performance-optimization",
+        "java-core"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "监控",
+        "日志",
+        "内存",
+        "文件",
+        "方案",
+        "秒杀",
+        "性能",
+        "QPS",
+        "瓶颈",
+        "异常",
+        "IO"
+      ],
+      "summary": "大家也知道， 现在八股文问的不多了，有小伙伴去面试遇到这样的情况：说你做过电商项目， 好，  我问你秒杀系统QPS达到10万并发，怎么记录日志，  你要知道 一个请求从进入秒杀服务到处理失败或者成功，至少会产生两条日志。也就是说，高峰期间，一个秒杀节点每秒产生的日志可能达到 30 万条以上。 ...",
+      "excerpt": "大家也知道， 现在八股文问的不多了，有小伙伴去面试遇到这样的情况：说 你做过电商项目， 好， 我问你秒杀系统QPS达到10万并发，怎么记录日志， 你要知道 一个请求从进入秒杀服务到处理失败或者成功，至少会产生两条日志。也就是说，高峰期间，一个秒杀节点每秒产生的日志可能达到 30 万条以上。 你怎么处理？ 直接懵逼了。 ​ ​ 一块性能比较好的固态硬盘， 他的 每秒的读写次数（也就是IOPS） 大概呢在 3 万左右。也就是说，那在秒杀峰值流量时的每秒日志条数是固态硬盘 IOPS 的 10 倍，磁盘都扛不住啊！！，更别说通过网络写入到监控系统中。 所以所以这里的瓶颈是： 每秒日志量远高于磁盘 IOPS，直接写磁盘会影响服务性能和稳定性 大量日志导致服务频繁分配，频繁释放相关对象的内存，影响服务性能。 在高负载下，日志系统可能会出现延迟,服务异常退出会导致 未写入磁盘的日志数据可能会丢失。 那解决解决方案呢， 我给你提供3种，具体的细节可以在评论区扣666详细学习。 1.通过Tmpfs，这是我比较推荐的，大道至简！ 说白了就是一个临时文件系统，它是一种基于内存的文件系统。我们可以将秒杀服务写日志的文件放在临时文件系统中。相比直接写磁盘的话，这种临时文件系统中写日志的性能至少能提升 100 倍，每当日志文件达到 20MB 的时候，就将日志文件转移到磁盘上，并将临时文件系统中的日志文件清空； 2.通过内存池设计，将给logger分配缓冲区，每一次的新写可以复用Logger对象； 3.参考kafka的缓冲池设计，当缓冲区达到大小和间隔时长临界值时，调用Flush函数，减少丢失的风险； 好，如果视频对你有帮助， 可以给我3连支持， 下期见！"
+    },
+    {
+      "slug": "oyxtm7v51dw7fcv7",
+      "title": "面试官：说一下 Nginx 反向代理的作用？",
+      "url": "/tulingzhouyu/db22bv/oyxtm7v51dw7fcv7",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "面试官：说一下 Nginx 反向代理的作用？"
+      ],
+      "toc_level": 2,
+      "toc_index": 998,
+      "word_count": 2306,
+      "updated_at": "2025-11-14T08:40:16.000Z",
+      "primary_category": "observability-troubleshooting",
+      "primary_category_name": "线上排障与可观测性",
+      "related_categories": [
+        "observability-troubleshooting",
+        "computer-network",
+        "microservices-governance",
+        "redis-cache",
+        "performance-optimization"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle",
+        "campus"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "故障",
+        "监控",
+        "日志",
+        "CPU",
+        "HTTP",
+        "HTTPS",
+        "网络",
+        "超时",
+        "负载均衡",
+        "缓存",
+        "性能",
+        "优化"
+      ],
+      "summary": "在现代 Web 开发和运维领域，Nginx 是一个无法绕开的名字。当面试官提出“谈谈 Nginx 反向代理的作用”时，他期待的绝不是一个简单的定义，而是一个从架构演进、问题解决到价值实现的完整图景。本文将带你层层深入，彻底掌握 Nginx 反向代理的核心精髓。核心概念：什么是反向代理从根本上说...",
+      "excerpt": "在现代 Web 开发和运维领域，Nginx 是一个无法绕开的名字。当面试官提出“谈谈 Nginx 反向代理的作用”时，他期待的绝不是一个简单的定义，而是一个从架构演进、问题解决到价值实现的完整图景。本文将带你层层深入，彻底掌握 Nginx 反向代理的核心精髓。 核心概念：什么是反向代理 从根本上说， 反向代理（Reverse Proxy） 是指以代理服务器来接受客户端的连接请求，然后将请求转发给内部网络上的一个或多个后端服务器，并将从服务器上得到的结果返回给客户端。 在这个过程中，代理服务器对外表现为一个单一的入口。对于客户端而言，它只知道自己在与 Nginx 代理服务器通信，而完全感知不到后端真实服务的存在、数量和拓扑结构。Nginx 在这里扮演了一个位于客户端和真实服务器之间的“中间人”或“总前台”角色。 正向代理 vs 反向代理：一个关键区别 为了更深刻地理解反向代理，我们常常将其与正向代理进行对比。它们最核心的区别在于 服务的对象不同 ： 正向代理 (Forward Proxy) ：为 客户端 服务。它隐藏了真实的客户端，替客户端去访问服务器。服务器不知道真正的请求方是谁。典型的例子是内部网络中的员工通过代理访问外部互联网。 反向代理 (Reverse Proxy) ：为 服务器 服务。它隐藏了真实的服务器集群，替服务器接收客户端的请求。客户端不知道真正提供服务的是哪台服务器。这是构建大规模 Web 应用的基础。 简单记： 正向代理“代里出”，反向代理“代外入” 。 传统架构的困境：为何需要反向代理 在反向代理出现之前，Web 应用普遍采用单体架构，即客户端直接连接到唯一的应用服务器。随着业务增长和用户量激增，这种架构的弊端暴露无遗： 性能瓶颈与单点故障 (SPOF) ：所有流量都由一台服务器处理，其 CPU、内存和 I/O 很快会达到极限，导致响应缓慢甚至宕机。一旦这台服务器发生故障，整个服务便完全瘫痪。 安全风险 ：应用服务器直接暴露在公网上，其 IP 地址、端口和操作系统细节都可能被攻击者获取，面临极大的安全威胁。 扩展性差 ：唯一的扩展方式是“垂直扩展”，即不断提升单台服务器的硬件配置。这种方式成本高昂，且存在物理上限。 为了解决这些问题，分布式架构应运而生，而 Nginx 反向代理正是开启分布式之门的钥匙。 核心作用一：负载均衡 (Load Balancing) 负载均衡是反向代理最广为人知的作用。当单台服务器无法满足性能需求时，我们可以通过增加服务器数量来“水平扩展”成一个服务器集群。Nginx 作为所有请求的统一入口，可以将海量的并发请求智能地分发到后端的多台服务器上，从而将负载压力均摊。 Nginx 提供了多种成熟的负载均衡策略： 轮询 (Round Robin) ：默认策略，按顺序将请求逐一分配到每台服务器。 加权轮询 (Weigh"
+    },
+    {
+      "slug": "qug6wm6gzy3s62zq",
+      "title": "订单服务调用时间从200ms飙升至1.5s，如何排查？",
+      "url": "/tulingzhouyu/db22bv/qug6wm6gzy3s62zq",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "订单服务调用时间从200ms飙升至1.5s，如何排查？"
+      ],
+      "toc_level": 2,
+      "toc_index": 1044,
+      "word_count": 2412,
+      "updated_at": "2025-10-12T06:37:15.000Z",
+      "primary_category": "observability-troubleshooting",
+      "primary_category_name": "线上排障与可观测性",
+      "related_categories": [
+        "observability-troubleshooting",
+        "java-concurrency",
+        "jvm-memory-gc",
+        "os-linux",
+        "mysql-index-transaction"
+      ],
+      "question_type": "troubleshooting",
+      "question_type_name": "故障排查题",
+      "levels": [
+        "middle",
+        "campus"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "排查",
+        "监控",
+        "告警",
+        "日志",
+        "链路",
+        "CPU",
+        "变慢",
+        "线程",
+        "锁",
+        "JVM",
+        "GC",
+        "垃圾回收"
+      ],
+      "summary": "一、事故背景：风平浪静下的告警风暴一个平静的工作日下午，监控系统突然告警齐发，指向我们的核心服务 ——“订单服务”。监控仪表盘呈现出三个诡异的现象：接口响应时间 (RT) 飙升：核心接口的 P99 响应时间从日常的 ~150ms 飙升至 1.5s，性能下降了近 900%。业务错误率激增：API...",
+      "excerpt": "一、事故背景：风平浪静下的告警风暴 一个平静的工作日下午，监控系统突然告警齐发，指向我们的核心服务 ——“订单服务”。监控仪表盘呈现出三个诡异的现象： 接口响应时间 (RT) 飙升 ：核心接口的 P99 响应时间从日常的 ~150ms 飙升至 1.5s ，性能下降了近 900%。 业务错误率激增 ：API 网关出现大量 HTTP 429 (Too Many Requests) 错误，意味着下游服务因无法处理请求而拒绝了流量。 基础资源指标“正常” ：出乎意料的是，服务器的 CPU 使用率 、 内存 、 网络 I/O 等关键指标均处于低位，没有任何异常。 这就构成了本次排查的核心矛盾： 计算资源明明很空闲，为什么应用却无法处理请求，表现得如此缓慢？ 这感觉就像一条高速公路，明明不堵车，但所有汽车都在以10公里的时速爬行。 二、排查之旅：抽丝剥茧，四步定位根源 面对这个谜团，我们展开了一场从应用到数据库的深度排查。 第一步：深入线程栈，探寻等待的根源 思考逻辑 (Why): CPU 不忙但请求慢，首要怀疑方向就是： 线程并非在执行计算，而是在“等待” 。CPU 是执行计算的单元，它空闲就证明计算任务不多。请求慢则证明任务从开始到结束耗时很长。这两者结合，强烈指向了线程的等待状态（如 I/O 等待、锁等待等）。 排查动作 (How): 我们立即登陆到目标服务器，对应用的 Java 进程执行了 jstack 命令，以获取一份实时的线程快照 (Thread Dump)，并统计了所有线程的状态。 核心发现 (What & So What?): 分析结果非常明确： 海量线程（超过80%）都处于 BLOCKED 状态 。 这是本次排查的 第一个关键突破口 。它有力地证明了应用正陷于严重的内部等待瓶颈，而不是CPU资源不足。这个发现让我们 排除了代码死循环、计算量过大等消耗CPU的场景 ，并将调查焦点缩小到两个主要可能性： 应用内部的锁竞争。 缓慢的外部 I/O 调用（如数据库、缓存、下游服务）。 第二步：排查外部依赖，收窄怀疑范围 思考逻辑 (Why): 为了判断线程是在等待“内部锁”还是“外部I/O”，我们首先需要检查所有外部依赖的健康状况。如果下游服务变慢，自然会导致我们的应用线程在等待响应时被阻塞。 排查动作 (How): 我们打开了全链路监控系统（如 SkyWalking / Prometheus），查看订单服务的服务依赖拓扑图以及所有下游服务的响应时间。 核心发现 (What & So What?): 监控显示，所有外部依赖（数据库、Redis缓存、其他微服务）的 响应时间均在正常范围内 。 这个发现意义重大，它帮助我们 排除了所有外部因素 。问题根源不在别处，就在订单服务应用本身或它直连的数据库上。调查范围被进一步缩小。 第三步：审视JVM内部，发现关键暂停 思"
+    },
+    {
+      "slug": "hn43vtrvgre2g5fk",
+      "title": "面试官：讲讲 Raft？我笑了。一次彻底搞懂 Raft 核心机制",
+      "url": "/tulingzhouyu/db22bv/hn43vtrvgre2g5fk",
+      "toc_path": [
+        "高频面试问题",
+        "楼兰老师",
+        "面试官：讲讲 Raft？我笑了。一次彻底搞懂 Raft 核心机制"
+      ],
+      "toc_level": 2,
+      "toc_index": 1148,
+      "word_count": 3256,
+      "updated_at": "2025-10-13T06:16:00.000Z",
+      "primary_category": "observability-troubleshooting",
+      "primary_category_name": "线上排障与可观测性",
+      "related_categories": [
+        "observability-troubleshooting",
+        "mq-rocketmq",
+        "mq-rabbitmq",
+        "mq-kafka",
+        "redis-persistence-cluster"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle",
+        "expert"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年",
+        "专家/P7+"
+      ],
+      "keywords": [
+        "日志",
+        "RocketMQ",
+        "RabbitMQ",
+        "Kafka",
+        "集群"
+      ],
+      "summary": "Hello，大家好！我们今天直入主题，聊一个在后端高级岗和架构师面试中，几乎无法回避的话题——Raft 算法。为什么它这么重要？因为我们熟知的 K8s、etcd、RocketMQ、Kafka、RabbitMQ这些顶级的分布式系统，它们的稳定和可靠，都离不开 Raft 这个核心基石。所以，无论你...",
+      "excerpt": "Hello，大家好！ 我们今天直入主题，聊一个在后端高级岗和架构师面试中，几乎无法回避的话题—— Raft 算法 。 为什么它这么重要？因为我们熟知的 K8s、etcd、RocketMQ、Kafka、RabbitMQ这些顶级的分布式系统，它们的稳定和可靠，都离不开 Raft 这个核心基石。 所以，无论你是想在面试中脱颖而出，还是想在工作中真正驾驭复杂的分布式系统，透彻理解 Raft 都是你的必修课。 这次我们就用最直观的方式，帮你一次性搞定它。 点赞、收藏，我们开始！ “在深入细节之前，我们先花 30 秒，快速建立一个宏观认知：Raft 到底是什么？ 它是什么？ Raft 是一个分布式一致性算法，它的最大特点就是为了‘易于理解’而设计，功能上和非常难懂的 Paxos 算法是等价的。 解决什么问题？ 它的核心任务，就是保证在一个由多台机器组成的集群里，数据是强一致的。即使有机器宕机、网络出问题，系统也能对外提供正确无误的服务。 应用在哪？ 就像我们开头提到的，它被广泛应用在各种需要‘高可靠协调’的场景。 所以大家要记住，在面试中，能把 Raft 讲清楚，绝对是你技术深度和广度的加分项，是区别普通工程师和高级专家的一个关键点。” “一个可靠的分布式系统，首先要解决的就是‘群龙无首’的问题。Raft 的世界里，所有的数据写入都必须经过一个总指挥，这个总指挥就是 Leader 。其他节点都是听从指挥的 Follower 。 那么，这个 Leader 是怎么来的呢？这就是 Raft 的第一个核心机制： Leader 选举 。 大家看这张图。假设我们有 S1, S2, S3, S4 四个节点。一开始 S2 是 Leader，它会不断地给其他 Follower 发送心跳，就像在说：‘我还活着，大家听我指挥’。 突然，S4 这个节点，在一段时间内（这个时间叫 election timeout ）没收到 Leader 的心跳。它就觉得：‘大哥是不是挂了？’ 于是，它决定起义！ 第一步，成为候选人 (Candidate) ：S4 会增加自己的‘任期号’（Term），这个 Term 就像古代的年号，代表一个新的朝代开始了。然后，它会先给自己投一票。 第二步，发起投票 ：S4 会向集群里所有其他节点发送投票请求，说：‘兄弟们，我准备当新大哥，Term 号也更新了，大家投我一票吧！’ 第三步，少数服从多数 ：其他节点收到请求后，如果发现自己的 Term 号确实落后了，并且自己还没给别人投过票，就会同意这个请求。当 S4 收到包括自己在内的、 超过半数 的选票后，它就成功晋升为新 Leader！ 第四步，宣告统治 ：S4 成为新 Leader 后，会立刻开始向全员发送心跳，宣告自己的统治，其他节点收到后，就都成为了它的 Follower。 [小结] 这就是 Leader 选举，通过‘心"
+    },
+    {
+      "slug": "oyf9afwwsipbg89s",
+      "title": "16、面试官：如何零代码修改，监控线上服务的慢SQL？",
+      "url": "/tulingzhouyu/db22bv/oyf9afwwsipbg89s",
+      "toc_path": [
+        "高频面试问题",
+        "赋文老师",
+        "16、面试官：如何零代码修改，监控线上服务的慢SQL？"
+      ],
+      "toc_level": 2,
+      "toc_index": 1289,
+      "word_count": 0,
+      "updated_at": "2025-11-07T05:59:08.000Z",
+      "primary_category": "observability-troubleshooting",
+      "primary_category_name": "线上排障与可观测性",
+      "related_categories": [
+        "observability-troubleshooting",
+        "resume-project"
+      ],
+      "question_type": "troubleshooting",
+      "question_type_name": "故障排查题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "线上",
+        "监控",
+        "面试官"
+      ],
+      "summary": "",
+      "excerpt": ""
+    },
+    {
+      "slug": "mt75o6gnxxz68qd7",
+      "title": "13、面试官：如何构建一个“全链路业务日志”系统，将一次用户请求的所有日志串联起来？",
+      "url": "/tulingzhouyu/db22bv/mt75o6gnxxz68qd7",
+      "toc_path": [
+        "高频面试问题",
+        "赋文老师",
+        "13、面试官：如何构建一个“全链路业务日志”系统，将一次用户请求的所有日志串联起来？"
+      ],
+      "toc_level": 2,
+      "toc_index": 1292,
+      "word_count": 6746,
+      "updated_at": "2025-11-10T07:40:59.000Z",
+      "primary_category": "observability-troubleshooting",
+      "primary_category_name": "线上排障与可观测性",
+      "related_categories": [
+        "observability-troubleshooting",
+        "resume-project",
+        "java-concurrency",
+        "project-system-design",
+        "distributed-lock-id"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "排查",
+        "故障",
+        "日志",
+        "链路",
+        "面试官",
+        "线程",
+        "ThreadLocal",
+        "方案",
+        "订单",
+        "支付",
+        "分布式ID",
+        "雪花算法"
+      ],
+      "summary": "腾讯二面，气氛很轻松。面试官是个技术老大，看起来很和善。前面聊了Redis、MySQL、消息队列，答得还不错。眼看就要结束了，面试官突然说：\"最后问一个场景题。\"他打开电脑，给我看了一张Kibana的截图：8万多条日志，密密麻麻。\"这是我们上周遇到的真实故障。\"\"凌晨3点，用户投诉说支付成功但...",
+      "excerpt": "腾讯二面，气氛很轻松。 面试官是个技术老大，看起来很和善。前面聊了Redis、MySQL、消息队列，答得还不错。 眼看就要结束了，面试官突然说：&quot;最后问一个场景题。&quot; 他打开电脑，给我看了一张Kibana的截图： 8万多条日志，密密麻麻。 &quot;这是我们上周遇到的真实故障。&quot; &quot;凌晨3点，用户投诉说支付成功但没发货。值班同学查了40分钟才定位到问题：MQ消息因为网络抖动延迟了5分钟，但订单服务8秒就超时了。&quot; &quot;如果是你，怎么快速定位这个问题？&quot; 我想了想，说：&quot;先用用户ID搜索日志，看订单服务、支付服务、物流服务的日志……&quot; 面试官打断我：&quot;用户ID搜出来8万条结果，因为这是个老用户，历史订单很多。你怎么确认哪些日志是这次故障的？&quot; 我愣住了。 &quot;如果订单服务在机器A，支付服务在机器B，物流服务在机器C，你怎么串联这些日志？&quot; &quot;如果请求经过了8个微服务，中间还有异步MQ，你怎么还原完整链路？&quot; &quot;最关键的， 如果这个故障在高峰期发生，每秒1万QPS，你怎么在海量日志中快速定位？ &quot; 我支支吾吾，答不上来。 面试官看了看表：&quot;这个问题确实有难度。我再给你一个提示： TraceID，听说过吗？ &quot; 我摇头。 &quot;回去可以了解一下。好了，今天就到这里，你还有什么问题要问我吗？&quot; 我知道，这一轮凉了。 走出腾讯大厦，深圳的阳光刺得我睁不开眼。 电梯里，我打开手机搜索&quot;TraceID&quot;。 第一条结果： 《微服务架构下的分布式链路追踪详解》 我点进去，越看越心惊： 这正是我欠缺的知识盲区。 回到酒店，我打开电脑，开始恶补。 Google、GitHub、掘金、InfoQ，凡是跟&quot;分布式追踪&quot;相关的文章，我全部扫了一遍。 看了SkyWalking的文档，研究了Zipkin的架构，甚至把Twitter的Snowflake算法论文都啃了一遍。 第二天早上，我写了一套完整的Demo。 第三天晚上，我整理出了一份PPT。 第四天，我把这份资料发到了掘金，标题是： 《面试官问我微服务怎么查日志，我说用grep，然后就挂了》 没想到，这篇文章当天就上了首页，1万多人点赞。 更没想到的是，三天后，我收到了字节跳动的面试邀请。 一、字节三面：我是这样回答日志追踪问题的 字节的面试官开门见山：&quot;看了你在掘金的文章，写得不错。来，给我讲讲全链路日志追踪。&quot; 我深吸一口气，打开笔记本。 &quot;面试官，我先说一个场景： 用户投诉说支付成功但没发货，怎么快速定位问题？ &quot; &quot;传统的排查方式有三个致命缺"
+    },
+    {
+      "slug": "xcveya1wk6yp21ic",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/xcveya1wk6yp21ic",
+      "toc_path": [
+        "高频面试问题",
+        "赋文老师",
+        "13、面试官：如何构建一个“全链路业务日志”系统，将一次用户请求的所有日志串联起来？",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1293,
+      "word_count": 2060,
+      "updated_at": "2025-11-13T14:09:56.000Z",
+      "primary_category": "observability-troubleshooting",
+      "primary_category_name": "线上排障与可观测性",
+      "related_categories": [
+        "observability-troubleshooting",
+        "resume-project",
+        "java-concurrency",
+        "computer-network",
+        "project-system-design"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle",
+        "senior",
+        "expert"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年",
+        "专家/P7+"
+      ],
+      "keywords": [
+        "线上",
+        "日志",
+        "链路",
+        "面试官",
+        "包装",
+        "线程",
+        "ThreadLocal",
+        "HTTP",
+        "方案",
+        "订单",
+        "支付",
+        "库存"
+      ],
+      "summary": "📎index (1).html面试官：线上出Bug你怎么查？短视频链接:",
+      "excerpt": "面试官：线上出Bug你怎么查？ 短视频 链接: https://pan.baidu.com/s/1DFeWAwdvsQrw9ZGa2JrcvQ?pwd=jcn9 提取码: jcn9 Part 1：【开场悬念】 (0:00 - 0:25) (快速剪辑：代码滚动 -> 办公室加班场景 -> 一个人挠头的特写) [PPT Slide 1: 标题页] “兄弟们！上周我一个哥们去面字节，面试官问了个特常见的问题： 线上出了Bug，你怎么查？ ” “他心想这不 so easy 嘛，张口就来：‘ 看日志啊！ ’” (音乐突然停顿，画面定格在面试官微笑的脸上) “结果面试官微微一笑，反手就是一个王炸： ‘那……需要查多久？’ ” “我那哥们当场就懵了……因为他想起了上个月，一个用户付了钱但没发货的Bug，值班的兄弟吭哧吭哧查了整整 40分钟 才找到问题！” “ 今天，我就带你把这个问题彻底打通！想要完整的技术文章和PPT资料的，一定要看到最后 ！” Part 2：【灵魂拷问，戳中痛点】 (0:25 - 1:00) (音乐变得稍微悬疑、急促) [PPT Slide 2: 灵魂拷问页] “为啥查个日志这么费劲？来，你品品面试官这几个灵魂拷问，看你顶得住几层？” (手指快速划过PPT上的四个问题方块) “ 第一问！ 一个用户ID搜出8万条日志，哪条是这次出问题的？” “ 第二问！ 订单、支付、库存，日志分散在3台不同机器，你怎么串起来看？” “ 第三问！ 请求中间还经过了异步的MQ消息，链路直接断了，你怎么还原？” “ 第四问！ 1秒钟10万条新日志刷出来，你眼睛跟得上吗？” [PPT Slide 3: 传统方式痛点页] “是不是已经开始冒冷汗了？在微服务时代，只用 grep 查日志，就像… 大海挥针一样！ 简直是噩梦！” Part 3：【破局！核心思想登场】 (1:00 - 1:45) (音乐转为明快、充满希望，出现“叮”的音效) [PPT Slide 4: 破局思路页] “怎么破局？思路其实也简单！就一句话： 给每个请求，发一张独一无二的‘身份证’！，并实现在调用链路上身份证透传就搞定了 ” “这张身份证，在咱们技术圈里，有个酷炫的名字，叫 TraceID ！” (PPT上TraceID高亮放大) “你看，就像这个19位的数字，当一个请求进来，我们就给它盖个章！无论它接下来是走HTTP、还是RPC、甚至是异步MQ，这个ID就跟个GPS一样，全程跟着它！” “它就像一条 隐形的红线 ，把所有散落的珍珠（日志）全都串了起来！” [PPT Slide 5: 效果对比页] “有了它，效果有多炸裂？我们看一下对比就知道了！” (左手指向PPT左边“传统方式”) “过去，东翻西找，猜来猜去， 40分钟 起步！” (右手指向PPT右边“TraceID方式”，加重语气) “现在，只需要复制这"
+    },
+    {
+      "slug": "pg2i42xpkdel9esa",
+      "title": "介绍一下云计算中的冷启动、热迁移和容灾，以及它们的优缺点",
+      "url": "/tulingzhouyu/db22bv/pg2i42xpkdel9esa",
+      "toc_path": [
+        "云计算",
+        "介绍一下云计算中的冷启动、热迁移和容灾，以及它们的优缺点"
+      ],
+      "toc_level": 1,
+      "toc_index": 1419,
+      "word_count": 753,
+      "updated_at": "2023-09-04T05:40:01.000Z",
+      "primary_category": "observability-troubleshooting",
+      "primary_category_name": "线上排障与可观测性",
+      "related_categories": [
+        "observability-troubleshooting"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "故障"
+      ],
+      "summary": "冷启动、热迁移和容灾是云计算中的三个重要概念，它们在应用程序的迁移和维护中发挥着重要作用。冷迁移：冷迁移是指将一台虚拟机从一个主机迁移到另一个主机，而虚拟机在迁移过程中需要关闭电源。因此，冷迁移是一种不中断业务的迁移方式，适用于需要停机维护或迁移到新的主机环境中。优点：可以将虚拟机完整地迁移到...",
+      "excerpt": "冷启动、热迁移和容灾是云计算中的三个重要概念，它们在应用程序的迁移和维护中发挥着重要作用。 冷迁移： 冷迁移是指将一台虚拟机从一个主机迁移到另一个主机，而虚拟机在迁移过程中需要关闭电源。因此，冷迁移是一种不中断业务的迁移方式，适用于需要停机维护或迁移到新的主机环境中。 优点： 可以将虚拟机完整地迁移到新的主机环境中，包括虚拟机实例、存储卷等。 迁移完成后，可以重新启动虚拟机并恢复业务运行。 缺点： 在迁移过程中需要关闭电源，可能会对正在运行的应用程序造成影响。 操作复杂，需要手动操作虚拟机的关闭和启动。 热迁移： 热迁移是指在虚拟机运行的情况下，将其从一个计算节点迁移到另一个计算节点，而无需关闭电源。因此，热迁移是一种对用户无感知的迁移方式，适用于需要不中断业务的高可用性场景。 优点： 在迁移过程中无需关闭电源，对正在运行的应用程序无影响。 可以实现零停机的业务连续性，提高系统的可用性。 缺点： 对虚拟机的状态和资源占用情况有一定要求，不是所有的虚拟机都可以进行热迁移。 操作相对复杂，需要选择合适的迁移时机和目标主机。 容灾： 容灾是指在发生硬件故障、自然灾害等重大事件时，通过备份和恢复机制，确保业务能够继续正常运行。因此，容灾是一种保证业务连续性的重要手段，适用于对业务连续性要求非常高的场景。 优点： 可以保证在重大事件发生时，业务能够继续正常运行，减少业务中断的影响。 可以实现数据备份和恢复，保证数据的完整性和可靠性。 缺点： 需要投入一定的资源和成本建立容灾机制，包括备份设备和恢复机制的建设和维护。 在恢复过程中可能会对业务运行造成一定的影响，需要合理规划恢复策略和流程。 综上所述，冷迁移、热迁移和容灾各有其优缺点和适用场景。在实际应用中，需要根据具体的需求和情况选择合适的迁移和容灾策略，以达到最佳的业务连续性和可用性效果。"
+    },
+    {
+      "slug": "mdvs585lm3vc4ogf",
+      "title": "5.模型微调怎么评估效果",
+      "url": "/tulingzhouyu/db22bv/mdvs585lm3vc4ogf",
+      "toc_path": [
+        "AI大模型面试",
+        "5.模型微调怎么评估效果"
+      ],
+      "toc_level": 1,
+      "toc_index": 1493,
+      "word_count": 1525,
+      "updated_at": "2025-07-14T07:45:37.000Z",
+      "primary_category": "observability-troubleshooting",
+      "primary_category_name": "线上排障与可观测性",
+      "related_categories": [
+        "observability-troubleshooting",
+        "performance-optimization",
+        "ai-llm",
+        "java-core",
+        "devops-release"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "campus",
+        "expert"
+      ],
+      "level_names": [
+        "校招/应届生",
+        "专家/P7+"
+      ],
+      "keywords": [
+        "线上",
+        "监控",
+        "日志",
+        "性能",
+        "优化",
+        "AI",
+        "大模型",
+        "LLM",
+        "异常",
+        "部署"
+      ],
+      "summary": "答题思路在面试中被问到“模型微调怎么评估效果”时，可以从技术指标、业务目标和实际场景等多个角度展开回答。以下是一个结构化且全面的回答思路：明确评估目标技术指标评估业务场景适配性效率与稳定性长期监控与迭代回答框架1. 明确评估目标首先需要明确微调的目标是什么：是提升模型在特定任务的性能？优化推理...",
+      "excerpt": "答题思路 在面试中被问到“模型微调怎么评估效果”时，可以从 技术指标 、 业务目标 和 实际场景 等多个角度展开回答。以下是一个结构化且全面的回答思路： 明确评估目标 技术指标评估 业务场景适配性 效率与稳定性 长期监控与迭代 回答框架 明确评估目标 首先需要明确微调的目标是什么：是提升模型在特定任务的性能？优化推理速度？还是解决领域适应性问题？不同的目标对应不同的评估方法。 技术指标评估 基础指标 ： 训练损失：观察模型在训练集上的损失是否收敛，若持续下降且稳定，说明模型学习了训练数据。 验证损失：在独立验证集上检查损失，若验证损失与训练损失差距过大（如验证损失上升），可能出现过拟合。 分类任务：准确率（Accuracy）、精确率（Precision）、召回率（Recall）、F1-Score、AUC-ROC曲线等。 生成任务：BLEU、ROUGE、METEOR（文本生成）；生成结果的流畅性、逻辑性等（人工评估）。 回归任务：MSE、MAE、R²。 困惑度（Perplexity）：评估模型对测试数据的预测能力，值越低说明模型越适应任务。 对比实验 ： 与 未微调的基线模型 （如原版LLM）在相同测试集上对比性能提升。 与 其他微调方法 （如LoRA、全参数微调）或不同超参数组合的结果对比。 过拟合/欠拟合分析 ： 检查训练集和验证集的指标差异（如训练Loss下降但验证Loss上升可能过拟合）。 通过交叉验证（Cross-Validation）或学习曲线（Learning Curve）判断模型泛化性。 业务场景适配性 领域相关指标 ： 领域内测试 构建领域相关的测试集，验证模型是否掌握专业术语、逻辑和行业规范。 例如：医疗领域模型需准确回答疾病诊断建议，金融领域模型需符合合规性。 跨领域泛化 用未见过的数据（或跨领域数据）测试模型，观察性能是否显著下降，判断是否过拟合。 业务KPI ： 如果微调目标是提升用户转化率，需通过A/B测试对比微调前后的业务指标（如点击率、留存率）。 人工评估 ： 邀请领域专家或用户对模型输出进行主观评分（如相关性、专业性、流畅性）。 对生成内容进行人工打分，评估维度包括： 相关性：内容是否符合任务需求（如客服问答是否切题）。 流畅性：语言是否自然、符合语法。 事实准确性：生成内容是否包含错误或虚构信息。 多样性：避免重复性回答（例如在创意生成任务中）。 下游任务表现 将微调后的模型嵌入实际业务流，测试端到端效果： 例如，客服场景中统计问题解决率、用户满意度。 代码生成任务中检查代码通过率或编译成功率 效率与稳定性 推理速度 ：微调后模型的响应时间是否满足业务需求（如实时性要求）。 资源占用 ：显存占用、模型体积是否适配部署环境（如移动端、边缘设备）。 输出稳定性 ：多次输入相同/相似问题时，输出是否一致（避免“模型幻觉”）。 长期"
+    }
+  ]
+}

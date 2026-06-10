@@ -1,0 +1,1340 @@
+{
+  "id": "mq-rocketmq",
+  "name": "RocketMQ",
+  "aliases": [
+    "RocketMQ",
+    "事务消息",
+    "顺序消息",
+    "延迟消息",
+    "消息堆积",
+    "重复消费"
+  ],
+  "count": 30,
+  "total_word_count": 47096,
+  "articles": [
+    {
+      "slug": "fndpbpml9b19czom",
+      "title": "智能家居监控系统数据收集积压优化",
+      "url": "/tulingzhouyu/db22bv/fndpbpml9b19czom",
+      "toc_path": [
+        "面试必看",
+        "项目亮点和难点",
+        "智能家居监控系统数据收集积压优化"
+      ],
+      "toc_level": 2,
+      "toc_index": 28,
+      "word_count": 906,
+      "updated_at": "2024-08-21T09:12:15.000Z",
+      "primary_category": "mq-rocketmq",
+      "primary_category_name": "RocketMQ",
+      "related_categories": [
+        "mq-rocketmq",
+        "observability-troubleshooting",
+        "mq-kafka",
+        "docker-k8s",
+        "resume-project"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "RocketMQ",
+        "监控",
+        "告警",
+        "Consumer",
+        "Service",
+        "项目",
+        "亮点",
+        "难点"
+      ],
+      "summary": "假设我们正在开发一个智能家居监控系统。该系统从数百万个智能设备（如温度传感器、安全摄像头、烟雾探测器等）收集数据，并通过 RocketMQ 将这些数据传输到后端进行处理和分析。在某些情况下，比如突发事件或系统升级时，可能会导致消息处理速度跟不上消息生产速度，从而造成消息积压。亮点：Rocket...",
+      "excerpt": "假设我们正在开发一个智能家居监控系统。该系统从数百万个智能设备（如温度传感器、安全摄像头、烟雾探测器等）收集数据，并通过 RocketMQ 将这些数据传输到后端进行处理和分析。 在某些情况下，比如突发事件或系统升级时，可能会导致消息处理速度跟不上消息生产速度，从而造成消息积压。 亮点：RocketMQ 消息大量积压问题的解决 要解决这个问题，我们可以采取以下策略： 增加消费者数量 提高单个消费者的处理能力 实现动态扩缩容 消息优先级处理 临时存储和批量处理 下面是具体的实现方案和代码示例： 消费者配置 动态扩缩容服务 消息优先级处理 临时存储和批量处理服务 监控和告警服务 解决方案说明： 增加消费者数量 ：通过 ConsumerScalingService 动态调整消费者线程数。 提高单个消费者的处理能力 ：在 RocketMQConsumerConfig 中配置了较大的并发消费线程数。 实现动态扩缩容 ： MessageAccumulationMonitor 服务监控消息积压情况，并根据需要动态调整消费者数量。 消息优先级处理 ： PriorityMessageProcessor 服务对高优先级消息（如安全警报）进行优先处理。 临时存储和批量处理 ：对于无法及时处理的消息，先存储到本地数据库，然后通过 BatchProcessingService 定期批量处理。 监控和告警 ： MessageAccumulationMonitor 服务监控消息积压情况，当积压严重时发送告警。 通过以上方案，我们能够有效地处理 RocketMQ 消息积压问题，确保智能家居监控系统能够及时处理大量设备数据，特别是在数据突增的情况下。这个方案不仅提高了系统的吞吐量，还保证了关键数据的及时处理，同时通过动态扩缩容和批量处理来优化资源使用。"
+    },
+    {
+      "slug": "frttoahqvhdy7dnh",
+      "title": "优惠券过期使用RocketMQ的延时任务实现",
+      "url": "/tulingzhouyu/db22bv/frttoahqvhdy7dnh",
+      "toc_path": [
+        "面试必看",
+        "项目亮点和难点",
+        "优惠券过期使用RocketMQ的延时任务实现"
+      ],
+      "toc_level": 2,
+      "toc_index": 31,
+      "word_count": 840,
+      "updated_at": "2024-08-20T13:18:42.000Z",
+      "primary_category": "mq-rocketmq",
+      "primary_category_name": "RocketMQ",
+      "related_categories": [
+        "mq-rocketmq",
+        "mq-general",
+        "resume-project",
+        "docker-k8s",
+        "project-system-design"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "RocketMQ",
+        "MQ",
+        "项目",
+        "亮点",
+        "难点",
+        "Service",
+        "订单"
+      ],
+      "summary": "实现优惠券过期功能可以通过RocketMQ的延时消息来处理。延时消息可以使消息在一段可预见的时间后被消费，这对于实现定时任务和处理过期机制非常有效。下面是一个详细的项目示例和代码说明，描述如何使用RocketMQ来管理优惠券的过期处理。项目背景假设我们有一个电商系统，用户在下单时可以使用优惠券...",
+      "excerpt": "实现优惠券过期功能可以通过RocketMQ的延时消息来处理。延时消息可以使消息在一段可预见的时间后被消费，这对于实现定时任务和处理过期机制非常有效。下面是一个详细的项目示例和代码说明，描述如何使用RocketMQ来管理优惠券的过期处理。 项目背景 假设我们有一个电商系统，用户在下单时可以使用优惠券。每张优惠券都有一个有效期，当优惠券过期时，我们需要将其标记为无效，以防止在后续订单中使用。 项目结构 优惠券服务（Coupon Service）：管理优惠券的创建、使用和过期管理。 RocketMQ消息组件：用于发送和消费延时消息。 延时消息机制：通过RocketMQ发送优惠券过期的延时消息。 核心代码实现 1. 实体类 优惠券模型 2. 优惠券服务 优惠券接口 优惠券服务 3. RocketMQ延时消息消费 代码说明 实体类 ： Coupon 类代表一张优惠券，包括优惠券代码、过期时间和有效性状态。 优惠券服务 ： createCoupon 方法负责创建新的优惠券，并发送一条延时消息，这条消息将在优惠券到期时被消费。 延时消息机制 ： 使用 rocketMQTemplate.syncSend 方法发送延时消息，其中 delayTime 计算为优惠券过期时间减去当前时间得到的毫秒数。 消息消费 ： CouponExpirationListener 监听指定的主题，消费消息并将对应优惠券标记为无效。这一过程依赖于RocketMQ的延时消息特性。 项目亮点 自动过期 ：通过延时消息自动管理优惠券的过期，无需手动干预。 降低复杂度 ：避免手动调度任务或定时任务，完全依靠消息中间件实现。 节省资源 ：只有在消息到期时才触发处理逻辑，节省系统资源。 高效性 ：RocketMQ的高性能保证了延时消息的高效处理，使得过期机制既可靠又快速。 通过这种方式，你可以很容易地处理类似的过期场景，不仅限于优惠券，也适用于租赁、订阅等其他领域的到期处理。"
+    },
+    {
+      "slug": "iru3beqk822rqtge",
+      "title": "喜马拉雅面试",
+      "url": "/tulingzhouyu/db22bv/iru3beqk822rqtge",
+      "toc_path": [
+        "面试必看",
+        "最全面经",
+        "喜马拉雅面试"
+      ],
+      "toc_level": 2,
+      "toc_index": 89,
+      "word_count": 435,
+      "updated_at": "2023-09-05T09:24:22.000Z",
+      "primary_category": "mq-rocketmq",
+      "primary_category_name": "RocketMQ",
+      "related_categories": [
+        "mq-rocketmq",
+        "spring-cloud",
+        "jvm-memory-gc",
+        "mysql-index-transaction",
+        "mq-general"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle",
+        "senior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "事务消息",
+        "JVM",
+        "调优",
+        "索引",
+        "事务",
+        "MVCC",
+        "锁",
+        "MQ"
+      ],
+      "summary": "TIPS：简历上写源码的需要准备的深入一点一面：技术，1.有一个500W的数据，比如一条数据对应一个用户和一个学习进度。生产上，我要每一个记录通过一定计算后放到另一个地方，怎么设计？你会考虑到哪些。这些数据不能删除。会越来越大的。2.ROCKETMQ的源码，非常细，问到你不会，我是被问到他会有...",
+      "excerpt": "TIPS：简历上写源码的需要准备的深入一点 一面：技术， 1.有一个500W的数据，比如一条数据对应一个用户和一个学习进度。生产上，我要每一个记录通过一定计算后放到另一个地方，怎么设计？ 你会考虑到哪些。这些数据不能删除。会越来越大的。 2.ROCKETMQ的源码，非常细，问到你不会，我是被问到他会有个raft协议，他问我这个raft协议是自己实现的还是借助别人的，这个我没看过。 3.JVM调优举个例子。 4.syncronize和retreentlock区别？说了一半后就直接跳着问，syncronize这个锁，是在哪里？字节码是什么，是以什么方式 5.MVCC谈一下 6.零拷贝谈一下，rocketmq是用了哪种 7.句子a:&quot;i like cat&quot; 句子b:&quot;cat is an animal&quot; 写两个方法 init()把字符加载进内存 List get(List str)根据搜索的单词查出句子的索引号集合。 自己设计，这是一个简单的搜索程序 ​ 二面：业务 很多人事问题 ​ 三面：技术 感觉是放我过的，很多没回答上来 1.设计一个本地缓存。你考虑哪些方面 2.谈一个你做的商城的模块，架构如何设计?秒杀如何设计的 3.rocketmq的brocker的线程模型 4.dubbo和spring cloud的区别 5.消息可靠性如何保证 6.让你自己设计一个事务消息，怎么设计 7.JVM调优举个例子。 四面：HR 五面：还不知道有没有"
+    },
+    {
+      "slug": "pcztmw6gdpmg3l83",
+      "title": "🚛 RocketMQ5.x教程-从安装到实战到经典面试题",
+      "url": "/tulingzhouyu/db22bv/pcztmw6gdpmg3l83",
+      "toc_path": [
+        "系列篇",
+        "🚛 RocketMQ5.x教程-从安装到实战到经典面试题"
+      ],
+      "toc_level": 1,
+      "toc_index": 112,
+      "word_count": 13936,
+      "updated_at": "2025-04-14T07:32:55.000Z",
+      "primary_category": "mq-rocketmq",
+      "primary_category_name": "RocketMQ",
+      "related_categories": [
+        "mq-rocketmq",
+        "mq-general",
+        "mq-kafka",
+        "redis-persistence-cluster",
+        "os-linux"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "middle",
+        "senior",
+        "campus"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "RocketMQ",
+        "消息堆积",
+        "MQ",
+        "消息队列",
+        "异步解耦",
+        "Topic",
+        "Consumer",
+        "Cluster",
+        "集群",
+        "Linux",
+        "进程",
+        "内存"
+      ],
+      "summary": "1.RocketMQ介绍RocketMQ是一款由阿里巴巴开源的分布式消息中间件。它具有低延迟、高吞吐量、高可用性和高可靠性等特点，适用于构建具有海量消息堆积和异步解耦功能的应用系统。1.1.基本概念生产者（Producer）：也称为消息发布者，是RocketMQ中用来构建并传输消息到服务端的运...",
+      "excerpt": "1.RocketMQ介绍 RocketMQ是一款由阿里巴巴开源的分布式消息中间件。它具有低延迟、高吞吐量、高可用性和高可靠性等特点，适用于构建具有海量消息堆积和异步解耦功能的应用系统。 1.1.基本概念 生产者（Producer） ：也称为 消息发布者， 是RocketMQ中用来构建并传输消息到服务端的运行实体。 主题（Topic） ：Topic是RocketMQ中消息传输和存储的顶层容器，用于标识同一类业务逻辑的消息； Topic是一个逻辑概念，并不是实际的消息容器； ​ 消息队列（MessageQueue） ：队列是RocketMQ中消息存储和传输的实际容器，也是消息的最小存储单元。 消费者（Consumer） ： 也称为消息订阅者， 是RocketMQ中用来接收并处理消息的运行实体。 消费者组（ConsumerGroup） ：消费者组是RocketMQ中承载多个消费行为一致的消费者负载均衡分组。和消费者不同，消费者组是一个逻辑概念。 NameServer ： 可以理解成注册中心，负责 更新和发现Broker服务 。在NameServer的集群中，NameServer与NameServer之间是没有任何通信的，它是无状态的。 Broker ：可以理解为 消息中转角色， 负责消息的存储和转发，接收生产者产生的消息并持久化消息；当用户发送的消息被发送到Broker时，Broker会将消息转发到与之关联的Topic中，以便让更多的接收者进行处理。 1.2.消息模型 1.3.部署模型 2.下载RocketMQ RocketMQ的官网地址： https://rocketmq.apache.org/ Github地址： https://github.com/apache/rocketmq 下载地址： https://rocketmq.apache.org/zh/download/ 当前最新的版本为5.1.0，本教程安装5.1.0版本。 3.安装RocketMQ 3.1.安装前需要准备一个CentOS7的Linux机器，使用的Linux版本如下： 3.2.安装JDK 推荐使用JDK1.8版本。可以使用课件资料包或者自行下载tar.gz包。 1.统一规划目录，创建app文件夹，在创建jdk文件夹，将jdk的包上载到 /app/jdk目录下然后解压 2.配置jdk环境变量，将JAVA_HOME变量加上;将path路径替换成相应配置 3.更新配置并查看jdk版本，显示以下信息则安装成功。 3.3.安装RocketMQ 3.3.1.将安装包上载到 /app/rocketMQ目录下 3.3.2.配置rocketMQ环境变量 3.3.3.更新配置 ROCKETMQ_HOME的环境变量是必须要单独配置的，如果不配置的话，启动NameSever和Broker都会报错。这个环境变量的作"
+    },
+    {
+      "slug": "wp0sptu2ox10kgwl",
+      "title": "为什么 RocketMQ 一个 CommitLog文件就能抗住百万QPS",
+      "url": "/tulingzhouyu/db22bv/wp0sptu2ox10kgwl",
+      "toc_path": [
+        "Rocketmq",
+        "为什么 RocketMQ 一个 CommitLog文件就能抗住百万QPS"
+      ],
+      "toc_level": 1,
+      "toc_index": 660,
+      "word_count": 1561,
+      "updated_at": "2026-01-09T08:49:35.000Z",
+      "primary_category": "mq-rocketmq",
+      "primary_category_name": "RocketMQ",
+      "related_categories": [
+        "mq-rocketmq",
+        "os-linux",
+        "performance-optimization",
+        "java-core",
+        "mq-kafka"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "middle",
+        "senior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "RocketMQ",
+        "操作系统",
+        "线程",
+        "内存",
+        "文件",
+        "上下文切换",
+        "性能",
+        "优化",
+        "QPS",
+        "吞吐",
+        "Java",
+        "IO",
+        "Kafka"
+      ],
+      "summary": "很多初学者觉得不可思议：磁盘 IO 那么慢，数据库插入几万条都费劲，RocketMQ 凭什么往一个文件里写数据能抗住百万 QPS？秘密在于它把 \"磁盘\" 当 \"内存\" 用。RocketMQ 的核心设计哲学是：顺序写盘（Sequential Write） + 零拷贝（Zero Copy） + 内...",
+      "excerpt": "很多初学者觉得不可思议： 磁盘 IO 那么慢，数据库插入几万条都费劲，RocketMQ 凭什么往一个文件里写数据能抗住百万 QPS？ 秘密在于它把 &quot;磁盘&quot; 当 &quot;内存&quot; 用。 RocketMQ 的核心设计哲学是： 顺序写盘（Sequential Write） + 零拷贝（Zero Copy） + 内存映射（mmap）。 我们分四个层级，像剥洋葱一样为你揭秘。 第一层：架构设计——“一种文件存所有” RocketMQ 与 Kafka 最大的不同在于： Kafka ：每个 Topic 的每个 Partition 一个文件。如果有 1000 个 Topic，写磁盘就是 1000 个文件的随机 IO。 RocketMQ ：无论你有多少 Topic，所有消息全部写入 同一个 逻辑文件，叫做 CommitLog 。 为什么要这么做？ 为了把 随机 IO 强制转换为 顺序 IO 。 随机 IO (Random I/O) ：磁头在盘面上疯狂跳动，寻道时间极长（最慢）。 顺序 IO (Sequential I/O) ：磁头几乎不动，一直往后写。 性能数据对比 ： 在机械硬盘（HDD）上，顺序写的速度可以达到 600MB/s ，这甚至比 随机写内存 还要快！ 我为你生成了一张架构图，直观对比这两种模式： 这图左边是普通 MQ 的噩梦，右边是 RocketMQ 的“单行道”策略。所有消息不分 Topic，全部排队进入 CommitLog，这就保证了极致的写性能。 第二层：底层实现—— MappedFile 与 mmap 即使是顺序写，如果每次写都要发生 用户态 <-> 内核态 的切换，性能也会崩。 RocketMQ 使用了 JDK 的 MappedByteBuffer ，也就是操作系统的 mmap (Memory Mapped Files) 技术。 1. 什么是 mmap？ 它将磁盘文件直接映射到内存（PageCache）。 写数据 ：直接写入内存映射区，操作系统会在后台异步刷盘到磁盘。 读数据 ：直接从内存读，如果内存没有，操作系统利用缺页中断加载。 2. Java 代码实现原理 在 RocketMQ 源码中， MappedFile 类是核心。每个 MappedFile 固定大小 1GB 。 import java.io.File; import java.io.RandomAccessFile; import java.nio.MappedByteBuffer; import java.nio.channels.FileChannel; public class MappedFileDemo { } 代码深度解析 ： fileChannel.map 是系统调用。它返回的 MappedByteBuffer 对象，让你操作文件就像操作内存"
+    },
+    {
+      "slug": "ws61ctgxr8kv3378",
+      "title": "RocketMQ的Producer是如何发送消息的",
+      "url": "/tulingzhouyu/db22bv/ws61ctgxr8kv3378",
+      "toc_path": [
+        "Rocketmq",
+        "RocketMQ的Producer是如何发送消息的"
+      ],
+      "toc_level": 1,
+      "toc_index": 661,
+      "word_count": 889,
+      "updated_at": "2024-08-18T13:05:05.000Z",
+      "primary_category": "mq-rocketmq",
+      "primary_category_name": "RocketMQ",
+      "related_categories": [
+        "mq-rocketmq",
+        "mq-general",
+        "microservices-governance",
+        "java-concurrency",
+        "mq-kafka"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "RocketMQ",
+        "MQ",
+        "重试",
+        "超时",
+        "多线程",
+        "线程",
+        "Topic"
+      ],
+      "summary": "RocketMQ的Producer发送消息过程涉及多个步骤，包括初始化、消息创建、发送方式选择等。让我们通过代码示例来详细解析这个过程。1. Producer初始化首先，我们需要创建并初始化一个Producer实例。import org.apache.rocketmq.client.produ...",
+      "excerpt": "RocketMQ的Producer发送消息过程涉及多个步骤，包括初始化、消息创建、发送方式选择等。让我们通过代码示例来详细解析这个过程。 1. Producer初始化 首先，我们需要创建并初始化一个Producer实例。 这段代码完成了以下步骤： 创建 DefaultMQProducer 实例，并指定生产者组名。 设置NameServer地址，用于服务发现和路由。 调用 start() 方法启动Producer。 2. 创建消息 接下来，我们需要创建要发送的消息。 这里我们创建了一个 Message 对象，指定了主题（Topic）、标签（Tag）、键（Key）和消息体。 3. 发送消息 RocketMQ支持多种发送方式，主要包括同步发送、异步发送和单向发送。 3.1 同步发送 同步发送会等待服务器响应，适用于重要的通知消息。 3.2 异步发送 异步发送适用于对响应时间敏感的业务场景。 3.3 单向发送 单向发送不关心发送结果，适用于不太重要的日志收集类消息。 4. 批量发送 RocketMQ还支持批量发送消息，以提高传输效率。 5. 发送过程中的重要考虑因素 消息大小 ：默认限制4MB，可以通过配置修改。 发送超时 ：可以设置发送超时时间，例如： 重试机制 ：同步和异步发送支持自动重试，可以设置重试次数： 6. 最佳实践 合理使用Tag：可以用于消息过滤，提高消费效率。 适当设置Key：方便根据Key查询消息。 合理选择发送方式：根据业务场景选择同步、异步或单向发送。 注意异常处理：特别是在同步发送时，要处理可能的异常。 Producer实例线程安全：可在多线程环境中共享。 通过以上详细说明和代码示例，我们可以看到RocketMQ的Producer发送消息涉及多个方面，包括初始化、消息创建、多种发送方式、批量发送等。正确理解和使用这些特性，可以帮助开发者更好地利用RocketMQ来构建高效、可靠的消息传输系统。"
+    },
+    {
+      "slug": "xmoqrypne7cv9pft",
+      "title": "RocketMQ的存储模型和底层优化策略有哪些",
+      "url": "/tulingzhouyu/db22bv/xmoqrypne7cv9pft",
+      "toc_path": [
+        "Rocketmq",
+        "RocketMQ的存储模型和底层优化策略有哪些"
+      ],
+      "toc_level": 1,
+      "toc_index": 662,
+      "word_count": 1705,
+      "updated_at": "2026-01-13T05:15:23.000Z",
+      "primary_category": "mq-rocketmq",
+      "primary_category_name": "RocketMQ",
+      "related_categories": [
+        "mq-rocketmq",
+        "os-linux",
+        "mq-general",
+        "java-core",
+        "performance-optimization"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle",
+        "senior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "RocketMQ",
+        "操作系统",
+        "线程",
+        "内存",
+        "文件",
+        "上下文切换",
+        "MQ",
+        "Java",
+        "IO",
+        "性能",
+        "优化",
+        "瓶颈"
+      ],
+      "summary": "RocketMQ 存储模型与底层优化深度解析RocketMQ 的存储设计遵循一个核心理念：极致的顺序写，配合灵活的随机读。第一层：宏观存储架构（The Big Picture）RocketMQ 的存储文件主要由三个核心部分组成：CommitLog、ConsumeQueue 和 IndexFil...",
+      "excerpt": "RocketMQ 存储模型与底层优化深度解析 RocketMQ 的存储设计遵循一个核心理念： 极致的顺序写，配合灵活的随机读 。 第一层：宏观存储架构（The Big Picture） RocketMQ 的存储文件主要由三个核心部分组成： CommitLog 、 ConsumeQueue 和 IndexFile 。我们可以用“图书馆”来类比这个模型。 1. 三大核心文件 文件类型 作用 对应图书馆类比 关键特性 CommitLog 消息主体存储 。无论哪个Topic的消息，全部混在一起顺序写入这个大文件。 书库的所有书籍 （按入库时间堆放，不分类） 顺序写，单个默认1GB，文件名是起始偏移量。 ConsumeQueue 逻辑消费队列 。主要存储消息在CommitLog中的偏移量，供消费者拉取。 索引卡片/分类目录 （按类别分类，指向书的位置） 索引文件，定长设计（20字节），轻量级。 IndexFile 哈希索引 。提供根据 Key 或时间区间查询消息的能力。 书名/作者检索电脑 底层是Hash表结构，用于运维排查。 2. 存储结构图解 第二层：核心优化策略（The Secret Sauce） RocketMQ 为什么快？核心在于它绕过了操作系统标准IO的瓶颈。 1. 顺序写（Sequential Write） 磁盘（尤其是机械硬盘HDD）最怕随机IO（磁头频繁寻道）。 RocketMQ的做法 ：所有 Topic 的消息 全部 写入同一个 CommitLog 。 效果 ：将随机写变成了顺序写。实验表明，磁盘顺序写的速度（约600MB/s）可以媲美内存的随机写。 2. 零拷贝技术（Zero Copy）与 mmap 这是 Java 高性能 IO 的基石。 传统 IO 的痛点 普通的 read/write 操作需要 4次拷贝 和 4次上下文切换 ： Disk -> Kernel Buffer -> User Buffer -> Kernel Socket Buffer -> NIC (网卡)。 mmap (内存映射文件) RocketMQ 使用 Java NIO 的 MappedByteBuffer 。 原理 ：将内核空间的 PageCache 直接映射到用户空间的虚拟地址。 效果 ： 写数据：直接写入用户态的内存地址（实际是 PageCache），由 OS 异步刷盘。 读数据：直接从 PageCache 读取，少了一次内核到用户的拷贝。 限制 ： MappedByteBuffer 单个文件限制在 1.5GB - 2GB 左右，所以 RocketMQ 的 CommitLog 设定为 1GB。 Java 代码演示 mmap 3. PageCache 与 预读（Readahead） RocketMQ 严重依赖操作系统的 PageCache （页缓存）。 写 ：消息先写"
+    },
+    {
+      "slug": "zhl8on233n8kc7h6",
+      "title": "RocketMQ有哪些使用场景",
+      "url": "/tulingzhouyu/db22bv/zhl8on233n8kc7h6",
+      "toc_path": [
+        "Rocketmq",
+        "RocketMQ有哪些使用场景"
+      ],
+      "toc_level": 1,
+      "toc_index": 663,
+      "word_count": 868,
+      "updated_at": "2024-09-23T12:44:21.000Z",
+      "primary_category": "mq-rocketmq",
+      "primary_category_name": "RocketMQ",
+      "related_categories": [
+        "mq-rocketmq",
+        "mq-general",
+        "mq-kafka",
+        "distributed-transaction",
+        "project-system-design"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "RocketMQ",
+        "事务消息",
+        "顺序消息",
+        "MQ",
+        "消息队列",
+        "削峰",
+        "Topic",
+        "分布式事务",
+        "高并发"
+      ],
+      "summary": "RocketMQ是一个分布式消息中间件，最初由阿里巴巴开发并开源，现在是Apache基金会孵化的顶级项目。与其他消息中间件类似，RocketMQ的核心功能是提供一种可靠、高效、可扩展的分布式消息传递机制。在大型分布式系统中，RocketMQ用于实现系统间的异步通信、解耦和数据流管理。Rocke...",
+      "excerpt": "RocketMQ是一个分布式消息中间件，最初由阿里巴巴开发并开源，现在是Apache基 ​ 金会孵化的顶级项目。与其他消息中间件类似，RocketMQ的核心功能是提供一种可靠、高效、可扩展的分布式消息传递机制。在大型分布式系统中，RocketMQ用于实现系统间的异步通信、解耦和数据流管理。 RocketMQ的主要特性 高吞吐量 ：RocketMQ可以处理高流量、低延迟的数据流，非常适合金融、电子商务等高并发场景。 高可靠性 ：通过消息持久化、多副本机制，RocketMQ确保消息的高度可靠性。 灵活的消息模型 ：支持多种模型，包括点对点和发布/订阅。 支持顺序消息 ：可以保证在同一主题内，消息的消费顺序。 事务消息 ：支持分布式事务，确保消息与数据库操作的一致性。 丰富的消息过滤机制 ：支持基于Tag和属性的消息过滤。 使用场景 系统解耦 ：微服务架构中，服务间通信通过消息中间件实现解耦，降低服务间的相互依赖。 异步处理 ：非实时处理任务通过消息队列异步执行，提高系统响应速度。 流量削峰 ：在高并发情况下，消息队列可以缓冲流量，防止流量骤增导致系统崩溃。 事件驱动架构 ：实现复杂业务流程的事件驱动，推动业务中各个阶段的事件流转。 日志处理 ：收集和处理日志、监控数据等场景，尤其适合大规模数据的实时处理。 代码示例 生产者示例 生产者用于将消息发送到指定的Topic。 消费者示例 消费者用于从Topic消费消息。 总结 RocketMQ是一个功能强大且灵活的分布式消息中间件，适用于各种规模的应用程序，从小型应用到大型企业级系统。它在高可用性、可扩展性和丰富功能支持方面表现出色，因此在许多复杂场景中都得到了广泛应用。通过提供异步通信机制和支持事件驱动架构，RocketMQ帮助开发者构建健壮、高效的现代应用程序。"
+    },
+    {
+      "slug": "iz20l15657osg030",
+      "title": "RocketMQ消费消息是推模式还是拉模式",
+      "url": "/tulingzhouyu/db22bv/iz20l15657osg030",
+      "toc_path": [
+        "Rocketmq",
+        "RocketMQ消费消息是推模式还是拉模式"
+      ],
+      "toc_level": 1,
+      "toc_index": 665,
+      "word_count": 874,
+      "updated_at": "2024-08-18T13:31:38.000Z",
+      "primary_category": "mq-rocketmq",
+      "primary_category_name": "RocketMQ",
+      "related_categories": [
+        "mq-rocketmq",
+        "mq-kafka",
+        "mq-general",
+        "performance-optimization"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "RocketMQ",
+        "Consumer",
+        "MQ",
+        "性能",
+        "优化"
+      ],
+      "summary": "RocketMQ实际上同时支持推模式和拉模式来消费消息，但这里有一个有趣的细节：虽然RocketMQ提供了所谓的\"推模式\"消费者，但在底层实现上，它仍然是基于拉模式的。让我们详细探讨这两种模式，并通过代码示例来解释它们的工作原理。1. 推模式（Push Mode）虽然称为\"推模式\"，但Rock...",
+      "excerpt": "RocketMQ实际上同时支持推模式和拉模式来消费消息，但这里有一个有趣的细节：虽然RocketMQ提供了所谓的&quot;推模式&quot;消费者，但在底层实现上，它仍然是基于拉模式的。让我们详细探讨这两种模式，并通过代码示例来解释它们的工作原理。 1. 推模式（Push Mode） 虽然称为&quot;推模式&quot;，但RocketMQ的DefaultMQPushConsumer实际上是在内部通过长轮询（Long Polling）来实现的，这本质上还是一种拉模式。不过，对于开发者来说，使用起来就像是推模式，因为消息会自动被&quot;推送&quot;到消费者的监听器中。 推模式示例代码： 在这个例子中，我们使用DefaultMQPushConsumer，它会自动从Broker拉取消息并调用我们注册的监听器。对开发者来说，这就像是消息被推送到了消费者。 2. 拉模式（Pull Mode） 拉模式允许消费者主动从Broker拉取消息。这种模式给了开发者更多的控制权，可以根据自己的节奏来消费消息。 拉模式示例代码： 在这个例子中，我们使用DefaultMQPullConsumer来主动拉取消息。消费者需要自己管理消费偏移量，并决定何时拉取下一批消息。 比较和选择 推模式（Push） : 优点：使用简单，自动管理消费进度，适合大多数场景。 缺点：灵活性较低，无法完全控制消费节奏。 拉模式（Pull） : 优点：更灵活，可以精确控制消费速度和批次大小。 缺点：需要自己管理偏移量，实现相对复杂。 结论 虽然RocketMQ提供了所谓的&quot;推模式&quot;，但实际上它是基于拉模式实现的。对于大多数应用场景，使用DefaultMQPushConsumer就足够了，因为它提供了一个类似推模式的简单接口。只有在需要精细控制消息消费过程时，才需要考虑使用拉模式。 无论选择哪种模式，理解它们的底层工作原理都是很重要的，这样可以在遇到性能问题或特殊需求时做出正确的选择和优化。"
+    },
+    {
+      "slug": "ac2mebudgnn2genu",
+      "title": "RocketMQ消息是如何存储的",
+      "url": "/tulingzhouyu/db22bv/ac2mebudgnn2genu",
+      "toc_path": [
+        "Rocketmq",
+        "RocketMQ消息是如何存储的"
+      ],
+      "toc_level": 1,
+      "toc_index": 666,
+      "word_count": 610,
+      "updated_at": "2024-08-18T14:13:53.000Z",
+      "primary_category": "mq-rocketmq",
+      "primary_category_name": "RocketMQ",
+      "related_categories": [
+        "mq-rocketmq",
+        "os-linux",
+        "mq-general",
+        "mysql-index-transaction",
+        "mq-rabbitmq"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "RocketMQ",
+        "内存",
+        "文件",
+        "MQ",
+        "索引",
+        "队列"
+      ],
+      "summary": "RocketMQ的消息存储是一个复杂而高效的过程，设计上充分考虑了性能和扩展性。消息存储的主要组件包括 CommitLog 文件、消费队列文件（ConsumeQueue）、以及索引文件（IndexFile）。我们来详细解释一下这几个核心部分。1. CommitLog文件CommitLog是Ro...",
+      "excerpt": "RocketMQ的消息存储是一个复杂而高效的过程，设计上充分考虑了性能和扩展性。消息存储的主要组件包括 CommitLog 文件、消费队列文件（ConsumeQueue）、以及索引文件（IndexFile）。我们来详细解释一下这几个核心部分。 1. CommitLog文件 CommitLog是RocketMQ的核心存储文件，负责保存消息的完整内容。 顺序写入 ：所有的消息都顺序写入CommitLog文件，这种方式减少了磁盘寻道时间，提高了写入性能。 文件滚动 ：CommitLog按照固定大小（比如1GB）进行分片。当一个文件写满后，会创建一个新的文件。 存储所有数据 ：包括消息体、主题、队列ID等。 2. ConsumeQueue文件 ConsumeQueue是针对消息的逻辑视图，旨在加快消费者对消息的访问速度。 条目固定 ：每个ConsumeQueue条目固定为20字节，包含消息在CommitLog中的偏移量、消息大小、Tag哈希值。 独立文件 ：每个主题的每个队列都有独立的ConsumeQueue文件，文件路径为 store/consumequeue/{topic}/{queueId} 。 快速定位 ：通过ConsumeQueue，消费者无需扫描整个CommitLog即可快速找到消息的位置。 3. IndexFile文件 IndexFile用于支持消息的快速检索。 哈希索引 ：为消息的key建立哈希索引，支持通过key快速检索消息偏移。 增强查询 ：IndexFile是可选的，用于需要基于消息属性进行快速查找的场景。 消息存储流程 接收消息 ：Broker接收到消息后，将其放入内存缓冲区（待写入CommitLog）。 写入CommitLog ： 每条消息追加到当前活跃的CommitLog文件中。使用顺序写入提升写入效率和磁盘利用率。 同步到ConsumeQueue ： 异步转发服务（ReputMessageService）从CommitLog读取新写入的消息。 将消息的偏移量和其他元数据（如大小和Tag哈希值）存储到相应的ConsumeQueue文件中。 更新IndexFile （可选）： 若消息带有key（如业务ID），则将其哈希和偏移量存入IndexFile。 这样，可以通过该key快速查找消息。"
+    },
+    {
+      "slug": "ryxgh0hscg5yn8wf",
+      "title": "RocketMQ消息积压问题如何解决",
+      "url": "/tulingzhouyu/db22bv/ryxgh0hscg5yn8wf",
+      "toc_path": [
+        "Rocketmq",
+        "RocketMQ消息积压问题如何解决"
+      ],
+      "toc_level": 1,
+      "toc_index": 667,
+      "word_count": 902,
+      "updated_at": "2024-08-19T06:04:32.000Z",
+      "primary_category": "mq-rocketmq",
+      "primary_category_name": "RocketMQ",
+      "related_categories": [
+        "mq-rocketmq",
+        "mq-kafka",
+        "mq-general",
+        "project-system-design",
+        "java-concurrency"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle",
+        "senior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "RocketMQ",
+        "Consumer",
+        "MQ",
+        "方案",
+        "线程"
+      ],
+      "summary": "消息积压是消息中间件中常见的问题，主要由消费速度跟不上生产速度导致。以下是几种解决方案：增加消费者线程数量这是最直接的方法，通过增加消费者线程数来提高消费能力。示例代码：DefaultMQPushConsumer consumer = new DefaultMQPushConsumer(\"Co...",
+      "excerpt": "消息积压是消息中间件中常见的问题，主要由消费速度跟不上生产速度导致。以下是几种解决方案： 增加消费者线程数量 这是最直接的方法，通过增加消费者线程数来提高消费能力。 示例代码： 消息业务异步处理 示例代码： 调整消费者的消费模式 将顺序消费改为并行消费，提高消费效率。 示例代码： 使用消息过滤 通过消息过滤，只消费重要的消息，降低消费压力。 示例代码： 临时扩容 在消息积压严重时，可以临时启动额外的消费者实例来快速消费积压的消息。 示例代码： 调整生产者发送策略 如果可能，可以调整生产者的发送策略，如降低发送频率或者实现背压机制。 示例代码： 代码说明： DefaultMQAdminExt 是 RocketMQ 提供的一个管理类，属于 RocketMQ 的管理工具模块。它继承自 MQAdmin ，是用于扩展和增强 RocketMQ 管理能力的一个类。这个类提供了一系列的管理 API，用于管理和监控 RocketMQ 集群，包括消息查询、消费进度管理、主题管理、Broker 状态监控等功能。 总结： 这些方法可以单独使用，也可以组合使用，具体取决于您的业务场景和系统架构。在实施这些解决方案时，请注意监控系统性能，确保不会因为过度优化而导致其他问题。同时，也要考虑长期的解决方案，如优化系统架构、升级硬件等，以从根本上提高系统的消息处理能力。"
+    },
+    {
+      "slug": "wvxgex2izfl683d0",
+      "title": "短视频",
+      "url": "/tulingzhouyu/db22bv/wvxgex2izfl683d0",
+      "toc_path": [
+        "Rocketmq",
+        "RocketMQ消息积压问题如何解决",
+        "短视频"
+      ],
+      "toc_level": 2,
+      "toc_index": 668,
+      "word_count": 584,
+      "updated_at": "2024-05-24T01:37:35.000Z",
+      "primary_category": "mq-rocketmq",
+      "primary_category_name": "RocketMQ",
+      "related_categories": [
+        "mq-rocketmq",
+        "mq-general",
+        "resume-project",
+        "java-core",
+        "project-system-design"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "RocketMQ",
+        "MQ",
+        "消息队列",
+        "简历",
+        "方案"
+      ],
+      "summary": "不会的技术就不要写在简历里面！你说你熟悉RocketMQ，结果问怎么处理消息挤压都不知道！这不是给自己挖坑吗？所以跟你们说过简历里面写的技术一定要会要不然就相当于浪费面试机会，现在的环境本来面试机会就少，呐。我给大家准备了一份80万字的java面试资料，不会的技术就去里面学就行了， 都给你总结...",
+      "excerpt": "不会的技术就不要写在简历里面 ！你说你熟悉RocketMQ，结果问怎么处理消息挤压都不知道！这不是给自己挖坑吗？所以跟你们说过简历里面写的技术一定要会要不然就相当于浪费面试机会，现在的环境本来面试机会就少，呐。我给大家准备了一份80万字的java面试资料，不会的技术就去里面学就行了， 都给你总结了面试的回答概要，扣666就会发给你。 ​ 哈喽大家我是徐庶，顺便讲下 RocketMQ消息挤压问题。 一般生产者发送消息的速度会快于消费者消费消息的速度，这时就会 产生消息积压 ，从而导致 消息可能 丢失 甚至 影响整个系统的性能和稳定性 。 那怎么解决呢？ 我给你提供4种解决方案，有更多的方式欢迎在评论区交流。 ​ 增加消费者数量 ：既然消息会挤压能说明消息的消费能力不足嘛，增加消费者服务不就完了嘛。 提升消费者的处理能力 ：当然也有可能是消费者代码处理能力不行，导致消费性能低下， 可以针对消费者的处理逻辑进行优化。 增加消息队列的分区数 ：如果消息队列采用了分区机制，可以通过增加分区数来提高消息的并行化处理能力，从而减少消息在单个分区内的积压。 调整消息的生产速率 ：既然消息消费不过来， 那上游就不要给这么快的消息嘛， 太快了人家受不了,慢一点。但是需要业务运行的情况下才可以啊。 5 . 监控和报警 ：建立监控和报警系统，实时监控消息队列的积压情况，及时发现并处理积压问题，当然这是兜底方案不是解决方案了。 ​ 好~ 如果视频看完对你有用别忘了给我三连支持一下，感谢~~~"
+    },
+    {
+      "slug": "vg1tvfm5z3u9cggv",
+      "title": "RocketMQ如何保证消息不丢失",
+      "url": "/tulingzhouyu/db22bv/vg1tvfm5z3u9cggv",
+      "toc_path": [
+        "Rocketmq",
+        "RocketMQ如何保证消息不丢失"
+      ],
+      "toc_level": 1,
+      "toc_index": 669,
+      "word_count": 1303,
+      "updated_at": "2026-01-09T08:57:36.000Z",
+      "primary_category": "mq-rocketmq",
+      "primary_category_name": "RocketMQ",
+      "related_categories": [
+        "mq-rocketmq",
+        "mq-kafka",
+        "mq-general",
+        "performance-optimization",
+        "redis-persistence-cluster"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "middle",
+        "senior",
+        "expert"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年",
+        "专家/P7+"
+      ],
+      "keywords": [
+        "RocketMQ",
+        "Consumer",
+        "MQ",
+        "性能",
+        "主从复制"
+      ],
+      "summary": "要保证 RocketMQ 消息不丢失，我们必须像“特工押运”一样，确保消息在 发送端（Producer）、存储端（Broker）、消费端（Consumer） 这三个环节都万无一失。任何一个环节掉链子，消息就丢了。我为你总结了一个**“防丢铁三角”**模型，我们逐层拆解。第一层：生产端（Prod...",
+      "excerpt": "要保证 RocketMQ 消息不丢失，我们必须像“特工押运”一样，确保消息在 发送端（Producer） 、 存储端（Broker） 、 消费端（Consumer） 这三个环节都万无一失。任何一个环节掉链子，消息就丢了。 我为你总结了一个**“防丢铁三角”**模型，我们逐层拆解。 第一层：生产端（Producer）—— “不拿到回执绝不松手” 很多消息丢失发生在发送阶段：比如网络抖动，或者 Broker 刚收到请求还没处理就挂了。 策略：使用同步发送 + 重试机制 不要用 sendOneway （只管发，不问结果），那个快但是不可靠。要用 send 同步方法，并检查发送结果。 import org.apache.rocketmq.client.producer.DefaultMQProducer; import org.apache.rocketmq.client.producer.SendResult; import org.apache.rocketmq.client.producer.SendStatus; import org.apache.rocketmq.common.message.Message; import org.apache.rocketmq.client.consumer.DefaultMQPushConsumer; import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyStatus; import org.apache.rocketmq.client.consumer.listener.MessageListenerConcurrently; public class ZeroLossDemo { } 第二层：Broker 端（存储端）—— “落袋为安，双重保险” 这是最关键的环节。如果 Broker 收到消息，还没来得及写硬盘，或者硬盘坏了，怎么办？ RocketMQ 提供了两个核心配置， 用性能换安全 。 1. 刷盘机制：SYNC_FLUSH (同步刷盘) 默认 (ASYNC_FLUSH) ：Broker 收到消息放在内存（PageCache）就返回成功。如果此时断电，内存数据丢失。 零丢失配置 (SYNC_FLUSH) ：Broker 必须把数据 真正写入物理磁盘 后，才给 Producer 返回成功。 配置： flushDiskType = SYNC_FLUSH 2. 主从复制：SYNC_MASTER (同步复制) 就算你同步刷盘了，如果这台机器硬盘物理损坏了呢？数据还是丢。 所以我们需要 Master-Slave 架构。 默认 (ASYNC_MASTER) ：Master 收到消息就返回成功，然后异步传给 Slave。如果 Maste"
+    },
+    {
+      "slug": "lplcgplbp8gkekgl",
+      "title": "RocketMQ事务消息是如何实现的",
+      "url": "/tulingzhouyu/db22bv/lplcgplbp8gkekgl",
+      "toc_path": [
+        "Rocketmq",
+        "RocketMQ事务消息是如何实现的"
+      ],
+      "toc_level": 1,
+      "toc_index": 670,
+      "word_count": 1545,
+      "updated_at": "2026-01-09T09:05:56.000Z",
+      "primary_category": "mq-rocketmq",
+      "primary_category_name": "RocketMQ",
+      "related_categories": [
+        "mq-rocketmq",
+        "mq-kafka",
+        "mq-general",
+        "distributed-transaction",
+        "java-core"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "middle",
+        "senior",
+        "expert"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年",
+        "专家/P7+"
+      ],
+      "keywords": [
+        "RocketMQ",
+        "事务消息",
+        "Topic",
+        "Consumer",
+        "MQ",
+        "分布式事务",
+        "Java"
+      ],
+      "summary": "第一层：核心痛点——“鱼和熊掌如何兼得？”在微服务架构中，我们经常遇到这样的场景：“转账”。A 账户扣钱（DB 操作）。给 B 账户发通知加钱（MQ 消息）。死局：先扣钱，再发 MQ？ -&gt; 万一 MQ 发送失败，钱扣了，对方没收到，资金不平。先发 MQ，再扣钱？ -&gt; 万一 MQ 发出去了，...",
+      "excerpt": "第一层：核心痛点——“鱼和熊掌如何兼得？” 在微服务架构中，我们经常遇到这样的场景： “转账” 。 A 账户扣钱（DB 操作）。 给 B 账户发通知加钱（MQ 消息）。 死局 ： 先扣钱，再发 MQ？ -> 万一 MQ 发送失败，钱扣了，对方没收到，资金不平。 先发 MQ，再扣钱？ -> 万一 MQ 发出去了，本地扣钱报错回滚了，对方收到钱了，公司亏空。 RocketMQ 的事务消息，本质上是把 MQ 消息变成了“两阶段提交”的协调者 ，保证 本地事务 和 消息发送 最终要么都成功，要么都失败。 第二层：全链路可视化（图解） 为了让你彻底看清内部的流转，我为你生成了一张包含 Topic 内部视角 的架构图。 注意看图中的 &quot;Real Topic&quot; 和 &quot;Half Topic&quot; 的区别，这是理解的钥匙。 这张图展示了消息在 Broker 内部的“隐身”与“现身”过程。 第三层：Java 代码实战（状态机视角） 在 Java 代码层面，RocketMQ 的事务消息其实是一个 状态机 。你需要重点关注 LocalTransactionState 的三个状态： COMMIT_MESSAGE ：提交。 ROLLBACK_MESSAGE ：回滚。 UNKNOW ：未知（等待回查）。 核心代码实现 我们来看一段生产环境级别的代码结构： import org.apache.rocketmq.client.producer.LocalTransactionState; import org.apache.rocketmq.client.producer.TransactionListener; import org.apache.rocketmq.client.producer.TransactionMQProducer; import org.apache.rocketmq.common.message.Message; import org.apache.rocketmq.common.message.MessageExt; import java.util.concurrent.ConcurrentHashMap; public class TransactionService { } 第四层：底层源码揭秘（消息去哪了？） 这一层是专家与普通开发者的分水岭。 你会发现，发完 Half 消息后，Consumer 明明订阅了 OrderTopic ，为什么死活收不到？ RocketMQ 在 Broker 端做了“偷梁换柱”： 篡改 Topic ： Broker 接收到事务消息（Half 消息）时，并不会直接写入 OrderTopic 。 它会将 Topic 修改为系统内置的 RMQ_SYS_TRANS_HALF_TOPIC 。 它会将"
+    },
+    {
+      "slug": "ottm7mn0vgxy7qua",
+      "title": "RocketMQ延迟消息是如何实现的",
+      "url": "/tulingzhouyu/db22bv/ottm7mn0vgxy7qua",
+      "toc_path": [
+        "Rocketmq",
+        "RocketMQ延迟消息是如何实现的"
+      ],
+      "toc_level": 1,
+      "toc_index": 671,
+      "word_count": 1327,
+      "updated_at": "2026-01-09T09:19:03.000Z",
+      "primary_category": "mq-rocketmq",
+      "primary_category_name": "RocketMQ",
+      "related_categories": [
+        "mq-rocketmq",
+        "mq-kafka",
+        "mq-general",
+        "docker-k8s",
+        "project-system-design"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle",
+        "senior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "RocketMQ",
+        "事务消息",
+        "延迟消息",
+        "Topic",
+        "MQ",
+        "Service",
+        "方案",
+        "订单"
+      ],
+      "summary": "想象一下这个场景：用户下了订单，如果 30 分钟内没付款，系统需要自动关闭订单。如果用 Timer 或 ScheduledExecutorService，服务器重启数据就没了；如果用数据库轮询，数据量大时数据库会挂。RocketMQ 的延迟消息就是为了解决这类问题。它允许你发送一条消息，但指定...",
+      "excerpt": "想象一下这个场景： 用户下了订单，如果 30 分钟内没付款，系统需要自动关闭订单。 如果用 Timer 或 ScheduledExecutorService ，服务器重启数据就没了；如果用数据库轮询，数据量大时数据库会挂。 RocketMQ 的延迟消息就是为了解决这类问题。它允许你发送一条消息，但指定**“现在别发，过段时间再发给消费者”**。 今天我们同样用 由浅入深 的方式，通过代码、原理、图解，彻底搞懂它。 第一层：怎么用？（代码实战） RocketMQ 的延迟消息 不支持任意时间 （RocketMQ 5.0 之前），而是采用了**“预设等级”**的机制。 默认支持 18 个等级 ： 1s 5s 10s 30s 1m 2m 3m 4m 5m 6m 7m 8m 9m 10m 20m 30m 1h 2h 代码实现： 第二层：核心原理——“偷梁换柱” 你可能会好奇： Broker 收到消息后，怎么做到“暂存”起来，等时间到了再给消费者的？ 其实，RocketMQ 再次使用了 Topic 替换 （偷梁换柱）的大法，这点和事务消息非常像。 1. 偷梁换柱（Ingress） 当 Broker 收到一条消息，如果发现 msg.getDelayTimeLevel() > 0 ： 备份原信息 ：把原来的 Topic ( TopicOrder ) 和 QueueId 存到消息属性（Properties）里。 篡改 Topic ：把 Topic 改成系统内置的 SCHEDULE_TOPIC_XXXX 。 篡改 QueueId ：根据延迟等级计算 QueueId。 公式： queueId = delayLevel - 1 。 也就是说， 所有 1s 延迟的消息都在 Queue-0，所有 5s 的都在 Queue-1 ，以此类推。这样做的好处是，同一个队列里的消息，延迟时间是相同的，保证了先进先出（FIFO），处理起来极其高效。 落盘 ：写入 CommitLog。此时消费者订阅的是 TopicOrder ，所以根本看不见这条消息。 2. 倒计时（Polling） Broker 内部有一个核心服务类 ScheduleMessageService 。 它会启动 18 个定时任务 （对应 18 个延迟等级）。 每个定时任务只扫描自己对应的那个 Queue。 逻辑 ：它会读取 SCHEDULE_TOPIC_XXXX 队列里的消息，判断： 现在时间 >= 消息存储时间 + 延迟时间 吗？ 没到时间 ：停止扫描，等一会再来（因为队列是有序的，头部的没到时间，后面的肯定也没到）。 到时间了 ：执行下一步“还原”。 3. 还原真相（Restoration） 一旦时间到了： Broker 把消息取出来。 从属性里读取出 原来的 Topic ( TopicOrder ) 和 原来的 QueueId"
+    },
+    {
+      "slug": "dpli1grw8pt3tdhr",
+      "title": "RocketMQ如何保证消息顺序",
+      "url": "/tulingzhouyu/db22bv/dpli1grw8pt3tdhr",
+      "toc_path": [
+        "Rocketmq",
+        "RocketMQ如何保证消息顺序"
+      ],
+      "toc_level": 1,
+      "toc_index": 672,
+      "word_count": 888,
+      "updated_at": "2024-08-19T08:08:21.000Z",
+      "primary_category": "mq-rocketmq",
+      "primary_category_name": "RocketMQ",
+      "related_categories": [
+        "mq-rocketmq",
+        "mq-general",
+        "mq-rabbitmq",
+        "microservices-governance",
+        "java-concurrency"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "RocketMQ",
+        "顺序消息",
+        "MQ",
+        "消息队列",
+        "队列",
+        "重试",
+        "负载均衡",
+        "并发",
+        "线程",
+        "锁"
+      ],
+      "summary": "RocketMQ提供了两种级别的顺序消息：全局顺序消息和分区顺序消息。1. 全局顺序消息全局顺序消息确保一个主题内的所有消息都按照发送顺序被消费。这通常通过将所有消息路由到同一个队列来实现。生产者代码示例：import org.apache.rocketmq.client.producer.D...",
+      "excerpt": "RocketMQ提供了两种级别的顺序消息：全局顺序消息和分区顺序消息。 1. 全局顺序消息 全局顺序消息确保一个主题内的所有消息都按照发送顺序被消费。这通常通过将所有消息路由到同一个队列来实现。 生产者代码示例： 消费者代码示例： 2. 分区顺序消息 分区顺序消息保证具有相同分区键的消息按顺序被消费。这允许更高的并行度，因为不同分区键的消息可以并行处理。 生产者代码示例： 消费者代码示例： 关键点解释 消息队列选择 ： 全局顺序：所有消息都发送到同一个队列。 分区顺序：使用自定义的队列选择算法，确保相同分区键的消息进入同一队列。 MessageListenerOrderly ： 使用 MessageListenerOrderly 接口来确保消息的有序消费。RocketMQ 保证同一个队列的消息会被同一个线程顺序处理。 ConsumeOrderlyStatus ： 消费者返回 ConsumeOrderlyStatus.SUCCESS 表示消息已成功处理。 锁定机制 ： RocketMQ 内部使用锁定机制确保同一时间只有一个消费者线程在处理特定队列的消息。 重试机制 ： 如果消息处理失败，RocketMQ 会自动重试，同时保持消息的顺序。 负载均衡 ： 分区顺序消息允许更好的负载均衡，因为不同的分区可以并行处理。 注意事项 全局顺序消息可能会限制系统的吞吐量，因为所有消息都经过单一队列。 分区顺序消息在保证局部顺序的同时提供了更好的并行性。 选择合适的分区键对于分区顺序消息至关重要，以确保相关消息进入同一队列。 消费者端需要正确处理并发和重试逻辑，以维护消息顺序。 通过这些机制和实践，RocketMQ 能够在不同场景下有效地保证消息的顺序性，同时兼顾系统的性能和可扩展性。"
+    },
+    {
+      "slug": "quouet2xt6b2k15h",
+      "title": "RocketMQ提供了哪些消息过滤机制",
+      "url": "/tulingzhouyu/db22bv/quouet2xt6b2k15h",
+      "toc_path": [
+        "Rocketmq",
+        "RocketMQ提供了哪些消息过滤机制"
+      ],
+      "toc_level": 1,
+      "toc_index": 674,
+      "word_count": 789,
+      "updated_at": "2024-08-18T12:23:07.000Z",
+      "primary_category": "mq-rocketmq",
+      "primary_category_name": "RocketMQ",
+      "related_categories": [
+        "mq-rocketmq",
+        "mq-general",
+        "performance-optimization"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "RocketMQ",
+        "MQ",
+        "性能",
+        "优化"
+      ],
+      "summary": "RocketMQ提供了多种消息过滤机制，以便消费者能够根据业务需求进行精确的消息消费。主要的过滤机制包括：Tag过滤：最常用的过滤方式，消费者可以基于消息的Tag进行过滤。SQL92语法过滤：基于Message属性，以SQL92标准语法进行复杂条件过滤，该功能需要Broker支持。1. Tag...",
+      "excerpt": "RocketMQ提供了多种消息过滤机制，以便消费者能够根据业务需求进行精确的消息消费。主要的过滤机制包括： Tag过滤 ：最常用的过滤方式，消费者可以基于消息的Tag进行过滤。 SQL92语法过滤 ：基于Message属性，以SQL92标准语法进行复杂条件过滤，该功能需要Broker支持。 1. Tag过滤 Tag过滤 是RocketMQ最基本的过滤机制，性能最好，因为它是在服务器端完成的。 每条消息可以有一个或多个Tag。 消费者订阅时指定需接收的Tag。 代码示例 生产者发送带Tag的消息： 消费者只接收某些Tag的消息： 2. SQL92语法过滤 SQL92过滤 基于用户设置的消息属性，支持更复杂的过滤条件。这种过滤机制是由服务器端进行的，需要预先配置Broker支持属性过滤。 使用方法 启动Broker时启用过滤 ：启动Broker时，需要配置 enablePropertyFilter=true 来启用SQL92语法过滤功能。 生产者设置消息属性 ： 消费者使用SQL92语法过滤 ： 总结 Tag过滤 ：简单高效，适合多订阅者需接受不同子类型消息的场景。 SQL92过滤 ：灵活强大，适合需要复杂条件过滤的场景，但是需要对性能加以考虑，并且需要在Broker端配置以支持属性过滤。 通过提供这些过滤机制，RocketMQ可以大大优化消息消费的准确性和有效性，使得消息系统更能贴合业务需求。不同的机制有各自的优势，选择具体的过滤机制需根据业务需求和系统性能进行合理权衡。"
+    },
+    {
+      "slug": "whblnk2iu56i25po",
+      "title": "RocketMQ的集群架构是怎样的",
+      "url": "/tulingzhouyu/db22bv/whblnk2iu56i25po",
+      "toc_path": [
+        "Rocketmq",
+        "RocketMQ的集群架构是怎样的"
+      ],
+      "toc_level": 1,
+      "toc_index": 675,
+      "word_count": 722,
+      "updated_at": "2024-08-18T12:26:01.000Z",
+      "primary_category": "mq-rocketmq",
+      "primary_category_name": "RocketMQ",
+      "related_categories": [
+        "mq-rocketmq",
+        "redis-persistence-cluster",
+        "mq-general",
+        "mq-kafka",
+        "microservices-governance"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "RocketMQ",
+        "集群",
+        "MQ",
+        "Consumer",
+        "负载均衡"
+      ],
+      "summary": "RocketMQ的集群架构设计旨在提高系统的可用性、可靠性和可扩展性。它通过多种组件协同工作，实现消息的生产、存储、分发和消费。以下是关于RocketMQ集群架构及其使用场景的详细说明。RocketMQ集群架构NameServer：它是一个几乎无状态的节点，可以集群部署用于服务发现。NameS...",
+      "excerpt": "RocketMQ的集群架构设计旨在提高系统的可用性、可靠性和可扩展性。它通过多种组件协同工作，实现消息的生产、存储、分发和消费。以下是关于RocketMQ集群架构及其使用场景的详细说明。 RocketMQ集群架构 NameServer ： 它是一个几乎无状态的节点，可以集群部署用于服务发现。 NameServer为Producer和Consumer提供路由信息。 Broker ： Broker负责接收、存储和转发消息。 它可以分为Master和Slave，支持多对Master-Slave配置以实现高可用。 Master和Slave之间通过同步/异步机制进行数据复制。 Producer ： 消息生产者负责产生消息，并发送到Broker。 支持同步和异步发送消息。 Consumer ： 消息消费者负责从Broker接收消息。 支持Push和Pull两种消费方式，可以是集群消费或广播消费。 使用场景 高可用性 ： 通过Master-Slave配置和Broker高可用机制，保证系统在部分节点失效的情况下仍能正常运行。 消息持久化 ： 控制消息的存储策略（同步/异步），从而达成更高的可靠性需求。 负载均衡 ： 使用多NameServer和Broker集群，支持负载均衡，从而支持大规模消息流量。 弹性扩展 ： 可以按需添加NameServer和Broker节点，进行水平扩展。 代码示例 创建NameServer集群 NameServer无状态，可以简单地在不同的服务器上启动多个实例： 多台服务器上重复上述操作。 配置和启动Broker集群 配置文件（ broker-a.properties ）示例： 启动Broker： 生产者与消费者代码示例 生产者： 消费者： 总结 RocketMQ的集群架构通过NameServer、Broker的灵活组合，实现了高可用、弹性伸缩和负载均衡，适用于各种规模的分布式系统。通过合理配置和使用，RocketMQ可以支持广泛的应用场景，如在线业务系统、异步处理和事件驱动架构。"
+    },
+    {
+      "slug": "fd2dzyhds20dtezg",
+      "title": "RocketMQ的Broker有哪几种集群模式",
+      "url": "/tulingzhouyu/db22bv/fd2dzyhds20dtezg",
+      "toc_path": [
+        "Rocketmq",
+        "RocketMQ的Broker有哪几种集群模式"
+      ],
+      "toc_level": 1,
+      "toc_index": 676,
+      "word_count": 435,
+      "updated_at": "2023-09-04T08:01:01.000Z",
+      "primary_category": "mq-rocketmq",
+      "primary_category_name": "RocketMQ",
+      "related_categories": [
+        "mq-rocketmq",
+        "redis-persistence-cluster",
+        "mq-general",
+        "observability-troubleshooting",
+        "devops-release"
+      ],
+      "question_type": "troubleshooting",
+      "question_type_name": "故障排查题",
+      "levels": [
+        "middle",
+        "senior",
+        "campus"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "RocketMQ",
+        "集群",
+        "MQ",
+        "故障",
+        "部署"
+      ],
+      "summary": "RocketMQ的Broker有三种集群模式：单Master模式：只有一个Master节点，其他都是Slave节点。Master节点负责响应客户端的请求并存储消息，Slave节点只同步Master节点的消息，也会响应部分客户端的读请求。这种模式的优点是简单易部署，但是存在单点故障的问题，如果M...",
+      "excerpt": "RocketMQ的Broker有三种集群模式： 单Master模式：只有一个Master节点，其他都是Slave节点。Master节点负责响应客户端的请求并存储消息，Slave节点只同步Master节点的消息，也会响应部分客户端的读请求。这种模式的优点是简单易部署，但是存在单点故障的问题，如果Master节点宕机，会导致整个服务不可用。 Master-Slave模式（经典双集群部署）：一个Master节点对应多个Slave节点，Master和Slave都是独立的NameServer。Master节点负责响应客户端请求并存储消息，Slave节点只同步Master节点的消息，也会响应部分客户端的读请求。这种模式的优点是高可用性，即使Master节点宕机，Slave节点可以自动升级为Master节点，继续提供服务。但是，如果只有一个Master节点，存在单点故障的问题。 Dledger模式（高可用集群部署）：在Master-Slave模式的基础上增加了Raft协议，实现了自动脑裂后的数据高可靠性。即使某个节点从网络上掉下来或者宕机后，仍然能够保证所有的消息不会丢失。这种模式的优点是高可用性和高可靠性，即使某个节点出现故障，也能保证服务的可用性。 总的来说，单Master模式适合测试和开发环境，Master-Slave模式适合生产环境，而Dledger模式适合需要高可靠性的生产环境。"
+    },
+    {
+      "slug": "dsd9wiywh58904vg",
+      "title": "RocketMQ的消息存储如何进行清理和归档",
+      "url": "/tulingzhouyu/db22bv/dsd9wiywh58904vg",
+      "toc_path": [
+        "Rocketmq",
+        "RocketMQ的消息存储如何进行清理和归档"
+      ],
+      "toc_level": 1,
+      "toc_index": 677,
+      "word_count": 619,
+      "updated_at": "2023-09-12T05:44:47.000Z",
+      "primary_category": "mq-rocketmq",
+      "primary_category_name": "RocketMQ",
+      "related_categories": [
+        "mq-rocketmq",
+        "mq-general",
+        "os-linux",
+        "mq-rabbitmq",
+        "performance-optimization"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "RocketMQ",
+        "MQ",
+        "消息队列",
+        "文件",
+        "队列",
+        "性能"
+      ],
+      "summary": "RocketMQ 提供了消息存储清理和归档的机制，以便管理消息存储空间，删除过期消息，并将历史消息归档到其他存储介质中。这些功能有助于维护消息队列的性能和可用性。以下是关于 RocketMQ 消息存储清理和归档的主要方面：消息文件删除策略： RocketMQ 支持多种消息文件删除策略，可以在配...",
+      "excerpt": "RocketMQ 提供了消息存储清理和归档的机制，以便管理消息存储空间，删除过期消息，并将历史消息归档到其他存储介质中。这些功能有助于维护消息队列的性能和可用性。以下是关于 RocketMQ 消息存储清理和归档的主要方面： 消息文件删除策略： RocketMQ 支持多种消息文件删除策略，可以在配置文件中进行设置。以下是一些常见的策略： 定时删除策略： 您可以配置 RocketMQ 定期删除过期的消息文件和索引文件。这样，一旦消息文件中的消息过期，RocketMQ 将自动删除它们。 空间满策略： 如果存储磁盘空间达到一定限制，RocketMQ 可以自动删除最早的消息文件，以释放磁盘空间。这个策略确保了存储空间不会无限制地增长。 指定时间段删除策略： 您可以配置 RocketMQ 只删除特定时间段内的消息文件，以保留历史消息。 消息归档： RocketMQ 允许您将历史消息归档到其他存储介质中，以减小消息服务器的存储负担。归档通常涉及将消息转移到长期存储（如云存储或本地归档系统）中。归档可以手动触发，也可以自动触发，具体取决于您的需求。 历史消息访问： 尽管消息被归档，RocketMQ 仍然提供了访问历史消息的机制。通过合适的归档系统或者存储介质，您可以检索和访问历史消息，以满足合规性要求或其他业务需求。 需要注意的是，清理和归档消息不是 RocketMQ 的核心功能，而是辅助功能。您需要根据自己的需求和业务场景来配置和管理消息的清理和归档策略。确保配置合理的清理策略以防止存储空间耗尽，并根据业务需求进行消息的归档操作，以保留历史消息数据。同时，归档后的消息可以根据需要进行合适的检索和恢复，以满足特定的数据需求。"
+    },
+    {
+      "slug": "kaotnpk87d1nv74n",
+      "title": "RocketMQ 的广播消息和集群消息有什么区别？",
+      "url": "/tulingzhouyu/db22bv/kaotnpk87d1nv74n",
+      "toc_path": [
+        "Rocketmq",
+        "RocketMQ 的广播消息和集群消息有什么区别？"
+      ],
+      "toc_level": 1,
+      "toc_index": 678,
+      "word_count": 474,
+      "updated_at": "2023-09-05T05:23:12.000Z",
+      "primary_category": "mq-rocketmq",
+      "primary_category_name": "RocketMQ",
+      "related_categories": [
+        "mq-rocketmq",
+        "mq-kafka",
+        "redis-persistence-cluster",
+        "mq-general",
+        "project-system-design"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "RocketMQ",
+        "Topic",
+        "集群",
+        "MQ",
+        "订单",
+        "库存"
+      ],
+      "summary": "广播消息和集群消息是 RocketMQ 的两种不同的消息消费模式。其中广播模式意味着一条消息会被发送到所有订阅了这个主题 Topic 的消费者，而所有消费者都会收到相同的消息副本。集群模式意味着一条消息只会分发给订阅了这个主题 Topic 的同一个消费者组中的一个消费者处理。每个消费者组只会处...",
+      "excerpt": "广播消息和集群消息是 RocketMQ 的两种不同的消息消费模式。其中 广播模式意味着一条消息会被发送到所有订阅了这个主题 Topic 的消费者，而所有消费者都会收到相同的消息副本。 集群模式意味着一条消息只会分发给订阅了这个主题 Topic 的同一个消费者组中的一个消费者处理。每个消费者组只会处理一次消息。 他们的区别主要提现在实现方式以及适用场景上。 集群模式在 Broker 端统一管理每个消费者组的消费进度，对消费进度的管理是严格的。这样，每次消费者服务启动后，都可以从上一次消费的进度开始开始进行消费。 而广播模式是交由每个消费者自行管理消费进度，消费进度的管理是不严格的，容易产生丢失。当消费者服务启动后，如果本地的消费进度丢失了，就只能消费到启动之后的消息，而无法从上一次消费的进度开始消费。因此，广播模式对于消息的连续性保证是不强的。 集群模式适用于大多数常规对消息安全敏感的业务场景，例如订单处理、库存管理等。多个消费者协同工作可以提高消息的处理能力并实现消息的负载均衡。而广播模式适用于一些对消息安全不太敏感的特殊业务场景。例如日记记录、时间通知等。这些场景下所有的消费者都需要处理相同的消息。 ​"
+    },
+    {
+      "slug": "pplrbbzufrv01z8q",
+      "title": "RocketMQ生产环境如何优化",
+      "url": "/tulingzhouyu/db22bv/pplrbbzufrv01z8q",
+      "toc_path": [
+        "Rocketmq",
+        "RocketMQ生产环境如何优化"
+      ],
+      "toc_level": 1,
+      "toc_index": 679,
+      "word_count": 847,
+      "updated_at": "2024-08-19T09:05:09.000Z",
+      "primary_category": "mq-rocketmq",
+      "primary_category_name": "RocketMQ",
+      "related_categories": [
+        "mq-rocketmq",
+        "performance-optimization",
+        "os-linux",
+        "mq-general",
+        "observability-troubleshooting"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "RocketMQ",
+        "性能",
+        "优化",
+        "吞吐",
+        "操作系统",
+        "线程",
+        "内存",
+        "文件",
+        "MQ",
+        "监控",
+        "告警"
+      ],
+      "summary": "RocketMQ在生产环境中的优化是一个多方面的任务，涉及到系统配置、应用代码、监控和运维等多个层面。以下是一些关键的优化策略，并附带相关的代码和配置示例：1. 生产者优化a) 批量发送消息批量发送可以提高吞吐量，减少网络开销。DefaultMQProducer producer = new ...",
+      "excerpt": "RocketMQ在生产环境中的优化是一个多方面的任务，涉及到系统配置、应用代码、监控和运维等多个层面。以下是一些关键的优化策略，并附带相关的代码和配置示例： 生产者优化 a) 批量发送消息 批量发送可以提高吞吐量，减少网络开销。 b) 异步发送 对于非关键消息，使用异步发送可以提高发送效率。 c) 合理设置发送超时时间 消费者优化 a) 增加消费并发度 通过增加消费线程数来提高消费能力。 b) 批量消费 配置批量消费可以减少网络交互，提高效率。 c) 合理设置消费重试次数 Broker配置优化 需要在broker.conf中配置： 合理设置Topic的队列数 小规模系统 ：对于一般的小型应用，可以从 4 到 8 个队列 开始，根据具体的消息负载和性能监控结果再行调整。 中等到大型系统 ：对于大型系统或高吞吐量需求，默认 16 到 32 个队列 是常见的设置。 消费设置长轮询模式 长轮询可以减少无效的轮询请求，在消费者端配置： JVM优化 a) 设置合适的堆内存大小 b) 使用G1垃圾收集器 消息存储优化 a) 启用文件预热 在broker.conf中开启文件预热配置，将warmMapedFileEnable这个参数设置为 true 时，RocketMQ 会在创建映射文件时对其进行预热。具体的实现方式可能包括写入一些数据以触发操作系统将文件的物理页与虚拟内存页面相关联，可以减少I/O延迟和提高文件读写效率。 监控和告警 使用RocketMQ的Dashboard或者其他监控工具（如Prometheus + Grafana）来监控系统状态，并设置适当的告警阈值。 消息压缩 对于大消息，可以考虑进行压缩： 这些优化策略涵盖了RocketMQ的多个方面，包括生产者、消费者、Broker配置、网络、JVM、存储等。在实际应用中，需要根据具体的业务场景和硬件环境来选择合适的优化策略。同时，优化是一个持续的过程，需要不断监控、测试和调整，以达到最佳的性能表现。"
+    },
+    {
+      "slug": "hwh4ar9s0e4ke7vm",
+      "title": "为啥你们项目用 Kafka，不用 RocketMQ？",
+      "url": "/tulingzhouyu/db22bv/hwh4ar9s0e4ke7vm",
+      "toc_path": [
+        "高频面试问题",
+        "fox老师",
+        "为啥你们项目用 Kafka，不用 RocketMQ？"
+      ],
+      "toc_level": 2,
+      "toc_index": 1100,
+      "word_count": 1685,
+      "updated_at": "2025-09-28T11:49:13.000Z",
+      "primary_category": "mq-rocketmq",
+      "primary_category_name": "RocketMQ",
+      "related_categories": [
+        "mq-rocketmq",
+        "mq-kafka",
+        "mq-general",
+        "observability-troubleshooting",
+        "java-core"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "middle",
+        "senior",
+        "expert"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年",
+        "专家/P7+"
+      ],
+      "keywords": [
+        "RocketMQ",
+        "事务消息",
+        "消息堆积",
+        "Kafka",
+        "MQ",
+        "排查",
+        "监控",
+        "日志",
+        "堆积",
+        "Java",
+        "异常"
+      ],
+      "summary": "一、 为什么选择 Kafka 而不是 RocketMQ？（适用于大数据、日志采集、实时流处理场景）核心论点：Kafka 是实时数据流的基石，为高吞吐、大规模数据管道而生。满分回答结构：肯定对方： “RocketMQ 是非常优秀的消息中间件，特别是在业务消息领域。”锚定场景： “但在我们的项目中...",
+      "excerpt": "一、 为什么选择 Kafka 而不是 RocketMQ？ （适用于大数据、日志采集、实时流处理场景） 核心论点：Kafka 是实时数据流的基石，为高吞吐、大规模数据管道而生。 满分回答结构： 肯定对方： “RocketMQ 是非常优秀的消息中间件，特别是在业务消息领域。” 锚定场景： “但在我们的项目中，核心场景是【日志/用户行为事件/监控数据采集和传输】，其特征是数据量极大（日TB/PB级），但对单条消息的丢失不那么敏感，允许少量丢失。” 分点阐述： 极致吞吐与可靠性权衡： “Kafka 的 顺序磁盘I/O 和 Zero-Copy 技术使其在纯消息吞吐性能上达到了极致，这正是我们海量数据场景最看重的。虽然 RocketMQ 吞吐量也很高，但在我们的压测中，Kafka 的极限更高。” 无缝的大数据生态集成： “我们的数据最终要流入 Flink/Spark Streaming 做实时计算，或进入 数据湖/数据仓库（如 Iceberg, Hudi, ClickHouse） 。Kafka 是大数据生态的 事实标准 ，与这些组件的连接器（Connector）最丰富、最成熟，集成成本极低。” 成熟的分布式与运维体系： “Kafka 的架构设计简洁清晰（Leader/Follower），在跨机房复制等场景下有经过大规模验证的解决方案（如LinkedIn的Brooklin），社区异常活跃，对我们构建稳定的大数据管道至关重要。” 总结： “因此，对于我们的 大数据管道 场景，Kafka 在 吞吐量、生态和成熟度 上的优势是决定性的。” 二、 为什么选择 RocketMQ 而不是 Kafka？ （适用于电商、金融、交易等核心业务场景） 核心论点：RocketMQ 是业务消息的专家，为交易一致性、业务解耦和友好运维而生。 满分回答结构： 肯定对方： “Kafka 无疑是消息领域吞吐量的王者，特别是在流处理方面。” 锚定场景： “但在我们的项目中，核心是【订单、支付、交易等核心业务】，消息必须保证 绝对可靠不丢失 ，并且时常需要 延时、事务等高级功能 。” 分点阐述： 开箱即用的高级消息特性： “RocketMQ 原生支持事务消息 ，其‘半消息’机制与我们的下单扣减库存、发送优惠券等场景完美契合，开发成本低，心智负担小。同时，其 延时消息 功能也非常成熟，用于处理超时关单等场景，而Kafka需要自行实现。” Java技术栈的深度友好： “我们团队技术栈以 Java 为主 。RocketMQ 用 Java 开发，这意味着遇到疑难问题时，我们团队 排查、阅读源码、定位问题的成本极低 ，甚至可以进行定制化开发。而 Kafka（Scala）在这方面门槛稍高。” 无与伦比的运维友好度： “RocketMQ 自带功能强大的 控制台（Dashboard） ，可以轻松查看消息轨迹、堆积情况、甚至"
+    },
+    {
+      "slug": "pgcuash33ddcxi2n",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/pgcuash33ddcxi2n",
+      "toc_path": [
+        "高频面试问题",
+        "fox老师",
+        "为啥你们项目用 Kafka，不用 RocketMQ？",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1101,
+      "word_count": 561,
+      "updated_at": "2025-09-28T11:43:59.000Z",
+      "primary_category": "mq-rocketmq",
+      "primary_category_name": "RocketMQ",
+      "related_categories": [
+        "mq-rocketmq",
+        "mq-kafka",
+        "mq-general",
+        "resume-project",
+        "observability-troubleshooting"
+      ],
+      "question_type": "resume_project",
+      "question_type_name": "简历项目题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "RocketMQ",
+        "事务消息",
+        "Kafka",
+        "MQ",
+        "消息队列",
+        "项目",
+        "面试官",
+        "排查",
+        "监控",
+        "日志"
+      ],
+      "summary": "口播文案朋友们，有个面试题几乎百分百会被问到：“你们项目为啥用Kafka不用RocketMQ？”或者反过来：“为啥用RocketMQ不用Kafka呀？”是不是一听就头大？别担心！这题其实不是在考你背书，而是在看你会不会“看菜下饭”。记住一句大实话：技术没有好坏，只有合不合适！如果你干的是这种事...",
+      "excerpt": "​ 口播文案 朋友们，有个面试题几乎百分百会被问到：“你们项目为啥用Kafka不用RocketMQ？”或者反过来：“为啥用RocketMQ不用Kafka呀？” 是不是一听就头大？别担心！这题其实不是在考你背书，而是在看你会不会“看菜下饭”。 记住一句大实话：技术没有好坏，只有合不合适！ 如果你干的是这种事： 天天处理海量日志、用户点击流、或者APP监控数据——数据量大到爆炸，速度必须快！ 那你就可以这么说： “哎，我们那场景太猛了，每天数据跟洪水似的！必须得上Kafka这匹‘千里马’啊！它处理这种海量数据最在行了，而且最后数据都要跑到Flink那边去，它俩是‘黄金搭档’，配合起来贼顺畅！” 如果你干的是这种事： 搞电商下单、支付、积分兑换——消息一条都不能丢，还得支持延时消息或者事务。 那你就可以这么说： “我们这业务可精细了，消息可不能玩消失！RocketMQ自带‘事务消息’技能，我们做下单流程特别顺手。而且它全是Java写的，我们排查问题、看源码什么的特别友好。它那个管理后台还能直接看消息到哪了，运维小哥都说好！” 说白了就一句话：因为我们的业务是XX样的，所以这个技术特别配！ 别再死记硬背参数对比了。你就告诉面试官：“Kafka是搞数据洪流的，RocketMQ是搞精细业务的。我们不是选哪个更好，而是选哪个更合适！” 最后考考你：你现在做的项目，要是让你挑消息队列，你会选谁？评论区聊聊！ 觉得有用记得点个赞，收藏一下，下次面试前保准用得上！"
+    },
+    {
+      "slug": "bx7avtp1xdt7rlw0",
+      "title": "字节二面：RocketMQ顺序消息如何提升吞吐量",
+      "url": "/tulingzhouyu/db22bv/bx7avtp1xdt7rlw0",
+      "toc_path": [
+        "高频面试问题",
+        "楼兰老师",
+        "字节二面：RocketMQ顺序消息如何提升吞吐量"
+      ],
+      "toc_level": 2,
+      "toc_index": 1160,
+      "word_count": 1862,
+      "updated_at": "2025-09-29T09:43:48.000Z",
+      "primary_category": "mq-rocketmq",
+      "primary_category_name": "RocketMQ",
+      "related_categories": [
+        "mq-rocketmq",
+        "performance-optimization",
+        "java-concurrency",
+        "os-linux",
+        "mq-general"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "middle",
+        "senior",
+        "expert"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年",
+        "专家/P7+"
+      ],
+      "keywords": [
+        "RocketMQ",
+        "顺序消息",
+        "性能",
+        "优化",
+        "压测",
+        "吞吐",
+        "瓶颈",
+        "并发",
+        "多线程",
+        "线程",
+        "锁",
+        "上下文切换",
+        "MQ"
+      ],
+      "summary": "字节二面的一道真面试题：RocketMQ顺序消息吞吐量太低，怎么优化？”你要是还只是按照MQ的常规思路回答：‘加队列、异步处理、加线程’，那这轮，大概率就挂了！因为这里，是提到了一个具体的业务场景：顺序消息。“今天，我就用这几张图，带你彻底看懂针对RocketMQ顺序消息性能优化的核心策略与进...",
+      "excerpt": "字节二面的一道真面试题：RocketMQ顺序消息吞吐量太低，怎么优化？” 你要是还只是按照MQ的常规思路回答：‘加队列、异步处理、加线程’，那这轮，大概率就挂了！因为这里，是提到了一个具体的业务场景：顺序消息。 “今天，我就用这几张图，带你彻底看懂针对RocketMQ顺序消息性能优化的核心策略与进阶技巧，让你直击面试官的灵魂！” ​ 首先你要理解顺序消息的性能瓶颈在哪。 RocketMQ针对消费者是提供了顺序消费和并行消费两种机制的。并行消费的情况下，RocketMQ的客户端会同时使用多个线程共同消费MessageQueue的消息，这样能提高并发性能。但是线程之间会产生无序竞争，这样就无法保证消息的顺序。 而采用顺序消费机制进行消费时，在消费者端会针对每个MessageQueue设计一个并发锁，保证同一时间，只有一个抢到锁的线程进行消费。这样才能利用MessageQueue先进先出的特性保证消息的处理顺序。 这时问题就来了。顺序消费加了线程锁，这就必然会降低并发性能，从而降低整个系统的吞吐量。而大部分情况下，引入RocketMQ的目的，就是为了提高系统的吞吐量，这中间就产生了矛盾。 我们应该如何去优化这个问题呢？这其中的处理方式就体现了初级程序员和高级程序员之间的技术视野差距了。 ​ 接下来要谈论优化方案。 先要确定一个优化的总纲： 在保证顺序的前提下，最大化并发。 ”，然后才是一些针对性的具体招数。 第一招：增加队列数量。但注意，绝不是无脑增加对列。 这一招的核心思想： 通过业务主键，确保同一组有业务关联的消息落入同一队列，从而保证这一组消息局部有序，实现并发与顺序的统一。 正确做法是 设计严格的业务主键（比如订单ID） ，做精准路由。 具体如何实现呢？看这张图： Producer把同一个订单ID的消息，比如Order1的所有操作，都精准地发到了同一个队列里。不同的订单（Order2, Order3）则进入不同的队列，由不同的Consumer来并行处理。 ​ 第 二招：降低单消息处理耗时。 这一招的核心思想是：剥离耗时操作，让消费主线程尽快释放，去处理下一条消息。 看这张图，消费者主线程拿到消息后，并没有自己埋头苦干，而是把慢活儿、重活儿，都甩给了身后的‘异步线程池’去处理。但绝不是简单的把所有操作都异步扔线程池，这样的话忽略了资源竞争，反而会制造新的性能瓶颈。 正确做法就是 将DB、RPC调用等非常耗时的操作放入异步线程池，并善用批量和缓存提升性能 。再通过重试和异步回调的机制控制处理结果，保证消息处理的顺序。这样就可以极大提高整个顺序消息的业务处理性能。 ​ 第三招：增加消费者线程数。 这一招的核心思想是： 在资源允许的范围内，通过压测找到那个最佳的线程数，来提高并行处理能力。 ” 但这里同样要注意，并不是盲目加线程就行。 RocketMQ在处理顺序消"
+    },
+    {
+      "slug": "wztgfkaovpvorvf1",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/wztgfkaovpvorvf1",
+      "toc_path": [
+        "高频面试问题",
+        "楼兰老师",
+        "字节二面：RocketMQ顺序消息如何提升吞吐量",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1161,
+      "word_count": 53,
+      "updated_at": "2025-09-29T09:45:27.000Z",
+      "primary_category": "mq-rocketmq",
+      "primary_category_name": "RocketMQ",
+      "related_categories": [
+        "mq-rocketmq",
+        "computer-network",
+        "performance-optimization",
+        "mq-general",
+        "netty-network"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "RocketMQ",
+        "顺序消息",
+        "优化",
+        "吞吐",
+        "MQ"
+      ],
+      "summary": "视频地址：通过网盘分享的文件：字节二面：RocketMQ顺序消息如何提升吞吐量链接: https://pan.baidu.com/s/1Rwras5AuLZNFvdWt94-rrw 提取码: ke4g📎RocketMQ顺序消息吞吐量优化.html",
+      "excerpt": "视频地址： 通过网盘分享的文件：字节二面：RocketMQ顺序消息如何提升吞吐量 链接: https://pan.baidu.com/s/1Rwras5AuLZNFvdWt94-rrw 提取码: ke4g ​"
+    },
+    {
+      "slug": "me1846yqgior3w00",
+      "title": "RocektMQ文件存储，普通程序员VS架构师",
+      "url": "/tulingzhouyu/db22bv/me1846yqgior3w00",
+      "toc_path": [
+        "高频面试问题",
+        "楼兰老师",
+        "RocektMQ文件存储，普通程序员VS架构师"
+      ],
+      "toc_level": 2,
+      "toc_index": 1162,
+      "word_count": 2197,
+      "updated_at": "2025-09-28T05:42:05.000Z",
+      "primary_category": "mq-rocketmq",
+      "primary_category_name": "RocketMQ",
+      "related_categories": [
+        "mq-rocketmq",
+        "mq-kafka",
+        "os-linux",
+        "mq-general",
+        "resume-project"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle",
+        "senior",
+        "expert"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年",
+        "专家/P7+"
+      ],
+      "keywords": [
+        "RocketMQ",
+        "Kafka",
+        "Topic",
+        "Partition",
+        "操作系统",
+        "文件",
+        "MQ",
+        "简历",
+        "项目",
+        "面试官"
+      ],
+      "summary": "面试官问你：看你简历上写了对RocketMQ有深入理解，那我们来聊聊他是怎么存储数据的把。你听完一愣，还只会干巴巴的背八股文，“CommitLog、ConsumeQueue、IndexFile。。。。”。停！这样回答，最多拿个及格分。现在这个大环境，你必须要展示出“架构师”的思想，才能争取到你...",
+      "excerpt": "面试官问你：看你简历上写了对RocketMQ有深入理解，那我们来聊聊他是怎么存储数据的把。你听完一愣，还只会干巴巴的背八股文，“CommitLog、ConsumeQueue、IndexFile。。。。”。停！这样回答，最多拿个及格分。现在这个大环境，你必须要展示出“架构师”的思想，才能争取到你想要的Offer。 我是楼兰，今天就用这一个问题，让你看看普通程序员和架构师的回答，到底差在哪里。 第一个问题，讲讲 RocketMQ 的核心文件存储结构 这是最基础的面试八股了。 RocketMQ的存储核心由三大文件组成。CommitLog、ConsumeQueue和indexfile。 CommitLog 是“数据文件” ：当生产者发送消息到 Broker 时，无论这条消息属于哪个 Topic，都会被统一、不加区分地顺序写入到 CommitLog 这一个文件中。这保证了磁盘写入是完全的追加写入，性能非常高，这也是 RocketMQ 高吞吐量的一个关键设计。 ConsumeQueue 是“消费者索引” ：主要是用来支持消费者以MessageQueue的形式消费消息。一个MessageQueue对应一个ConsumeQueue文件。文件中包含三个核心信息：消息在CommitLog中的偏移量Offset、消息的总长度以及消息Tag的哈希值。消费者会根据ConsumeQueue文件找到自己感兴趣的消息，再从CommitLog中读取到消息的具体内容。 IndexFile是“时间索引”：主要是为消息查询提供了一种通过key或者时间区间来查询消息的方法。 总结来说，RocketMQ 通过“数据”和“索引”分离的设计，用一次额外的索引查找，换来了极致的顺序写性能和对海量 Topic 的友好支持。 到这，面试八股就算结束了。但面试官通常心里毫无波澜，因为面试过一千个人，都是这么背的。想让他眼前一亮，你必须主动升级问题，把思考过程亮出来。 面试官，其实要真正理解这个结构，就必须思考一个问题：为什么RocketMQ不学Kafka，而要自己设计一套这么复杂的结构。把这个问题分析清楚了，面试官绝对眼前一亮。 同样作为顶级的消息中间件，RocketMQ和Kafka的文件存储结构其实是很相似的，都是数据文件与索引文件分开，而且索引文件的设计也是这种数据索引加时间索引的形式。 但这两者的设计哲学确实完全不同。 Kafka 走的是“物理隔离，各自为政”的路线 ：每个 Topic 的每个分区（Partition）都对应一个独立的物理日志文件。它的优点是模型非常简单，单个分区内的读写因为文件独立，局部性很好。但缺点也很明显，当 Topic 或分区数量变得非常多时，磁盘上会产生海量的小文件，这不仅会耗尽文件句柄，更重要的是，磁盘的磁头需要在这些不同文件间频繁移动，宏观上就从顺序写退化成了随机写，导致性能下"
+    },
+    {
+      "slug": "qn7sam1ka0o5649w",
+      "title": "RocketMQ核心面试题一次全给讲通透",
+      "url": "/tulingzhouyu/db22bv/qn7sam1ka0o5649w",
+      "toc_path": [
+        "高频面试问题",
+        "楼兰老师",
+        "RocketMQ核心面试题一次全给讲通透"
+      ],
+      "toc_level": 2,
+      "toc_index": 1169,
+      "word_count": 2622,
+      "updated_at": "2025-09-22T09:11:58.000Z",
+      "primary_category": "mq-rocketmq",
+      "primary_category_name": "RocketMQ",
+      "related_categories": [
+        "mq-rocketmq",
+        "mq-general",
+        "mq-kafka",
+        "resume-project",
+        "performance-optimization"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "middle",
+        "senior",
+        "campus"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "RocketMQ",
+        "事务消息",
+        "顺序消息",
+        "延迟消息",
+        "消息堆积",
+        "MQ",
+        "消息队列",
+        "Kafka",
+        "Topic",
+        "Consumer",
+        "项目",
+        "面试官",
+        "性能"
+      ],
+      "summary": "文章目录面设基础第一问：到底什么是MQ？有什么用？第一步：解决性能瓶颈第二步：解决高可用最核心的问题：谁来统一指挥？终极拷问：你到底有没有做过设计？#万剑归宗：RocketMQ你理解到哪一层了？RocketMQ核心面试题，一次全给讲通透--楼兰RocketMQ的核心架构是什么样的？你项目当中是...",
+      "excerpt": "文章目录 面设基础第一问：到底什么是MQ？有什么用？ 第一步：解决性能瓶颈 第二步：解决高可用 最核心的问题：谁来统一指挥？ 终极拷问：你到底有没有做过设计？ #万剑归宗：RocketMQ你理解到哪一层了？ RocketMQ核心面试题，一次全给讲通透 --楼兰 RocketMQ的核心架构是什么样的？你项目当中是如何使用RocketMQ的？RocketMQ如何保证服务高可用？顺序消息、事务消息、延迟消息这些业务场景是怎么实现的？使用时如何对RocketMQ进行优化调优？这些都是RocketMQ的面试必考题。 如果你只是靠背面试题，那你会有背不完的面试题。听着别人说得头头是道，一到自己就磕磕绊绊。怎样才能让面试官真正相信你懂RocketMQ呢？如果你没有达到相声十级的水平，那么你需要的或许不是一些面试八股，而是一张思路清晰的架构设计图。理解了RocketMQ的核心设计，所有面试题都可以临场发挥。一图搞定所有面试题，RocketMQ走起！ 这次我们通过一张架构图，带你彻底搞定RocketMQ的架构面试题，各种技术概念，各种使用技巧，从入门到精通，一次全搞定。 面设基础第一问：到底什么是MQ？有什么用？ 我们先从一个场景开始：A服务需要远程调用B服务，A服务每秒发200个消息，B服务每秒只能处理100个。分分钟被压垮！ 怎么办？加一层中间件——消息队列。A是生产者，B是消费者。 生产者发送的消息，在中间消息对列中排队，并分配一个编号。消费者按照自己的速度从消息对列中拉取消息进行消费，并记录自己的处理进度，称为offset偏移量。有了中间的消息对列做缓冲，B服务就能按照自己的速度处理消息。这样，一个消息对列也就成型了。 但问题马上就来了， 这只是个简陋的队列。面试官马上追问：“这和RocketMQ有什么关系？消费者多了，怎么提升性能？机器挂了，数据丢了怎么办？” 问到点子上了！“分步解决掉这些问题，RocketMQ就成型了。” 第一步：解决性能瓶颈 B处理不过来，消息会堆积。怎么办？很简单，多找几个业务相同的B组成一个消费者组 (Consumer Group) 一起干！ 但问题又来了， 所有人都抢一个队列，还是有瓶颈！解决方案呢？有！给消息分类，就是主题(Topic)。一个Topic里再开多个队列(Queue)。生产者指定Topic发送消息，消息会均匀的写入到不同的对列当中。每个对列再去分配给消费者组当中的一个消费者进行消费。这样大家消费进度互不干涉，自然就能分工协作了。 这就好比超市结账，只开一个收银台肯定堵死。现在开了多个，每个消费者负责一个，效率瞬间起飞！ 然后在消息对列的服务端，分别记录每个MessageQueue上的消息写入的进度，称为代理者位点。还有每个消费者组的消费进度，称为消费者位点。这样就可以有序的监控每个MessageQueue上消息的消费进度了。"
+    },
+    {
+      "slug": "cw4eiwvowivo2ln7",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/cw4eiwvowivo2ln7",
+      "toc_path": [
+        "高频面试问题",
+        "楼兰老师",
+        "RocketMQ核心面试题一次全给讲通透",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1170,
+      "word_count": 51,
+      "updated_at": "2025-09-23T05:28:14.000Z",
+      "primary_category": "mq-rocketmq",
+      "primary_category_name": "RocketMQ",
+      "related_categories": [
+        "mq-rocketmq",
+        "mq-general",
+        "computer-network",
+        "netty-network",
+        "os-linux"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "middle",
+        "senior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "RocketMQ",
+        "MQ",
+        "文件"
+      ],
+      "summary": "📎RocketMQ核心架构.html📎RocketMQ1.png📎RocketMQ2.png📎RocketMQ3.png📎RocketMQ4.png📎RocketMQ5.png视频地址:通过网盘分享的文件：RocketMQ核心面试题一次讲透链接: https://pan.baidu...",
+      "excerpt": "视频地址:通过网盘分享的文件：RocketMQ核心面试题一次讲透 链接: https://pan.baidu.com/s/16KCN8EwFTf_x6W7f3K0e7g 提取码: xd56"
+    },
+    {
+      "slug": "zzbbgvpbmuwym7tz",
+      "title": "RocketMQ 消息积压不用慌！Java 工程师实战指南：从应急止损到架构根治（含代码 + 面试考点）",
+      "url": "/tulingzhouyu/db22bv/zzbbgvpbmuwym7tz",
+      "toc_path": [
+        "高频面试问题",
+        "鹏宇老师",
+        "RocketMQ 消息积压不用慌！Java 工程师实战指南：从应急止损到架构根治（含代码 + 面试考点）"
+      ],
+      "toc_level": 2,
+      "toc_index": 1231,
+      "word_count": 5006,
+      "updated_at": "2025-10-22T06:32:02.000Z",
+      "primary_category": "mq-rocketmq",
+      "primary_category_name": "RocketMQ",
+      "related_categories": [
+        "mq-rocketmq",
+        "observability-troubleshooting",
+        "java-core",
+        "mq-general",
+        "microservices-governance"
+      ],
+      "question_type": "troubleshooting",
+      "question_type_name": "故障排查题",
+      "levels": [
+        "middle",
+        "senior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "RocketMQ",
+        "消息堆积",
+        "排查",
+        "故障",
+        "监控",
+        "日志",
+        "链路",
+        "CPU",
+        "堆积",
+        "Java",
+        "异常",
+        "IO",
+        "MQ"
+      ],
+      "summary": "在 Java 后端开发中，RocketMQ 作为高频使用的消息中间件，“消息积压” 是生产环境绕不开的坑 —— 大促峰值流量冲垮消费端、慢 SQL 阻塞业务执行、下游接口超时导致消息堆积…… 这些问题轻则引发业务延迟，重则导致系统雪崩。更棘手的是，面试时面试官还会追问 “怎么处理积压”，光说 ...",
+      "excerpt": "在 Java 后端开发中，RocketMQ 作为高频使用的消息中间件，“消息积压” 是生产环境绕不开的坑 —— 大促峰值流量冲垮消费端、慢 SQL 阻塞业务执行、下游接口超时导致消息堆积…… 这些问题轻则引发业务延迟，重则导致系统雪崩。更棘手的是，面试时面试官还会追问 “怎么处理积压”，光说 “扩容” 根本拿不到高分。 本文将从 问题本质→临时应急→根因排查→长期根治 四个维度，结合 Java 代码示例，带你彻底掌握 RocketMQ 消息积压的解决方案，既搞定生产故障，又应对面试拷问。 一、先搞懂：消息积压的本质不是 “故障”，是 “常态” 很多开发者一遇到积压就慌，其实从 MQ 的设计初衷来看， 积压是 “削峰填谷” 的必然结果 ——MQ 的核心价值就是承接峰值流量，让消费端按 “平稳速度” 处理，只要积压在业务可接受范围内（比如日志消息延迟 10 分钟无关紧要，支付消息延迟 10 秒致命），就无需处理。 1.1 如何判断积压是否需要处理？ 两个核心标准，用 Java 代码可通过 RocketMQ Admin API 查询： 只有同时满足 “积压持续增长” 和 “延迟超阈值”，才需要启动处理流程。 1.2 定位问题：找到积压的核心诱因（关键！避免盲目操作） 确定需要处理积压后， 第一步不是 “扩容”，而是 “定位诱因” —— 盲目操作可能导致下游雪崩（比如消费慢是因为数据库压力大，再扩消费者会让数据库更卡）。根据 PPT 中的定位逻辑，分三步精准排查： 步骤 1：明确业务场景 ——“哪类消息在积压？” 先搞清楚是哪个模块、哪类消息出了问题，不同场景优先级和处理方式完全不同： 核心业务消息（如支付回调、订单创建）：需紧急处理，优先级最高； 非核心消息（如日志同步、数据统计）：可暂缓处理，甚至丢弃部分过期消息； 实操方式：通过 RocketMQ 控制台查看 “各 Tag 消息的积压量”，或在代码中打印消息 Tag 进行筛选： 步骤 2：检查上游流量 ——“是输入太多，还是处理太慢？” 通过监控工具（如 Prometheus+Grafana、RocketMQ 控制台）查看 Topic 的 “消息生产 TPS”，判断是否是上游流量异常： 场景 A：流量突增（如大促秒杀、定时任务批量推送）： 正常突增：后续需扩容 Queue 和消费者长期支撑； 异常突增（如爬虫攻击、重复请求）：需在生产者端加限流（见下文 2.1 代码）； 场景 B：流量正常，但积压持续：说明是消费端处理效率下降（见步骤 3）。 步骤 3：评估消费速度 ——“消费端为什么处理慢？” 通过 RocketMQ 监控查看 “消费 TPS” 和 “消费延迟”，判断消费端是否正常： 消费 TPS 骤降：需排查消费逻辑（如慢 SQL、下游接口超时）； 消费 TPS 正常，但积压仍增长：说明生产 TPS > 消"
+    }
+  ]
+}

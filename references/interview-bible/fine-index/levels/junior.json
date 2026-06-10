@@ -1,0 +1,1970 @@
+{
+  "id": "junior",
+  "name": "初级/1-3年",
+  "aliases": [
+    "初级",
+    "1-3年",
+    "1到3年",
+    "工作1年",
+    "工作2年",
+    "工作3年",
+    "2-5年",
+    "增删改查",
+    "CRUD",
+    "基础题",
+    "常见面试题"
+  ],
+  "count": 41,
+  "total_word_count": 157810,
+  "articles": [
+    {
+      "slug": "kw8ziidim4eddn5o",
+      "title": "工作2-5年简历模板",
+      "url": "/tulingzhouyu/db22bv/kw8ziidim4eddn5o",
+      "toc_path": [
+        "面试必看",
+        "面试指导与简历模板",
+        "工作2-5年简历模板"
+      ],
+      "toc_level": 2,
+      "toc_index": 10,
+      "word_count": 21,
+      "updated_at": "2025-04-13T11:29:28.000Z",
+      "primary_category": "resume-project",
+      "primary_category_name": "简历与项目表达",
+      "related_categories": [
+        "resume-project",
+        "java-core"
+      ],
+      "question_type": "resume_project",
+      "question_type_name": "简历项目题",
+      "levels": [
+        "junior",
+        "senior"
+      ],
+      "level_names": [
+        "初级/1-3年",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "简历",
+        "Java"
+      ],
+      "summary": "01-中高级工程师.pdf02-高级Java研发工程师（P6）.pdf",
+      "excerpt": ""
+    },
+    {
+      "slug": "apbcfyk28dhe7w38",
+      "title": "简历全是 CRUD？3 个 “合法包装” 技巧，让你的 Controller-Service-Dao 讲出阿里 P7 的味道！",
+      "url": "/tulingzhouyu/db22bv/apbcfyk28dhe7w38",
+      "toc_path": [
+        "面试必看",
+        "项目亮点和难点",
+        "简历全是 CRUD？3 个 “合法包装” 技巧，让你的 Controller-Service-Dao 讲出阿里 P7 的味道！"
+      ],
+      "toc_level": 2,
+      "toc_index": 16,
+      "word_count": 1453,
+      "updated_at": "2026-01-25T05:44:15.000Z",
+      "primary_category": "resume-project",
+      "primary_category_name": "简历与项目表达",
+      "related_categories": [
+        "resume-project",
+        "java-collections",
+        "redis-cache",
+        "docker-k8s",
+        "observability-troubleshooting"
+      ],
+      "question_type": "resume_project",
+      "question_type_name": "简历项目题",
+      "levels": [
+        "junior",
+        "middle",
+        "senior"
+      ],
+      "level_names": [
+        "初级/1-3年",
+        "中级/3-5年",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "简历",
+        "项目",
+        "亮点",
+        "难点",
+        "面试官",
+        "CRUD",
+        "包装",
+        "HashMap",
+        "ConcurrentHashMap",
+        "Redis",
+        "缓存",
+        "穿透"
+      ],
+      "summary": "写在开头最近帮大家改简历，我发现 90% 的 Java 程序员都面临同一个死局： “Fox 老师，我工作 3 年了，每天都在写 Controller-Service-Dao，做的全是 CRUD（增删改查）。简历上写不出东西，面试官问稍微深一点就挂，怎么破？”这其实是行业的",
+      "excerpt": "写在开头 最近帮大家改简历，我发现 90% 的 Java 程序员都面临同一个死局： “Fox 老师，我工作 3 年了，每天都在写 Controller-Service-Dao，做的全是 CRUD （增删改查）。简历上写不出东西，面试官问稍微深一点就挂，怎么破？” 这其实是行业的 “隐性门槛” 。 面试官心里很清楚，绝大多数业务都是 CRUD。但为什么有的人能拿 30k，有的人只能拿 15k？ 区别不在于你“做了什么”，而在于你“挖了多深”。 今天 Fox 不讲虚的，教你 3 个 “合法包装” 技巧。哪怕你做的只是最简单的管理后台，也能讲出 阿里 P7 架构师 的味道！ 技巧一：把“功能实现”包装成“故障解决” 面试官最烦的就是听流水账。如果你想让他眼前一亮，就得学会 “讲故事” ——而且是 “惊心动魄” 的故事。 👇 一张图看懂话术区别： 初级回答：我用了 Redis 加快查询。 高薪回答：我解决了缓存穿透导致 DB CPU 飙升 100% 的事故。 ✅ 高薪包装术（故障驱动法）： 不要讲顺风顺水的故事，要讲生产事故。 面试官最喜欢听的是： 原本好好的 -> 突然出事了 -> 你怎么排查 -> 怎么解决 。 话术模板： “面试官，这个项目虽然业务逻辑不复杂，但在高并发下遇到了 严重的缓存穿透问题 。 当时我发现数据库 CPU 突然飙升到 100%，排查日志发现是有黑产在疯狂请求不存在的商品 ID，导致 Redis 缓存完全失效，流量全部打穿到了 DB。 后来我没有简单地加防火墙，而是 引入了 布隆过滤器 （Bloom Filter） ，在缓存层之前拦截掉了 99% 的非法请求。同时，为了防止误判，我还设计了一套异步重建机制……” 技巧二：把“技术选型”包装成“架构思考” ❌ 初级回答（平庸）： “因为 ConcurrentHashMap 线程安全，所以我们用它做本地缓存。” 💡 面试官潜台词： “这人没经验，不知道 Map 只进不出会导致 OOM 吗？” ✅ 高薪包装术（防患于未然）： 真正的架构师，在选型时考虑的永远是 稳定性 和 边界情况 。 话术模板： “在设计本地缓存时，我没有盲目使用 ConcurrentHashMap 。 虽然它线程安全，但我看过源码，它 缺乏自动过期（TTL）和内存淘汰机制 。在生产环境中，如果缓存数据持续增长，极易导致 OOM（内存溢出） 。 所以我最终引入了 Caffeine （Spring Boot 默认缓存组件）。 我深入研究过它的 Window TinyLfu 算法 ，发现它比普通的 LRU 算法命中率更高。我配置了 maximumSize 和 expireAfterWrite ，既保证了热点数据的高效读取，又完美规避了内存泄漏的风险。” 👉 核心逻辑： 从“只会用 API”进阶到“考虑系统稳定性”。面试官一听就"
+    },
+    {
+      "slug": "nn6meztozbalk68e",
+      "title": "保险分销平台(亮点与难点)",
+      "url": "/tulingzhouyu/db22bv/nn6meztozbalk68e",
+      "toc_path": [
+        "面试必看",
+        "项目亮点和难点",
+        "保险分销平台(亮点与难点)"
+      ],
+      "toc_level": 2,
+      "toc_index": 18,
+      "word_count": 5522,
+      "updated_at": "2025-08-13T12:12:36.000Z",
+      "primary_category": "redis-cache",
+      "primary_category_name": "Redis缓存",
+      "related_categories": [
+        "redis-cache",
+        "project-system-design",
+        "performance-optimization",
+        "resume-project",
+        "mysql-index-transaction"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle",
+        "junior"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年",
+        "初级/1-3年"
+      ],
+      "keywords": [
+        "Redis",
+        "缓存",
+        "缓存一致性",
+        "穿透",
+        "击穿",
+        "架构设计",
+        "方案",
+        "高并发",
+        "秒杀",
+        "订单",
+        "支付",
+        "限流",
+        "性能",
+        "简历",
+        "MySQL"
+      ],
+      "summary": "Java工程师 .pdf上面这位学员简历的项目没什么亮点和难点，投出去面试机会可能不多，经过和老师沟通后，着重优化了第一个项目《分销领客牛平台》，这个项目本质上就是一个保险分销平台，优化如下：项目名称：分销领客牛平台（保险产品分销系统）项目描述：领客牛是一个大型保险产品分销平台，日均服务10万...",
+      "excerpt": "上面这位学员简历的项目没什么亮点和难点，投出去面试机会可能不多，经过和老师沟通后，着重优化了第一个项目《分销领客牛平台》，这个项目本质上就是一个 保险分销平台 ，优化如下： 项目名称：分销领客牛平台（保险产品分销系统） 项目描述： 领客牛是一个大型保险产品分销平台，日均服务10万+代理人，支持数百款保险产品的在线销售。系统实现了完整的多级分销体系，包括渠道管理、团队管理、产品配置、佣金计算、投保流程等核心功能。 技术架构： 前端：Vue.js + Element UI 后端：SpringBoot + SpringCloud Alibaba + MySQL + Redis + kafka + Apollo 监控：Prometheus + Grafana + ELK 核心亮点： 高并发订单处理 采用多级缓存(本地缓存+Redis集群)架构，将热点产品信息查询延迟控制在100ms以内 设计了分布式锁+消息队列的架构，实现订单峰值1000+TPS的稳定处理 使用分库分表技术，解决了亿级订单数据存储问题（视情况写） 复杂佣金计算系统 设计了灵活的多级分销佣金计算规则引擎，支持20+种佣金计算规则 采用责任链+策略模式处理不同产品类型的佣金计算逻辑 实现佣金计算的实时预览功能，提升用户体验 投保计划书智能生成 设计了基于模板引擎的动态计划书生成系统，支持100+种产品组合方案 实现了计划书异步生成和缓存机制，将生成时间从20秒优化到1秒内 采用多级缓存+延迟队列，解决了高峰期计划书并发生成问题 技术难点及解决方案： 订单数据一致性问题 （实际问题） 实现了基于TCC模式的分布式事务处理机制，确保订单与支付状态的最终一致性 设计了订单状态机，通过状态流转实现订单全生命周期的有效管理 采用补偿机制处理分布式事务异常，确保数据最终一致性 复杂业务规则处理(业务) 引入规则引擎，将90+种业务规则配置化，提升系统可维护性 设计了产品规则动态装载机制，支持业务规则热更新 实现了规则验证的并行处理，提升规则校验效率 系统性能优化 （性能优化） 结合业务场景优化复杂SQL，将30秒级查询优化到1秒内 实现读写分离，利用多级缓存减少数据库访问压力 通过异步处理+任务队列，提升系统整体吞吐量 安全性设计 实现了基于RBAC的细粒度权限控制 设计防刷限流机制，有效防止恶意攻击 实现敏感数据加密存储和传输机制 这样的包装既突出了技术深度，又结合了具体的业务场景，面试时可以重点展开这些亮点，并准备具体的技术方案和数据支撑。每个点都可以深入展开讨论，展现你的技术实力和解决问题的能力。 ​ 结合AI部分： 智能核保助手 集成大模型进行风险评估，自动分析客户提交的材料 智能识别保险欺诈行为，提升核保效率70% 基于历史数据训练模型，实现个性化保险产品推荐 客户服务智能体 7×24小时智能客服，处理8"
+    },
+    {
+      "slug": "na2rgdk111ggmagx",
+      "title": "传统OA办公系统(亮点与难点)",
+      "url": "/tulingzhouyu/db22bv/na2rgdk111ggmagx",
+      "toc_path": [
+        "面试必看",
+        "项目亮点和难点",
+        "传统OA办公系统(亮点与难点)"
+      ],
+      "toc_level": 2,
+      "toc_index": 19,
+      "word_count": 4034,
+      "updated_at": "2025-06-17T11:20:09.000Z",
+      "primary_category": "redis-cache",
+      "primary_category_name": "Redis缓存",
+      "related_categories": [
+        "redis-cache",
+        "performance-optimization",
+        "resume-project",
+        "os-linux",
+        "java-concurrency"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle",
+        "junior"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年",
+        "初级/1-3年"
+      ],
+      "keywords": [
+        "Redis",
+        "缓存",
+        "击穿",
+        "性能",
+        "优化",
+        "吞吐",
+        "容量",
+        "简历",
+        "项目",
+        "亮点",
+        "难点",
+        "如何回答",
+        "并发"
+      ],
+      "summary": "Java开发工程师.docx上面这位学员简历的项目没什么亮点和难点，投出去面试机会可能不多，经过和老师沟通后，着重优化了第三个项目《OA办公系统》，优化如下：项目三：企业级分布式协同办公系统项目描述：该项目是面向集团级企业的大型分布式协同办公平台，服务用户规模3000+，日均处理业务数据约10...",
+      "excerpt": "上面这位学员简历的项目没什么亮点和难点，投出去面试机会可能不多，经过和老师沟通后，着重优化了第三个项目《OA办公系统》，优化如下： 项目三：企业级分布式协同办公系统 项目描述： 该项目是面向集团级企业的大型分布式协同办公平台，服务用户规模3000+，日均处理业务数据约10万+。平台采用微服务架构，实现了信息发布中心、流程审批中心、远程办公中心等核心功能模块，支持全面的信创环境适配。 技术架构： 前端：Vue.js + Element UI 后端：SpringBoot + SpringCloud Alibaba + Redis + Rabbitmq + MySQL + MinIO + ElasticSearch 监控：Prometheus + Grafana + ELK 技术难点及解决方案： 文档处理性能优化： 设计基于MinIO的分布式文件存储方案，支持PB级文档存储 实现文档断点续传和秒传功能，提升10倍传输效率 引入文档预览服务，支持100+种格式在线预览 复杂审批流程引擎优化 设计实现了基于Activity工作流引擎的自定义工作流程 通过状态机模式处理复杂审批流转，支持动态分支、会签、并行等场景 引入Redis分布式锁确保并发审批的数据一致性 审批处理效率提升200%，支持千级并发处理 系统性能优化 实现基于ElasticSearch的全文检索，检索响应时间优化至100ms以内 使用RabbitMQ消息队列实现系统解耦，提高系统可用性达99.99% 设计多级缓存架构（本地缓存+Redis集群），降低数据库压力80% 实现读写分离，通过分库分表处理海量数据，单表数据量控制在500万以内 安全性提升 实现基于RBAC的细粒度权限控制，支持动态权限调整 设计统一认证中心，实现SSO单点登录 所有敏感数据采用AES加密存储，确保数据安全 实现操作日志完整追踪机制，支持审计回溯 项目成果： 系统平均响应时间从3s优化至300ms，支持2000+并发用户 业务处理效率提升200%，用户满意度提升40% 系统运维成本降低60%，故障处理时间缩短80% 获得公司年度最佳技术创新奖 ​ 结合AI部分： 智能文档处理 文档自动分类、摘要生成、关键信息提取 合同条款智能审核，风险点自动标注 会议纪要自动生成，关键决议智能提醒 工作流智能优化 基于历史数据预测审批时长，智能调度资源 异常流程自动识别与预警 智能排班系统，考虑员工技能匹配度 ​ 面试如何回答： 一、设计基于MinIO的分布式文件存储方案，支持PB级文档存储 业务背景分析 在我们的办公系统中，经常需要处理大量的文档上传下载需求，需要支持PB级的文档存储。考虑到性能、可靠性和成本等因素，我们选择了基于MinIO构建分布式存储方案。 整体架构设计 采用MinIO分布式集群架构，每个集群至少4个节点 使用Nginx做负"
+    },
+    {
+      "slug": "fhtiwxnmcgg0nztu",
+      "title": "建行市场结算平台(亮点与难点)",
+      "url": "/tulingzhouyu/db22bv/fhtiwxnmcgg0nztu",
+      "toc_path": [
+        "面试必看",
+        "项目亮点和难点",
+        "建行市场结算平台(亮点与难点)"
+      ],
+      "toc_level": 2,
+      "toc_index": 20,
+      "word_count": 4339,
+      "updated_at": "2025-06-17T11:20:31.000Z",
+      "primary_category": "redis-cache",
+      "primary_category_name": "Redis缓存",
+      "related_categories": [
+        "redis-cache",
+        "project-system-design",
+        "resume-project",
+        "performance-optimization",
+        "mysql-sharding"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle",
+        "junior"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年",
+        "初级/1-3年"
+      ],
+      "keywords": [
+        "Redis",
+        "缓存",
+        "缓存一致性",
+        "穿透",
+        "击穿",
+        "雪崩",
+        "系统设计",
+        "架构设计",
+        "方案",
+        "高并发",
+        "秒杀",
+        "订单",
+        "简历",
+        "性能",
+        "分库分表"
+      ],
+      "summary": "8年经验.pdf上面这位学员简历的项目没什么亮点和难点，投出去面试机会可能不多，经过和老师沟通后，着重优化了第二个项目建行惠市宝项目，这个项目本质上就是一个银行结算平台，优化如下：项目名称：中国建设银行惠市宝（专业市场结算平台）项目描述：该项目是建设银行面向全国专业市场的统一支付结算平台，日交...",
+      "excerpt": "上面这位学员简历的项目没什么亮点和难点，投出去面试机会可能不多，经过和老师沟通后，着重优化了第二个项目建行惠市宝项目，这个项目本质上就是一个 银行结算平台 ，优化如下： ​ 项目名称：中国建设银行惠市宝（专业市场结算平台） 项目描述： 该项目是建设银行面向全国专业市场的统一支付结算平台，日交易金额过亿，服务数百家专业市场、上万商户的核心系统。项目采用微服务架构，主要包含合约、支付、清算、对账调账四大核心模块。 技术栈： SpringBoot + SpringCloud + Redis + Kafka + Quartz + Oracle 核心职责与技术难点： 架构设计与性能优化 实现了基于本地消息表+Kafka的事务最终一致性方案，确保支付、分账等核心场景的数据一致性 采用多级缓存架构(本地缓存+Redis集群)，将商户信息查询性能提升5倍，系统整体响应时间降低到200ms以内 设计并实现了基于分库分表的高性能支付模块，通过分库策略和索引优化，使得单表数据量控制在千万级别，查询性能提升300% 支付流程优化与安全性提升 设计了支付防重复提交机制，通过分布式锁+幂等性检查，有效防止重复支付 实现了基于风控规则引擎的交易监控系统，支持灵活配置风控规则，有效拦截异常交易 开发了支付结果实时通知重试机制，通过指数退避算法，确保通知成功率达到99.99% 清算系统设计与优化 设计了支持多维度的分账规则引擎，可灵活配置商户分账比例、阶梯分账等复杂场景 实现了分布式任务调度系统，通过Quartz集群确保大批量清算任务的可靠执行 开发了智能对账系统，支持T+1差异化对账，对账准确率达99.999%，大幅减少人工对账工作量 系统监控与运维 构建了基于ELK的统一日志收集分析平台，实现系统运行状态实时监控 设计了服务降级和熔断机制，通过Sentinel实现系统限流保护 实现了分布式链路追踪，通过SkyWalking快速定位系统瓶颈 技术亮点： 采用SpringCloud微服务架构，实现系统高可用性，服务可用性达到99.99% 使用分布式事务确保支付环节的数据一致性 实现了支付、清算等核心模块的高并发处理能力，系统TPS达到3000+ 通过分库分表、缓存优化等手段，有效支持海量数据处理 项目成果： 系统成功上线后支持日均交易量10万+，峰值TPS 3000+ 平台运行稳定，核心接口响应时间<200ms，系统可用性99.99% 获得建行总行年度优秀项目奖，并在多个分行成功推广使用 这样的项目描述既保留了原有业务特点，又突出了技术难点和解决方案，同时加入了具体的性能指标和业务成果，使项目更具说服力和亮点。在面试时，你可以重点展开讨论系统架构、业务设计亮点、分布式事务处理、性能优化等技术难点的具体实现方案。 ​ 结合AI部分： 风控智能决策系统 实时反欺诈检测，毫秒级风险评估 信贷智能审"
+    },
+    {
+      "slug": "iu40yi3obhsecxi5",
+      "title": "银行项目长事务优化",
+      "url": "/tulingzhouyu/db22bv/iu40yi3obhsecxi5",
+      "toc_path": [
+        "面试必看",
+        "项目亮点和难点",
+        "银行项目长事务优化"
+      ],
+      "toc_level": 2,
+      "toc_index": 29,
+      "word_count": 1105,
+      "updated_at": "2024-08-20T13:46:27.000Z",
+      "primary_category": "mysql-index-transaction",
+      "primary_category_name": "MySQL索引与事务",
+      "related_categories": [
+        "mysql-index-transaction",
+        "resume-project",
+        "java-concurrency",
+        "performance-optimization",
+        "observability-troubleshooting"
+      ],
+      "question_type": "resume_project",
+      "question_type_name": "简历项目题",
+      "levels": [
+        "middle",
+        "junior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "初级/1-3年"
+      ],
+      "keywords": [
+        "事务",
+        "锁",
+        "简历",
+        "项目",
+        "亮点",
+        "难点",
+        "CRUD",
+        "并发",
+        "优化",
+        "日志"
+      ],
+      "summary": "很多同学开发过一些传统项目，项目基本都是CRUD的业务实现，简历里不知道写什么项目亮点，其实长事务的优化就是可以写的一个亮点，我们可以考虑一个银行系统的场景，其中涉及账户转账功能的长事务优化。这个示例将展示如何优化银行账户资金转账时的长事务。项目背景在一个银行账户管理系统中，用户可以从一个账户...",
+      "excerpt": "很多同学开发过一些传统项目，项目基本都是CRUD的业务实现，简历里不知道写什么项目亮点，其实长事务的优化就是可以写的一个亮点，我们可以考虑一个银行系统的场景，其中涉及账户转账功能的长事务优化。这个示例将展示如何优化银行账户资金转账时的长事务。 项目背景 在一个银行账户管理系统中，用户可以从一个账户向另一个账户转账。原有的实现将整个转账过程（包括账户余额检查、扣款、入账、记录交易流水和通知客户）都纳入一个事务中。这可能导致以下问题： 长时间锁定账户记录，导致其他操作无法进行 系统并发能力降低 影响用户体验（长时间等待转账完成） 优化策略 缩小事务范围：仅将扣款和入账操作纳入事务。 使用异步处理：异步处理通知和记录交易流水。 采用批量操作来减少数据库交互。 使用乐观锁来控制并发。 优化实现 1. 服务设计 将关键的扣款和入账操作封装在一个事务中，而将通知和日志记录异步化。 2. 仓库接口 数据库操作接口包括基于乐观锁的余额更新方法。 3. 异步服务 使用异步服务处理非实时性任务，如记录交易日志和发送通知。 代码说明 事务范围缩小 ： 事务中只进行关键的扣款和入账操作。这样可以缩短事务时间，减少数据库锁定。 乐观锁 ： 通过在更新账户余额时使用版本号，确保数据一致性并避免并发冲突。 异步处理 ： 利用 @Async 异步方法处理日志记录和用户通知，从而减轻主流程的压力。 批量操作 ： 将所有账户相关信息提前查询减少每个操作的数据库交互次数。 优化效果 并发提升 ：通过缩短关键事务的锁定时间，提升了系统并发处理能力。 快速响应 ：将不影响数据一致性的操作异步化处理，使得用户能够更快速地完成转账操作。 提升可靠性 ：通过乐观锁减少了数据更新时的锁冲突风险，增加了系统的健壮性。 提高用户体验 ：减少转账等待时间，并提供及时通知，改善了整体用户体验。 通过上述优化策略，我们可以在银行系统中有效减少长事务的影响，提高系统的效率和用户满意度。"
+    },
+    {
+      "slug": "qu5hvh3bbni7koti",
+      "title": "陌陌、猎豹移动、映客和作业帮面试",
+      "url": "/tulingzhouyu/db22bv/qu5hvh3bbni7koti",
+      "toc_path": [
+        "面试必看",
+        "最全面经",
+        "陌陌、猎豹移动、映客和作业帮面试"
+      ],
+      "toc_level": 2,
+      "toc_index": 87,
+      "word_count": 2047,
+      "updated_at": "2023-09-05T15:11:28.000Z",
+      "primary_category": "mysql-index-transaction",
+      "primary_category_name": "MySQL索引与事务",
+      "related_categories": [
+        "mysql-index-transaction",
+        "redis-cache",
+        "resume-project",
+        "performance-optimization",
+        "project-system-design"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle",
+        "junior"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年",
+        "初级/1-3年"
+      ],
+      "keywords": [
+        "MySQL",
+        "索引",
+        "事务",
+        "MVCC",
+        "锁",
+        "InnoDB",
+        "Redis",
+        "缓存",
+        "击穿",
+        "简历",
+        "项目",
+        "CRUD",
+        "性能",
+        "系统设计"
+      ],
+      "summary": "本人工作 6 年多，最近一份工作在一家知名的二手车公司。近期我面试了 4 家二线大厂：陌陌、猎豹移动、映客和作业帮。下面分享一下面试经验，希望对大家有所帮助。分享之前，先谈两点感受：1、面试后端岗位，要准备的知识点很多：常规算法、编程语言、常用框架、数据库、主流中间件、以及项目中具体问题的解决...",
+      "excerpt": "本人工作 6 年多，最近一份工作在一家知名的二手车公司。近期我面试了 4 家二线大厂： 陌陌、猎豹移动、映客和作业帮。 下面分享一下面试经验，希望对大家有所帮助。分享之前，先谈两点感受： 1、面试后端岗位，要准备的知识点很多：常规算法、编程语言、常用框架、数据库、主流中间件、以及项目中具体问题的解决方案。原理知识和实战经验都不能忽视。 2、充足的准备很重要，尤其对于很久没有面试的同学，可以先找几家小公司练练手，等找到面试感觉后，再投心仪的公司，要注意把控好整体节奏。 第一家：陌陌 1、说一下 MySQL InnoDB 的索引原理是什么？B+ Tree 索引的优势是什么？使用索引查询时，它的完整流程是什么样的？ 2、是否做过分库分表？如果数据量很大了，你会怎么设计分表方案？ 3、平时项目中，MySQL 单表的数据量有多大？访问量如何？如果碰到性能问题，你会怎么优化？联表查询的隐患是什么？都有哪些优化方案呢？ 4、实际项目中，Redis 都用在了哪些场景？能说下 Redis 基本的数据结构以及适用场景吗？ 5、Redis 和 Zookeeper 分别是如何实现分布式锁的？优缺点各是什么？ 6、目前线上业务的 Redis 使用了什么部署架构？了解哨兵是如何保证 Redis 高可用的吗？知道哨兵架构下 Master 节点的选举流程吗？ 7、是否了解过 Nginx？Nginx 的负载均衡方式有哪些？是如何配置的？ 8、谈一下你在项目中做得比较出彩的地方？ 9、系统设计题：假设现在有一个陌陌群，有人发了一个群红包，群里面有100 个人去抢这个红包，请从存储以及业务流程角度简述一下实现方案。 陌陌这边比较关注：项目过程中你是否会主动思考，高并发的实践经验，线上问题的解决能力，同时对运维和架构知识有一定要求。 第二家：猎豹移动 1、简历上提到有做过接口性能优化，能谈谈具体是怎么做的吗？ 2、简述下一个 HTTP 请求，从发起请求开始到响应的大概流程。 3、平时项目中 MySQL 用的哪种存储引擎？InnoDB 和 MYISAM 的区别是什么？事务的四个特性分别是什么？MVCC 的作用是什么？ 4、清楚 MySQL 的架构吗？简述一条查询 SQL 的完整执行流程？在上述执行流程中，提示 SQL 语法错误发生在哪个环节？表字段不存在发生在哪个环节？ 5、有一张 USER 表，表中有 id、name 、age、sex、login_time 五个字段。 问题1：需要查询男性用户在某个时间段内的登录情况，请问索引该如何建立？ 问题2：现在有一个联合索引 （sex、login_time、age），下面这条 SQL 语句 where sex in (1,2) and login_time between 1 and 10 and age > 20 能否用到这个联合索引，为什么？ 6、实际"
+    },
+    {
+      "slug": "gd98aqe6nn6e73qq",
+      "title": "金三银四精选面试题系列-徐庶",
+      "url": "/tulingzhouyu/db22bv/gd98aqe6nn6e73qq",
+      "toc_path": [
+        "系列篇",
+        "金三银四精选面试题系列-徐庶"
+      ],
+      "toc_level": 1,
+      "toc_index": 97,
+      "word_count": 4614,
+      "updated_at": "2024-02-20T11:24:47.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "os-linux",
+        "mysql-index-transaction",
+        "java-thread-pool",
+        "jvm-memory-gc"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "middle",
+        "senior",
+        "junior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年",
+        "初级/1-3年"
+      ],
+      "keywords": [
+        "并发",
+        "线程",
+        "锁",
+        "AQS",
+        "CAS",
+        "ThreadLocal",
+        "操作系统",
+        "进程",
+        "内存",
+        "文件",
+        "索引",
+        "事务",
+        "线程池",
+        "JVM"
+      ],
+      "summary": "Java中有哪几种方式来创建线程执行任务？薪资：8-12k岗位：初级开发工程师1. 继承Thread类/**  * 作者：徐庶  */ public class XushuThread extends Thread{       public static void main(String[]...",
+      "excerpt": "Java中有哪几种方式来创建线程执行任务？ 薪资：8-12k 岗位：初级开发工程师 1. 继承Thread类 ​ 总结：重写的是run()方法，而不是start()方法，但是占用了继承的名额，Java中的类是单继承的。 ​ 讲到单继承，我们应该注意，java中的接口是可以多继承的 2. 实现Runnable接口 总结：实现Runnable接口，实现run()方法，使用依然要用到Thread，这种方式更常用 有时候，我们会直接使用匿名内部类的方式或者Lambda表达式的方式： 3. 实现Callable接口 总结：实现Callable接口，实现call()方法，得使用Thread+FutureTask配合，这种方式支持拿到异步执行任务的结果 ​ 4. 利用线程池来创建线程 总结：实现Callable接口或者Runnable接口都可以，由ExecutorService来创建线程 ​ 注意，工作中不建议使用Executors来创建线程池 总结 以上几种方式，底层都是基于Runnable。 为什么不建议使用Executors来创建线程池？ 薪资：10k-20k 岗位：中级开发工程师 1. FixedThreadPool 当我们使用Executors创建FixedThreadPool时，对应的构造方法为： 发现创建的队列为LinkedBlockingQueue，是一个无界阻塞队列，如果使用该线程池执行任务，如果任务过多就会不断的添加到队列中，任务越多占用的内存就越多，最终可能耗尽内存，导致OOM。 ​ 2. SingleThreadExecutor 当我们使用Executors创建SingleThreadExecutor时，对应的构造方法为： 也是LinkedBlockingQueue，所以同样可能会耗尽内存。 总结 除开有可能造成OOM之外，我们使用Executors来创建线程池也不能自定义线程的名字，不利于排查问题，所以建议直接使用ThreadPoolExecutor来定义线程池，这样可以灵活控制。 ​ 线程池有哪几种状态？每种状态分别表示什么？ 薪资：10k-15k 岗位：初级开发工程师 1. RUNNING Accept new tasks and process queued tasks 表示线程池正常运行，既能接受新任务，也会正常处理队列中的任务 2. SHUTDOWN Don't accept new tasks, but process queued tasks 当调用线程池的shutdown()方法时，线程池就进入SHUTDOWN状态，表示线程池处于正在关闭状态，此状态下 线程池不会接受新任务 ，但是会 继续把队列中的任务处理完 3. STOP Don't accept new tasks, don't process queued tasks, a"
+    },
+    {
+      "slug": "rmggzgsmr6w4hli5",
+      "title": "🚛 超详细Redis7.X 安装以及快速入门加常见面试题讲解",
+      "url": "/tulingzhouyu/db22bv/rmggzgsmr6w4hli5",
+      "toc_path": [
+        "系列篇",
+        "🚛 超详细Redis7.X 安装以及快速入门加常见面试题讲解"
+      ],
+      "toc_level": 1,
+      "toc_index": 114,
+      "word_count": 20321,
+      "updated_at": "2025-05-21T07:10:02.000Z",
+      "primary_category": "redis-cache",
+      "primary_category_name": "Redis缓存",
+      "related_categories": [
+        "redis-cache",
+        "redis-persistence-cluster",
+        "spring-cloud",
+        "observability-troubleshooting",
+        "mysql-sharding"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "senior",
+        "campus",
+        "junior"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "校招/应届生",
+        "初级/1-3年"
+      ],
+      "keywords": [
+        "Redis",
+        "哨兵",
+        "Cluster",
+        "集群",
+        "主从复制",
+        "Sentinel",
+        "故障",
+        "监控",
+        "日志",
+        "分片",
+        "读写分离",
+        "主从"
+      ],
+      "summary": "1. Redis简介1.1 什么是RedisRedis是一个基于内存的 key-value 键值存储的、可持久化的数据库，并且提供了非常丰富的数据结构，同时还支持非常丰富的功能特性。1.2 Redis的数据结构字符串（Strings）： 存储字符串类型的值。哈希表（Hashes）： 存储字段和...",
+      "excerpt": "Redis简介 1.1 什么是Redis Redis是一个基于内存的 key-value 键值存储的、可持久化的数据库，并且提供了非常丰富的数据结构，同时还支持非常丰富的功能特性。 1.2 Redis的数据结构 字符串（Strings）： 存储字符串类型的值。 哈希表（Hashes）： 存储字段和对应值的映射。 列表（Lists）： 存储有序的字符串列表。 集合（Sets）： 存储不重复的字符串集合。 有序集合（Sorted Sets）： 类似集合，但每个元素都关联一个分数，可以按分数排序。 1.3 Redis的功能特性 安全性 ： 密码保护：通过设置密码保护访问。 ACL：用户访问控制列表。 多种数据结构 ：十种数据结构。 事务 ：支持将多个命令打包执行，保持原子性。 支持持久化： 可以将数据持久化到磁盘，保证数据安全。 复制 ：支持主从复制，实现数据的冗余和读取扩展。 哨兵系统 ：用于监控主服务器的状态，自动进行故障转移。 集群 ：通过Redis Cluster实现数据分片和高可用性。 Lua脚本 ：支持在Redis服务器上执行Lua脚本。 慢查询日志 ：记录执行时间超过指定阈值的查询。 Redis 安装 本教程将演示在 linux 环境下安装 Redis7，给大家最简单，最快捷的安装方式，其中包括单机部署、主从部署、哨兵部署、集群部署的安装以及相应的架构介绍。 单机部署 检查安装 gcc 环境 Redis是由C语言编写的，它的运行需要C环境，因此我们需要先安装gcc。 下载安装 Redis 文件介绍： redis-benchmark：性能测试工具 redis-check-aof：修复有问题的 aof 文件 redis-check-rdb：修复有问题的rdb文件 redis-sentinel：Redis集群使用 redis-server：Redis服务器启动命令 redis-cli：客户端，操作入口 启动 Redis 到这里其实我们可以在使用 /opt/software/redis/redis-stable/src 或者 /usr/local/bin 目录下的 redis-server 启动 Redis 服务了。 配置Redis 前面的启动方式无法再后台运行，退出之后直接关闭了 Redis 服务，所以我们还需要针对 Redis 做一些设置。 需要修改的内容如下：如果大家使用 vim 打开后没有行号，可以在打开 vim 后输入：“：set number”。 修改完成后，使用配置文件启动 Redis，并使用 redis-cli 连接测试，需要注意由于前面我们配置了安全密码，所以连接后需要先验证密码，否则会报错。 退出 OR 关闭 redis 主从部署（Master-Slave Replication） 主从复制，是指将一台Redis服务器的数据，复制到其他的"
+    },
+    {
+      "slug": "bkgyx9eokguvv3tm",
+      "title": "👍 一小时快速入门MySQL+傻瓜式安装教程",
+      "url": "/tulingzhouyu/db22bv/bkgyx9eokguvv3tm",
+      "toc_path": [
+        "系列篇",
+        "👍 一小时快速入门MySQL+傻瓜式安装教程"
+      ],
+      "toc_level": 1,
+      "toc_index": 115,
+      "word_count": 3377,
+      "updated_at": "2024-08-15T13:40:22.000Z",
+      "primary_category": "mysql-index-transaction",
+      "primary_category_name": "MySQL索引与事务",
+      "related_categories": [
+        "mysql-index-transaction",
+        "os-linux",
+        "computer-network",
+        "netty-network",
+        "docker-k8s"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "campus",
+        "junior",
+        "middle"
+      ],
+      "level_names": [
+        "校招/应届生",
+        "初级/1-3年",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "MySQL",
+        "索引",
+        "操作系统",
+        "Linux",
+        "文件",
+        "Docker",
+        "容器"
+      ],
+      "summary": "1.课程介绍2024 年给大家带来一个快速入门 MySQL 的超详细教程，帮助还没有使用过 MySQL 的小伙伴快速掌握 MySQL 的安装与入门使用，接下来就开始 MySQL 的扫盲行动吧。2.MySQL简介MySQL是一个开源的关系型数据库管理系统，广泛应用于Web应用程序的数据存储和管理...",
+      "excerpt": "1.课程介绍 2024 年给大家带来一个快速入门 MySQL 的超详细教程，帮助还没有使用过 MySQL 的小伙伴快速掌握 MySQL 的安装与入门使用，接下来就开始 MySQL 的扫盲行动吧。 2.MySQL简介 MySQL是一个开源的关系型数据库管理系统，广泛应用于Web应用程序的数据存储和管理。它支持多用户并发访问，具有高性能、稳定可靠、易于使用和管理等特点。 MySQL官网提供了详细的文档、下载、社区支持等资源，官网地址为 https://www.mysql.com/。在官网上，你可以找到各种版本的MySQL，包括社区版、企业版等，以及适用于不同操作系统的安装包。 安装MySQL的方式多样化，可以根据需求选择合适的方式进行安装。一种常见的方式是通过Linux的工具包管理器进行安装，比如使用apt-get、yum等。另外，你也可以使用Docker容器来快速部署MySQL，这种方式方便灵活，能够在不同的环境中快速部署MySQL服务。在本教程中，将会详细介绍 Linux 安装、Windows 安装两种常见的安装方式。 3.Windows安装 3.1 软件下载 打开 MySQL 官网，选择 DownLoads，在点击下方 Community DownLoads，然后依次按照图示进行操作下载，如下： ​ 3.2 安装 Windows 的安装有图形化界面，非常的方便快捷，直接运行下载好的 msi 文件，大多数都是下一步，极少步骤需要处理，需要单独处理的步骤提到了前面，大家稍微记一下就行，其他无脑下一步。需要注意如下图示： 完整的过程图再文末。 3.3 测试是否安装成功 相信安装过程没什么问题，操作完成后，使用 cmd 进行简单测试。 3.3.1 win + R 输入 cmd 或者 win 搜索 cmd 打开命令窗口登录 MySQL。 输入登录 MySQL 命令： mysql -u root -p ,如果出现以下报错，则需要配置下 MySQL 环境变量。 3.3.2 配置 MySQL 环境变量 3.3.2.1 进入 MySQL 安装目录，打开 bin 目录，复制 bin 所在目录链接 3.3.2.2 打开我的电脑属性 --> 高级系统设置 --> 环境变量 ······ 按图示操作 3.3.2.3 需要注意，配置环境变量后，需要重新打开一个 cmd 窗口才能生效。效果如下，输入安装时的 root 密码后，出下 MySQL 提示，则代表安装成功，可以简单测试下： 4.Linux安装 使用 Centos7 安装 MySQL8.0 4.1 检查系统是否已经安装数据库 4.2 如果存在卸载相应数据库 4.3 安装下载工具wget 4.3.1 查看安装情况 4.3.2 如果没有安装 4.4 下载阿里云 yum 源文件 4.5 清理yum缓存 4.6 下载 mysql 源安装"
+    },
+    {
+      "slug": "flzcleillddvwrm2",
+      "title": "HashMap底层原理常见面试题",
+      "url": "/tulingzhouyu/db22bv/flzcleillddvwrm2",
+      "toc_path": [
+        "Java基础",
+        "HashMap底层原理常见面试题"
+      ],
+      "toc_level": 1,
+      "toc_index": 172,
+      "word_count": 4442,
+      "updated_at": "2025-01-13T14:06:40.000Z",
+      "primary_category": "java-collections",
+      "primary_category_name": "Java集合",
+      "related_categories": [
+        "java-collections",
+        "algorithm",
+        "java-core",
+        "java-concurrency",
+        "performance-optimization"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "junior",
+        "campus",
+        "senior"
+      ],
+      "level_names": [
+        "初级/1-3年",
+        "校招/应届生",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "HashMap",
+        "算法",
+        "数组",
+        "链表",
+        "查找",
+        "Java",
+        "equals",
+        "异常",
+        "并发",
+        "多线程",
+        "线程",
+        "锁",
+        "性能"
+      ],
+      "summary": "1、HashMap 的底层数据结构在 JDK 1.7 中 HashMap 是以「数组加链表」的形式组成的，JDK 1.8 之后新增了「红黑树」的组成结构，「当链表长度大于 8 并且 hash 桶的容量大于 64 时，链表结构会转换成红黑树结构」。所以，它的组成结构如下图所示：底层数据结构Has...",
+      "excerpt": "1、HashMap 的底层数据结构 在 JDK 1.7 中 HashMap 是以 「数组加链表」 的形式组成的， JDK 1.8 之后新增了 「红黑树」 的组成结构， 「当链表长度大于 8 并且 hash 桶的容量大于 64 时，链表结构会转换成红黑树结构」 。所以，它的组成结构如下图所示： 底层数据结构 HashMap 中数组的每一个元素又称为哈希桶，也就是 key-value 这样的实例。在 Java7 中叫 Entry， Java8 中叫 Node。 因为它本身所有的位置都为 null，在 put 插入的时候会根据 key 的 hash 去计算一个 index 值。比如，我 put （&quot;徐庶&quot;，666），在 HashMap 中插入 &quot;徐庶&quot; 这个元素，通过 hash 算法算出 index 位置是 3。这时的结构如下所示，还是个数组。 初次 put 以上没 hash 冲突时，若发生 hash 冲突就得引入链表啦。假设我再次 put （&quot;元直&quot;，666），在 HashMap 中插入 &quot;元直&quot; 这个元素，通过 hash 算法算出 index 位置也是 3。这时的结构如下所示：形成了链表。 再次 put，发生 hash 冲突 它的源码如下所示： 「可以看出每个哈希桶中包含了四个字段：hash、key、value、next，其中 next 表示链表的下一个节点」 。 ❝ JDK 1.8 之所以添加红黑树是因为一旦链表过长，会严重影响 HashMap 的性能，而红黑树具有快速增删改查的特点，这样就可以有效的解决链表过长时操作比较慢的问题。 ❞ 2、HashMap 的重要方法 PS：以下源码分析全部基于 JDK1.8 版本。 查询（get 方法） 源码如下： 代码注释已经很详细，强调一点：当哈希冲突时我们不仅需要判断 hash 值，还需要通过判断 key 值是否相等，才能确认此元素是不是我们想要的元素。 新增（put 方法） 源码如下： 注释已经很详细了。但新增的方法比较复杂，画个流程图方便方便各位理解： put 流程 扩容（resize 方法） 源码如下： 从以上源码可以看出，扩容主要分两步： 扩容：创建一个新的 Entry 空数组，长度是原数组的 2 倍。 位运算：原来的元素哈希值和原数组长度进行 & 运算。 JDK 1.8 在扩容时并没有像 JDK 1.7 那样，重新计算每个元素的哈希值，而是通过高位运算（e.hash & oldCap）来确定元素是否需要移动，假设 key1 的信息如下： key1.hash = 10；二进制：0000 1010 oldCap = 16；二进制：0001 0000 「使用 e.hash & oldCap 得到的结果，高一位为 0，当结果为 0 时表"
+    },
+    {
+      "slug": "luyre8gk988x4s7g",
+      "title": "程序员必懂的权限模型：RBAC",
+      "url": "/tulingzhouyu/db22bv/luyre8gk988x4s7g",
+      "toc_path": [
+        "Java基础",
+        "程序员必懂的权限模型：RBAC"
+      ],
+      "toc_level": 1,
+      "toc_index": 173,
+      "word_count": 4117,
+      "updated_at": "2025-10-22T06:23:00.000Z",
+      "primary_category": "security-auth",
+      "primary_category_name": "安全认证与权限",
+      "related_categories": [
+        "security-auth",
+        "os-linux",
+        "java-core",
+        "resume-project",
+        "project-system-design"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "campus",
+        "junior",
+        "senior"
+      ],
+      "level_names": [
+        "校招/应届生",
+        "初级/1-3年",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "安全",
+        "权限",
+        "RBAC",
+        "操作系统",
+        "文件",
+        "Java",
+        "项目",
+        "方案"
+      ],
+      "summary": "随着软件系统的复杂性和规模的不断增长，权限管理成为了一个至关重要的问题。在大型多人协作的系统中，如何有效地管理不同用户的访问权限，确保系统的安全性和稳定性，是每一个开发者都需要面对的挑战。为了解决这一问题，业界提出了一种被广泛应用的权限管理模型——基于角色的访问控制（Role-Based Ac...",
+      "excerpt": "随着软件系统的复杂性和规模的不断增长，权限管理成为了一个至关重要的问题。 在大型多人协作的系统中，如何有效地管理不同用户的访问权限，确保系统的安全性和稳定性，是每一个开发者都需要面对的挑战。为了解决这一问题，业界提出了一种被广泛应用的权限管理模型——基于角色的访问控制（Role-Based Access Control，简称RBAC）。 RBAC 模型定义 说起 RBAC 权限模型，我们先看下在“维基”上的定义： RBAC 其实是一种分析模型，主要分为： 基本模型 RBAC0 、 角色分层模型 RBAC1 、 角色限制模型 RBAC2 和 统一模型 RBAC3 。 RBAC 权限模型是基于角色的权限控制。模型中有几个关键的术语： 用户：系统接口及访问的操作者 权限：能够访问某接口或者做某操作的授权资格 角色：具有一类相同操作权限的用户的总称 RBAC0 RBAC0 是 RBAC 权限模型的核心思想，RBAC1、RBAC2、RBAC3 都是在 RBAC0 上进行扩展的。 RBAC0 是由四部分构成： 用户 、 角色 、 会话 、 许可 。 用户和角色的含义很简单，通过字面意思即可明白， 会话： 指用户被赋予角色的过程，称之为会话或者是说激活角色； 许可： 就是角色拥有的权限（操作和和被控制的对象），简单的说就是用户可使用的功能或者可查看的数据。 用户与角色是多对多的关系，用户与会话是一对一的关系，会话与角色是一对多的关系，角色与许可是多对多的关系。 RBAC1 RBAC1 是在 RBAC0 权限模型的基础上，在角色中加入了 继承的概念 ，添加了继承的概念后，角色就有了上下级或者等级关系。 举例：集团权责清单下包含的角色有：系统管理员、总部权责管理员、区域权责管理员、普通用户，当管理方式向下兼容时，就可以采用 RBAC1 的继承关系来实现权限的设置。 上层角色拥有下层的所有角色的权限，且上层角色可拥有额外的权限 RBAC2 RBAC2 是在 RBAC0 权限模型的基础上，在用户和角色以及会话和角色之间分别加入了 约束的概念 （职责分离），职责分离指的是同一个人不能拥有两种特定的权限（例如财务部的纳入和支出，或者运动员和裁判员等等）。 用户和角色的约束有以下几种形式: 互斥角色 ：同一个用户在两个互斥角色中 只能选择一个 （也会存在一个用户拥有多个角色情况，但是需要通过切换用户角色来实现对不同业务操作） 基数约束 ：一个用户拥有的角色是有限的，一个角色拥有的许可也是有限的 先决条件约束 ：用户想要获得高级角色，首先必须拥有低级角色 会话和角色之间的约束，可以动态的约束用户拥有的角色，例如一个用户可以拥有两个角色，但是运行时只能激活一个角色。 RBAC3 RBAC3 是 RBAC1 与 RBAC2 的合集，所以 RBAC3 包含 继承和约束 。 为什么要引用 RBA"
+    },
+    {
+      "slug": "rgm60f0zoraq02ts",
+      "title": "短视频",
+      "url": "/tulingzhouyu/db22bv/rgm60f0zoraq02ts",
+      "toc_path": [
+        "Java基础",
+        "深拷贝和浅拷贝区别",
+        "短视频"
+      ],
+      "toc_level": 2,
+      "toc_index": 210,
+      "word_count": 336,
+      "updated_at": "2024-06-13T13:22:40.000Z",
+      "primary_category": "java-core",
+      "primary_category_name": "Java基础",
+      "related_categories": [
+        "java-core"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "junior",
+        "middle",
+        "campus"
+      ],
+      "level_names": [
+        "初级/1-3年",
+        "中级/3-5年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "Java"
+      ],
+      "summary": "没想到一个很简单的面试题，难住了一位工作3年的粉丝，大家好，我是JJ最近有粉丝在后台留言问深拷贝与浅拷贝有什么区别，工作三年了这个都不知道，有点不应该啊。深拷贝和浅拷贝是对象复制中的两个关键概念，它们主要区别在于对象的内部数据是否独立。浅拷贝只复制对象自身，而不复制其内部引用的对象。也就是说，...",
+      "excerpt": "没想到一个很简单的面试题，难住了一位工作3年的粉丝，大家好，我是JJ ​ 最近有粉丝在后台留言问深拷贝与浅拷贝有什么区别，工作三年了这个都不知道，有点不应该啊。 ​ 深拷贝和浅拷贝是对象复制中的两个关键概念，它们主要 区别在于对象的内部数据是否独立 。 ​ 浅拷贝 只复制对象自身 ，而 不复制其内部引用的对象 。 ​ 也就是说，浅拷贝后的对象与原始对象 共享同一个内部引用 。 ​ 如果 修改其中一个对象的内部数据，另外一个对象也会受到影响 。 ​ 而深拷贝不仅会复制对象自身，还会递归地复制所有内部引用的对象，从而 创建完全独立的副本 。 ​ 这样，深拷贝后的对象和原始对象之间 没有任何共享的数据 ， 修改其中一个对象的内部数据不会影响到另一个对象 。 ​ 简单来说，浅拷贝结果是对象之间共享内部引用，而深拷贝结果是每个对象都有独立的内部数据副本。"
+    },
+    {
+      "slug": "xnnlrqaa80pnu0zn",
+      "title": "短视频",
+      "url": "/tulingzhouyu/db22bv/xnnlrqaa80pnu0zn",
+      "toc_path": [
+        "JVM",
+        "什么是三色标记",
+        "短视频"
+      ],
+      "toc_level": 2,
+      "toc_index": 324,
+      "word_count": 506,
+      "updated_at": "2024-05-15T06:13:11.000Z",
+      "primary_category": "jvm-memory-gc",
+      "primary_category_name": "JVM内存与GC",
+      "related_categories": [
+        "jvm-memory-gc",
+        "java-collections",
+        "os-linux",
+        "algorithm",
+        "resume-project"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "junior"
+      ],
+      "level_names": [
+        "初级/1-3年"
+      ],
+      "keywords": [
+        "JVM",
+        "GC",
+        "垃圾回收",
+        "集合",
+        "内存",
+        "算法",
+        "CRUD"
+      ],
+      "summary": "最近有一位工作 3 年的粉丝，在后台留言   面试的时候被问到什么是三色标记法？当时一脸懵逼，天天 CRUD，三色标记是什么鬼啊。其实三色标记法是Java虚拟机中一种用于垃圾回收的算法，主要是用于标记内存中的对象，好确定哪些对象是存活的，哪些对象是可以被回收的。这种算法将内存中的对象分为三种颜...",
+      "excerpt": "最近有一位工作 3 年的粉丝，在后台留言 面试的时候被问到什么是三色标记法？当时一脸懵逼，天天 CRUD，三色标记是什么鬼啊。 其实三色标记法是Java虚拟机中一种用于垃圾回收的算法，主要是用于 标记内存中的对象 ，好确定哪些对象是存活的，哪些对象是可以被回收的。 这种算法将内存中的对象分为 三种颜色 ： 白色 黑色 灰色 白色代表对象还没被扫描过，我们可以理解为是 未知状态 。 黑色代表对象已经被扫描过， 但是 它的引用对象还没被有扫描过 。 灰色代表对象已经被扫描过了， 并且它的引用对象也全都被扫描过了 ，我们可以理解为是 已知状态 。 ​ 在GC开始的时候会将所有对象都标记为白色。 然后 从根对象开始遍历内存中的对象，遍历过程中它会把直接引用对象都标记为灰色，并且把它们加入到灰色集合中。 接着呢 ，会逐个判断灰色集合中的对象是否存在子对象 如果存在就继续放入灰色集合中，如果不存在就标记为黑色，放入到黑色集合中。 然后重复这个过程，直到灰色集合处理为空，也就代表这一轮标记就完成了。 最终 ，所有存活的对象都会被标记为黑色，而未被标记的白色对象就是待回收的垃圾对象。 而垃圾回收器通过三色标记算法 在一定程度上减少了 gc 停顿时间 ， 提高了系统的性能和响应速度 。 以上就是我对三色标记法的理解。"
+    },
+    {
+      "slug": "zoztq2o064yi6t2n",
+      "title": "MyBatis的核心组件有哪些？",
+      "url": "/tulingzhouyu/db22bv/zoztq2o064yi6t2n",
+      "toc_path": [
+        "MyBatis",
+        "基础篇",
+        "MyBatis的核心组件有哪些？"
+      ],
+      "toc_level": 2,
+      "toc_index": 498,
+      "word_count": 467,
+      "updated_at": "2023-08-29T11:35:35.000Z",
+      "primary_category": "mybatis",
+      "primary_category_name": "MyBatis",
+      "related_categories": [
+        "mybatis",
+        "java-core",
+        "os-linux",
+        "mysql-index-transaction",
+        "devops-release"
+      ],
+      "question_type": "other",
+      "question_type_name": "其他问题",
+      "levels": [
+        "middle",
+        "campus",
+        "junior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "校招/应届生",
+        "初级/1-3年"
+      ],
+      "keywords": [
+        "MyBatis",
+        "Mapper",
+        "Java",
+        "文件",
+        "事务",
+        "回滚"
+      ],
+      "summary": "首先第一个是，SqlSessionFactory，它就像是一个会话工厂。它的任务是创建 SqlSession 对象，这个对象是我们与数据库交互的主要途径。SqlSessionFactory 的作用很重要，因为它可以帮我们配置数据库连接信息和事务管理等。一旦这个工厂被建立起来，它就会加载一些必要...",
+      "excerpt": "首先第一个是，SqlSessionFactory，它就像是一个会话工厂。它的任务是创建 SqlSession 对象，这个对象是我们与数据库交互的主要途径。SqlSessionFactory 的作用很重要，因为它可以帮我们配置数据库连接信息和事务管理等。一旦这个工厂被建立起来，它就会加载一些必要的配置和映射文件，为后续的数据库操作提供一个可靠的基础。 ​ 第二个是 SqlSession，可以理解为我们与数据库进行互动的窗口。通过它，我们能够执行 SQL 语句，提交或回滚事务，还可以获取 Mapper 接口的实例。不过需要注意的是，SqlSession 的生命周期是短暂的，通常在数据库操作完成后就应该关闭它，这样可以释放资源。 ​ 接下来是 Mapper 接口，这个概念有点像定义了一套数据库操作的规则。每个 Mapper 接口对应一个或多个映射文件，里面的方法定义了具体的 SQL 操作，比如插入、更新、删除和查询等。MyBatis 通过动态代理的方式，把接口方法和映射文件中的 SQL 语句关联起来，这样我们就可以方便地通过接口来执行数据库操作。 ​ 最后，是映射文件，它是一个用来连接 Java 对象和数据库表的桥梁。在映射文件里，我们可以定义 SQL 语句、参数映射、结果映射等等。里面的 SQL 语句可以包括增删改查等操作，MyBatis 会根据我们调用的方法来选择正确的 SQL 语句来执行。"
+    },
+    {
+      "slug": "fmv901lw0u8oew5x",
+      "title": "Redis数据类型及实现原理",
+      "url": "/tulingzhouyu/db22bv/fmv901lw0u8oew5x",
+      "toc_path": [
+        "Redis",
+        "Redis数据类型及实现原理"
+      ],
+      "toc_level": 1,
+      "toc_index": 524,
+      "word_count": 12783,
+      "updated_at": "2025-06-19T00:58:53.000Z",
+      "primary_category": "redis-cache",
+      "primary_category_name": "Redis缓存",
+      "related_categories": [
+        "redis-cache",
+        "java-core",
+        "os-linux",
+        "redis-lock",
+        "distributed-lock-id"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "senior",
+        "campus",
+        "junior"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "校招/应届生",
+        "初级/1-3年"
+      ],
+      "keywords": [
+        "Redis",
+        "缓存",
+        "Java",
+        "String",
+        "线程",
+        "内存",
+        "分布式锁"
+      ],
+      "summary": "说明：本文由天明整理之前VIP系统课中的部分章节笔记Redis常用数据结构Redis提供了一些数据结构供我们往Redis中存取数据，最常用的的有5种，字符串（String）、哈希(Hash)、列表（list）、集合（set）、有序集合（ZSET）。另外RedisObject和3种高级类型Bit...",
+      "excerpt": "说明：本文由 天明 整理之前VIP系统课中的部分章节笔记 Redis常用数据结构 Redis提供了一些数据结构供我们往Redis中存取数据，最常用的的有5种，字符串（String）、哈希(Hash)、列表（list）、集合（set）、有序集合（ZSET）。另外RedisObject和3种高级类型Bitmaps,Hyperloglog,GEO也一并给大家整理到这里了 字符串（String） 字符串类型是Redis最基础的数据结构。首先键都是字符串类型，而且其他几种数据结构都是在字符串类型基础上构建的，所以字符串类型能为其他四种数据结构的学习奠定基础。字符串类型的值实际可以是字符串(简单的字符串、复杂的字符串(例如JSON、XML))、数字(整数、浮点数)，甚至是二进制(图片、音频、视频)，但是值最大不能超过512MB。（磁盘扇区512个字节） （虽然Redis是C写的，C里面有字符串 < 本质使用char数组来实现>，但是处于种种考虑，Redis还是自己实现了字符串类型） 操作命令 set 设置值 set key value set命令有几个选项: ex seconds: 为键设置秒级过期时间。 px milliseconds: 为键设置毫秒级过期时间。 nx: 键必须不存在,才可以设置成功，用于添加（分布式锁常用）。 xx: 与nx相反,键必须存在，才可以设置成功,用于更新。 从执行效果上看，ex参数和expire命令基本一样。还有一个需要特别注意的地方是如果一个字符串已经设置了过期时间，然后你调用了set 方法修改了它，它的过期时间会消失。 而nx和xx执行效果如下 除了set选项，Redis 还提供了setex和 setnx两个命令: setex key seconds value setnx key value setex和 setnx的作用和ex和nx选项是一样的。也就是，setex为键设置秒级过期时间，setnx设置时键必须不存在,才可以设置成功。 setex示例： setnx示例： 因为键foo-ex已存在,所以setnx失败,返回结果为0，键foo-ex2不存在，所以setnx成功,返回结果为1。 有什么应用场景吗?以setnx命令为例子，由于Redis的单线程命令处理机制，如果有多个客户端同时执行setnx key value，根据setnx的特性只有一个客户端能设置成功，setnx可以作为分布式锁的一种实现方案。当然分布式锁没有不是只有一个命令就OK了，其中还有很多的东西要注意，我们后面会用单独的章节来讲述基于Redis的分布式锁。 get 获取值 如果要获取的键不存在,则返回nil(空): mset 批量设置值 通过mset命令一次性设置4个键值对 mget 批量获取值 批量获取了键a、b、c、d的值: 如果有些键不存在,那么它的值为ni"
+    },
+    {
+      "slug": "xa5ncygcogxlln05",
+      "title": "说下你对DDD的理解",
+      "url": "/tulingzhouyu/db22bv/xa5ncygcogxlln05",
+      "toc_path": [
+        "SpringCloud",
+        "说下你对DDD的理解"
+      ],
+      "toc_level": 1,
+      "toc_index": 567,
+      "word_count": 1333,
+      "updated_at": "2026-01-19T11:45:04.000Z",
+      "primary_category": "resume-project",
+      "primary_category_name": "简历与项目表达",
+      "related_categories": [
+        "resume-project",
+        "docker-k8s",
+        "spring-core",
+        "spring-cloud",
+        "project-system-design"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "expert",
+        "junior"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "专家/P7+",
+        "初级/1-3年"
+      ],
+      "keywords": [
+        "项目",
+        "面试官",
+        "CRUD",
+        "Service",
+        "Spring",
+        "SpringCloud",
+        "订单"
+      ],
+      "summary": "一、 标准面试回答模版（建议背诵）面试官： 谈谈你对 DDD 的理解，你在项目中是怎么落地的？Fox版标准回答： “如果你上来就跟我谈‘四层架构’、‘Repository’，那你只是学了 DDD 的皮毛。 DDD 不是一套框架，而是一种处理高度复杂业务的思维方式。我对 DDD 的理解，分为‘战...",
+      "excerpt": "一、 标准面试回答模版（建议背诵） 面试官： 谈谈你对 DDD 的理解，你在项目中是怎么落地的？ Fox版标准回答： “如果你上来就跟我谈‘四层架构’、‘Repository’，那你只是学了 DDD 的皮毛。 DDD 不是一套框架，而是一种 处理高度复杂业务的思维方式 。 我对 DDD 的理解，分为‘ 战略设计’和‘战术设计’ 两个层面： 战略设计（Strategic Design）—— 这是架构师的战场： 核心是为了 划定边界 。通过 通用语言（Ubiquitous Language） 和业务专家对齐认知，识别出 核心域、支撑域和通用域 。 最重要的是划分 限界上下文（Bounded Context） 。在微服务架构中，一个限界上下文通常就对应一个微服务。这解决了‘微服务怎么拆’的世界级难题。 战术设计（Tactical Design）—— 这是程序员的战场： 核心是为了 保证业务逻辑的高内聚 。 我们要定义 聚合（Aggregate） 和 聚合根（Aggregate Root） 来保证数据的一致性边界。 我们要区分 实体（Entity） 和 值对象（Value Object） 。 最关键的是，我们要摒弃 贫血模型（Anemic Model） ，转向 充血模型（Rich Model） ，把业务逻辑封装在领域对象内部，而不是散落在 Service 层。 一句话总结： DDD 的本质，是 让软件架构与业务领域保持高度一致 ，从而控制业务复杂度。” 二、 核心原理与代码层面的体现 1. 场景一：贫血模型 vs 充血模型（最能体现 DDD 味道的地方） 面试官潜台词： 你写的代码是面向对象（OO）还是面向过程？ 贫血模型（传统 Spring 开发模式）： User 对象只有 @Data (Getter/Setter)。 业务逻辑全在 UserService 里。 Fox 点评： “这不叫面向对象，这叫**‘披着对象外衣的面向过程’**。Service 层臃肿不堪，Entity 沦为单纯的数据载体。” 充血模型（DDD 模式）： User 对象拥有业务行为。 代码演示： ​ 2. 场景二：值对象（Value Object）的妙用 面试官潜台词： 你知道什么是不可变对象吗？ 地址（Address） 就是个典型的值对象。 它没有 ID，只有属性（省、市、区）。 两个地址如果属性完全一样，它们就是相等的。 代码体现： 在 DDD 中，修改地址 不是 user.setProvince(&quot;xx&quot;) ，而是直接 替换 整个对象： user.changeAddress(new Address(&quot;北京&quot;, &quot;海淀&quot;, ...)) 。 三、 Fox 的深度解析 如果面试官追问：“ DDD 这么好，为什么国内很多公司推行不下去"
+    },
+    {
+      "slug": "givv2ag0kf3kmhfq",
+      "title": "短视频",
+      "url": "/tulingzhouyu/db22bv/givv2ag0kf3kmhfq",
+      "toc_path": [
+        "ElasticSearch",
+        "ElasticSearch中的倒排索引是如何工作的",
+        "短视频"
+      ],
+      "toc_level": 2,
+      "toc_index": 592,
+      "word_count": 464,
+      "updated_at": "2024-06-20T11:40:09.000Z",
+      "primary_category": "mysql-index-transaction",
+      "primary_category_name": "MySQL索引与事务",
+      "related_categories": [
+        "mysql-index-transaction",
+        "algorithm"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "junior",
+        "middle"
+      ],
+      "level_names": [
+        "初级/1-3年",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "索引",
+        "排序"
+      ],
+      "summary": "提到ES就会想到倒排索引，那你知道什么是倒排索引吗？最近有个工作3年的小伙伴面试就被问到了这道面试题，据说当时 啊~~~~~，哈喽，各位小伙伴，大家好，我是JJ倒排索引是ES中一种用于全文搜索的核心数据结构。与正排索引不同，正排索引是按照文档顺序组织词汇，而倒排索引是将词汇映射到包含这些词汇的...",
+      "excerpt": "提到ES就会想到倒排索引，那你知道什么是倒排索引吗？ ​ 最近有个工作3年的小伙伴面试就被问到了这道面试题，据说当时 啊~~~~~， ​ 哈喽，各位小伙伴，大家好，我是JJ ​ 倒排索引是ES中一种用于全文搜索的核心数据结构 。 ​ 与正排索引不同， 正排索引 是 按照文档顺序组织词汇 ，而 倒排索引 是将 词汇映射到包含这些词汇的文档列表 中。 ​ 在ES中，倒排索引的创建过程如下： ​ 首先，文档会 先经过分析器 Analyzer 的处理 ，将其 拆分为一系列的词汇单元 ，如单词或短语，这些词汇单元被称为 term。 ​ 然后，将这些 term作为倒排索引的键 ，而包含 term的文档编号、词频等信息作为值 ，存储在倒排列表中。 ​ 也就是说每个term都对应了一个倒排列表，记录了包含该term的所有文档的信息。 ​ 在查询的时候， 用户输入的查询语句同样会经过分析器的处理，拆分为一系列的term 。 ​ 然后根据倒排索引进行快速检索，找到包含这些term的文档，返回查询结果。 ​ 倒排索引的优点在于它能在 O(1)时间 内判断某个文档是否包含某个词汇。 ​ 除此之外，还可以基于词频、相关度等统计信息对搜索结果进行排序。 ​ 因此呢，倒排索引广泛应用在全文搜索和信息检索中，比如搜索引擎、网站搜索和文本分类等场景。"
+    },
+    {
+      "slug": "hesqtinz9cmqe0en",
+      "title": "什么是分布式系统",
+      "url": "/tulingzhouyu/db22bv/hesqtinz9cmqe0en",
+      "toc_path": [
+        "分布式",
+        "什么是分布式系统"
+      ],
+      "toc_level": 1,
+      "toc_index": 752,
+      "word_count": 184,
+      "updated_at": "2023-10-15T08:49:21.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "redis-persistence-cluster",
+        "devops-release",
+        "observability-troubleshooting",
+        "performance-optimization"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "junior"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "初级/1-3年"
+      ],
+      "keywords": [
+        "网络",
+        "集群",
+        "部署",
+        "故障",
+        "性能"
+      ],
+      "summary": "薪资：6k-12k岗位：初级开发工程师一个系统   各组件分别部署在不同服务器。彼此通过网络通信和协调的系统。 可以指多个不同组件分布在网络上互相协作，比如说电商网站也可以一个组件的多个副本组成集群，互相协作如同一个组件，比如数据存储服务中为了数据不丢失而采取的多个服务备份冗余，当数据修改时也...",
+      "excerpt": "薪资：6k-12k 岗位：初级开发工程师 一个系统 各组件 分别部署在不同服务器。 彼此通过网络通信和协调的系统。 可以指 多个不同组件 分布在网络上互相协作，比如说电商网站 也可以 一个组件的多个副本 组成集群，互相协作如同一个组件，比如数据存储服务中为了数据不丢失而采取的多个服务备份冗余，当数据修改时也需要通信来复制数据 分布式最早出现的目地首先是解决单点问题，避免单点故障，然后解决了性能问题。"
+    },
+    {
+      "slug": "ir2n1zxegmny481u",
+      "title": "OA、ERP这些CRUD的项目如何提炼亮点",
+      "url": "/tulingzhouyu/db22bv/ir2n1zxegmny481u",
+      "toc_path": [
+        "项目设计场景题",
+        "OA、ERP这些CRUD的项目如何提炼亮点"
+      ],
+      "toc_level": 1,
+      "toc_index": 832,
+      "word_count": 3465,
+      "updated_at": "2025-09-24T11:23:30.000Z",
+      "primary_category": "resume-project",
+      "primary_category_name": "简历与项目表达",
+      "related_categories": [
+        "resume-project",
+        "redis-cache",
+        "project-system-design",
+        "redis-lock",
+        "java-concurrency"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "junior",
+        "senior",
+        "middle"
+      ],
+      "level_names": [
+        "初级/1-3年",
+        "高级/5-8年",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "简历",
+        "项目",
+        "亮点",
+        "面试官",
+        "STAR",
+        "CRUD",
+        "包装",
+        "Redis",
+        "缓存",
+        "穿透",
+        "击穿",
+        "方案",
+        "分布式锁",
+        "并发"
+      ],
+      "summary": "要让 OA/ERP 这类 “CRUD 表象” 的项目体现亮点，核心不是 “造假”，而是挖掘隐藏的技术深度、业务价值和个人解决问题的能力—— 把 “简单执行” 转化为 “主动优化、解决痛点、创造价值” 的故事。下面从「简历包装维度」和「面试聊细节的切入点」两方面，给你具体可落地的方案。一、简历包...",
+      "excerpt": "要让 OA/ERP 这类 “CRUD 表象” 的项目体现亮点，核心不是 “造假”，而是 挖掘隐藏的技术深度、业务价值和个人解决问题的能力 —— 把 “简单执行” 转化为 “主动优化、解决痛点、创造价值” 的故事。下面从「简历包装维度」和「面试聊细节的切入点」两方面，给你具体可落地的方案。 一、简历包装：从 5 个核心维度 “提炼亮点”（附案例） OA/ERP 的本质是 “解决企业内部效率 / 成本问题”，但多数人只写 “做了 XX 模块”，却没说 “解决了什么痛点、用了什么技术、带来了什么结果”。简历要做的就是把 “CRUD 动作” 转化为 “价值输出”，用「STAR 法则（场景 - 任务 - 行动 - 结果）」+「数据化」呈现。 维度 1：业务价值 —— 从 “功能开发” 到 “降本增效” 企业招人的核心是 “解决业务问题”，先把项目和 “效率提升、成本降低、风险规避” 绑定，瞬间脱离 “纯 CRUD” 标签。 反面案例 ：“开发 OA 系统的请假审批模块，实现请假申请、审批功能。” 正面案例 ：“针对公司 3000 + 员工‘手动请假审批（邮件 + Excel 统计）耗时 2 天 / 次、HR 月均花 120 小时核对考勤’的痛点，负责 OA 请假审批模块的设计与开发；通过对接 HR 考勤系统自动同步数据、集成流程引擎实现审批节点动态配置，最终审批时长缩短至 1 小时内，HR 月均统计时间减少 90 小时，考勤数据误差率从 8% 降至 0.5%。” 挖掘方向 ： 你的模块覆盖多少用户？（如 “支撑全国 5 个分公司、1000 + 销售使用的 ERP 客户管理模块”） 替代了什么低效的旧模式？（手动 Excel、线下签字、多系统重复录入） 带来了多少可量化的提升？（时间缩短 XX%、成本减少 XX 元、误差率降低 XX%） 维度 2：技术深度 —— 从 “用框架” 到 “解难题” CRUD 背后藏着大量技术细节，比如 “数据量大了怎么处理？并发冲突怎么解决？跨系统数据怎么同步？”，把这些 “隐性技术决策” 挖出来，就是亮点。 反面案例 ：“用 Spring Boot+MyBatis 开发 ERP 库存模块。” 正面案例 ：“负责 ERP 库存模块的核心开发，面对‘日均 10 万 + 库存变动记录、采购 / 销售 / 仓库三端并发更新导致数据不一致’的问题：1）采用 MyBatis-Plus 实现基础 CRUD，同时自定义 SQL 优化库存查询（添加联合索引、避免全表扫描），将‘库存余量查询’接口响应时间从 800ms 压减至 150ms；2）引入 Redisson 分布式锁解决并发更新冲突，结合 Seata TCC 模式保证‘库存扣减 + 订单创建’的事务一致性，上线后库存数据不一致率为 0，支持单日 3 万 + 订单峰值。” 挖掘方向（OA/ERP 高频"
+    },
+    {
+      "slug": "zmh8bxm30a2a81p2",
+      "title": "如何设计一个秒杀系统",
+      "url": "/tulingzhouyu/db22bv/zmh8bxm30a2a81p2",
+      "toc_path": [
+        "项目设计场景题",
+        "如何设计一个秒杀系统"
+      ],
+      "toc_level": 1,
+      "toc_index": 834,
+      "word_count": 23726,
+      "updated_at": "2025-06-09T13:15:00.000Z",
+      "primary_category": "project-system-design",
+      "primary_category_name": "项目场景与系统设计",
+      "related_categories": [
+        "project-system-design",
+        "java-core",
+        "redis-cache",
+        "performance-optimization",
+        "computer-network"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle",
+        "junior"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年",
+        "初级/1-3年"
+      ],
+      "keywords": [
+        "方案",
+        "高并发",
+        "秒杀",
+        "支付",
+        "库存",
+        "限流",
+        "降级",
+        "Java",
+        "IO",
+        "序列化",
+        "Redis",
+        "缓存",
+        "性能"
+      ],
+      "summary": "前言：说起秒杀，我想你肯定不陌生，近些年，从双十一购物到春节抢红包，再到 12306 抢火车票，“秒杀”的场景处处可见。简单来说，秒杀就是在同一个时刻有大量的请求争抢购买同一个商品并完成交易的过程，用技术的行话来说就是大量的并发读和并发写。不管是哪一门语言，并发都是程序员们最为头疼的部分。本文...",
+      "excerpt": "前言： 说起秒杀，我想你肯定不陌生，近些年，从双十一购物到春节抢红包，再到 12306 抢火车票，“秒杀”的场景处处可见。简单来说，秒杀就是在同一个时刻有大量的请求争抢购买同一个商品并完成交易的过程，用技术的行话来说就是大量的并发读和并发写。不管是哪一门语言，并发都是程序员们最为头疼的部分。本文从七个方面，来详细讲一下秒杀系统要如何设计，应该注意哪些事情。 主要考察 ： 性能瓶颈，缓存的高可用问题。主要从预处理，数据库，IO，批处理，缓存，池化，消息队列，零拷贝，无锁等来考虑 ， 针对问题寻找解决方案 通常分布式系统结构图如下 ： 总的思路可以按照业务流程 每个环节 ，从 拦 截 和 分 摊 来考虑。如上图中可以 端：开始将请求拦在系统上游 ，可通过JS限时提交次数 CDN动静分离等 站点：用户(uid)标识 鉴权防刷 拦截恶意发包. 限流降级，监控预警 服务：先到多级缓存(CDN，Nginx，Ehcache，Redis，BufferPool)读写分离，再根据数据库 进行异步分批，削峰填谷( 请求队列批次) 等 数据：数据库缓存，读写分离，集群，SQL优化 每层都可以考虑分摊，加入负载均衡多网关多中心多数据库实例分流处理， 纵向多级缓存策略 层层过滤分摊压力 ​ 01 | 设计秒杀系统注意的4要1不要架构原则 对于一个软件而言而言，你可以很快增删改查做出一个秒杀系统，但是要让它支持高并发访问就没那么容易了。 比如说，如何让系统面对百万级的请求流量不出故障？如何保证高并发情况下数据的一致性写？完全靠堆服务器来解决吗？这显然不是最好的解决方案。 在我看来，秒杀系统本质上就是一个满足大并发、高性能和高可用的分布式系统。今天，我们就来聊聊，如何在满足一个良好架构的分布式系统基础上，针对秒杀这种业务做到极致的性能改进。 1. 数据要尽量少 所谓“数据要尽量少”，首先是指用户请求的数据能少就少。请求的数据包括上传给系统的数据和系统返回给用户的数据（通常就是网页）。 为啥“数据要尽量少”呢？因为首先这些数据在网络上传输需要时间，其次不管是请求数据还是返回数据都需要服务器做处理，而服务器在写网络时通常都要做压缩和字符编码，这些都非常消耗 CPU，所以减少传输的数据量可以显著减少 CPU 的使用。 例如，我们可以简化秒杀页面的大小，去掉不必要的页面装修效果，等等。其次，“数据要尽量少”还要求系统依赖的数据能少就少，包括系统完成某些业务逻辑需要读取和保存的数据，这些数据一般是和后台服务以及数据库打交道的。调用其他服务会涉及数据的序列化和反序列化，而这也是 CPU 的一大杀手，同样也会增加延时。而且，数据库本身也容易成为一个瓶颈，所以和数据库打交道越少越好，数据越简单、越小则越好。 2. 请求数要尽量 少 用户请求的页面返回后，浏览器渲染这个页面还要包含其他的额外请求，比如说，这"
+    },
+    {
+      "slug": "hv7t6xfxra7cpusi",
+      "title": "Restful API设计最佳实践",
+      "url": "/tulingzhouyu/db22bv/hv7t6xfxra7cpusi",
+      "toc_path": [
+        "项目设计场景题",
+        "Restful API设计最佳实践"
+      ],
+      "toc_level": 1,
+      "toc_index": 873,
+      "word_count": 6292,
+      "updated_at": "2024-07-15T14:21:21.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "java-core",
+        "java-concurrency",
+        "resume-project"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "junior",
+        "middle",
+        "senior"
+      ],
+      "level_names": [
+        "初级/1-3年",
+        "中级/3-5年",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "HTTP",
+        "网络",
+        "Java",
+        "项目",
+        "CRUD",
+        "包装"
+      ],
+      "summary": "本次分享内容REST API介绍REST API设计建议：资源命名、参数传递、错误状态、版本划分等一个文章API的设计案例REST API常见问题1.什么是 REST API？REST API 是当今最常见的 Web 接口形式之一 ，在确保客户端和服务器之间的顺利通信方面发挥了重要作用。你可以...",
+      "excerpt": "本次分享内容 REST API介绍 REST API设计建议：资源命名、参数传递、错误状态、版本划分等 一个文章API的设计案例 REST API常见问题 1.什么是 REST API？ REST API 是当今最常见的 Web 接口形式之一 ，在确保客户端和服务器之间的顺利通信方面发挥了重要作用。 你可以把客户端看作前端，把服务器看作后端。 客户端（前端）和服务器（后端）之间的通信通常不是直接的。因此，我们使用 API（应用编程接口），作为客户端和服务器之间的中介。 因为 API 在这种 client–server 通信中起着至关重要的作用，所以我们在设计 API 时应该遵循最佳实践。这有助于开发人员更好地维护和使用它们。 本次讲解创建 REST API 时可以遵循的一些最佳实践。这将帮助大家创建高效，安全，易于使用和维护的 API。 什么是 REST API？ REST 是 Representational State Transfer 的缩写。它是由 Roy Fielding 博士在 2000 年他的博士 论文 中提出一种软件架构风格，用于指导网络应用的设计和开发，使得 Web API（网络应用编程接口）更加简单、灵活、可扩展和易于理解。 任何遵循 REST 设计原则的 API 都被称为 RESTful API。 简单地说，REST API 是两台计算机通过 HTTP（超文本传输协议）进行通信的媒介，与客户端和服务器的通信方式相同。 REST API 使用 URL 唯一标识和定位 RESTful 服务中的资源，一个完整的 URL 结构如下： 2.REST API 设计建议 1. 用名词表示资源 当你设计一个 REST API 时，端点应该使用名词而非动词。 这是因为 HTTP 方法已经以动词形式执行基本的 CRUD（创建、读取、更新、删除）操作。 GET、POST、PUT、PATCH 和 DELETE 是最常见的 HTTP 动词。还有其他非 HTTP 标准动词，如 COPY、PURGE、LINK、UNLINK 等等。 因此，举例来说，一个端点不应该是这样的： 它应该是这样的： 2. 用复数名词表示集合 如果 URL 表示的资源是一个集合应该使用复数名词。 如果你有一个像 https://mysite.com/post/123 这样的端点，用 DELETE 请求删除一个帖子，或用 PUT 或 PATCH 更新一个帖子，可能是可以的，但它没有告诉用户在这个集合中可能还有一些其他帖子。这就是为什么你的集合应该使用复数的名词。 所以，不应该是 https://mysite.com/post/123 ，而是 https://mysite.com/posts/123 。 3. 端点使用嵌套显示关系 很多时候，不同的端点相互联系，所以你应该对它们进行嵌套，这样更容易"
+    },
+    {
+      "slug": "qx7ycbfzcrorctz3",
+      "title": "面试官：MySQL 里有 1 亿条加密数据，如何设计索引？",
+      "url": "/tulingzhouyu/db22bv/qx7ycbfzcrorctz3",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "面试官：MySQL 里有 1 亿条加密数据，如何设计索引？"
+      ],
+      "toc_level": 2,
+      "toc_index": 946,
+      "word_count": 1419,
+      "updated_at": "2025-12-26T05:30:32.000Z",
+      "primary_category": "mysql-index-transaction",
+      "primary_category_name": "MySQL索引与事务",
+      "related_categories": [
+        "mysql-index-transaction",
+        "security-auth",
+        "project-system-design",
+        "algorithm",
+        "resume-project"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "expert",
+        "junior"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "专家/P7+",
+        "初级/1-3年"
+      ],
+      "keywords": [
+        "MySQL",
+        "索引",
+        "InnoDB",
+        "安全",
+        "加密",
+        "架构设计",
+        "方案",
+        "算法",
+        "查找",
+        "面试官"
+      ],
+      "summary": "前言：在数据安全日益严苛的今天，\"脱敏\"和\"加密\"已成为架构设计的标配。但安全往往伴随着性能的牺牲。当业务方要求对身份证、手机号等敏感字段进行加密存储，同时又要求毫秒级的精确查询，甚至范围查询时，作为架构师的你，该如何破局？一、 核心冲突：秩序 vs 混沌",
+      "excerpt": "前言 ：在数据安全日益严苛的今天，&quot;脱敏&quot;和&quot;加密&quot;已成为架构设计的标配。但安全往往伴随着性能的牺牲。当业务方要求对身份证、手机号等敏感字段进行加密存储，同时又要求毫秒级的精确查询，甚至范围查询时，作为架构师的你，该如何破局？ 一、 核心冲突：秩序 vs 混沌 如上图所示，这不仅仅是颜色的对立，更是 数据结构层面的根本冲突 。 左侧（明文世界） ：MySQL 的 InnoDB 引擎之所以快，依赖于 B+ 树的 有序性 。因为 100 < 101 < 102 ，数据库可以通过二分查找迅速定位数据，时间复杂度是 O(logN)。 右侧（密文世界） ：现代加密算法（如 AES-CBC、GCM 模式）的核心设计目标就是 消除规律 。加密后的数据看起来必须像随机噪声（Random Noise）。 矛盾点在于 ：一旦使用了高强度的随机加密（每次加密结果都不同），数据就彻底失去了顺序性。数据库面对一堆乱码，B+ 树失效，只能退化为 全表扫描 。对于 1 亿条数据，这意味着查询时间从几毫秒劣化为几十秒甚至超时。 二、 致命陷阱：天真的&quot;确定性加密&quot; 为了解决索引问题，很多初级开发者会想到一个&quot;聪明&quot;的办法： 把加密算法改一改，让同样的明文永远生成同样的密文（如 AES-ECB 模式） 。这样不就可以利用数据库索引了吗？ 这是一个巨大的安全陷阱！ 如上图的频率分析所示： 在真实世界中，数据的分布是不均匀的（例如北京的用户远多于其他城市）。 如果加密是确定性的，密文的分布将完美复刻明文的分布。 黑客不需要解密，只需统计密文出现的频率（比如出现次数最多的那个密文串），就能推断出它代表&quot;北京&quot;。 这种泄露被称为 模式泄露（Pattern Leakage） ，它让加密形同虚设。因此， 直接对密文建索引，通常是在裸奔。 三、 黄金方案：盲索引 (Blind Index) 如何既要安全的随机加密，又要高效的索引查询？答案是 将&quot;存储&quot;与&quot;索引&quot;解耦 。我们采用 双列策略 ，如上图的管道分流模型所示： 数据列 (Data Column) ： 职责 ：负责数据的最终展示和解密。 算法 ：使用 AES-CBC + 随机 IV 。 特点 ：每次加密结果都不同，彻底不可识别，不可搜索，安全性最高。 索引列 (Index Column) ： 职责 ：仅负责 WHERE column = ? 的精确查询。 算法 ：使用 HMAC-SHA256 + 专用 Salt 。 特点 ：这是一个单向哈希。对于相同的手机号，生成的哈希值是固定的。我们只对这一列建立数据库索引。 查询流程 ： 当用户搜索 138-0000-8888 时，系统在内存中计算其 Hash 值（如 e5f"
+    },
+    {
+      "slug": "lnd8ulmpkxlm7b2t",
+      "title": "如何设计一个敏感词过滤系统？",
+      "url": "/tulingzhouyu/db22bv/lnd8ulmpkxlm7b2t",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "如何设计一个敏感词过滤系统？"
+      ],
+      "toc_level": 2,
+      "toc_index": 954,
+      "word_count": 2180,
+      "updated_at": "2025-12-22T09:09:20.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "redis-cache",
+        "java-core",
+        "jvm-memory-gc",
+        "ai-llm"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle",
+        "junior"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年",
+        "初级/1-3年"
+      ],
+      "keywords": [
+        "并发",
+        "多线程",
+        "线程",
+        "锁",
+        "volatile",
+        "Redis",
+        "缓存",
+        "Java",
+        "String",
+        "GC",
+        "垃圾回收",
+        "堆",
+        "AI"
+      ],
+      "summary": "在当今的互联网环境下，内容安全（Content Security）已经成为各大平台不可忽视的生命线。无论是社交媒体、直播弹幕，还是电商评论，海量的用户生成内容（UGC）中往往夹杂着违规信息。设计一个生产级的敏感词过滤系统，我们面临着三个核心挑战：高效匹配：在亿级流量冲击下，如何保证毫秒级的低延...",
+      "excerpt": "在当今的互联网环境下，内容安全（Content Security）已经成为各大平台不可忽视的生命线。无论是社交媒体、直播弹幕，还是电商评论，海量的用户生成内容（UGC）中往往夹杂着违规信息。 设计一个生产级的敏感词过滤系统，我们面临着三个核心挑战： 高效匹配 ：在亿级流量冲击下，如何保证毫秒级的低延迟响应？ 动态更新 ：如何在不重启服务、不中断业务的情况下，实时生效最新的违规词库？ 对抗变种 ：面对“火星文”、拼音拆解等恶意规避手段，系统如何保持健壮性？ 本文将围绕这三个目标，从最基础的算法选型开始，一步步演进到支撑亿级流量的分布式智能架构。 一、 算法选型：从 O(N*M) 到 O(K) 的性能跃迁 在系统初期，很多开发者会习惯性地使用数据库模糊查询（ LIKE %keyword% ）或者正则表达式（Regex）来解决问题。在数据量极少时，这确实有效。但在生产环境中，这种方案是致命的。 假设我们有一个包含 10,000 个敏感词的词库，需要检测一段 5,000 字的文章。 如果使用简单的字符串包含匹配（ String.contains ），系统需要进行 10,000 × 5,000 次扫描。随着词库的膨胀，计算量呈线性甚至指数级增长，CPU 会瞬间被耗尽。 我们需要的是一种 时间复杂度与词库大小无关 的算法。 如上图所示，引入 Trie 树（字典树） 或 AC 自动机（Aho-Corasick Automaton） 后，性能发生了质的飞跃。无论词库里有 1 万个词还是 100 万个词，检测耗时只与 被检测文本的长度 （K）有关。这种“空间换时间”的策略，将响应时间从秒级压缩到了毫秒级。 二、 核心数据结构：基于 Trie 树的状态机实现 Trie 树的核心思想是利用字符串的 公共前缀 来减少查询时间。我们将所有的敏感词构建成一棵树状结构，根节点为空，每个节点代表一个字符。 当文本流进入系统时，我们像查字典一样逐字匹配： 指针游走 ：读取文本中的字符，在树上寻找对应的子节点。 状态判定 ：如果路径断开，说明不匹配；如果路径走到了标记为“结束”的节点，说明命中了敏感词。 白名单溯源 ：为了防止误杀（例如“杀毒软件”包含“杀毒”），我们可以在树的特定路径上标记“白名单”属性，实现更细粒度的控制。 三、 动态配置：基于双缓冲（Double Buffering）的热加载机制 算法解决了匹配效率问题，但工程落地时会遇到一个棘手的痛点： 词库更新 。 运营人员在后台新增了一个突发敏感词，技术部门不可能为此重启所有服务。我们需要实现 热加载（Hot Reload） 。 在多线程高并发环境下，直接修改正在使用的 Trie 树是非常危险的，极易导致并发冲突或服务崩溃。这里我们引入了并发编程中常用的 Copy-On-Write 思想与 双 Buffer 机制 。 设计方案如下："
+    },
+    {
+      "slug": "yo0mhznqfy6wir00",
+      "title": "Redis 极限调优：如何在不扩容的情况下实现 QPS 翻倍？",
+      "url": "/tulingzhouyu/db22bv/yo0mhznqfy6wir00",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "Redis 极限调优：如何在不扩容的情况下实现 QPS 翻倍？"
+      ],
+      "toc_level": 2,
+      "toc_index": 984,
+      "word_count": 1500,
+      "updated_at": "2025-11-28T07:36:55.000Z",
+      "primary_category": "redis-cache",
+      "primary_category_name": "Redis缓存",
+      "related_categories": [
+        "redis-cache",
+        "performance-optimization",
+        "os-linux",
+        "java-concurrency",
+        "java-core"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "expert",
+        "junior"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "专家/P7+",
+        "初级/1-3年"
+      ],
+      "keywords": [
+        "Redis",
+        "缓存",
+        "击穿",
+        "性能",
+        "优化",
+        "调优",
+        "QPS",
+        "RT",
+        "瓶颈",
+        "线程",
+        "内存",
+        "上下文切换",
+        "并发",
+        "Java"
+      ],
+      "summary": "1. 引言：从“资源堆砌”到“架构压榨”大家好。面对“不扩容、不加机器、QPS 翻倍”这个命题，初级工程师可能会觉得是刁难，但对于架构师来说，这正是审视系统熵增的最佳时机。今天我们不谈那些虚无缥缈的理论，我将从",
+      "excerpt": "1. 引言：从“资源堆砌”到“架构压榨” 大家好。面对“不扩容、不加机器、QPS 翻倍”这个命题，初级工程师可能会觉得是刁难，但对于架构师来说，这正是 审视系统熵增 的最佳时机。 今天我们不谈那些虚无缥缈的理论，我将从 网络模型、内存架构、数据协议、线程模型 四个维度，为大家拆解一套在生产环境验证过的“组合拳”。 2. 第一刀：斩断网络延迟 (Pipeline & Batching) 大家先看屏幕上的对比。这看似简单的“打包”，背后隐藏着 Redis 性能最大的杀手—— RTT（往返时延）与系统调用开销 。 表象 ：如上图所示，串行模式下，Client 和 Server 像是在打乒乓球，大量时间浪费在“路上”。 深度解析 ： 系统调用（Syscall） ：每一次 Redis 请求，应用服务器都要进行 write 和 read 系统调用，意味着要发生两次 用户态与内核态的上下文切换 。如果你执行 1000 次 SET，就是 2000 次上下文切换，这比 Redis 执行命令本身的开销大得多。 Pipeline 的本质 ：它不仅仅是减少网络包，更是将 N 次系统调用合并为 1 次。 实战建议 ： 不要贪杯 ：Pipeline 虽然好，但不要一次打包几万条命令，这会导致网络缓冲区溢出，甚至造成 Head-of-line blocking（队头阻塞）。建议控制在 50-100 条 为一组。 区分场景 ：如果是集群模式（Cluster），要注意 Pipeline 中的 Key 必须落在同一个 Slot，否则需要客户端（如 Jedis/Lettuce）进行复杂的计算和分发。 3. 第二刀：空间换时间，架构降维 (Local Cache) 如果网络层优化到了极致，瓶颈依然存在，我们就必须引入架构层面的核武器—— 多级缓存（Near Cache） 。 架构哲学 ： 最快的 Redis 请求，是根本不发请求。 深度解析 ： L1 (JVM 堆内) ：访问速度是纳秒级（ns）。 L2 (Redis) ：访问速度是毫秒级（ms）。 两者相差 1000 倍 。 关键权衡 (Trade-off) ：引入本地缓存最大的挑战是 数据一致性 。 解决方案 ：我们通常采用“ 短 TTL + 惰性更新 ”策略。对于热点 Key（如秒杀商品的库存、配置开关），设置 1-3 秒的过期时间。 W-TinyLFU 算法 ：建议使用 Caffeine 而不是 Guava Cache，因为 Caffeine 引入了 Window TinyLFU 算法，能更精准地识别出那些“刚进来就变冷”的伪热点数据，防止本地内存被污染。 收益 ：这不仅是 QPS 的翻倍，更是对 Redis 的一种 保护机制 ，防止热点 Key 击穿压垮整个集群。 4. 第三刀：拒绝“虚胖”，协议瘦身 (Serialization) 解决"
+    },
+    {
+      "slug": "wp1nrlfnhsqr4lvr",
+      "title": "大白话讲解RBAC：从入门到实践的四级模型解析",
+      "url": "/tulingzhouyu/db22bv/wp1nrlfnhsqr4lvr",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "大白话讲解RBAC：从入门到实践的四级模型解析"
+      ],
+      "toc_level": 2,
+      "toc_index": 1004,
+      "word_count": 2270,
+      "updated_at": "2025-11-11T11:54:06.000Z",
+      "primary_category": "security-auth",
+      "primary_category_name": "安全认证与权限",
+      "related_categories": [
+        "security-auth",
+        "java-core",
+        "resume-project",
+        "project-system-design",
+        "jvm-memory-gc"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "campus",
+        "junior",
+        "senior"
+      ],
+      "level_names": [
+        "校招/应届生",
+        "初级/1-3年",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "安全",
+        "权限",
+        "RBAC",
+        "CRUD",
+        "方案",
+        "堆"
+      ],
+      "summary": "摘要： 在现代软件设计中，权限管理是不可或缺的一环。一个混乱的权限系统不仅会带来巨大的维护成本，更可能引发严重的安全漏洞。基于角色的访问控制（Role-Based Access Control, RBAC）是解决这一问题的业界标准方案。本文将用最直白的方式，带您深入理解NIST标准的RBAC四...",
+      "excerpt": "摘要： 在现代软件设计中，权限管理是不可或缺的一环。一个混乱的权限系统不仅会带来巨大的维护成本，更可能引发严重的安全漏洞。基于角色的访问控制（Role-Based Access Control, RBAC）是解决这一问题的业界标准方案。本文将用最直白的方式，带您深入理解NIST标准的RBAC四级模型，帮助您在“权限混乱”与“井然有序”之间，做出最适合您业务的架构选择。 一、 为什么需要RBAC？告别“蜘蛛网式”的权限噩梦 在系统建设初期，为了快速实现功能，我们常常采用将权限直接分配给用户的方式。短期来看，这似乎很直接；但随着用户和权限数量的增加，系统会迅速演变成一张错综复杂、难以维护的“权限蜘蛛网”。 如上图左侧所示，直接分配模式导致了用户与权限之间的网状关系。当需要调整一个用户的权限，或者回收某个即将离职员工的所有权限时，管理员需要在一团乱麻中逐一操作，极易出错和遗漏。更糟糕的是，我们很难从宏观上审计“谁到底拥有哪些权限”，安全风险极高。 RBAC模型通过引入“角色（Role）”这一核心概念，优雅地解决了这个问题。如上图右侧所示，角色成为了用户和权限之间的“中转站”： 管理员 ：不再直接与用户打交道，而是专注于定义角色，并为角色批量分配权限。 用户 ：通过被授予一个或多个角色，间接获得了所有必需的权限。 这种解耦带来了显而易见的优势： 高效、清晰、安全、易于审计 。当新员工入职时，只需赋予其相应角色即可；当员工离职或转岗时，收回或变更其角色便完成了所有权限的调整。 二、 角色不只是“职位”：深入理解角色的多维属性 很多人误以为“角色”就是用户的“职位”，例如“销售经理”或“财务总监”。这只说对了一部分。一个设计良好的角色系统，其定义是多维度的，并且包含明确的属性。 1. 角色的四大维度： 在实践中，我们可以从以下四个维度来综合定义一个角色，使其更具业务贴合性： 职责维度 ：最基础的维度，如“审批者”、“创建者”。 部门维度 ：限定角色所属的组织单元，如“市场部”、“研发部”。 资历维度 ：区分同一职责的不同级别，如“初级”、“高级”、“专家”。 地点维度 ：应用于跨地域业务，如“华东区”、“北美区”。 例如，“华东区市场部的高级内容审批者”就是一个由多维度组合而成的精准角色。 2. 角色的三大核心属性： 一个完整的角色权限，至少应包含以下三种控制能力： 访问权限 (Access) ：决定了用户能“看到”什么，主要控制UI元素的可见性，如菜单、按钮、页面。 操作权限 (Operation) ：决定了用户能“做什么”，即对数据的增删改查（CRUD）等后端API接口的调用能力。 会话权限 (Session) ：定义了用户以此角色登录后的会话生命周期，例如，高权限角色（如管理员）的会话有效期应更短，以降低安全风险。 三、 RBAC四级模型深度解析：从够用到专业 N"
+    },
+    {
+      "slug": "dvdoki9pk6g4mo5n",
+      "title": "阿里二面：如何保证消息队列的顺序性？工作3年了还不会，有点扎心！",
+      "url": "/tulingzhouyu/db22bv/dvdoki9pk6g4mo5n",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "阿里二面：如何保证消息队列的顺序性？工作3年了还不会，有点扎心！"
+      ],
+      "toc_level": 2,
+      "toc_index": 1046,
+      "word_count": 2357,
+      "updated_at": "2025-10-10T05:17:54.000Z",
+      "primary_category": "mq-rabbitmq",
+      "primary_category_name": "RabbitMQ",
+      "related_categories": [
+        "mq-rabbitmq",
+        "java-concurrency",
+        "mq-rocketmq",
+        "mq-general",
+        "project-system-design"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle",
+        "senior",
+        "junior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年",
+        "初级/1-3年"
+      ],
+      "keywords": [
+        "队列",
+        "并发",
+        "线程",
+        "锁",
+        "RocketMQ",
+        "MQ",
+        "消息队列",
+        "方案",
+        "订单",
+        "支付"
+      ],
+      "summary": "摘要: 本文将通过一个生动的面试场景，彻底剖析 RocketMQ 中保证消息顺序性的核心原理。我们将告别枯燥的理论，借助一系列精心设计的可视化图表，从“为什么会乱序”的痛点出发，深入探讨发送端和消费端的双重保障机制，并最终给出一份令面试官满意的“满分答案”。面试官靠在椅背上，手指轻轻敲着桌面，...",
+      "excerpt": "摘要 : 本文将通过一个生动的面试场景，彻底剖析 RocketMQ 中保证消息顺序性的核心原理。我们将告别枯燥的理论，借助一系列精心设计的可视化图表，从“为什么会乱序”的痛点出发，深入探讨发送端和消费端的双重保障机制，并最终给出一份令面试官满意的“满分答案”。 面试官靠在椅背上，手指轻轻敲着桌面，看似随意地抛出了一个问题： “看你简历上写了熟悉消息队列，那聊聊吧， 如何保证消息队列的顺序性？ ” 这个问题，就像一把精准的钥匙，旨在打开候选人对分布式系统理解深度的大门。如果你的回答还停留在“一个Topic、一个Partition、一个Consumer”这种教科书式的答案，那么，你可能就危险了。 今天，我们就将这个问题的答案，彻底讲透。 痛点：为什么默认情况会乱序？ 在追求高性能和高吞吐量的设计哲学下，消息队列（以RocketMQ为例）默认会将一个Topic下的消息分散到多个队列（Queue）中，而消费端则会启动多个线程并发地从这些队列中拉取消息进行消费。 这就像一个繁忙的收费站，开设了多个收费口，以求最快地疏导车流。 问题恰恰出在这里。对于同一个业务逻辑（例如，同一个订单），它的消息可能会被分散到不同的队列，并被不同的消费者线程在不同的时间点处理。 比如，“订单创建”消息进入了队列1，被消费者A拿到；而紧随其后的“订单支付”消息进入了队列2，却被手速更快的消费者B先一步处理了。结果就是—— 支付先于创建 ，业务逻辑瞬间崩溃。 这就是高吞吐量带来的“甜蜜的烦恼”： 并发消费打破了“先进先出”（FIFO）的理想模型 。 上图左侧的“并发下的混乱”直观地展示了这个问题：生产者P1（创建）和P2（支付）的消息被不同消费者（C1, C2）无序处理。而右侧，则是我们期望的理想状态：同一业务（订单）的消息，被同一个消费者严格按照发送顺序处理。 那么，如何才能从混乱走向理想？ 发送端：将关联消息送入“同一车道” 解决问题的第一步，是从源头入手。我们必须确保 所有关联的消息，都能被发送到同一个队列中 。 这就好比，我们要强制所有关于“订单A001”的车辆，都必须从“1号收费口”通过。 RocketMQ为此提供了 MessageQueueSelector 接口。我们可以在发送消息时，传入一个自定义的队列选择器。在这个选择器中，根据我们的业务标识（比如 orderId ），通过哈希取模等算法，计算出该消息应该进入哪一个队列。 只要我们的业务标识（ orderId ）是固定的，那么无论发送多少条与该订单相关的消息（创建、支付、完成），它们最终都会落入完全相同的队列中。 如图所示，所有 OrderID 为 &quot;A001&quot; 的消息，经过 MessageQueueSelector 的计算（ hash(&quot;A001&quot;) % 3 = 1 ），都被精准地投递到"
+    },
+    {
+      "slug": "mgdl6ck0h89ywqmf",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/mgdl6ck0h89ywqmf",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "阿里二面：如何保证消息队列的顺序性？工作3年了还不会，有点扎心！",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1047,
+      "word_count": 43,
+      "updated_at": "2025-10-14T05:36:39.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "mq-general",
+        "netty-network",
+        "mq-rabbitmq",
+        "ai-llm"
+      ],
+      "question_type": "collection",
+      "question_type_name": "面经题库合集",
+      "levels": [
+        "junior",
+        "middle"
+      ],
+      "level_names": [
+        "初级/1-3年",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "消息队列",
+        "队列"
+      ],
+      "summary": "📎阿里二面：如何保证消息队列的顺序性？工作3年了还不会，有点扎心！.html链接: https://pan.baidu.com/s/1RQUjW-fnq2vH7D5R2ba9Nw?pwd=x1em 提取码: x1em",
+      "excerpt": "链接: https://pan.baidu.com/s/1RQUjW-fnq2vH7D5R2ba9Nw?pwd=x1em 提取码: x1em"
+    },
+    {
+      "slug": "dg0vts3m4augvwvb",
+      "title": "两个100亿URL的文件怎么找交集？",
+      "url": "/tulingzhouyu/db22bv/dg0vts3m4augvwvb",
+      "toc_path": [
+        "高频面试问题",
+        "fox老师",
+        "两个100亿URL的文件怎么找交集？"
+      ],
+      "toc_level": 2,
+      "toc_index": 1090,
+      "word_count": 3728,
+      "updated_at": "2025-10-07T06:13:48.000Z",
+      "primary_category": "os-linux",
+      "primary_category_name": "操作系统与Linux",
+      "related_categories": [
+        "os-linux",
+        "project-system-design",
+        "resume-project",
+        "mysql-sharding",
+        "performance-optimization"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "junior",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "初级/1-3年",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "内存",
+        "文件",
+        "系统设计",
+        "方案",
+        "面试官",
+        "分片",
+        "读写分离",
+        "性能",
+        "吞吐",
+        "容量",
+        "瓶颈"
+      ],
+      "summary": "在大厂后端、存储或大数据方向的面试中，“100 亿 URL 文件求交集” 是一道典型的 “看似简单，实则考察系统设计能力” 的高频题。很多候选人仅能说出 “用布隆过滤器” 这一单点技术，却在面试官的追问下暴露对 “海量数据处理逻辑、工程落地细节、可扩展性设计” 的认知短板 。本文将从问题痛点拆...",
+      "excerpt": "在大厂后端、存储或大数据方向的面试中，“100 亿 URL 文件求交集” 是一道典型的 “看似简单，实则考察系统设计能力” 的高频题。很多候选人仅能说出 “用布隆过滤器” 这一单点技术，却在面试官的追问下暴露对 “海量数据处理逻辑、工程落地细节、可扩展性设计” 的认知短板 。本文将从 问题痛点拆解→常见误区分析→工业级方案落地→面试考察能力 四个维度，带你掌握这道题的完整解题思路。 一、问题背景：100 亿 URL 背后的核心挑战 在分析方案前，需先明确 “100 亿 URL” 这一量级对应的技术痛点 —— 脱离数据规模谈方案，都是纸上谈兵： 数据量超限 ：按单条 URL 平均 100 字节计算，100 亿条 URL 的总容量约为 10TB （100 亿 ×100 字节 = 10¹¹ 字节 =~10TB），远超单机内存（常规服务器内存为 64GB-256GB），无法通过 “全量加载到内存对比” 实现； 精确性要求 ：URL 作为业务核心数据（如电商商品页、搜索引擎结果页），不允许 “漏判”（将交集 URL 误判为非交集，导致核心资源丢失），仅允许 “极少量误判”（需通过后续逻辑修正）； 可扩展性与实时性 ：实际业务中，URL 库并非静态 —— 每天可能新增数千万条 URL（如爬虫抓取、用户生成），需支持 “实时更新” 与 “动态扩容”，避免系统因数据增长而崩溃； 性能要求 ：交集查询需满足 “低延迟”（如搜索引擎需秒级响应新 URL 是否重复），不能因数据量大而导致查询耗时飙升。 这些痛点决定了： 单一技术无法解决问题，必须通过 “分层过滤 + 分布式扩展” 的架构，平衡 “速度、精度、成本、扩展性” 四大目标 。 二、常见误区：为什么 “只答布隆过滤器” 会挂？ 很多候选人第一反应是 “用布隆过滤器”—— 这一思路本身没错，但 “仅答布隆过滤器” 忽略了工程落地的核心细节，面试官的 “灵魂三问” 正是针对这些漏洞： 误区 1：忽视布隆过滤器的 “误判风险” 布隆过滤器的核心特性是 “无漏判、有可控误判”（误判率通常设为 1%-0.1%），但候选人往往未考虑 “误判的业务影响”： 若误判的 1% 包含核心 URL（如电商爆款商品 URL、政务平台关键页面），布隆过滤器会将 “已存在的核心 URL” 误判为 “新 URL”，导致重复抓取 / 存储，不仅浪费资源，还可能引发 “内容重复展示” 的业务问题； 面试官追问 “误判怎么办”，本质是考察 “如何用后续逻辑修正误判”—— 答案不是 “降低误判率”（过低误判率会导致布隆过滤器内存翻倍），而是 “用精准存储做二次核验”。 误区 2：未计算布隆过滤器的 “内存成本” 与 “分布式适配” 候选人常忽略 “100 亿 URL 的布隆过滤器需要多大内存”，更未考虑 “单机装不下时的解决方案”： 按误判率 1% 计算，布"
+    },
+    {
+      "slug": "ehwrfy3ctmmnfdt2",
+      "title": "如果服务器非正常断电，如何保证数据安全？",
+      "url": "/tulingzhouyu/db22bv/ehwrfy3ctmmnfdt2",
+      "toc_path": [
+        "高频面试问题",
+        "楼兰老师",
+        "如果服务器非正常断电，如何保证数据安全？"
+      ],
+      "toc_level": 2,
+      "toc_index": 1121,
+      "word_count": 3974,
+      "updated_at": "2025-12-18T06:39:54.000Z",
+      "primary_category": "os-linux",
+      "primary_category_name": "操作系统与Linux",
+      "related_categories": [
+        "os-linux",
+        "mq-rabbitmq",
+        "mq-rocketmq",
+        "mq-kafka",
+        "security-auth"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle",
+        "senior",
+        "junior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年",
+        "初级/1-3年"
+      ],
+      "keywords": [
+        "操作系统",
+        "Linux",
+        "线程",
+        "内存",
+        "文件",
+        "RabbitMQ",
+        "队列",
+        "RocketMQ",
+        "Kafka",
+        "安全"
+      ],
+      "summary": "开场：一场关于“安全感”的幻觉你应该背过很多高可用的面试题把？一堆服务器，一会这个机器挂了，一会那个服务崩了。然后问你怎么保证服务高可用？怎么保证数据不丢失？还没见过这样的面试题的朋友，可以在评论区敲个888，我看看还有多少如此单纯的程序员。这时候很多朋友要吐槽了，这就是典型的“面试造火箭，工...",
+      "excerpt": "开场：一场关于“安全感”的幻觉 你应该背过很多高可用的面试题把？一堆服务器，一会这个机器挂了，一会那个服务崩了。然后问你怎么保证服务高可用？怎么保证数据不丢失？还没见过这样的面试题的朋友，可以在评论区敲个888，我看看还有多少如此单纯的程序员。 这时候很多朋友要吐槽了，这就是典型的“面试造火箭，工作拧螺丝”了。但是，如果抛开这些面试题，真的让你负责一个对数据非常敏感的金融系统，面对非正常断电这种不可抗力，你会怎么保证数据安全呢？你可以把视频先暂停两秒，在评论区留下你的想法。不过，请千万别说你的服务器有UPS这样的答案啊。咱们是来讨论技术的，不是来说相声的。看完视频后，再来看看你的想法是不是成熟。 接下来我们要讨论的核心就两字：刷盘。你可能觉得这东西很理论，工作用不上。那么这次，我也不来虚的。我们会从理论到实战，从RocketMQ、Kafka、RabbitMQ这三个重要的MQ工具来分析下，他们是如何设计刷盘策略的。针对数据安全这个事，他们是怎么“小题撒做”的。 还是要强调。这期内容非常硬核，甚至我估计大部分的朋友看一次是看不明白的。所以，点赞、收藏，这样可以回头多看几遍。我是楼兰，咱们技术走起！ 第一章：你的数据到底怎么丢的？ 首先，我们要搞清楚，为什么服务器断电会丢数据？ 原因很简单： 内存是易失的，硬盘才是永恒的 。废话。这谁都知道。不过这跟数据有什么关系呢？ 我们都知道内存读写快，硬盘读写慢。所以，操作系统为了提升运行速度，也耍了个小聪明。在操作系统的底层，也就是我们常说的内核态，他是不允许用户态的应用程序直接接触磁盘这样的硬件的，只允许应用程序调用内核态暴露的接口-也就是系统调用来完成数据读写。 比如，Linux系统就提供了一个write方法，来完成数据写入。 你只要调用一下write方法，通知操作系统，我要写入数据，剩下的事情就交由操作系统的内核态去完成了。但这时，操作系统耍了个小聪明。他其实并没有真正去写硬盘，只是把数据拷贝到了内存里的 Page Cache页缓存里 ，然后立马骗你说：“写完了，成功了！” 这时候，数据其实还停在内存。 如果这时候断电，Page Cache 里的数据瞬间灰飞烟灭。你以为你存下来了，其实你存了个寂寞。 那要怎么保证数据安全呢？这就需要进行“刷盘”。也就是把页缓存中的数据写入到硬盘当中。这样，即便服务器断电了，硬盘里的数据也不会丢失。 但接下来的问题就是什么时候会刷盘呢？大部分情况下，操作系统是在内核态自己去协调什么时候刷盘的。作为应用程序，你是无法知道操作系统什么时候刷盘的。也就是如果出现非正常断电，作为用户态的应用程序，你也就只能烧个高香，默默祈祷数据不要丢了。 要是这样，那还玩的下去吗？于是，操作系统给我们留了个后门，也是唯一的救命稻草-fsync刷盘。 fsync 的指令非常霸道，它会勒令操作系统： “别废话，现"
+    },
+    {
+      "slug": "aewmlbxogrudke4m",
+      "title": "DDD教你破解数据库表设计难题",
+      "url": "/tulingzhouyu/db22bv/aewmlbxogrudke4m",
+      "toc_path": [
+        "高频面试问题",
+        "楼兰老师",
+        "DDD教你破解数据库表设计难题"
+      ],
+      "toc_level": 2,
+      "toc_index": 1134,
+      "word_count": 3133,
+      "updated_at": "2025-10-31T09:08:04.000Z",
+      "primary_category": "project-system-design",
+      "primary_category_name": "项目场景与系统设计",
+      "related_categories": [
+        "project-system-design",
+        "resume-project",
+        "performance-optimization"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "expert",
+        "senior",
+        "junior"
+      ],
+      "level_names": [
+        "专家/P7+",
+        "高级/5-8年",
+        "初级/1-3年"
+      ],
+      "keywords": [
+        "方案",
+        "订单",
+        "支付",
+        "库存",
+        "项目",
+        "面试官",
+        "性能"
+      ],
+      "summary": "上周有位工作五年的朋友，好不容易得到一个面试机会。面试时被面试官问了个很常见的问题：“电商系统，用户可以维护多个收货地址，下单时选一个。订单表和地址表你怎么设计？\"他很自信地说：”按数据库三范式啊，设计订单表和地址表两张表，主外键关联呗。“面试官又接着问：”那查订单详情是不是要关联查询？他说对...",
+      "excerpt": "上周有位工作五年的朋友，好不容易得到一个面试机会。面试时被面试官问了个很常见的问题：“电商系统，用户可以维护多个收货地址，下单时选一个。订单表和地址表你怎么设计？&quot; 他很自信地说：”按数据库三范式啊，设计订单表和地址表两张表，主外键关联呗。“ 面试官又接着问：”那查订单详情是不是要关联查询？他说对啊。 接下来面试官又继续问：“如果用户下单后修改了地址信息，历史订单的地址会不会变？&quot; 这时候他愣住了，想了想说：“那...把地址字段冗余到订单表？” 没想到面试官根本没给他犹豫的机会，又接着说：“好，那用户信息、商品信息、商户信息这些是不是也一样要冗余？那订单表得要有多少个字段？”他彻底懵了... 你看，这就是凭经验做设计的问题。平时开发，你可以参考老代码，可以问问同事。但面试的时候呢？临时想方案，总是漏洞百出。为什么？ 因为你脑子里没有一套稳定的方法论 。这种方法论，虽然比较虚，但是越是重要的工作就越需要方法论。因为，开发团队里重要的决定，都是要让整个团队理解的。你要只是当一个程序员，那你自己写好打码就行了。但是如果你真要当架构师，那么如何说服团队理解并支持你的设计，很多时候比设计本身更重要。 但更要命的是，这种既要经验又要方法论的东西，网上几乎没人能讲明白。如果没真正做过复杂项目，那么他们总结的所谓'经验'，其实就是背答案。遇到变种题，立马露馅。 今天这个视频我将来点不一样的。我会用DDD——领域驱动设计，这个在大厂和复杂项目中被广泛验证的方法论，带你看看 真正的架构师是怎么思考这个问题的 。更重要的是， 掌握一套可以应对各种业务场景设计的思维框架 。 【经典三范式设计】 &quot;咱们先快速回顾一下数据库三范式，这是数据库设计中的一种规范标准，旨在提高数据存储和使用的性能。具体来说， 第一范式要求 每一列都是不可分割的原子值 比如地址不能存成'北京市朝阳区xxx'一整个字符串，要拆成省、市、区 第二范式 要求每一列都完全依赖于主键 订单表里不能出现商品的库存信息，因为库存依赖商品ID，不依赖订单ID 第三范式 要求每一列都直接依赖主键，不能间接依赖 订单表里有用户ID，就不应该再冗余用户的注册时间，因为注册时间依赖用户ID 好，理论清楚了。按三范式，标准设计应该是这样： 看起来很规范对吧？一个最明显的问题就是数据一致性问题 数据一致性问题 ：用户下单时地址是'北京市朝阳区'，过了一个月他把这个地址改成了'上海市浦东新区'。你再查历史订单，发现当时寄到北京的订单，现在显示的地址是上海！用户投诉，你怎么解释？ 所以很多人会说，那我冗余呗。把地址信息直接冗余到订单表里。 但新问题又来了： 如果地址的字段结构发生变化了怎么办？ 订单表里冗余了地址信息，那用户信息、商品信息、商户信息等等，要不要也冗余？ 如果全冗余，订单表会变成一个五六十个字段的"
+    },
+    {
+      "slug": "szvkxf750zdww91z",
+      "title": "一网打尽MySQL各种锁",
+      "url": "/tulingzhouyu/db22bv/szvkxf750zdww91z",
+      "toc_path": [
+        "高频面试问题",
+        "楼兰老师",
+        "一网打尽MySQL各种锁"
+      ],
+      "toc_level": 2,
+      "toc_index": 1146,
+      "word_count": 2986,
+      "updated_at": "2025-10-17T12:05:41.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "mysql-index-transaction",
+        "java-core",
+        "os-linux",
+        "performance-optimization"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "junior"
+      ],
+      "level_names": [
+        "初级/1-3年"
+      ],
+      "keywords": [
+        "并发",
+        "多线程",
+        "线程",
+        "锁",
+        "synchronized",
+        "CAS",
+        "MySQL",
+        "Java",
+        "操作系统",
+        "上下文切换",
+        "性能",
+        "优化"
+      ],
+      "summary": "简历上写的‘精通Java并发’是吧？行，那咱们聊聊。synchronized和ReentrantLock哪个性能好？为什么？synchronized是公平锁还是非公平锁？Java里怎么实现乐观锁和悲观锁？CAS原理是啥？ABA问题又是什么？怎么解决？CountDownLatch和CyclicB...",
+      "excerpt": "简历上写的‘精通Java并发’是吧？行，那咱们聊聊。 synchronized 和 ReentrantLock 哪个性能好？为什么？ synchronized 是公平锁还是非公平锁？Java里怎么实现乐观锁和悲观锁？CAS原理是啥？ABA问题又是什么？怎么解决？ CountDownLatch 和 CyclicBarrier 有啥区别？最后， synchronized 底层那个锁升级过程，偏向锁、轻量级锁、重量级锁，它们仨是为了解决啥问题？又是怎么一步步转换的？来，说说你的理解。 怎么样？是不是感觉灵魂都快被问出窍了，当场就想打开招聘软件更新一下简历？哈哈，别紧张！ 这些玩意儿，说白了就是Java世界里的一帮‘保安’，专门负责维持多线程抢东西时候的秩序。今天，咱不搞那些虚头巴脑的定义，就用大白话，把这帮‘保安’的脾气、性格、还有他们内部的“晋升机制”，给你扒个底朝天！ 记得点赞收藏，不然想用的时候就找不到了。跟上我的节奏，咱们一个一个盘！ 首先，咱们得搞明白两种最基本的‘世界观’： 悲观锁和乐观锁 。 这一组锁是根据对并发冲突的假设不同进行区分的。要搞清楚这两个锁，你就记住一个场景， 上厕所 就够了。 悲观锁 这哥们儿，纯纯一个‘被迫害妄想症’患者。它的座右铭是：‘总有刁民想害朕！’。所以它在干任何事之前，都必须先把门锁死。比如去上厕所，它不仅要锁门，还得在门外挂个‘正在使用，请勿打扰’的牌子。Java里咱们最熟悉的 synchronized 和 ReentrantLock 就是这种性格，只要一个线程抢到了，别的线程就只能在外面憋着。这种锁，用在像秒杀减库存这种‘兵家必争之地’就特别合适，虽然有点笨重，但胜在绝对安全。 那 乐观锁 呢？正好相反，是个‘傻白甜’，心特别大。它觉得世界如此美好，大家都会谦让。它去上厕所，门都不锁，直接就进去了。等办完事出来的时候，它会检查一下：‘哎，我进来时放这儿的纸巾，还是原来那个牌子吗？’。如果还是，说明没人来过，万事大吉。如果被人换了，说明中间有人来过，那它这次就算白上了，得重新再来一次。这个‘检查并替换’的动作，在Java里就叫 CAS（Compare-And-Swap） 。咱们常用的 AtomicInteger 这些原子类，就是靠这手绝活。它特别适合更新帖子阅读数这种竞争不激烈的场景，性能起飞。不过它有个坑，就是经典的 ABA问题 。啥意思呢？就是你女朋友跟你分手了，她又找了个新男友，然后又分手了，最后又回来找你复合。你一看，哎，还是那个她，但中间发生过啥，你还真不知道。想解决也简单，加个版本号就行， AtomicStampedReference 就是干这个的。 好，搞懂了这两种哲学，咱们再来聊聊下一组： 公平锁和非公平锁 这一组锁就是根据线程排队的规矩来区分的。公平锁就像银行叫排号，讲究一个先来后到。非公平锁就像路边招"
+    },
+    {
+      "slug": "chgdt98fpor0baz5",
+      "title": "5亿用户数据，面试官的‘死亡追问’你敢接吗？",
+      "url": "/tulingzhouyu/db22bv/chgdt98fpor0baz5",
+      "toc_path": [
+        "高频面试问题",
+        "楼兰老师",
+        "5亿用户数据，面试官的‘死亡追问’你敢接吗？"
+      ],
+      "toc_level": 2,
+      "toc_index": 1164,
+      "word_count": 1486,
+      "updated_at": "2025-09-25T14:19:50.000Z",
+      "primary_category": "mysql-sharding",
+      "primary_category_name": "分库分表",
+      "related_categories": [
+        "mysql-sharding",
+        "resume-project",
+        "distributed-lock-id",
+        "project-system-design",
+        "security-auth"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "junior"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "初级/1-3年"
+      ],
+      "keywords": [
+        "分库分表",
+        "分片",
+        "项目",
+        "面试官",
+        "分布式ID",
+        "雪花算法",
+        "方案",
+        "认证"
+      ],
+      "summary": "我敢说，90%的同学在面试时，都掉进过面试八股的陷阱。面试官问：“做过分库分表吗？”，你张口就来：“做过！”然后面试官提一个业务场景：“五亿用户数据，怎么分库分表”。你下意识的就想到那些你背得滚瓜烂熟的面试八股，什么分库分表、垂直分、水平分，脱口而出。你回答得没错，但你可能已经与这个Offer...",
+      "excerpt": "​ 我敢说，90%的同学在面试时，都掉进过面试八股的陷阱。面试官问：“做过分库分表吗？”，你张口就来：“做过！”然后面试官提一个业务场景：“五亿用户数据，怎么分库分表”。你下意识的就想到那些你背得滚瓜烂熟的面试八股，什么分库分表、垂直分、水平分，脱口而出。你回答得没错，但你可能已经与这个Offer失之交臂了。 为什么？因为你要知道，面试最终希望考察的不是你的记忆力，而是你思考问题解决问题的能力。谈到分库分表，表怎么分？数据怎么查？重要业务场景怎么设计？这些才是真正能够打动面试官的。今天，我就带你走完这“从背书到实战”的最后一公里。 我们回到这个经典的面试场景：5亿用户的巨型表t_user，登录缓慢。 (手指向“垂直分表”) 第一刀，垂直拆分。冷热分离， 把不常用的用户资料，拆到【冷表】t_user_profile；把登录要用的认证信息，留在【热表】t_user_auth 。业务上进行一些隔离，这样每次登录时要读的数据就能少一些。 但这样毕竟改变不了数据量太多的本质问题。所以第二刀，水平拆分。把这张最常用的认证表，按 user_id 哈希，切成1024张小表。 好，到此为止，这是所有教科书都会教你的标准流程。但对于一个真实的线上系统，噩梦才刚刚开始。 ​ 此时，一个顶尖的面试官，会立刻抛出他的**“死亡追问” ： 你按 user_id 分片，那用户现在用 username 来登录，你告诉我，数据在哪张表里？难道你要让我的系统去轮询1024张表吗？你的登录接口不是要爆炸吗？”这个问题，就是程序员的试金石！它考验的根本不是你记住了什么，而是你有没有能力去设计一个 优雅、高效、且能预见未来**的系统！而我们的破局点，就是这个听起来有点科幻的—— 基因分片法！ 别眨眼，我们分三步，彻底解构这个方案： 第一步：定义和抽取“分片基因” 。什么是基因？就是我们从 username 身上提取的一段信息。具体操作是，对 username 进行哈希转成数字，然后与 1023 （也就是2的10次方减1）做一次“与”运算，得到一个0到1023的数字。这个数字，实际上就是username的哈希数字二进制表示的最后10位。这就是 username 的“分片基因”，它会最终决定这个用户的数据应该落在哪个分片上。 第二步：改造ID，注入基因！接下来我们还是 采用像雪花算法这类分布式ID算法生成一个原始ID。接下来重点来了。把上一步计算出来的分片基因，像DNA片段一样，注入到原始ID的二进制尾部。具体操作就是先左移流出10个比特位，然后与分片基因进行一次“或”操作。这样新生成的ID二进制尾部就全都是分片基因了。然后，再按照这个分片基因进行正常的数据分片，将数据保存到对应的子表当中。 第三步：双路归一！ 现在，整个架构的任督二脉被打通了！ 当用户用 username 登录 ：我们后台实时计算它的"
+    },
+    {
+      "slug": "hilpe4g2ipuruv0x",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/hilpe4g2ipuruv0x",
+      "toc_path": [
+        "高频面试问题",
+        "楼兰老师",
+        "RocketMQ核心面试题一次全给讲通透",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1171,
+      "word_count": 2045,
+      "updated_at": "2025-09-19T13:36:22.000Z",
+      "primary_category": "ai-llm",
+      "primary_category_name": "AI与大模型",
+      "related_categories": [
+        "ai-llm",
+        "mq-rocketmq",
+        "computer-network",
+        "jvm-memory-gc",
+        "mq-general"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "campus",
+        "junior",
+        "middle"
+      ],
+      "level_names": [
+        "校招/应届生",
+        "初级/1-3年",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "AI",
+        "大模型",
+        "RocketMQ",
+        "网络",
+        "MQ"
+      ],
+      "summary": "📎大模型.html📎神经网络.png口播文案：AI大模型你玩的很熟吧但是你有没有发现你用的AI大模型其实有一点点精神不太稳定有时候他是一个无所不知的超级天才像这样但有时候呢他又像一个满嘴跑火车的人工智障像这样怎么控制大模型的输出效果呢其实你和AI高手之间或许就差这两个神之旋钮没有动今天呢我...",
+      "excerpt": "口播文案： AI大模型你玩的很熟吧 但是你有没有发现 你用的AI大模型 其实有一点点精神不太稳定 有时候他是一个无所不知的超级天才 像这样但有时候呢 他又像一个满嘴跑火车的人工智障 像这样 怎么控制大模型的输出效果呢 其实你和AI高手之间 或许就差这两个神之旋钮没有动 今天呢 我就把AI的底层逻辑扒给你看 让你也能彻底的驯服AI大模型 好我们先来看一看AI大模型 它是如何思考问题的 来先看这一张AI的思考流程图 当我们向AI大模型询问一个问题时 比如说我们输入今天天气很好 适合出去 AI第一步呢 不是直接思考这个问题 而是进行预处理 它会把你的这句话 给拆成一个一个的词 也就是我们常说的TOKEN 再把每个词变成一串 只有他才能看得懂的 数字密码也称为向量 接下来重点来了 这些数字 就会进入到AI 这个神秘的神经网络结构当中 接下来真正的魔法就开始了 他会根据你的前半句话 根据他以往学过的经验库 预测出下一个词可能出现的词表 并且计算出每个词可能正确的概率 然后会从中选出一个最可能的词 比如说这一次 他可能会选择这个概率最高的“玩”字 但他不会停 接下来还会把“玩” 接到之前的输入之后 作为一个新的输入 再次计算完后面的词是什么 这就是所谓的自回归模型 接下来会把今天天气很好 适合出去玩 作为一个新的线索 再问自己一遍 这句话后面又该接什么呢 这一次 他算出最后该接的是一个感叹号 接下来 他会不断的重复这个自回归的过程 直到推算出一个特殊的结束符啊 通常称为EOS 这时才会停止推测 最后他把推测出的所有的词拼到一起 一句流畅的完整的话就诞生了 这就是AI逐字思考的秘密 好理解了这个基础的流程之后呢 接下来重头戏来了 我们怎么去控制这个过程呢 实际上大模型提供了两个关键的旋钮 就是专门供用户来选择的 第一个呢 称为temperature温度 你可以把它想象成是 AI的一个胆量的开关 你看现在我把它的胆量调得非常的低 那右边这些柱状图里面 最高的这个玩字 它的概率就会变得非常非常的高 几乎就成为了唯一的选择 这时AI就会变得非常的保守 只会说最安全的话 现在我把它胆量拉满 这时候所有候选词的概率 就会变得更加的平均了 包括像散步啊烧烤啊 甚至是看电影啊 也都有了一些出场的机会 AI此时就会变得更加的有创意 更加爱冒险了 第二个参数呢 称为top-p 如果说温度是调整胆量 那么top-p就是AI的理智筛选器 你看这里有一个绿色的top圈 它决定了AI的候选名单到底有多大 如果我把这个top-p调的很低 你看这时候圈子会越变越小 当只有概率最高的 这个玩字被圈了进来 剩下的那些就会直接被淘汰 这呢显然能够让AI的回答更加的 专注不跑偏 这些调整 最终怎么去决定我们的答案呢 接下来我们来看最终的揭秘 这里呢每个候选词的概率和能量条 都一目了然 只有被这个top圈圈中的"
+    },
+    {
+      "slug": "bqhibl970nr1cll4",
+      "title": "搞定 Java 电商面试：购物车设计全解析（3 种存储方案 + 数据合并逻辑 + 异常处理）",
+      "url": "/tulingzhouyu/db22bv/bqhibl970nr1cll4",
+      "toc_path": [
+        "高频面试问题",
+        "鹏宇老师",
+        "搞定 Java 电商面试：购物车设计全解析（3 种存储方案 + 数据合并逻辑 + 异常处理）"
+      ],
+      "toc_level": 2,
+      "toc_index": 1225,
+      "word_count": 5763,
+      "updated_at": "2025-10-30T04:38:06.000Z",
+      "primary_category": "redis-cache",
+      "primary_category_name": "Redis缓存",
+      "related_categories": [
+        "redis-cache",
+        "mysql-index-transaction",
+        "java-core",
+        "project-system-design",
+        "redis-persistence-cluster"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle",
+        "junior"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年",
+        "初级/1-3年"
+      ],
+      "keywords": [
+        "Redis",
+        "缓存",
+        "MySQL",
+        "索引",
+        "事务",
+        "锁",
+        "Java",
+        "异常",
+        "IO",
+        "方案",
+        "高并发",
+        "秒杀",
+        "RDB"
+      ],
+      "summary": "1. 文档引言1.1 文档目的本文档针对 “电商购物车设计” 场景，从 Java 技术栈角度提供完整落地方案，涵盖核心功能定义、不同用户状态（登录 / 未登录 / 状态切换）的存储设计、数据同步逻辑及代码实现，同时预留 PPT 截图插入位置，便于配合演示讲解。1.2 核心背景购物车是电商系统的...",
+      "excerpt": "1. 文档引言 1.1 文档目的 本文档针对 “电商购物车设计” 场景，从 Java 技术栈角度提供完整落地方案，涵盖核心功能定义、不同用户状态（登录 / 未登录 / 状态切换）的存储设计、数据同步逻辑及代码实现，同时预留 PPT 截图插入位置，便于配合演示讲解。 1.2 核心背景 购物车是电商系统的 “核心交互模块”，需满足 高频操作性能、数据可靠性、跨设备同步 三大核心需求。面试官通过该模块设计，考察候选人对 “客户端 - 服务端协同”“存储方案权衡”“Java 技术落地” 的综合能力，即 “小模块见大架构”。 2. 购物车核心功能定义 2.1 基础功能清单 购物车需覆盖用户从 “加购” 到 “结算” 的全流程操作，核心功能如下： 功能名称 功能描述 技术关注点 加入商品 接收用户选择的商品 SKU、数量，完成加购 数据合法性校验、重复加购处理 删除商品 支持单个 / 批量删除购物车商品 原子性操作、删除后数据同步 修改数量 调整商品购买数量（含上限校验，如库存限制） 实时价格重算、库存联动检查 查询购物车 展示所有加购商品（含选中状态、价格、优惠） 数据缓存、快速渲染 商品结算 筛选选中商品，跳转至下单流程 选中状态校验、临时锁库存 优惠计算 自动叠加满减、折扣券、会员价 优惠规则引擎集成、金额精度控制 2.2 Java 功能接口设计（伪代码） 基于 SpringBoot 框架定义 CartService 接口，统一封装核心功能，后续根据用户状态实现不同逻辑： 3. 登录状态下的服务端存储方案 登录用户数据需 “跨设备同步”，因此存储于服务端，Java 技术栈下有三种主流方案，需结合业务规模选型。 3.1 方案 1：仅使用 MySQL 存储 3.1.1 技术原理 基于关系型数据库的 ACID 特性，将购物车数据持久化至 MySQL，通过 user_id 和 sku_id 做唯一索引，避免重复存储。 3.1.2 Java 实现 数据库表设计 ： 实体类与 Mapper （使用 MyBatis-Plus 简化 CRUD）： Service 实现 （核心逻辑）： 3.1.3 优缺点与适用场景 维度 优点 缺点 数据可靠性 支持事务，数据持久化，无丢失风险 磁盘 IO，高频操作（如秒杀加购）卡顿 性能 支持索引优化，查询性能可控 并发写入需加锁，易出现性能瓶颈 维护成本 无需额外组件，仅依赖 MySQL 分库分表复杂（用户量超 100 万时需拆分） 适用场景 ：日均 UV＜1 万的小型电商、工业用品采购平台（加购频率低）。 3.2 方案 2：仅使用 Redis 存储 3.2.1 技术原理 利用 Redis 的 Hash 数据结构（Key = 用户 ID，Field = 商品 SKU，Value = 商品 JSON）实现高频读写，通过 RDB+AOF 持久化降低"
+    },
+    {
+      "slug": "pg86cc288ow7gyrc",
+      "title": "21、面试官：JWT签发后，用户注销了，Token如何失效？",
+      "url": "/tulingzhouyu/db22bv/pg86cc288ow7gyrc",
+      "toc_path": [
+        "高频面试问题",
+        "赋文老师",
+        "21、面试官：JWT签发后，用户注销了，Token如何失效？"
+      ],
+      "toc_level": 2,
+      "toc_index": 1280,
+      "word_count": 3439,
+      "updated_at": "2025-11-24T07:20:18.000Z",
+      "primary_category": "java-core",
+      "primary_category_name": "Java基础",
+      "related_categories": [
+        "java-core",
+        "security-auth",
+        "resume-project",
+        "redis-cache",
+        "project-system-design"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "campus",
+        "junior"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "校招/应届生",
+        "初级/1-3年"
+      ],
+      "keywords": [
+        "Java",
+        "IO",
+        "安全",
+        "JWT",
+        "加密",
+        "XSS",
+        "面试官",
+        "Redis",
+        "方案",
+        "高并发",
+        "库存"
+      ],
+      "summary": "“面试官：‘JWT 签发后，用户点击注销，Token 怎么让它失效？’ 你是不是心里一慌：JWT 是无状态的，一旦签发没法主动撤回啊！”这道题堪称 Java 面试 “高频陷阱题”——90% 的开发者只答 “存黑名单”，却没 get 到面试官的真实意图。看似考 “失效方法”，实则藏着对 JWT ...",
+      "excerpt": "“面试官：‘JWT 签发后，用户点击注销，Token 怎么让它失效？’ 你是不是心里一慌：JWT 是无状态的，一旦签发没法主动撤回啊！” 这道题堪称 Java 面试 “高频陷阱题”——90% 的开发者只答 “存黑名单”，却没 get 到面试官的真实意图。看似考 “失效方法”，实则藏着对 JWT 本质、场景权衡、性能安全的三层考察。今天咱们从 “冲突本质” 到 “落地代码”，拆解这道题的满分思路，附场景配图 + Java 实现，让你面试时直接拿捏！ 一、先搞懂：面试官到底在考你什么？（3 个核心考点） Q1：为什么这道题能区分 “初级” 和 “中级” 开发者？A：JWT 的 “无状态” 是核心优势（不用服务器存储，分布式部署友好），但也是痛点 ——Token 一旦签发，只要签名正确、没过期，就默认有效。面试官想通过这道题，看你是否理解 “无状态≠不可控”，能否在 “架构优势” 和 “业务需求” 之间找到平衡。 Q2：面试官真正关注的 3 个维度？ 基础认知 ：是否清楚 JWT 的有效性依赖 “签名 + 过期时间”，而非用户状态； 场景思维 ：能否根据并发量、架构（单体 / 分布式）选择合适方案； 工程能力 ：是否考虑性能（比如黑名单查询会不会拖慢接口）、安全性（比如刷新 Token 防泄露）。 二、冲突本质：为什么 JWT 注销后还能生效？ 先看一个真实场景：用户 A 登录后，服务器签发 JWT（有效期 2 小时），A 点击 “注销” 退出系统。但此时 Token 还没过期，黑客如果截获这个 Token，依然能调用接口查询 A 的个人信息 —— 这就是核心冲突： JWT 的有效性只和 “技术层面” 相关（签名没篡改、没过期），和 “业务层面” 的用户状态（是否注销、封号）无关 。 解决问题的核心思路：在 JWT 的 “签名 + 过期” 之外，增加一层 “业务有效性校验”，让注销行为能影响 Token 的可用性。 三、4 种落地方案（场景 + 代码 + 配图）：从单体到分布式 方案 1：黑名单机制（中小规模系统首选） 适用场景 并发量不高（QPS<1 万）、单体 / 小型分布式系统； 要求注销后 “立即失效”（比如金融、隐私相关接口）。 核心逻辑 用户注销时，把 Token 存入 Redis 黑名单，设置过期时间 = JWT 剩余有效期（避免 Redis 无限存储）；接口请求时，先校验 Token 是否在黑名单中，在则拒绝访问。 Java 代码实现（完整可运行） JWT 工具类（简化版，实际密钥需存配置中心） java 运行 注销接口（存入黑名单） java 运行 拦截器（校验黑名单） java 运行 拦截器配置 java 运行 配图建议（黑名单机制流程图） plaintext 方案 2：短有效期 + 刷新 Token（高并发场景首选） 适用场景 并发量高（QP"
+    },
+    {
+      "slug": "gnhzou1qlowc3zse",
+      "title": "19、面试官：先不考虑机器配置，垃圾回收器结合业务特性，到底怎么选 ？",
+      "url": "/tulingzhouyu/db22bv/gnhzou1qlowc3zse",
+      "toc_path": [
+        "高频面试问题",
+        "赋文老师",
+        "19、面试官：先不考虑机器配置，垃圾回收器结合业务特性，到底怎么选 ？"
+      ],
+      "toc_level": 2,
+      "toc_index": 1284,
+      "word_count": 2963,
+      "updated_at": "2025-11-24T13:39:52.000Z",
+      "primary_category": "jvm-memory-gc",
+      "primary_category_name": "JVM内存与GC",
+      "related_categories": [
+        "jvm-memory-gc",
+        "project-system-design",
+        "java-concurrency",
+        "java-core",
+        "resume-project"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "junior"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "初级/1-3年"
+      ],
+      "keywords": [
+        "JVM",
+        "GC",
+        "垃圾回收",
+        "堆",
+        "方案",
+        "高并发",
+        "秒杀",
+        "订单",
+        "支付",
+        "库存",
+        "并发",
+        "多线程",
+        "Java"
+      ],
+      "summary": "“先别谈 JVM 参数和机器配置 —— 结合你的业务，到底怎么选垃圾回收器？”相信不少 Java 开发者面试到 JVM 环节时，都会被这个问题问懵。明明背了一堆 Parallel、G1、ZGC 的参数配置，却被面试官一句话拉回 “业务本质”，瞬间语塞。其实面试官的潜台词很明确：你不是 “GC ...",
+      "excerpt": "“先别谈 JVM 参数和机器配置 —— 结合你的业务，到底怎么选垃圾回收器？” 相信不少 Java 开发者面试到 JVM 环节时，都会被这个问题问懵。明明背了一堆 Parallel、G1、ZGC 的参数配置，却被面试官一句话拉回 “业务本质”，瞬间语塞。 其实面试官的潜台词很明确： 你不是 “GC 参数背诵机”，而是能结合业务痛点做技术决策的工程师 。机器配置只是优化项，业务特性才是 GC 选型的根基 —— 这正是高级工程师和初级工程师的核心差距，也是这道题的考核核心。 一、面试官到底在考什么？（直击核心） 很多人会疑惑：“GC 选型怎么可能抛开机器配置？” 面试官要的不是 “忽略配置”，而是 先抓住最核心的矛盾 —— 业务的核心诉求是什么？ 是追求单位时间处理更多任务（高吞吐）？还是要求响应时间绝对稳定（低延迟）？或是高并发下不能有明显停顿（高并发低停顿）？ 不同 GC 的设计目标本就为了解决不同业务痛点： Parallel GC：为 “高吞吐” 而生，牺牲短停顿换效率； G1 GC：为 “低延迟” 平衡，在吞吐和停顿间找最优解； ZGC/Shenandoah：为 “高并发低停顿” 兜底，毫秒级停顿扛住峰值。 面试考的，正是你 “把业务诉求翻译成技术选型” 的逻辑能力 —— 这比记 100 个 JVM 参数更重要。 二、3 个核心业务场景 + GC 选型实战（含代码 + 配图建议） 下面我们用 “业务场景→冲突痛点→选型方案→代码验证→原理拆解” 的逻辑，把 GC 选型讲透。每个场景都对应真实业务，直接可用于面试作答。 场景 1：高吞吐优先 —— 后台批处理、数据同步、报表生成 业务描述 每天凌晨 3 点执行数据同步任务，需处理 1000 万条用户数据，转换后写入数据库； 不在乎单次 GC 停顿（哪怕 200ms），但要求 “总处理时间越短越好”； 对象特征：批量创建、批量回收，以短生命周期对象为主。 冲突痛点 如果选低延迟的 G1，会因为频繁的增量回收消耗 CPU，导致总吞吐下降 —— 批处理业务不需要 “响应快”，只需要 “干活多、干活快”。 选型方案：Parallel Scavenge + Parallel Old（并行 GC 组合） 原理：新生代用 Parallel Scavenge（多线程并行回收），老年代用 Parallel Old（多线程并行 Full GC），最大化利用 CPU 核心，减少垃圾回收的总耗时，优先保证吞吐量。 核心优势：单位时间内处理的任务最多，适合 “吞吐量为王” 的后台任务。 Java 代码示例（模拟批处理场景） java 运行 场景 2：低延迟优先 —— 金融交易、实时接口、支付系统 业务描述 电商支付接口，每秒处理 1000 + 请求，响应时间要求 < 50ms； 绝对不能出现长停顿（比如 500ms 的 Full G"
+    },
+    {
+      "slug": "qbi56ufd1gy46xyt",
+      "title": "9、面试官：用线程池还是MQ做异步？我想要的答案，其实是这个",
+      "url": "/tulingzhouyu/db22bv/qbi56ufd1gy46xyt",
+      "toc_path": [
+        "高频面试问题",
+        "赋文老师",
+        "9、面试官：用线程池还是MQ做异步？我想要的答案，其实是这个"
+      ],
+      "toc_level": 2,
+      "toc_index": 1300,
+      "word_count": 3051,
+      "updated_at": "2025-10-31T07:54:49.000Z",
+      "primary_category": "java-thread-pool",
+      "primary_category_name": "线程池",
+      "related_categories": [
+        "java-thread-pool",
+        "mq-general",
+        "os-linux",
+        "java-concurrency",
+        "resume-project"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle",
+        "senior",
+        "junior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年",
+        "初级/1-3年"
+      ],
+      "keywords": [
+        "线程池",
+        "ThreadPoolExecutor",
+        "MQ",
+        "消息队列",
+        "削峰",
+        "进程",
+        "线程",
+        "锁",
+        "面试官"
+      ],
+      "summary": "面试官问：“我们这里有个耗时操作，你用什么方式把它异步化？”在面试中，这个问题就像一个分水岭。初级工程师可能会说：“简单，new Thread一下。” (嗯，小伙子很有想法，但我们不这么玩...)中级工程师会自信地回答：“用线程池！ThreadPoolExecutor或者@Async注解，方便...",
+      "excerpt": "面试官问：“我们这里有个耗时操作，你用什么方式把它异步化？” 在面试中，这个问题就像一个分水岭。 初级工程师 可能会说：“简单， new Thread 一下。” (嗯，小伙子很有想法，但我们不这么玩...) 中级工程师 会自信地回答：“用线程池！ ThreadPoolExecutor 或者 @Async 注解，方便快捷！” 高级工程师 则会反问：“这个业务场景，对可靠性、吞吐量和耦合度有什么要求？” 看到区别了吗？当你开始讨论 场景和权衡 (Trade-off) 时，你才真正触及了面试官的期望。 今天，我们就来把“线程池异步”和“MQ异步”这两个最常用的“瑞士军刀”掰开揉碎，讲清楚它们各自的优势、命门，以及面试官想听到的，那个藏在问题背后的“满分答案”。 一、问题的起点：为什么需要异步？ 想象一个典型的电商下单场景。用户点击“支付”按钮后，主流程是“创建订单”。但除此之外，系统还需要做一系列非核心的“附加动作”： 通知库存中心，锁定库存 给用户发短信/Push通知 给用户增加积分 记录一条操作日志用于数据分析 如果把这些操作全部放在一个同步方法里，会发生什么？ 整个接口的响应时间高达450毫秒！用户会感觉页面“卡”了一下，体验极差。而实际上，用户只关心“创建订单”是否成功，后面的附加动作晚几百毫秒甚至几秒钟完成，完全可以接受。 这就是异步的用武之地 ：将非核心、耗时的操作从主流程中剥离出去，让主流程快速返回，从而提升系统响应速度和吞吐量。 现在，选择题来了：实现这个异步化，你是用 线程池 ，还是 消息队列(MQ) ？ 二、近在咫尺的敏捷：线程池异步 对于上面的场景，最直接、最轻量的改造方式，就是使用线程池。 面试官内心OS ：我想听你分析线程池异步的优缺点。它最大的优点是什么？它最致命的缺点又是什么？ 你的回答应该直击要害 ： “面试官您好，线程池异步方案，我称之为**‘进程内异步’ 。它最大的优点是 简单、高效、几乎没有延迟**。” 工作流程解析： 整个过程都在同一个JVM进程内完成，任务的提交和执行几乎是瞬时的，省去了网络开销和序列化/反序列化成本。 用Java代码实现也非常简单，尤其是借助Spring的 @Async 注解： 但是，美好的事物总有代价。 当你准备说出它的缺点时，面试官的耳朵一定会竖起来。 “线程池异步方案有三个致命的‘硬伤’： 数据丢失风险 ：如果应用实例 突然宕机或重启 ，线程池任务队列中还未执行的任务，或者正在执行但未完成的任务，都会 全部丢失 。这是最严重的问题。 耦合性太强 ：任务的生产者（ OrderService ）和消费者（如 NotificationService ）在 同一个应用 中。如果未来“发短信”这个功能需要独立成一个微服务，就需要大规模的代码重构。 缺乏削峰填谷能力 ：如果上游瞬间涌入大量请求，线程池的任务队列"
+    },
+    {
+      "slug": "dsnhkwk8qiqs7mx9",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/dsnhkwk8qiqs7mx9",
+      "toc_path": [
+        "高频面试问题",
+        "赋文老师",
+        "7、阿里P7面试官：双十一零点1亿人下单，你的购物车怎么设计不崩？",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1305,
+      "word_count": 2515,
+      "updated_at": "2025-10-24T14:46:35.000Z",
+      "primary_category": "redis-cache",
+      "primary_category_name": "Redis缓存",
+      "related_categories": [
+        "redis-cache",
+        "mysql-index-transaction",
+        "project-system-design",
+        "resume-project",
+        "java-concurrency"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "expert",
+        "junior"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "专家/P7+",
+        "初级/1-3年"
+      ],
+      "keywords": [
+        "Redis",
+        "缓存",
+        "雪崩",
+        "MySQL",
+        "索引",
+        "锁",
+        "架构设计",
+        "方案",
+        "高并发",
+        "项目",
+        "面试官",
+        "CRUD",
+        "并发"
+      ],
+      "summary": "📎index (8).html面试官：双十一1亿人下单，你的购物车怎么不崩？链接: https://pan.baidu.com/s/1_phm6gYuR14eCC3hhcf1qg?pwd=cmkv 提取码: cmkv 【高并发购物车架构设计】5分钟终极口播稿(BGM: 富有节奏感、略带悬疑的...",
+      "excerpt": "面试官：双十一1亿人下单，你的购物车怎么不崩？ 链接: https://pan.baidu.com/s/1_phm6gYuR14eCC3hhcf1qg?pwd=cmkv 提取码: cmkv 【高并发购物车架构设计】5分钟终极口播稿 (BGM: 富有节奏感、略带悬疑的科技风电子音乐) 【0:00 - 0:35 | 开场：抛出问题，建立人设】 (快速切入，眼神犀利，语速稍快) “兄弟们，今天我们来拆一个阿里P7级别的面试题，这个问题能直接过滤掉90%的程序员。 (停顿1秒，看向镜头，一字一顿) 面试官问你：‘双十一零点，一个亿的人同时涌入，你的购物车怎么设计才不会崩？’ 这个问题，你要是只回答CRUD、加索引、或者搞个缓存，那基本就等于告诉面试官：‘我没做过高并发项目’。 (镜头拉近，语气变得自信) 今天，我就带你用 架构师的视角 ，把这道题彻底打透。这期视频含金量极高，结尾我会把今天这个可以直接拿来用的**【PPT源文件】 和一篇 【万字详解文章】**，毫无保留地分享给你，千万别划走！” 【转场到PPT第2页：冰与火】 【0:35 - 1:20 | 分析本质：点破矛盾，引发共鸣】 “要解决问题，首先要看透问题的本质。购物车的核心矛盾，我称之为‘冰与火’。 一方面，它是 火焰 。你想想双十一零点前，你是不是在疯狂加购、改数量？它的‘写’操作，远远超过了普通的‘读’，这就是极度的写压力。 但另一方面，它又是 冰山 。在没下单之前，购物车里的东西随时可能被删掉、被清空，它是个非常临时的、非核心的数据。我们完全没必要为了它，动用像银行转账那样的、昂贵的‘强一致性’方案。 【转场到PPT第3页：面试官的恐惧】 “如果你没看透这个‘冰火矛盾’，那你设计的系统，就会精准地踩中面试官最担心的三个雷区，也是他最怕你犯的三个致命错误： 第一，存储雪崩！ 你把所有压力都给到MySQL，高并发一来，无数的请求去锁同一行数据，行锁瞬间打满，数据库CPU飙到100%，整个系统直接雪崩！ 第二，设计缺陷！ 很多人说用缓存，但用错了照样是灾难。比如高并发下，两个请求同时修改购物车，后一个请求直接覆盖了前一个，用户加的商品莫名其妙没了，这叫 数据覆盖 ，绝对是P0级事故！ 第三，业务漏洞！ 游客登录时，购物车数据合并失败，或者数据丢失了，用户体验极差，等着被客诉淹没吧！” 【1:20 - 2:45 | 破局核心：存储选型与数据结构】 【转场到PPT第4页：MySQL vs Redis】 “好，问题分析完，我们来破局。 第一步，也是最关键的一步：选对主战场。 左边，是新手的选择：MySQL。它就像一条单行道，高并发一来，所有请求都在‘行锁’这个收费站前排队，动弹不得。 所以，我们的主战场必须是右边—— Redis 。它天然就是为高并发而生的。它给每个用户一个独立的内存空间，就像一个巨大的停车场，"
+    },
+    {
+      "slug": "dovcn1fxspk188zv",
+      "title": "如何实现系统的高可用性",
+      "url": "/tulingzhouyu/db22bv/dovcn1fxspk188zv",
+      "toc_path": [
+        "三高架构",
+        "如何实现系统的高可用性"
+      ],
+      "toc_level": 1,
+      "toc_index": 1382,
+      "word_count": 1843,
+      "updated_at": "2026-01-05T09:17:19.000Z",
+      "primary_category": "project-system-design",
+      "primary_category_name": "项目场景与系统设计",
+      "related_categories": [
+        "project-system-design",
+        "observability-troubleshooting",
+        "microservices-governance",
+        "resume-project",
+        "redis-persistence-cluster"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "expert",
+        "junior"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "专家/P7+",
+        "初级/1-3年"
+      ],
+      "keywords": [
+        "架构设计",
+        "方案",
+        "秒杀",
+        "限流",
+        "降级",
+        "熔断",
+        "故障",
+        "监控",
+        "CPU",
+        "超时",
+        "负载均衡",
+        "简历"
+      ],
+      "summary": "在架构师或高级开发工程师的面试中，“请讲讲你理解的高可用系统是如何设计的？”是一个极高频的“劝退题”。很多求职者简历上写着“负责千万级高可用架构”、“99.99% SLA”，但一被问到细节，往往只能憋出一句：“呃……就是多加几台服务器？”如果这么回答，基本上就离“回家等通知”不远了。今天我们就...",
+      "excerpt": "在架构师或高级开发工程师的面试中，“请讲讲你理解的高可用系统是如何设计的？”是一个极高频的“劝退题”。 很多求职者简历上写着“负责千万级高可用架构”、“99.99% SLA”，但一被问到细节，往往只能憋出一句：“呃……就是多加几台服务器？” 如果这么回答，基本上就离“回家等通知”不远了。今天我们就结合实战场景，像剥洋葱一样，层层递进地解析这个面试题，带你从“加服务器”一路进阶到“异地多活”。 核心思维：高可用的本质是“冗余” 首先，开篇点题。高可用（High Availability, HA）的核心确实离不开 冗余（Redundancy） 。 通俗点说，就是**“鸡蛋不要放在一个篮子里”**。并不是要追求服务器永远不挂（那是不可能的），而是当某台机器挂掉时，有备份立马顶上来，让用户感觉不到故障的存在。 初级回答 ：“做集群，部署两台 Tomcat。” 面试官追问 ：“那用户请求发给谁？你前面总得有个入口吧？比如 Nginx。” 这就引出了第一关的挑战。 第 1 关：解决“入口”的单点故障—— 网关层高可用 如果你有两台 Tomcat，前面挡了一台 Nginx 做负载均衡。Tomcat 是冗余了，但 Nginx 成了新的单点（SPOF） 。一旦这台 Nginx 宕机，后端无论有多少台健康的服务器，整个系统都会对外表现为“全瘫”。 解决方案：Keepalived + VIP（虚拟 IP） 架构设计 ：部署两台 Nginx，分为主节点（Master）和备节点（Backup）。 核心机制 ： 心跳检测 ：Keepalived 在主备之间持续发送心跳包。 IP 漂移 ：正常情况下，VIP 绑定在 Master 上。一旦 Master 宕机（心跳停止），VIP 会在毫秒级时间内“漂移”到 Backup 节点上，流量随之自动切换。 关键词 ： 故障转移（Failover） 。不仅要有备份，还要有自动切换的能力。 第 2 关：解决“心脏”的停跳风险—— 数据层高可用 应用层和网关层搞定了，但系统最脆弱的往往是数据库。数据库如果是单机，一旦宕机，数据读写全停，业务直接归零。 通常我们会做“一主多从”来实现读写分离和备份。但这里有一个致命问题： 如果半夜 3 点主库挂了怎么办？ 指望运维人员半夜爬起来手动修改配置、提升从库吗？这几分钟甚至几十分钟的业务中断是不可接受的。 解决方案：哨兵机制（Sentinel）或 MHA 架构设计 ：引入“哨兵”组件（监控集群）。 核心机制 ： 自动监控 ：7x24 小时监控主库状态。 自动选举 ：主库故障时，哨兵通过投票机制，自动在从库中选出一个新的主库。 自动切换 ：自动完成主从切换配置。 关键词 ： 自动故障转移（Auto-Failover） 。将故障恢复时间从分钟级压缩到秒级。 第 3 关：抵御流量洪峰的冲击—— 服务雪崩与自我保护 前两"
+    },
+    {
+      "slug": "vz99ihzxosq0sstz",
+      "title": "进阶网络通信",
+      "url": "/tulingzhouyu/db22bv/vz99ihzxosq0sstz",
+      "toc_path": [
+        "GoLang",
+        "进阶网络通信"
+      ],
+      "toc_level": 1,
+      "toc_index": 1523,
+      "word_count": 6167,
+      "updated_at": "2025-06-18T08:41:38.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "java-core",
+        "resume-project",
+        "os-linux"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "junior",
+        "campus"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "初级/1-3年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "TCP",
+        "UDP",
+        "HTTP",
+        "三次握手",
+        "四次挥手",
+        "网络",
+        "BIO",
+        "NIO",
+        "IO",
+        "项目",
+        "面试官",
+        "CRUD"
+      ],
+      "summary": "课程介绍通信的本质：TCP/IP通信原理：网络分层TCP如何确保可靠性传递：三次握手四次挥手BIO/NIO： ServerSocket Socket 多路复用 （原理源码详细讲解Epoll）\t\t标准库net包的使用Go语言标准库里提供的 net 包，支持基于 IP 层、TCP/UDP 层及更高...",
+      "excerpt": "课程介绍 通信的本质： TCP/IP通信原理：网络分层 TCP如何确保可靠性传递：三次握手四次挥手 BIO/NIO： ServerSocket Socket 多路复用 （原理源码详细讲解Epoll） 标准库net包的使用 Go语言标准库里提供的 net 包，支持基于 IP 层、TCP/UDP 层及更高层面（如 HTTP、FTP、SMTP）的网络操作，其中用于 IP 层的称为 Raw Socket。 重要函数：net.Listen() 服务端的监听 。 net.Dial()客户端的处理 代码实现： client端 通过标准流 数据传递 客户端传递数据给服务端 关键方法：os.stdin bufio. conn.Write conn.Read 服务端读取 客户端数据 多行写 和 读 bye标志退出 Web开启 net包装类 net/http 主要方法 http.ListenAndServe() http.HandleFunc() 代码实现： 原理图 多个handler 发起Get请求 代码实现： 传递参数 代码实现： Json格式处理 代码实现： 发起Post请求 代码实现： Golang标准库 template templates定义了数据驱动的文本输出，生产html文件的模板在 html/template 包里面。 模板使用插值语法 {{.var}} 也可以使用一些流程控制，列如 if else for range等 主要方法： template.New(&quot;别名&quot;).Parse(&quot;解析的模板&quot;) template.Execute() 自定义模板代码实现： HTML模板 1.定义html页面 2.handle中解析模板文件 (文件目录有问题 路径访问不到问题最好新项目go mod) 代码实现： 注意1 空格 {{ 1 }} {{- 1 -}} -》 1 注意2 注释 /* xxoo */ 注意3 pipeline多连接传递 unix 管道 |前面的命令将运算的结果传递给下一名的最后一个位置 比如下面都会输出 shenzhuan {{ &quot;shenzhuan&quot; }} {{printf &quot;%q&quot; &quot;shenzhuan&quot;}} {{&quot;shenzhuan&quot; | printf &quot;%q&quot; }} {{&quot;zhuan&quot; | printf &quot;%s%s&quot; &quot;shen&quot; |printf &quot;%q&quot;}} {{&quot;shenzhuan&quot; | printf &quot;%s&quot; | printf &quot;%q&quot;}} 注意4 变量的使用 $va"
+    }
+  ]
+}

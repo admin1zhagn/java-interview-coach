@@ -1,0 +1,1879 @@
+{
+  "id": "algorithm",
+  "name": "算法与数据结构",
+  "aliases": [
+    "算法",
+    "LeetCode",
+    "数组",
+    "链表",
+    "二叉树",
+    "动态规划",
+    "排序",
+    "查找"
+  ],
+  "count": 51,
+  "total_word_count": 43113,
+  "articles": [
+    {
+      "slug": "rmwkooukymzcgygp",
+      "title": "LeetCode篇",
+      "url": "/tulingzhouyu/db22bv/rmwkooukymzcgygp",
+      "toc_path": [
+        "面试必看",
+        "大厂真题",
+        "阿里面试真题",
+        "LeetCode篇"
+      ],
+      "toc_level": 3,
+      "toc_index": 41,
+      "word_count": 5848,
+      "updated_at": "2024-04-29T12:18:10.000Z",
+      "primary_category": "algorithm",
+      "primary_category_name": "算法与数据结构",
+      "related_categories": [
+        "algorithm",
+        "computer-network",
+        "netty-network",
+        "mysql-index-transaction",
+        "performance-optimization"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "LeetCode",
+        "数组",
+        "动态规划",
+        "排序",
+        "索引"
+      ],
+      "summary": "【Python语法】reduce(function, iterable[, initializer])    reduce(lambda x,y:x * y,ns) # 数组之乘积 (ns[0] * ns[1]) * ns[2]    reduce(lambda x,y:x + y,ns) #...",
+      "excerpt": "【Python语法】 【背包模板】 「力扣」 上的 0-1 背包问题： 组合问题模板 #0-1背包，不可重复for n in ns: for i in range(T, n-1, -1): dp[i] = max(dp[i], dp[i - n] + ws[i])#完全背包，可重复，无序，算重量for n in ns: for i in range(n, T+1): dp[i] = max(dp[i], dp[i - n] + ws[i]) #完全背包，可重复，有序，算次数 for i in range(1, T+1): for n in ns: dp[i] += dp[i-n] 377 组合总和 Ⅳ 494 目标和 518 零钱兑换 II True、False问题 139 单词拆分 416 分割等和子集 最大最小问题： dp[i] = min(dp[i], dp[i-num]+1)dp[i] = max(dp[i], dp[i-num]+1) 474 一和零 322 零钱兑换 「力扣」 第 879 题：盈利计划（困难）； 「力扣」 第 1449 题：数位成本和为目标值的最大数字（困难）。 【回溯模板】 「剪枝」 第 46 题 全排列 第 47 题 全排列② # 剪枝def backtrack(temp_list, length): if length == n: res.append(temp_list) for i in range(n): if not visited[i]: visited[i] = 1 backtrack(temp_list + [nums[i]], length + 1) visited[i] = 0 「索引遍历」 第 78 题 子集 | 第 47 题 子集② | 第 131 题 分割字符串 # 索引遍历def helper1(idx, n, temp_list): if temp_list not in res: res.append(temp_list) for i in range(idx, n): helper1(i + 1, n, temp_list + [nums[i]]) 「 资源消耗」 第 22 题 夸号生成 # 资源消耗def backtrack(S, L, R): if not L and not R: ans.append(''.join(S)) return if L : backtrack(S + ['('], L-1, R) if R > L : backtrack(S + [')'], L, R-1) 「资源消耗」 第 93 题 复原IP 资源消耗def backtrack(i, tmp, flag): if i == n and flag == 0: res.append(tmp[:-1]) eli"
+    },
+    {
+      "slug": "xwyb50ph2lulal1c",
+      "title": "HashMap底层数据结构是怎样的",
+      "url": "/tulingzhouyu/db22bv/xwyb50ph2lulal1c",
+      "toc_path": [
+        "面试必看",
+        "大厂真题",
+        "美团面试真题",
+        "HashMap底层数据结构是怎样的"
+      ],
+      "toc_level": 3,
+      "toc_index": 54,
+      "word_count": 332,
+      "updated_at": "2023-08-28T09:06:12.000Z",
+      "primary_category": "algorithm",
+      "primary_category_name": "算法与数据结构",
+      "related_categories": [
+        "algorithm",
+        "java-collections",
+        "mysql-index-transaction",
+        "java-core"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "数组",
+        "链表",
+        "查找",
+        "HashMap",
+        "索引",
+        "Java"
+      ],
+      "summary": "HashMap的底层数据结构主要由数组和链表（或红黑树）组成。HashMap内部维护了一个Entry数组，用于存储键值对对象Entry。数组的每个元素都是一个单向链表的头节点，如果发生哈希冲突（即两个不同的键经过哈希运算得到的数组索引位置相同），则将新的键值对添加到对应索引位置的链表中。链表节...",
+      "excerpt": "HashMap的底层数据结构主要由 数组 和 链表 （或 红黑树 ）组成。 HashMap内部维护了一个 Entry数组 ，用于存储键值对对象Entry。数组的每个元素都是一个 单向链表的头节点 ，如果发生哈希冲突（即两个不同的键经过哈希运算得到的数组索引位置相同），则将新的键值对添加到对应索引位置的链表中。 链表节点包含 键 、 值 和 指向下一个节点的指针 。在Java 8之后，当链表长度达到一定 阈值时（默认为8） ，链表会自动 转换为红黑树 ，以提高查找效率。 红黑树是一种 自平衡的二叉搜索树 ，它的插入、删除和查找操作的时间复杂度都是 O(log n) ，相比于链表，红黑树在查找效率上更高。 通过哈希函数将键映射到数组索引位置，可以快速定位到对应的链表或红黑树，然后在链表或红黑树中进行查找、插入或删除操作。HashMap通过哈希表的数据结构，实现了高效的键值对存储和查找。"
+    },
+    {
+      "slug": "kxb1pes1rv2mltqe",
+      "title": "布谷鸟过滤器（Cuckoo Filter)",
+      "url": "/tulingzhouyu/db22bv/kxb1pes1rv2mltqe",
+      "toc_path": [
+        "综合篇",
+        "布谷鸟过滤器（Cuckoo Filter)"
+      ],
+      "toc_level": 1,
+      "toc_index": 161,
+      "word_count": 2832,
+      "updated_at": "2024-10-31T02:27:08.000Z",
+      "primary_category": "algorithm",
+      "primary_category_name": "算法与数据结构",
+      "related_categories": [
+        "algorithm",
+        "observability-troubleshooting",
+        "mysql-index-transaction",
+        "jvm-memory-gc",
+        "performance-optimization"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "算法",
+        "数组",
+        "查找",
+        "CPU",
+        "索引",
+        "性能",
+        "优化"
+      ],
+      "summary": "1 概述在允许一定误判率的大数据量下的查找是否存在问题上可以使用布隆过滤器，详情上篇文章。布隆过滤器在工程应用方面已经比较成熟了，上一篇文章中，谈到了布隆过滤器的一些缺点，比如不支持删除操作、查询效率弱，因为多个随机哈希函数探测的是bit数组中多个不同的点，所以会导致低CPU缓存命中率。针对此...",
+      "excerpt": "1 概述 在允许一定误判率的大数据量下的查找是否存在问题上可以使用布隆过滤器，详情上篇文章。布隆过滤器在工程应用方面已经比较成熟了，上一篇文章中，谈到了布隆过滤器的一些缺点，比如不支持删除操作、查询效率弱，因为多个随机哈希函数探测的是bit数组中多个不同的点，所以会导致低CPU缓存命中率。 针对此2014年的一篇文章 《Cuckoo Filter：Better Than Bloom》 基于 布谷鸟哈希算法 提出了 布谷鸟过滤器 ，不过看文章的名字有点碰瓷的感觉了，这篇文章解决了布隆过滤器存在的问题。 布谷鸟过滤器用更低的空间开销解决了布隆过滤器不能删除元素的问题，做到了更好的效果，具体的 It supports adding and removing items dynamically; It provides higher lookup performance than traditional Bloom filters, even when close to full (e.g., 95% space utilized); It is easier to implement than alternatives such as the quotient filter; It uses less space than Bloom filters in many practical applications, if the target false positive rate \u000f is less than 3% 支持动态的添加和删除元素 提供了比传统布隆过滤器更高的查找性能，即使在接近满的情况下（比如空间利用率达到 95% 的时候） 比起商过滤器它更容易实现 如果要求误判率低于3%，它比布隆过滤器有更低的空间开销 2 布谷鸟哈希 布谷鸟哈希是2001 年由Rasmus Pagh 和Flemming Friche Rodler 提出。本质上来说它为解决哈希冲突提供了另一种策略，利用较少计算换取了较大空间。它具有占用空间小、查询迅速等特性。名称源于采取了一种和布谷鸟一样的养娃方法 布谷鸟交配后，雌性 布谷鸟 就准备产蛋了，但它却不会自己筑巢。它会来到像知更 鸟 、刺嘴莺等那些比它小的 鸟 类的巢中，移走原来的那窝蛋中的一个，用自己的蛋来取而代之。相对于它的体形来说，它的蛋是偏小的，而且蛋上的斑纹同它混入的其他 鸟 的蛋也非常相似，所以不易被分辨出来。如果不是这样，它的蛋肯定会被扔出去。 是一种鸠占鹊巢的策略，最原始的布谷鸟哈希方法是使用两个哈希函数对一个 key 进行哈希，得到桶中的两个位置，此时 如果两个位置都为为空则将 key 随机存入其中一个位置 如果只有一个位置为空则存入为空的位置 如果都不为空，则随机踢出一个元素，踢出的元素再重新计算哈希找到相应的位置 "
+    },
+    {
+      "slug": "rihz8qgxpcbgkdam",
+      "title": "Comparator与Comparable有什么区别",
+      "url": "/tulingzhouyu/db22bv/rihz8qgxpcbgkdam",
+      "toc_path": [
+        "Java基础",
+        "Comparator与Comparable有什么区别"
+      ],
+      "toc_level": 1,
+      "toc_index": 190,
+      "word_count": 419,
+      "updated_at": "2023-09-06T06:19:20.000Z",
+      "primary_category": "algorithm",
+      "primary_category_name": "算法与数据结构",
+      "related_categories": [
+        "algorithm",
+        "java-core"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "排序",
+        "Java"
+      ],
+      "summary": "Comparator和Comparable都是Java中用于对象排序的接口，它们之间有一些关键的区别。Comparable接口是在对象自身的类中实现的，它定义了对象的自然排序方式。一个类实现了Comparable接口后，可以使用compareTo方法来比较当前对象和其他对象的大小关系。这个接口...",
+      "excerpt": "Comparator和Comparable都是Java中用于对象排序的接口，它们之间有一些关键的区别。 Comparable接口是在对象自身的类中实现的 ，它定义了对象的自然排序方式。一个类实现了Comparable接口后，可以使用compareTo方法来比较当前对象和其他对象的大小关系。这个接口只能在对象自身的类中实现，不需要额外的比较器。 Comparator接口是一个独立的比较器 ，它可以用于对不同类的对象进行排序。Comparator接口允许在对象类之外创建一个单独的比较器类或匿名类，并使用它来定义对象的排序规则。比较器通过实现compare方法来比较两个对象的大小关系。 因此，主要区别如下： Comparable接口是在对象自身的类中实现，定义了对象的自然排序方式。 Comparator接口是一个单独的比较器，定义了用于排序的规则，可以用于不同类的对象排序。 Comparable是内部排序，对象的类必须实现Comparable接口才能进行排序。 Comparator是外部排序，可以独立定义排序规则，并与任何类的对象一起使用。 在使用时，如果需要对对象的默认排序进行操作，可以实现Comparable接口。如果需要对不同类的对象进行排序，或者需要定义多种不同的排序规则，可以使用Comparator接口。"
+    },
+    {
+      "slug": "ln9qeqinrwe13ugn",
+      "title": "ConcurrentSkipList系列原理",
+      "url": "/tulingzhouyu/db22bv/ln9qeqinrwe13ugn",
+      "toc_path": [
+        "并发编程",
+        "ConcurrentSkipList系列原理"
+      ],
+      "toc_level": 1,
+      "toc_index": 290,
+      "word_count": 2354,
+      "updated_at": "2025-01-24T06:59:46.000Z",
+      "primary_category": "algorithm",
+      "primary_category_name": "算法与数据结构",
+      "related_categories": [
+        "algorithm",
+        "java-collections",
+        "computer-network",
+        "java-concurrency",
+        "netty-network"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "算法",
+        "链表",
+        "二叉树",
+        "排序",
+        "查找",
+        "集合",
+        "HashMap",
+        "ConcurrentHashMap",
+        "TreeMap",
+        "并发",
+        "多线程",
+        "线程"
+      ],
+      "summary": "ConcurrentSkipList是有序的容器是TreeMap 和TreeSet的并发集合替代品. ConcurrentSkipListMap  有序MapConcurrentSkipListSet   有序Set TreeMap和TreeSet使用红黑树按照key的顺序（自然顺序、自定义顺...",
+      "excerpt": "ConcurrentSkipList 是有序的容器 是TreeMap 和TreeSet的并发集合替代品. ConcurrentSkipListMap 有序 Map ConcurrentSkipListSet 有序 Set TreeMap 和 TreeSet 使用红黑树按照 key 的顺序（自然顺序、自定义顺序）来使得键值对有序存储 ， 但是只能在单线程下安全使用；多线程下想要使键值对按照 key 的顺序来存储，则需要使用 ConcurrentSkipListMap 和 ConcurrentSkipListSet ，分别用以代替 TreeMap 和 TreeSet ，存入的数据按 key 排序。在实现上， ConcurrentSkipListSet 本质上就是 ConcurrentSkipListMap 。 （一） 了解什么是 SkipList ？ 1． 二分查找和 AVL 树查找 二分查找要求元素可以随机访问，所以决定了需要把元素存储在连续内存。这样查找确实很快，但是插入和删除元素的时候，为了保证元素的有序性，就需要大量的移动元素了。 如果需要的是一个能够进行二分查找，又能快速添加和删除元素的数据结构，首先就是二叉查找树，二叉查找树在最坏情况下可能变成一个链表。 于是，就出现了平衡二叉树，根据平衡算法的不同有 AVL 树， B-Tree ， B+Tree ，红黑树等，但是 AVL 树实现起来比较复杂，平衡操作较难理解，这时候就可以用 SkipList 跳跃表结构。 2． 什么是跳表 传统意义的单链表是一个线性结构，向有序的链表中插入一个节点需要 O(n) 的时间，查找操作需要 O(n) 的时间。 如果我们使用上图所示的跳跃表，就可以减少查找所需时间为 O(n/2) ，因为我们可以先通过每个节点的最上面的指针先进行查找，这样子就能跳过一半的节点。 查找过程 : 比如我们想查找 50 ，首先和 20 比较，大于 20 之后，在和 40 进行比较，然后在和 70 进行比较，发现 70 大于 50 ，说明查找的点在 40 和 50 之间，从这个过程中，我们可以看出，查找的时候跳过了 30 。 设计思想 : 跳跃表其实也是一种通过“空间来换取时间”的一个算法，令链表的每个结点不仅记录 next 结点位置，还可以按照 level 层级分别记录后继第 level 个结点。此法使用的就是 “ 先大步查找确定范围，再逐渐缩小迫近 ” 的思想进行的查找。 跳跃表在算法效率上很接近红黑树。 概率数据结构 跳跃表又被称为 概率 ，或者说是随机化的数据结构，目前开源软件 Redis 和 lucence都有用到它。 新插入的元素的时候 , 这个元素到底应不应该成节点呢 , 就是随机 , 如果随机到了就成为节点了 , 如果不是就算了 . 都是线程安全的 Map 实现， Concurren"
+    },
+    {
+      "slug": "pg4191un9az8nwdz",
+      "title": "什么数据用hash存储",
+      "url": "/tulingzhouyu/db22bv/pg4191un9az8nwdz",
+      "toc_path": [
+        "Mysql",
+        "什么数据用hash存储"
+      ],
+      "toc_level": 1,
+      "toc_index": 429,
+      "word_count": 154,
+      "updated_at": "2024-08-22T08:55:02.000Z",
+      "primary_category": "algorithm",
+      "primary_category_name": "算法与数据结构",
+      "related_categories": [
+        "algorithm",
+        "mysql-index-transaction"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "算法",
+        "查找",
+        "索引"
+      ],
+      "summary": "在诸葛老师的公开课中就讲到了， hash结构不支持范围查询，  所以哈希索引只能做等于查找，但是无论多大的Hash表，查找复杂度都是O(1)。为什么范围不行：哈希算法将输入映射到一个固定大小的哈希值，不同的输入可能会产生相同的哈希值（哈希碰撞）。因此，哈希表并不保留输入数据的顺序，这使得进行范...",
+      "excerpt": "在诸葛老师的公开课中就讲到了， hash结构不支持范围查询， 所以哈希索引只能做等于查找，但是无论多大的Hash表，查找复杂度都是O(1)。 ​ 为什么范围不行： 哈希算法将输入映射到一个固定大小的哈希值，不同的输入可能会产生相同的哈希值（哈希碰撞）。因此，哈希表并不保留输入数据的顺序，这使得进行范围查询（如 BETWEEN 、 > 、 < 等）变得非常困难。"
+    },
+    {
+      "slug": "ggqga7or37xxern5",
+      "title": "了解ElasticSearch 深翻页的问题及解决吗",
+      "url": "/tulingzhouyu/db22bv/ggqga7or37xxern5",
+      "toc_path": [
+        "ElasticSearch",
+        "了解ElasticSearch 深翻页的问题及解决吗"
+      ],
+      "toc_level": 1,
+      "toc_index": 600,
+      "word_count": 375,
+      "updated_at": "2023-09-04T11:54:17.000Z",
+      "primary_category": "algorithm",
+      "primary_category_name": "算法与数据结构",
+      "related_categories": [
+        "algorithm",
+        "performance-optimization",
+        "project-system-design",
+        "java-concurrency"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "排序",
+        "性能",
+        "优化",
+        "高并发",
+        "并发"
+      ],
+      "summary": "是的，我了解ElasticSearch的深翻页问题及其解决方法。ElasticSearch的深翻页问题主要与分页查询有关。在分页查询时，每次都需要对所有数据进行排序，然后取出指定范围的文档，这会导致查询效率低下和资源浪费。对于数据量较小（from+size在10000条内）的情况，或者只需要关...",
+      "excerpt": "是的，我了解ElasticSearch的深翻页问题及其解决方法。 ElasticSearch的深翻页问题主要与分页查询有关。在分页查询时，每次都需要对所有数据进行排序，然后取出指定范围的文档，这会导致查询效率低下和资源浪费。 对于数据量较小（from+size在10000条内）的情况，或者只需要关注结果集的前N条数据，可以使用&quot;from&quot;和&quot;size&quot;分页方式。在这种情况下，直接使用简单的分页查询即可。 然而，对于数据量较大且需要深度翻页的情况，例如后台批处理任务（如数据迁移）等，推荐使用&quot;scroll&quot;方式进行查询。scroll API能够高效地获取大量数据，并且避免了对全部数据的排序操作，提高了查询效率。 另外，对于数据量大且需要深度翻页，同时又存在用户实时、高并发查询需求的情况，建议使用&quot;search after&quot;方式。search after API能够提供一种高效的、可扩展的、适用于大规模数据的分页查询方式，同时还能满足实时查询的需求。 总之，针对不同的情况和需求，可以选择合适的查询方式来优化查询效率和性能。"
+    },
+    {
+      "slug": "ofof6rygsusp2rq6",
+      "title": "ZAB 和 Paxos 算法的联系与区别",
+      "url": "/tulingzhouyu/db22bv/ofof6rygsusp2rq6",
+      "toc_path": [
+        "Zookeeper",
+        "ZAB 和 Paxos 算法的联系与区别"
+      ],
+      "toc_level": 1,
+      "toc_index": 644,
+      "word_count": 483,
+      "updated_at": "2023-09-04T09:11:06.000Z",
+      "primary_category": "algorithm",
+      "primary_category_name": "算法与数据结构",
+      "related_categories": [
+        "algorithm",
+        "java-concurrency",
+        "observability-troubleshooting",
+        "os-linux"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "算法",
+        "故障",
+        "进程"
+      ],
+      "summary": "ZAB（ZooKeeper Atomic Broadcast）算法和Paxos算法都是分布式系统中用于实现数据一致性的算法。两者的主要联系在于它们都采用了类似领导者的选举机制，通过多数派的投票来保证系统的稳定性。在ZAB中，这体现在它使用了一种类似于Paxos的领导者选举过程，其中有一个领导者...",
+      "excerpt": "ZAB（ZooKeeper Atomic Broadcast）算法和Paxos算法都是分布式系统中用于实现数据一致性的算法。 两者的主要联系在于它们都采用了类似领导者的选举机制，通过多数派的投票来保证系统的稳定性。在ZAB中，这体现在它使用了一种类似于Paxos的领导者选举过程，其中有一个领导者（leader）来协调多个跟随者（follower）的操作。而在Paxos中，一个提案需要被大多数的进程接受并返回结果，才能被确定。 两者的区别在于它们的目标和实现方式不同： 目标：ZAB算法是为了构建一个高可用的分布式数据主备系统（如ZooKeeper），而Paxos算法则是为了构建一个分布式一致性状态机系统。 实现方式：ZAB算法使用了消息广播的方式来实现分布式系统的协调，它要求每个消息都必须得到大多数节点的反馈才能确认，从而确保消息的一致性。同时，ZAB算法还引入了一个重要的概念，即消息的epoch，用来保证在领导者出现故障时，能够正确地选择新的领导者。Paxos算法则更加通用，它可以处理更广泛的一致性问题，而不仅仅是消息广播。然而，Paxos算法的实现较为复杂，因为它需要处理多种可能的情况，包括领导者故障、消息丢失等。 综上所述，ZAB和Paxos的联系在于采用了领导者的选举机制和多数派的投票原则，而区别在于它们的目标和实现方式不同。"
+    },
+    {
+      "slug": "ywiia55xxy96lkcg",
+      "title": "说下Raft算法",
+      "url": "/tulingzhouyu/db22bv/ywiia55xxy96lkcg",
+      "toc_path": [
+        "分布式",
+        "说下Raft算法"
+      ],
+      "toc_level": 1,
+      "toc_index": 748,
+      "word_count": 634,
+      "updated_at": "2024-11-24T11:56:30.000Z",
+      "primary_category": "algorithm",
+      "primary_category_name": "算法与数据结构",
+      "related_categories": [
+        "algorithm",
+        "performance-optimization",
+        "redis-persistence-cluster",
+        "microservices-governance",
+        "java-core"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "算法",
+        "集群",
+        "超时"
+      ],
+      "summary": "Raft算法Raft算法是什么？Raft 也是一个 一致性算法，和 Paxos 目标相同。但它还有另一个名字 - 易于理解的一致性算法。Paxos 和 Raft 都是为了实现 一致性 产生的。这个过程如同选举一样，参选者 需要说服 大多数选民 (Server) 投票给他，一旦选定后就跟随其操作...",
+      "excerpt": "Raft算法 Raft算法是什么？ Raft 也是一个 一致性算法 ，和 Paxos 目标相同。但它还有另一个名字 - 易于理解的一致性算法 。 Paxos 和 Raft 都是为了实现 一致性 产生的。这个过程如同选举一样， 参选者 需要说服 大多数选民 (Server) 投票给他，一旦选定后就跟随其操作。 Paxos 和 Raft 的区别在于选举的 具体过程 不同。 Raft算法的工作流程？ Raft算法的角色 Raft 协议将 Server 进程分为三种角色： Leader（领导者） Follower（跟随者） Candidate（候选人） 就像一个民主社会，领导者由跟随者投票选出。刚开始没有 领导者 ，所有集群中的 参与者 都是 跟随者 。 那么首先开启一轮大选。在大选期间 所有跟随者 都能参与竞选，这时所有跟随者的角色就变成了 候选人 ，民主投票选出领袖后就开始了这届领袖的任期，然后选举结束，所有除 领导者 的 候选人 又变回 跟随者 服从领导者领导。 这里提到一个概念 「任期」 ，用术语 Term 表达。 三类角色的变迁图如下： Raft三种角色变迁图 Leader选举过程 Raft 使用心跳（heartbeat）触发Leader选举。当Server启动时，初始化为Follower。Leader向所有Followers周期性发送heartbeat。如果Follower在选举超时时间内没有收到Leader的heartbeat，就会等待一段随机的时间后发起一次Leader选举。 Follower将其当前term加一然后转换为Candidate。它首先给自己投票并且给集群中的其他服务器发送 RequestVote RPC 。结果有以下三种情况： 赢得了多数（超过1/2）的选票，成功选举为Leader； 收到了Leader的消息，表示有其它服务器已经抢先当选了Leader； 没有Server赢得多数的选票，Leader选举失败，等待选举时间超时（ Election Timeout ）后发起下一次选举。 Leader选举 选出 Leader 后， Leader 通过 定期 向所有 Follower 发送 心跳信息 维持其统治。若 Follower 一段时间未收到 Leader 的 心跳 ，则认为 Leader 可能已经挂了，然后再次发起 选举 过程。"
+    },
+    {
+      "slug": "sh5gb8mbgvo6alip",
+      "title": "说下paxos算法",
+      "url": "/tulingzhouyu/db22bv/sh5gb8mbgvo6alip",
+      "toc_path": [
+        "分布式",
+        "说下paxos算法"
+      ],
+      "toc_level": 1,
+      "toc_index": 750,
+      "word_count": 1083,
+      "updated_at": "2023-10-06T06:35:10.000Z",
+      "primary_category": "algorithm",
+      "primary_category_name": "算法与数据结构",
+      "related_categories": [
+        "algorithm",
+        "redis-lock",
+        "distributed-lock-id",
+        "java-concurrency",
+        "mysql-index-transaction"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "算法",
+        "分布式锁",
+        "锁"
+      ],
+      "summary": "Paxos 有点类似前面说的 2PC，3PC，但比这两种算法更加完善。在很多多大厂都得到了工程实践，比如阿里的 OceanBase 的 分布式数据库， Google 的 chubby 分布式锁 。Paxos算法是什么？Paxos 算法是 基于消息传递 且具有 高效容错特性 的一致性算法，目前公...",
+      "excerpt": "Paxos 有点类似前面说的 2PC ， 3PC ，但比这两种算法更加完善。在很多多大厂都得到了工程实践，比如阿里的 OceanBase 的 分布式数据库 ， Google 的 chubby 分布式锁 。 Paxos算法是什么？ Paxos 算法是 基于消息传递 且具有 高效容错特性 的一致性算法，目前公认的解决 分布式一致性问题 最有效的算法之一。 Paxos算法的工作流程？ 角色 在Paxos中有这么几个角色： Proposer（提议者） : 提议者提出提案，用于投票表决。 Accecptor（接受者） : 对提案进行投票，并接受达成共识的提案。 Learner（学习者） : 被告知投票的结果，接受达成共识的提案。 在实际中，一个节点可以同时充当不同角色。 Paxos的三种角色 提议者提出提案，提案=编号+value，可以表示为[M,V]，每个提案都有唯一编号，而且编号的大小是趋势递增的。 算法流程 Paxos算法包含两个阶段，第一阶段**Prepare(准备) 、第二阶段 Accept(接受)**。 Paxos算法流程 Prepare(准备)阶段 提议者提议一个新的提案 P[Mn,?]，然后向接受者的某个超过半数的子集成员发送编号为Mn的准备请求 如果一个接受者收到一个编号为Mn的准备请求，并且编号Mn大于它已经响应的所有准备请求的编号，那么它就会将它已经批准过的最大编号的提案作为响应反馈给提议者，同时该接受者会承诺不会再批准任何编号小于Mn的提案。 总结一下，接受者在收到提案后，会给与提议者 两个承诺 与 一个应答 ： 两个承诺： 承诺不会再接受提案号小于或等于 Mn 的 Prepare 请求 承诺不会再接受提案号小于Mn 的 Accept 请求 一个应答： 不违背以前作出的承诺的前提下，回复已经通过的提案中提案号最大的那个提案所设定的值和提案号Mmax，如果这个值从来没有被任何提案设定过，则返回空值。如果不满足已经做出的承诺，即收到的提案号并不是决策节点收到过的最大的，那允许直接对此 Prepare 请求不予理会。 Accept(接受)阶段 如果提议者收到来自半数以上的接受者对于它发出的编号为Mn的准备请求的响应，那么它就会发送一个针对[Mn,Vn]的接受请求给接受者，注意Vn的值就是收到的响应中编号最大的提案的值，如果响应中不包含任何提案，那么它可以随意选定一个值。 如果接受者收到这个针对[Mn,Vn]提案的接受请求，只要该接受者尚未对编号大于Mn的准备请求做出响应，它就可以通过这个提案。 当提议者收到了多数接受者的接受应答后，协商结束，共识决议形成，将形成的决议发送给所有学习节点进行学习。 所以Paxos算法的整体详细流程如下： Paxos详细流程 算法的流程模拟，可以查看参考[13]。 Paxos算法有什么缺点吗？怎么优化？ 前面描述的可以称"
+    },
+    {
+      "slug": "xerhnrqtnau1p77w",
+      "title": "一文了解Paxos 算法",
+      "url": "/tulingzhouyu/db22bv/xerhnrqtnau1p77w",
+      "toc_path": [
+        "分布式",
+        "说下paxos算法",
+        "一文了解Paxos 算法"
+      ],
+      "toc_level": 2,
+      "toc_index": 751,
+      "word_count": 3495,
+      "updated_at": "2025-05-27T08:17:00.000Z",
+      "primary_category": "algorithm",
+      "primary_category_name": "算法与数据结构",
+      "related_categories": [
+        "algorithm",
+        "redis-persistence-cluster",
+        "performance-optimization",
+        "ai-llm",
+        "redis-lock"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "senior",
+        "campus"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "算法",
+        "集群",
+        "性能",
+        "优化",
+        "分布式锁"
+      ],
+      "summary": "本文主要介绍了 Paxos 算法，包括 Basic Paxos 和 Multi Paxos。Basic Paxos 算法中存在提议者、接受者、学习者三种角色，通过准备和接受两个阶段达成共识，还讲解了接受者存在已通过提案的情况。Multi Paxos 是一种思想，引入领导者以解决冲突和优化执行过...",
+      "excerpt": "本文主要介绍了 Paxos 算法，包括 Basic Paxos 和 Multi Paxos。 Basic Paxos 算法中存在提议者、接受者、学习者三种角色，通过准备和接受两个阶段达成共识，还讲解了接受者存在已通过提案的情况。 Multi Paxos 是一种思想，引入领导者以解决冲突和优化执行过程，如 Chubby 实现了其算法。 前言 Paxos 算法由 Leslie Lamport 在 1989 年提出的一个分布式共识算法，Paxos 算法较难理解，本文尝试以图形化方案解释 Paxos 算法。 Lamport 提出的 Paxos 算法包括两个部分： Basic Paxos 算法：多节点如何就某个值达成共识 Multi Paxos 思想：执行多个 Basic Paxos ，就一系列的值达成共识 一、Basic Paxos 1. 问题 假设一个集群包含三个节点 A, B, C，提供只读 key-value 存储服务。只读 key-value 的意思是指，当一个 key 被创建时，它的值就确定下来了，且后面不能修改。 客户端 1 和客户端 2 同时试图创建一个 K 键。客户端 1 创建值为 &quot;baili&quot; 的 K ，客户端 2 创建值为 &quot;百里&quot; 的 K 。在这种情况下，集群如何达成共识，实现各节点上 K 的值一致呢？ 2. Paxos 涉及的概念 在 Paxos 算法中，存在提议者（Proposer），接受者（Acceptor），学习者（Learner）三种角色，它们的关系如下： 提议者（Proposer）：提议一个值，用于投票表决，可以将上图客户端 1 和客户端 2 看作提议者。实际上，提议者更多是集群内的节点，这里为了演示的方便，将客户端 1 和 2 看作提议者，不影响 Paxos 算法的实质 接受者（Acceptor）：对每个提议的值进行投票，并存储接受的值，例如，上图集群内的节点 A、B、C 学习者（Learner）：被告知投票的结果，接受达成共识的值，不参与投票的过程，存储接受数据 需要指出的是，一个节点，既可以是提议者，也可以是接受者。 在 Paxos 算法中，使用 提案 表示一个提议，提案包括提案编号和提议的值。接下来，我们使用 [n, v] 表示一个提案，其中， n 是提案编号， v 是提案的值。 在 Basic Paxos 中，集群中各个节点为了达成共识，需要进行 2 个阶段的协商，即准备（Prepare）阶段和接受（Accept）阶段。 3. 准备阶段 假设客户端 1 的提案编号是 1，客户端 2 的提案编号为 5，并假设节点 A, B 先收到来自客户端 1 的准备请求，节点 C 先收到来自客户端 2 的准备请求。 客户端作为提议者，向所有的接受者发送包含提案编号的准备请求。注意在准备阶段，请求中"
+    },
+    {
+      "slug": "tdo7qe9qvsaxxuux",
+      "title": "你了解哪些限流算法",
+      "url": "/tulingzhouyu/db22bv/tdo7qe9qvsaxxuux",
+      "toc_path": [
+        "分布式",
+        "你了解哪些限流算法"
+      ],
+      "toc_level": 1,
+      "toc_index": 757,
+      "word_count": 508,
+      "updated_at": "2023-10-06T07:04:22.000Z",
+      "primary_category": "algorithm",
+      "primary_category_name": "算法与数据结构",
+      "related_categories": [
+        "algorithm",
+        "project-system-design",
+        "microservices-governance",
+        "mq-rabbitmq",
+        "java-thread-pool"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "算法",
+        "方案",
+        "限流",
+        "队列",
+        "线程池"
+      ],
+      "summary": "计数器计数器比较简单粗暴，比如我们要限制1s能够通过的请求数，实现的思路就是从第一个请求进来开始计时，在接下来的1s内，每个请求进来请求数就+1，超过最大请求数的请求会被拒绝，等到1s结束后计数清零，重新开始计数。这种方式有个很大的弊端：比如前10ms已经通过了最大的请求数，那么后面的990m...",
+      "excerpt": "计数器 计数器比较简单粗暴，比如我们要限制1s能够通过的请求数，实现的思路就是从第一个请求进来开始计时，在接下来的1s内，每个请求进来请求数就+1，超过最大请求数的请求会被拒绝，等到1s结束后计数清零，重新开始计数。 这种方式有个很大的弊端：比如前10ms已经通过了最大的请求数，那么后面的990ms的请求只能拒绝，这种现象叫做“突刺现象”。 漏桶算法 就是桶底出水的速度恒定，进水的速度可能快慢不一，但是当进水量大于出水量的时候，水会被装在桶里，不会直接被丢弃；但是桶也是有容量限制的，当桶装满水后溢出的部分还是会被丢弃的。 算法实现 ：可以准备一个队列来保存暂时处理不了的请求，然后通过一个线程池定期从队列中获取请求来执行。 漏桶算法 令牌桶算法 令牌桶就是生产访问令牌的一个地方，生产的速度恒定，用户访问的时候当桶中有令牌时就可以访问，否则将触发限流。 实现方案 ：Guava RateLimiter限流 Guava RateLimiter是一个谷歌提供的限流，其基于令牌桶算法，比较适用于单实例的系统。 令牌桶算法 这一期的分布式面试题就整理到这里了，主要是偏理论的一些问题，分布式其实是个很大的类型，比如分布式调用、分布式治理…… 所以，这篇文章只是个开始，后面还会有分布式调用（RPC）、微服务相关的主题文章，敬请期待。"
+    },
+    {
+      "slug": "fy92c73ft3412i71",
+      "title": "需要设计一款基于 LBS 的交友系统，如何设\n计地理空间邻近算法",
+      "url": "/tulingzhouyu/db22bv/fy92c73ft3412i71",
+      "toc_path": [
+        "项目设计场景题",
+        "需要设计一款基于 LBS 的交友系统，如何设\n计地理空间邻近算法"
+      ],
+      "toc_level": 1,
+      "toc_index": 852,
+      "word_count": 4699,
+      "updated_at": "2024-07-15T14:21:19.000Z",
+      "primary_category": "algorithm",
+      "primary_category_name": "算法与数据结构",
+      "related_categories": [
+        "algorithm",
+        "redis-cache",
+        "os-linux",
+        "project-system-design",
+        "mysql-sharding"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "算法",
+        "链表",
+        "排序",
+        "查找",
+        "Redis",
+        "缓存",
+        "内存",
+        "方案",
+        "限流",
+        "分片"
+      ],
+      "summary": "交友与婚恋是人们最基本的需求之一。随着互联网时代的不断发展，移动社交软件已经成为了人们生活中必不可少的一部分。然而，熟人社交并不能完全满足年轻人的社交与情感需求，于是陌生人交友平台悄然兴起。我们决定开发一款基于地理位置服务（LBS）的应用，为用户匹配邻近的、互相感兴趣的好友，应用名称为“Lia...",
+      "excerpt": "交友与婚恋是人们最基本的需求之一。随着互联网时代的不断发展，移动社交软件已经成为了人们生活中必不可少的一部分。然而，熟人社交并不能完全满足年轻人的社交与情感需求，于是陌生人交友平台悄然兴起。 我们决定开发一款基于地理位置服务（LBS）的应用，为用户匹配邻近的、互相感兴趣的好友，应用名称为“Liao”。 Liao面临的技术挑战包括：面对海量的用户，如何为其快速找到邻近的人，可以选择的地理空间邻近算法有哪些？Liao如何在这些算法中选择出最合适的那个？ 1 需求分析 Liao的客户端是一个移动App，用户打开App后，上传、编辑自己的基本信息，然后系统（推荐算法）根据其地理位置和个人信息，为其推荐位置邻近的用户。用户在手机上查看对方的照片和资料，如果感兴趣，希望进一步联系，就向右滑动照片；如果不感兴趣，就向左滑动照片。 如果两个人都向右滑动了对方，就表示他们互相感兴趣。系统就通知他们配对成功，并为他们开启聊天功能，可以更进一步了解对方，决定是否建立更深入的关系。 Liao的功能用例图如下。 用户规模分析 Liao的目标用户是全球范围内的中青年单身男女，预估目标用户超过10亿，系统按10亿用户进行设计。 2 概要设计 Liao的系统架构采用典型的 微服务架构 设计方案，用户通过网关服务器访问具体的微服务，如下图。 由上图可知，首先，用户所有请求都通过统一的 网关服务器 处理。网关服务器负责限流、防攻击、用户身份识别及权限验证、微服务调用及数据聚合封装等，而真正的业务逻辑则通过访问微服务来完成。Liao的关键微服务有：用户微服务、图片微服务、配对微服务、聊天微服务、推荐微服务、邻近算法微服务等。Liao的网关预计将承担每天百亿次规模的访问压力。 用户微服务 管理用户的个人信息、兴趣爱好以及交友偏好等，此外也负责用户登录服务，只有登录用户才能访问系统。因为需要存储十亿条用户数据，所以用户数据库采用分片的MySQL数据库。 图片微服务 用于管理用户照片，提供用户照片存储及展示的功能。Liao需要存储的图片数大约几百亿张。我们使用Nginx作为图片服务器，图片服务器可以线性扩容，每写满一台服务器（及其Slave服务器），就继续写入下一台服务器。服务器IP、图片路径则记录在用户数据库中。同时，购买CDN服务，缓存热门的用户照片。 配对 微 服务 负责将互相喜欢的用户配对，通知用户，并加入彼此的通讯录中。用户每次右划操作都调用该微服务。系统设置一个用户每天可以喜欢（右划）的人是有上限的，但是，对于活跃用户而言，长期积累下来，喜欢的人的数量还是非常大的，因此配对微服务会将数据发送给一个流式大数据引擎进行计算。 推荐微服务 负责向用户展示其可能感兴趣的、邻近的用户。因此，一方面，推荐微服务需要根据用户操作、个人兴趣、交友偏好调用协同过滤等推荐算法进行推荐，另一方面必须保证推荐的用"
+    },
+    {
+      "slug": "przpf1ercwlhumma",
+      "title": "实现快速排序算法",
+      "url": "/tulingzhouyu/db22bv/przpf1ercwlhumma",
+      "toc_path": [
+        "数据结构与算法",
+        "实现快速排序算法"
+      ],
+      "toc_level": 1,
+      "toc_index": 891,
+      "word_count": 821,
+      "updated_at": "2024-08-30T14:31:48.000Z",
+      "primary_category": "algorithm",
+      "primary_category_name": "算法与数据结构",
+      "related_categories": [
+        "algorithm",
+        "mysql-index-transaction",
+        "mq-kafka",
+        "performance-optimization",
+        "java-core"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "算法",
+        "数组",
+        "排序",
+        "索引"
+      ],
+      "summary": "快速排序（QuickSort）是一种高效的排序算法，采用分治法策略。它的基本思想是选择一个“基准”元素，通过一趟排序将待排序序列分成两部分，其中一部分的所有元素都比基准元素小，另一部分的所有元素都比基准元素大，然后递归地对这两部分进行排序。以下是详细的代码示例和解释：快速排序实现思路：选择一个...",
+      "excerpt": "快速排序（QuickSort）是一种高效的排序算法，采用分治法策略。它的基本思想是选择一个“基准”元素，通过一趟排序将待排序序列分成两部分，其中一部分的所有元素都比基准元素小，另一部分的所有元素都比基准元素大，然后递归地对这两部分进行排序。以下是详细的代码示例和解释： 快速排序实现 思路 ： 选择一个基准元素（通常选择数组的最后一个元素）。 通过分区操作将数组分为两部分：左边部分的元素都小于基准元素，右边部分的元素都大于基准元素。 递归地对左边和右边部分进行快速排序。 代码示例 ： 详细解释 quickSort方法 ： 参数 ： int[] arr 是待排序的数组， int low 是起始索引， int high 是结束索引。 递归条件 ： if (low < high) ，当起始索引小于结束索引时，继续排序。 分区操作 ：调用 partition 方法获取分区索引 pi 。 递归调用 ： 对左子数组进行快速排序： quickSort(arr, low, pi - 1) 。 对右子数组进行快速排序： quickSort(arr, pi + 1, high) 。 partition方法 ： 选择基准 ：选择数组的最后一个元素作为基准。 初始化索引 ： int i = low - 1 ，用于标记小于基准的元素的索引。 遍历数组 ：从 low 到 high-1 遍历数组。 如果当前元素小于或等于基准，增加 i 并交换 arr[i] 和 arr[j] 。 交换基准 ：将基准元素与 arr[i+1] 交换。 返回分区索引 ：返回 i + 1 作为新的分区索引。 main方法 ： 创建一个未排序的数组 arr 。 调用 quickSort 方法对数组进行排序。 打印排序前和排序后的数组。 通过这种方式，我们可以高效地对数组进行排序，快速排序的平均时间复杂度为O(n log n)。"
+    },
+    {
+      "slug": "ufwsc029nbpf4ofn",
+      "title": "实现归并排序算法",
+      "url": "/tulingzhouyu/db22bv/ufwsc029nbpf4ofn",
+      "toc_path": [
+        "数据结构与算法",
+        "实现归并排序算法"
+      ],
+      "toc_level": 1,
+      "toc_index": 892,
+      "word_count": 876,
+      "updated_at": "2024-08-30T14:32:39.000Z",
+      "primary_category": "algorithm",
+      "primary_category_name": "算法与数据结构",
+      "related_categories": [
+        "algorithm",
+        "mysql-index-transaction",
+        "performance-optimization",
+        "ai-llm"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "算法",
+        "数组",
+        "排序",
+        "索引"
+      ],
+      "summary": "归并排序（Merge Sort）是一种基于分治法的排序算法。它将数组分成两个子数组，分别排序，然后合并这两个子数组。归并排序的时间复杂度为O(n log n)，并且是稳定的排序算法。以下是详细的代码示例和解释：归并排序实现思路：将数组分成两半，递归地对每一半进行归并排序。合并两个已排序的子数组...",
+      "excerpt": "归并排序（Merge Sort）是一种基于分治法的排序算法。它将数组分成两个子数组，分别排序，然后合并这两个子数组。归并排序的时间复杂度为O(n log n)，并且是稳定的排序算法。以下是详细的代码示例和解释： 归并排序实现 思路 ： 将数组分成两半，递归地对每一半进行归并排序。 合并两个已排序的子数组。 代码示例 ： 详细解释 mergeSort方法 ： 参数 ： int[] arr 是待排序的数组， int left 是起始索引， int right 是结束索引。 递归条件 ： if (left < right) ，当起始索引小于结束索引时，继续排序。 计算中间索引 ： int mid = left + (right - left) / 2; 。 递归调用 ： 对左半部分进行归并排序： mergeSort(arr, left, mid) 。 对右半部分进行归并排序： mergeSort(arr, mid + 1, right) 。 合并两个子数组 ：调用 merge(arr, left, mid, right) 。 merge方法 ： 参数 ： int[] arr 是待合并的数组， int left 是左子数组的起始索引， int mid 是中间索引， int right 是右子数组的结束索引。 创建临时数组 ： int[] L 和 int[] R 用于存储左右子数组。 复制数据到临时数组 ：将左右子数组的数据复制到临时数组 L 和 R 。 合并临时数组 ： 使用两个索引 i 和 j 遍历临时数组 L 和 R 。 比较 L[i] 和 R[j] ，将较小的元素放入原数组 arr 。 继续合并直到一个临时数组耗尽。 复制剩余元素 ：将未耗尽的临时数组的剩余元素复制到 arr 。 main方法 ： 创建一个未排序的数组 arr 。 调用 mergeSort 方法对数组进行排序。 打印排序前和排序后的数组。 通过这种方式，我们可以高效地对数组进行排序，归并排序的时间复杂度为O(n log n)。"
+    },
+    {
+      "slug": "gxmiy6qo3n4d88lz",
+      "title": "判断一棵二叉树是否是平衡二叉树",
+      "url": "/tulingzhouyu/db22bv/gxmiy6qo3n4d88lz",
+      "toc_path": [
+        "数据结构与算法",
+        "判断一棵二叉树是否是平衡二叉树"
+      ],
+      "toc_level": 1,
+      "toc_index": 894,
+      "word_count": 845,
+      "updated_at": "2024-08-30T14:28:04.000Z",
+      "primary_category": "algorithm",
+      "primary_category_name": "算法与数据结构",
+      "related_categories": [
+        "algorithm",
+        "ai-llm"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "算法",
+        "二叉树"
+      ],
+      "summary": "判断一棵二叉树是否是平衡二叉树（即AVL树）是一个常见的问题。平衡二叉树的定义是：对于树中的每个节点，其左右子树的高度差不超过1。我们可以通过递归的方法来判断一棵二叉树是否是平衡的。以下是详细的代码示例和解释：判断平衡二叉树实现思路：使用递归的方法来计算每个节点的高度。在计算高度的过程中，检查...",
+      "excerpt": "判断一棵二叉树是否是平衡二叉树（即AVL树）是一个常见的问题。平衡二叉树的定义是：对于树中的每个节点，其左右子树的高度差不超过1。我们可以通过递归的方法来判断一棵二叉树是否是平衡的。以下是详细的代码示例和解释： 判断平衡二叉树实现 思路 ： 使用递归的方法来计算每个节点的高度。 在计算高度的过程中，检查每个节点的左右子树的高度差是否超过1。 如果超过1，则该树不是平衡二叉树。 代码示例 ： 详细解释 TreeNode类 ： int val : 存储节点的值。 TreeNode left, right : 分别指向左子节点和右子节点。 构造函数 TreeNode(int val) : 初始化节点的值，并将左右子节点设为 null 。 isBalanced方法 ： 调用 checkHeight 方法来检查树的高度。 如果 checkHeight 返回-1，表示树不平衡，返回 false ；否则返回 true 。 checkHeight方法 ： 初始检查 ：如果节点为空，返回高度0。 递归计算左子树高度 ：调用 checkHeight(node.left) 。 如果返回-1，表示左子树不平衡，直接返回-1。 递归计算右子树高度 ：调用 checkHeight(node.right) 。 如果返回-1，表示右子树不平衡，直接返回-1。 检查高度差 ：如果左右子树高度差超过1，返回-1。 返回节点高度 ：返回左右子树高度的最大值加1。 main方法 ： 创建一个平衡二叉树并检查其是否平衡。 创建一个不平衡二叉树并检查其是否平衡。 通过这种方式，我们可以高效地判断一棵二叉树是否是平衡的，时间复杂度为O(n)，其中n是二叉树的节点数。"
+    },
+    {
+      "slug": "gmodckrw8s9t5bpg",
+      "title": "反转一个单链表",
+      "url": "/tulingzhouyu/db22bv/gmodckrw8s9t5bpg",
+      "toc_path": [
+        "数据结构与算法",
+        "反转一个单链表"
+      ],
+      "toc_level": 1,
+      "toc_index": 896,
+      "word_count": 525,
+      "updated_at": "2024-08-30T14:21:22.000Z",
+      "primary_category": "algorithm",
+      "primary_category_name": "算法与数据结构",
+      "related_categories": [
+        "algorithm"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "算法",
+        "链表"
+      ],
+      "summary": "反转一个单链表是一个经典的面试题目，涉及到对链表节点的指针进行重新排列。以下是反转单链表的详细步骤和代码示例：反转单链表思路：使用三个指针：prev、current、和next。初始时，prev指向null，current指向链表的头节点。在遍历链表时，逐个反转节点的指针方向。最终，prev将...",
+      "excerpt": "反转一个单链表是一个经典的面试题目，涉及到对链表节点的指针进行重新排列。以下是反转单链表的详细步骤和代码示例： 反转单链表 思路 ： 使用三个指针： prev 、 current 、和 next 。 初始时， prev 指向 null ， current 指向链表的头节点。 在遍历链表时，逐个反转节点的指针方向。 最终， prev 将指向新的头节点。 步骤 ： 保存当前节点的下一个节点。 将当前节点的 next 指针指向前一个节点。 移动 prev 和 current 指针到下一个节点。 重复上述步骤直到遍历完整个链表。 代码示例 ： 说明 ListNode类 ：定义了链表节点的数据结构，包含一个整数值和一个指向下一个节点的指针。 reverseList方法 ：实现了反转链表的逻辑，通过迭代方式反转链表。 printList方法 ：用于打印链表的元素，帮助验证反转结果。 这种方法的时间复杂度为O(n)，空间复杂度为O(1)，因为它只使用了常量级别的额外空间来存储指针。通过这种方式，我们可以高效地反转一个单链表。"
+    },
+    {
+      "slug": "hlu747w5881xl4vk",
+      "title": "实现一个简单的哈希表",
+      "url": "/tulingzhouyu/db22bv/hlu747w5881xl4vk",
+      "toc_path": [
+        "数据结构与算法",
+        "实现一个简单的哈希表"
+      ],
+      "toc_level": 1,
+      "toc_index": 897,
+      "word_count": 775,
+      "updated_at": "2024-08-30T14:38:31.000Z",
+      "primary_category": "algorithm",
+      "primary_category_name": "算法与数据结构",
+      "related_categories": [
+        "algorithm",
+        "java-collections",
+        "mysql-index-transaction",
+        "performance-optimization",
+        "devops-release"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "算法",
+        "数组",
+        "链表",
+        "查找",
+        "LinkedList",
+        "索引",
+        "容量"
+      ],
+      "summary": "实现一个简单的哈希表需要考虑如何存储键值对、处理哈希冲突、以及基本的操作如插入、删除和查找。我们可以使用链地址法来处理哈希冲突，这意味着每个哈希表的槽位将存储一个链表来处理冲突。以下是详细的代码示例和解释：简单哈希表实现思路：使用一个数组来存储链表，每个链表用于存储哈希冲突的键值对。计算键的哈...",
+      "excerpt": "实现一个简单的哈希表需要考虑如何存储键值对、处理哈希冲突、以及基本的操作如插入、删除和查找。我们可以使用链地址法来处理哈希冲突，这意味着每个哈希表的槽位将存储一个链表来处理冲突。以下是详细的代码示例和解释： 简单哈希表实现 思路 ： 使用一个数组来存储链表，每个链表用于存储哈希冲突的键值对。 计算键的哈希值并将其映射到数组的索引。 提供插入、删除和查找操作。 代码示例 ： 详细解释 HashNode类 ： 定义了一个节点，包含键、值和指向下一个节点的引用。 SimpleHashTable类 ： 成员变量 ： LinkedList<HashNode<K, V>>[] table : 用于存储链表的数组。 int capacity : 哈希表的容量。 int size : 当前哈希表中的元素数量。 构造函数 ：初始化哈希表的容量和数组。 hash方法 ：计算键的哈希值并映射到数组的索引。 put方法 ：插入键值对，处理哈希冲突。 get方法 ：根据键查找值。 remove方法 ：删除键值对并返回被删除的值。 size方法 ：返回哈希表的当前大小。 main方法 ： 创建一个 SimpleHashTable 实例。 插入一些键值对。 获取和删除键值对，并打印结果。 通过这种实现，我们可以创建一个简单的哈希表，支持基本的插入、查找和删除操作。"
+    },
+    {
+      "slug": "ms89el2zzsnq3poq",
+      "title": "找出两个单链表的交点",
+      "url": "/tulingzhouyu/db22bv/ms89el2zzsnq3poq",
+      "toc_path": [
+        "数据结构与算法",
+        "找出两个单链表的交点"
+      ],
+      "toc_level": 1,
+      "toc_index": 899,
+      "word_count": 854,
+      "updated_at": "2024-08-30T14:23:44.000Z",
+      "primary_category": "algorithm",
+      "primary_category_name": "算法与数据结构",
+      "related_categories": [
+        "algorithm",
+        "java-core",
+        "ai-llm"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "算法",
+        "链表"
+      ],
+      "summary": "找出两个单链表的交点是一个常见的问题，可以通过双指针法来解决。以下是详细的代码示例和解释：双指针法思路：使用两个指针pA和pB分别遍历两个链表。当pA到达链表A的末尾时，将其重定位到链表B的头部。当pB到达链表B的末尾时，将其重定位到链表A的头部。如果两个链表相交，pA和pB将在交点相遇。如果...",
+      "excerpt": "找出两个单链表的交点是一个常见的问题，可以通过双指针法来解决。以下是详细的代码示例和解释： 双指针法 思路 ： 使用两个指针 pA 和 pB 分别遍历两个链表。 当 pA 到达链表A的末尾时，将其重定位到链表B的头部。 当 pB 到达链表B的末尾时，将其重定位到链表A的头部。 如果两个链表相交， pA 和 pB 将在交点相遇。 如果不相交， pA 和 pB 将在遍历完两个链表后同时到达 null 。 代码示例 ： 详细解释 ListNode类 ： int val : 存储节点的值。 ListNode next : 指向下一个节点的指针。 构造函数 ListNode(int val) : 初始化节点的值，并将 next 指针设为 null 。 getIntersectionNode方法 ： 初始检查 ：如果任一链表为空，则不可能有交点，直接返回 null 。 初始化指针 ： pA 指针初始化为链表A的头节点。 pB 指针初始化为链表B的头节点。 循环遍历 ： while (pA != pB) : 遍历两个链表，直到 pA 和 pB 相等。 pA = (pA == null) ? headB : pA.next : 如果 pA 到达链表A的末尾，则重定位到链表B的头部。 pB = (pB == null) ? headA : pB.next : 如果 pB 到达链表B的末尾，则重定位到链表A的头部。 返回结果 ：返回交点节点或 null 。 main方法 ： 创建两个链表A和B，并在它们之间创建一个交点。 调用 getIntersectionNode 方法找出交点，并输出结果。 这种方法的时间复杂度为O(n + m)，空间复杂度为O(1)，其中n和m分别是两个链表的长度。通过这种方式，我们可以高效地找出两个单链表的交点。"
+    },
+    {
+      "slug": "fvi7amx14afcuqnz",
+      "title": "检测单链表中是否有环",
+      "url": "/tulingzhouyu/db22bv/fvi7amx14afcuqnz",
+      "toc_path": [
+        "数据结构与算法",
+        "检测单链表中是否有环"
+      ],
+      "toc_level": 1,
+      "toc_index": 900,
+      "word_count": 802,
+      "updated_at": "2024-08-30T14:22:49.000Z",
+      "primary_category": "algorithm",
+      "primary_category_name": "算法与数据结构",
+      "related_categories": [
+        "algorithm",
+        "ai-llm"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "算法",
+        "链表"
+      ],
+      "summary": "检测单链表中是否存在环是一个经典的问题，可以使用“快慢指针”方法来解决。这种方法也被称为“龟兔赛跑”算法。以下是详细的代码示例和解释：快慢指针方法思路：使用两个指针：slow和fast。slow指针每次移动一步，fast指针每次移动两步。如果链表中存在环，fast指针最终会与slow指针相遇。...",
+      "excerpt": "检测单链表中是否存在环是一个经典的问题，可以使用“快慢指针”方法来解决。这种方法也被称为“龟兔赛跑”算法。以下是详细的代码示例和解释： 快慢指针方法 思路 ： 使用两个指针： slow 和 fast 。 slow 指针每次移动一步， fast 指针每次移动两步。 如果链表中存在环， fast 指针最终会与 slow 指针相遇。 如果链表中没有环， fast 指针会在到达链表末尾时变为 null 。 代码示例 ： 详细解释 ListNode类 ： int val : 存储节点的值。 ListNode next : 指向下一个节点的指针。 构造函数 ListNode(int val) : 初始化节点的值，并将 next 指针设为 null 。 hasCycle方法 ： 初始检查 ：如果链表为空或只有一个节点，则不可能有环，直接返回 false 。 初始化指针 ： slow 和 fast 都初始化为头节点。 循环遍历 ： while (fast != null && fast.next != null) : 遍历链表，直到 fast 指针到达链表末尾。 slow = slow.next : 慢指针每次移动一步。 fast = fast.next.next : 快指针每次移动两步。 如果 slow 和 fast 相遇，则链表中存在环，返回 true 。 返回结果 ：如果循环结束且没有相遇，返回 false ，表示链表中没有环。 main方法 ： 创建一个链表 1 -> 2 -> 3 -> 4 -> 5 。 手动创建一个环，使节点 5 指向节点 3 。 调用 hasCycle 方法检测链表中是否有环，并输出结果。 这种方法的时间复杂度为O(n)，空间复杂度为O(1)，因为它只使用了常量级别的额外空间来存储指针。通过这种方式，我们可以高效地检测单链表中是否存在环。"
+    },
+    {
+      "slug": "vfdpb50bh04diqwy",
+      "title": "实现一个基本的图数据结构，并实现深度优先搜索（DFS）和广度优先搜索（BFS）",
+      "url": "/tulingzhouyu/db22bv/vfdpb50bh04diqwy",
+      "toc_path": [
+        "数据结构与算法",
+        "实现一个基本的图数据结构，并实现深度优先搜索（DFS）和广度优先搜索（BFS）"
+      ],
+      "toc_level": 1,
+      "toc_index": 901,
+      "word_count": 701,
+      "updated_at": "2024-08-30T14:40:40.000Z",
+      "primary_category": "algorithm",
+      "primary_category_name": "算法与数据结构",
+      "related_categories": [
+        "algorithm",
+        "mq-rabbitmq",
+        "ai-llm"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "算法",
+        "队列"
+      ],
+      "summary": "实现一个基本的图数据结构可以使用邻接表来表示图。邻接表是一种常用的图表示方法，其中每个节点都有一个列表，存储与其相邻的节点。我们将实现图的基本结构，并提供深度优先搜索（DFS）和广度优先搜索（BFS）算法。以下是详细的代码示例和解释：图数据结构及DFS和BFS实现思路：使用一个Map来存储图的...",
+      "excerpt": "实现一个基本的图数据结构可以使用邻接表来表示图。邻接表是一种常用的图表示方法，其中每个节点都有一个列表，存储与其相邻的节点。我们将实现图的基本结构，并提供深度优先搜索（DFS）和广度优先搜索（BFS）算法。以下是详细的代码示例和解释： 图数据结构及DFS和BFS实现 思路 ： 使用一个 Map 来存储图的邻接表，其中键是节点，值是与该节点相邻的节点列表。 实现DFS和BFS算法来遍历图。 代码示例 ： 详细解释 Graph类 ： 成员变量 ： Map<Integer, List<Integer>> adjList : 用于存储图的邻接表。 构造函数 ：初始化邻接表。 addEdge方法 ：添加边到图中。 使用 computeIfAbsent 方法确保每个节点都有一个列表。 对于无向图，添加双向边。 深度优先搜索（DFS） ： dfs方法 ：初始化一个 Set 用于存储已访问节点，并调用 dfsUtil 。 dfsUtil方法 ：递归地访问节点。 将当前节点标记为已访问并打印。 递归访问所有未访问的邻居节点。 广度优先搜索（BFS） ： bfs方法 ：使用队列实现。 初始化一个 Set 用于存储已访问节点和一个 Queue 用于存储待访问节点。 将起始节点标记为已访问并加入队列。 迭代访问队列中的节点，打印节点并将未访问的邻居节点加入队列。 main方法 ： 创建一个 Graph 实例。 添加一些边。 调用 dfs 和 bfs 方法从节点0开始遍历图，并打印结果。 通过这种实现，我们可以创建一个简单的图数据结构，并使用DFS和BFS算法遍历图。"
+    },
+    {
+      "slug": "kwx4si8s733r6uzh",
+      "title": "给定一个数组，找出其中的最大子数组和",
+      "url": "/tulingzhouyu/db22bv/kwx4si8s733r6uzh",
+      "toc_path": [
+        "数据结构与算法",
+        "给定一个数组，找出其中的最大子数组和"
+      ],
+      "toc_level": 1,
+      "toc_index": 902,
+      "word_count": 597,
+      "updated_at": "2024-08-30T14:39:43.000Z",
+      "primary_category": "algorithm",
+      "primary_category_name": "算法与数据结构",
+      "related_categories": [
+        "algorithm",
+        "java-core",
+        "ai-llm"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "算法",
+        "数组",
+        "动态规划",
+        "异常"
+      ],
+      "summary": "要找出一个数组中的最大子数组和，可以使用Kadane's算法。这种算法通过动态规划的思想，以线性时间复杂度O(n)解决问题。以下是详细的代码示例和解释：Kadane's算法实现思路：初始化两个变量：maxSoFar用于存储全局最大子数组和，maxEndingHere用于存储当前子数组的最大和。...",
+      "excerpt": "要找出一个数组中的最大子数组和，可以使用Kadane's算法。这种算法通过动态规划的思想，以线性时间复杂度O(n)解决问题。以下是详细的代码示例和解释： Kadane's算法实现 思路 ： 初始化两个变量： maxSoFar 用于存储全局最大子数组和， maxEndingHere 用于存储当前子数组的最大和。 遍历数组，对于每个元素，更新 maxEndingHere 为当前元素与 maxEndingHere + 当前元素 的较大值。 更新 maxSoFar 为 maxSoFar 与 maxEndingHere 的较大值。 最终 maxSoFar 即为最大子数组和。 代码示例 ： 详细解释 maxSubArray方法 ： 参数 ： int[] nums 是输入数组。 边界检查 ：如果数组为空或长度为0，抛出异常。 初始化 ： int maxSoFar = nums[0]; ：初始化全局最大子数组和为数组的第一个元素。 int maxEndingHere = nums[0]; ：初始化当前子数组的最大和为数组的第一个元素。 遍历数组 ： 从第二个元素开始遍历数组。 更新当前子数组的最大和 ： maxEndingHere = Math.max(nums[i], maxEndingHere + nums[i]); 。 选择当前元素或将其加入当前子数组，取较大值。 更新全局最大子数组和 ： maxSoFar = Math.max(maxSoFar, maxEndingHere); 。 更新全局最大值为当前最大值与全局最大值的较大者。 返回结果 ：返回全局最大子数组和 maxSoFar 。 main方法 ： 创建一个整数数组 nums 。 调用 maxSubArray 方法获取结果。 打印最大子数组和。 通过这种方法，我们可以高效地找出数组中的最大子数组和，时间复杂度为O(n)。"
+    },
+    {
+      "slug": "bv4la1g8zkn2np83",
+      "title": "实现二叉树的前序、中序和后序遍历（递归和非递归方式）",
+      "url": "/tulingzhouyu/db22bv/bv4la1g8zkn2np83",
+      "toc_path": [
+        "数据结构与算法",
+        "实现二叉树的前序、中序和后序遍历（递归和非递归方式）"
+      ],
+      "toc_level": 1,
+      "toc_index": 903,
+      "word_count": 752,
+      "updated_at": "2024-08-30T14:30:03.000Z",
+      "primary_category": "algorithm",
+      "primary_category_name": "算法与数据结构",
+      "related_categories": [
+        "algorithm",
+        "jvm-memory-gc"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "算法",
+        "二叉树",
+        "栈"
+      ],
+      "summary": "实现二叉树的前序、中序和后序遍历可以通过递归和非递归两种方式来完成。以下是详细的代码示例和解释：二叉树节点类class TreeNode {       int val; // 节点的值       TreeNode left; // 左子节点       TreeNode right; //...",
+      "excerpt": "实现二叉树的前序、中序和后序遍历可以通过递归和非递归两种方式来完成。以下是详细的代码示例和解释： 二叉树节点类 递归方式 前序遍历（递归） 中序遍历（递归） 后序遍历（递归） 非递归方式 前序遍历（非递归） 中序遍历（非递归） 后序遍历（非递归） 详细解释 递归方式 ： 前序遍历 ：访问根节点，然后递归遍历左子树和右子树。 中序遍历 ：递归遍历左子树，访问根节点，然后递归遍历右子树。 后序遍历 ：递归遍历左子树和右子树，然后访问根节点。 非递归方式 ： 前序遍历 ：使用栈来模拟递归，先访问根节点，然后将右子节点和左子节点依次入栈。 中序遍历 ：使用栈来模拟递归，先将左子节点入栈，访问根节点后转向右子节点。 后序遍历 ：使用两个栈，一个用于遍历，一个用于存储访问顺序，最后输出访问顺序。 通过这些方法，我们可以实现二叉树的前序、中序和后序遍历，既可以使用递归方式，也可以使用非递归方式。"
+    },
+    {
+      "slug": "sa0o3gzrwqktiuqc",
+      "title": "给定一个数组，找出其中和为特定值的两个数",
+      "url": "/tulingzhouyu/db22bv/sa0o3gzrwqktiuqc",
+      "toc_path": [
+        "数据结构与算法",
+        "给定一个数组，找出其中和为特定值的两个数"
+      ],
+      "toc_level": 1,
+      "toc_index": 905,
+      "word_count": 655,
+      "updated_at": "2024-08-30T14:34:50.000Z",
+      "primary_category": "algorithm",
+      "primary_category_name": "算法与数据结构",
+      "related_categories": [
+        "algorithm",
+        "mysql-index-transaction",
+        "java-collections",
+        "ai-llm"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "算法",
+        "数组",
+        "索引",
+        "HashMap"
+      ],
+      "summary": "要在一个数组中找到和为特定值的两个数，可以使用哈希表来实现。这种方法的时间复杂度为O(n)，因为我们只需遍历数组一次。以下是详细的代码示例和解释：找出和为特定值的两个数思路：使用一个哈希表来存储数组中已经访问过的元素及其索引。对于每个元素，计算其与目标和的差值。检查差值是否在哈希表中存在，如果...",
+      "excerpt": "要在一个数组中找到和为特定值的两个数，可以使用哈希表来实现。这种方法的时间复杂度为O(n)，因为我们只需遍历数组一次。以下是详细的代码示例和解释： 找出和为特定值的两个数 思路 ： 使用一个哈希表来存储数组中已经访问过的元素及其索引。 对于每个元素，计算其与目标和的差值。 检查差值是否在哈希表中存在，如果存在，则找到了两个数。 如果不存在，将当前元素及其索引存入哈希表。 代码示例 ： 详细解释 twoSum方法 ： 参数 ： int[] nums 是输入数组， int target 是目标和。 哈希表初始化 ： Map<Integer, Integer> map = new HashMap<>(); 用于存储数组元素及其索引。 遍历数组 ： 对于每个元素 nums[i] ，计算其与目标和的差值 complement = target - nums[i] 。 检查差值 ：使用 map.containsKey(complement) 检查差值是否在哈希表中。 如果存在，返回两个数的索引 return new int[] { map.get(complement), i }; 。 存储元素 ：如果差值不存在，将当前元素及其索引存入哈希表 map.put(nums[i], i); 。 返回结果 ：如果没有找到符合条件的两个数，返回空数组 return new int[] {}; 。 main方法 ： 创建一个数组 nums 和一个目标和 target 。 调用 twoSum 方法获取结果。 打印结果索引，如果没有找到，输出提示信息。 通过这种方法，我们可以高效地找到数组中和为特定值的两个数，时间复杂度为O(n)。"
+    },
+    {
+      "slug": "suo8y6zu2fpoxv6b",
+      "title": "给定一个二叉树，实现层序遍历",
+      "url": "/tulingzhouyu/db22bv/suo8y6zu2fpoxv6b",
+      "toc_path": [
+        "数据结构与算法",
+        "给定一个二叉树，实现层序遍历"
+      ],
+      "toc_level": 1,
+      "toc_index": 908,
+      "word_count": 686,
+      "updated_at": "2024-08-30T14:27:10.000Z",
+      "primary_category": "algorithm",
+      "primary_category_name": "算法与数据结构",
+      "related_categories": [
+        "algorithm",
+        "mq-rabbitmq",
+        "java-collections",
+        "performance-optimization",
+        "ai-llm"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "算法",
+        "二叉树",
+        "队列",
+        "LinkedList"
+      ],
+      "summary": "层序遍历（也称为广度优先遍历）是一种遍历二叉树的方式，按照从上到下、从左到右的顺序访问每一层的节点。可以使用队列来实现层序遍历。以下是详细的代码示例和解释：层序遍历实现思路：使用一个队列来辅助遍历。首先将根节点入队。当队列不为空时，取出队首节点，访问该节点，并将其左右子节点（如果存在）入队。重...",
+      "excerpt": "层序遍历（也称为广度优先遍历）是一种遍历二叉树的方式，按照从上到下、从左到右的顺序访问每一层的节点。可以使用队列来实现层序遍历。以下是详细的代码示例和解释： 层序遍历实现 思路 ： 使用一个队列来辅助遍历。 首先将根节点入队。 当队列不为空时，取出队首节点，访问该节点，并将其左右子节点（如果存在）入队。 重复上述过程直到队列为空。 代码示例 ： 详细解释 TreeNode类 ： int val : 存储节点的值。 TreeNode left, right : 分别指向左子节点和右子节点。 构造函数 TreeNode(int val) : 初始化节点的值，并将左右子节点设为 null 。 levelOrderTraversal方法 ： 初始检查 ：如果树为空（ root == null ），直接返回。 初始化队列 ： Queue<TreeNode> queue = new LinkedList<>(); ：创建一个队列用于辅助遍历。 queue.add(root); ：将根节点入队。 循环遍历 ： while (!queue.isEmpty()) : 当队列不为空时，继续遍历。 TreeNode currentNode = queue.poll(); : 取出队首节点。 System.out.print(currentNode.val + &quot; &quot;); : 访问当前节点并打印其值。 如果当前节点的左子节点不为空，将其入队。 如果当前节点的右子节点不为空，将其入队。 main方法 ： 创建一个二叉树。 调用 levelOrderTraversal 方法进行层序遍历，并输出结果。 通过这种方式，我们可以高效地实现二叉树的层序遍历，时间复杂度为O(n)，其中n是二叉树的节点数。"
+    },
+    {
+      "slug": "ty05hmxuo945cvii",
+      "title": "在一个排序数组中查找一个数，如果不存在，返回它应该插入的位置",
+      "url": "/tulingzhouyu/db22bv/ty05hmxuo945cvii",
+      "toc_path": [
+        "数据结构与算法",
+        "在一个排序数组中查找一个数，如果不存在，返回它应该插入的位置"
+      ],
+      "toc_level": 1,
+      "toc_index": 909,
+      "word_count": 704,
+      "updated_at": "2024-08-30T14:30:55.000Z",
+      "primary_category": "algorithm",
+      "primary_category_name": "算法与数据结构",
+      "related_categories": [
+        "algorithm",
+        "mysql-index-transaction",
+        "performance-optimization",
+        "ai-llm"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "算法",
+        "数组",
+        "排序",
+        "查找",
+        "索引"
+      ],
+      "summary": "在一个排序数组中查找一个数，并返回它的索引或应该插入的位置，可以使用二分查找算法。二分查找的时间复杂度为O(log n)，非常高效。以下是详细的代码示例和解释：二分查找实现思路：使用二分查找算法在排序数组中查找目标值。如果找到目标值，返回其索引。如果未找到目标值，返回它应该插入的位置，这个位置...",
+      "excerpt": "在一个排序数组中查找一个数，并返回它的索引或应该插入的位置，可以使用二分查找算法。二分查找的时间复杂度为O(log n)，非常高效。以下是详细的代码示例和解释： 二分查找实现 思路 ： 使用二分查找算法在排序数组中查找目标值。 如果找到目标值，返回其索引。 如果未找到目标值，返回它应该插入的位置，这个位置是第一个大于目标值的元素的索引。 代码示例 ： 详细解释 searchInsert方法 ： 初始化指针 ： int left = 0; ：初始化左指针为数组的起始位置。 int right = nums.length - 1; ：初始化右指针为数组的末尾位置。 二分查找循环 ： while (left <= right) : 当左指针不超过右指针时，继续查找。 int mid = left + (right - left) / 2; : 计算中间索引，使用这种方式防止整数溢出。 比较中间值与目标值 ： if (nums[mid] == target) : 如果中间值等于目标值，返回中间索引。 else if (nums[mid] < target) : 如果中间值小于目标值，目标值在右半部分，移动左指针到 mid + 1 。 else : 如果中间值大于目标值，目标值在左半部分，移动右指针到 mid - 1 。 返回插入位置 ： 当循环结束时， left 指针指向目标值应该插入的位置。 main方法 ： 创建一个排序数组 nums 。 测试不同的目标值，调用 searchInsert 方法，并输出结果。 通过这种方式，我们可以高效地在排序数组中查找目标值或确定其插入位置，时间复杂度为O(log n)。"
+    },
+    {
+      "slug": "cm2086x5kzxi57od",
+      "title": "讲讲你对线性表 - 数组和矩阵的理解",
+      "url": "/tulingzhouyu/db22bv/cm2086x5kzxi57od",
+      "toc_path": [
+        "数据结构与算法",
+        "讲讲你对线性表 - 数组和矩阵的理解"
+      ],
+      "toc_level": 1,
+      "toc_index": 910,
+      "word_count": 530,
+      "updated_at": "2023-08-31T13:09:42.000Z",
+      "primary_category": "algorithm",
+      "primary_category_name": "算法与数据结构",
+      "related_categories": [
+        "algorithm",
+        "mysql-index-transaction",
+        "java-collections",
+        "os-linux"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "算法",
+        "数组",
+        "索引",
+        "集合",
+        "内存"
+      ],
+      "summary": "当谈到线性表时，数组和矩阵是两种常见的数据结构。数组（Array）： 数组是有序的元素集合，可以通过索引来访问和操作其中的元素。它是最简单、最基本的数据结构之一。数组的特点包括：连续存储：数组中的元素在内存中是连续存储的，这样可以通过计算偏移量来快速定位元素。相同类型：数组中的所有元素必须具有...",
+      "excerpt": "当谈到线性表时，数组和矩阵是两种常见的数据结构。 数组（Array）： 数组是有序的元素集合，可以通过索引来访问和操作其中的元素。它是最简单、最基本的数据结构之一。数组的特点包括： 连续存储： 数组中的元素在内存中是连续存储的，这样可以通过计算偏移量来快速定位元素。 相同类型： 数组中的所有元素必须具有相同的数据类型。 固定大小： 数组在创建时需要指定固定的大小，无法动态扩展。 数组可以通过索引来读取和修改元素，索引从0开始。数组的访问时间复杂度为O(1)，即常数时间。但在插入和删除元素时，需要移动其他元素以保持连续存储的特性，导致时间复杂度为O(n)。 矩阵（Matrix）： 矩阵是二维的线性表，由行和列组成。它是一种常见的多维数组形式，用于表示和处理二维数据。矩阵的特点包括： 行和列： 矩阵由行和列组成，每个元素可以通过行号和列号来唯一标识。 索引定位： 类似于数组，矩阵中的元素也可以通过索引来访问和修改。 二维结构： 矩阵提供了一种方便和有效地表示和处理二维数据结构的方式。 矩阵在很多领域有广泛的应用，例如图像处理、机器学习和科学计算等。它可以用于表示和操作具有行列关系的数据。对于一个m行n列的矩阵，访问单个元素的时间复杂度为O(1)，在进行矩阵运算时，如矩阵相加、矩阵乘法等，时间复杂度取决于具体的运算算法。"
+    },
+    {
+      "slug": "aiu9sb98stpvr557",
+      "title": "讲讲你对线性表 - 链表的理解",
+      "url": "/tulingzhouyu/db22bv/aiu9sb98stpvr557",
+      "toc_path": [
+        "数据结构与算法",
+        "讲讲你对线性表 - 链表的理解"
+      ],
+      "toc_level": 1,
+      "toc_index": 911,
+      "word_count": 169,
+      "updated_at": "2023-08-31T13:34:05.000Z",
+      "primary_category": "algorithm",
+      "primary_category_name": "算法与数据结构",
+      "related_categories": [
+        "algorithm",
+        "os-linux"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "算法",
+        "数组",
+        "链表",
+        "内存"
+      ],
+      "summary": "链表是一种常见的线性表数据结构，与数组不同，链表中的元素在内存中不是连续存储的。链表由节点（Node）组成，每个节点包含数据元素和一个指向下一个节点的指针。链表具有动态大小和灵活插入、删除的特点，因为节点间通过指针连接，无需移动其他元素。常见的链表类型有单向链表、双向链表和循环链表。链表在频繁...",
+      "excerpt": "链表是一种常见的线性表数据结构，与数组不同，链表中的元素在内存中不是连续存储的。 链表由节点（Node）组成，每个节点包含数据元素和一个指向下一个节点的指针。 链表具有动态大小和灵活插入、删除的特点，因为节点间通过指针连接，无需移动其他元素。 常见的链表类型有 单向链表 、 双向链表 和 循环链表 。链表在频繁插入和删除操作时表现更高效，但访问时间复杂度较高。"
+    },
+    {
+      "slug": "bm523fpri9wu590r",
+      "title": "讲讲你对线性表(散列) - 哈希表的理解",
+      "url": "/tulingzhouyu/db22bv/bm523fpri9wu590r",
+      "toc_path": [
+        "数据结构与算法",
+        "讲讲你对线性表(散列) - 哈希表的理解"
+      ],
+      "toc_level": 1,
+      "toc_index": 912,
+      "word_count": 404,
+      "updated_at": "2023-08-31T13:41:52.000Z",
+      "primary_category": "algorithm",
+      "primary_category_name": "算法与数据结构",
+      "related_categories": [
+        "algorithm",
+        "performance-optimization"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "算法",
+        "数组",
+        "链表",
+        "查找",
+        "性能"
+      ],
+      "summary": "哈希表是一种基于散列思想的线性表数据结构，它通过哈希函数将关键字映射到表中的位置，实现高效的插入、删除和查找操作。哈希表的特点如下：哈希函数：哈希表通过哈希函数将关键字映射为哈希值，并根据哈希值确定元素在表中的位置。好的哈希函数能够最大程度地减少冲突，即不同的关键字映射到相同的哈希值。数组存储...",
+      "excerpt": "哈希表是一种基于散列思想的线性表数据结构，它通过哈希函数将关键字映射到表中的位置，实现高效的插入、删除和查找操作。 哈希表的特点如下： 哈希函数： 哈希表通过哈希函数将关键字映射为哈希值，并根据哈希值确定元素在表中的位置。好的哈希函数能够最大程度地减少冲突，即不同的关键字映射到相同的哈希值。 数组存储： 哈希表使用数组作为底层存储结构，每个位置称为哈希桶。每个桶可以存储一个或多个元素，解决了哈希冲突的问题。 冲突处理： 由于不同的关键字可能映射到相同的哈希值，因此哈希表需要解决冲突。常见的冲突处理方法有链地址法和开放地址法。 链地址法： 每个桶中维护一个链表，哈希值相同的元素通过链表连接起来。 开放地址法： 当发生冲突时，通过寻找下一个可用的桶进行探测，直到找到空闲位置或者遍历完所有桶。 哈希表的插入、删除和查找操作的平均时间复杂度为O(1)，具有非常高效的性能。然而，哈希函数的设计和解决冲突的方法对哈希表的性能有着重要影响。 ​"
+    },
+    {
+      "slug": "dytp927ru69aggvv",
+      "title": "说说你对树 - 二叉搜索树的理解",
+      "url": "/tulingzhouyu/db22bv/dytp927ru69aggvv",
+      "toc_path": [
+        "数据结构与算法",
+        "说说你对树 - 二叉搜索树的理解"
+      ],
+      "toc_level": 1,
+      "toc_index": 914,
+      "word_count": 379,
+      "updated_at": "2023-08-31T13:56:58.000Z",
+      "primary_category": "algorithm",
+      "primary_category_name": "算法与数据结构",
+      "related_categories": [
+        "algorithm"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "算法",
+        "二叉树",
+        "查找"
+      ],
+      "summary": "二叉搜索树是一种常见的二叉树结构，它具有以下特点：每个节点最多只有两个子节点，分别称为左子节点和右子节点；对于任意节点，其左子树中的所有节点均小于该节点，其右子树中的所有节点均大于该节点；对于每个节点，其左子树和右子树也都是二叉搜索树。因此，二叉搜索树具有以下特性：高效的查找功能。由于所有节点...",
+      "excerpt": "二叉搜索树是一种常见的二叉树结构，它具有以下特点： 每个节点最多只有两个子节点，分别称为左子节点和右子节点； 对于任意节点，其左子树中的所有节点均小于该节点，其右子树中的所有节点均大于该节点； 对于每个节点，其左子树和右子树也都是二叉搜索树。 因此，二叉搜索树具有以下特性： 高效的查找功能。由于所有节点按照大小顺序排列，我们可以通过比较查找目标与节点值的大小来决定是继续往左子树搜索还是往右子树搜索，从而实现快速的查找。查找操作的时间复杂度为 O(log n)，其中 n 是二叉搜索树中节点数量。 高效的插入和删除功能。由于插入和删除节点时需要保持二叉搜索树的性质，我们可以通过递归地比较目标值与当前节点的值来找到合适的位置，并进行插入或删除操作。插入和删除操作的时间复杂度同样为 O(log n)。 需要注意的是，如果二叉搜索树的左子树或右子树过于极端，会导致树的深度过大，从而降低查找和操作的效率。"
+    },
+    {
+      "slug": "mcv1g7waa2uaqlvw",
+      "title": "说说你对树 - 平衡二叉树的理解",
+      "url": "/tulingzhouyu/db22bv/mcv1g7waa2uaqlvw",
+      "toc_path": [
+        "数据结构与算法",
+        "说说你对树 - 平衡二叉树的理解"
+      ],
+      "toc_level": 1,
+      "toc_index": 915,
+      "word_count": 318,
+      "updated_at": "2023-08-31T14:05:54.000Z",
+      "primary_category": "algorithm",
+      "primary_category_name": "算法与数据结构",
+      "related_categories": [
+        "algorithm",
+        "performance-optimization"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "算法",
+        "二叉树",
+        "查找",
+        "性能"
+      ],
+      "summary": "平衡二叉树是一种特殊的二叉搜索树，旨在解决普通二叉搜索树的性能问题。它通过限制左右子树的高度差不超过一个常数来保持树的平衡性。平衡二叉树的设计使得插入、删除和查找等操作的时间复杂度维持在较小的范围内。其中，AVL树和红黑树是两种常见的平衡二叉树。AVL树通过维护每个节点的平衡因子（左子树高度减...",
+      "excerpt": "平衡二叉树是一种特殊的二叉搜索树，旨在解决普通二叉搜索树的性能问题。它通过限制左右子树的高度差不超过一个常数来保持树的平衡性。平衡二叉树的设计使得插入、删除和查找等操作的时间复杂度维持在较小的范围内。 其中，AVL树和红黑树是两种常见的平衡二叉树。 AVL树通过维护每个节点的平衡因子（左子树高度减去右子树高度）来实现自平衡，当平衡因子超过阈值时通过旋转操作调整树的结构。红黑树通过在每个节点上增加一个颜色属性（红色或黑色）来维持平衡，通过变换和重新着色操作来调整树的结构。 平衡二叉树的优点在于它可以保持树的高度相对较小，从而提高了数据的存储和检索效率。相比于普通的二叉搜索树，平衡二叉树的操作时间复杂度更加稳定，在最坏情况下也能达到O(log n)的复杂度。"
+    },
+    {
+      "slug": "fz93c0bnloxkm1t9",
+      "title": "说说你对树 - 红黑树的理解",
+      "url": "/tulingzhouyu/db22bv/fz93c0bnloxkm1t9",
+      "toc_path": [
+        "数据结构与算法",
+        "说说你对树 - 红黑树的理解"
+      ],
+      "toc_level": 1,
+      "toc_index": 916,
+      "word_count": 281,
+      "updated_at": "2023-08-31T14:12:22.000Z",
+      "primary_category": "algorithm",
+      "primary_category_name": "算法与数据结构",
+      "related_categories": [
+        "algorithm"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "算法",
+        "查找"
+      ],
+      "summary": "红黑树是一种自平衡的二叉搜索树，它在普通二叉搜索树的基础上通过引入颜色属性和一些特定规则来维持树的平衡性。红黑树的特性包括 以下几点：每个节点都被标记为红色或黑色。根节点始终为黑色，这是确保整个树的平衡的起点。叶子节点是特殊的空节点，标记为黑色。没有两个相邻的红色节点，这样确保了没有连续的红色...",
+      "excerpt": "红黑树是一种自平衡的二叉搜索树，它在普通二叉搜索树的基础上通过引入颜色属性和一些特定规则来维持树的平衡性。 红黑树的特性包括 以下几点： 每个节点都被标记为红色或黑色。 根节点始终为黑色，这是确保整个树的平衡的起点。 叶子节点是特殊的空节点，标记为黑色。 没有两个相邻的红色节点，这样确保了没有连续的红色路径。 从任意节点到其每个叶子节点的简单路径上都包含相同数目的黑色节点，这就是所谓的黑色平衡，它确保了红黑树的整体高度相对平衡。 红黑树通过这些特性保持树的平衡，避免了最坏情况下的退化。它的插入、删除和查找操作具有稳定的时间复杂度，通常为O(log n)，适用于需要高效的动态数据结构。"
+    },
+    {
+      "slug": "ri108fi912t4rhya",
+      "title": "说说你对树 - 前缀树的理解",
+      "url": "/tulingzhouyu/db22bv/ri108fi912t4rhya",
+      "toc_path": [
+        "数据结构与算法",
+        "说说你对树 - 前缀树的理解"
+      ],
+      "toc_level": 1,
+      "toc_index": 918,
+      "word_count": 423,
+      "updated_at": "2023-08-31T14:18:55.000Z",
+      "primary_category": "algorithm",
+      "primary_category_name": "算法与数据结构",
+      "related_categories": [
+        "algorithm",
+        "mysql-index-transaction",
+        "java-collections"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "算法",
+        "查找",
+        "索引",
+        "集合"
+      ],
+      "summary": "前缀树也被称为字典树，是一种用于高效存储和检索字符串的数据结构。前缀树的基本思想是将每个字符串拆分成字符序列，然后使用树形结构进行存储。树的根节点为空，每个字符都对应着一个节点。从根节点到叶子节点的路径表示一个完整的字符串。在构建前缀树时，将待存储的字符串逐个字符插入树的路径。如果某个字符在当...",
+      "excerpt": "前缀树也被称为 字典树 ，是一种用于 高效存储 和 检索字符串 的数据结构。 前缀树的基本思想是将每个字符串拆分成字符序列，然后使用树形结构进行存储。树的根节点为空，每个字符都对应着一个节点。从根节点到叶子节点的路径表示一个完整的字符串。 在构建前缀树时，将待存储的字符串逐个字符插入树的路径。如果某个字符在当前节点的子节点中不存在，则创建一个新的子节点，并将该字符放入子节点中。通过这样的方式，构建出的前缀树能够有效地存储大量的字符串，并且支持快速的插入和查找操作。 前缀树的一个重要特点是，每个节点存储的字符序列为从根节点到该节点的路径上的字符集合。这使得在树中查找以给定前缀开头的字符串非常高效。只需从根节点开始，按照给定前缀依次遍历子节点，直到遍历完前缀中的所有字符或者无法继续匹配为止。 前缀树的应用非常广泛。它可以用于实现自动补全功能，即根据用户输入的前缀快速匹配出可能的后续字符或单词。前缀树还可以用于搜索引擎中的关键词索引，以及字典和拼写检查等任务。"
+    },
+    {
+      "slug": "xi8zn8cdzbnsgaa5",
+      "title": "说说你对图 - 遍历的理解",
+      "url": "/tulingzhouyu/db22bv/xi8zn8cdzbnsgaa5",
+      "toc_path": [
+        "数据结构与算法",
+        "说说你对图 - 遍历的理解"
+      ],
+      "toc_level": 1,
+      "toc_index": 919,
+      "word_count": 329,
+      "updated_at": "2023-08-31T14:20:55.000Z",
+      "primary_category": "algorithm",
+      "primary_category_name": "算法与数据结构",
+      "related_categories": [
+        "algorithm"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "算法",
+        "查找"
+      ],
+      "summary": "在计算机科学中，图是由一些点（节点或顶点）和连接这些点的线（边或权重）组成的数据结构。遍历是对图进行搜索的过程，它可以访问所有节点，并按照一定顺序处理它们。图遍历分为深度优先搜索和广度优先搜索两种方法。深度优先搜索先访问一个节点及其相邻未访问过的节点，直到无法继续访问为止，然后回溯到上一个节点...",
+      "excerpt": "在计算机科学中，图是由一些点（节点或顶点）和连接这些点的线（边或权重）组成的数据结构。遍历是对图进行搜索的过程，它可以访问所有节点，并按照一定顺序处理它们。 图遍历分为 深度优先搜索 和 广度优先搜索 两种方法。 深度优先搜索先访问一个节点及其相邻未访问过的节点，直到无法继续访问为止，然后回溯到上一个节点并继续访问其它子节点。 广度优先搜索则从起始节点开始，首先遍历所有与该节点直接相邻的节点，然后遍历与这些节点相邻的尚未访问过的节点。重复这个过程，直到所有节点都被访问。 图遍历非常重要，在实际应用中被广泛使用。例如，它可以用于寻找图中的连通分量、检测环以及寻找最短路径等问题。深度优先搜索通常用于找到图中的所有路径，而广度优先搜索则更适合查找最短路径或解决迷宫等问题。"
+    },
+    {
+      "slug": "yqvtt8vc1e7tezc5",
+      "title": "说说你对图 - 最小生成树的理解",
+      "url": "/tulingzhouyu/db22bv/yqvtt8vc1e7tezc5",
+      "toc_path": [
+        "数据结构与算法",
+        "说说你对图 - 最小生成树的理解"
+      ],
+      "toc_level": 1,
+      "toc_index": 920,
+      "word_count": 325,
+      "updated_at": "2023-09-01T05:52:37.000Z",
+      "primary_category": "algorithm",
+      "primary_category_name": "算法与数据结构",
+      "related_categories": [
+        "algorithm",
+        "computer-network",
+        "observability-troubleshooting"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "算法",
+        "网络",
+        "链路"
+      ],
+      "summary": "最小生成树是图论中的一个重要概念，指的是一个连通图的一棵生成树，使得该生成树上所有边的权重之和最小。普里姆算法和克鲁斯卡尔算法是求解最小生成树的经典方法。普里姆算法从任意一个节点开始，逐步扩展生成树，每次选择与当前生成树连接的权重最小且未被选择过的边。通过不断添加边并将相关节点加入生成树中，最...",
+      "excerpt": "最小生成树是图论中的一个重要概念，指的是一个连通图的一棵生成树，使得该生成树上所有边的权重之和最小。 普里姆算法和克鲁斯卡尔算法是求解最小生成树的经典方法。 普里姆算法从任意一个节点开始，逐步扩展生成树，每次选择与当前生成树连接的权重最小且未被选择过的边。通过不断添加边并将相关节点加入生成树中，最终得到最小生成树。 克鲁斯卡尔算法则按照边的权重从小到大的顺序逐步添加边，确保不形成环路。通过使用并查集数据结构判断节点是否在同一连通分量中，如果不是，则可以将该边添加到生成树中。 最小生成树在实际问题中有广泛应用。在网络设计中，可以利用最小生成树选择最优通信链路，以实现最低成本的连通性。在电力网络中，最小生成树可以帮助选择最佳输电线路，以满足能源传输需求。"
+    },
+    {
+      "slug": "olflgxpfigdgg67x",
+      "title": "说说你对图 - 拓扑排序的理解",
+      "url": "/tulingzhouyu/db22bv/olflgxpfigdgg67x",
+      "toc_path": [
+        "数据结构与算法",
+        "说说你对图 - 拓扑排序的理解"
+      ],
+      "toc_level": 1,
+      "toc_index": 921,
+      "word_count": 356,
+      "updated_at": "2023-09-01T06:11:13.000Z",
+      "primary_category": "algorithm",
+      "primary_category_name": "算法与数据结构",
+      "related_categories": [
+        "algorithm",
+        "spring-core",
+        "resume-project"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "算法",
+        "排序",
+        "循环依赖",
+        "项目"
+      ],
+      "summary": "拓扑排序是一种对有向无环图进行排序的算法。在拓扑排序中，图中的节点表示任务或事件，有向边表示任务间的依赖关系。拓扑排序可以确定任务的执行顺序，使得所有依赖关系得到满足，并且没有循环依赖。拓扑排序的基本思想是，首先找到没有前驱节点的节点，将其加入结果序列中，然后移除该节点及其出边，再继续找到没有...",
+      "excerpt": "拓扑排序是一种对有向无环图进行排序的算法。在拓扑排序中，图中的节点表示任务或事件，有向边表示任务间的依赖关系。拓扑排序可以确定任务的执行顺序，使得所有依赖关系得到满足，并且没有循环依赖。 拓扑排序的基本思想是，首先找到没有前驱节点的节点，将其加入结果序列中，然后移除该节点及其出边，再继续找到没有前驱节点的节点。重复这个过程，直到所有节点都被访问。 拓扑排序可以解决许多实际问题。例如，在项目管理中，可以使用拓扑排序确定任务的执行顺序，以避免任务之间的冲突和循环依赖。在编译器中，拓扑排序可以确定源代码中函数或变量的依赖关系，从而进行正确的编译顺序。在任务调度中，拓扑排序也常用于确定任务的优先级和顺序。 需要注意的是，拓扑排序只适用于有向无环图，因为循环依赖会导致排序无法进行。如果图中存在环路，则无法进行拓扑排序。"
+    },
+    {
+      "slug": "nmm5yix29hdhhvaa",
+      "title": "说说你对排序 - 冒泡排序的理解",
+      "url": "/tulingzhouyu/db22bv/nmm5yix29hdhhvaa",
+      "toc_path": [
+        "数据结构与算法",
+        "说说你对排序 - 冒泡排序的理解"
+      ],
+      "toc_level": 1,
+      "toc_index": 922,
+      "word_count": 343,
+      "updated_at": "2023-09-01T06:28:24.000Z",
+      "primary_category": "algorithm",
+      "primary_category_name": "算法与数据结构",
+      "related_categories": [
+        "algorithm"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "算法",
+        "数组",
+        "排序"
+      ],
+      "summary": "冒泡排序是一种简单的排序算法，其基本思想是通过多次遍历数组，每次比较相邻的两个元素。如果前一个元素大于后一个元素，则交换它们的位置。这样，每一次遍历都会将当前未排序部分的最大元素“冒泡”到数组的末尾，重复执行直到整个数组排好序。冒泡排序的时间复杂度为O(n^2)，效率相对较低，但它的实现简单，...",
+      "excerpt": "冒泡排序是一种简单的排序算法，其基本思想是通过多次遍历数组，每次比较相邻的两个元素。如果前一个元素大于后一个元素，则交换它们的位置。这样，每一次遍历都会将当前未排序部分的最大元素“冒泡”到数组的末尾，重复执行直到整个数组排好序。 冒泡排序的时间复杂度为O(n^2)，效率相对较低，但它的实现简单，易于理解和调试，并且不需要额外的空间，因此在一些小规模或特殊场合下仍然被广泛使用。但对于大规模数据的排序来说，冒泡排序的效率远不如其他更高级的排序算法，例如快速排序、归并排序等。 在实际应用中，冒泡排序常用于对少量数据进行排序，或者在某些特定情况下，例如已经几乎排好序的小规模数据集上的排序。冒泡排序的优势在于简单易懂，容易实现，不需要过多的系统资源，而缺点在于时间复杂度高，难以应用于大规模数据的排序。"
+    },
+    {
+      "slug": "de2vls9oqxkqb36p",
+      "title": "说说你对排序 - 快速排序的理解",
+      "url": "/tulingzhouyu/db22bv/de2vls9oqxkqb36p",
+      "toc_path": [
+        "数据结构与算法",
+        "说说你对排序 - 快速排序的理解"
+      ],
+      "toc_level": 1,
+      "toc_index": 923,
+      "word_count": 389,
+      "updated_at": "2023-09-01T06:41:32.000Z",
+      "primary_category": "algorithm",
+      "primary_category_name": "算法与数据结构",
+      "related_categories": [
+        "algorithm",
+        "performance-optimization"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "算法",
+        "数组",
+        "排序",
+        "性能"
+      ],
+      "summary": "快速排序是一种高效的排序算法，基于分治思想。它的核心思路是通过选择基准元素，将待排序数组划分为两个子数组，其中一个子数组的元素都小于基准元素，另一个子数组的元素都大于基准元素。然后对这两个子数组递归执行快速排序，最终得到整个数组有序。具体实现步骤如下：选择一个基准元素作为比较目标，然后使用双指...",
+      "excerpt": "快速排序是一种高效的排序算法，基于分治思想。 它的核心思路是通过选择基准元素，将待排序数组划分为两个子数组，其中一个子数组的元素都小于基准元素，另一个子数组的元素都大于基准元素。然后对这两个子数组递归执行快速排序，最终得到整个数组有序。 具体实现步骤如下：选择一个基准元素作为比较目标，然后使用双指针从数组两端开始进行扫描。左指针寻找大于等于基准元素的数，右指针寻找小于等于基准元素的数。当找到这样的元素时，交换它们的位置。重复这个过程直到两个指针相遇。 在划分操作完成后，将基准元素放置在合适的位置，这样基准元素左边的子数组都小于基准元素，右边的子数组都大于基准元素。然后对左右两个子数组分别递归执行上述步骤，直到子数组的长度为1或0。 快速排序的时间复杂度为O(nlogn)，其中n是待排序数组的长度。它具有较高的平均性能，适用于各种规模的数据集。另外，快速排序是原地排序算法，不需要额外的空间。"
+    },
+    {
+      "slug": "kg5awwvcm2y5kpho",
+      "title": "说说你对排序 - 插入排序的理解",
+      "url": "/tulingzhouyu/db22bv/kg5awwvcm2y5kpho",
+      "toc_path": [
+        "数据结构与算法",
+        "说说你对排序 - 插入排序的理解"
+      ],
+      "toc_level": 1,
+      "toc_index": 924,
+      "word_count": 493,
+      "updated_at": "2023-09-01T06:48:58.000Z",
+      "primary_category": "algorithm",
+      "primary_category_name": "算法与数据结构",
+      "related_categories": [
+        "algorithm",
+        "performance-optimization"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "算法",
+        "数组",
+        "排序",
+        "性能"
+      ],
+      "summary": "插入排序是一种简单直观的排序算法。它将待排序的数组分为已排序和未排序两部分，初始时已排序部分只有一个元素。然后，从未排序部分选择一个元素，并将其插入到已排序部分的正确位置，以保持整体有序。具体实现步骤如下：从第二个元素开始，将其作为当前需要插入的元素。将当前元素与已排序部分的元素进行比较，找到...",
+      "excerpt": "插入排序是一种简单直观的排序算法。它将待排序的数组分为已排序和未排序两部分，初始时已排序部分只有一个元素。然后，从未排序部分选择一个元素，并将其插入到已排序部分的正确位置，以保持整体有序。 具体实现步骤如下：从第二个元素开始，将其作为当前需要插入的元素。将当前元素与已排序部分的元素进行比较，找到合适的位置插入。当找到合适位置时，将大于当前元素的元素后移一位，腾出空间插入当前元素。重复这个过程，直到遍历完所有未排序的元素。 插入排序的时间复杂度为O(n^2)，其中n是待排序数组的长度。在最坏情况下，即待排序数组逆序排列时，插入排序的性能相对较差，因为每个元素都需要与已排序部分的所有元素进行比较。 但在实际应用中，当待排序数组接近有序时，插入排序的效率高，因为大部分元素已经在正确的位置上，只需进行少量的比较和移动操作。 插入排序是一种稳定的排序算法，它不会改变相同元素的相对顺序。这意味着如果有多个相同的元素，它们在排序后仍然保持原来的顺序。 尽管插入排序的时间复杂度相对较高，但在小规模数据集或部分有序的情况下，插入排序仍然具有优势。它的实现简单、易于理解，并且可以作为其他排序算法的辅助排序方式。"
+    },
+    {
+      "slug": "igsox4ka90vrnbtn",
+      "title": "说说你对算法思想 - 分治算法的理解",
+      "url": "/tulingzhouyu/db22bv/igsox4ka90vrnbtn",
+      "toc_path": [
+        "数据结构与算法",
+        "说说你对算法思想 - 分治算法的理解"
+      ],
+      "toc_level": 1,
+      "toc_index": 925,
+      "word_count": 303,
+      "updated_at": "2023-09-01T06:52:14.000Z",
+      "primary_category": "algorithm",
+      "primary_category_name": "算法与数据结构",
+      "related_categories": [
+        "algorithm"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "算法"
+      ],
+      "summary": "分治算法是一种将复杂问题划分为规模较小的子问题，并递归地解决这些子问题，最后将它们的解合并为原问题的解的算法思想。它具有以下几个关键步骤：分解、解决和合并。通过将大问题分解为小问题，每个小问题都可以独立求解，然后将它们的解合并起来，最终得到原问题的解。分治算法适用于具有重叠子问题性质的问题，能...",
+      "excerpt": "分治算法是一种将复杂问题划分为规模较小的子问题，并递归地解决这些子问题，最后将它们的解合并为原问题的解的算法思想。 它具有以下几个关键步骤：分解、解决和合并。 通过将大问题分解为小问题，每个小问题都可以独立求解，然后将它们的解合并起来，最终得到原问题的解。 分治算法适用于具有重叠子问题性质的问题，能够降低问题的复杂度。它的优点是能够充分利用计算资源，方便问题的并行化处理。然而，使用分治算法解决问题需要满足一些条件，如子问题应是独立且相互类似的，原问题应能通过子问题的解合并得到，子问题的规模应足够小。 总之，分治算法是一种高效解决复杂问题的策略，通过将问题分解为小问题，递归求解并合并解，从而获得整体问题的解。"
+    },
+    {
+      "slug": "agvyk5pipg8g1uc2",
+      "title": "说说你对算法思想 - 动态规划算法的理解",
+      "url": "/tulingzhouyu/db22bv/agvyk5pipg8g1uc2",
+      "toc_path": [
+        "数据结构与算法",
+        "说说你对算法思想 - 动态规划算法的理解"
+      ],
+      "toc_level": 1,
+      "toc_index": 926,
+      "word_count": 322,
+      "updated_at": "2023-09-01T06:59:50.000Z",
+      "primary_category": "algorithm",
+      "primary_category_name": "算法与数据结构",
+      "related_categories": [
+        "algorithm",
+        "performance-optimization"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "算法",
+        "动态规划",
+        "优化"
+      ],
+      "summary": "动态规划算法是一种解决最优化问题的算法思想，通过将问题划分为若干个子问题，并将子问题的解保存起来，在高效解决问题的同时降低了时间复杂度。它的基本思想是：将原问题分解为若干个重叠子问题，并存储子问题的解。通过定义状态和状态转移方程，逐步构建出问题的最优解。动态规划算法包含以下几个关键步骤：定义问...",
+      "excerpt": "动态规划算法是一种解决最优化问题的算法思想，通过将问题划分为若干个子问题，并将子问题的解保存起来，在高效解决问题的同时降低了时间复杂度。 它的基本思想是：将原问题分解为若干个重叠子问题，并存储子问题的解。通过定义状态和状态转移方程，逐步构建出问题的最优解。 动态规划算法包含以下几个关键步骤：定义问题的状态、定义状态转移方程、确定初始状态、递推求解和按需存储。它适用于具有最优子结构和重叠子问题性质的问题，能够在高效解决问题的同时降低时间复杂度。 动态规划算法的优点是能够充分利用计算资源，方便问题的并行化处理，同时也能节省空间和时间。使用动态规划算法需要满足一定的条件，如具有最优子结构和重叠子问题性质，或者可以通过转化为具有这些性质的问题来求解。"
+    },
+    {
+      "slug": "kyqftlcr0z644609",
+      "title": "说说你对算法思想 - 贪心算法的理解",
+      "url": "/tulingzhouyu/db22bv/kyqftlcr0z644609",
+      "toc_path": [
+        "数据结构与算法",
+        "说说你对算法思想 - 贪心算法的理解"
+      ],
+      "toc_level": 1,
+      "toc_index": 927,
+      "word_count": 432,
+      "updated_at": "2023-09-01T07:05:30.000Z",
+      "primary_category": "algorithm",
+      "primary_category_name": "算法与数据结构",
+      "related_categories": [
+        "algorithm",
+        "performance-optimization"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "算法",
+        "优化"
+      ],
+      "summary": "贪心算法是一种常用的求解最优化问题的算法思想。它通过每一步的局部最优选择，希望最终达到全局最优解。贪心算法的核心思想是在求解过程中做出当前情况下的最优选择，并相信这个选择对全局来说也是最优的。它不考虑子问题的解决过程，只关注当前状态下的最优解。因此，贪心算法通常简单高效。贪心算法的步骤相对简单...",
+      "excerpt": "贪心算法是一种常用的求解最优化问题的算法思想。 它通过每一步的局部最优选择，希望最终达到全局最优解。 贪心算法的核心思想是在求解过程中做出当前情况下的最优选择，并相信这个选择对全局来说也是最优的。它不考虑子问题的解决过程，只关注当前状态下的最优解。因此，贪心算法通常简单高效。 贪心算法的步骤相对简单明了。首先，需要确定贪心策略，即每一步时如何选择局部最优解。然后，在每一步选择中确定当前情况下的局部最优解，并更新问题的状态。最后，根据问题的要求或约束条件确定算法的终止条件。 贪心算法的优点在于它的简单性和高效性。相比其他复杂的算法，贪心算法往往更易于实现和理解。它适用于那些能够通过局部最优解达到全局最优解的问题，而且通常可以快速得到一个次优或近似最优解。 然而，贪心算法并不能保证得到问题的最优解。由于它只关注当前的局部最优解，并没有回溯和修正之前的选择，可能会导致无法达到全局最优解。因此，在应用贪心算法时需要仔细分析问题的特点和约束条件，判断是否适合使用贪心算法。"
+    },
+    {
+      "slug": "yfq0uar9fo3tr2wi",
+      "title": "说说你对算法思想 - 二分法的理解",
+      "url": "/tulingzhouyu/db22bv/yfq0uar9fo3tr2wi",
+      "toc_path": [
+        "数据结构与算法",
+        "说说你对算法思想 - 二分法的理解"
+      ],
+      "toc_level": 1,
+      "toc_index": 928,
+      "word_count": 321,
+      "updated_at": "2023-09-01T07:11:22.000Z",
+      "primary_category": "algorithm",
+      "primary_category_name": "算法与数据结构",
+      "related_categories": [
+        "algorithm",
+        "java-collections"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "算法",
+        "数组",
+        "排序",
+        "查找",
+        "集合"
+      ],
+      "summary": "二分法是一种高效的算法思想，其主要思想是通过将待查找的数据集合逐渐缩小一半，来快速查找目标值或满足条件的解。与线性搜索相比，二分法具有时间复杂度更低的特点，是处理大规模数据时的必备技巧。二分法的核心步骤包括确定搜索范围、计算中间值、比较与目标值的大小，然后根据比较结果更新搜索范围，循环执行直到...",
+      "excerpt": "二分法是一种高效的算法思想，其主要思想是通过将待查找的数据集合逐渐缩小一半，来快速查找目标值或满足条件的解。与线性搜索相比，二分法具有 时间复杂度更低 的特点，是处理大规模数据时的必备技巧。 二分法的核心步骤包括确定搜索范围、计算中间值、比较与目标值的大小，然后根据比较结果更新搜索范围，循环执行直到找到目标值或满足条件的解。由于每次搜索范围缩小一半，所以算法的时间复杂度通常为O(logN)，其中N为数据集合的大小。这使得二分法在处理大规模数据时具有较高的效率和快速收敛的特点。 二分法主要应用于有序数据集合中的查找和判定问题，例如在有序数组中查找目标值的位置，或者在某个函数的定义域内寻找满足条件的解。它有广泛的应用，包括搜索算法、排序算法和数值计算等领域。"
+    },
+    {
+      "slug": "qbtsainlggmzgq1l",
+      "title": "说说你对算法思想 - 回溯算法的理解",
+      "url": "/tulingzhouyu/db22bv/qbtsainlggmzgq1l",
+      "toc_path": [
+        "数据结构与算法",
+        "说说你对算法思想 - 回溯算法的理解"
+      ],
+      "toc_level": 1,
+      "toc_index": 929,
+      "word_count": 333,
+      "updated_at": "2023-09-01T07:15:18.000Z",
+      "primary_category": "algorithm",
+      "primary_category_name": "算法与数据结构",
+      "related_categories": [
+        "algorithm",
+        "performance-optimization"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "算法",
+        "优化"
+      ],
+      "summary": "回溯算法是一种通过回溯和递归的方式来解决问题的算法思想。回溯算法从问题初始状态开始，根据限制条件和约束条件，选择一个可行的路径进行搜索。如果搜索到的路径不满足条件，就会返回上一步，重新选择路径继续搜索，直到找到解或确定无解为止。回溯算法通常用于具有多个选择路径，并需要依次尝试并验证每个选择的问...",
+      "excerpt": "回溯算法是一种通过回溯和递归的方式来解决问题的算法思想。回溯算法从问题初始状态开始，根据限制条件和约束条件，选择一个可行的路径进行搜索。如果搜索到的路径不满足条件，就会返回上一步，重新选择路径继续搜索，直到找到解或确定无解为止。 回溯算法通常用于具有多个选择路径，并需要依次尝试并验证每个选择的问题。例如，组合问题、排列问题、棋盘问题等都可以使用回溯算法来解决。 回溯算法通过递归实现，递归函数会尝试每个选择，并在每个选择后调用自身进行下一步的搜索。同时，在搜索过程中需要进行剪枝操作，剪掉那些已经不可能得到正确解的部分，以减少不必要的计算。 回溯算法的时间复杂度较高，通常是指数级别的。因此，在实际应用中，我们需要进行优化，避免不必要的搜索和重复计算，以提高算法的效率。"
+    },
+    {
+      "slug": "zn2g6w1s4pyaq12x",
+      "title": "说说你对分布式算法 - 一致性Hash算法的理解",
+      "url": "/tulingzhouyu/db22bv/zn2g6w1s4pyaq12x",
+      "toc_path": [
+        "数据结构与算法",
+        "说说你对分布式算法 - 一致性Hash算法的理解"
+      ],
+      "toc_level": 1,
+      "toc_index": 930,
+      "word_count": 457,
+      "updated_at": "2023-09-01T07:38:45.000Z",
+      "primary_category": "algorithm",
+      "primary_category_name": "算法与数据结构",
+      "related_categories": [
+        "algorithm",
+        "microservices-governance",
+        "performance-optimization"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "算法",
+        "排序",
+        "查找",
+        "负载均衡",
+        "性能"
+      ],
+      "summary": "一致性哈希算法是一种分布式算法，用于解决数据分布和负载均衡问题。它通过将数据和节点映射到一个哈希环上，实现了数据在节点之间的均匀分布和最小化数据迁移。一致性哈希算法的核心思想是将数据和节点都映射到哈希环上。每个节点在哈希环上有一个位置，根据哈希值进行排序。存储或查找数据时，通过哈希函数找到数据...",
+      "excerpt": "一致性哈希算法是一种分布式算法，用于解决数据分布和负载均衡问题。它通过将数据和节点映射到一个哈希环上，实现了数据在节点之间的均匀分布和最小化数据迁移。 一致性哈希算法的核心思想是将数据和节点都映射到哈希环上。每个节点在哈希环上有一个位置，根据哈希值进行排序。存储或查找数据时，通过哈希函数找到数据在环上的位置，并顺时针找到离它最近的节点，将数据存储在该节点上。 一致性哈希算法的优势在于节点增删时最小化数据迁移。只有相邻节点之间的数据会受影响，不影响整个环上的数据分布，提高了系统的稳定性和性能。 此外，一致性哈希算法具备良好的负载均衡特性。数据在哈希环上均匀分布，节点间的数据负载更均衡。节点数变化时，只需重新映射部分数据，不影响整体负载均衡。 然而，一致性哈希算法也有缺点。节点较少时可能导致负载不均衡。热点数据仍可能集中在某几个节点上，无法完全解决数据倾斜问题。 总结来说，一致性哈希算法通过哈希环实现了数据在节点之间的均匀分布和最小化数据迁移。它具备良好的负载均衡特性，但在节点较少和数据倾斜等情况下仍有一定局限性。"
+    },
+    {
+      "slug": "xvrdgg1f808it0ov",
+      "title": "说说你对分布式算法 - Paxos算法的理解",
+      "url": "/tulingzhouyu/db22bv/xvrdgg1f808it0ov",
+      "toc_path": [
+        "数据结构与算法",
+        "说说你对分布式算法 - Paxos算法的理解"
+      ],
+      "toc_level": 1,
+      "toc_index": 931,
+      "word_count": 310,
+      "updated_at": "2023-09-01T07:40:50.000Z",
+      "primary_category": "algorithm",
+      "primary_category_name": "算法与数据结构",
+      "related_categories": [
+        "algorithm",
+        "observability-troubleshooting",
+        "computer-network",
+        "performance-optimization"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "算法",
+        "故障",
+        "网络",
+        "性能"
+      ],
+      "summary": "Paxos算法是一种用于分布式系统中实现一致性的算法。它通过引入提议者、接受者和学习者三个基本角色，在面对网络故障和节点故障的情况下，使得分布式系统能够就某个值达成一致。Paxos算法的核心是通过多轮的消息交互来达成共识。提议者向接受者发送提议请求，接受者对提议进行投票，可以接受或拒绝。如果有...",
+      "excerpt": "Paxos算法是一种用于分布式系统中实现一致性的算法。它通过引入提议者、接受者和学习者三个基本角色，在面对网络故障和节点故障的情况下，使得分布式系统能够就某个值达成一致。 Paxos算法的核心是通过多轮的消息交互来达成共识。提议者向接受者发送提议请求，接受者对提议进行投票，可以接受或拒绝。如果有足够多的接受者接受了提议，提议者将该提议确定为最终值，并通知学习者进行学习。 Paxos算法克服了网络故障和节点故障可能带来的不确定性。在出现故障时，可以通过选举新的议员来继续进行共识达成，确保系统的可用性和一致性。 然而，Paxos算法也存在一些挑战。其过程较为复杂，实现和理解都相对困难。此外，多轮的消息交互可能会导致性能问题，因为需要等待接受者的投票结果。"
+    },
+    {
+      "slug": "pnchbafzt734oa6n",
+      "title": "说说你对分布式算法 - Raft算法的理解",
+      "url": "/tulingzhouyu/db22bv/pnchbafzt734oa6n",
+      "toc_path": [
+        "数据结构与算法",
+        "说说你对分布式算法 - Raft算法的理解"
+      ],
+      "toc_level": 1,
+      "toc_index": 932,
+      "word_count": 308,
+      "updated_at": "2023-09-01T07:44:46.000Z",
+      "primary_category": "algorithm",
+      "primary_category_name": "算法与数据结构",
+      "related_categories": [
+        "algorithm",
+        "observability-troubleshooting",
+        "java-concurrency",
+        "computer-network"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "算法",
+        "故障",
+        "日志",
+        "并发",
+        "网络"
+      ],
+      "summary": "Raft算法是一种用于分布式系统中实现一致性的算法，相对于Paxos算法更易理解和实现。它引入了领导者、跟随者和候选人的角色，通过心跳机制和选举过程来保持一致性。在Raft算法中，节点可以是领导者、跟随者或候选人三种状态。领导者处理客户端请求并发送心跳信号，跟随者接受并响应心跳信号，而候选人则...",
+      "excerpt": "Raft算法是一种用于分布式系统中实现一致性的算法，相对于Paxos算法更易理解和实现。它引入了领导者、跟随者和候选人的角色，通过心跳机制和选举过程来保持一致性。 在Raft算法中，节点可以是领导者、跟随者或候选人三种状态。领导者处理客户端请求并发送心跳信号，跟随者接受并响应心跳信号，而候选人则发起选举。选举过程中，候选人获得多数票即成为新的领导者。 Raft算法解决了日志复制和一致性问题。节点通过记录操作到日志中来达到一致性，并通过心跳信号和选举过程进行日志复制和同步。 相比起Paxos算法，Raft算法更容易理解和实现，因为它将分布式系统的角色和概念划分得更清晰，并提供了可读性更好的算法描述。不过，Raft算法仍需处理网络故障、节点故障和切换领导者等情况。"
+    },
+    {
+      "slug": "ivmizlc6e7h50cfc",
+      "title": "说说你对分布式算法 - ZAB算法的理解",
+      "url": "/tulingzhouyu/db22bv/ivmizlc6e7h50cfc",
+      "toc_path": [
+        "数据结构与算法",
+        "说说你对分布式算法 - ZAB算法的理解"
+      ],
+      "toc_level": 1,
+      "toc_index": 933,
+      "word_count": 470,
+      "updated_at": "2023-09-01T07:50:06.000Z",
+      "primary_category": "algorithm",
+      "primary_category_name": "算法与数据结构",
+      "related_categories": [
+        "algorithm",
+        "mysql-index-transaction",
+        "redis-persistence-cluster",
+        "mq-rabbitmq"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "senior",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "算法",
+        "事务",
+        "集群",
+        "确认机制"
+      ],
+      "summary": "ZAB算法是用于实现分布式系统中的原子广播的核心算法，它被广泛应用于ZooKeeper分布式协调服务中。ZAB算法由两个主要阶段组成：崩溃恢复阶段和消息广播阶段。在崩溃恢复阶段，当一个ZooKeeper节点启动或者领导者节点崩溃重启时，整个集群进入此阶段。首先，节点通过互相通信来选举出一个新的...",
+      "excerpt": "ZAB算法是用于实现分布式系统中的原子广播的核心算法，它被广泛应用于ZooKeeper分布式协调服务中。 ZAB算法由两个主要阶段组成： 崩溃恢复阶段 和 消息广播阶段 。 在崩溃恢复阶段，当一个ZooKeeper节点启动或者领导者节点崩溃重启时，整个集群进入此阶段。 首先， 节点通过互相通信来选举出一个新的领导者，并将最新的数据状态发送给所有的跟随者节点，以确保数据的一致性。一旦恢复完成，集群进入下一个阶段。在消息广播阶段，领导者节点负责接收客户端的请求并将其转化为ZooKeeper事务。 然后， 领导者使用ZAB算法将这些事务以广播的形式发送给所有的节点。每个节点按顺序执行这些事务，并向领导者节点发送确认消息。一旦领导者节点收到大多数节点的确认消息，就可以认为这些事务已经被提交。 最后， 领导者将已提交的消息广播给所有节点，确保所有节点按照相同的顺序执行这些事务，从而实现数据的一致性和原子性。 ZAB算法的关键在于领导者选举和消息广播。领导者选举通过节点间的投票过程实现，节点通过互相通信来达成共识，并选出新的领导者。 消息广播则采用基于多数投票的确认机制，只有当超过半数的节点确认了事务才能认为这些事务已经被提交。"
+    },
+    {
+      "slug": "nvqrgktknicykl6w",
+      "title": "说说你对安全算法 - 摘要算法的理解",
+      "url": "/tulingzhouyu/db22bv/nvqrgktknicykl6w",
+      "toc_path": [
+        "数据结构与算法",
+        "说说你对安全算法 - 摘要算法的理解"
+      ],
+      "toc_level": 1,
+      "toc_index": 935,
+      "word_count": 463,
+      "updated_at": "2023-09-01T07:57:06.000Z",
+      "primary_category": "algorithm",
+      "primary_category_name": "算法与数据结构",
+      "related_categories": [
+        "algorithm",
+        "security-auth"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "算法",
+        "安全"
+      ],
+      "summary": "摘要算法是一种将任意长度的数据转换为固定长度字节串的算法。它具有以下特点和应用。首先，摘要算法能够生成一个唯一且固定长度的摘要值，用于验证数据的完整性和一致性。无论输入数据有多长，生成的摘要值始终是固定长度的，且即使数据只改变了一点点，生成的摘要值也会大不相同。其次，摘要算法是单向的，即无法从...",
+      "excerpt": "摘要算法是一种将任意长度的数据转换为固定长度字节串的算法。它具有以下特点和应用。 首先， 摘要算法能够生成一个唯一且固定长度的摘要值，用于验证数据的完整性和一致性。无论输入数据有多长，生成的摘要值始终是固定长度的，且即使数据只改变了一点点，生成的摘要值也会大不相同。 其次， 摘要算法是单向的，即无法从摘要值推导出原始数据。这种性质保证了数据的安全性，对于同一个输入数据，只要计算后的摘要值相同，可以认为原始数据也是相同的。 此外， 好的摘要算法应该保证生成的摘要值是唯一的，即使输入的数据非常相似，生成的摘要值也应该是不同的。这样可以避免碰撞，即不同的输入数据生成相同的摘要值。 摘要算法也应该是高效的，在较短的时间内能够生成摘要值。这样才能满足现实场景中对大量数据进行快速计算的需求。 而且， 摘要算法还可以用于隐私保护。例如，存储用户密码时，不保存明文密码，而是将密码通过摘要算法生成摘要值进行存储和验证。这样即使数据库泄露，攻击者也无法获得原始密码。 常见的摘要算法包括MD5、SHA-1、SHA-256等，它们已被广泛应用于数据校验、密码存储、数字签名等领域。"
+    },
+    {
+      "slug": "tdllwxr33rr6l4gc",
+      "title": "说说你对安全算法 - 国密算法的理解",
+      "url": "/tulingzhouyu/db22bv/tdllwxr33rr6l4gc",
+      "toc_path": [
+        "数据结构与算法",
+        "说说你对安全算法 - 国密算法的理解"
+      ],
+      "toc_level": 1,
+      "toc_index": 937,
+      "word_count": 374,
+      "updated_at": "2023-09-01T08:03:19.000Z",
+      "primary_category": "algorithm",
+      "primary_category_name": "算法与数据结构",
+      "related_categories": [
+        "algorithm",
+        "security-auth"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "算法",
+        "安全",
+        "加密"
+      ],
+      "summary": "国密算法是中国自主研发的密码算法体系，包括对称加密算法、非对称加密算法和哈希算法。其中，国密算法采用SM4作为对称加密算法，SM2作为非对称加密算法，以及SM3作为哈希算法。国密算法在信息安全领域具有重要意义和广泛应用，它是我国信息安全自主可控的重要支撑之一。国密算法的优势在于安全性、自主可控...",
+      "excerpt": "国密算法是中国自主研发的密码算法体系，包括 对称加密算法 、 非对称加密算法 和 哈希算法 。其中，国密算法采用SM4作为对称加密算法，SM2作为非对称加密算法，以及SM3作为哈希算法。国密算法在信息安全领域具有重要意义和广泛应用，它是我国信息安全自主可控的重要支撑之一。 国密算法的优势在于安全性、自主可控性和适应中国国情等方面。例如，SM4算法为高效且安全的分组密码算法，适用于各种加密场景，如数据传输、存储保护等。SM2算法提供了公钥加密、数字签名和密钥协商等功能，具有高强度、高效率和自主可控等特点，广泛应用于证书、签名、加密通信等领域。SM3算法具有较高的安全性和抗碰撞能力，广泛应用于数据完整性校验、数字签名、安全存储等场景。 需要注意的是，国密算法在国际上的认可程度还有待提高。此外，随着技术的不断发展和攻击手段的演进，国密算法也需要不断进行研究和改进，以应对新的安全挑战。"
+    },
+    {
+      "slug": "daozwvz77rfdfv3o",
+      "title": "亿级任务调度：时间轮算法的革命性重构",
+      "url": "/tulingzhouyu/db22bv/daozwvz77rfdfv3o",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "亿级任务调度：时间轮算法的革命性重构"
+      ],
+      "toc_level": 2,
+      "toc_index": 990,
+      "word_count": 1472,
+      "updated_at": "2025-11-21T13:38:10.000Z",
+      "primary_category": "algorithm",
+      "primary_category_name": "算法与数据结构",
+      "related_categories": [
+        "algorithm",
+        "observability-troubleshooting",
+        "performance-optimization",
+        "jvm-memory-gc",
+        "microservices-governance"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "senior",
+        "campus"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "算法",
+        "数组",
+        "链表",
+        "CPU",
+        "堆积",
+        "性能",
+        "优化",
+        "瓶颈",
+        "堆",
+        "降级",
+        "重试",
+        "超时"
+      ],
+      "summary": "在分布式系统中，定时任务调度是一个极其基础却又容易成为瓶颈的环节。当任务数量从几千上升到百万、亿级时，传统的调度模型会迅速崩溃。本文将结合可视化演示，带你深入理解时间轮（Timing Wheel）算法是如何将时间复杂度从 O(N)",
+      "excerpt": "在分布式系统中，定时任务调度是一个极其基础却又容易成为瓶颈的环节。当任务数量从几千上升到百万、亿级时，传统的调度模型会迅速崩溃。 本文将结合可视化演示，带你深入理解 时间轮（Timing Wheel） 算法是如何将时间复杂度从 O(N) 降维至 O(1) 的。 一、 传统方案的崩溃点 如上图所示，当面对海量延时任务时，我们最直观的反应是使用“优先队列”（PriorityQueue）或“最小堆”（Min-Heap）。这些数据结构在任务量较小时表现良好，但在亿级规模下，它们存在致命缺陷： 时间复杂度瓶颈 ：最小堆的插入和删除操作复杂度为 O(log N) 。虽然看起来不慢，但当 N 达到千万级，且每秒有数万次触发时，CPU 会将大量时间消耗在调整堆结构（Sift Up/Down）上，而非执行任务。 全量扫描的代价 ：如果使用简单的链表或数据库轮询，每次检查都需要遍历整个任务集（ O(N) ），这不仅导致严重的触发延迟（图中的 &quot;TIMEOUT&quot;），更会让 CPU 陷入无效的空转计算（图中的 &quot;CPU: 99%&quot;）。 我们需要一种不再依赖任务数量 N 的算法。 二、 破局：单级时间轮的 O(1) 魔法 时间轮的核心思想来源于我们墙上的挂钟。它利用了 哈希表 的思想，将线性时间“卷”成了一个环。 槽位（Slot）与哈希 ：我们将时间切分为一个个刻度（Slot），本质上是一个循环数组。任务根据其触发时间，通过取模运算 index = (timestamp % size) 直接映射到对应的数组下标中。 指针驱动（Tick） ：指针（Current Time）每秒移动一格。它不需要遍历所有任务， 只关注当前指向的槽位 。 为什么是 O(1)？ 无论任务队列中有 10 个还是 1 亿个任务，指针移动一次的操作是固定的：取出当前槽位的链表，执行所有任务。插入任务也是直接计算下标放入，与总任务数无关。 局限性： 单级时间轮面临“空间与精度”的权衡。如果我们要支持跨度为 1 年、精度为 1 秒的调度，需要 365 \\times 24 \\times 3600 \\approx 3153 万个槽位，这将消耗巨大的内存空间。 三、 进阶：多级时间轮的层级结构 为了解决单级时间轮的空间膨胀问题，我们引入了 层级（Hierarchy） 概念，这与水表的读数机制或时钟的时分秒针完全一致。 多轮协作 ：我们不再使用一个巨大的数组，而是创建多个小的时间轮（如上图的 Hour, Minute, Second）。 任务分流 ： 10秒后 的任务，直接挂在 秒轮 （最内层）。 40分钟后 的任务，挂在 分轮 （中间层）。 5小时后 的任务，挂在 时轮 （最外层）。 通过这种方式，我们用极小的空间（ 60+60+24 = 144 个槽位）就能表示一整天的时间跨度。 "
+    }
+  ]
+}

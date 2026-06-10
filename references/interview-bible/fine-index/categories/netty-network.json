@@ -1,0 +1,1065 @@
+{
+  "id": "netty-network",
+  "name": "Netty与网络编程",
+  "aliases": [
+    "Netty",
+    "BIO",
+    "NIO",
+    "AIO",
+    "TCP",
+    "HTTP",
+    "WebSocket",
+    "网络编程"
+  ],
+  "count": 25,
+  "total_word_count": 47746,
+  "articles": [
+    {
+      "slug": "fbbnqbv2ry9lk1vq",
+      "title": "Netty篇",
+      "url": "/tulingzhouyu/db22bv/fbbnqbv2ry9lk1vq",
+      "toc_path": [
+        "面试必看",
+        "大厂真题",
+        "阿里面试真题",
+        "Netty篇"
+      ],
+      "toc_level": 3,
+      "toc_index": 42,
+      "word_count": 9595,
+      "updated_at": "2024-04-29T12:16:27.000Z",
+      "primary_category": "netty-network",
+      "primary_category_name": "Netty与网络编程",
+      "related_categories": [
+        "netty-network",
+        "os-linux",
+        "jvm-memory-gc",
+        "computer-network",
+        "java-concurrency"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle",
+        "senior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "Netty",
+        "BIO",
+        "NIO",
+        "TCP",
+        "HTTP",
+        "WebSocket",
+        "操作系统",
+        "进程",
+        "线程",
+        "内存",
+        "文件",
+        "上下文切换",
+        "JVM",
+        "并发"
+      ],
+      "summary": "核心组件1、整体结构Core 核心层Core 核心层是 Netty 最精华的内容，它提供了底层网络通信的通用抽象和实现，包括事件模型、通用API、支持零拷贝的 ByteBuf 等。Protocol Support 协议支持层协议支持层基本上覆盖了主流协议的编解码实现，如 HTTP、Protob...",
+      "excerpt": "核心组件 1、整体结构 Core 核心层 Core 核心层是 Netty 最精华的内容，它提供了底层网络通信的通用抽象和实现，包括事件模型、通用API、支持零拷贝的 ByteBuf 等。 Protocol Support 协议支持层 协议支持层基本上覆盖了主流协议的编解码实现，如 HTTP、Protobuf、WebSocket、二进制等主流协议，此外 Netty 还支持自定义应用层协议。Netty 丰富的协议支持降低了用户的开发成本，基于 Netty 我们可以快速开发 HTTP、WebSocket 等服务。 Transport Service 传输服务层 传输服务层提供了网络传输能力的定义和实现方法。它支持 Socket、HTTP 隧道、虚拟机管道等传输方式。Netty 对 TCP、UDP 等数据传输做了抽象和封装，用户可以更聚焦在业务逻辑实现上，而不必关系底层数据传输的细节。 2、逻辑架构 网络通信层 网络通信层的职责是执行网络 I/O 的操作。它支持多种网络协议和 I/O 模型的连接操作。当网络数据读取到内核缓冲区后，会触发各种网络事件，这些网络事件会分发给事件调度层进行处理。 网络通信层的核心组件包含 BootStrap、ServerBootStrap、Channel 三个组件。 Bootstrap 是“引导”的意思，负责 Netty 客户端程序 的启动、初始化、服务器连接等过程，串联了 Netty 的其他核心组件。 ServerBootStrap 用于 服务端启动 绑定本地端口，会绑定Boss 和 Worker两个 EventLoopGroup。 Channel 的是“ 通道 ”，Netty Channel提供了基于NIO更高层次的抽象，如 register、bind、connect、read、write、flush 等。 事件调度层 事件调度层的职责是通过 Reactor 线程模型对各类事件进行聚合处理，通过 Selector 主循环线程集成多种事件（ I/O 事件、信号事件、定时事件等），实际的业务处理逻辑是交由服务编排层中相关的 Handler 完成。 事件调度层的核心组件包括 EventLoopGroup、EventLoop 。 EventLoop 负责处理 Channel 生命周期内的所有 I/O 事件，如 accept、connect、read、write 等 I/O 事件 ①一个 EventLoopGroup 往往包含 一个或者多个 EventLoop。 ②EventLoop 同一时间会与一个Channel绑定，每个 EventLoop 负责 处理一种类型 Channel 。 ③Channel 在生命周期内可以对和多个 EventLoop 进行 多次绑定和解绑 。 EventLoopGroup 是Netty 的 核心处理引擎 ，本质是一"
+    },
+    {
+      "slug": "dpxl834qsx20hfn3",
+      "title": "BIO、NIO、AIO有什么区别",
+      "url": "/tulingzhouyu/db22bv/dpxl834qsx20hfn3",
+      "toc_path": [
+        "Java基础",
+        "BIO、NIO、AIO有什么区别"
+      ],
+      "toc_level": 1,
+      "toc_index": 186,
+      "word_count": 403,
+      "updated_at": "2023-09-06T06:07:49.000Z",
+      "primary_category": "netty-network",
+      "primary_category_name": "Netty与网络编程",
+      "related_categories": [
+        "netty-network",
+        "java-core",
+        "os-linux",
+        "java-concurrency",
+        "ai-llm"
+      ],
+      "question_type": "troubleshooting",
+      "question_type_name": "故障排查题",
+      "levels": [
+        "senior",
+        "campus"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "BIO",
+        "NIO",
+        "AIO",
+        "Java",
+        "IO",
+        "操作系统",
+        "线程",
+        "并发",
+        "AI"
+      ],
+      "summary": "他们三者都是Java中常用的I/O模型，我们从以下三个维度进行对比：阻塞与非阻塞：BIO是阻塞式I/O模型，线程会一直被阻塞等待操作完成。NIO是非阻塞式I/O模型，线程可以去做其他任务，当I/O操作完成时得到通知。AIO也是非阻塞式I/O模型，不需要用户线程关注I/O事件，由操作系统通过回调...",
+      "excerpt": "他们三者都是Java中常用的I/O模型，我们从以下三个维度进行对比： 阻塞与非阻塞： BIO是阻塞式I/O模型，线程会一直被阻塞等待操作完成。 NIO是非阻塞式I/O模型，线程可以去做其他任务，当I/O操作完成时得到通知。 AIO也是非阻塞式I/O模型，不需要用户线程关注I/O事件，由操作系统通过回调机制处理。 缓冲区： BIO使用传统的字节流和字符流，需要为输入输出流分别创建缓冲区。 NIO引入了基于通道和缓冲区的I/O方式，使用一个缓冲区完成数据读写操作。 AIO则不需要缓冲区，使用异步回调方式进行操作。 线程模型： BIO采用一个线程处理一个请求方式，面对高并发时线程数量急剧增加，容易导致系统崩溃。 NIO采用多路复用器来监听多个客户端请求，使用一个线程处理，减少线程数量，提高系统性能。 AIO依靠操作系统完成I/O操作，不需要额外的线程池或多路复用器。 综上所述，BIO、NIO、AIO的区别主要在于阻塞与非阻塞、缓冲区和线程模型等方面。根据具体应用场景选择合适的I/O模型可以提高程序的性能和可扩展性。"
+    },
+    {
+      "slug": "myecbvscgqv6rasz",
+      "title": "短视频",
+      "url": "/tulingzhouyu/db22bv/myecbvscgqv6rasz",
+      "toc_path": [
+        "Java基础",
+        "BIO、NIO、AIO有什么区别",
+        "短视频"
+      ],
+      "toc_level": 2,
+      "toc_index": 188,
+      "word_count": 847,
+      "updated_at": "2024-05-27T07:21:27.000Z",
+      "primary_category": "netty-network",
+      "primary_category_name": "Netty与网络编程",
+      "related_categories": [
+        "netty-network",
+        "java-core",
+        "java-concurrency",
+        "ai-llm",
+        "computer-network"
+      ],
+      "question_type": "troubleshooting",
+      "question_type_name": "故障排查题",
+      "levels": [
+        "senior",
+        "campus"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "BIO",
+        "NIO",
+        "AIO",
+        "Java",
+        "IO",
+        "并发",
+        "线程",
+        "AI",
+        "网络"
+      ],
+      "summary": "如果你不是计算机科班没有学过网络，那可能会对BIO、NIO、AIO这些概念一头雾水。哈喽大家好我是徐庶，来用大白话给大家解释一下。首先是BIO它是一种传统的阻塞 I/O 模型。举个例子， 就像你去餐厅吃饭，服务员一个接一个地接待客人。如果有一个客人点的菜很多或者吃得很慢，服务员就得一直等着，不...",
+      "excerpt": "如果你不是计算机科班没有学过网络，那可能会对BIO、NIO、AIO这些概念一头雾水。哈喽大家好我是徐庶，来用大白话给大家解释一下。 首先是 BIO 它是一种传统的 阻塞 I/O 模型 。举个例子， 就像你去餐厅吃饭，服务员一个接一个地接待客人。如果有一个客人点的菜很多或者吃得很慢，服务员就得一直等着，不能去接待其他客人。这就类似BIO模型，每个客户端请求都需要一个独立的线程来处理，如果请求处理时间长，就会阻塞线程，导致服务器资源消耗大，性能受限， 当然可以通过线程池机制改善 。 ​ 然后 NIO 就诞生了 ， 它是一种 非阻塞 I/O 模型 ，在JDK1.4的时候引入。这种模型服务器可以用一个或少量线程来处理所有的客户端请求， 客户端发送的连接请求都会注册到多路复用器上，多路复用器轮询所有连接有I/O请求就进行处理。 就像你去一个自助餐厅吃饭一样，服务员不会一直站在你旁边，而是会间歇性地来查看你是否需要帮助。如果你需要服务，举手示意，服务员就会过来帮你。这里的服务员就是多路复用器，可以为多个客户服务。NIO模型的优点是可以处理大量客户端连接，不需要为每个请求创建一个线程，资源利用效率高，适用于高并发场景。 ​ 最后还有 AIO ，它是一种 异步 I/O 模型 ，在JDK7的时候引入。在这种模型下，操作是异步执行的，当操作完成后会采用自动回调的方式通知服务器。 就像你去一个高级餐厅一样，点完菜后服务员告诉你，菜好了会通知你，不需要你一直等着。然后你可以自由活动，当菜做好了，服务员会直接通知你来取。 这样一来，服务器在发起一个 I/O 操作后，不用等待其完成，而是继续处理其他事情，操作完成后会通过回调机制通知服务器。AIO模型的优点是更加高效，因为服务器在等待 I/O 操作时可以做其他事情，适用于高负载和高性能要求的场景。 ​ 最后给这三种模型分别总结一句话就是： BIO：每个请求一个线程，挨个处理，简单但性能有限。 NIO： 多路复用器轮询所有连接有I/O请求就进行处理 。提高性能。 AIO：异步执行，完成后通知，提高资源利用率和响应速度。 ​ 最后呢 通过一个简单聊天室功能,给大家整理了这3种模式的Java代码示例， 大家需要的可以在评论区扣666进行获取。 代码： https://gitee.com/xscodeit/bio-nio-aio-demo.git"
+    },
+    {
+      "slug": "nttmmftsi3uchf8s",
+      "title": "UNION 与UNION ALL 的区别？",
+      "url": "/tulingzhouyu/db22bv/nttmmftsi3uchf8s",
+      "toc_path": [
+        "Mysql",
+        "UNION 与UNION ALL 的区别？"
+      ],
+      "toc_level": 1,
+      "toc_index": 409,
+      "word_count": 306,
+      "updated_at": "2023-08-28T14:10:17.000Z",
+      "primary_category": "netty-network",
+      "primary_category_name": "Netty与网络编程",
+      "related_categories": [
+        "netty-network",
+        "java-core",
+        "performance-optimization",
+        "mysql-index-transaction"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "NIO",
+        "IO",
+        "性能"
+      ],
+      "summary": "UNION和UNION ALL是在SQL中用于合并查询结果集的操作符，它们之间存在以下区别：UNION：UNION用于合并两个或多个查询结果集，并去除重复的行。它将多个查询的结果合并为一个结果集，并自动去除重复的行。在执行UNION操作时，数据库会进行额外的去重操作，这可能会带来一定的性能开销...",
+      "excerpt": "UNION和UNION ALL是在SQL中用于合并查询结果集的操作符，它们之间存在以下区别： UNION： UNION用于合并两个或多个查询结果集，并去除重复的行。它将多个查询的结果 合并为一个结果集，并自动去除重复的行。 在执行UNION操作时，数据库会进行额外的去重操作，这可能会带来一定的性能开销。 UNION ALL： UNION ALL同样 用于合并查询结果集，但不去除重复的行。 它将多个查询的结果简单地合并在一起，包括重复的行。相比于UNION，UNION ALL不进行去重操作，因此执行效率更高。 总结来说： 在使用时，可以根据具体的需求来选择合适的操作符。如果需要去除重复的行，可以使用UNION；如果不需要去重，或者对性能要求较高，可以使用UNION ALL。需要注意的是，使用UNION或UNION ALL时，要求被合并的查询结果的列数和列类型保持一致。"
+    },
+    {
+      "slug": "nyz74xb13w2mxhgh",
+      "title": "RestTemplate连接池怎么优化？",
+      "url": "/tulingzhouyu/db22bv/nyz74xb13w2mxhgh",
+      "toc_path": [
+        "Spring",
+        "高级篇",
+        "RestTemplate连接池怎么优化？"
+      ],
+      "toc_level": 2,
+      "toc_index": 456,
+      "word_count": 358,
+      "updated_at": "2024-06-28T05:37:15.000Z",
+      "primary_category": "netty-network",
+      "primary_category_name": "Netty与网络编程",
+      "related_categories": [
+        "netty-network",
+        "computer-network",
+        "performance-optimization",
+        "java-concurrency",
+        "java-thread-pool"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "性能",
+        "优化",
+        "并发",
+        "线程",
+        "线程池"
+      ],
+      "summary": "有同学私信我说面试被问RestTemplate连接池怎么优化， 直接问懵了，   数据库连接池、线程池我知道， RestTemplate连接池是个啥？RestTemplate是通过建立http连接进行远程访问的，其实http连接也是有池化概念的，不过RestTemplate默认没有使用连接池，...",
+      "excerpt": "有同学私信我说面试被问RestTemplate连接池怎么优化， 直接问懵了， 数据库连接池、线程池我知道， RestTemplate连接池是个啥？ RestTemplate是通过建立http连接进行远程访问的，其实http连接也是有池化概念的，不过RestTemplate默认没有使用连接池，而是每次远程访问都会创建一个新的http连接，那我们应该知道， 每次 http连接 都会进行 tcp的3次握手和4次挥手， 如果在高并发场景下，其实可以通过连接池的方式， 建立长连接， 这样省去了每次建立新的连接带来的性能消耗。 ​ 可以直接针对RestTemplate配置ClientHttpRequestFactory为 okHttp或者httpClient， 他们都提供了现成的连接池实现。可以设置最大连接数， 空闲连接存活时长。 当然 1.http连接池不是万能的,过多的长连接会占用服务器资源,导致其他服务受阻 2.http连接池只适用于请求是经常访问同一主机(或同一个接口)的情况下 3.并发数不高的情况下资源利用率低下 ​ 好如果视频对你有帮助可以三连支持， 需要RestTemplate连接池示例代码可以评论区扣666 ​ ​"
+    },
+    {
+      "slug": "om32fi26bha6ufgm",
+      "title": "💎网络面试题集合",
+      "url": "/tulingzhouyu/db22bv/om32fi26bha6ufgm",
+      "toc_path": [
+        "网络专题",
+        "💎网络面试题集合"
+      ],
+      "toc_level": 1,
+      "toc_index": 604,
+      "word_count": 6622,
+      "updated_at": "2025-12-11T07:28:02.000Z",
+      "primary_category": "netty-network",
+      "primary_category_name": "Netty与网络编程",
+      "related_categories": [
+        "netty-network",
+        "computer-network",
+        "os-linux",
+        "java-core",
+        "java-concurrency"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle",
+        "senior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "BIO",
+        "NIO",
+        "TCP",
+        "HTTP",
+        "WebSocket",
+        "网络",
+        "进程",
+        "线程",
+        "内存",
+        "文件",
+        "注解",
+        "异常",
+        "并发"
+      ],
+      "summary": "1. 实时消息推送的方案1.1. 场景：我们都遇到过这种场景：在刷短视频的时候当别人评论或者点赞了你的视频，系统会主动给你推送一条动态。在跟别人在线聊天的时候也需要实时感知到",
+      "excerpt": "实时消息推送的方案 场景： 我们都遇到过这种场景： 在刷短视频的时候当别人评论或者点赞了你的视频，系统会主动给你推送一条动态。 在跟别人在线聊天的时候也需要实时感知到 3. 在进行多人在线游戏的时候需要实时知道别人出的牌和释放的技能： 4.甚至在线下使用一些共享设备比如共享单车， 当在手机点击“开锁”，系统也会实时推送消息给共享单车进行开锁： 给大家介绍几个常见的实现方案： Github地址 文中所提到的案例我都一一的做了实现 https://gitee.com/xscodeit/xushu_springboot_demos.git 短轮询 ​ 轮询( polling )应该是实现消息推送方案中最简单的一种，这里我们暂且将轮询分为 短轮询 和 长轮询 。 短轮询很好理解，指定的时间间隔，由浏览器向服务器发出 HTTP 请求，服务器实时返回未读消息数据给客户端，浏览器再做渲染显示。 一个简单的JS定时器就可以搞定，每秒钟请求一次未读消息数接口，返回的数据展示即可。 效果还是可以的，短轮询实现固然简单，缺点也是显而易见，由于推送数据并不会频繁变更，无论后端此时是否有新的消息产生，客户端都会进行请求，势必会对服务端造成很大压力，浪费带宽和服务器资源。 长轮询 ​ 长轮询是对上边短轮询的一种改进版本，在尽可能减少对服务器资源浪费的同时，保证消息的相对实时性。长轮询在中间件中应用的很广泛，比如 Nacos 和 apollo 配置中心，消息队列 kafka 、 RocketMQ 中都有用到长轮询。 这次我使用 apollo 配置中心实现长轮询的方式，应用了一个类 DeferredResult ，它是在 servelet3.0 后经过Spring封装提供的一种异步请求机制，直意就是延迟结果。 DeferredResult 可以允许容器线程快速释放占用的资源，不阻塞请求线程，以此接受更多的请求提升系统的吞吐量，然后启动异步工作线程处理真正的业务逻辑，处理完成调用 DeferredResult.setResult(200) 提交响应结果。 下边我们用长轮询来实现消息推送。 因为一个ID可能会被多个长轮询请求监听，所以我采用了 guava 包提供的 Multimap 结构存放长轮询，一个key可以对应多个value。一旦监听到key发生变化，对应的所有长轮询都会响应。前端得到非请求超时的状态码，知晓数据变更，主动查询未读消息数接口，更新页面数据。 当请求超过设置的超时时间，会抛出 AsyncRequestTimeoutException 异常，这里直接用 @ControllerAdvice 全局捕获统一返回即可，前端获取约定好的状态码后再次发起长轮询请求，如此往复调用。 我们来测试一下，首先页面发起长轮询请求 /polling/watch/10086 监听消息更变，请求被挂起，"
+    },
+    {
+      "slug": "xk3gf97y8262m7qu",
+      "title": "为什么有了HTTP，还需要WebSocket协议？",
+      "url": "/tulingzhouyu/db22bv/xk3gf97y8262m7qu",
+      "toc_path": [
+        "网络专题",
+        "为什么有了HTTP，还需要WebSocket协议？"
+      ],
+      "toc_level": 1,
+      "toc_index": 606,
+      "word_count": 1446,
+      "updated_at": "2024-09-04T05:10:24.000Z",
+      "primary_category": "netty-network",
+      "primary_category_name": "Netty与网络编程",
+      "related_categories": [
+        "netty-network",
+        "computer-network",
+        "security-auth",
+        "performance-optimization",
+        "devops-release"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "TCP",
+        "HTTP",
+        "WebSocket",
+        "网络",
+        "安全",
+        "加密",
+        "性能",
+        "发布"
+      ],
+      "summary": "HTTP是基于TCP协议的，同一时间里，客户端和服务器只能有一方主动发数据，是半双工通信。通常，打开某个网页，我们每点击一次网页上的某个选项，前端就会发送一次HTTP请求，网站返回一次HTTP响应。这种由客户端主动请求，服务器响应的方式满足大部分网页的功能场景。但这种情况下，服务器不会主动给客...",
+      "excerpt": "HTTP 是基于TCP协议的，同一时间里，客户端和服务器只能有一方主动发数据，是半双工通信。 通常，打开某个网页，我们每点击一次网页上的某个选项，前端就会发送一次HTTP请求，网站返回一次HTTP响应。这种由客户端主动请求，服务器响应的方式满足大部分网页的功能场景。但这种情况下，服务器不会主动给客户端发消息。而类似网页游戏这样的场景，是需要客户端和服务器之间互相主动发大量数据的。 因此，我们需要一个基于TCP的新协议，即新的 应用层协议WebSocket 。 WebSocket是什么？ WebSocket 是一种用于在单个 TCP 连接上进行 全双工通信 的网络协议。它使用类似于 HTTP 的握手来建立连接，然后使用单独的持久连接来进行通信。这种方式使得 WebSocket 可以在浏览器和服务器之间进行实时通信，而不需要多次发送 HTTP 请求来获取数据。这意味着连接是持久的，它一直保持打开，直到有一方主动关闭连接。这使得 WebSocket 非常适合用于实时应用程序，因为它不需要不断地建立和关闭连接。 WebSocket怎样建立连接？ WebSocket 连接通常在客户端（例如浏览器）和服务器之间建立。客户端发送一个 HTTP 请求来建立连接，然后服务器返回一个确认消息，表示已建立连接。之后，客户端和服务器可以通过这个连接进行双向通信。客户端可以向服务器发送消息，服务器也可以向客户端发送消息。消息可以是任意的字节数组，并且可以使用任意的格式进行编码。 WebSocket 是一种必不可少的客户端—服务器通信工具，需要充分了解其实用性并避免使用场景才能从其最大潜力中获益。 WebSocket的实际用途 最常见的用途是在实时应用程序开发中，它有助于在客户端持续显示数据。由于后端服务器不断发回此数据，WebSocket 允许在已打开的连接中不间断地推送或传输此数据，使此类数据传输更快，并利用了应用程序的性能。 聊天应用程序开发人员在一次性交换、发布、广播消息等操作中调用 WebSocket 。由于使用相同的 WebSocket 连接来发送或接收消息，因此通信变得简单、轻量、快捷。 在进行游戏应用程序开发的同时，服务器必须不间断地接收数据，而不要求刷新 UI。WebSocket在不影响游戏应用程序 UI 的情况下实现了这一目标。 从上述几个示例中，我们大概知道了在什么情况下不太适合使用，例如数据交互周期很长，甚至几小时一次的情况或只需要一次性处理数据时，不应采用 WebSocket协议。在这些情况下，使用 HTTP 协议是一个明智的选择。 由于 HTTP 和 WebSocket 都用于应用程序通信，因此人们常常感到困惑，很难从这两者中选择一个。 WebSocket 与 HTTP 的选择 WebSocket 是一种框架双向协议。与此相反，HTTP 是一种单向协议，作用"
+    },
+    {
+      "slug": "nf78fw4uxpl84fq7",
+      "title": "什么是缓冲区？在网络编程中，为什么使用缓冲区是重要的？",
+      "url": "/tulingzhouyu/db22bv/nf78fw4uxpl84fq7",
+      "toc_path": [
+        "网络专题",
+        "什么是缓冲区？在网络编程中，为什么使用缓冲区是重要的？"
+      ],
+      "toc_level": 1,
+      "toc_index": 625,
+      "word_count": 536,
+      "updated_at": "2023-08-27T11:36:12.000Z",
+      "primary_category": "netty-network",
+      "primary_category_name": "Netty与网络编程",
+      "related_categories": [
+        "netty-network",
+        "computer-network",
+        "os-linux",
+        "performance-optimization"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "网络编程",
+        "网络",
+        "内存",
+        "文件",
+        "性能",
+        "优化"
+      ],
+      "summary": "缓冲区就像是一个临时存储区，类似于你在做作业时用来放草稿的纸。在计算机领域，缓冲区是一块内存区域，用来临时存储数据，等待处理或传输。就像你先把想法写在草稿纸上，然后再把它们整理好写在最终的纸上一样。在网络编程中，缓冲区的作用也类似。当计算机之间进行数据传输，比如发送网页、图片或文件，数据往往不...",
+      "excerpt": "缓冲区就像是一个临时存储区，类似于你在做作业时用来放草稿的纸。在计算机领域，缓冲区是一块内存区域，用来临时存储数据，等待处理或传输。就像你先把想法写在草稿纸上，然后再把它们整理好写在最终的纸上一样。 在网络编程中，缓冲区的作用也类似。当计算机之间进行数据传输，比如发送网页、图片或文件，数据往往不是一次性就能传输完的。而且，网络传输可能会受到延迟或不稳定的影响。这时候，就像使用草稿纸一样，我们使用缓冲区来暂时存储数据，然后逐步地将数据发送或接收。 缓冲区的重要性在于它能够带来很多好处： 性能优化： 缓冲区允许将数据分批次传输，减少了频繁的数据传输操作，提高了效率。 数据处理： 缓冲区允许程序一次性处理大块数据，而不需要等待每个小数据块的到达。这对于复杂的数据操作非常有用。 网络延迟： 缓冲区可以处理网络传输中的延迟问题。数据先被放入缓冲区，然后在适当的时机一起发送，从而减少了由于网络延迟引起的等待时间。 稳定性： 缓冲区还有助于防止数据丢失。如果数据一下子全部发送，中间出了问题，可能会导致数据丢失。但是使用缓冲区，数据被分成小块，即使一部分数据丢失，其他部分仍然可以正常传输。 总之，在网络编程中，缓冲区就像是一个中转站，可以帮助数据的传输更加顺利、高效，同时还能提高程序的稳定性。"
+    },
+    {
+      "slug": "houxyd9nq0fty57g",
+      "title": "TCP粘包和拆包问题是如何产生的，以及如何在网络编程中处理这些问题。",
+      "url": "/tulingzhouyu/db22bv/houxyd9nq0fty57g",
+      "toc_path": [
+        "网络专题",
+        "TCP粘包和拆包问题是如何产生的，以及如何在网络编程中处理这些问题。"
+      ],
+      "toc_level": 1,
+      "toc_index": 626,
+      "word_count": 576,
+      "updated_at": "2023-08-27T11:41:29.000Z",
+      "primary_category": "netty-network",
+      "primary_category_name": "Netty与网络编程",
+      "related_categories": [
+        "netty-network",
+        "computer-network"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "TCP",
+        "网络编程",
+        "网络"
+      ],
+      "summary": "嗨！当然可以，我来用通俗易懂的语言解释一下。想象一下你正在通过网络给朋友发短信，但是你们之间的消息不是一次只能传一条，而是可以把几条消息放在一个大包裹里一起发送。这就是TCP粘包和拆包问题的由来。TCP粘包：就好比你给朋友发了两条短信，但它们却被放在同一个大包裹里发出去，接收方可能会一下子收到...",
+      "excerpt": "嗨！当然可以，我来用通俗易懂的语言解释一下。 想象一下你正在通过网络给朋友发短信，但是你们之间的消息不是一次只能传一条，而是可以把几条消息放在一个大包裹里一起发送。这就是TCP粘包和拆包问题的由来。 TCP粘包 ：就好比你给朋友发了两条短信，但它们却被放在同一个大包裹里发出去，接收方可能会一下子收到两条短信，而不是分开接收。这就是粘包问题，接收方难以确定消息的边界。 TCP拆包 ：再想象一下，你给朋友发的一条短信因为某些原因被分成了两个部分，接收方可能会先收到一部分，然后另一部分稍后才到达。这就是拆包问题，接收方无法准确地组合消息。 在网络编程中，我们要想办法解决这些问题： 处理粘包问题 ： 消息边界标识 ：在消息中加入特殊标识，表示消息的结束，接收方通过这个标识来分割消息。 固定长度消息 ：规定每条消息的长度，不足的话用空格或零来填充。 使用更高层协议 ：比如在应用层使用JSON或XML，这些格式可以包含消息长度信息。 处理拆包问题 ： 消息长度标识 ：在消息开头加入消息长度信息，接收方先读取长度，再读取相应长度的消息内容。 固定长度消息 ：如果每条消息都是固定长度，就不会有拆包问题。 使用更高层协议 ：高层协议中可以使用标签、分隔符等方式区分不同的消息。 总之，网络编程中的粘包和拆包问题源于TCP传输特性，但通过一些技巧和规范的处理方式，我们可以有效地避免或解决这些问题，确保数据传输的准确性和完整性。"
+    },
+    {
+      "slug": "ylxm2g3tzebbcbhc",
+      "title": "深入剖析：Netty 为何是 Java 网络编程的性能之王？",
+      "url": "/tulingzhouyu/db22bv/ylxm2g3tzebbcbhc",
+      "toc_path": [
+        "Netty",
+        "深入剖析：Netty 为何是 Java 网络编程的性能之王？"
+      ],
+      "toc_level": 1,
+      "toc_index": 631,
+      "word_count": 1686,
+      "updated_at": "2026-01-09T08:48:47.000Z",
+      "primary_category": "netty-network",
+      "primary_category_name": "Netty与网络编程",
+      "related_categories": [
+        "netty-network",
+        "java-concurrency",
+        "os-linux",
+        "java-core",
+        "performance-optimization"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "senior",
+        "middle",
+        "campus"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "Netty",
+        "BIO",
+        "NIO",
+        "网络编程",
+        "并发",
+        "多线程",
+        "线程",
+        "锁",
+        "synchronized",
+        "ThreadLocal",
+        "操作系统",
+        "Linux",
+        "Java",
+        "性能"
+      ],
+      "summary": "在 Java 的中间件领域（如 Dubbo, RocketMQ, Zookeeper, Spark），Netty 几乎无处不在。当我们需要开发高性能、高并发的网络应用时，Netty 也是首选。究竟是什么让 Netty 拥有如此惊人的吞吐量和极低的延迟？本文将从IO 模型、内存管理、锁机制优化等...",
+      "excerpt": "在 Java 的中间件领域（如 Dubbo, RocketMQ, Zookeeper, Spark），Netty 几乎无处不在。当我们需要开发高性能、高并发的网络应用时，Netty 也是首选。 究竟是什么让 Netty 拥有如此惊人的吞吐量和极低的延迟？本文将从 IO 模型 、 内存管理 、 锁机制优化 等五个核心维度，揭秘 Netty 的高性能之道。 1. 核心引擎：异步事件驱动的 NIO 模型 Netty 的高性能首先建立在非阻塞 I/O（NIO）的基础之上，但它不仅仅是简单的 NIO 封装，而是实现了一个高效的 Reactor 线程模型 。 1.1 传统 BIO 的痛点 在传统的 BIO（阻塞 I/O）模型中，每个连接都需要一个独立的线程来处理。当连接数达到数万时，线程上下文切换（Context Switch）的开销将耗尽 CPU 资源，系统瞬间崩溃。 1.2 Netty 的 Reactor 模式 Netty 采用了 “主从 Reactor 多线程模型” （Main-Sub Reactor），这也是它能轻松应对百万级并发的关键： BossGroup (Main Reactor) ：专门负责“接待客人”。它只处理 OP_ACCEPT 事件（即连接请求）。一旦连接建立，它迅速将连接注册到 WorkerGroup 中的某个线程上，然后立刻返回去接收新的连接。 WorkerGroup (Sub Reactor) ：专门负责“服务客人”。它处理 OP_READ / OP_WRITE 事件。每个 Worker 线程都绑定了一个 Selector ，并通过一个死循环（EventLoop）不断轮询其管理的所有连接是否有数据到达。 性能优势 ： 极少的线程数 ：只需少量线程（通常为 CPU 核心数 * 2）即可管理成千上万个连接。 非阻塞 ：I/O 读写不再阻塞线程，CPU 利用率极大提高。 2. 极致的数据传输：Zero-Copy (零拷贝) 在网络传输中，“拷贝”是最昂贵的操作之一。Netty 在应用层和操作系统层都实现了“零拷贝”，将 CPU 从繁重的数据搬运中解放出来。 2.1 操作系统层面的零拷贝 ( FileRegion ) 当需要发送文件时（例如静态资源服务器），Netty 支持 FileRegion ，底层调用 Java NIO 的 transferTo 方法（对应 Linux 的 sendfile 系统调用）。 传统方式 ：硬盘 -> 内核缓冲 -> 用户缓冲 -> 内核 Socket 缓冲 -> 网卡。需要 4 次拷贝，4 次上下文切换。 Netty 方式 ：硬盘 -> 内核缓冲 -> 网卡。 数据根本不经过 JVM 内存 ，极大降低了 GC 压力和 CPU 开销。 2.2 Netty 应用层面的零拷贝 ( CompositeByteBuf ) 这是"
+    },
+    {
+      "slug": "grqcu1gkfrg016z6",
+      "title": "Netty的ByteBuf与ByteBuffer相比的优势",
+      "url": "/tulingzhouyu/db22bv/grqcu1gkfrg016z6",
+      "toc_path": [
+        "Netty",
+        "Netty的ByteBuf与ByteBuffer相比的优势"
+      ],
+      "toc_level": 1,
+      "toc_index": 632,
+      "word_count": 740,
+      "updated_at": "2024-08-05T12:36:07.000Z",
+      "primary_category": "netty-network",
+      "primary_category_name": "Netty与网络编程",
+      "related_categories": [
+        "netty-network",
+        "performance-optimization",
+        "computer-network",
+        "os-linux"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "Netty",
+        "网络编程",
+        "性能",
+        "容量",
+        "网络",
+        "内存"
+      ],
+      "summary": "ByteBuf 是 Netty 提供的一个用于字节数据操作的缓冲区。它解决了 ByteBuffer 的诸多局限性，提供了更加灵活、高效的内存管理功能，并且支持多种操作方式，适用于复杂网络编程场景。ByteBuf 与 ByteBuffer 相比的优势读写指针分离ByteBuffer 只有一个指针...",
+      "excerpt": "ByteBuf 是 Netty 提供的一个用于字节数据操作的缓冲区。它解决了 ByteBuffer 的诸多局限性，提供了更加灵活、高效的内存管理功能，并且支持多种操作方式，适用于复杂网络编程场景。 ByteBuf 与 ByteBuffer 相比的优势 读写指针分离 ByteBuffer 只有一个指针，当从写模式切换到读模式时，需要显式调用 flip() 方法。而 ByteBuf 拥有独立的 readerIndex 和 writerIndex ，不用显式转换读写模式，读取和写入间的操作非常直观。 示例代码： 容量自动扩展 ByteBuffer 的容量是固定的，超出容量时需要手动创建新的缓冲区并迁移数据。而 ByteBuf 的容量可以自动扩展，便于处理未知大小的数据流。 示例代码： 池化机制 ByteBuf 提供了池化机制，通过 PooledByteBufAllocator 实现对缓冲区的重用，减少内存分配和回收的开销。这对于性能要求高的应用非常重要。 示例代码： 更丰富的API ByteBuf 提供了更多的操作方法，如随机访问、标记恢复读写指针、多种数据类型读写等，极大地方便了编程。 示例代码： 示例代码：将ByteBuf与ByteBuffer进行比较 从代码可以看出， ByteBuf 在使用上更加简洁和灵活，避免了 ByteBuffer 中的一些繁琐步骤，如 flip() 的调用。此外， ByteBuf 多样的功能和高效的内存管理令人更加得心应手，特别是对高性能网络编程要求较高的场景。 结论 综上所述， ByteBuf 不仅解决了 ByteBuffer 的一些局限，还提供了许多高级功能，如读写指针分离、自动容量扩展和池化机制等，使其成为高性能网络编程的理想选择。希望这些解释能够帮助你更好地理解 ByteBuf 及其优势。"
+    },
+    {
+      "slug": "pmr9xbb2e85445xs",
+      "title": "Netty的心跳机制怎么实现的",
+      "url": "/tulingzhouyu/db22bv/pmr9xbb2e85445xs",
+      "toc_path": [
+        "Netty",
+        "Netty的心跳机制怎么实现的"
+      ],
+      "toc_level": 1,
+      "toc_index": 634,
+      "word_count": 1324,
+      "updated_at": "2024-08-05T12:36:56.000Z",
+      "primary_category": "netty-network",
+      "primary_category_name": "Netty与网络编程",
+      "related_categories": [
+        "netty-network",
+        "java-core",
+        "performance-optimization"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "Netty",
+        "NIO",
+        "异常",
+        "IO",
+        "RT"
+      ],
+      "summary": "Netty 中的心跳机制通常用于保持客户端和服务器之间的长连接，以便在连接空闲一段时间后发送“心跳”消息来检测连接状态，避免连接意外断开。Netty 提供了一些工具和类来便捷地实现心跳机制。以下是如何在 Netty 中实现心跳机制的详细步骤和示例代码：步骤添加 IdleStateHandler...",
+      "excerpt": "Netty 中的心跳机制通常用于保持客户端和服务器之间的长连接，以便在连接空闲一段时间后发送“心跳”消息来检测连接状态，避免连接意外断开。Netty 提供了一些工具和类来便捷地实现心跳机制。 以下是如何在 Netty 中实现心跳机制的详细步骤和示例代码： 步骤 添加 IdleStateHandler ： Netty 提供的 IdleStateHandler 可以检测连接的空闲状态，根据设定的时间触发相应的事件。 实现处理心跳事件的处理器 ： 通过继承 ChannelInboundHandlerAdapter 或 ChannelDuplexHandler ，处理 IdleStateEvent 事件，发送心跳消息或关闭连接。 在 Pipeline 中添加处理器 ： 将 IdleStateHandler 和自定义的心跳处理器添加到 ChannelPipeline 中。 示例代码 以下示例展示了如何实现一个简单的 Netty 心跳机制： 服务端 客户端 代码解释 服务端代码解释 ： ServerBootstrap ：配置和启动 NIO 服务端。 NioServerSocketChannel ：指定服务端的通道类型为 NIO。 IdleStateHandler ：添加到 Pipeline 中，检测连接的空闲状态。这段代码中配置了 READ_IDLE 5 秒，即连接 5 秒未读取数据时触发空闲事件。 ServerHeartbeatHandler ：自定义的处理器，处理空闲事件（心跳检测）。在发生读空闲事件时，发送心跳消息“HEARTBEAT”给客户端。遇到异常时关闭连接。 客户端代码解释 ： Bootstrap ：配置和启动 NIO 客户端。 NioSocketChannel ：指定客户端的通道类型为 NIO。 IdleStateHandler ：添加到 Pipeline 中，检测连接的空闲状态。配置了 ALL_IDLE 5 秒，即连接 5 秒既未读取也未写入数据时触发空闲事件。 ClientHeartbeatHandler ：自定义的处理器，处理空闲事件（心跳检测）。在发生读写空闲事件时，发送心跳消息“HEARTBEAT”给服务器。处理服务器的心跳响应消息并打印。遇到异常时关闭连接。 通过以上代码示例和详细注释，您可以更好地理解 Netty 中心跳机制的实现方式。Netty 提供的 IdleStateHandler 非常便利，能够有效简化心跳检测的实现，确保连接在长时间闲置时保持活跃状态。"
+    },
+    {
+      "slug": "rexk3p7tkufftatu",
+      "title": "Netty如何处理粘包与拆包",
+      "url": "/tulingzhouyu/db22bv/rexk3p7tkufftatu",
+      "toc_path": [
+        "Netty",
+        "Netty如何处理粘包与拆包"
+      ],
+      "toc_level": 1,
+      "toc_index": 636,
+      "word_count": 1074,
+      "updated_at": "2024-08-05T12:37:51.000Z",
+      "primary_category": "netty-network",
+      "primary_category_name": "Netty与网络编程",
+      "related_categories": [
+        "netty-network",
+        "computer-network",
+        "performance-optimization",
+        "project-system-design",
+        "java-core"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "Netty",
+        "TCP",
+        "网络编程",
+        "网络",
+        "性能",
+        "高并发",
+        "IO"
+      ],
+      "summary": "在网络编程中，粘包和拆包是常见的问题，特别是在使用TCP协议进行通讯时。Netty作为一个高性能的网络框架，提供了多种方法来处理粘包和拆包问题。什么是粘包和拆包粘包：指的是发送方将几段数据连续发送到网络中，接收方将若干段数据粘合在一起作为一次接收到的数据。拆包：指的是发送方一次性发送的数据由于...",
+      "excerpt": "在网络编程中，粘包和拆包是常见的问题，特别是在使用TCP协议进行通讯时。Netty作为一个高性能的网络框架，提供了多种方法来处理粘包和拆包问题。 什么是粘包和拆包 粘包 ：指的是发送方将几段数据连续发送到网络中，接收方将若干段数据粘合在一起作为一次接收到的数据。 拆包 ：指的是发送方一次性发送的数据由于某种原因被分成了多次发送，接收方在接收时将这些数据分成了若干次接收。 处理粘包和拆包的方法 Netty提供了一系列的 ByteToMessageDecoder 的具体实现类来解决粘包和拆包问题，包括但不限于以下几种方法： 固定长度的帧解码器（FixedLengthFrameDecoder） 这种方法适用于消息长度固定的场景。解码器会按照指定的长度来截取数据，从而避免粘包和拆包问题。 行分隔符解码器（LineBasedFrameDecoder） 这种方法适用于以特定字符（如换行符）为分隔符的场景。解码器会在检测到分隔符时将数据截取出来。 分隔符解码器（DelimiterBasedFrameDecoder） 这种方法适用于使用特定分隔符来标志消息边界的场景。可以自定义分隔符，如换行符、空格等。 基于长度的帧解码器（LengthFieldBasedFrameDecoder） 这种方法适用于消息包含长度字段的场景。解码器通过读取长度字段的值来确定每个消息的边界。 具体示例 下面是一个示例，展示了如何使用 LengthFieldBasedFrameDecoder 和自定义解码器来处理粘包和拆包问题。 假设我们定义了一种协议，每条消息的前4个字节表示消息的长度，接下来的字节表示实际的消息内容。 编码器和解码器 设置ChannelPipeline 总结 Netty 提供了一系列的解码器，如FixedLengthFrameDecoder、LineBasedFrameDecoder、DelimiterBasedFrameDecoder和LengthFieldBasedFrameDecoder，以处理粘包和拆包问题。 你可以根据你的具体需求选择合适的解码器，也可以自定义自己的解码器。 通过合理配置ChannelPipeline，可以高效地解决TCP通信中的粘包和拆包问题。 这些处理方法结合了Netty强大的内存管理和高效的网络IO，使得Netty在处理高并发网络通信时表现出色。"
+    },
+    {
+      "slug": "svyiga5kp5glyb5o",
+      "title": "Netty如何处理闲置连接",
+      "url": "/tulingzhouyu/db22bv/svyiga5kp5glyb5o",
+      "toc_path": [
+        "Netty",
+        "Netty如何处理闲置连接"
+      ],
+      "toc_level": 1,
+      "toc_index": 637,
+      "word_count": 797,
+      "updated_at": "2024-08-05T12:38:24.000Z",
+      "primary_category": "netty-network",
+      "primary_category_name": "Netty与网络编程",
+      "related_categories": [
+        "netty-network",
+        "java-core"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "Netty"
+      ],
+      "summary": "在 Netty 中，比如一个客户端连接长时间没有发送数据，这种闲置连接（idle connection）该如何监测并处理？Netty是通过 IdleStateHandler 来处理闲置连接的。IdleStateHandler 是一个 ChannelHandler，用于检测读、写或读写的空闲状态...",
+      "excerpt": "在 Netty 中，比如一个客户端连接长时间没有发送数据，这种闲置连接（idle connection）该如何监测并处理？Netty是通过 IdleStateHandler 来处理闲置连接的。 IdleStateHandler 是一个 ChannelHandler，用于检测读、写或读写的空闲状态，并在空闲状态发生时触发 IdleStateEvent 事件。你可以通过捕获和处理这些事件来执行相应的操作，比如关闭闲置连接。 使用 IdleStateHandler 处理闲置连接 以下是如何使用 IdleStateHandler 处理闲置连接的步骤： 添加 IdleStateHandler 到 ChannelPipeline ： IdleStateHandler 的构造函数接受三个参数：读空闲时间、写空闲时间和读写空闲时间。你可以根据需要设置这些参数。 捕获 IdleStateEvent 事件 ： 创建一个自定义的 ChannelInboundHandler 来捕获 IdleStateEvent 事件，并在事件发生时执行相应的处理逻辑。 代码示例 以下是一个完整的示例，展示了如何在 Netty 中使用 IdleStateHandler 处理闲置连接： 服务器端代码 自定义处理器 ： 初始化 ChannelPipeline ： 启动服务器 ： 客户端代码 客户端代码类似于服务器端，只需要在客户端的 ChannelPipeline 中添加 IdleStateHandler 和自定义的处理器即可。 总结 IdleStateHandler 是 Netty 提供的处理闲置连接的工具。 通过在 ChannelPipeline 中添加 IdleStateHandler，可以检测读、写或读写空闲事件。 自定义处理器可以捕获 IdleStateEvent 事件，并执行相应的处理逻辑，如关闭闲置连接。 配置 IdleStateHandler 的读、写和读写空闲时间，可以灵活地应对不同的应用场景。 通过这些步骤，Netty 可以有效地监测并处理闲置连接，确保资源的合理利用和系统的稳定运行。"
+    },
+    {
+      "slug": "ekoctkf5nztzo0ky",
+      "title": "Netty是如何实现零拷贝的",
+      "url": "/tulingzhouyu/db22bv/ekoctkf5nztzo0ky",
+      "toc_path": [
+        "Netty",
+        "Netty是如何实现零拷贝的"
+      ],
+      "toc_level": 1,
+      "toc_index": 638,
+      "word_count": 967,
+      "updated_at": "2024-08-05T12:38:46.000Z",
+      "primary_category": "netty-network",
+      "primary_category_name": "Netty与网络编程",
+      "related_categories": [
+        "netty-network",
+        "os-linux",
+        "performance-optimization",
+        "observability-troubleshooting",
+        "java-core"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "Netty",
+        "网络编程",
+        "操作系统",
+        "内存",
+        "文件",
+        "性能",
+        "优化",
+        "CPU"
+      ],
+      "summary": "零拷贝（Zero-Copy）是一种优化技术，旨在减少或完全消除数据在内存中的复制过程，从而提高系统的性能和效率。在传统的数据传输过程中，数据可能会被多次复制，例如从磁盘到内核缓冲区，然后从内核缓冲区复制到用户缓冲区，再从用户缓冲区复制到另一块内存。这些多次复制不但浪费了 CPU 资源，还增加了...",
+      "excerpt": "零拷贝（Zero-Copy）是一种优化技术，旨在减少或完全消除数据在内存中的复制过程，从而提高系统的性能和效率。在传统的数据传输过程中，数据可能会被多次复制，例如从磁盘到内核缓冲区，然后从内核缓冲区复制到用户缓冲区，再从用户缓冲区复制到另一块内存。这些多次复制不但浪费了 CPU 资源，还增加了内存带宽的使用。 零拷贝的工作原理 在实现零拷贝的过程中，数据不会在内存中被多次复制，而是直接从一个地址移动到另一个地址。常见的零拷贝技术包括： sendfile 系统调用 ：直接在内核空间中将文件数据发送到网络 socket。 内存映射文件（Memory-Mapped Files） ：使用 mmap 系统调用将文件映射到内存空间，然后可以直接操作内存中的数据。 DMA（直接内存访问） ：硬件级别的技术，允许设备直接访问主存而不需要通过 CPU。 Netty 中如何实现零拷贝 Netty 通过多种机制来实现零拷贝，具体如下： FileRegion 类和 sendfile 系统调用 ： FileRegion 是 Netty 提供的一个接口，代表一个文件区域。通过使用 FileRegion ，Netty 可以直接将文件数据从文件系统发送到网络通道。在底层，Netty 利用了操作系统提供的 sendfile 系统调用，这个调用允许直接在内核空间传输文件数据到网络接口，不需要用户空间的中转。 CompositeByteBuf ： CompositeByteBuf 是 Netty 中的一个组合缓冲区，它允许将多个 ByteBuf 实例组合成一个逻辑上的 ByteBuf 而不需要实际的数据复制。这在需要处理包含多个部分（比如头部和主体）的数据时特别有用。 缓冲区的切片（Slicing）和复制（Duplication） ： ByteBuf 提供了切片和复制功能，这些功能允许创建共享同一内存区域的多个 ByteBuf 实例，从而避免不必要的数据拷贝。 包装现有的缓冲区（Wrapped Buffer） ： 可以通过 Unpooled.wrappedBuffer 方法将现有的数组或 ByteBuffer 包装成 ByteBuf ，而不需要进行数据的复制。 直接内存（Direct Memory） ： Netty 支持直接内存（Direct Memory），即使用 DirectByteBuf 。直接内存缓冲区是分配在堆外内存的，可以直接被操作系统和硬件设备访问，避免了 JVM 堆和操作系统之间的数据复制。 总结 零拷贝技术通过减少数据在内存中的复制过程，显著提高了数据传输的性能。Netty 通过一系列的机制，包括 sendfile 系统调用、 CompositeByteBuf 、缓冲区的切片和复制、包装现有的缓冲区、以及直接内存，来实现零拷贝。这些技术的结合，使得 Netty 成为一个高效且强"
+    },
+    {
+      "slug": "yhaq1qke0gp6lf9l",
+      "title": "Netty中用了哪些设计模式",
+      "url": "/tulingzhouyu/db22bv/yhaq1qke0gp6lf9l",
+      "toc_path": [
+        "Netty",
+        "Netty中用了哪些设计模式"
+      ],
+      "toc_level": 1,
+      "toc_index": 640,
+      "word_count": 722,
+      "updated_at": "2024-08-05T12:39:28.000Z",
+      "primary_category": "netty-network",
+      "primary_category_name": "Netty与网络编程",
+      "related_categories": [
+        "netty-network",
+        "performance-optimization",
+        "computer-network",
+        "java-core",
+        "ai-llm"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "Netty",
+        "性能",
+        "网络"
+      ],
+      "summary": "Netty 作为一个高性能、异步事件驱动的网络框架，其实现中运用了多种设计模式，以提高代码复用性、可维护性以及系统的灵活性和可扩展性。下面列出了一些 Netty 中主要的设计模式及其实现：1. 责任链模式（Chain of Responsibility）Netty 的 ChannelPipel...",
+      "excerpt": "Netty 作为一个高性能、异步事件驱动的网络框架，其实现中运用了多种设计模式，以提高代码复用性、可维护性以及系统的灵活性和可扩展性。下面列出了一些 Netty 中主要的设计模式及其实现： 1. 责任链模式（Chain of Responsibility） Netty 的 ChannelPipeline 和 ChannelHandler 是责任链模式的典型实现。所有的 ChannelHandler 都链接在一个链中，每个 Handler 处理自己的部分，然后将事件传递到下一个 Handler。 示例代码 ： 2. 观察者模式（Observer Pattern） Netty 的 Future 和 ChannelFutureListener 功能实现了观察者模式。当异步操作完成时，Future 通知所有的注册监听器。 示例代码 ： 3. Reactor 模式（Reactor Pattern） Reactor 模式是 Netty 的核心，用于处理和分发 I/O 事件。Netty 的 EventLoopGroup 和 Channel 是这一模式的具体实现。 示例代码 ： 4. 工厂模式（Factory Pattern） Netty 使用工厂模式来创建不同的 Channel 和 EventLoop 实例。例如， NioServerSocketChannel 和 NioEventLoopGroup 都是实现了相应接口的具体工厂类。 示例代码 ： 5. 模板方法模式（Template Method Pattern） Netty 中的 ChannelInitializer 类使用了模板方法模式。开发者可以通过继承 ChannelInitializer 类，并实现 initChannel 方法来配置自定义的 ChannelPipeline。 示例代码 ： 6. 单例模式（Singleton Pattern） Netty 中的一些核心组件，如 PooledByteBufAllocator 使用了单例模式，以确保全局范围内只存在一个实例，并且可以高效地进行内存分配。 示例代码 ： 7. 装饰者模式（Decorator Pattern） ChannelHandler 的装饰链实际上也是装饰者模式的一个典型实现。每个 ChannelHandler 可以在处理数据之前或之后添加一些附加的功能，而不用修改其他的处理器。 示例代码 ： 这些设计模式在 Netty 中被有机结合使用，使得 Netty 成为一个功能强大、灵活且高性能的网络通信框架。通过这些设计模式，Netty 能够更好地应对不同的应用场景和需求，提高开发效率与代码质量。"
+    },
+    {
+      "slug": "ihqntb112grs4ag2",
+      "title": "Netty线上如何做性能调优",
+      "url": "/tulingzhouyu/db22bv/ihqntb112grs4ag2",
+      "toc_path": [
+        "Netty",
+        "Netty线上如何做性能调优"
+      ],
+      "toc_level": 1,
+      "toc_index": 641,
+      "word_count": 1121,
+      "updated_at": "2024-08-05T12:41:05.000Z",
+      "primary_category": "netty-network",
+      "primary_category_name": "Netty与网络编程",
+      "related_categories": [
+        "netty-network",
+        "performance-optimization",
+        "os-linux",
+        "observability-troubleshooting",
+        "jvm-memory-gc"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "Netty",
+        "TCP",
+        "性能",
+        "优化",
+        "调优",
+        "瓶颈",
+        "线程",
+        "内存",
+        "文件",
+        "线上",
+        "监控",
+        "日志"
+      ],
+      "summary": "进行 Netty 程序的性能调优，可以从多个方面入手，包括线程模型、内存管理、数据压缩和连接管理等。以下是一些关键的性能调优策略和常见的坑：1. 优化线程模型调优策略：调整线程池的大小：要确保线程池大小（NioEventLoopGroup）适合你的应用程序。通常，线程池大小为 CPU 核心数的...",
+      "excerpt": "进行 Netty 程序的性能调优，可以从多个方面入手，包括线程模型、内存管理、数据压缩和连接管理等。以下是一些关键的性能调优策略和常见的坑： 1. 优化线程模型 调优策略： 调整线程池的大小 ：要确保线程池大小（ NioEventLoopGroup ）适合你的应用程序。通常，线程池大小为 CPU 核心数的 2 倍。 分开业务逻辑和 IO 线程 ：将业务逻辑处理从 IO 处理线程池分离出来，避免阻塞 IO 线程。 示例代码： 常见的坑： 线程池大小设置不当 ：过大或过小的线程池会影响性能，导致 CPU 负载不均或过度切换。 阻塞 IO 线程 ：避免在 IO 线程中执行耗时操作，如数据库查询或文件 I/O。 2. 内存管理 调优策略： 使用池化内存分配 ：启用 PooledByteBufAllocator 以提高内存分配效率。 减少对象创建和销毁 ：尽量重用对象，减少垃圾回收的频率。 示例代码： 常见的坑： 内存泄漏 ：确保 ByteBuf 被正确释放，避免内存泄漏。 频繁的垃圾回收 ：监控 GC 日志，避免频繁的 Full GC。 3. 数据压缩和编解码 调优策略： 使用合适的编解码器 ：选择高效的编解码器，如 Protobuf、JSON 等。 数据压缩 ：对大数据块进行压缩，减少网络带宽消耗。 示例代码： 常见的坑： 选择不当的编解码器 ：不适合的数据格式会增加序列化和反序列化的开销。 过度压缩 ：压缩和解压缩会消耗 CPU 资源，权衡压缩率和 CPU 开销。 4. 连接管理 调优策略： 保持连接活跃 ：使用心跳检测机制确保连接的长久性。 连接池化 ：对于客户端，使用连接池来提高连接复用率。 示例代码： 常见的坑： 未处理的连接断开 ：确保处理好连接断开和重新连接逻辑。 5. 调整 TCP 参数 调优策略： 调整 TCP 缓冲区大小 ：根据网络带宽和延迟，适当调整 SO_RCVBUF 和 SO_SNDBUF 。 启用 TCP_NODELAY ：在延迟敏感的场景下(比如实时聊天，金融融交易实时数据)，启用 TCP_NODELAY 以禁用 Nagle 算法(Nagle 算法会导致小数据包被缓存，直到缓存区数据量达到一定大小后才会发送)。 示例代码： 常见的坑： 错误的缓冲区设置 ：过大的缓冲区会增加内存消耗，过小的缓冲区会导致频繁的发送和接收。 误用 TCP_NODELAY ：不在意延迟的场景下，不启用 TCP_NODELAY 以避免额外的 CPU 开销。 ​ 6. 使用日志和监控 调优策略： 使用日志和监控工具 ：借助工具如 JMX、Grafana 和 Prometheus 监控应用性能。 配置合适的日志级别 ：在生产环境下，避免过度的日志写操作。 示例代码： 常见的坑： 忽略监控数据 ：未能及时发现和处理性能瓶颈。 过多的日志 ：日志过多会影响应用性能。 综"
+    },
+    {
+      "slug": "co8nsw9wletch16k",
+      "title": "什么是WebSocket？NGINX如何支持WebSocket协议？",
+      "url": "/tulingzhouyu/db22bv/co8nsw9wletch16k",
+      "toc_path": [
+        "Nginx",
+        "什么是WebSocket？NGINX如何支持WebSocket协议？"
+      ],
+      "toc_level": 1,
+      "toc_index": 710,
+      "word_count": 559,
+      "updated_at": "2024-09-03T11:18:09.000Z",
+      "primary_category": "netty-network",
+      "primary_category_name": "Netty与网络编程",
+      "related_categories": [
+        "netty-network",
+        "computer-network",
+        "java-core",
+        "microservices-governance",
+        "os-linux"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "TCP",
+        "HTTP",
+        "WebSocket",
+        "负载均衡",
+        "文件"
+      ],
+      "summary": "WebSocket是一种在单个TCP连接上实现全双工通信的协议，它允许服务器和客户端之间进行双向通信，而无需通过多次HTTP请求和响应来完成。与传统的HTTP请求-响应模式不同，WebSocket连接保持打开状态，可以在连接建立后随时进行双向数据交换，这对于实时通信应用非常有用，如在线聊天、实...",
+      "excerpt": "WebSocket是一种在单个TCP连接上实现全双工通信的协议，它允许服务器和客户端之间进行双向通信，而无需通过多次HTTP请求和响应来完成。与传统的HTTP请求-响应模式不同，WebSocket连接保持打开状态，可以在连接建立后随时进行双向数据交换，这对于实时通信应用非常有用，如在线聊天、实时游戏等。 NGINX可以通过适当的配置来支持WebSocket协议。以下是在NGINX中支持WebSocket的一些配置步骤： 安装更新的版本 ： 确保你正在使用更新的NGINX版本，因为WebSocket支持在较早的版本中可能不太完善。建议使用NGINX 1.3.13及更高版本。 配置HTTP请求头部 ： WebSocket连接需要一些特定的HTTP头部字段来协商和建立连接。在客户端发起WebSocket连接时，它会发送一个升级请求，包括 Upgrade 头部和 Connection 头部。服务器需要适当地响应这些头部，以指示连接已升级为WebSocket连接。 启用WebSocket模块 ： 确保已在编译NGINX时启用WebSocket模块。在配置文件中，你可以使用 proxy_set_header 指令来设置Upgrade和Connection头部，以及其他可能需要的头部。 后端服务器设置 ： 如果WebSocket连接需要与后端服务器进行通信，确保后端服务器能够正确处理WebSocket连接，包括协商和处理WebSocket数据帧。 测试连接 ： 在配置完成后，可以使用WebSocket客户端工具或浏览器的开发工具来测试WebSocket连接，以确保连接已成功建立。 总之，在配置NGINX以支持WebSocket时，关键是正确处理升级请求和响应头部，以及在后端服务器上正确处理WebSocket连接。通过合适的配置，NGINX可以用作WebSocket代理，实现WebSocket连接的转发和负载均衡。"
+    },
+    {
+      "slug": "aozt2l8rd7tekp13",
+      "title": "如何防止恶意请求和爬虫访问你的网站？有哪些NGINX模块可以实现这些功能？",
+      "url": "/tulingzhouyu/db22bv/aozt2l8rd7tekp13",
+      "toc_path": [
+        "Nginx",
+        "如何防止恶意请求和爬虫访问你的网站？有哪些NGINX模块可以实现这些功能？"
+      ],
+      "toc_level": 1,
+      "toc_index": 714,
+      "word_count": 604,
+      "updated_at": "2023-09-04T11:33:06.000Z",
+      "primary_category": "netty-network",
+      "primary_category_name": "Netty与网络编程",
+      "related_categories": [
+        "netty-network",
+        "computer-network",
+        "security-auth",
+        "java-core",
+        "project-system-design"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "HTTP",
+        "安全",
+        "XSS",
+        "方案"
+      ],
+      "summary": "防止恶意请求和爬虫访问你的网站是网站安全的重要方面之一。NGINX提供了一些模块和方法，可以帮助你实现这些功能。以下是一些常用的NGINX模块和方法，可以用来防止恶意请求和爬虫访问： ngx_http_access_module：这个模块允许你设置IP地址的访问控制，可以通过在NGINX配置中...",
+      "excerpt": "防止恶意请求和爬虫访问你的网站是网站安全的重要方面之一。NGINX提供了一些模块和方法，可以帮助你实现这些功能。以下是一些常用的NGINX模块和方法，可以用来防止恶意请求和爬虫访问： ngx_http_access_module ： 这个模块允许你设置IP地址的访问控制，可以通过在NGINX配置中使用 allow 和 deny 指令来允许或拒绝特定IP地址的访问。你可以使用这个模块来阻止恶意IP地址的访问。 ngx_http_geo_module ： 这个模块允许你创建地理位置基础的访问规则。你可以定义特定国家或地区的IP地址范围，并设置相应的访问规则，从而阻止来自特定地理位置的恶意请求。 ngx_http_limit_req_module 和 ngx_http_limit_conn_module ： 这些模块允许你设置请求速率限制和连接数限制。 ngx_http_limit_req_module 用于限制请求速率， ngx_http_limit_conn_module 用于限制并发连接数。这可以帮助防止恶意请求和爬虫过多占用资源。 ngx_http_bot_protection_module ： 这个第三方模块专门用于识别和阻止爬虫和恶意机器人的访问。它可以通过检查User-Agent头部、IP地址和其他特征来辨别这些访问，并采取相应的措施。 ngx_http_referer_module ： 这个模块允许你设置防盗链，即限制只有从特定来源链接的请求才能访问资源。这可以防止其他网站的恶意爬虫访问你的资源。 ngx_http_rewrite_module ： 使用重写规则，你可以根据请求的URL或其他标志重定向、拒绝或处理请求。这可以用于识别和处理恶意请求。 ngx_http_security_headers_module ： 这个模块允许你设置安全相关的HTTP头部，如X-Frame-Options、X-XSS-Protection等，从而增强网站的安全性。 要注意，虽然这些NGINX模块和方法可以帮助防止恶意请求和爬虫访问，但恶意行为的多样性和不断变化可能需要综合多种策略来进行有效的防御。使用WAF（Web应用防火墙）和专门的安全解决方案也可以进一步提高网站的安全性。"
+    },
+    {
+      "slug": "yiseoedhvy5m0ygp",
+      "title": "如何设置HTTP压缩以减少数据传输量？在NGINX中如何启用Gzip压缩？",
+      "url": "/tulingzhouyu/db22bv/yiseoedhvy5m0ygp",
+      "toc_path": [
+        "Nginx",
+        "如何设置HTTP压缩以减少数据传输量？在NGINX中如何启用Gzip压缩？"
+      ],
+      "toc_level": 1,
+      "toc_index": 716,
+      "word_count": 467,
+      "updated_at": "2023-09-04T11:32:20.000Z",
+      "primary_category": "netty-network",
+      "primary_category_name": "Netty与网络编程",
+      "related_categories": [
+        "netty-network",
+        "computer-network",
+        "os-linux"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "HTTP",
+        "文件"
+      ],
+      "summary": "HTTP压缩是一种技术，通过在传输数据之前对内容进行压缩，可以显著减少数据的传输量，从而加快页面加载速度并降低带宽消耗。其中一种常见的压缩方法是使用Gzip压缩。在NGINX中，你可以通过以下步骤启用Gzip压缩： 打开NGINX的配置文件（通常是nginx.conf或在/etc/nginx目...",
+      "excerpt": "HTTP压缩是一种技术，通过在传输数据之前对内容进行压缩，可以显著减少数据的传输量，从而加快页面加载速度并降低带宽消耗。其中一种常见的压缩方法是使用Gzip压缩。 在NGINX中，你可以通过以下步骤启用Gzip压缩： 打开NGINX的配置文件（通常是 nginx.conf 或在 /etc/nginx 目录中的其他文件）。 在 http 块内添加以下配置指令来启用Gzip压缩： 保存配置文件并重新加载或重启NGINX，以使配置生效。 以上配置将启用Gzip压缩，并根据配置指令压缩特定的MIME类型的内容。你可以根据需要进行调整，以便最好地满足你的网站的要求。 启用Gzip压缩后，NGINX将自动在发送响应时对适当的内容进行压缩，并在响应头部中添加&quot;Content-Encoding: gzip&quot;头部，以指示客户端对响应进行解压缩。这将显著减少传输数据量，提高页面加载速度。"
+    },
+    {
+      "slug": "vo7e4d75xqznuxi0",
+      "title": "喜马拉雅自研网关技术实践",
+      "url": "/tulingzhouyu/db22bv/vo7e4d75xqznuxi0",
+      "toc_path": [
+        "项目设计场景题",
+        "喜马拉雅自研网关技术实践"
+      ],
+      "toc_level": 1,
+      "toc_index": 866,
+      "word_count": 4887,
+      "updated_at": "2024-07-15T14:21:20.000Z",
+      "primary_category": "netty-network",
+      "primary_category_name": "Netty与网络编程",
+      "related_categories": [
+        "netty-network",
+        "microservices-governance",
+        "computer-network",
+        "os-linux",
+        "java-core"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle",
+        "campus"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "Netty",
+        "HTTP",
+        "熔断",
+        "降级",
+        "超时",
+        "网络",
+        "线程",
+        "内存",
+        "文件",
+        "上下文切换",
+        "String",
+        "异常"
+      ],
+      "summary": "分享内容业务背景架构1.0 之 Tomcat nio + AsyncServlet架构2.0 之 Netty + 全异步 架构3.0 之 Netty + Http2 总结业务背景网关是一个比较成熟了的产品，基本上各大互联网公司都会有网关这个中间件，来解决一些公有业务的上浮，而且能快速的更新迭代...",
+      "excerpt": "分享内容 业务背景 架构1.0 之 Tomcat nio + AsyncServlet 架构2.0 之 Netty + 全异步 架构3.0 之 Netty + Http2 总结 业务背景 网关是一个比较成熟了的产品，基本上各大互联网公司都会有网关这个中间件，来解决一些公有业务的上浮，而且能快速的更新迭代，如果没有网关，要更新一个公有特性，就要推动所有业务方都更新和发布，那是效率极低的事，有网关后，这一切都变得不是问题，喜马拉雅也是一样，用户数增长达到 6 亿多的级别，Web 服务个数达到 600+，基本都接入网关接入，日处理 200 亿加次调用，单机 QPS 高峰达到 4w+。 网关除了要实现最基本的功能反向代理外，还有公有特性，比如黑白名单，流控，鉴权，熔断，API 发布，监控和报警等，我们还根据业务方的需求实现了流量调度，流量 Copy，预发布，智能化升降级，流量预热等相关功能，下面就我们网关在这些方便的一些实践经验以及发展历程，下面是喜马拉雅网关的演化过程： 架构1.0 Tomcat nio + AsyncServlet 网关在架构设计时最为关键点，就是网关在接收到请求，调用后端服务时不能阻塞 Block，否则网关的吞吐量很难上去，因为最耗时的就是调用后端服务这个远程调用过程，如果这里是阻塞的，那你的 tomcat 的工作线程都 block 主了，在等待后端服务响应的过程中，不能去处理其他的请求, 这个地方一定要异步 架构图如下： 这版我们实现单独的 Push 层，作为网关收到响应后，响应客户端时，通过这层实现，和后端服务的通信是 HttpNioClient，对业务的支持黑白名单，流控，鉴权，API 发布等功能，这版只是功能上达到网关的要求，但是处理能力很快就成了瓶颈，单机 qps 到 5k 的时候，就会不停的 full gc，后面通过 dump 线上的堆分析，发现全是 tomcat 缓存了很多 http 的请求，因为 tomcat 默认会缓存 200 个 requestProcessor，每个 prcessor 都关联了一个 request，还有就是 servlet3.0 tomcat 的异步实现会出现内存泄漏，后面通过减少这个配置，效果明显。但性能肯定就下降了，总结了下，基于 tomcat 做为接入端，有如下几个问题： Tomcat 自身的问题 缓存太多，tomcat 用了很多对象池技术，特别是一个 processorCache 默认 200，在并发回收时会存在没有把 jmx 里的对象删除，导致内存泄露，流量一高很容易触发 gc。 内存 copy，tomcat 的默认是用堆内存 processorCache 默认 200，以数据需要读到堆内，而我们后端服务是 netty，有堆外内存，需要通过数次 copy。 tomcat 还有个问题是读 body "
+    },
+    {
+      "slug": "upiq8ypgl2ch1hay",
+      "title": "石墨文档百万级长连接技术实践",
+      "url": "/tulingzhouyu/db22bv/upiq8ypgl2ch1hay",
+      "toc_path": [
+        "项目设计场景题",
+        "石墨文档百万级长连接技术实践"
+      ],
+      "toc_level": 1,
+      "toc_index": 869,
+      "word_count": 5481,
+      "updated_at": "2024-07-15T14:21:20.000Z",
+      "primary_category": "netty-network",
+      "primary_category_name": "Netty与网络编程",
+      "related_categories": [
+        "netty-network",
+        "redis-cache",
+        "spring-cloud",
+        "performance-optimization",
+        "mq-kafka"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "senior",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "HTTP",
+        "WebSocket",
+        "Redis",
+        "缓存",
+        "Gateway",
+        "注册中心",
+        "性能",
+        "优化",
+        "压测",
+        "QPS",
+        "吞吐",
+        "Kafka"
+      ],
+      "summary": "本次分享内容网关1.0架构痛点网关2.0架构优化性能压测总结1 引言在石墨文档的部分业务中，例如文档分享、评论、幻灯片演示和文档表格跟随等场景，涉及到多客户端数据同步和服务端批量数据推送的需求，一般的 HTTP 协议无法满足服务端主动 Push 数据的场景，因此选择采用 WebSocket 方...",
+      "excerpt": "本次分享内容 网关1.0架构痛点 网关2.0架构优化 性能压测 总结 1 引言 在石墨文档的部分业务中，例如文档分享、评论、幻灯片演示和文档表格跟随等场景，涉及到多客户端数据同步和服务端批量数据推送的需求，一般的 HTTP 协议无法满足服务端主动 Push 数据的场景，因此选择采用 WebSocket 方案进行业务开发。 随着石墨文档业务发展，目前日连接峰值已达百万量级，日益增长的用户连接数和不符合目前量级的架构设计导致了内存和 CPU 使用量急剧增长，因此我们考虑对网关进行重构。 2 网关 1.0 网关 1.0 是使用 Node.js 基于 Socket.IO 进行修改开发的版本，很好的满足了当时用户量级下的业务场景需求。 2.1 架构 网关 1.0 版本架构设计图 网关 1.0 客户端连接流程： 用户通过 NGINX 连接网关，该操作被业务服务感知； 业务服务感知到用户连接后，会进行相关用户数据查询，再将消息 Pub 到 Redis； 网关服务通过 Redis Sub 收到消息； 查询网关集群中的用户会话数据，向客户端进行消息推送。 2.2 痛点 虽然 1.0 版本的网关在线上运行良好，但是不能很好的支持后续业务的扩展，并且有以下几个问题需要解决： 资源消耗 ：Nginx 仅使用 TLS 解密，请求透传，产生了大量的资源浪费，同时之前的 Node 网关性能不好，消耗大量的 CPU、内存。 维护与观测 ：未接入石墨的监控体系，无法和现有监控告警联通，维护上存在一定的困难； 业务耦合问题 ：业务服务与网关功能被集成到了同一个服务中，无法针对业务部分性能损耗进行针对性水平扩容，为了解决性能问题，以及后续的模块扩展能力，都需要进行服务解耦。 3 网关 2.0 网关 2.0 需要解决很多问题：石墨文档内部有很多组件：文档、表格、幻灯片和表单等等。在 1.0 版本中组件对网关的业务调用可以通过：Redis、Kafka 和 HTTP 接口，来源不可查，管控困难。 此外，从性能优化的角度考虑也需要对原有服务进行解耦合，将 1.0 版本网关拆分为网关功能部分和业务处理部分，网关功能部分为 WS-Gateway：集成用户鉴权、TLS 证书验证和 WebSocket 连接管理等；业务处理部分为 WS-API：组件服务直接与该服务进行 gRPC 通信。可针对具体的模块进行针对性扩容；服务重构加上 Nginx 移除，整体硬件消耗显著降低；服务整合到石墨监控体系。 3.1 整体架构 网关 2.0 版本架构设计图 网关 2.0 客户端连接流程： 客户端与 WS-Gateway 服务通过握手流程建立 WebSocket 连接； 连接建立成功后，WS-Gateway 服务将会话进行节点存储，将连接信息映射关系缓存到 Redis 中，并通过 Kafka 向 WS-API 推送客户端上线消息"
+    },
+    {
+      "slug": "wue67oykz0ilmhle",
+      "title": "为什么有了HTTP，还需要WebSocket？从“请求-响应”到“双向奔赴”的协议演进",
+      "url": "/tulingzhouyu/db22bv/wue67oykz0ilmhle",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "为什么有了HTTP，还需要WebSocket？从“请求-响应”到“双向奔赴”的协议演进"
+      ],
+      "toc_level": 2,
+      "toc_index": 1024,
+      "word_count": 1819,
+      "updated_at": "2025-10-27T05:27:21.000Z",
+      "primary_category": "netty-network",
+      "primary_category_name": "Netty与网络编程",
+      "related_categories": [
+        "netty-network",
+        "computer-network",
+        "project-system-design",
+        "microservices-governance",
+        "performance-optimization"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "TCP",
+        "HTTP",
+        "WebSocket",
+        "网络",
+        "方案",
+        "降级",
+        "超时",
+        "性能",
+        "优化"
+      ],
+      "summary": "在构建现代Web应用的征途中，我们时常会遇到一个经典问题：当HTTP协议已经如此普及和强大时，我们为什么还需要引入WebSocket？答案的核心在于一个词：实时性。本文将带您层层深入，从HTTP的固有局限出发，探索为实现“伪实时”而诞生的各种变通方案，并最终揭示WebSocket作为终极解决方...",
+      "excerpt": "在构建现代Web应用的征途中，我们时常会遇到一个经典问题：当HTTP协议已经如此普及和强大时，我们为什么还需要引入WebSocket？答案的核心在于一个词： 实时性 。本文将带您层层深入，从HTTP的固有局限出发，探索为实现“伪实时”而诞生的各种变通方案，并最终揭示WebSocket作为终极解决方案的革命性意义。 一、 起点：HTTP与WebSocket的本质区别 从根本上说，HTTP（超文本传输协议）被设计为一种 单向的、无状态的 通信协议。它的工作模式就像我们去餐厅点餐：你（客户端）向服务员（服务器）提出一个明确的请求（“我要一份宫保鸡丁”），服务员在做好后把菜给你（响应）。上完这道菜，这次服务就结束了。如果你还想要一碗米饭，必须再次发起一个新的请求。 而WebSocket则完全不同，它是一种 双向的、持久化的 协议。它更像是在你和厨师之间建立了一条专属的对讲机通道。一旦通道建立，你随时可以告诉厨师你的新需求，而厨师那边一旦有新菜品完成，也可以立刻通过对讲机告诉你来取，无需你反复询问。 二、 困境：HTTP的“半双工”之痛 HTTP的单向性本质，决定了它在实时通信场景下的核心痛点： 服务器无法主动向客户端推送信息 。服务器就像一部只能接听的电话，它永远无法主动拨号给客户端。想象一个在线聊天应用，如果你的朋友给你发了一条消息，服务器是无法立刻将这条消息“推”到你的浏览器上的。它只能被动地等待你的浏览器下一次来“问”它有没有新消息。此外，每次HTTP请求都包含着冗长的头部信息，对于需要频繁通信的场景，这无疑是巨大的性能浪费。 三. 探索与妥协：伪实时方案的演进 为了绕开HTTP的限制，聪明的工程师们想出了一系列“曲线救国”的方案。 方案一：定时轮询 (Polling) - 简单粗暴的暴力破解 这是最直观的解决方案。客户端设置一个定时器（例如，每隔2秒），不知疲倦地向服务器发起请求：“有新数据吗？”。这种方法的优点是实现极其简单，但缺点也同样致命： 资源浪费 ：绝大多数的请求都是无效的，服务器一次又一次地回答“没有”，这极大地消耗了双方的计算和网络资源。 延迟不可控 ：数据的实时性完全取决于轮询间隔。间隔太短，服务器压力山大；间隔太长，用户体验则会大打折扣。 方案二：长轮询 (Long-Polling) - 更具智慧的耐心等待 长轮询是对定时轮询的智能优化。客户端发起请求后，服务器不再立即响应“没有”。相反，它会“憋个大招”——将这个连接暂时挂起，直到 真正有新数据 或者连接超时为止。一旦有新数据，服务器会立即将数据通过这个挂起的连接返回给客户端。客户端收到数据后，马上发起下一轮长轮询。 这个方案显著减少了无效请求，提升了效率。但它并非完美： 服务器压力 ：为每个客户端维持一个挂起的连接，对服务器的并发处理能力是一个考验。 非真正持久 ：每次响应或超时后，连接"
+    },
+    {
+      "slug": "pvv1nnituvpgl4os",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/pvv1nnituvpgl4os",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "为什么有了HTTP，还需要WebSocket？从“请求-响应”到“双向奔赴”的协议演进",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1025,
+      "word_count": 26,
+      "updated_at": "2025-10-27T09:22:53.000Z",
+      "primary_category": "netty-network",
+      "primary_category_name": "Netty与网络编程",
+      "related_categories": [
+        "netty-network",
+        "computer-network",
+        "ai-llm"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "HTTP",
+        "WebSocket"
+      ],
+      "summary": "📎为什么有Http协议了还需要WebSocket协议？.html链接: https://pan.baidu.com/s/14p60BdSfm_dT4LTl14tN_g?pwd=pfvj提取码: pfvj",
+      "excerpt": "链接: https://pan.baidu.com/s/14p60BdSfm_dT4LTl14tN_g?pwd=pfvj 提取码: pfvj"
+    },
+    {
+      "slug": "kkgfvebbl3i8ag83",
+      "title": "面试官问：Web 实时消息推送核心方案有哪些？6 大方案全解析（含代码 + 架构图）",
+      "url": "/tulingzhouyu/db22bv/kkgfvebbl3i8ag83",
+      "toc_path": [
+        "高频面试问题",
+        "鹏宇老师",
+        "面试官问：Web 实时消息推送核心方案有哪些？6 大方案全解析（含代码 + 架构图）"
+      ],
+      "toc_level": 2,
+      "toc_index": 1199,
+      "word_count": 4783,
+      "updated_at": "2025-11-28T14:28:56.000Z",
+      "primary_category": "netty-network",
+      "primary_category_name": "Netty与网络编程",
+      "related_categories": [
+        "netty-network",
+        "project-system-design",
+        "computer-network",
+        "java-core",
+        "spring-boot"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle",
+        "campus"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "TCP",
+        "HTTP",
+        "WebSocket",
+        "架构设计",
+        "方案",
+        "高并发",
+        "降级",
+        "Java",
+        "异常",
+        "Spring Boot"
+      ],
+      "summary": "在 Java 后端面试中，“实时消息推送” 是高频考点。无论是初级开发岗位考察基础方案，还是中高级岗位考察架构设计，掌握消息推送的核心方案及选型逻辑，都能让你在面试中脱颖而出。本文将基于 6 大核心方案，从原理、代码实现、优缺点、适用场景四个维度展开详解。一、什么是消息推送？消息推送是网站 /...",
+      "excerpt": "在 Java 后端面试中，“实时消息推送” 是高频考点。无论是初级开发岗位考察基础方案，还是中高级岗位考察架构设计，掌握消息推送的核心方案及选型逻辑，都能让你在面试中脱颖而出。本文将基于 6 大核心方案，从原理、代码实现、优缺点、适用场景四个维度展开详解。 一、什么是消息推送？ 消息推送是网站 / APP 运营方向用户当前网页或移动设备主动推送信息的机制，主要分为 Web 端和移动端两类，核心目标是实现 “事件触发后，Web 页面通知小红点实时 + 1”，让用户及时感知未读消息。 1.1 核心需求拆解 实时性：事件触发后（如他人分享资源、后台推送通知），客户端需快速感知； 可视化：未读消息数通过 “小红点” 直观展示，支持实时更新； 可靠性：消息不丢失、不重复推送。 1.2 数据存储模型 消息推送的底层依赖数据存储记录消息明细，表结构设计如下（MySQL 示例）： 二、消息推送核心模式：推（Push）vs 拉（Pull） 所有消息推送方案本质上基于两种核心模式，理解这两种模式是选型的基础： 2.1 推模式（Push） 定义：服务端主动将消息推送给客户端，无需客户端主动请求，实时性强； 代表方案：SSE、WebSocket、MQTT、iframe 流； 核心优势：实时性高，减少客户端无效请求； 核心劣势：服务端需维护连接，高并发场景对服务器压力较大。 2.2 拉模式（Pull） 定义：客户端主动向服务端请求数据，服务端被动返回，实时性取决于请求频率； 代表方案：短轮询、长轮询； 核心优势：实现简单，服务端无连接维护压力； 核心劣势：实时性弱（取决于轮询间隔），存在大量无效请求。 三、6 大核心方案详解（含代码 + 流程图） 方案 1：短轮询（Polling） 3.1 核心原理 客户端按固定时间间隔（如 1 秒）向服务端发送 HTTP 请求，服务端无论是否有新消息，都立即返回响应（含未读消息数），客户端收到响应后更新小红点。 3.2 代码实现（前端伪代码） 3.3 优缺点 优点：实现简单，无需服务端特殊配置，兼容所有浏览器； 缺点：无效请求占比高（大部分请求无新消息），浪费带宽和服务器资源；实时性取决于轮询间隔（间隔越短，资源消耗越大）。 3.4 工作流程 3.5 适用场景 简单原型开发、小流量场景、对实时性要求低的需求（如后台数据统计更新）。 方案 2：长轮询（Long Polling） 3.6 核心原理 短轮询的优化版：客户端发起 HTTP 请求后，服务端若无新消息，不立即返回响应，而是 “hold 住” 请求（通过异步机制），直到有新消息产生或请求超时（如 30 秒），才返回响应；客户端收到响应后，立即发起下一次请求，形成 “请求 - hold - 响应 - 再请求” 的循环。 3.7 代码实现（Java 后端伪代码） 基于 Spring Boot 的长轮"
+    }
+  ]
+}

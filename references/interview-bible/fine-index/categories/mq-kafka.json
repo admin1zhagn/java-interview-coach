@@ -1,0 +1,867 @@
+{
+  "id": "mq-kafka",
+  "name": "Kafka",
+  "aliases": [
+    "Kafka",
+    "Topic",
+    "Partition",
+    "Consumer",
+    "ISR",
+    "高水位"
+  ],
+  "count": 18,
+  "total_word_count": 78977,
+  "articles": [
+    {
+      "slug": "cvwg6enm2flskiry",
+      "title": "Kafka篇",
+      "url": "/tulingzhouyu/db22bv/cvwg6enm2flskiry",
+      "toc_path": [
+        "面试必看",
+        "大厂真题",
+        "阿里面试真题",
+        "Kafka篇"
+      ],
+      "toc_level": 3,
+      "toc_index": 44,
+      "word_count": 5159,
+      "updated_at": "2024-04-29T12:14:54.000Z",
+      "primary_category": "mq-kafka",
+      "primary_category_name": "Kafka",
+      "related_categories": [
+        "mq-kafka",
+        "mq-rabbitmq",
+        "mq-rocketmq",
+        "mq-general",
+        "observability-troubleshooting"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle",
+        "senior",
+        "campus"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "Kafka",
+        "Topic",
+        "Partition",
+        "Consumer",
+        "ISR",
+        "高水位",
+        "RabbitMQ",
+        "队列",
+        "死信",
+        "RocketMQ",
+        "消息堆积",
+        "重复消费",
+        "MQ"
+      ],
+      "summary": "Why kafka消息队列的作用：异步、削峰填谷、解耦中小型公司，技术挑战不是特别高，用 RabbitMQ （开源、社区活跃）是不错的选择；大型公司，基础架构研发实力较强，用 RocketMQ（Java二次开发） 是很好的选择。如果是大数据领域的实时计算、日志采集等场景，用 Kafka 是业内...",
+      "excerpt": "Why kafka 消息队列的作用： 异步、削峰填谷、解耦 中小型公司 ，技术挑战不是特别高，用 RabbitMQ （开源、社区活跃）是不错的选择；大型公司，基础架构研发实力较强，用 RocketMQ （Java二次开发） 是很好的选择。 如果是 大数据领域 的实时计算、日志采集等场景，用 Kafka 是业内标准的，绝对没问题，社区活跃度很高，绝对不会黄，何况几乎是全世界这个领域的事实性规范。 RabbitMQ RabbitMQ开始是用在电信业务的可靠通信的，也是少有的几款 支持AMQP 协议的产品之一。 优点： 轻量级，快速，部署使用方便 支持灵活的路由配置。RabbitMQ中，在生产者和队列之间有一个交换器模块。根据配置的路由规则，生产者发送的消息可以发送到不同的队列中。路由规则很灵活，还可以自己实现。 RabbitMQ的客户端支持大多数的编程语言，支持AMQP协议。 缺点： 如果有大量消息堆积在队列中，性能会急剧下降 每秒处理几万到几十万的消息。如果应用要求高的性能，不要选择RabbitMQ。 RabbitMQ是Erlang开发的，功能扩展和二次开发代价很高。 RocketMQ 借鉴了Kafka的设计并做了很多改进， 几乎具备了消息队列应该具备的所有特性和功能。 RocketMQ主要用于有序，事务，流计算，消息推送，日志流处理，binlog分发等场景。 经过了历次的双11考验，性能，稳定性可靠性没的说。 java开发，阅读源代码、扩展、二次开发很方便。 对电商领域的响应延迟做了很多优化。 每秒处理几十万的消息，同时响应在毫秒级。如果应用很关注响应时间，可以使用RocketMQ。 性能比RabbitMQ高一个数量级。 支持死信队列，DLX 是一个非常有用的特性。它可以处理 异常情况下，消息不能够被消费者正确消费而被置入死信队列中 的情况，后续分析程序可以通过消费这个死信队列中的内容来分析当时所遇到的异常情况，进而可以 改善和优化系统。 缺点： 跟周边系统的整合和兼容不是很好。 Kafka 高可用 ，几乎所有相关的开源软件都支持，满足大多数的应用场景，尤其是大数据和流计算领域， Kafka高效，可伸缩，消息持久化。支持分区、副本和容错。 对批处理和异步处理做了大量的设计，因此Kafka可以得到非常高的性能。 每秒处理几十万异步消息消息，如果开启了压缩，最终可以达到每秒处理2000w消息的级别。 但是由于是异步的和批处理的，延迟也会高，不适合电商场景。 What Kafka Producer API：允许应用程序将记录流发布到一个或多个Kafka主题。 Consumer API：允许应用程序订阅一个或多个主题并处理为其生成的记录流。 Streams API：允许应用程序充当流处理器，将输入流转换为输出流。 消息Message Kafka的数据单元称为消息。可"
+    },
+    {
+      "slug": "xkl9lun0hgt7erq2",
+      "title": "💎 B站讲的最好的Kafka系列课",
+      "url": "/tulingzhouyu/db22bv/xkl9lun0hgt7erq2",
+      "toc_path": [
+        "系列篇",
+        "💎 B站讲的最好的Kafka系列课"
+      ],
+      "toc_level": 1,
+      "toc_index": 110,
+      "word_count": 3886,
+      "updated_at": "2023-09-07T11:56:37.000Z",
+      "primary_category": "mq-kafka",
+      "primary_category_name": "Kafka",
+      "related_categories": [
+        "mq-kafka",
+        "os-linux",
+        "mq-general",
+        "java-core",
+        "mq-rabbitmq"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "middle",
+        "senior",
+        "campus"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "Kafka",
+        "Topic",
+        "Partition",
+        "Consumer",
+        "Linux",
+        "文件",
+        "MQ",
+        "消息队列",
+        "削峰",
+        "Java",
+        "IO",
+        "RabbitMQ"
+      ],
+      "summary": "Kafka入门什么是消息队列与Kafka简介消息队列（Message Queue，简称MQ），指保存消息的一个容器，本质是个队列。消息（Message）是指在应用之间传送的数据，消息可以非常简单，比如只包含文本字符串，也可以更复杂，可能包含嵌入对象。消息队列（Message Queue）是一种...",
+      "excerpt": "Kafka入门 什么是消息队列与Kafka简介 消息队列（Message Queue，简称MQ），指保存消息的一个容器，本质是个队列。 消息（Message）是指在应用之间传送的数据，消息可以非常简单，比如只包含文本字符串，也可以更复杂，可能包含嵌入对象。 消息队列（Message Queue）是一种应用间的通信方式，消息发送后可以立即返回，有消息系统来确保信息的可靠专递，消息发布者只管把消息发布到MQ中而不管谁来取，消息使用者只管从MQ中取消息而不管谁发布的，这样发布者和使用者都不用知道对方的存在。 Producer：消息生产者，负责产生和发送消息到 Broker； Broker：消息处理中心。负责消息存储、确认、重试等，一般其中会包含多个 queue； Consumer：消息消费者，负责从 Broker 中获取消息，并进行相应处理； 为什么需要消息队列？ 1、屏蔽异构平台的细节：发送方、接收方系统之间不需要了解双方，只需认识消息。 2、异步：消息堆积能力；发送方接收方不需同时在线，发送方接收方不需同时扩容（削峰）。 3、解耦：防止引入过多的API给系统的稳定性带来风险；调用方使用不当会给被调用方系统造成压力，被调用方处理不当会降低调用方系统的响应能力。 4、复用：一次发送多次消费。 5、可靠：一次保证消息的传递。如果发送消息时接收者不可用，消息队列会保留消息，直到成功地传递它。 6、提供路由：发送者无需与接收者建立连接，双方通过消息队列保证消息能够从发送者路由到接收者，甚至对于本来网络不易互通的两个服务，也可以提供 消息路由 。 消息队列有什么优点和缺点？ 核心优点 解耦 异步 削峰 缺点 系统可用性降低：系统引入的外部依赖越多，越容易挂掉。 系统复杂度提高了 一致性问题：消息传递给多个系统，部分执行成功，部分执行失败，容易导致数据不一致 Kafka简介 Kafka是一个分布式流处理系统，流处理系统使它可以像消息队列一样publish或者subscribe消息，分布式提供了容错性，并发处理消息的机制。 Kafka的优势和特点 高吞吐量 ：单机每秒处理几十上百万的消息量。即使存储了许多TB的消息，它也保持稳定的性能。 高性能 ：单节点支持上千个客户端，并保证零停机和零数据丢失，异步化处理机制 持久化： 将消息持久化到磁盘。通过将数据持久化到硬盘以及replica(follower节点)防止数据丢失。 零拷贝 ：减少了很多的拷贝技术，以及可以总体减少阻塞事件，提高吞吐量。 可靠性 ： Kafka是分布式，分区，复制和容错的。 Kafka的特点 ： 顺序读，顺序写 利用Linux的页缓存 分布式系统，易于向外扩展。所有的Producer、Broker和Consumer都会有多个，均为分布式的。无需停机即可扩展机器。多个Producer、Consumer可能是不"
+    },
+    {
+      "slug": "vxnpfud2c295wer5",
+      "title": "RocketMQ的Consumer是如何消费消息的",
+      "url": "/tulingzhouyu/db22bv/vxnpfud2c295wer5",
+      "toc_path": [
+        "Rocketmq",
+        "RocketMQ的Consumer是如何消费消息的"
+      ],
+      "toc_level": 1,
+      "toc_index": 664,
+      "word_count": 901,
+      "updated_at": "2024-08-18T13:07:26.000Z",
+      "primary_category": "mq-kafka",
+      "primary_category_name": "Kafka",
+      "related_categories": [
+        "mq-kafka",
+        "mq-rocketmq",
+        "mq-general",
+        "microservices-governance",
+        "performance-optimization"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "middle",
+        "senior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "Consumer",
+        "RocketMQ",
+        "重复消费",
+        "MQ",
+        "重试",
+        "负载均衡",
+        "性能",
+        "优化"
+      ],
+      "summary": "RocketMQ提供了两种主要的消费模式：推送式消费（Push Consumer）和拉取式消费（Pull Consumer）。我们将主要讨论更常用的推送式消费模式，并提供相应的代码示例。Consumer消费消息的基本流程实例化Consumer：创建并配置一个Consumer实例。订阅主题：指定...",
+      "excerpt": "RocketMQ提供了两种主要的消费模式：推送式消费（Push Consumer）和拉取式消费（Pull Consumer）。我们将主要讨论更常用的推送式消费模式，并提供相应的代码示例。 Consumer消费消息的基本流程 实例化Consumer ：创建并配置一个Consumer实例。 订阅主题 ：指定要订阅的主题和标签。 注册消息监听器 ：实现消息处理逻辑。 启动Consumer ：开始消费消息。 处理消息 ：在监听器中处理接收到的消息。 代码示例 以下是一个基本的Push Consumer的代码示例： 详细解释 Consumer实例化 ： 使用 DefaultMQPushConsumer 类创建Consumer实例，并指定Consumer Group。 Consumer Group用于标识一组具有相同角色的Consumer实例。 设置NameServer地址 ： 使用 setNamesrvAddr() 方法设置RocketMQ NameServer的地址。 设置消费起始位置 ： setConsumeFromWhere() 方法用于指定从哪里开始消费消息。 CONSUME_FROM_FIRST_OFFSET 表示从最早的可用消息开始消费。 订阅主题 ： subscribe() 方法用于订阅指定的主题。 第一个参数是主题名称，第二个参数是标签过滤表达式。&quot;*&quot;表示订阅该主题下的所有消息。 注册消息监听器 ： registerMessageListener() 方法用于注册一个消息监听器。 这里使用的是 MessageListenerConcurrently 接口，适用于并发消费场景。 在 consumeMessage() 方法中实现具体的消息处理逻辑。 消息处理 ： 在监听器的 consumeMessage() 方法中，我们遍历收到的消息列表并打印消息内容。 返回 ConsumeConcurrentlyStatus.CONSUME_SUCCESS 表示消息已成功消费。 启动Consumer ： 调用 start() 方法启动Consumer实例，开始消费消息。 其他重要概念 消费模式 ： Push模式：Broker主动将消息推送给Consumer。 Pull模式：Consumer主动从Broker拉取消息。 消息过滤 ： 可以通过标签（Tag）或自定义属性进行消息过滤。 消费进度 ： RocketMQ会自动管理消费进度，确保消息不会重复消费。 消费失败处理 ： 如果消息处理失败，可以返回 ConsumeConcurrentlyStatus.RECONSUME_LATER ，RocketMQ会稍后重试。 负载均衡 ： 同一个Consumer Group中的多个Consumer实例会自动进行负载均衡，分摊消息的消费。 小结 RocketMQ的"
+    },
+    {
+      "slug": "bubwm3kyevkt68m8",
+      "title": "💎Kafka面试题集合",
+      "url": "/tulingzhouyu/db22bv/bubwm3kyevkt68m8",
+      "toc_path": [
+        "Kafka",
+        "💎Kafka面试题集合"
+      ],
+      "toc_level": 1,
+      "toc_index": 681,
+      "word_count": 14915,
+      "updated_at": "2025-06-19T01:01:02.000Z",
+      "primary_category": "mq-kafka",
+      "primary_category_name": "Kafka",
+      "related_categories": [
+        "mq-kafka",
+        "mq-general",
+        "performance-optimization",
+        "java-core",
+        "mq-rabbitmq"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "senior",
+        "middle",
+        "campus"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "Kafka",
+        "Topic",
+        "Partition",
+        "Consumer",
+        "ISR",
+        "MQ",
+        "消息队列",
+        "削峰",
+        "性能",
+        "调优",
+        "吞吐",
+        "Java",
+        "RabbitMQ"
+      ],
+      "summary": "Kafka入门什么是消息队列与Kafka简介消息队列（Message Queue，简称MQ），指保存消息的一个容器，本质是个队列。消息（Message）是指在应用之间传送的数据，消息可以非常简单，比如只包含文本字符串，也可以更复杂，可能包含嵌入对象。消息队列（Message Queue）是一种...",
+      "excerpt": "Kafka入门 什么是消息队列与Kafka简介 消息队列（Message Queue，简称MQ），指保存消息的一个容器，本质是个队列。 消息（Message）是指在应用之间传送的数据，消息可以非常简单，比如只包含文本字符串，也可以更复杂，可能包含嵌入对象。 消息队列（Message Queue）是一种应用间的通信方式，消息发送后可以立即返回，有消息系统来确保信息的可靠专递，消息发布者只管把消息发布到MQ中而不管谁来取，消息使用者只管从MQ中取消息而不管谁发布的，这样发布者和使用者都不用知道对方的存在。 Producer：消息生产者，负责产生和发送消息到 Broker； Broker：消息处理中心。负责消息存储、确认、重试等，一般其中会包含多个 queue； Consumer：消息消费者，负责从 Broker 中获取消息，并进行相应处理； 为什么需要消息队列？ 1、屏蔽异构平台的细节：发送方、接收方系统之间不需要了解双方，只需认识消息。 2、异步：消息堆积能力；发送方接收方不需同时在线，发送方接收方不需同时扩容（削峰）。 3、解耦：防止引入过多的API给系统的稳定性带来风险；调用方使用不当会给被调用方系统造成压力，被调用方处理不当会降低调用方系统的响应能力。 4、复用：一次发送多次消费。 5、可靠：一次保证消息的传递。如果发送消息时接收者不可用，消息队列会保留消息，直到成功地传递它。 6、提供路由：发送者无需与接收者建立连接，双方通过消息队列保证消息能够从发送者路由到接收者，甚至对于本来网络不易互通的两个服务，也可以提供 消息路由 。 消息队列有什么优点和缺点？ 核心优点 解耦 异步 削峰 缺点 系统可用性降低：系统引入的外部依赖越多，越容易挂掉。 系统复杂度提高了 一致性问题：消息传递给多个系统，部分执行成功，部分执行失败，容易导致数据不一致 Kafka简介 Kafka是一个分布式流处理系统，流处理系统使它可以像消息队列一样publish或者subscribe消息，分布式提供了容错性，并发处理消息的机制。 Kafka的优势和特点 高吞吐量 ：单机每秒处理几十上百万的消息量。即使存储了许多TB的消息，它也保持稳定的性能。 高性能 ：单节点支持上千个客户端，并保证零停机和零数据丢失，异步化处理机制 持久化： 将消息持久化到磁盘。通过将数据持久化到硬盘以及replica(follower节点)防止数据丢失。 零拷贝 ：减少了很多的拷贝技术，以及可以总体减少阻塞事件，提高吞吐量。 可靠性 ： Kafka是分布式，分区，复制和容错的。 Kafka的特点 ： 顺序读，顺序写 利用Linux的页缓存 分布式系统，易于向外扩展。所有的Producer、Broker和Consumer都会有多个，均为分布式的。无需停机即可扩展机器。多个Producer、Consumer可能是不"
+    },
+    {
+      "slug": "eoew281vevvklpuv",
+      "title": "什么是Kafka？有什么主要用途？",
+      "url": "/tulingzhouyu/db22bv/eoew281vevvklpuv",
+      "toc_path": [
+        "Kafka",
+        "什么是Kafka？有什么主要用途？"
+      ],
+      "toc_level": 1,
+      "toc_index": 682,
+      "word_count": 2492,
+      "updated_at": "2026-01-22T05:08:07.000Z",
+      "primary_category": "mq-kafka",
+      "primary_category_name": "Kafka",
+      "related_categories": [
+        "mq-kafka",
+        "java-core",
+        "observability-troubleshooting",
+        "performance-optimization",
+        "project-system-design"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "Kafka",
+        "Topic",
+        "Partition",
+        "Consumer",
+        "ISR",
+        "Java",
+        "序列化",
+        "监控",
+        "告警",
+        "日志",
+        "性能",
+        "吞吐"
+      ],
+      "summary": "1) 什么是 Kafka？Kafka 是一个分布式的高吞吐、可扩展的日志系统和流处理平台。核心不是一个简单的消息队列，而是一个持久化的、可分区的提交日志（commit log），并提供对日志的高吞吐、可并行消费和流式处理能力。主要角色：主题（Topic）：消息的类别/通道。一个主题可以分为若干...",
+      "excerpt": "1) 什么是 Kafka？ Kafka 是一个分布式的高吞吐、可扩展的日志系统和流处理平台。核心不是一个简单的消息队列，而是一个持久化的、可分区的提交日志（commit log），并提供对日志的高吞吐、可并行消费和流式处理能力。 主要角色： 主题（Topic）：消息的类别/通道。一个主题可以分为若干分区（Partition）。 分区（Partition）：Kafka 的并行度单位。每个分区中的消息有序且只在该分区内有序。分区跨 Broker 分布，提供水平扩展能力。 Broker：Kafka 服务器实例。一个集群由多个 Broker 组成，负责存储分区日志、处理生产者/消费者请求。 生产者（Producer）：向一个或多个 Topic 的分区写入消息。 消费者（Consumer）：从 Topic 的分区读取消息。消费者可以组（Consumer Group）来实现并行消费。 Offset：每条消息在分区中的序号，用来定位和提交消费进度。 发展路线：早期依赖 Zookeeper 管理元数据，现今版本逐步支持 KRaft（Kafka 自己的共识层，未来趋向独立于 Zookeeper），提升简化和稳定性。 核心特性包括高吞吐、水平扩展、可持久化、可恰当的“再平衡”以实现并行消费，以及强大的生态系统（Kafka Streams、Connect、Schema Registry、ksqldb 等）。 2) Kafka 的核心概念（与 Java 开发者直接相关） 主题与分区 一个 Topic 可以有一个或多个分区。 写入会根据分区策略落到不同分区（简单轮询、分区器自定义等）。 消费端的并行度由分区数量决定：一个 Consumer Group 中的消费者数量不能超过分区数量。 偏移量（Offset） 记录了每条消息在对应分区中的位置。 consumer 可以选择自动提交偏移量（enable.auto.commit=true）或手动提交，以实现更严格的消费语义。 持久性与副本 分区的日志被持久化到磁盘，Broker 之间可以复制（副本）以提高可靠性和容错性。 Exactly-Once（端到端的“恰好一次”语义） 通过自带的幂等性生产者（idempotent producer）和事务（transactions）来实现。 适用于事件源、金融事件等对重复性敏感的场景。 Kafka Streams 与 Kafka Connect Kafka Streams：在 Java 应用中对 Kafka 的流处理 API，便于实现聚合、转换、窗口化等。 Kafka Connect：现成的连接器生态，便于与数据库、日志系统、文件等外部系统对接。 3) Kafka 的典型用途（Java 场景优先） 实时日志与事件聚合：将应用日志、事件、指标等流式写入 Kafka，后续进行实时分析或存储到数据仓库。 数"
+    },
+    {
+      "slug": "gy9dxx8cf1bgzw8o",
+      "title": "Kafka中的Topic和Partition有什么关系？",
+      "url": "/tulingzhouyu/db22bv/gy9dxx8cf1bgzw8o",
+      "toc_path": [
+        "Kafka",
+        "Kafka中的Topic和Partition有什么关系？"
+      ],
+      "toc_level": 1,
+      "toc_index": 684,
+      "word_count": 3720,
+      "updated_at": "2026-01-22T08:12:48.000Z",
+      "primary_category": "mq-kafka",
+      "primary_category_name": "Kafka",
+      "related_categories": [
+        "mq-kafka",
+        "java-core",
+        "performance-optimization",
+        "observability-troubleshooting",
+        "project-system-design"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "Kafka",
+        "Topic",
+        "Partition",
+        "Consumer",
+        "Java",
+        "String",
+        "性能",
+        "优化",
+        "吞吐",
+        "监控",
+        "日志",
+        "堆积"
+      ],
+      "summary": "Kafka 的设计哲学是构建一个高吞吐量、低延迟、可伸缩的分布式消息系统。Topic 和 Partition 是实现这一目标的核心抽象。理解它们的紧密关系是掌握 Kafka 的基石。1) \"Topic (主题)：消息的逻辑分类\"1.1 \"什么是 Topic?\"graph TD A[\"Topic...",
+      "excerpt": "Kafka 的设计哲学是构建一个高吞吐量、低延迟、可伸缩的分布式消息系统。Topic 和 Partition 是实现这一目标的核心抽象。理解它们的紧密关系是掌握 Kafka 的基石。 1) &quot;Topic (主题)：消息的逻辑分类&quot; 1.1 &quot;什么是 Topic?&quot; &quot;定义&quot; : 在 Kafka 中， Topic （主题）是一个逻辑上的概念，代表了一类消息的集合。你可以把它想象成一个消息队列的名称，或者一个数据流的管道。生产者向特定的 Topic 发送消息，消费者从特定的 Topic 订阅消息。 &quot;特点&quot; : 消息分类 : Topic 提供了一种将不同类型的消息进行逻辑隔离和分类的机制。例如，你可以有一个 orders 主题来处理所有订单相关的消息， user_logs 主题来存储用户行为日志。 多生产者/多消费者 : 多个生产者可以向同一个 Topic 发送消息，多个消费者可以从同一个 Topic 订阅消息。 2) &quot;Partition (分区)：Topic 的物理组成单元&quot; 2.1 &quot;什么是 Partition?&quot; &quot;定义&quot; : Partition （分区）是 Topic 的物理组成单元。每一个 Topic 都可以被划分为一个或多个 Partition 。每个 Partition 都是一个有序的、不可变的消息序列，消息被追加写入，并被消费者按顺序读取。 &quot;特点&quot; : 有序性 : 在一个 Partition 内部 ，消息是严格有序的。这意味着生产者发送消息的顺序与消费者接收消息的顺序是一致的。但需要注意的是，这种有序性仅限于单个 Partition 内部， 不能保证整个 Topic 的消息全局有序 。 不可变性 : 一旦消息被写入 Partition ，它的内容和顺序就不可改变。 分布式存储 : 每个 Partition 都可以存储在不同的 Kafka Broker 上，这使得 Kafka 能够实现数据的水平扩展和高可用性。 并发处理单元 : Partition 是 Kafka 实现消费者并行处理的最小单位。 3) &quot;Topic 与 Partition 的关系：分而治之&quot; 3.1 &quot;逻辑与物理的映射&quot; &quot;总结关系&quot; : Topic 是逻辑概念 ，是消息的分类。 Partition 是物理概念 ，是 Topic 的一个组成部分，也是实际存储消息的单元。 一个 Topic 被逻辑地划分为一个或多个 Partition 。 每个 Partition 都是一个独立的消息日志，可以独立地存储在不同的 Kafka Broker 上。 3.2 &quot;"
+    },
+    {
+      "slug": "vhkyrlrvla5wgc4s",
+      "title": "Kafka的消费消息是如何传递的？",
+      "url": "/tulingzhouyu/db22bv/vhkyrlrvla5wgc4s",
+      "toc_path": [
+        "Kafka",
+        "Kafka的消费消息是如何传递的？"
+      ],
+      "toc_level": 1,
+      "toc_index": 685,
+      "word_count": 3830,
+      "updated_at": "2026-01-22T06:05:31.000Z",
+      "primary_category": "mq-kafka",
+      "primary_category_name": "Kafka",
+      "related_categories": [
+        "mq-kafka",
+        "java-core",
+        "performance-optimization",
+        "microservices-governance",
+        "project-system-design"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "senior",
+        "campus"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "Kafka",
+        "Topic",
+        "Partition",
+        "Consumer",
+        "Java",
+        "性能",
+        "吞吐",
+        "重试",
+        "超时",
+        "负载均衡",
+        "方案",
+        "高并发"
+      ],
+      "summary": "在 Kafka 庞大的消息生态系统中，消息的生产和消费是其核心功能。理解生产者如何高效地将数据写入 Kafka 是基础，而掌握消费者如何可靠、高效地从 Kafka 中拉取并处理消息，则是构建稳定、高性能分布式应用的关键。本篇将从 Java 开发者的角度，详细剖析 Kafka 消息的消费过程。1...",
+      "excerpt": "在 Kafka 庞大的消息生态系统中，消息的生产和消费是其核心功能。理解生产者如何高效地将数据写入 Kafka 是基础，而掌握消费者如何可靠、高效地从 Kafka 中拉取并处理消息，则是构建稳定、高性能分布式应用的关键。本篇将从 Java 开发者的角度，详细剖析 Kafka 消息的消费过程。 1) 核心概念回顾 在深入消费流程之前，我们先快速回顾几个核心概念： 主题 (Topic) ：消息的逻辑分类。例如， order_events 主题包含所有订单相关的事件消息。 分区 (Partition) ：Topic 的物理组成单元。一个 Topic 可以有一个或多个分区。消息在分区内严格有序，且每个分区都是一个不可变的日志序列。 偏移量 (Offset) ：消息在分区内的唯一标识符，一个单调递增的数字。消费者通过记录和提交 Offset 来追踪自己在每个分区中的消费进度。 消费者 (Consumer) ：负责从 Kafka 主题中读取消息的客户端应用程序。 消费者组 (Consumer Group) ：多个消费者共同协作来消费一个或多个主题。它是 Kafka 实现高并发和负载均衡的核心机制。 2) 消费者组：负载均衡与容错的基石 消费者组是理解 Kafka 消费机制的关键。 负载均衡 ：在一个消费者组内，订阅同一个主题的所有消费者实例会共同分担该主题下所有分区的消费任务。Kafka 会确保一个分区在同一时间只被消费者组内的一个消费者实例消费。这保证了消息的有序性（分区内）和消费者之间的负载均衡。 高可用性 ：如果消费者组内某个消费者实例宕机，Kafka 会自动将该实例原先负责的分区重新分配给组内其他活跃的消费者实例，从而实现高可用性。这个过程称为“ 重平衡 (Rebalance) ”。 独立性 ：不同的消费者组可以独立地消费同一个主题，并且各自维护自己的消费进度（Offset），互不干扰。例如，一个消费者组可能用于实时处理订单，而另一个消费者组可能用于对订单进行大数据分析。 Mermaid 图：消费者组与分区关系 图表解读 ： 主题 订单事件 有三个分区：P0, P1, P2。 消费者组 A 有三个消费者实例：CGA1, CGA2, CGA3。每个消费者分配一个分区，实现并行消费。 消费者组 B 有两个消费者实例：CGB1, CGB2。CGB1 负责 P0 和 P2，CGB2 负责 P1。两个组独立消费，互不影响。 3) 消息消费流程：从加入组到提交偏移量 Kafka 消息消费是一个迭代的拉取（Poll）过程。以下是其详细步骤： 3.1) 加入消费者组与分区分配 (Rebalance) 当一个消费者启动时，它会尝试加入一个消费者组。 查找协调器 (Group Coordinator) ：每个消费者组都有一个 Group Coordinator，它是一个 Kafka"
+    },
+    {
+      "slug": "fyuce7d7zglkpwp5",
+      "title": "Kafka如何保证消息可靠？",
+      "url": "/tulingzhouyu/db22bv/fyuce7d7zglkpwp5",
+      "toc_path": [
+        "Kafka",
+        "Kafka如何保证消息可靠？"
+      ],
+      "toc_level": 1,
+      "toc_index": 686,
+      "word_count": 5514,
+      "updated_at": "2026-01-20T08:32:47.000Z",
+      "primary_category": "mq-kafka",
+      "primary_category_name": "Kafka",
+      "related_categories": [
+        "mq-kafka",
+        "java-core",
+        "performance-optimization",
+        "microservices-governance",
+        "observability-troubleshooting"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "middle",
+        "senior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "Kafka",
+        "Topic",
+        "Partition",
+        "Consumer",
+        "ISR",
+        "性能",
+        "重试",
+        "超时",
+        "负载均衡",
+        "故障",
+        "日志"
+      ],
+      "summary": "1. 什么是消息可靠性？为什么Kafka需要它？消息可靠性是指消息在整个生命周期中能够被正确传递和处理的保障。在Kafka中，这通常意味着：消息不丢失 (At-least-once)：生产者发送的消息，至少会被成功投递一次。消息不重复 (At-most-once)：生产者发送的消息，至多会被成...",
+      "excerpt": "1. 什么是消息可靠性？为什么Kafka需要它？ 消息可靠性是指消息在整个生命周期中能够被正确传递和处理的保障。在Kafka中，这通常意味着： 消息不丢失 (At-least-once) ：生产者发送的消息，至少会被成功投递一次。 消息不重复 (At-most-once) ：生产者发送的消息，至多会被成功投递一次。 消息精确一次 (Exactly-once) ：生产者发送的消息，恰好会被成功投递一次（不丢不重）。 消息有序性 (Ordering) ：同一个分区内的消息，按照发送顺序进行存储和消费。 在分布式系统中，网络延迟、服务器故障、进程崩溃等问题随时可能发生，如果没有可靠性保障，消息可能会丢失或重复，导致业务数据不一致甚至严重错误。Kafka通过多方面机制来应对这些挑战。 2. 生产者如何保证消息不丢失与不重复 生产者是消息的起点，Kafka提供了多种配置和机制来保证消息从这里可靠地发送到Broker。 2.1 acks 参数：消息持久化的保证 acks 是生产者最重要的配置之一，它决定了生产者发送消息的确认机制，直接影响消息的持久性保证和性能。 acks=0 (不等待确认) ： 含义 ：生产者发送消息后，不等待Broker的任何确认，直接发送下一条。 可靠性 ：最低。消息可能会因网络问题、Broker崩溃等原因丢失。 性能 ：最高。 适用场景 ：对消息丢失不敏感的场景，如日志收集（可以接受少量日志丢失）。 acks=1 (等待Leader确认) ： 含义 ：生产者发送消息后，只要Leader副本成功写入消息，就认为消息发送成功。 可靠性 ：中等。如果Leader在消息同步到Follower之前崩溃，消息会丢失。 性能 ：中等。 适用场景 ：对消息丢失有一定容忍度，但希望比 acks=0 更可靠的场景。 acks=all 或 acks=-1 (等待所有ISR副本确认) ： 含义 ：生产者发送消息后，不仅Leader副本要成功写入，还要等待所有ISR（In-Sync Replicas，同步副本）中的Follower副本也成功同步消息后，才认为消息发送成功。 可靠性 ：最高。只要ISR中至少有一个副本存活，消息就不会丢失。 性能 ：最低（相对于 acks=0 和 acks=1 ）。 适用场景 ：对消息丢失零容忍的场景，如金融交易、订单系统。 代码示例：设置 acks 2.2 retries 参数：应对瞬时故障 当生产者发送消息失败时（例如，网络瞬时抖动，Leader切换等），可以通过重试机制来重新发送消息。 retries ：配置重试的次数。设置为一个大于0的值，可以在瞬时故障时有效防止消息丢失。 注意 ：在不开启幂等性（ enable.idempotence=false ）的情况下，重试可能导致消息重复。例如，消息已成功写入Broker但Producer接"
+    },
+    {
+      "slug": "ik54ff6igqgl984f",
+      "title": "如何确保Kafka集群的高可用？",
+      "url": "/tulingzhouyu/db22bv/ik54ff6igqgl984f",
+      "toc_path": [
+        "Kafka",
+        "如何确保Kafka集群的高可用？"
+      ],
+      "toc_level": 1,
+      "toc_index": 687,
+      "word_count": 3035,
+      "updated_at": "2026-01-22T06:25:52.000Z",
+      "primary_category": "mq-kafka",
+      "primary_category_name": "Kafka",
+      "related_categories": [
+        "mq-kafka",
+        "java-core",
+        "performance-optimization",
+        "observability-troubleshooting",
+        "java-concurrency"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "senior",
+        "campus"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "Kafka",
+        "Topic",
+        "Partition",
+        "Consumer",
+        "ISR",
+        "Java",
+        "异常",
+        "吞吐",
+        "故障",
+        "监控",
+        "线程"
+      ],
+      "summary": "在构建现代分布式系统时，高可用性（High Availability, HA）是一个核心且非功能性需求。对于 Apache Kafka 这样的核心消息基础设施，确保其高可用性至关重要，因为它直接关系到消息的可靠存储、传递以及整个系统的稳定运行。本篇将深入探讨 Kafka 实现高可用的机制。1)...",
+      "excerpt": "在构建现代分布式系统时，高可用性（High Availability, HA）是一个核心且非功能性需求。对于 Apache Kafka 这样的核心消息基础设施，确保其高可用性至关重要，因为它直接关系到消息的可靠存储、传递以及整个系统的稳定运行。本篇将深入探讨 Kafka 实现高可用的机制。 1) 理解高可用性：Kafka 的设计目标 高可用性意味着系统在面对各种故障（如服务器宕机、网络分区、磁盘损坏等）时，仍能持续提供服务的能力。Kafka 从设计之初就考虑了分布式环境下的高可用性，其核心目标是： 数据持久性 ：确保已提交（committed）的消息不会丢失。 服务连续性 ：即使部分节点失效，生产者和消费者也能继续正常工作。 弹性伸缩 ：支持动态地添加或移除 Broker，不影响服务。 2) Kafka 高可用的核心基石：副本与分区 Kafka 实现高可用性主要依赖于 分区（Partition） 的 副本机制（Replication） 。 2.1) Topic、Partition 与 Broker Topic (主题) ：消息的逻辑分类。 Partition (分区) ：每个 Topic 包含一个或多个 Partition。Partition 是 Kafka 消息存储的最小单元，也是实现并行处理和高可用的关键。分区内部消息严格有序。 Broker (代理) ：Kafka 服务器实例。一个 Kafka 集群由多个 Broker 组成。每个 Broker 存储一个或多个 Topic 的 Partition。 2.2) 副本因子（Replication Factor） 定义 ：一个 Topic 的每个 Partition 都可以在多个 Broker 上拥有副本。副本因子（ replication-factor ）定义了每个 Partition 拥有的副本数量。例如， replication-factor = 3 意味着每个 Partition 会有 1 个 Leader 副本和 2 个 Follower 副本。 作用 ：提供数据冗余和故障转移能力。如果某个 Broker 宕机，只要还有其他副本存活，该 Partition 的数据就不会丢失，且服务可以继续。 2.3) Leader 和 Follower Leader 副本 ：每个 Partition 都有一个 Leader 副本。所有生产者对该 Partition 的写入操作和消费者对该 Partition 的读取操作都必须通过 Leader 副本进行。 Follower 副本 ：除 Leader 外，其他副本都是 Follower。Follower 的职责是定期从 Leader 副本拉取数据，并与 Leader 保持同步，充当热备。 Mermaid 图：Kafka 分区副本结构 图表解读 ： 主题 OrderEv"
+    },
+    {
+      "slug": "ugeps3zvzu34adpx",
+      "title": "Kafka中的消费者偏移量是如何管理的？",
+      "url": "/tulingzhouyu/db22bv/ugeps3zvzu34adpx",
+      "toc_path": [
+        "Kafka",
+        "Kafka中的消费者偏移量是如何管理的？"
+      ],
+      "toc_level": 1,
+      "toc_index": 688,
+      "word_count": 3769,
+      "updated_at": "2026-01-22T07:53:10.000Z",
+      "primary_category": "mq-kafka",
+      "primary_category_name": "Kafka",
+      "related_categories": [
+        "mq-kafka",
+        "performance-optimization",
+        "observability-troubleshooting",
+        "java-core",
+        "mq-rocketmq"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "senior",
+        "campus"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "Kafka",
+        "Topic",
+        "Partition",
+        "Consumer",
+        "性能",
+        "优化",
+        "吞吐",
+        "瓶颈",
+        "故障",
+        "监控",
+        "日志",
+        "堆积",
+        "Java"
+      ],
+      "summary": "消费者偏移量是Kafka中用来追踪消息消费进度的关键机制。理解它的管理原理对于构建可靠的消息系统至关重要。1) \"什么是消费者偏移量（Offset）\"1.1 \"基本概念与作用\"graph TD A[\"消费者偏移量 (Offset)\"] A --&gt; B[\"定义: 分区内消息的唯一位置标识 (从 ...",
+      "excerpt": "消费者偏移量是Kafka中用来追踪消息消费进度的关键机制。理解它的管理原理对于构建可靠的消息系统至关重要。 1) &quot;什么是消费者偏移量（Offset）&quot; 1.1 &quot;基本概念与作用&quot; &quot;定义&quot; : 在Kafka中， 偏移量（Offset） 是一个单调递增的数字，用于标识分区（Partition）内每条消息的唯一位置。它从0开始，每当有新消息写入分区时，偏移量就会递增。 &quot;作用&quot; : 记录消费进度 : 消费者使用偏移量来跟踪它已经消费到分区中的哪条消息。 支持故障恢复 : 当消费者崩溃或重启时，它可以从上次提交的偏移量位置继续消费，实现“断点续传”。 支持消息重放 : 通过将偏移量重置到更早的位置，消费者可以重新消费历史消息。 避免重复消费/消息丢失 : 合理管理偏移量，可以最大限度地减少消息重复或丢失。 1.2 &quot;偏移量的三个重要位置&quot; &quot;核心理解&quot; : 无论是“已提交偏移量”还是“下次拉取偏移量”，都始终指向 下一条待消费的消息 。例如，如果提交了偏移量 K ，意味着已成功处理了 0 到 K-1 的消息。 2) &quot;偏移量的存储机制&quot; 2.1 &quot;存储位置： __consumer_offsets Topic&quot; 从Kafka 0.9.0.0版本开始，消费者偏移量不再存储在Zookeeper中，而是存储在Kafka集群内部的一个特殊主题： __consumer_offsets 。 &quot;统一性与伸缩性&quot; : 将所有元数据存储在Kafka本身，利用其日志机制和复制机制，提供高可用性和高吞吐量。 &quot;存储内容&quot; : 消息的Key包含 消费者组ID 、 Topic名称 和 分区号 ，Value包含 提交的偏移量 、 时间戳 等信息。 &quot;分区选择&quot; : Kafka使用 Hash(GroupID) % __consumer_offsets主题分区数 来决定一个消费者组的偏移量存储在哪个分区，确保了同一消费者组的顺序性和不同消费者组的并发性。 3) &quot;偏移量的提交方式&quot; 提交方式直接影响消息的可靠性和消费者的吞吐量。 3.1 &quot;自动提交 vs 手动提交&quot; &quot;自动提交的风险&quot; : 消息丢失 : auto.commit.interval.ms (默认5秒) 内，消费者拉取到消息，但在未处理完前自动提交了偏移量，此时消费者故障，消息会丢失。 重复消费 : 消费者处理了消息，但在自动提交前故障。重启后从上次成功提交的偏移量开始，导致已处理消息重复消费。 &quot;生产环境建议&quot; : 禁用自动提交，采用手动"
+    },
+    {
+      "slug": "ffqhls0w8y09ym97",
+      "title": "Kafka中的消息如何分配给不同的消费者？",
+      "url": "/tulingzhouyu/db22bv/ffqhls0w8y09ym97",
+      "toc_path": [
+        "Kafka",
+        "Kafka中的消息如何分配给不同的消费者？"
+      ],
+      "toc_level": 1,
+      "toc_index": 689,
+      "word_count": 4948,
+      "updated_at": "2026-01-22T07:00:11.000Z",
+      "primary_category": "mq-kafka",
+      "primary_category_name": "Kafka",
+      "related_categories": [
+        "mq-kafka",
+        "performance-optimization",
+        "java-core",
+        "project-system-design",
+        "microservices-governance"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "campus"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "Kafka",
+        "Topic",
+        "Partition",
+        "Consumer",
+        "性能",
+        "吞吐",
+        "Java",
+        "方案",
+        "订单",
+        "超时",
+        "负载均衡"
+      ],
+      "summary": "Apache Kafka 作为高吞吐量的分布式消息系统，其核心优势之一在于能够高效且可靠地将消息分发给多个消费者。这种分配机制是 Kafka 实现负载均衡、并行处理和高可用性的基石。1) \"核心概念详解\"1.1 \"三层关键概念\"graph TD A[\"Topic: 订单事件\"] B1[\"Par...",
+      "excerpt": "Apache Kafka 作为高吞吐量的分布式消息系统，其核心优势之一在于能够高效且可靠地将消息分发给多个消费者。这种分配机制是 Kafka 实现负载均衡、并行处理和高可用性的基石。 1) &quot;核心概念详解&quot; 1.1 &quot;三层关键概念&quot; &quot;Topic （主题）&quot; ： &quot;逻辑消息分类，生产者发送消息到 Topic，消费者从 Topic 消费消息。&quot; &quot;示例：'订单事件'、'用户行为日志'、'系统监控指标'。&quot; &quot;Partition （分区）&quot; ： &quot;每个 Topic 物理上由多个 Partition 组成。&quot; &quot;是 Kafka 消息存储的最小单元，每个 Partition 是一个独立的有序日志。&quot; &quot;决定了消费端的最大并行度：一个 Consumer Group 中最多可以有与 Partition 数相同的消费者。&quot; &quot;Consumer Group （消费者组）&quot; ： &quot;一组消费者实例，共同消费一个或多个 Topic 的所有消息。&quot; &quot;组内消费者可以根据需要增加或减少，Kafka 会自动调整 Partition 分配。&quot; &quot;不同的 Consumer Group 独立消费同一 Topic，互不影响。&quot; 2) &quot;为什么需要消费者组？&quot; &quot;负载均衡&quot; ：&quot;多个消费者并行处理消息，充分利用计算资源。&quot; &quot;容错能力&quot; ：&quot;某个消费者宕机，其他消费者能自动接管其分区，不中断服务。&quot; &quot;灵活扩展&quot; ：&quot;根据处理能力添加或移除消费者，动态调整吞吐量。&quot; &quot;多场景支持&quot; ：&quot;不同的应用可以独立消费同一 Topic，无需互相干扰。&quot; 3) &quot;Consumer Group 内部分配机制&quot; 3.1 &quot;一个关键约束&quot; &quot;一个 Partition 同一时刻只能被一个消费者消费&quot; 这是 Kafka 设计中的重要原则，确保了： &quot;消息的顺序性：同一分区内的消息顺序被严格保证。&quot; &quot;状态管理简化：无需处理并发访问同一分区的问题。&quot; &quot;偏移量管理明确：每个分区的消费进度由单一消费者管理。&quot; 3.2 &quot;分配关系示意&quot; &quot;观察&quot; ： &quot;6 个 Partition 分配给 3 个消费者，每个消费者分 2 个。"
+    },
+    {
+      "slug": "xwrsftnpg347umko",
+      "title": "Kafka中的消息是如何存储的？",
+      "url": "/tulingzhouyu/db22bv/xwrsftnpg347umko",
+      "toc_path": [
+        "Kafka",
+        "Kafka中的消息是如何存储的？"
+      ],
+      "toc_level": 1,
+      "toc_index": 691,
+      "word_count": 6649,
+      "updated_at": "2026-01-22T07:10:48.000Z",
+      "primary_category": "mq-kafka",
+      "primary_category_name": "Kafka",
+      "related_categories": [
+        "mq-kafka",
+        "performance-optimization",
+        "observability-troubleshooting",
+        "java-core",
+        "redis-persistence-cluster"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "senior",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "Kafka",
+        "Topic",
+        "Partition",
+        "性能",
+        "优化",
+        "调优",
+        "容量",
+        "排查",
+        "故障",
+        "监控",
+        "日志",
+        "CPU",
+        "Java"
+      ],
+      "summary": "Kafka 被称为\"分布式消息系统的王者\"，其高性能的秘诀之一就是其独特的消息存储设计。本篇将深入分析 Kafka 如何在磁盘上高效地存储和管理消息。1) \"Kafka 存储架构的整体视图\"1.1 \"三层存储结构\"graph TD A[\"Kafka Cluster\"] A --&gt; B[\"Bro...",
+      "excerpt": "Kafka 被称为&quot;分布式消息系统的王者&quot;，其高性能的秘诀之一就是其独特的消息存储设计。本篇将深入分析 Kafka 如何在磁盘上高效地存储和管理消息。 1) &quot;Kafka 存储架构的整体视图&quot; 1.1 &quot;三层存储结构&quot; &quot;分层说明&quot; ： &quot;Cluster 层&quot; ：&quot;多个 Broker 组成集群。&quot; &quot;Topic 层&quot; ：&quot;每个 Broker 存储多个 Topic。&quot; &quot;Partition 层&quot; ：&quot;每个 Topic 有多个 Partition。&quot; &quot;Replica 层&quot; ：&quot;每个 Partition 有多个副本。&quot; &quot;Segment 层&quot; ：&quot;每个副本的数据分段存储。&quot; &quot;File 层&quot; ：&quot;每个 Segment 包含多个物理文件。&quot; 2) &quot;分区和日志文件的对应关系&quot; 2.1 &quot;文件系统中的物理结构&quot; &quot;文件命名规则&quot; ： &quot;文件名 = 该 Segment 中第一条消息的偏移量（Offset）。&quot; &quot;例如 00000000000000100000.log 表示从 Offset 100000 开始的日志段。&quot; &quot;文件名是 20 位数字，左边补零。&quot; 2.2 &quot;Segment 的概念&quot; &quot;Segment 的作用&quot; ： &quot;Kafka 不会在一个无限增长的日志文件中写入消息。&quot; &quot;而是将日志分成多个 Segment，每个 Segment 有大小限制。&quot; &quot;当 Segment 大小达到阈值时，创建新的 Segment。&quot; &quot;这样便于删除旧数据、查询和管理。&quot; 3) &quot;消息的存储格式&quot; 3.1 &quot;消息 Record 的结构&quot; 3.2 &quot;消息二进制格式详细说明&quot; 3.3 &quot;消息压缩&quot; 4) &quot;日志文件的读写机制&quot; 4.1 &quot;消息写入流程&quot; 4.2 &quot;消息读取流程&quot; 5) &quot;索引机制详解&quot; 5.1 &quot;偏移量索引（Offset Index）&quot; 5.2 &quot;时间戳索引（Timestamp Index）&quot; 5.3 &quot;索引查询"
+    },
+    {
+      "slug": "pxt0lionnhv3mfab",
+      "title": "Kafka消费者分区策略",
+      "url": "/tulingzhouyu/db22bv/pxt0lionnhv3mfab",
+      "toc_path": [
+        "Kafka",
+        "Kafka消费者分区策略"
+      ],
+      "toc_level": 1,
+      "toc_index": 692,
+      "word_count": 11105,
+      "updated_at": "2026-01-22T07:20:15.000Z",
+      "primary_category": "mq-kafka",
+      "primary_category_name": "Kafka",
+      "related_categories": [
+        "mq-kafka",
+        "performance-optimization",
+        "java-core",
+        "observability-troubleshooting",
+        "microservices-governance"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "senior",
+        "campus"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "Kafka",
+        "Topic",
+        "Partition",
+        "性能",
+        "优化",
+        "调优",
+        "Java",
+        "排查",
+        "监控",
+        "超时",
+        "负载均衡"
+      ],
+      "summary": "Kafka 的分区分配策略是决定消费者如何获取分区、如何应对 Rebalance 的关键因素。理解这些策略对于构建高效、稳定的消费系统至关重要。1) \"分区分配策略的核心概念\"1.1 \"什么是分区分配策略？\"graph TD A[\"分区分配策略\"] A --&gt; B[\"定义\"] B --&gt; B1...",
+      "excerpt": "Kafka 的分区分配策略是决定消费者如何获取分区、如何应对 Rebalance 的关键因素。理解这些策略对于构建高效、稳定的消费系统至关重要。 1) &quot;分区分配策略的核心概念&quot; 1.1 &quot;什么是分区分配策略？&quot; 1.2 &quot;分配策略的关键约束&quot; 2) &quot;内置分配策略详解&quot; 2.1 &quot;RangeAssignor（范围分配）&quot; &quot;原理&quot; ：按 Topic 依次分配，将每个 Topic 的分区按范围平均分配给消费者。 &quot;分配图示&quot; ： &quot;特点&quot; ： ✅ &quot;实现简单，易于理解&quot; ✅ &quot;相同 Key 的消息总是分配到同一消费者&quot; ❌ &quot;分配可能不均，特别是多 Topic 场景&quot; ❌ &quot;Topic 增加后重新分配变化大&quot; 2.2 &quot;RoundRobinAssignor（轮询分配）&quot; &quot;原理&quot; ：将所有 Topic 的所有 Partition 混合，轮询分配给消费者。 &quot;分配图示&quot; ： &quot;特点&quot; ： ✅ &quot;分配更均匀&quot; ✅ &quot;避免某个消费者负载过高&quot; ❌ &quot;消费者宕机时大量 Partition 需要转移&quot; ❌ &quot;相同 Key 的消息可能分配到不同消费者&quot; 2.3 &quot;StickyAssignor（粘性分配，Kafka 0.11+ 默认）&quot; &quot;原理&quot; ：尽可能保留现有分配，同时在约束下实现均衡。 &quot;分配对比图&quot; ： &quot;特点&quot; ： ✅ &quot;最小化 Partition 转移&quot; ✅ &quot;降低 Rebalance 开销&quot; ✅ &quot;保持消费连续性&quot; ✅ &quot;是目前最推荐的策略&quot; ❌ &quot;算法复杂度高&quot; 2.4 &quot;CooperativeStickyAssignor（合作型粘性分配）&quot; &quot;原理&quot; ：在 StickyAssignor 基础上，实现 Rebalance 停顿时间最短。 &quot;时间对比&quot; ： 3) &quot;分配策略对比与选择&quot; 3.1 &quot;四种策略对比表&quot; &quot;策略&quot; &quot;实现复杂度&quot; &quot;分配均衡性&quot; &quot;Rebalance 开销&quot; &quot;消费顺序&quo"
+    },
+    {
+      "slug": "eav93qvg0qcgmgv3",
+      "title": "说下CAP原则",
+      "url": "/tulingzhouyu/db22bv/eav93qvg0qcgmgv3",
+      "toc_path": [
+        "分布式",
+        "CAP原则和BASE原则怎么理解",
+        "说下CAP原则"
+      ],
+      "toc_level": 2,
+      "toc_index": 745,
+      "word_count": 1345,
+      "updated_at": "2023-10-15T11:39:30.000Z",
+      "primary_category": "mq-kafka",
+      "primary_category_name": "Kafka",
+      "related_categories": [
+        "mq-kafka",
+        "java-concurrency",
+        "mysql-index-transaction",
+        "performance-optimization",
+        "ai-llm"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "Partition",
+        "锁"
+      ],
+      "summary": "薪资：8·k-15k岗位：初中级开发工程师在设计一个分布式项目的时候会遇到三个特性：一致性（consistency）、可用性（Availability）、分区容错（partition-tolerance）都需要的情景.CAP定律说的是在一个分布式计算机系统中，一致性，可用性和分区容错性这三种保...",
+      "excerpt": "薪资：8·k-15k 岗位：初中级开发工程师 在设计一个分布式项目的时候会遇到三个特性：一致性（consistency）、可用性（Availability）、分区容错（partition-tolerance）都需要的情景. ​ CAP定律说的是在一个分布式计算机系统中，一致性，可用性和分区容错性这三种保证无法同时得到满足，最多满足两个。 ​ 如下图，CAP的三种特性只能同时满足两个。而且在不同的两两组合，也有一些成熟的分布式产品。 ​ ​ 接下来，我们来介绍一下CAP的三种特性，我们采用一个应用场景来分析CAP中的每个特点的含义。 该场景整体分为5个流程： 流程一、客户端发送请求(如:添加订单、修改订单、删除订单) 流程二、Web业务层处理业务，并修改存储成数据信息 流程三、存储层内部Master与Backup的数据同步 流程四、Web业务层从存储层取出数据 流程五、Web业务层返回数据给客户端 ​ ​ ​ (1) 一致性Consistency 一致性指“ all nodes see the same data at the same time ”，即更新操作成功并返回客户端完成后， 所有节点在同一时间的数据完全一致 。 ​ 一旦数据更新完成并成功返回客户端后，那么分布式系统中所有节点在同一时间的数据完全一致。 ​ 一致性是指写操作后的读操作可以读取到最新的数据状态，当数据分布在多个节点上，从任意结点读取到的数据都是最新的状态。 ​ 一致性实现目标： Web业务层向主Master写数据库成功，从Backup读数据也成功。 ​ ​ Web业务层向主Master读数据库失败，从Backup读数据也失败。 ​ ​ 必要实现流程： 写入主数据库后，在向从数据库同步期间要将从数据库锁定，待同步完成后再释放锁，以免在新数据写入成功后，向从数据库查询到旧的数据。 ​ ​ 分布式一致性特点： 1.由于存在数据同步的过程，写操作的响应会有一定的延迟。 2.为了保证数据一致性会对资源暂时锁定，待数据同步完成释放锁定资源。 3.如果请求数据同步失败的结点则会返回错误信息，一定不会返回旧数据。 ​ (2) 可用性(Availability) 可用性指“Reads and writes always succeed”，即 服务一直可用，而且是 正常响应时间 。 ​ 对于可用性的衡量标准如下： 可用性分类 可用水平（%） 一年中可容忍停机时间 容错可用性 99.9999 <1 min 极高可用性 99.999 <5 min 具有故障自动恢复能力的可用性 99.99 <53 min 高可用性 99.9 <8.8h 商品可用性 99 <43.8 min 可用性实现目标： 1.当Master正在被更新，Backup数据库接收到数据查询的请求则 立即能够响应数据查询结果 。 2.backup数"
+    },
+    {
+      "slug": "ia491gw6i2h2rrq8",
+      "title": "喜马拉雅亿级推送系统实践",
+      "url": "/tulingzhouyu/db22bv/ia491gw6i2h2rrq8",
+      "toc_path": [
+        "项目设计场景题",
+        "喜马拉雅亿级推送系统实践"
+      ],
+      "toc_level": 1,
+      "toc_index": 865,
+      "word_count": 3219,
+      "updated_at": "2024-07-15T14:21:20.000Z",
+      "primary_category": "mq-kafka",
+      "primary_category_name": "Kafka",
+      "related_categories": [
+        "mq-kafka",
+        "mq-rabbitmq",
+        "redis-cache",
+        "performance-optimization",
+        "project-system-design"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle",
+        "senior",
+        "campus"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "Consumer",
+        "队列",
+        "缓存",
+        "性能",
+        "优化",
+        "架构设计",
+        "方案"
+      ],
+      "summary": "本次分享内容业务背景和推送系统架构设计业务过滤机制设计分库分表下的多维查询问题特殊业务的时效性问题过滤机制的存储和性能问题总结背景介绍首先介绍下推送系统的作用，如上图是一个新闻业务的推送 / 通知，推送主要就是在用户不打开 APP 的时候有一个手段触达用户，保持 APP 的存在感，提高 APP...",
+      "excerpt": "本次分享内容 业务背景和推送系统架构设计 业务过滤机制设计 分库分表下的多维查询问题 特殊业务的时效性问题 过滤机制的存储和性能问题 总结 背景介绍 首先介绍下推送系统的作用，如上图是一个新闻业务的推送 / 通知，推送主要就是在用户不打开 APP 的时候有一个手段触达用户，保持 APP 的存在感，提高 APP 的日活。公司目前主要用推送的业务包括 主播开播 ，公司有直播业务，主播在开直播的时候会给这个主播的所有粉丝发一个推送开播提醒 专辑更新 ，平台上有非常多的专辑，专辑下面是一系列具体的声音，比如一本儿小说是一个专辑，小说有很多章节，那么当小说更新章节的时候给所有订阅这个专辑的用户发一个更新的提醒。 个性化、新闻业务 等。 既然想给一个用户发推送，系统要跟这个用户设备之间有一个联系的通道。自建通道需要 App 常驻后台，而手机厂商因为省电等原因普遍采取 “激进” 的后台进程管理策略，导致自建通道质量较差。目前通道一般是由 “推送服务商” 去维护，也就是说公司内的推送系统并不直接给用户发推送，推送流转流程如下： 国内的几大厂商 hmov 有自己官方的推送通道，但是每一家接口都不一样，所以一些厂商比如小米、个推提供集成接口。发送时推送系统发给集成商，然后集成商根据具体的设备，发给 hmov 这些具体的厂商，最终发给用户。 给设备发推送的时候，必须说清楚你要发的是什么内容，即 title、message/body，还要指定给哪个设备发推送。我们以 token 来标识一个设备， 在不同的场景下 token 的含义是不一样的，公司内部一般用 uid 或者 deviceId 标识一个设备，对于集成商、hmov 也有自己对设备的唯一 “编号”，所以公司内部的推送服务，要负责进行 uid、deviceId 到集成商 token 的转换。 整体设计 技术架构设计 推送整体上是一个基于队列的流式处理系统，上图右侧是主链路，各个业务方通过推送接口给推送系统发推送，推送接口会把数据发到一个队列，由转换和过滤服务消费。转换就是上文说的 uid/deviceId 到 token 的转换，过滤下文专门讲，转换过滤处理后发给发送模块，最终给到集成商接口。 App 启动时会向服务端发送绑定请求，上报 uid/deviceId 与 token 的绑定关系。当卸载 / 重装 App 等导致 token 失效时，集成商通过 http 回调告知推送系统。各个组件都会通过 kafka 发送流水到公司的 xstream 实时流处理集群，聚合数据并落盘到 mysql，最终由 grafana 提供各种报表展示。 业务过滤机制设计 各个业务方可以无脑给用户发推送，但推送系统要有节制，因此要对业务消息有选择的过滤，包括以下几点（按支持的先后顺序）： 用户开关，App 支持配置用户开关，若用户关闭了推送，则不向"
+    },
+    {
+      "slug": "zc71tq2mei3pc590",
+      "title": "双十一10万用户订单消息卡爆！查不到物流，怎么快速处理不引发退单？",
+      "url": "/tulingzhouyu/db22bv/zc71tq2mei3pc590",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "双十一10万用户订单消息卡爆！查不到物流，怎么快速处理不引发退单？"
+      ],
+      "toc_level": 2,
+      "toc_index": 1054,
+      "word_count": 1877,
+      "updated_at": "2025-09-28T10:56:29.000Z",
+      "primary_category": "mq-kafka",
+      "primary_category_name": "Kafka",
+      "related_categories": [
+        "mq-kafka",
+        "performance-optimization",
+        "project-system-design",
+        "observability-troubleshooting",
+        "mq-general"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle",
+        "senior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "Kafka",
+        "Topic",
+        "Partition",
+        "Consumer",
+        "性能",
+        "优化",
+        "RT",
+        "吞吐",
+        "瓶颈",
+        "系统设计",
+        "方案",
+        "秒杀",
+        "线上",
+        "MQ"
+      ],
+      "summary": "一、是什么：消息队列堆积的“惊魂一刻”想象一下双十一零点的抢购洪峰，数以万计的订单在瞬间生成。用户的“下单”操作，会作为一个“创建订单”消息被发送到消息队列（Message Queue, MQ）中，等待下游的“物流系统”、“积分系统”等消费者（Consumer）来处理。消息队列堆積 (Mess...",
+      "excerpt": "一、是什么：消息队列堆积的“惊魂一刻” 想象一下双十一零点的抢购洪峰，数以万计的订单在瞬间生成。用户的“下单”操作，会作为一个“创建订单”消息被发送到消息队列（Message Queue, MQ）中，等待下游的“物流系统”、“积分系统”等消费者（Consumer）来处理。 消息队列堆積 (Message Backlog) ，顾名思义，就是消息的生产速度远大于消费速度，导致大量消息滞留在队列中无法被及时处理的现象。就像高速公路在节假日变成了巨大的停车场，车辆（消息）源源不断地涌入，但出口（消费者）却通行缓慢，最终导致整个路网瘫痪。 用户侧的直观感受就是：付了款，订单状态却迟迟不变；刷新无数次，物流信息就是“揽收中”；参与了活动，积分和优惠券却不见踪影。 二、为什么：探究堵车的“三大元凶” 消息队列的堵塞并非偶然，其背后往往隐藏着深刻的系统设计和资源问题。主要原因可以归结为三类： 消费能力不足 (Insufficient Consumer Capacity): 这是最常见的原因。 业务洪峰: 如双十一、秒杀活动，生产端的流量在短时间内飙升百倍，而消费端的处理能力没有相应扩展。 消费者性能瓶颈: 消费者自身逻辑复杂、执行耗时过长（例如，包含多次数据库读写、调用外部接口），导致单条消息处理时间（RT）过长。 消费者“罢工” (Consumer Failure): 代码缺陷: 消费者代码存在bug，处理特定消息时会抛出异常并不断重试，形成“毒丸消息”，阻塞整个队列。 下游依赖故障: 消费者依赖的数据库、缓存或外部API出现故障或高延迟，导致消费者自身被“拖垮”，处理停滞。 资源耗尽 (Resource Exhaustion): 消费者侧: 消费者所在服务器的CPU、内存、网络IO或线程池资源达到瓶颈，无法再接收和处理更多消息。 MQ服务端: MQ Broker自身的磁盘空间、内存或连接数达到上限，也会导致系统整体性能下降。 三、怎么做：从“治标”到“治本”的快速抢修手册 面对消息堆积，我们需要一套组合拳，先快速恢复业务（治标），再从根源上解决问题（治本）。 第一阶段：紧急响应 (治标) 目标是 立刻恢复消费能力，消化堆积 。 核心策略：紧急扩容 (Scale-Out) 这是最直接、最有效的“大力出奇迹”方案。立即水平扩展消费者实例的数量。如果原本有5个消费者实例，迅速增加到50个甚至100个。通过并行处理，消费能力会得到线性甚至超线性的增长，快速“吃掉”堆积的消息。 操作前提: 你的应用必须是无状态的，且消费逻辑是幂等的（即同一条消息处理多次和处理一次的结果相同），这是任何分布式系统的基本要求。 ​ 辅助策略：降级与熔断 如果扩容后发现消费者的瓶颈在于下游依赖（如数据库压力过大），则需要对消费逻辑进行降级。 非核心业务降级: 暂时关闭一些非核心的消费逻辑，如“订单完成"
+    },
+    {
+      "slug": "mde3hx99piu7yvdq",
+      "title": "Kafka为什么这么快？",
+      "url": "/tulingzhouyu/db22bv/mde3hx99piu7yvdq",
+      "toc_path": [
+        "高频面试问题",
+        "楼兰老师",
+        "Kafka为什么这么快？"
+      ],
+      "toc_level": 2,
+      "toc_index": 1140,
+      "word_count": 2572,
+      "updated_at": "2025-10-22T12:26:05.000Z",
+      "primary_category": "mq-kafka",
+      "primary_category_name": "Kafka",
+      "related_categories": [
+        "mq-kafka",
+        "os-linux",
+        "observability-troubleshooting",
+        "mysql-index-transaction",
+        "performance-optimization"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "middle",
+        "campus",
+        "senior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "校招/应届生",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "Kafka",
+        "Topic",
+        "Partition",
+        "ISR",
+        "操作系统",
+        "内存",
+        "文件",
+        "上下文切换",
+        "故障",
+        "日志",
+        "CPU",
+        "索引",
+        "性能"
+      ],
+      "summary": "kafka为什么这么快？--楼兰拓展版 聊到Kafka，你应该经常遇到这样的面试题：“小伙子，基础不错。那聊聊Kafka 凭什么这么快？”你可能觉得我看过，但是要注意，这既是送分题，又是送命题。说它是送分题，是因为大部分人都能答出“顺序写、零拷贝”这几个关键词。但如果不注意，这也是个送命题，因...",
+      "excerpt": "kafka为什么这么快？ --楼兰拓展版 聊到Kafka，你应该经常遇到这样的面试题：“小伙子，基础不错。那聊聊Kafka 凭什么这么快？” 你可能觉得我看过，但是要注意，这既是送分题，又是送命题。 说它是 送分题 ，是因为大部分人都能答出“顺序写、零拷贝”这几个关键词。 但如果不注意，这也是个 送命题 ，因为这种题目是没有标准答案的。你所认为的那些标准答案，可能只是面试官眼中让人昏昏欲睡的陈词滥调。所以你提的每一个点，都是要体现出你对技术的思考和总结。 今天，咱们就从这几个比较重要的知识点入手，把这道题带你体系化的盘一遍。不仅让你知道“是什么”，“为什么”，还会给你更多自行补充的拓展点，让你一次看个爽。记得点赞、收藏，不然下次就找不到了。 ① 顺序写：重新定义磁盘速度 大家普遍有个印象：磁盘很慢。没错，但说的是“随机读写”的磁盘。想象一下，你不是在笔记本最后接着写，而是在中间某一页找个空白地儿硬塞几个字，是不是很费劲？磁头在盘片上疯狂寻道，就像你疯狂翻页一样，这当然慢！ 但 Kafka 不这么玩。它采用 顺序追加写入 ，就像记笔记一样，永远只在文件末尾添加新内容。 看这张图，数据流（Writes）源源不断地写向每个分区（Partition）的末尾。而每个文件，在磁盘上都是提前申请的一块连续空间。磁头几乎不需要来回寻址，只管“一路向西”，这种操作的效率，快到可以和内存的随机读写掰手腕。Kafka 用最有效的方法，驯服了磁盘这头猛兽。这种顺序写的思想，也成了很多其他中间件提升日志写入效率的参考思想。 ② 页缓存：把“急事”交给操作系统 如果每次写入都要等磁盘“确认收货”，那 Kafka 早就堵死了。所以，它请了个“外援”——操作系统的 页缓存（Page Cache） 。 看这张图，当 Producer 的消息过来，Kafka 把它“啪”一下丢进内存里的 Page Cache 就立刻告诉 Producer：“好了，搞定！”。它自己不用管什么时候、怎么把数据写到磁盘上。 这个“脏活累活”甩给了谁？操作系统。OS 会在它觉得合适的时候（比如凑够了一批数据，或者系统不忙时），自己把 Page Cache 里的数据批量刷到磁盘（disk）上。 这就像你收快递，快递员把包裹放前台（Page Cache）就行了，他不用等你亲自下楼取货（写入 Disk）。这样一来，写入操作的响应时间就大大缩短，应用的吞吐量自然就上去了。 但这种甩手掌柜的做法也是有不足之处的。最大的问题就在于你不知道操作系统什么时候进行刷盘操作，那如果出现了服务器故障，你也无法确保PageCache里的缓存信息能不能安全写到磁盘上。也就是没法保证数据安全。 解决的方法最好是写一条日志就申请一次刷盘操作，也就是称为同步刷盘。但是刷盘性能低，会影响应用的吞吐性能，而且过于频繁的刷盘操作还会加大操作系统的负担。这中"
+    },
+    {
+      "slug": "wdukmyap5ugkfb5t",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/wdukmyap5ugkfb5t",
+      "toc_path": [
+        "高频面试问题",
+        "楼兰老师",
+        "Kafka为什么这么快？",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1141,
+      "word_count": 41,
+      "updated_at": "2025-10-22T13:48:07.000Z",
+      "primary_category": "mq-kafka",
+      "primary_category_name": "Kafka",
+      "related_categories": [
+        "mq-kafka",
+        "computer-network",
+        "netty-network",
+        "os-linux",
+        "ai-llm"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "Kafka",
+        "文件"
+      ],
+      "summary": "📎Kafka为什么这么快？.html通过网盘分享的文件：Kafka为什么这么快？-扩展版链接: https://pan.baidu.com/s/1fafhBj7D13CopU01_jUlzQ 提取码: b318",
+      "excerpt": "通过网盘分享的文件：Kafka为什么这么快？-扩展版 链接: https://pan.baidu.com/s/1fafhBj7D13CopU01_jUlzQ 提取码: b318"
+    }
+  ]
+}

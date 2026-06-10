@@ -1,0 +1,769 @@
+{
+  "id": "java-collections",
+  "name": "Java集合",
+  "aliases": [
+    "集合",
+    "HashMap",
+    "ConcurrentHashMap",
+    "ArrayList",
+    "LinkedList",
+    "HashSet",
+    "TreeMap"
+  ],
+  "count": 17,
+  "total_word_count": 222275,
+  "articles": [
+    {
+      "slug": "eivhfmeh91kchwio",
+      "title": "Java基础篇",
+      "url": "/tulingzhouyu/db22bv/eivhfmeh91kchwio",
+      "toc_path": [
+        "面试必看",
+        "大厂真题",
+        "阿里面试真题",
+        "Java基础篇"
+      ],
+      "toc_level": 3,
+      "toc_index": 48,
+      "word_count": 5161,
+      "updated_at": "2024-04-29T12:11:24.000Z",
+      "primary_category": "java-collections",
+      "primary_category_name": "Java集合",
+      "related_categories": [
+        "java-collections",
+        "java-core",
+        "algorithm",
+        "java-concurrency",
+        "os-linux"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "集合",
+        "HashMap",
+        "ConcurrentHashMap",
+        "ArrayList",
+        "LinkedList",
+        "Java",
+        "泛型",
+        "反射",
+        "注解",
+        "异常",
+        "IO",
+        "序列化",
+        "并发"
+      ],
+      "summary": "Java基础面向对象三大特性特性：封装、继承、多态；封装：对抽象的事物抽象化成一个对象，并对其对象的属性私有化，同时提供一些能被外界访问属性的方法；继承：子类扩展新的数据域或功能，并复用父类的属性与功能，单继承，多实现；多态：通过继承（多个⼦类对同⼀⽅法的重写）、也可以通过接⼝（实现接⼝并覆盖...",
+      "excerpt": "Java基础 面向对象三大特性 特性： 封装、继承、多态； 封装： 对抽象的事物抽象化成一个对象，并对其对象的属性私有化，同时提供一些能被外界访问属性的方法； 继承： 子类扩展新的数据域或功能，并复用父类的属性与功能，单继承，多实现； 多态： 通过继承（多个⼦类对同⼀⽅法的重写）、也可以通过接⼝（实现接⼝并覆盖接⼝）； 1、Java与C++区别 不同点：c++支持多继承，并且有指针的概念，由程序员自己管理内存；Java是单继承，可以用接口实现多继承，Java不提供指针来直接访问内存，程序内存更加安全，并且Java有JVM⾃动内存管理机制，不需要程序员⼿动释放⽆⽤内存。 2、多态实现原理 多态的底层实现是动态绑定，即在运行时才把方法调用与方法实现关联起来。 静态绑定与动态绑定： 一种是在编译期确定，被称为静态分派，比如方法的重载； 一种是在运行时确定，被称为动态分派，比如方法的覆盖（重写）和接口的实现。 多态的实现 虚拟机栈中会存放当前方法调用的栈帧（局部变量表、操作栈、动态连接、返回地址）。多态的实现过程，就是方法调用动态分派的过程，如果子类覆盖了父类的方法，则在多态调用中，动态绑定过程会首先确定实际类型是子类，从而先搜索到子类中的方法。这个过程便是方法覆盖的本质。 3、static和final关键字 static： 可以修饰属性、方法 static修饰属性： 类级别属性，所有对象共享一份，随着类的加载而加载（只加载一次），先于对象的创建；可以使用类名直接调用。 static修饰方法： 随着类的加载而加载；可以使用类名直接调用；静态方法中，只能调用静态的成员，不可用this； final： 关键字主要⽤在三个地⽅：变量、⽅法、类。 final修饰变量： 如果是基本数据类型的变量，则其数值一旦在初始化之后便不能更改； 如果是引⽤类型的变量，则在对其初始化之后便不能再让其指向另⼀个对象。 final修饰方法： 把⽅法锁定，以防任何继承类修改它的含义（重写）；类中所有的private⽅法都隐式地指定为final。 final修饰类： final修饰类时，表明这个类不能被继承。final类中的所有成员⽅法都会被隐式地指定为final⽅法。 一个类不能被继承，除了final关键字之外，还有可以私有化构造器。（内部类无效） 4、抽象类和接口 抽象类： 包含抽象方法的类，即使用abstract修饰的类；抽象类只能被继承，所以不能使用final修饰，抽象类不能被实例化； 接口： 接口是一个抽象类型，是抽象方法的集合，接口支持多继承，接口中定义的方法，默认是public abstract修饰的抽象方法； 相同点： ①抽象类和接口都不能被实例化； ②抽象类和接口都可以定义抽象方法，子类/实现类必须覆写这些抽象方法； 不同点： ①抽象类有构造方法，接口没有构造方法； ③抽象类可以"
+    },
+    {
+      "slug": "qdcazqpoazu0eaa7",
+      "title": "HashMap的扩容机制是怎样的",
+      "url": "/tulingzhouyu/db22bv/qdcazqpoazu0eaa7",
+      "toc_path": [
+        "面试必看",
+        "大厂真题",
+        "美团面试真题",
+        "HashMap的扩容机制是怎样的"
+      ],
+      "toc_level": 3,
+      "toc_index": 55,
+      "word_count": 478,
+      "updated_at": "2023-08-28T11:14:05.000Z",
+      "primary_category": "java-collections",
+      "primary_category_name": "Java集合",
+      "related_categories": [
+        "java-collections",
+        "algorithm",
+        "performance-optimization"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "HashMap",
+        "数组",
+        "链表",
+        "性能",
+        "容量"
+      ],
+      "summary": "HashMap的扩容机制是为了保持负载因子在一定范围内，以提高HashMap的性能和效率。负载因子是指HashMap中已存储的键值对数量与数组容量的比值。当HashMap中的键值对数量超过了负载因子与数组容量的乘积时，就会触发扩容操作。默认情况下，负载因子为0.75，即当键值对数量超过数组容量...",
+      "excerpt": "HashMap的扩容机制是为了保持 负载因子 在一定范围内，以提高HashMap的性能和效率。负载因子是指HashMap中已存储的 键值对数量与数组容量的比值 。 当HashMap中的键值对数量超过了负载因子与数组容量的乘积时，就会触发扩容操作。默认情况下， 负载因子为0.75 ，即当键值对数量超过数组容量的75%时，会进行扩容。 HashMap的扩容操作主要包括以下几个步骤： 创建一个新的数组，其容量是原数组的 两倍 。 将原数组中的键值对重新分配到新数组中的对应位置。这个过程需要重新计算键的哈希值，并根据新数组的容量进行取模运算，以确定键值对在新数组中的位置。 如果原数组中的某个位置有多个键值对，可能会出现 哈希冲突 。在重新分配键值对时，会使用链表或红黑树来解决冲突。 将新数组设置为HashMap的内部数组，并更新相关的属性，如 容量 和 阈值 。 通过扩容操作，HashMap可以动态调整数组的大小，以适应存储键值对数量的变化。这样可以保持负载因子在合适的范围内，避免链表或红黑树过长，从而保持HashMap的性能和效率。需要注意的是，扩容操作可能会导致一定的 性能损耗 ，因为需要重新计算哈希值和重新分配键值对。因此，在设计使用HashMap的时候，需要合理设置初始容量和负载因子，以减少扩容的频率。"
+    },
+    {
+      "slug": "wokovmo4oc1h0qf2",
+      "title": "ConcurrentHashMap的存储结构是怎样的",
+      "url": "/tulingzhouyu/db22bv/wokovmo4oc1h0qf2",
+      "toc_path": [
+        "面试必看",
+        "大厂真题",
+        "美团面试真题",
+        "ConcurrentHashMap的存储结构是怎样的"
+      ],
+      "toc_level": 3,
+      "toc_index": 56,
+      "word_count": 189,
+      "updated_at": "2023-08-28T11:21:04.000Z",
+      "primary_category": "java-collections",
+      "primary_category_name": "Java集合",
+      "related_categories": [
+        "java-collections",
+        "java-concurrency",
+        "algorithm",
+        "java-core",
+        "mysql-index-transaction"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "HashMap",
+        "ConcurrentHashMap",
+        "线程",
+        "锁",
+        "CAS",
+        "数组",
+        "链表",
+        "Java"
+      ],
+      "summary": "ConcurrentHashMap在Java7 中使用的分段锁，也就是每一个 Segment 上同时只有一个线程可以操作，每一个 Segment 都是一个类似 HashMap 数组的结构，它可以扩容，它的冲突会转化为链表。但是Segment 的个数一但初始化就不能改变，默认 Segment 的...",
+      "excerpt": "ConcurrentHashMap在Java7 中使用的 分段锁 ，也就是每一个 Segment 上同时只有一个线程可以操作，每一个 Segment 都是一个类似 HashMap 数组 的结构，它可以扩容，它的冲突会转化为链表。但是Segment 的个数一但初始化就不能改变，默认 Segment 的个数是 16 个 。 Java8 中的 ConcurrnetHashMap 使用的 Synchronized 锁加 CAS 的机制。结构也由Java7 中的 Segment 数组 + HashEntry 数组 + 链表 进化成了 Node 数组 + 链表 / 红黑树 ，Node 是类似于一个 HashEntry 的结构。它的冲突在达到一定大小时会转化成红黑树，在冲突小于一定数量时又会退回链表。"
+    },
+    {
+      "slug": "bblkc05gy40vn6pn",
+      "title": "阿里面试",
+      "url": "/tulingzhouyu/db22bv/bblkc05gy40vn6pn",
+      "toc_path": [
+        "面试必看",
+        "最全面经",
+        "阿里面试"
+      ],
+      "toc_level": 2,
+      "toc_index": 86,
+      "word_count": 18294,
+      "updated_at": "2023-09-05T11:18:12.000Z",
+      "primary_category": "java-collections",
+      "primary_category_name": "Java集合",
+      "related_categories": [
+        "java-collections",
+        "java-concurrency",
+        "os-linux",
+        "java-thread-pool",
+        "java-core"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "campus",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "校招/应届生",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "集合",
+        "HashMap",
+        "ConcurrentHashMap",
+        "ArrayList",
+        "LinkedList",
+        "TreeMap",
+        "并发",
+        "多线程",
+        "线程",
+        "锁",
+        "volatile",
+        "synchronized",
+        "线程池",
+        "Java"
+      ],
+      "summary": "Java基础Vector,ArrayList, LinkedList的区别是什么？答：Vector、ArrayList都是以类似数组的形式存储在内存中，LinkedList则以链表的形式进行存储。List中的元素有序、允许有重复的元素，Set中的元素无序、不允许有重复元素。Vector线程同步...",
+      "excerpt": "Java基础 Vector,ArrayList, LinkedList的区别是什么？ 答： Vector、ArrayList都是以类似数组的形式存储在内存中，LinkedList则以链表的形式进行存储。 List中的元素有序、允许有重复的元素，Set中的元素无序、不允许有重复元素。 Vector线程同步，ArrayList、LinkedList线程不同步。 LinkedList适合指定位置插入、删除操作，不适合查找；ArrayList、Vector适合查找，不适合指定位置的插入、删除操作。 ArrayList在元素填满容器时会自动扩充容器大小的50%，而Vector则是100%，因此ArrayList更节省空间。 HashTable, HashMap，TreeMap区别？ 答： HashTable线程同步，HashMap非线程同步。 HashTable不允许<键,值>有空值，HashMap允许<键,值>有空值。 HashTable使用Enumeration，HashMap使用Iterator。 HashTable中hash数组的默认大小是11，增加方式的old*2+1，HashMap中hash数组的默认大小是16，增长方式一定是2的指数倍。 TreeMap能够把它保存的记录根据键排序，默认是按升序排序。 HashMap的数据结构 jdk1.8之前list + 链表 jdk1.8之后list + 链表（当链表长度到8时，转化为红黑树） HashMap的扩容因子 默认0.75，也就是会浪费1/4的空间，达到扩容因子时，会将list扩容一倍，0.75 是时间与空间一个平衡值； 多线程修改HashMap 多线程同时写入，同时执行扩容操作，多线程扩容可能死锁、丢数据；可以对HashMap 加入同步锁Collections.synchronizedMap(hashMap)，但是效率很低，因为该锁是互斥锁，同一时刻只能有一个线程执行读写操作，这时候应该使用ConcurrentHashMap LinkedHashMap Java LinkedHashMap工作原理及实现 Java集合框架：LinkedHashMap 注意：在使用Iterator遍历的时候，LinkedHashMap会产生 java.util.ConcurrentModificationException 。 扩展HashMap增加双向链表的实现，号称是最占内存的数据结构。支持iterator()时按Entry的插入顺序来排序(但是更新不算， 如果设置accessOrder属性为true，则所有读写访问都算)。实现上是在Entry上再增加属性before/after指针，插入时把自己加到Header Entry的前面去。如果所有读写访问都要排序，还要把前后Entry的before/after拼接起来以在链表中"
+    },
+    {
+      "slug": "avpxs3qirk1w4qod",
+      "title": "👍 2024金三银四100道面试题笔记资料",
+      "url": "/tulingzhouyu/db22bv/avpxs3qirk1w4qod",
+      "toc_path": [
+        "系列篇",
+        "👍 2024金三银四100道面试题笔记资料"
+      ],
+      "toc_level": 1,
+      "toc_index": 98,
+      "word_count": 95240,
+      "updated_at": "2024-02-21T12:37:19.000Z",
+      "primary_category": "java-collections",
+      "primary_category_name": "Java集合",
+      "related_categories": [
+        "java-collections",
+        "java-core",
+        "java-concurrency",
+        "algorithm",
+        "mysql-index-transaction"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "集合",
+        "HashMap",
+        "ConcurrentHashMap",
+        "TreeMap",
+        "Java",
+        "equals",
+        "泛型",
+        "异常",
+        "并发",
+        "线程",
+        "锁",
+        "synchronized",
+        "算法"
+      ],
+      "summary": "什么是浅拷贝和深拷贝？浅拷贝（shallow copy）：只复制指向某个对象的指针，而不复制对象本身，新旧对象共享一块内存； 深拷贝（deep copy）：复制并创建一个一摸一样的对象，不共享内存，修改新对象，旧对象保持不变；浅拷贝拷贝对象和原始对象的引用类型引用同一个对象。public cl...",
+      "excerpt": "什么是浅拷贝和深拷贝？ 浅拷贝 （shallow copy）：只 复制 指向某个对象的指针，而不 复制 对象本身，新旧对象共享一块内存； 深拷贝 （deep copy）： 复制 并创建一个一摸一样的对象，不共享内存，修改新对象，旧对象保持不变； 浅拷贝 拷贝对象和原始对象的引用类型引用同一个对象。 深拷贝 拷贝对象和原始对象的引用类型引用不同对象。 使用 clone() 方法来拷贝一个对象即复杂又有风险，它会抛出异常，并且还需要类型转换。Effective Java 书上讲到，最好不要去使用 clone()，可以使用拷贝构造函数或者拷贝工厂来拷贝一个对象。 Overload、Override、Overwrite的介绍? overload意为重载，override意为覆盖，overwrite意为重写。从中文意思上看，并无差别，但是如下所示，给出英文定义： 💡 Overloading occurs when two or more methods in one class have the same method name but different parameters. 当一个类中的两个或多个方法具有相同的方法名但参数不同时，就会发生重载。 Overriding or overwrite means having two methods with the same method name and parameters (i.e., method signature). One of the methods is in the parent class and the other is in the child class. 重写意味着有两个方法具有相同的方法名和参数（即方法签名）。其中一个方法在父类中，另一个在子类中。 Overload为同一个类中，存在多个方法名相同的函数，但是他们拥有不同的参数（参数个数，类型，顺序）。 Override 和 Overwrite 为子类和父类之间，子类和父类拥有同样的方法名和参数列表，只是将方法体重写。这是面向对象编程的多态性。 Overload规则 包含多个同名函数，但是参数各不相同。 参数类型、参数个数、参数顺序（不同类型间）至少有一个不同。 可以改变返回值类型（不能作为重载判断依据） 可以改变访问修饰符（不能作为重载判断依据） 可以改变异常类型和数量（不能作为重载判断依据） Overrite规则 存在于子类和父类之间 子类必须和父类的方法名和参数列表必须完全相同。 可以改变返回值类型，但子类返回值类型必须是父类返回值类型的派生类。 可以改变访问修饰符，但是子类权限只能更开放。 声明为 final 的方法不能被重写。 声明为 static 的方法不能被重写，但是可以被重新声明。 构造器不能被重写。 子类和父类在同一个"
+    },
+    {
+      "slug": "nksbg1bfv63039ga",
+      "title": "💎 Java面试题大全",
+      "url": "/tulingzhouyu/db22bv/nksbg1bfv63039ga",
+      "toc_path": [
+        "系列篇",
+        "💎 Java面试题大全"
+      ],
+      "toc_level": 1,
+      "toc_index": 101,
+      "word_count": 49044,
+      "updated_at": "2025-02-19T08:14:50.000Z",
+      "primary_category": "java-collections",
+      "primary_category_name": "Java集合",
+      "related_categories": [
+        "java-collections",
+        "java-core",
+        "algorithm",
+        "os-linux",
+        "jvm-classloading"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "集合",
+        "HashMap",
+        "ConcurrentHashMap",
+        "ArrayList",
+        "LinkedList",
+        "Java",
+        "String",
+        "equals",
+        "泛型",
+        "算法",
+        "数组",
+        "链表",
+        "操作系统"
+      ],
+      "summary": "JDK、JRE、JVM之间的区别JDK(Java SE Development Kit)，Java标准开发包，它提供了编译、运行Java程序所需的各种工具和资源，包括Java编译器、Java运行时环境，以及常用的Java类库等JRE( Java Runtime Environment) ，Ja...",
+      "excerpt": "JDK、JRE、JVM之间的区别 JDK(Java SE Development Kit)，Java标准开发包，它提供了 编译 、 运行 Java程序所需的各种工具和资源，包括 Java编译器 、 Java运行时环境 ，以及常用的 Java类库 等 JRE( Java Runtime Environment) ，Java运行环境，用于 运行 Java的字节码文件。JRE中包括了JVM以及JVM工作所需要的类库，普通用户而只需要安装JRE来运行Java程序，而程序开发者必须安装JDK来编译、调试程序。 JVM(Java Virtual Machine)，Java虚拟机，是JRE的一部分，它是整个java实现跨平台的最核心的部分，负责运行字节码文件。 ​ 我们写Java代码，用txt就可以写，但是写出来的Java代码，想要运行，需要先编译成字节码，那就需要编译器，而JDK中就包含了编译器javac，编译之后的字节码，想要运行，就需要一个可以执行字节码的程序，这个程序就是JVM（Java虚拟机），专门用来执行Java字节码的。 ​ 如果我们要开发Java程序，那就需要JDK，因为要编译Java源文件。 如果我们只想运行已经编译好的Java字节码文件，也就是*.class文件，那么就只需要JRE。 JDK中包含了JRE，JRE中包含了JVM。 另外，JVM在执行Java字节码时，需要把字节码解释为机器指令，而不同操作系统的机器指令是有可能不一样的，所以就导致不同操作系统上的JVM是不一样的，所以我们在安装JDK时需要选择操作系统。 另外，JVM是用来执行Java字节码的，所以凡是某个代码编译之后是Java字节码，那就都能在JVM上运行，比如 Apache Groovy , Scala and Kotlin 等等。 ​ hashCode()与equals()之间的关系 在Java中，每个对象都可以调用自己的hashCode()方法得到自己的哈希值(hashCode)，相当于对象的指纹信息，通常来说世界上没有完全相同的两个指纹，但是在Java中做不到这么绝对，但是我们仍然可以利用hashCode来做一些提前的判断，比如： 如果两个对象的hashCode不相同，那么这两个对象肯定不同的两个对象 如果两个对象的hashCode相同，不代表这两个对象一定是同一个对象，也可能是两个对象 如果两个对象相等，那么他们的hashCode就一定相同 ​ 在Java的一些集合类的实现中，在比较两个对象是否相等时，会根据上面的原则，会先调用对象的hashCode()方法得到hashCode进行比较，如果hashCode不相同，就可以直接认为这两个对象不相同，如果hashCode相同，那么就会进一步调用equals()方法进行比较。而equals()方法，就是用来最终确定两个对象是不是相等的"
+    },
+    {
+      "slug": "iayyx1debbkx29g6",
+      "title": "💎 Java基础面试题合集",
+      "url": "/tulingzhouyu/db22bv/iayyx1debbkx29g6",
+      "toc_path": [
+        "Java基础",
+        "💎 Java基础面试题合集"
+      ],
+      "toc_level": 1,
+      "toc_index": 168,
+      "word_count": 40395,
+      "updated_at": "2025-12-11T07:09:33.000Z",
+      "primary_category": "java-collections",
+      "primary_category_name": "Java集合",
+      "related_categories": [
+        "java-collections",
+        "java-core",
+        "java-concurrency",
+        "os-linux",
+        "algorithm"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "集合",
+        "ArrayList",
+        "Java",
+        "泛型",
+        "注解",
+        "异常",
+        "并发",
+        "多线程",
+        "线程",
+        "锁",
+        "内存",
+        "数组"
+      ],
+      "summary": "1. 如何优雅的避免空指针异常空指针异常是导致java程序运行中断最常见的原因，相信每个程序猿都碰见过，也就是NullPointException，我们通常简称为NPE，本文告诉大家如何优雅避免NPE。1.数据准备package npe; /** * @author 百里 */ public ...",
+      "excerpt": "如何优雅的避免空指针异常 空指针异常是导致java程序运行中断最常见的原因，相信每个程序猿都碰见过，也就是NullPointException，我们通常简称为NPE，本文告诉大家如何优雅避免NPE。 1.数据准备 UML类关系图： 2.实战：获取用户所在的城市 2.1.直接获取；容易出现空指针异常。 2.2.使用if-else判断；避免了出现空指针的问题，但是代码结构层次嵌套多，不美观 2.3.使用工具类美化一下if判断代码 2.4.使用Optional解决了层次多的问题也避免了空指针的问题，当我们配合使用orElse时，会先执行orElse方法，然后执行逻辑代码，不管是否出现了空指针。 2.5.使用断言处理接口入参，检查假设和前置条件是否满足，以及检查空值情况，提前捕获空指针异常并进行处理 2.6.使用@Nullable注解，标识变量或方法参数和返回值是否可以为 null，以便在编译期或开发工具中提示可能的 NullPointerException 风险 2.7.额外补充 JDK17优化了空指针异常信息(Helpful NullPointerExceptions) 通过精确描述哪个变量为空来提高JVM生成的空指针异常信息的可用性。 即，以前的空指针异常信息不会告诉你具体是哪个对象为null，当运行的语句是对一个嵌套结构的对象做连续的方法调用(如&quot;a.getb().getc().xxx()&quot;)时，就需要进一步分析或调试才能判断出谁是null。而该特性加入以后则直接在异常信息中说明值为null的对象是哪个。 执行结果： 什么是 CopyOnWriteArrayList 1.Copy-On-Write 是什么？ Copy-On-Write它是一种在计算机科学中常见的优化技术，主要应用于需要频繁读取但很少修改的数据结构上。 简单的说就是在计算机中就是当你想要对一块内存进行修改时，我们不在原有内存块中进行写操作，而是将内存拷贝一份，在新的内存中进行写操作，写完之后呢，就将指向原来内存指针指向新的内存，原来的内存就可以被回收掉了！ 既然是一种优化策略，我们看一段代码： 上面的Demo在单线程下执行时没什么毛病，但是在多线程的环境中，就可能出异常，为什么呢？ 因为多线程迭代时如果有其他线程对这个集合list进行增减元素，会抛出java.util.ConcurrentModificationException的异常。 我们以增加元素为例子，运行下面这Demo： 这里暴露的问题是什么呢？ 多线程场景下迭代器遍历集合的读取操作和其他线程对集合进行写入操作会导致出现并发修改异常 解决方案： CopyOnWriteArrayList避免了多线程操作List线程不安全的问题 2.CopyOnWriteArrayList介绍 从JDK1.5开始Java并发包里提供"
+    },
+    {
+      "slug": "flzcleillddvwrm2",
+      "title": "HashMap底层原理常见面试题",
+      "url": "/tulingzhouyu/db22bv/flzcleillddvwrm2",
+      "toc_path": [
+        "Java基础",
+        "HashMap底层原理常见面试题"
+      ],
+      "toc_level": 1,
+      "toc_index": 172,
+      "word_count": 4442,
+      "updated_at": "2025-01-13T14:06:40.000Z",
+      "primary_category": "java-collections",
+      "primary_category_name": "Java集合",
+      "related_categories": [
+        "java-collections",
+        "algorithm",
+        "java-core",
+        "java-concurrency",
+        "performance-optimization"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "junior",
+        "campus",
+        "senior"
+      ],
+      "level_names": [
+        "初级/1-3年",
+        "校招/应届生",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "HashMap",
+        "算法",
+        "数组",
+        "链表",
+        "查找",
+        "Java",
+        "equals",
+        "异常",
+        "并发",
+        "多线程",
+        "线程",
+        "锁",
+        "性能"
+      ],
+      "summary": "1、HashMap 的底层数据结构在 JDK 1.7 中 HashMap 是以「数组加链表」的形式组成的，JDK 1.8 之后新增了「红黑树」的组成结构，「当链表长度大于 8 并且 hash 桶的容量大于 64 时，链表结构会转换成红黑树结构」。所以，它的组成结构如下图所示：底层数据结构Has...",
+      "excerpt": "1、HashMap 的底层数据结构 在 JDK 1.7 中 HashMap 是以 「数组加链表」 的形式组成的， JDK 1.8 之后新增了 「红黑树」 的组成结构， 「当链表长度大于 8 并且 hash 桶的容量大于 64 时，链表结构会转换成红黑树结构」 。所以，它的组成结构如下图所示： 底层数据结构 HashMap 中数组的每一个元素又称为哈希桶，也就是 key-value 这样的实例。在 Java7 中叫 Entry， Java8 中叫 Node。 因为它本身所有的位置都为 null，在 put 插入的时候会根据 key 的 hash 去计算一个 index 值。比如，我 put （&quot;徐庶&quot;，666），在 HashMap 中插入 &quot;徐庶&quot; 这个元素，通过 hash 算法算出 index 位置是 3。这时的结构如下所示，还是个数组。 初次 put 以上没 hash 冲突时，若发生 hash 冲突就得引入链表啦。假设我再次 put （&quot;元直&quot;，666），在 HashMap 中插入 &quot;元直&quot; 这个元素，通过 hash 算法算出 index 位置也是 3。这时的结构如下所示：形成了链表。 再次 put，发生 hash 冲突 它的源码如下所示： 「可以看出每个哈希桶中包含了四个字段：hash、key、value、next，其中 next 表示链表的下一个节点」 。 ❝ JDK 1.8 之所以添加红黑树是因为一旦链表过长，会严重影响 HashMap 的性能，而红黑树具有快速增删改查的特点，这样就可以有效的解决链表过长时操作比较慢的问题。 ❞ 2、HashMap 的重要方法 PS：以下源码分析全部基于 JDK1.8 版本。 查询（get 方法） 源码如下： 代码注释已经很详细，强调一点：当哈希冲突时我们不仅需要判断 hash 值，还需要通过判断 key 值是否相等，才能确认此元素是不是我们想要的元素。 新增（put 方法） 源码如下： 注释已经很详细了。但新增的方法比较复杂，画个流程图方便方便各位理解： put 流程 扩容（resize 方法） 源码如下： 从以上源码可以看出，扩容主要分两步： 扩容：创建一个新的 Entry 空数组，长度是原数组的 2 倍。 位运算：原来的元素哈希值和原数组长度进行 & 运算。 JDK 1.8 在扩容时并没有像 JDK 1.7 那样，重新计算每个元素的哈希值，而是通过高位运算（e.hash & oldCap）来确定元素是否需要移动，假设 key1 的信息如下： key1.hash = 10；二进制：0000 1010 oldCap = 16；二进制：0001 0000 「使用 e.hash & oldCap 得到的结果，高一位为 0，当结果为 0 时表"
+    },
+    {
+      "slug": "dl0w237u3ngawt4p",
+      "title": "Java中的集合框架有哪些核心接口",
+      "url": "/tulingzhouyu/db22bv/dl0w237u3ngawt4p",
+      "toc_path": [
+        "Java基础",
+        "Java中的集合框架有哪些核心接口"
+      ],
+      "toc_level": 1,
+      "toc_index": 202,
+      "word_count": 399,
+      "updated_at": "2023-09-06T06:32:08.000Z",
+      "primary_category": "java-collections",
+      "primary_category_name": "Java集合",
+      "related_categories": [
+        "java-collections",
+        "java-core",
+        "mq-rabbitmq"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "集合",
+        "HashMap",
+        "ArrayList",
+        "LinkedList",
+        "HashSet",
+        "TreeMap",
+        "Java",
+        "队列"
+      ],
+      "summary": "Java中的集合框架提供了一组接口和类，用于存储和操作数据集合。其中一些核心接口包括：Collection接口：是集合框架中最通用的接口，用于表示一组对象。它是List、Set和Queue接口的父接口，定义了对集合进行基本操作的方法。List接口：表示一个有序的、可重复的集合。List接口的实...",
+      "excerpt": "Java中的集合框架提供了一组接口和类，用于存储和操作数据集合。其中一些核心接口包括： Collection接口： 是集合框架中最通用的接口，用于表示一组对象。它是List、Set和Queue接口的父接口，定义了对集合进行基本操作的方法。 List接口： 表示一个有序的、可重复的集合。List接口的实现类可以根据元素的插入顺序访问和操作集合中的元素。常见的List接口的实现类有ArrayList、LinkedList和Vector。 Set接口： 表示一个无序的、不可重复的集合。Set接口的实现类不能包含重复的元素。常见的Set接口的实现类有HashSet、TreeSet和LinkedHashSet。 Queue接口： 表示一个先进先出的集合。Queue接口的实现类通常用于实现队列数据结构。常见的Queue接口的实现类有LinkedList和PriorityQueue。 Map接口： 表示一个键值对的映射集合。Map接口中的每个元素由一个键和一个值组成，并且每个键只能在Map中出现一次。常见的Map接口的实现类有HashMap、TreeMap和LinkedHashMap。 以上是Java集合框架中一些核心接口的介绍。这些接口提供了不同类型和功能的集合，可以根据需求选择合适的接口和实现类来存储和操作数据。"
+    },
+    {
+      "slug": "wcdss8mhkqiohbkg",
+      "title": "ArrayList和LinkedList有什么区别",
+      "url": "/tulingzhouyu/db22bv/wcdss8mhkqiohbkg",
+      "toc_path": [
+        "Java基础",
+        "ArrayList和LinkedList有什么区别"
+      ],
+      "toc_level": 1,
+      "toc_index": 203,
+      "word_count": 414,
+      "updated_at": "2023-09-20T06:37:11.000Z",
+      "primary_category": "java-collections",
+      "primary_category_name": "Java集合",
+      "related_categories": [
+        "java-collections",
+        "performance-optimization",
+        "algorithm",
+        "java-core",
+        "os-linux"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "集合",
+        "ArrayList",
+        "LinkedList",
+        "性能",
+        "数组",
+        "链表",
+        "Java",
+        "内存"
+      ],
+      "summary": "ArrayList和LinkedList是Java集合框架中List接口的两个常见实现类，它们在底层实现和性能特点上有以下几点区别：底层数据结构：ArrayList使用数组来存储元素，而LinkedList使用双向链表来存储元素。随机访问性能：ArrayList支持高效的随机访问（根据索引获取...",
+      "excerpt": "ArrayList和LinkedList是Java集合框架中List接口的两个常见实现类，它们在底层实现和性能特点上有以下几点区别： 底层数据结构： ArrayList使用数组来存储元素，而LinkedList使用双向链表来存储元素。 随机访问性能： ArrayList支持高效的随机访问（根据索引获取元素），因为它可以通过下标计算元素在数组中的位置。而LinkedList在随机访问方面性能较差，获取元素需要从头或尾部开始遍历链表找到对应位置。 插入和删除性能： ArrayList在尾部添加或删除元素的性能较好，因为它不涉及数组的移动。而在中间插入或删除元素时，ArrayList涉及到元素的移动，性能相对较低。LinkedList在任意位置进行插入和删除操作的性能较好，因为只需要调整链表中的指针即可。 内存占用： ArrayList在每个元素都需要存储一个引用和一个额外的数组空间，因此内存占用比较高。而LinkedList由于需要存储前后节点的引用，相对于ArrayList占用的内存更多。 综上所述，如果需要频繁进行随机访问操作或在尾部进行插入和删除操作，可以选择ArrayList。如果需要频繁进行中间位置的插入和删除操作，或者对内存占用有一定限制，可以选择LinkedList。"
+    },
+    {
+      "slug": "sh7mkz2o95ng1n1g",
+      "title": "HashMap和Hashtable有什么区别",
+      "url": "/tulingzhouyu/db22bv/sh7mkz2o95ng1n1g",
+      "toc_path": [
+        "Java基础",
+        "HashMap和Hashtable有什么区别"
+      ],
+      "toc_level": 1,
+      "toc_index": 204,
+      "word_count": 298,
+      "updated_at": "2023-09-06T06:33:26.000Z",
+      "primary_category": "java-collections",
+      "primary_category_name": "Java集合",
+      "related_categories": [
+        "java-collections",
+        "java-concurrency",
+        "java-core",
+        "security-auth",
+        "os-linux"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "集合",
+        "HashMap",
+        "并发",
+        "线程",
+        "synchronized",
+        "Java",
+        "异常",
+        "安全"
+      ],
+      "summary": "HashMap和Hashtable都是Java集合框架中Map接口的实现类，它们有以下几个区别：线程安全性：Hashtable是线程安全的，而HashMap是非线程安全的。Hashtable通过在每个方法前加上synchronized关键字来保证线程安全性，而HashMap则没有实现这种机制。...",
+      "excerpt": "HashMap和Hashtable都是Java集合框架中Map接口的实现类，它们有以下几个区别： 线程安全性： Hashtable是线程安全的，而HashMap是非线程安全的。Hashtable通过在每个方法前加上synchronized关键字来保证线程安全性，而HashMap则没有实现这种机制。 null值： Hashtable不允许键或值为null，否则会抛出NullPointerException异常。而HashMap可以存储key和value为null的元素。 继承和接口实现： Hashtable继承自Dictionary类，而HashMap则继承自AbstractMap类并实现了Map接口。 初始容量和扩容机制： Hashtable在创建时必须指定容量大小，且默认大小为11。而HashMap可以在创建时不指定容量大小，系统会自动分配初始容量，并采用2倍扩容机制。 迭代器 ：迭代器 Iterator 对 Hashtable 是安全的，而 Iterator 对 HashMap 不是安全的，因为迭代器被设计为工作于一个快照上，如果在迭代过程中其他线程修改了 HashMap，则会抛出并发修改异常。"
+    },
+    {
+      "slug": "oi62527xx01nta0g",
+      "title": "JDK7与JDK8之间HashMap的区别？",
+      "url": "/tulingzhouyu/db22bv/oi62527xx01nta0g",
+      "toc_path": [
+        "并发编程",
+        "JDK7与JDK8之间HashMap的区别？"
+      ],
+      "toc_level": 1,
+      "toc_index": 288,
+      "word_count": 1215,
+      "updated_at": "2026-01-08T08:32:12.000Z",
+      "primary_category": "java-collections",
+      "primary_category_name": "Java集合",
+      "related_categories": [
+        "java-collections",
+        "algorithm",
+        "java-concurrency",
+        "os-linux",
+        "resume-project"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "senior",
+        "expert"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "专家/P7+"
+      ],
+      "keywords": [
+        "HashMap",
+        "ConcurrentHashMap",
+        "算法",
+        "数组",
+        "链表",
+        "并发",
+        "多线程",
+        "线程",
+        "内存",
+        "面试官"
+      ],
+      "summary": "一、 标准面试回答模版（建议背诵）面试官： JDK 1.7 和 JDK 1.8 中的 HashMap 有什么区别？Fox版标准回答：“HashMap 在 JDK 1.8 做了一次彻底的重构，核心区别主要体现在底层数据结构、插入方式和扩容机制三个方面：底层数据结构：JDK 1.7：",
+      "excerpt": "一、 标准面试回答模版（建议背诵） 面试官： JDK 1.7 和 JDK 1.8 中的 HashMap 有什么区别？ Fox版标准回答： “HashMap 在 JDK 1.8 做了一次彻底的重构，核心区别主要体现在 底层数据结构 、 插入方式 和 扩容机制 三个方面： 底层数据结构： JDK 1.7： 数组 + 链表 。无论链表多长，都一直遍历，极端情况下查询性能退化为 $O(n)$ 。 JDK 1.8： 数组 + 链表 + 红黑树 。当链表长度超过 8（且数组长度大于 64）时，链表会强制转为红黑树，将查询性能从 $O(n)$ 提升到 $O(\\log n)$ ，解决哈希冲突导致的性能衰减问题。 插入数据的操作： JDK 1.7： 采用 头插法 （Head Insertion）。新来的节点插在链表头部。 JDK 1.8： 采用 尾插法 （Tail Insertion）。新来的节点插在链表尾部。 原因： 1.7 的头插法在多线程扩容时会导致**‘死循环’**（环形链表）问题，1.8 改为尾插法解决了这个问题（但仍不保证线程安全）。 扩容（Resize）时的计算： JDK 1.7： 需要对每个元素 重新计算哈希值 ，再取模算出新下标，效率较低。 JDK 1.8： 采用 高低位算法 。不需要重新算哈希值，只需要判断 Hash 值新增的那一位是 0 还是 1，要么索引不变，要么索引 = 原索引 + 原数组长度。效率极大提升。” 二、 结构与源码对比（Talk is cheap） 面试时，建议脑子里要有这两张图的画面感，最好能给面试官画出来。 1. 数据结构对比 JDK 1.7 (Entry) 就是一个纯粹的 Entry 数组。链表单纯是为了解决 Hash 冲突。 ​ JDK 1.8 (Node / TreeNode) Look at me! 这里多了一个复杂的 TreeNode。 ​ 关键阈值： TREEIFY_THRESHOLD = 8 (链表转树), UNTREEIFY_THRESHOLD = 6 (树退化回链表)。 2. 扩容逻辑对比（核心优化） JDK 1.7 逻辑： ​ JDK 1.8 逻辑（Fox高光点）： 不需要重新取模，直接看 hash & oldCap 的结果。 ​ 解析： 这种位运算设计非常巧妙，直接利用了二进制的高位特性，省去了大量的哈希计算。 三、 Fox的深度解析 如果面试官问：“为什么 JDK 1.7 会出现死循环？JDK 1.8 改成尾插法就线程安全了吗？” 这是区分 P6 和 P7 的关键点。 Fox版解析： 关于死循环（JDK 1.7）： “核心原因是头插法在扩容时会改变链表元素的顺序。 假设线程 A 和线程 B 同时进行 transfer（扩容转移）。 原链表：A -> B -> C 线程 A 挂起，线程 B 完成扩容。因为是头插"
+    },
+    {
+      "slug": "cazo0ro75gxuh49k",
+      "title": "说下ConcurrentHashMap和Hashtable的异同点",
+      "url": "/tulingzhouyu/db22bv/cazo0ro75gxuh49k",
+      "toc_path": [
+        "并发编程",
+        "说下ConcurrentHashMap和Hashtable的异同点"
+      ],
+      "toc_level": 1,
+      "toc_index": 289,
+      "word_count": 985,
+      "updated_at": "2026-01-08T08:42:53.000Z",
+      "primary_category": "java-collections",
+      "primary_category_name": "Java集合",
+      "related_categories": [
+        "java-collections",
+        "java-concurrency",
+        "mysql-index-transaction",
+        "os-linux",
+        "performance-optimization"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "HashMap",
+        "ConcurrentHashMap",
+        "并发",
+        "线程",
+        "锁",
+        "synchronized",
+        "CAS",
+        "性能",
+        "吞吐"
+      ],
+      "summary": "一、 标准面试回答模版（建议背诵）面试官： 请说一下 ConcurrentHashMap 和 Hashtable 的区别？Fox版标准回答：“这两者虽然都是线程安全的 Map，但在实现原理、性能和迭代机制上有本质区别：核心区别：锁的粒度（Lock Granularity）Hashtable：",
+      "excerpt": "一、 标准面试回答模版（建议背诵） 面试官： 请说一下 ConcurrentHashMap 和 Hashtable 的区别？ Fox版标准回答： “这两者虽然都是线程安全的 Map，但在 实现原理 、 性能 和 迭代机制 上有本质区别： 核心区别：锁的粒度（Lock Granularity） Hashtable： 是一把‘全局大锁’。它在 put 、 get 等所有核心方法上直接加了 synchronized 。这意味着不管你操作哪个 Key，全表都被锁死，并发度几乎为 0。 ConcurrentHashMap： 是‘分段锁’ （JDK 1.7）或 ‘节点锁’（JDK 1.8）。 JDK 1.8 中： 它使用 CAS + synchronized 锁住哈希桶的 头节点 。只有两个线程同时操作**同一个桶（Hash冲突）**时才会竞争，大大提高了并发吞吐量。 性能差距： 在高并发环境下， Hashtable 的性能会急剧下降（因为所有线程都在争夺同一把锁）。 ConcurrentHashMap 的读操作（ get ）通常是 无锁 的，写操作锁粒度极细，性能接近 HashMap 。 迭代机制： Hashtable： 使用 Fail-Fast 迭代器。如果遍历时有其他线程修改了数据，会直接抛出 ConcurrentModificationException 异常。 ConcurrentHashMap： 使用 Weakly Consistent（弱一致性） 迭代器。它允许在遍历时并发修改， 不会抛出异常 ，但迭代器可能看不到最新的修改（比如遍历开始后新插入的数据）。 共同点： 它们都 不允许 Key 或 Value 为 null （这一点与 HashMap 不同）。” 二、 源码级对比（Talk is cheap） 面试时，直接指出源码中锁的位置，胜过千言万语。 1. Hashtable (全局锁) Look at me! 注意看这个 synchronized 是加在方法上的，简单粗暴。 ​ 2. ConcurrentHashMap JDK 1.8 (细粒度锁) Look at me! 只有在发生 Hash 冲突，且 CAS 失败时，才锁住那个 特定的 Node （头节点）。 三、 Fox的深度解析（面试杀手锏） 如果面试官追问：“ 为什么它们都不允许 null 键和 null 值？而 HashMap 却允许？ ” 这是一个非常刁钻但高频的问题，必须用**二义性（Ambiguity）**来解释。 Fox版解析： “这主要是为了解决并发环境下的**‘二义性’**问题。 在 HashMap（非并发）中： 如果 map.get(key) 返回 null ，我有两种情况： 这个 key 不存在。 这个 key 存在，但值就是 null 。 解决办法： 我可以调用 map.c"
+    },
+    {
+      "slug": "ok06pgr1p259gqc6",
+      "title": "实现一个LRU（最近最少使用）缓存",
+      "url": "/tulingzhouyu/db22bv/ok06pgr1p259gqc6",
+      "toc_path": [
+        "数据结构与算法",
+        "实现一个LRU（最近最少使用）缓存"
+      ],
+      "toc_level": 1,
+      "toc_index": 893,
+      "word_count": 865,
+      "updated_at": "2024-08-30T14:25:09.000Z",
+      "primary_category": "java-collections",
+      "primary_category_name": "Java集合",
+      "related_categories": [
+        "java-collections",
+        "algorithm",
+        "redis-cache",
+        "performance-optimization",
+        "ai-llm"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "HashMap",
+        "算法",
+        "链表",
+        "查找",
+        "缓存",
+        "容量"
+      ],
+      "summary": "实现一个LRU（最近最少使用）缓存可以通过使用HashMap和双向链表来实现。HashMap用于快速查找缓存中的元素，而双向链表用于维护元素的使用顺序。以下是详细的代码示例和解释：LRU缓存实现思路：使用HashMap存储键值对，以便快速访问。使用双向链表维护元素的使用顺序，最近使用的元素放在...",
+      "excerpt": "实现一个LRU（最近最少使用）缓存可以通过使用 HashMap 和双向链表来实现。 HashMap 用于快速查找缓存中的元素，而双向链表用于维护元素的使用顺序。以下是详细的代码示例和解释： LRU缓存实现 思路 ： 使用 HashMap 存储键值对，以便快速访问。 使用双向链表维护元素的使用顺序，最近使用的元素放在链表头部，最少使用的元素放在链表尾部。 每次访问或插入元素时，将该元素移动到链表头部。 当缓存容量达到上限时，移除链表尾部的元素。 代码示例 ： 详细解释 Node类 ： int key, value : 存储缓存的键和值。 Node prev, next : 指向前一个和后一个节点的指针。 构造函数 Node(int key, int value) : 初始化节点的键和值。 LRUCache类 ： 成员变量 ： int capacity : 缓存的容量。 HashMap<Integer, Node> map : 存储键到节点的映射。 Node head, tail : 哨兵节点，用于标记链表的头部和尾部。 构造函数 ： 初始化容量、 HashMap 和哨兵节点。 将 head 和 tail 连接起来。 get方法 ： 从 map 中获取节点，如果不存在返回-1。 如果存在，将节点移动到链表头部，并返回节点的值。 put方法 ： 检查键是否存在于 map 中。 如果不存在，创建新节点并添加到链表头部。 如果 map 的大小超过容量，移除链表尾部的节点。 如果存在，更新节点的值并移动到链表头部。 辅助方法 ： addNode(Node node) : 将节点添加到链表头部。 removeNode(Node node) : 从链表中移除节点。 moveToHead(Node node) : 将节点移动到链表头部。 popTail() : 移除并返回链表尾部的节点。 通过这种方式，我们可以高效地实现一个LRU缓存， get 和 put 操作的时间复杂度均为O(1)。"
+    },
+    {
+      "slug": "vrg9pv9z61mp3sq9",
+      "title": "说说你对树 - 哈夫曼树的理解",
+      "url": "/tulingzhouyu/db22bv/vrg9pv9z61mp3sq9",
+      "toc_path": [
+        "数据结构与算法",
+        "说说你对树 - 哈夫曼树的理解"
+      ],
+      "toc_level": 1,
+      "toc_index": 917,
+      "word_count": 411,
+      "updated_at": "2023-08-31T14:16:14.000Z",
+      "primary_category": "java-collections",
+      "primary_category_name": "Java集合",
+      "related_categories": [
+        "java-collections",
+        "algorithm"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "集合",
+        "算法",
+        "二叉树"
+      ],
+      "summary": "哈夫曼树是一种用于数据压缩的树形结构，通过构建最优二叉树来实现高效的编码和解码。在构建哈夫曼树的过程中，首先需要统计待编码数据中每个字符的出现频率。然后，将每个字符及其频率创建为一个叶子节点，并将它们组成一个节点集合。接着，从节点集合中选择权重最小的两个节点作为左右子节点，创建一个新的父节点。...",
+      "excerpt": "哈夫曼树是一种用于数据压缩的树形结构，通过构建最优二叉树来实现高效的编码和解码。 在构建哈夫曼树的过程中， 首先 需要统计待编码数据中每个字符的出现频率。 然后 ，将每个字符及其频率创建为一个叶子节点，并将它们组成一个节点集合。 接着 ，从节点集合中选择权重最小的两个节点作为左右子节点，创建一个新的父节点。新的父节点的权重为两个子节点的权重之和。将新的父节点放回节点集合中，并重复这个过程，直到节点集合中只剩下一个节点，即哈夫曼树的根节点。 在哈夫曼树中，字符出现频率越高的节点越靠近树的根部，这样可以让频率高的字符拥有较短的编码，而频率低的字符拥有较长的编码。编码的方式是，从根节点开始，向左子树走路径加0，向右子树走路径加1。最终，每个叶子节点都有一个表示字符编码的二进制串。 哈夫曼树采用前缀编码，即任何一个字符的编码都不是另一个字符编码的前缀，使得解码过程能够唯一确定。用哈夫曼编码表示数据，可以有效地减小存储空间和提高传输效率。"
+    },
+    {
+      "slug": "fm2zg75apnci5pzi",
+      "title": "HashMap 源码深度解析：为何“8”是链表转树的临界点？",
+      "url": "/tulingzhouyu/db22bv/fm2zg75apnci5pzi",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "HashMap 源码深度解析：为何“8”是链表转树的临界点？"
+      ],
+      "toc_level": 2,
+      "toc_index": 982,
+      "word_count": 1361,
+      "updated_at": "2025-11-28T07:39:36.000Z",
+      "primary_category": "java-collections",
+      "primary_category_name": "Java集合",
+      "related_categories": [
+        "java-collections",
+        "algorithm",
+        "java-core",
+        "observability-troubleshooting",
+        "performance-optimization"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "senior",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "HashMap",
+        "算法",
+        "链表",
+        "查找",
+        "Java",
+        "CPU",
+        "性能",
+        "容量"
+      ],
+      "summary": "在 Java 面试中，HashMap 几乎是必考题。而其中最刁钻的一个追问往往是：“在 JDK 1.8 中，为什么链表转红黑树的阈值（TREEIFY_THRESHOLD）被设定为 8？”这不仅仅是一个简单的数字，它背后隐藏着 Java 工程师在",
+      "excerpt": "在 Java 面试中， HashMap 几乎是必考题。而其中最刁钻的一个追问往往是： “在 JDK 1.8 中，为什么链表转红黑树的阈值（TREEIFY_THRESHOLD）被设定为 8？” 这不仅仅是一个简单的数字，它背后隐藏着 Java 工程师在 安全、性能、空间与统计学 之间所做的极致权衡。今天，我们借助图文来一次源码级的深度拆解。 一、 开篇：源码中的“魔数” 当我们打开 HashMap.java 的源码，第 143 行赫然写着这样一行常量定义。很多开发者只记住了“8 转树，6 转链表”这个结论，却鲜少探究其背后的设计哲学。这个“8”并非拍脑袋决定的，它是整个 HashMap 各种妥协后的“临界点”。 二、 安全视角：防御 Hash DoS 攻击 首先，我们要明白为什么要引入红黑树？这其实是一场防御战。 在 Web 应用中，如果 HashMap 依然沿用 JDK 1.7 的纯链表结构，攻击者可以构造大量 hashCode 相同的恶意请求（Hash Collisions）。这会导致哈希表退化成一个长长的链表，查找性能从 O(1) 骤降为 O(n)。 如上图所示，这种攻击会让 CPU 占用率瞬间飙升至 100%，造成拒绝服务（DoS）。而引入红黑树作为“兜底方案”，能将最差情况下的性能维持在 O(log n) 。即使发生哈希碰撞攻击，服务器依然能保持响应。 “8”在这里，是系统自我保护的触发器。 三、 经济学视角：空间换时间的博弈 既然红黑树这么好，为什么不一开始就用红黑树，而要等到链表长度达到 8 才转换？ 这就涉及到了 “空间成本” 。源码注释中明确提到： TreeNodes are about twice the size of regular Nodes （树节点的大小大约是普通节点的两倍）。 上图的天平揭示了这个经济学原理： 左侧 ：在链表较短时，虽然查询是线性的，但节点轻量，内存占用小，且短链表的遍历速度非常快（CPU 缓存亲和性好）。 右侧 ：红黑树虽然查询快，但维护成本高（左旋、右旋、变色），且占用内存大。 只有当链表长度达到 8 时，线性查找的 时间损耗 （Time Penalty）才会超过维护红黑树的 空间与维护代价 。这是一个典型的“空间换时间”的拐点。 四、 统计学视角：泊松分布的黑天鹅 如果说前两点是工程上的权衡，那么这一点就是数学上的铁律。 在理想的随机哈希函数下，哈希桶中的节点数量遵循 泊松分布（Poisson Distribution） 。如上图所示： 大部分桶是空的或者只有 1-2 个元素。 链表长度达到 8 的概率，仅为 0.00000006 （千万分之六）。 这意味着，在正常使用下，你几乎永远看不到链表转树的情况。 “8”被设计成一个统计学上的“黑天鹅事件”阈值。 如果你的 HashMap 中真的出现了长度为 8 的"
+    },
+    {
+      "slug": "voysan9b9ud138wm",
+      "title": "图解：40亿个QQ号，1G内存限制下实现去重（相同QQ号保留1个）",
+      "url": "/tulingzhouyu/db22bv/voysan9b9ud138wm",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "图解：40亿个QQ号，1G内存限制下实现去重（相同QQ号保留1个）"
+      ],
+      "toc_level": 2,
+      "toc_index": 1042,
+      "word_count": 3084,
+      "updated_at": "2025-10-13T12:03:02.000Z",
+      "primary_category": "java-collections",
+      "primary_category_name": "Java集合",
+      "related_categories": [
+        "java-collections",
+        "os-linux",
+        "project-system-design",
+        "jvm-memory-gc",
+        "observability-troubleshooting"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "campus",
+        "middle"
+      ],
+      "level_names": [
+        "校招/应届生",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "集合",
+        "HashMap",
+        "HashSet",
+        "内存",
+        "方案",
+        "JVM",
+        "CPU"
+      ],
+      "summary": "摘要：当面试官抛出“有40亿个QQ号，给你1GB内存，如何实现高效去重？”时，你会如何应对？这是一个经典的海量数据处理问题，考察的不仅是基础知识，更是解决问题的思维框架。本文将结合一个交互式的可视化看板，带你从最直观的“内存爆炸”方案，一步步走到巧妙运用位运算的“空间魔法”，最终掌握在资源受限...",
+      "excerpt": "摘要 ：当面试官抛出“有40亿个QQ号，给你1GB内存，如何实现高效去重？”时，你会如何应对？这是一个经典的海量数据处理问题，考察的不仅是基础知识，更是解决问题的思维框架。本文将结合一个交互式的可视化看板，带你从最直观的“内存爆炸”方案，一步步走到巧妙运用位运算的“空间魔法”，最终掌握在资源受限下处理海量数据的核心秘诀。 引言：一张通关路线图 面对海量数据问题，我们的第一反应往往是“硬算”，但现实的硬件限制很快就会给我们当头一棒。解决这个问题的过程，就像一场闯关游戏，需要我们摒弃常规思路，寻找破局的“捷径”。 在开始之前，让我们先看一下本次挑战的完整“通关路线图”。它清晰地展示了从错误路线到正确路线的思维转变，以及我们最终要达成的目标。 这张图是我们接下来探索之旅的地图。左侧的“错误路线”代表了我们最容易想到的、但会迅速失败的常规方法；右侧的“正确路线”则是我们即将学习的、高效且节约空间的解决方案。现在，让我们从失败的第一步开始。 第一章：错误的起点——为何 HashSet 会内存爆炸？ 任何一个熟悉集合（Set）数据结构的开发者，在面对“去重”需求时，第一反应可能都是利用 HashSet 的特性：元素唯一。思路很简单，将40亿个QQ号逐一添加到 HashSet 中，利用其自动去重的能力，最后 HashSet 的大小就是去重后的数量。 这个思路在逻辑上无懈可击，但在工程上却不堪一击。其灾难性的后果可以用下图来形象地说明。 上图非常形象地展示了：当海量数据（40亿QQ号）源源不断地涌入内存时，系统资源被迅速耗尽，最终导致服务崩溃。为什么会这样？让我们来做一道简单的数学题。 一个QQ号是 unsigned int 类型，范围约为0到43亿，它本身只占4个字节。但将它作为一个对象存入 HashSet （例如Java中的 HashSet<Integer> ）时，成本远不止于此： 对象开销 ： Integer 是一个对象，它需要额外的存储空间，包括对象头（存储哈希值、锁信息等）和类型指针。 集合开销 ： HashSet 内部通常由一个 HashMap 实现，每个存入的元素都会被包装成一个节点对象（如 Map.Entry ），这个节点又包含了对键、值、下一个节点的引用等。 内存对齐 ：为了CPU高效访问，JVM会对对象占用的内存进行对齐填充，通常是8字节的倍数。 综合下来，一个QQ号在 HashSet 中占用的空间，保守估计也需要 16到24个字节 。我们取一个较低的估值16字节来计算： 总内存占用 = 4 , 000 , 000 , 000 (个) × 16 (字节/个) = 64 , 000 , 000 , 000 字节 总内存占用 = 4 , 000 , 000 , 000 ( 个 ) × 16 ( 字节 / 个 ) = 64 , 000 , 000 , 000 "
+    }
+  ]
+}

@@ -1,0 +1,1198 @@
+{
+  "id": "mysql-sharding",
+  "name": "分库分表",
+  "aliases": [
+    "分库分表",
+    "分片",
+    "ShardingSphere",
+    "读写分离",
+    "主从",
+    "分片键"
+  ],
+  "count": 27,
+  "total_word_count": 31347,
+  "articles": [
+    {
+      "slug": "wgd2496vzxfxim10",
+      "title": "说下你对分库分表的理解",
+      "url": "/tulingzhouyu/db22bv/wgd2496vzxfxim10",
+      "toc_path": [
+        "Mysql",
+        "说下你对分库分表的理解"
+      ],
+      "toc_level": 1,
+      "toc_index": 420,
+      "word_count": 584,
+      "updated_at": "2023-08-29T08:46:58.000Z",
+      "primary_category": "mysql-sharding",
+      "primary_category_name": "分库分表",
+      "related_categories": [
+        "mysql-sharding",
+        "mysql-index-transaction",
+        "distributed-transaction",
+        "project-system-design",
+        "distributed-lock-id"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "分库分表",
+        "分片",
+        "MySQL",
+        "事务",
+        "分布式事务",
+        "最终一致性",
+        "方案",
+        "唯一ID"
+      ],
+      "summary": "MySQL的分库分表拆分策略通常包括垂直拆分和水平拆分两种方式。下面我将介绍这两种策略以及分库分表面临的问题和解决方案。水平切分：水平切分又称为 Sharding，它是将同一个表中的记录拆分到多个结构相同的表中。当一个表的数据不断增多时，Sharding 是必然的选择，它可以将数据分布到集群的...",
+      "excerpt": "MySQL的分库分表拆分策略通常包括 垂直拆分 和 水平拆分 两种方式。下面我将介绍这两种策略以及分库分表面临的问题和解决方案。 水平切分： 水平切分又称为 Sharding，它是将同一个表中的记录拆分到多个结构相同的表中。当一个表的数据不断增多时，Sharding 是必然的选择，它可以将数据分布到集群的不同节点上，从而缓存单个数据库的压力。 垂直切分： 垂直切分是将一张表按列切分成多个表，通常是按照列的关系密集程度进行切分，也可以利用垂直切分将经常被使用的列和不经常被使用的列切分到不同的表中。 分库分表面临的问题和解决方案如下： 数据一致性： 由于数据被分布到不同的数据库和表中，分库分表涉及跨节点的事务，需要确保数据的一致性。可以采用两阶段提交（2PC）协议、最终一致性方案或者基于分布式事务的工具来管理分布式事务，确保数据的一致性。 跨分片查询： 当业务需要跨多个分片进行查询时，可能会面临性能问题和复杂的查询逻辑。可以使用分布式查询引擎、数据聚合、缓存和分布式计算框架等技术来处理跨分片查询需求，提高查询效率和简化查询逻辑。 全局唯一性约束： 在分库分表环境下，全局唯一性约束可能受到挑战。可以采用分布式唯一ID生成器（如Snowflake算法）来生成全局唯一ID，避免冲突。 在实施分库分表时，需要根据具体情况选择适合的拆分策略，并结合具体的业务特点进行优化和调整。同时，有效的监控和测试也是必不可少的，以确保分库分表系统的高可用性、性能和稳定性。"
+    },
+    {
+      "slug": "lk72ltf37te36x28",
+      "title": "分表后非分片键的查询、排序怎么处理",
+      "url": "/tulingzhouyu/db22bv/lk72ltf37te36x28",
+      "toc_path": [
+        "Mysql",
+        "分表后非分片键的查询、排序怎么处理"
+      ],
+      "toc_level": 1,
+      "toc_index": 424,
+      "word_count": 370,
+      "updated_at": "2023-08-30T05:40:42.000Z",
+      "primary_category": "mysql-sharding",
+      "primary_category_name": "分库分表",
+      "related_categories": [
+        "mysql-sharding",
+        "algorithm",
+        "mysql-index-transaction",
+        "netty-network",
+        "java-core"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "分片",
+        "分片键",
+        "排序",
+        "索引",
+        "NIO",
+        "IO"
+      ],
+      "summary": "在使用分表后，非分片键的查询和排序可以通过以下方式进行处理：联合查询：如果需要执行涉及多个分表的查询，可以使用联合查询（UNION）或者连接查询（JOIN）来合并结果。将查询条件应用到对应的分表，然后将结果联合起来返回给用户。扫描所有分表：如果查询涉及到的数据无法通过分片键进行过滤，那么可能需...",
+      "excerpt": "在使用分表后，非分片键的查询和排序可以通过以下方式进行处理： 联合查询： 如果需要执行涉及多个分表的查询，可以使用联合查询（UNION）或者连接查询（JOIN）来合并结果。将查询条件应用到对应的分表，然后将结果联合起来返回给用户。 扫描所有分表： 如果查询涉及到的数据无法通过分片键进行过滤，那么可能需要扫描所有的分表来获取满足条件的数据。这样的查询会比较慢，因为需要访问所有的分表并合并结果，但在某些场景下是必要的。 手动分页和排序： 如果需要对分表后的数据进行排序和分页，可以在每个分表上执行独立的排序和分页操作，然后将结果合并或者按需返回给用户。这需要在应用程序中进行额外的逻辑处理。 使用全局索引： 如果有一些特定的查询需要在非分片键上执行，并且这些查询非常频繁，可以考虑创建全局索引。全局索引不关心分片键，而是在整个集群上创建索引，可以加速这类查询的执行速度。"
+    },
+    {
+      "slug": "kqi54gid41lxd7td",
+      "title": "分库分表下如何实现精准分页？",
+      "url": "/tulingzhouyu/db22bv/kqi54gid41lxd7td",
+      "toc_path": [
+        "Mysql",
+        "分库分表下如何实现精准分页？"
+      ],
+      "toc_level": 1,
+      "toc_index": 427,
+      "word_count": 488,
+      "updated_at": "2024-06-21T11:48:59.000Z",
+      "primary_category": "mysql-sharding",
+      "primary_category_name": "分库分表",
+      "related_categories": [
+        "mysql-sharding",
+        "mysql-index-transaction",
+        "performance-optimization"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "分库分表",
+        "分片",
+        "索引",
+        "性能",
+        "优化"
+      ],
+      "summary": "哈喽，大家好，我是JJ，今天给大家分享一道数据库的高频面试题：分库分表下如何实现精准分页？在分库分表的数据库架构中，精准分页是一个有挑战性的问题，因为数据被分散存储在不同的分片和数据库中。想要实现精准分页就需要解决两个主要问题：跨分片和跨库的数据访问。跨分片，常见的方法是使用记录游标分页。这种...",
+      "excerpt": "哈喽，大家好，我是JJ，今天给大家分享一道数据库的高频面试题： 分库分表下如何实现精准分页？ ​ 在分库分表的数据库架构中，精准分页是一个有挑战性的问题，因为数据被分散存储在不同的分片和数据库中。 ​ 想要实现精准分页就需要解决两个主要问题： 跨分片和跨库的数据访问 。 ​ 跨分片 ，常见的方法是使用 记录游标分页 。这种方法会在每个分片中 记录上一页或下一页的分页标识 ，比如记录上一页或下一页的最后一条记录的 主键 。 ​ 然后，当执行分页查询时，根据游标进行定位，从而实现精准分页。 ​ 虽然这种方法相对简单，但是需要在分片中 维护额外的索引或元数据信息 。 ​ 跨库的话 ，可以通过 数据同步 或者 查询路由 来实现跨库的数据分页。 ​ 数据同步 意味着将分片中的数据复制到一个统一的主库中，然后在主库上执行分页操作。 ​ 查询路由 则是在查询时根据分页条件将请求发送到对应的分片或库中，然后在各个分片中执行分页操作，最后将结果合并返回给客户端。 ​ 这种方法可以 减少数据复制的开销 ，但是会 增加系统的复杂性和维护成本 。 ​ 在实际应用中，需要进行实际性能测试和优化，确保系统能够满足实际需求。 ​ 同时，还需要考虑数据一致性和容错性等方面的问题，保证系统的稳定性和可靠性。"
+    },
+    {
+      "slug": "lod2cy3udsngw1up",
+      "title": "说说你们公司 es 的集群架构，索引数据大小，分片有多少",
+      "url": "/tulingzhouyu/db22bv/lod2cy3udsngw1up",
+      "toc_path": [
+        "ElasticSearch",
+        "说说你们公司 es 的集群架构，索引数据大小，分片有多少"
+      ],
+      "toc_level": 1,
+      "toc_index": 590,
+      "word_count": 1694,
+      "updated_at": "2026-01-26T05:47:11.000Z",
+      "primary_category": "mysql-sharding",
+      "primary_category_name": "分库分表",
+      "related_categories": [
+        "mysql-sharding",
+        "jvm-memory-gc",
+        "os-linux",
+        "observability-troubleshooting",
+        "performance-optimization"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "分片",
+        "JVM",
+        "OOM",
+        "堆",
+        "调优",
+        "操作系统",
+        "内存",
+        "文件",
+        "故障",
+        "日志",
+        "CPU",
+        "性能"
+      ],
+      "summary": "一、 标准面试回答模版（建议背诵）面试官： 说说你们公司 ES 的集群架构，索引数据大小，分片有多少？依据是什么？Fox版标准回答：“关于 ES 架构，我不是拍脑袋定的，而是根据业务增量、机器成本和架构演进三个维度来规划的。以我们核心的 ELK 日志平台为例：容量与分片规划（算账）：",
+      "excerpt": "一、 标准面试回答模版（建议背诵） 面试官： 说说你们公司 ES 的集群架构，索引数据大小，分片有多少？依据是什么？ Fox版标准回答： “关于 ES 架构，我不是拍脑袋定的，而是根据 业务增量 、 机器成本 和 架构演进 三个维度来规划的。以我们核心的 ELK 日志平台 为例： 容量与分片规划（算账）： 数据量： 我们的日增量是 1TB 。考虑到保留 7 天和 1 副本（1 Replica），总数据量约 14TB。我申请了 10 台 Data 节点 （每台挂载 4TB NVMe SSD），预留了 40% 的水位线给突发流量和段合并（Segment Merge）。 分片数： 依据 单主分片 30GB-50GB 的业内黄金法则，我将每日索引的主分片数设置为 24 。 计算逻辑： 1024GB/ 24 = 42GB，这个大小既保证了写入并发能力，又避免了分片过大导致故障恢复慢的问题。 物理与逻辑架构（部署）： 角色分离： 我们采用了 13+2 的架构。 3 台专用 Master： 低配（4核8G）， 跨可用区（Zone）部署 ，核心目的是防止脑裂，保证集群大脑的高可用。 10 台 Data 节点： 高配（16核64G），负责数据存储和写入。 2 台协调节点（Coordinating Node）： 针对部分重度聚合查询，我独立部署了协调节点，专门做 Scatter-Gather（分发与汇聚），实现了 计算与存储的分离 ，防止复杂查询 OOM 搞挂数据节点。 关键参数调优（亮点）： 内存陷阱： Data 节点虽有 64G 内存，但我将 JVM 堆内存严格锁定在 31GB ，是为了利用 JVM 的**指针压缩（Compressed Oops）**技术。剩余 33G 全部留给操作系统的 Page Cache ，加速 Lucene 的倒排索引查询。 写入优化： 针对日志写多读少的特点，我将 refresh_interval 调大到 30s ，并将 Translog 设置为 异步落盘 ，用极小的可见性延迟换取了写入性能的翻倍。” 二、 原理与数据结构层面的体现 1. 场景一：为什么要卡在 31GB 内存？—— 指针压缩（Compressed Oops） 场景： 公司配了 64GB 甚至 128GB 的大内存机器，新手往往会把堆内存设为 48GB 或更多。 问题： Java 对象头中的指针通常是 64 位的。当堆内存 < 32GB 时，JVM 默认开启 指针压缩 ，将指针压缩为 32 位。一旦跨过 32GB 这个阈值，指针被迫膨胀回 64 位。 后果： 内存占用瞬间变大，CPU 缓存命中率降低，性能不升反降。 ES 的解法： Heap < 32GB (通常设 31GB) 。 原理： 剩下的内存并没有浪费，而是给到了 OS Page Cache 。ES 底层 Lucene 的 "
+    },
+    {
+      "slug": "wp5sppd2wpi5c49e",
+      "title": "ElasticSearch中的分片是什么",
+      "url": "/tulingzhouyu/db22bv/wp5sppd2wpi5c49e",
+      "toc_path": [
+        "ElasticSearch",
+        "ElasticSearch中的分片是什么"
+      ],
+      "toc_level": 1,
+      "toc_index": 595,
+      "word_count": 1032,
+      "updated_at": "2026-01-27T05:41:54.000Z",
+      "primary_category": "mysql-sharding",
+      "primary_category_name": "分库分表",
+      "related_categories": [
+        "mysql-sharding",
+        "mysql-index-transaction",
+        "resume-project",
+        "performance-optimization",
+        "redis-persistence-cluster"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "senior",
+        "campus",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "校招/应届生",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "分片",
+        "读写分离",
+        "索引",
+        "面试官",
+        "性能",
+        "吞吐",
+        "容量",
+        "瓶颈",
+        "Cluster",
+        "集群"
+      ],
+      "summary": "一、 Fox版标准面试回答（建议背诵）面试官： 请解释一下 Elasticsearch 中的分片（Shard）是什么？Fox版回答： “一句话定义：分片（Shard）是 Elasticsearch 实现分布式存储和横向扩展（Scale-out）的最小工作单元。但我对它的理解，通常会从逻辑和物理...",
+      "excerpt": "一、 Fox版标准面试回答（建议背诵） 面试官： 请解释一下 Elasticsearch 中的分片（Shard）是什么？ Fox版回答： “一句话定义： 分片（Shard）是 Elasticsearch 实现分布式存储和横向扩展（Scale-out）的最小工作单元。 但我对它的理解，通常会从 逻辑 和 物理 两个维度来向别人解释： 从逻辑视角看（为什么需要它）： 一个索引（Index）的数据量可能非常大（比如 1TB），单个节点的硬盘可能存不下，或者单个节点的处理能力（CPU/内存）不足以支撑高并发。 分片的作用就是把这个大索引**‘切’ 成多份，散落在集群的多个节点上。这样不仅解决了 存储瓶颈**，还能利用多节点的资源进行 并行计算 ，提升查询效率。 从物理视角看（它到底是什么）： 这是一个非常硬核的点： 每一个分片，本质上就是一个独立的、功能完整的 Apache Lucene 索引。 这意味着每个分片都有自己独立的倒排索引、文件系统缓存和处理能力。我们在 ES 层面看到的一个 Index，实际上是由底层多个 Lucene Index（即分片）组合而成的逻辑概念。 所以，分片是 ES 能够处理海量数据、实现高可用和高性能的 物理基础 。” 二、 进阶解析（防止面试官深挖） 如果面试官追问： “那主分片和副本分片有什么区别？为什么主分片数量创建后不能改？” Fox版进阶解析： “这涉及到了 ES 的 分片模型 和 路由原理 。 1. 关于分片的类型（Primary vs Replica）： ES 的分片分为两种，职责非常明确： 主分片（Primary Shard）： 它是数据的‘源头’。所有的新增、修改、删除操作（Write）必须先在主分片上完成。 关键点： 主分片的数量在创建索引时 必须指定 ，且创建后 不能修改 （除非重建索引 Reindex）。 副本分片（Replica Shard）： 它是主分片的‘完整拷贝’。 核心作用： 高可用（HA）： 如果主分片挂了，副本会立马晋升为主分片，防止数据丢失。 读写分离（提升吞吐）： 副本分片可以承担搜索（Read）请求。并发量大时，只需增加副本数即可。 2. 关于‘为什么主分片不能改’（路由公式）： 这是一个经典的架构设计权衡。ES 在保存文档时，需要知道这个文档该存在哪个分片上，它用的是下面这个路由公式： shard = hash(routing) % number_of_primary_shards routing ：默认是文档 ID。 number_of_primary_shards ：主分片数量。 结论： 如果索引创建后，我们将主分片数量从 5 改为 10，那么取模运算的结果就全变了。到时候 ES 去找数据时，会去错误的分片寻找，导致之前的文档全部‘失联’。这就是主分片不可变的最底层原因。” 三、 总结 "
+    },
+    {
+      "slug": "dlta7pxy0o81zta9",
+      "title": "👍一次搞定MySQL分库分表",
+      "url": "/tulingzhouyu/db22bv/dlta7pxy0o81zta9",
+      "toc_path": [
+        "分库分表",
+        "👍一次搞定MySQL分库分表"
+      ],
+      "toc_level": 1,
+      "toc_index": 760,
+      "word_count": 8363,
+      "updated_at": "2025-06-18T08:39:06.000Z",
+      "primary_category": "mysql-sharding",
+      "primary_category_name": "分库分表",
+      "related_categories": [
+        "mysql-sharding",
+        "mysql-index-transaction",
+        "project-system-design",
+        "performance-optimization",
+        "java-concurrency"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle",
+        "senior",
+        "campus"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "分库分表",
+        "分片",
+        "ShardingSphere",
+        "主从",
+        "分片键",
+        "MySQL",
+        "索引",
+        "事务",
+        "锁",
+        "方案",
+        "高并发",
+        "订单",
+        "性能",
+        "并发"
+      ],
+      "summary": "天明寄语：应学员要求更新分库分表部分相关问题。注意在MySQL基础之上再看此篇。什么是分库分表？对于阅读本文的读者来说，分库分表概念应该并不会陌生，其拆开来讲是分库和分表两个手段：分表：将一个表中的数据按照某种规则分拆到多张表中，降低锁粒度以及索引树，提升数据查询效率。分库：将一个数据库中的数...",
+      "excerpt": "天明 寄语 ： 应学员要求更新分库分表部分相关问题。注意在MySQL基础之上再看此篇。 什么是分库分表？ 对于阅读本文的读者来说，分库分表概念应该并不会陌生，其拆开来讲是分库和分表两个手段： 分表：将一个表中的数据按照某种规则分拆到多张表中， 降低锁粒度以及索引树 ，提升数据查询效率。 分库：将一个数据库中的数据按照某种规则分拆到多个数据库中，以 缓解单服务器的压力 （CPU、内存、磁盘、IO）。 分库分表手段，其在解决如 IO 瓶颈、读写性能、物理存储瓶颈、内存瓶颈、单机故障影响面等问题的同时也带来如事务性、主键冲突、跨库 join、跨库聚合查询等问题。anyway，在综合业务场景考虑，正如缓存的使用一样，本着非必须勿使用原则。如数据库确实成为性能瓶颈时，在设计分库分表方案时也应充分考虑方案的扩展性，或者考虑采用成熟热门的分布式数据库解决方案，如 TiDB。 目标： 什么是分库分表以及为什么分库分表 如何分库分表 分库分表常见几种方式以及优缺点 如何选择分库分表的方式 数据库常见优化方案 对于后端程序员来说，绕不开数据库的使用与方案选型，那么随着业务规模的逐渐扩大，其对于存储的使用上也需要随之进行升级和优化。 随着规模的扩大，数据库面临如下问题： 读压力：并发 QPS、索引不合理、SQL 语句不合理、锁粒度 写压力：并发 QPS、事务、锁粒度 物理性能：磁盘瓶颈、CPU 瓶颈、内存瓶颈、IO 瓶颈 其他：宕机、网络异常 面对上述问题，常见的优化手段有： 索引优化、主从同步、缓存、分库分表每个技术手段都可以作为一个专题进行讲解，本文主要介绍分库分表的技术方案实现。 为什么分库分表？ 如果业务量剧增，数据库可能会出现性能瓶颈，这时候就需要考虑拆分数据库。从这几方面来看： 磁盘存储 业务量剧增，MySQL单机磁盘容量会撑爆，拆成多个数据库，磁盘使用率大大降低。 并发连接支撑 数据库连接是有限的。在高并发的场景下，大量请求访问数据库，MySQL单机是扛不住的！当前非常火的 微服务架构 出现，就是为了应对高并发。它把 订单、用户、商品 等不同模块，拆分成多个应用，并且把单个数据库也拆分成多个不同功能模块的数据库（ 订单库、用户库、商品库 ），以分担读写压力。 性能角度：CPU、内存、磁盘、IO 瓶颈 随着业务体量扩大，数据规模达到百万行，数据库索引树庞大，查询性能出现瓶颈。 用户并发流量规模扩大，由于单库(单服务器)物理性能限制也无法承载大流量。 可用性角度：单机故障率影响面 如果是单库，数据库宕机会导致 100%服务不可用，N 库则可以将影响面降低 N 倍。 分库分表带来的问题？ 事务性问题 方案一：在进行分库分表方案设计过程中，从业务角度出发，尽可能保证一个事务所操作的表分布在一个库中，从而实现数据库层面的事务保证。 方案二：方式一无法实现的情况下，业务层引入分"
+    },
+    {
+      "slug": "gzhabkzngpg69pqq",
+      "title": "什么是ShardingSphere，它的主要功能是什么？",
+      "url": "/tulingzhouyu/db22bv/gzhabkzngpg69pqq",
+      "toc_path": [
+        "分库分表",
+        "什么是ShardingSphere，它的主要功能是什么？"
+      ],
+      "toc_level": 1,
+      "toc_index": 761,
+      "word_count": 340,
+      "updated_at": "2023-09-17T11:52:25.000Z",
+      "primary_category": "mysql-sharding",
+      "primary_category_name": "分库分表",
+      "related_categories": [
+        "mysql-sharding",
+        "distributed-transaction",
+        "java-core",
+        "project-system-design",
+        "mysql-index-transaction"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "分库分表",
+        "分片",
+        "ShardingSphere",
+        "读写分离",
+        "分布式事务",
+        "Java",
+        "方案",
+        "事务"
+      ],
+      "summary": "ShardingSphere 是一套开源的分布式数据库中间件解决方案组成的生态圈，主要由 JDBC、Proxy 组成。这两个产品均提供标准化的数据分片、分布式事务和数据库治理功能，可适用于如 Java 同构、异构语言、云原生等各种多样化的应用场景。ShardingSphere是一个功能强大的数...",
+      "excerpt": "ShardingSphere 是一套开源的分布式数据库中间件解决方案组成的生态圈，主要由 JDBC、Proxy 组成。这两个产品均提供标准化的数据分片、分布式事务和数据库治理功能，可适用于如 Java 同构、异构语言、云原生等各种多样化的应用场景。 ShardingSphere是一个功能强大的数据库中间件，可用于解决分布式数据库架构中的多种挑战，包括数据分片、读写分离、分布式事务、影子库、数据加密等，从而提高了系统的性能、扩展性和可用性。 ShardingSphere 保留了非常多的功能扩展。通过使用 ShardingSphere，开发者可以无需修改原有业务代码，即可实现数据库的水平扩展和垂直拆分。 ShardingSphere 5.x 版本开始致力于可插拔架构，项目的功能组件能够灵活的以可插拔的方式进行扩展，从而满足更多定制化的需求。 另外，ShardingSphere 还针对分库分表场景，致力于设计并实现一整套分库分表的解决方案，包括数据迁移、冷热数据分离等一系列的问题。"
+    },
+    {
+      "slug": "so4v2s0gb1eqv4la",
+      "title": "ShardingSphere的核心模块有哪些？他们是如何工作的？",
+      "url": "/tulingzhouyu/db22bv/so4v2s0gb1eqv4la",
+      "toc_path": [
+        "分库分表",
+        "ShardingSphere的核心模块有哪些？他们是如何工作的？"
+      ],
+      "toc_level": 1,
+      "toc_index": 762,
+      "word_count": 515,
+      "updated_at": "2023-09-10T09:06:39.000Z",
+      "primary_category": "mysql-sharding",
+      "primary_category_name": "分库分表",
+      "related_categories": [
+        "mysql-sharding",
+        "java-core",
+        "distributed-transaction",
+        "mysql-index-transaction",
+        "devops-release"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "分库分表",
+        "分片",
+        "ShardingSphere",
+        "读写分离",
+        "Java",
+        "分布式事务",
+        "事务",
+        "部署"
+      ],
+      "summary": "ShardingSphere 是一个分布式数据库中间件，它由多个核心模块组成，包括 Sharding-JDBC、Sharding-Proxy 和 Sharding-Sidecar。Sharding-JDBC 是 ShardingSphere 的核心模块之一，它提供了一个轻量级的 Java 框架...",
+      "excerpt": "ShardingSphere 是一个分布式数据库中间件，它由多个核心模块组成，包括 Sharding-JDBC、Sharding-Proxy 和 Sharding-Sidecar。 Sharding-JDBC 是 ShardingSphere 的核心模块之一，它提供了一个轻量级的 Java 框架，在 Java 的 JDBC 层提供额外的服务。使用客户端直连数据库，以 jar 包形式提供服务，无需额外部署和依赖，可理解为增强版的 JDBC 驱动，完全兼容 JDBC 和各种 ORM 框架。 Sharding-JDBC主要用于嵌入到应用程序中，使应用程序能够透明地使用分片和读写分离功能，而无需对应用程序进行大规模修改。 Sharding-Proxy 是 ShardingSphere 的另一核心模块，它以代理的形式部署在应用程序与数据库之间，实现了对 SQL 的解析和改写以及请求的转发。用户无需修改任何应用程序代码，只需通过配置文件或 API 接口进行分片规则设置，即可实现数据分片和读写分离等功能。 Sharding-Proxy主要用于需要将数据库访问透明地分片化的情况，而不想在应用程序中引入Sharding-JDBC的情况。它也可以用于监控和审计数据库操作。 Sharding-Sidecar 是 ShardingSphere 的规划中的第三个模块，它将作为一个独立的微服务，为用户提供更为灵活和强大的数据分片、分布式事务和数据治理等功能。Sarding-SideCar 主要用于云原生环境。 总体来说，ShardingSphere 的三个核心模块通过相互配合，共同实现了数据库的分片和分布式事务等功能的解决方案。 开发人员可以根据其应用程序的要求选择合适的模块来集成ShardingSphere。这些模块共同为分布式数据库操作提供了更好的性能、可扩展性和可用性。"
+    },
+    {
+      "slug": "mrdsiysxguairh0c",
+      "title": "分库分表如何预估分多少个库和多少张表",
+      "url": "/tulingzhouyu/db22bv/mrdsiysxguairh0c",
+      "toc_path": [
+        "分库分表",
+        "分库分表如何预估分多少个库和多少张表"
+      ],
+      "toc_level": 1,
+      "toc_index": 763,
+      "word_count": 922,
+      "updated_at": "2025-04-15T06:48:02.000Z",
+      "primary_category": "mysql-sharding",
+      "primary_category_name": "分库分表",
+      "related_categories": [
+        "mysql-sharding",
+        "project-system-design",
+        "mysql-index-transaction",
+        "performance-optimization",
+        "observability-troubleshooting"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "分库分表",
+        "分片",
+        "ShardingSphere",
+        "方案",
+        "订单",
+        "MySQL",
+        "索引",
+        "事务",
+        "性能",
+        "容量",
+        "监控"
+      ],
+      "summary": "预估分库分表的数量需要考虑多个因素，并结合具体的业务场景。让我们通过一个实际的例子来说明这个过程。假设我们有一个电子商务平台，主要处理订单信息。我们将以订单表为例进行分析。示例：订单系统1. 数据量分析假设我们有以下数据：当前订单数：1亿每日新增订单：100万预计5年后的订单总量：1亿 + (...",
+      "excerpt": "预估分库分表的数量需要考虑多个因素，并结合具体的业务场景。让我们通过一个实际的例子来说明这个过程。 假设我们有一个电子商务平台，主要处理订单信息。我们将以订单表为例进行分析。 示例：订单系统 1. 数据量分析 假设我们有以下数据： 当前订单数：1亿 每日新增订单：100万 预计5年后的订单总量：1亿 + (100万 * 365 * 5) ≈ 28.25亿 2. 性能考量 假设单个MySQL实例能够高效处理的数据量上限是500GB。 每条订单记录大小约为1KB。 3. 业务需求 需要支持按用户ID和订单时间查询。 需要保证单个用户的订单在同一个分片，以便于事务处理和查询。 4. 分库分表策略 考虑到上述因素，我们可以采用双层分片策略：先分库，再分表。 分库策略： 使用用户ID作为分库键，确保同一用户的订单在同一个库中。 分表策略： 在每个库内，按照订单创建时间范围分表。 5. 具体计算 预估总数据量 ： 28.25亿 * 1KB ≈ 2.825TB 预估需要的库数量 ： 2.825TB / 500GB ≈ 5.65，向上取整到8个库（2的幂次，便于后续扩展） 每个库的表数量 ： 假设我们希望单表控制在5000万条记录以内 每个库的记录数：28.25亿 / 8 ≈ 3.53亿 每个库需要的表数：3.53亿 / 5000万 ≈ 7.06，向上取整到8张表 6. 最终方案 分8个库 每个库8张表 总共64个分片（8 * 8） 实现示例 在这个示例中： getDbIndex 方法根据用户ID确定数据库索引。 getTableIndex 方法根据订单时间确定表索引，这里假设按季度分表。 getTableName 方法结合两者，返回完整的表名。 注意事项 这只是初始设计，需要根据实际运行情况进行调整。 考虑使用分库分表中间件（如ShardingSphere）来简化实现。 预留足够的扩展空间，比如这里我们用了8个库而不是6个。 定期监控数据增长情况，及时调整分片策略。 这个例子展示了如何基于具体的业务需求和数据特征来设计分库分表方案。实际应用中，还需要考虑更多因素，如查询模式、数据分布的均匀性等，并通过压力测试来验证方案的可行性。 ​ 发散思维：如果日均订单约500W增量呢？ 思路：1年约18亿，至少保留2-3年热数据就是 40~50亿，算上空间预留可以准备50亿。可以按照32个库，每个库32张表来规划 。一共1024张表，每个表预计存放500万，即可满足50亿数据的容量规划了"
+    },
+    {
+      "slug": "cnbdvsnzgdoz0vpi",
+      "title": "ShardingSphere 的读写分离是如何实现的？",
+      "url": "/tulingzhouyu/db22bv/cnbdvsnzgdoz0vpi",
+      "toc_path": [
+        "分库分表",
+        "ShardingSphere 的读写分离是如何实现的？"
+      ],
+      "toc_level": 1,
+      "toc_index": 764,
+      "word_count": 635,
+      "updated_at": "2023-09-10T09:39:17.000Z",
+      "primary_category": "mysql-sharding",
+      "primary_category_name": "分库分表",
+      "related_categories": [
+        "mysql-sharding",
+        "mysql-index-transaction",
+        "performance-optimization",
+        "redis-persistence-cluster",
+        "microservices-governance"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "分库分表",
+        "ShardingSphere",
+        "读写分离",
+        "主从",
+        "MySQL",
+        "性能",
+        "RT",
+        "集群",
+        "负载均衡"
+      ],
+      "summary": "读写分离是ShardingSphere 的重要功能。主要负责将 SQL 语句根据他们的执行逻辑不同，路由到不同的数据库中执行。读写分离功能只负责 SQL 路由，而不负责不同数据库之间的数据同步。通常，MySQL 的数据同步是通过 MySQL 主从集群机制完成。要在ShardingSphere中...",
+      "excerpt": "读写分离是ShardingSphere 的重要功能。主要负责将 SQL 语句根据他们的执行逻辑不同，路由到不同的数据库中执行。读写分离功能只负责 SQL 路由，而不负责不同数据库之间的数据同步。通常，MySQL 的数据同步是通过 MySQL 主从集群机制完成。要在ShardingSphere中实现读写分离功能，主要通过以下几个步骤： 数据源配置 ：首先，在应用程序的配置中，你需要配置多个数据库数据源，包括主库（用于写操作）和多个从库（用于读操作）。每个数据源都有一个唯一的名称和连接信息。 SQL解析 ：当应用程序发送SQL查询请求时，ShardingSphere的SQL 执行引擎会拦截并解析SQL语句。 读写分离规则 ：ShardingSphere通过读写分离规则来确定查询应该发送到主库还是从库。这些规则可以在配置文件中定义，通常基于SQL的类型（SELECT、INSERT、UPDATE、DELETE）来决定路由。 路由查询 ：根据读写分离规则，Sharding-JDBC将查询请求路由到适当的数据源。如果是SELECT查询，它将路由到一个从库；如果是INSERT、UPDATE或DELETE操作，它将路由到主库。这确保了写操作总是发送到主库，而读操作可以发送到从库，以分担主库的负载。 执行查询 ：一旦确定了目标数据源，Sharding-JDBC会将查询请求转发到相应的数据库。主库用于写操作，从库用于读操作。 返回结果 ：数据库执行查询后，将结果返回给Sharding-JDBC，然后Sharding-JDBC将结果返回给应用程序。 ShardingSphere的读写分离实现主要依赖于SQL解析和读写分离规则。通过解析SQL语句，它能够识别查询类型并将其路由到适当的数据库数据源。这使得应用程序可以实现自动的读写分离，从而提高了系统性能和负载均衡。开发人员只需配置好数据源和读写分离规则，ShardingSphere会自动处理剩下的工作。具体的配置方式，根据 ShardingSphere 版本不同会略有不同。"
+    },
+    {
+      "slug": "rrd5uquhzddtbg8w",
+      "title": "如何配置ShardingSphere的数据分片策略？",
+      "url": "/tulingzhouyu/db22bv/rrd5uquhzddtbg8w",
+      "toc_path": [
+        "分库分表",
+        "如何配置ShardingSphere的数据分片策略？"
+      ],
+      "toc_level": 1,
+      "toc_index": 765,
+      "word_count": 392,
+      "updated_at": "2023-09-10T09:50:20.000Z",
+      "primary_category": "mysql-sharding",
+      "primary_category_name": "分库分表",
+      "related_categories": [
+        "mysql-sharding",
+        "algorithm",
+        "os-linux",
+        "security-auth"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "分库分表",
+        "分片",
+        "ShardingSphere",
+        "分片键",
+        "算法",
+        "文件",
+        "加密"
+      ],
+      "summary": "在ShardingSphere中配置数据分片策略涉及到定义如何将数据分布到不同的数据库和表中，以满足分库分表的需求。通常按照以下步骤来配置一个数据分片策略：配置数据源：在 ShardingSphere 的配置文件中，配置多个数据源，每个数据源对应一个数据库实例。配置逻辑表： 在配置文件中，配置...",
+      "excerpt": "在ShardingSphere中配置数据分片策略涉及到定义如何将数据分布到不同的数据库和表中，以满足分库分表的需求。通常按照以下步骤来配置一个数据分片策略： 配置数据源： 在 ShardingSphere 的配置文件中，配置多个数据源，每个数据源对应一个数据库实例。 配置逻辑表： 在配置文件中，配置多个逻辑表。每个逻辑表对应一个或多个真实数据表。 配置逻辑表的主键生成策略：分库分表场景下，主键不能由数据库本地生成，所以通常会在 ShardingSphere 中配置主键生成策略，用来在分布式场景下，给逻辑表的每一条记录生成一个唯一的主键 配置逻辑表的分库策略和分表策略：分别配置逻辑表的分库策略和分表策略。在配置策略时，一般先配置逻辑表的分片键，也就是按哪个字段分片。然后配置对应的分片算法，也就是按什么规则进行分片。常用的分片算法有取模算法、哈希算法等，也可以自定义复杂算法。 补充一些其他规则：根据具体业务要求，配置一些补充的规则。例如敏感数据加密、广播表、绑定表、影子库等。"
+    },
+    {
+      "slug": "gw5k8azarwzm0ruo",
+      "title": "ShardingSphere支持水平分片和垂直分片吗？请解释 它们的区别。",
+      "url": "/tulingzhouyu/db22bv/gw5k8azarwzm0ruo",
+      "toc_path": [
+        "分库分表",
+        "ShardingSphere支持水平分片和垂直分片吗？请解释 它们的区别。"
+      ],
+      "toc_level": 1,
+      "toc_index": 766,
+      "word_count": 468,
+      "updated_at": "2023-09-11T05:17:25.000Z",
+      "primary_category": "mysql-sharding",
+      "primary_category_name": "分库分表",
+      "related_categories": [
+        "mysql-sharding",
+        "performance-optimization",
+        "java-concurrency",
+        "project-system-design",
+        "mysql-index-transaction"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "分库分表",
+        "分片",
+        "ShardingSphere",
+        "性能",
+        "瓶颈",
+        "并发",
+        "方案",
+        "事务"
+      ],
+      "summary": "ShardingSphere是支持水平分片和垂直分片的，但它们的区别在于：垂直分片：是在应用层面上进行的一种策略，它主要是为了解决单台数据库性能瓶颈的问题，将数据根据业务逻辑分类进行分片存储。每个表中的数据会被分散到不同的数据库中。它的优点是能够减轻单个库的负载压力，方便数据维护等；缺点是没有...",
+      "excerpt": "ShardingSphere是支持水平分片和垂直分片的，但它们的区别在于： 垂直分片： 是在应用层面上进行的一种策略，它主要是为了解决单台数据库性能瓶颈的问题，将数据根据业务逻辑分类进行分片存储。每个表中的数据会被分散到不同的数据库中。它的优点是能够减轻单个库的负载压力，方便数据维护等；缺点是没有根本解决单库数据量过大、并发性高的性能瓶颈，并且可能会产生跨服务的事务一致性问题。在应用模块间存在较强耦合关系的情况下，这种策略可能更适合使用。 水平分片：是在数据库层面上进行的一种策略，能够将数据根据某种规则分散至多个库或表中，每个分片仅包含数据的一部分。例如，可以根据某个字段（或某几个字段），如主键进行分片存储。这种策略可以有效地解决单库数据量过大、并发性高的性能瓶颈，提高系统的稳定性和负载能力。水平分片在理论上突破了单机数据量处理的瓶颈，并且扩展相对自由，是分库分表的标准解决方案。 在实际应用中，可以同时使用水平和垂直分片，根据具体业务需求来设计复杂的分片策略，以实现更好的性能、可扩展性和数据管理。ShardingSphere提供了支持这两种分片方式的功能，以满足不同应用场景的需求。"
+    },
+    {
+      "slug": "ogb45izelbgbkngu",
+      "title": "什么是ShardingSphere的广播表？",
+      "url": "/tulingzhouyu/db22bv/ogb45izelbgbkngu",
+      "toc_path": [
+        "分库分表",
+        "什么是ShardingSphere的广播表？"
+      ],
+      "toc_level": 1,
+      "toc_index": 767,
+      "word_count": 308,
+      "updated_at": "2023-09-11T05:19:20.000Z",
+      "primary_category": "mysql-sharding",
+      "primary_category_name": "分库分表",
+      "related_categories": [
+        "mysql-sharding",
+        "redis-persistence-cluster"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "分库分表",
+        "分片",
+        "ShardingSphere",
+        "集群"
+      ],
+      "summary": "ShardingSphere的广播表是指存在于每个分片数据源中的表。这些表的结构和数据在每个数据库中都完全一致。这种表适用于数据量不大且需要与海量数据的表进行关联查询的场景，例如字典表、省份信息等。对于广播表，ShardingSphere不会对数据进行分片，所有节点的数据都是完全一致的。当有新...",
+      "excerpt": "ShardingSphere的广播表是指存在于每个分片数据源中的表。这些表的结构和数据在每个数据库中都完全一致。这种表适用于数据量不大且需要与海量数据的表进行关联查询的场景，例如字典表、省份信息等。对于广播表，ShardingSphere不会对数据进行分片，所有节点的数据都是完全一致的。当有新的插入、更新操作时，它们会实时在所有节点上执行，以保证各个分片的数据一致性。查询操作只需要从一个节点获取，而不是从多个节点获取。同时，广播表可以与任何一个表进行JOIN操作。在ShardingSphere中，可以通过创建广播表的方式来实现广播表的功能。 在ShardingSphere中，开发人员可以配置广播表，使其在分片集群中自动生效。广播表的使用可以简化分布式系统中的数据管理，确保全局数据的一致性，同时降低了查询广播表的复杂性。"
+    },
+    {
+      "slug": "mvcwgxi3x1q4l7zn",
+      "title": "什么是 ShardingSphere 的关联表？",
+      "url": "/tulingzhouyu/db22bv/mvcwgxi3x1q4l7zn",
+      "toc_path": [
+        "分库分表",
+        "什么是 ShardingSphere 的关联表？"
+      ],
+      "toc_level": 1,
+      "toc_index": 768,
+      "word_count": 260,
+      "updated_at": "2023-09-11T05:29:05.000Z",
+      "primary_category": "mysql-sharding",
+      "primary_category_name": "分库分表",
+      "related_categories": [
+        "mysql-sharding",
+        "project-system-design"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "分库分表",
+        "分片",
+        "ShardingSphere",
+        "分片键",
+        "订单"
+      ],
+      "summary": "ShardingSphere提供了关联表的功能，主要解决在进行多表关联查询时，容易出现的查询效率太低的问题。具体来说，关联表定义了一种映射关系，将不同分片表的某些字段对应起来。这样，在进行多表关联查询时，ShardingSphere就可以通过这个映射关系，将查询操作转换成分片表的本地查询操作。...",
+      "excerpt": "ShardingSphere提供了关联表的功能，主要解决在进行多表关联查询时，容易出现的查询效率太低的问题。 具体来说，关联表定义了一种映射关系，将不同分片表的某些字段对应起来。这样，在进行多表关联查询时，ShardingSphere就可以通过这个映射关系，将查询操作转换成分片表的本地查询操作。这样就可以避免跨节点、跨数据库的查询，提高了查询效率。 例如，如果有两个表：订单表(t_order)和订单情表表(t_order_item)，它们之间存在一个外键关联关系。我们可以定义一个关联规则，将这两个表关联起来。当进行多表关联查询时，ShardingSphere就会根据这个关联规则，自动将分片键相同的表关联起来进行查询，从而提高查询的效率。"
+    },
+    {
+      "slug": "dbhi0m0rhwubmcg3",
+      "title": "短视频",
+      "url": "/tulingzhouyu/db22bv/dbhi0m0rhwubmcg3",
+      "toc_path": [
+        "分库分表",
+        "什么是 ShardingSphere 的关联表？",
+        "短视频"
+      ],
+      "toc_level": 2,
+      "toc_index": 769,
+      "word_count": 549,
+      "updated_at": "2024-06-03T07:32:10.000Z",
+      "primary_category": "mysql-sharding",
+      "primary_category_name": "分库分表",
+      "related_categories": [
+        "mysql-sharding",
+        "performance-optimization",
+        "project-system-design",
+        "mq-general"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "分库分表",
+        "分片",
+        "ShardingSphere",
+        "分片键",
+        "性能",
+        "优化",
+        "架构设计",
+        "方案",
+        "MQ"
+      ],
+      "summary": "分库分表大家都知道！数据量多了我就拆！拆表！拆库以提升查询效率， 那拆完后如果要查询几张不同库的表  ，那如何进行表关联查询呢？？？哈喽大家好我是徐庶， 给大家讲讲分库分表下，如何进行表关联查询，需要本视频文字版的同学直接在评论区扣666.我给大家提供3种常见的解决方案：第1种：  直接数据冗...",
+      "excerpt": "分库分表大家都知道！数据量多了 我就拆 ！ 拆表 ！ 拆库 以提升查询效率， 那拆完后如果要 查询几张不同库的表 ，那 如何进行表关联查询呢 ？？？ ​ 哈喽大家好我是徐庶， 给大家讲讲分库分表下，如何进行表关联查询，需要本视频文字版的同学直接在评论区扣666. ​ 我给大家提供 3种 常见的解决方案： ​ 第1种： 直接数据冗余 ： 这是我 最推荐的也是性能比较好的 ， 不过要注意修改数据后的一致性，当数据修改时可以用MQ做关联表的冗余数据修改。 第2种： 应用层查询 ： 说白了就是 在应用中分别查询不同表的数据然后汇总 。但是会增加应用层的复杂性。 第3种： 中间件支持 ：如果你用了 ShardingSphere 他本身就 提供了关联表的功能 ，专门用来解决多表关联查询。 只要配置一下关联规则。当进行多表关联查询时，ShardingSphere就会根据这个关联规则，自动将分片键相同的表关联起来进行查询，从而提高查询的效率。 ​ 其实如果按照业务进行拆分数据库， 合理的设计 下 极少情况会出现夸库关联表查询 。 哪怕出现 如果对性能要求高的情况， 我还是 建议用数据冗余得方式 ， 如果对性能要求不高并且用了ShardingSphere就直接用它自带的关联表功能就行！。 所以 拆分 是 一项 对系统架构设计要求极高的一个活儿 。 拆的好 的系统 利于合理的分工 ， 可以更有 针对性对不同业务特性的模块进行性能优化 。 拆得不好 反而会 增加复杂性 和 开发成本 。 如果对架构这块有需要学习的同学， 可以加我联系方式。"
+    },
+    {
+      "slug": "qvent10nv2kb2rq6",
+      "title": "ShardingSphere支持哪些分片算法？",
+      "url": "/tulingzhouyu/db22bv/qvent10nv2kb2rq6",
+      "toc_path": [
+        "分库分表",
+        "ShardingSphere支持哪些分片算法？"
+      ],
+      "toc_level": 1,
+      "toc_index": 770,
+      "word_count": 282,
+      "updated_at": "2023-09-11T05:32:39.000Z",
+      "primary_category": "mysql-sharding",
+      "primary_category_name": "分库分表",
+      "related_categories": [
+        "mysql-sharding",
+        "algorithm",
+        "devops-release",
+        "performance-optimization"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "分库分表",
+        "分片",
+        "ShardingSphere",
+        "分片键",
+        "算法",
+        "容量"
+      ],
+      "summary": "ShardingSphere支持多种分片算法，主要包括：精确分片算法（PreciseShardingAlgorithm）：用于处理使用单一键作为分片键的=与IN进行分片的场景。范围分片算法（RangeShardingAlgorithm）：用于处理使用单一键作为分片键的BETWEEN AND、&gt;...",
+      "excerpt": "ShardingSphere支持多种分片算法，主要包括： 精确分片算法（PreciseShardingAlgorithm）：用于处理使用单一键作为分片键的=与IN进行分片的场景。 范围分片算法（RangeShardingAlgorithm）：用于处理使用单一键作为分片键的BETWEEN AND、>、<、>=、<=进行分片的场景。 复合分片算法（ComplexKeysShardingAlgorithm）：用于处理使用多键作为分片键进行分片的场景，多个分片键的逻辑较复杂，需要应用开发者自行处理其中的复杂度。 提示分片算法（HintShardingAlgorithm）：用于处理分片规则与 SQL 无关的场景。对于分片字段非SQL决定，而由其他外置条件决定的场景，可使用SQL Hint灵活的注入分片字段。 此外，随着版本不断演进，ShardingSphere还在不断丰富分片算法，例如基于分片边界的范围分片算法（BoundaryBasedRangeShardingAlgorithm）、基于分片容量的范围分片算法（VolumeBasedRangeShardingAlgorithm）等。"
+    },
+    {
+      "slug": "llezowetw2ia6qkc",
+      "title": "ShardingSpehre 的分库分表功能是如何工作的？",
+      "url": "/tulingzhouyu/db22bv/llezowetw2ia6qkc",
+      "toc_path": [
+        "分库分表",
+        "ShardingSpehre 的分库分表功能是如何工作的？"
+      ],
+      "toc_level": 1,
+      "toc_index": 771,
+      "word_count": 397,
+      "updated_at": "2023-09-11T06:18:16.000Z",
+      "primary_category": "mysql-sharding",
+      "primary_category_name": "分库分表",
+      "related_categories": [
+        "mysql-sharding",
+        "spring-cloud",
+        "performance-optimization",
+        "project-system-design",
+        "os-linux"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "分库分表",
+        "分片",
+        "ShardingSphere",
+        "注册中心",
+        "性能",
+        "优化",
+        "方案",
+        "内存"
+      ],
+      "summary": "ShardingSphere 的分库分表功能主要通过如下几个步骤完成：配置管控：ShardingSphere 需要解析复杂的配置信息，并且支持将配置信息上传到第三方注册中心。SQL 解析：将要执行的 SQL 语句解析成抽象语法树。SQL 路由：根据解析上下文匹配数据库和表的分片策略，并生成 S...",
+      "excerpt": "ShardingSphere 的分库分表功能主要通过如下几个步骤完成： 配置管控：ShardingSphere 需要解析复杂的配置信息，并且支持将配置信息上传到第三方注册中心。 SQL 解析：将要执行的 SQL 语句解析成抽象语法树。 SQL 路由： 根据解析上下文匹配数据库和表的分片策略，并生成 SQL 的路由路径。 SQL 优化：用户只需要面向逻辑库和逻辑表来写SQL，最终由ShardigSphere的改写引擎将SQL改写为在真实数据库中可以正确执行的语句。SQL改写分为正确性改写和优化改写。 SQL 执行：ShardingSphere 采用一套自动化的执行引擎，负责将路由和改写完成之后的真实 SQL 安全且高效发送到底层数据源执行。 结果归并：将从各个数据节点获取的多数据结果集，组合成为一个结果集并正确的返回至请求客户端。ShardingSphere 内部实现了流式归并和内存归并两种方案。 ShardingSphere 的分库分表功能使得应用程序能够透明地访问分布式数据库，而无需关心具体的数据库分片细节。开发人员只需配置好数据源和分片规则，ShardingSphere会自动处理数据的分布和查询路由。这有助于提高系统性能、可扩展性和可用性。"
+    },
+    {
+      "slug": "zakekhrmhx7xkx5u",
+      "title": "ShardingSphere如何保证分布式事务一致性？",
+      "url": "/tulingzhouyu/db22bv/zakekhrmhx7xkx5u",
+      "toc_path": [
+        "分库分表",
+        "ShardingSphere如何保证分布式事务一致性？"
+      ],
+      "toc_level": 1,
+      "toc_index": 772,
+      "word_count": 413,
+      "updated_at": "2023-09-11T06:19:51.000Z",
+      "primary_category": "mysql-sharding",
+      "primary_category_name": "分库分表",
+      "related_categories": [
+        "mysql-sharding",
+        "mysql-index-transaction",
+        "distributed-transaction",
+        "java-concurrency",
+        "project-system-design"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle",
+        "senior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "分库分表",
+        "分片",
+        "ShardingSphere",
+        "事务",
+        "锁",
+        "分布式事务",
+        "最终一致性",
+        "方案"
+      ],
+      "summary": "ShardingSphere 保证分布式事务一致性的方式主要有两种：XA事务和柔性事务。XA事务通过在准备阶段和提交阶段进行两阶段锁，来保证分布式事务的一致性。在准备阶段，ShardingSphere 会对所有的数据库节点进行锁定，保证在事务执行过程中不会有其他操作干扰。在提交阶段，Shard...",
+      "excerpt": "ShardingSphere 保证分布式事务一致性的方式主要有两种：XA事务和柔性事务。 XA事务通过在准备阶段和提交阶段进行两阶段锁，来保证分布式事务的一致性。在准备阶段，ShardingSphere 会对所有的数据库节点进行锁定，保证在事务执行过程中不会有其他操作干扰。在提交阶段，ShardingSphere 会对所有的数据库节点进行提交或者回滚操作，以保证事务的一致性。 柔性事务则是通过BASE理论来实现的。BASE理论包括基本可用（Basically Available）、软状态（Soft State）和最终一致性（EventualConsistency）。在柔性事务中，ShardingSphere 采用了柔性状态和最终一致性的理念，允许短时间内不同步，最终保证数据的一致性。 另外，ShardingSphere 还提供了接入分布式事务的 SPI，并针对性能要求较高、一致性要求较低的业务提供了基于柔性事务的方案。在整合Seata AT事务时，ShardingSphere 通过扩展服务间的传输机制，将Seata的全局事务上下文传递到分片执行引擎中，从而保证了分布式事务的一致性。 总之，ShardingSphere 通过XA事务和柔性事务两种方式来保证分布式事务的一致性。在实现过程中，ShardingSphere 还提供了相应的工具类和抽象类，方便开发者进行相关操作。"
+    },
+    {
+      "slug": "xhf3pmkcbax2y8ey",
+      "title": "分库分表后如何进行跨库join",
+      "url": "/tulingzhouyu/db22bv/xhf3pmkcbax2y8ey",
+      "toc_path": [
+        "分库分表",
+        "分库分表后如何进行跨库join"
+      ],
+      "toc_level": 1,
+      "toc_index": 773,
+      "word_count": 738,
+      "updated_at": "2024-08-25T09:07:22.000Z",
+      "primary_category": "mysql-sharding",
+      "primary_category_name": "分库分表",
+      "related_categories": [
+        "mysql-sharding",
+        "performance-optimization",
+        "redis-cache",
+        "project-system-design",
+        "observability-troubleshooting"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "分库分表",
+        "分片",
+        "ShardingSphere",
+        "性能",
+        "优化",
+        "Redis",
+        "缓存",
+        "系统设计",
+        "订单",
+        "监控"
+      ],
+      "summary": "在分库分表架构下进行跨库JOIN需要特别谨慎，因为传统的数据库JOIN操作无法直接在分布式环境中跨库执行。以下是几种常用的策略和方法来解决这个问题：1. 应用层Join应用层Join是最直接的方法，通过在应用程序中编写逻辑来处理多个数据库的查询结果并进行合并。示例代码:public List",
+      "excerpt": "在分库分表架构下进行跨库JOIN需要特别谨慎，因为传统的数据库JOIN操作无法直接在分布式环境中跨库执行。以下是几种常用的策略和方法来解决这个问题： 1. 应用层Join 应用层Join是最直接的方法，通过在应用程序中编写逻辑来处理多个数据库的查询结果并进行合并。 示例代码: 2. 数据冗余 在某些情况下，可以通过冗余存储部分必要的数据以避免跨库Join。例如，将信息复制到一个中心库或每个分片中包含必要的冗余字段。 示例: 假设有订单(Order)和用户(User)数据分库。可以在Order表中冗余存储User的部分信息（如username），以减少跨库查询。 3. 使用中间件 利用分布式中间件或数据库中间件，例如Mycat、ShardingSphere，这些工具通常能处理分库分表的情况下进行复杂查询。 ShardingSphere示例: 4. 数据仓库 将数据归集到数据仓库（如Hadoop、Apache Drill），并在那里执行复杂的跨库JOIN查询。数据仓库通常更擅长处理大规模数据的JOIN操作。 5. 缓存和异步处理 利用Redis或其他缓存系统缓存部分跨库JOIN结果，减少实时计算负荷。或者，异步地进行定时数据处理，预先准备合并的结果。 风险和注意事项 性能问题 ：应用层Join可能导致性能问题，尤其是在数据量很大时。 一致性 ：如果使用数据冗余或中间件，需要小心维护数据一致性。 复杂性 ：采用复杂的中间件或数据仓库可能引入额外的系统复杂性和运维负担。 最佳实践 减少跨库操作 ：在系统设计时，尽量减少需要跨库的场景。 数据设计 ：在数据设计阶段考虑拆分策略，最大化本地数据访问。 持续监控 ：监控性能和负载，必要时优化查询策略。 跨库JOIN是一个系统复杂性较高的问题，应根据具体场景做出合理选择和优化设计。在大多数情况下，通过良好的数据设计和应用级优化，可以有效地缓解跨库数据访问带来的复杂性和性能挑战。"
+    },
+    {
+      "slug": "wgn6eviabyy4eae2",
+      "title": "分库分表后如何进行分页查询",
+      "url": "/tulingzhouyu/db22bv/wgn6eviabyy4eae2",
+      "toc_path": [
+        "分库分表",
+        "分库分表后如何进行分页查询"
+      ],
+      "toc_level": 1,
+      "toc_index": 774,
+      "word_count": 898,
+      "updated_at": "2024-08-21T12:07:01.000Z",
+      "primary_category": "mysql-sharding",
+      "primary_category_name": "分库分表",
+      "related_categories": [
+        "mysql-sharding",
+        "algorithm",
+        "project-system-design",
+        "redis-cache",
+        "mysql-index-transaction"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "分库分表",
+        "分片",
+        "ShardingSphere",
+        "排序",
+        "方案",
+        "缓存",
+        "索引"
+      ],
+      "summary": "在分库分表后进行分页查询是一项复杂的任务，因为数据被分布在多个表或数据库中，不像单个表那样可以直接利用数据库提供的分页功能（如 LIMIT 和 OFFSET）。在这种情况下，您需要在应用程序层面进行一些策略上的调整。以下是一些常见的解决方案：方法 1：应用层合并每个分表查询： 分别在每个子表或...",
+      "excerpt": "在分库分表后进行分页查询是一项复杂的任务，因为数据被分布在多个表或数据库中，不像单个表那样可以直接利用数据库提供的分页功能（如 LIMIT 和 OFFSET ）。在这种情况下，您需要在应用程序层面进行一些策略上的调整。以下是一些常见的解决方案： 方法 1：应用层合并 每个分表查询： 分别在每个子表或数据库上执行相同的分页查询，但不使用 LIMIT 和 OFFSET 。这意味着对于每个分表，你都可能需要查询比单表环境中更多的数据。 合并结果： 将来自所有分表的结果合并在一起。 排序和截取： 在应用程序层面，对合并后的数据进行排序，然后根据全局的分页参数（如 page 和 pageSize ）计算出实际需要返回的记录范围，并从中截取出需要的数据。 方法 2：主键或逻辑分页 确定分页字段： 在分库分表设计时，确保有一个能够全局排序的字段，如时间戳、主键（如果是全局唯一）或其他可以用于排序的字段。 分表分页查询： 利用上面确定的分页字段，对每个子表执行固定条件的子查询，比如选取某个范围的字段值。 循环迭代： 使用一个外层循环依次查询每个子表中的下一页的数据，根据分页字段逐步推进，直到得到足够多的记录用来展示所需页。 合并结果： 合并每次查询得到的结果，根据全局排序字段进行排序，并截取所需的记录段。 方法 3：中间件或工具支持 使用中间件： 使用数据访问中间件来承接分库分表对应用开发过程的复杂性。这些中间件通常内置了分页处理、查询合并等复杂操作。 工具辅助： 一些分库分表的解决方案工具提供了分页功能，例如 MyCat、ShardingSphere。这些工具通常可以透过配置执行自动的跨分片分页查询。 方法 4：异步批查询 分步执行： 通过异步请求每个子表的分页数据。 缓存全量索引： 依据全局排序字段定期缓存数据的索引或结果，以降低实时查询的开销。 动态刷新： 针对高实时性要求，通过间隔更新和必要时即时刷新来保证数据的时效性。 开发建议 选择合适的分库分表策略 ：在数据分片策略设计之初，就需要重点考虑到如何高效进行全局分页查询。 平衡延迟和查询成本 ：通过增加一些计算或存储（如缓存）来减少复杂度和轮询开销。 性能监测 ：在事情进行调整时，使用性能监测工具来时刻关注数据库和应用程序开销变化情况。 通过以上策略，结合实际的应用需求，可以有效应对分库分表后分页查询过程中的挑战。"
+    },
+    {
+      "slug": "is3fvga1r1saydzk",
+      "title": "如何使用 ShardingSphere 进行数据加密？",
+      "url": "/tulingzhouyu/db22bv/is3fvga1r1saydzk",
+      "toc_path": [
+        "分库分表",
+        "如何使用 ShardingSphere 进行数据加密？"
+      ],
+      "toc_level": 1,
+      "toc_index": 775,
+      "word_count": 264,
+      "updated_at": "2023-09-11T06:24:04.000Z",
+      "primary_category": "mysql-sharding",
+      "primary_category_name": "分库分表",
+      "related_categories": [
+        "mysql-sharding",
+        "security-auth",
+        "algorithm",
+        "devops-release",
+        "ai-llm"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "分库分表",
+        "ShardingSphere",
+        "加密",
+        "算法"
+      ],
+      "summary": "ShardingSphere 的数据加密功能配置主要分为以下步骤：数据源配置：首先需要配置数据源信息，包括数据源的名称、连接池等信息。加密算法配置：在 ShardingSphere 中内置了一些常见的加密算法，例如 AES、MD5、RC4、SM3 和 SM4，用户可以选择其中一种或多种算法进行...",
+      "excerpt": "ShardingSphere 的数据加密功能配置主要分为以下步骤： 数据源配置：首先需要配置数据源信息，包括数据源的名称、连接池等信息。 加密算法配置：在 ShardingSphere 中内置了一些常见的加密算法，例如 AES、MD5、RC4、SM3 和 SM4，用户可以选择其中一种或多种算法进行加解密操作。同时，用户也可以通过实现 ShardingSphere 提供的接口来自定义加密算法。 加密表配置：该步骤主要用于配置数据表里哪个列为密文数据（cipherColumn）、使用什么算法进行加解密（encryptorName）、哪个列为辅助查询数据（assistedQueryColumn）、使用什么算法进行加解密（assistedQueryEncryptorName）、哪个列为明文数据（plainColumn）以及使用哪个列进行 SQL 编写（logicColumn）。 通过以上步骤，用户可以完成 ShardingSphere 数据加密功能的配置。"
+    },
+    {
+      "slug": "ozq1myqzagouzdvk",
+      "title": "一次搞定MySQL分库分表",
+      "url": "/tulingzhouyu/db22bv/ozq1myqzagouzdvk",
+      "toc_path": [
+        "项目设计场景题",
+        "一次搞定MySQL分库分表"
+      ],
+      "toc_level": 1,
+      "toc_index": 874,
+      "word_count": 2313,
+      "updated_at": "2024-07-15T14:21:21.000Z",
+      "primary_category": "mysql-sharding",
+      "primary_category_name": "分库分表",
+      "related_categories": [
+        "mysql-sharding",
+        "performance-optimization",
+        "observability-troubleshooting",
+        "docker-k8s",
+        "java-core"
+      ],
+      "question_type": "troubleshooting",
+      "question_type_name": "故障排查题",
+      "levels": [
+        "middle",
+        "senior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "分库分表",
+        "读写分离",
+        "性能",
+        "优化",
+        "吞吐",
+        "容量",
+        "瓶颈",
+        "线上",
+        "CPU",
+        "Service",
+        "IO"
+      ],
+      "summary": "本次分享内容数据库瓶颈水平和垂直拆分库表分库分表工具分库分表步骤分库分表问题一、数据库瓶颈不管是 IO 瓶颈，还是 CPU 瓶颈，最终都会导致数据库的活跃连接数增加，进而逼近甚至达到数据库可承载活跃连接数的阈值。在业务 Service 来看就是，可用数据库连接少甚至无连接可用。接下来就可以想象...",
+      "excerpt": "本次分享内容 数据库瓶颈 水平和垂直拆分库表 分库分表工具 分库分表步骤 分库分表问题 一、数据库瓶颈 不管是 IO 瓶颈，还是 CPU 瓶颈，最终都会导致数据库的活跃连接数增加，进而逼近甚至达到数据库可承载活跃连接数的阈值。在业务 Service 来看就是，可用数据库连接少甚至无连接可用。接下来就可以想象了吧（并发量、吞吐量、崩溃）。 1、IO 瓶颈 第一种：磁盘读 IO 瓶颈，热点数据太多，数据库缓存放不下，每次查询时会产生大量的 IO，降低查询速度 -> 分库和垂直分表。 第二种：网络 IO 瓶颈，请求的数据太多，网络带宽不够 -> 分库。 2、CPU 瓶颈 第一种：SQL 问题，如 SQL 中包含 join，group by，order by，非索引字段条件查询等，增加 CPU 运算的操作 -> SQL 优化，建立合适的索引，在业务 Service 层进行业务计算。 第二种：单表数据量太大，查询时扫描的行太多，SQL 效率低，增加 CPU 运算的操作 -> 水平分表。 二、分库分表 1、水平分库 概念： 以字段为依据，按照一定策略（hash、range 等），将一个库中的数据拆分到多个库中。 结果： 每个库的结构都一样； 每个库的数据都不一样，没有交集； 所有库的并集是全量数据； 场景： 系统绝对并发量上来了，分表难以根本上解决问题，并且还没有明显的业务归属来垂直分库。 分析： 库多了，io 和 cpu 的压力自然可以成倍缓解。 2、水平分表 概念： 以字段为依据，按照一定策略（hash、range 等），将一个表中的数据拆分到多个表中。 结果： 每个表的结构都一样； 每个表的数据都不一样，没有交集； 所有表的并集是全量数据； 场景： 系统绝对并发量并没有上来，只是单表的数据量太多，影响了 SQL 效率，加重了 CPU 负担，以至于成为瓶颈。 分析： 表的数据量少了，单次 SQL 执行效率高，自然减轻了 CPU 的负担。 3、垂直分库 概念： 以表为依据，按照业务归属不同，将不同的表拆分到不同的库中。 结果： 每个库的结构都不一样； 每个库的数据也不一样，没有交集； 所有库的并集是全量数据； 场景： 系统绝对并发量上来了，并且可以抽象出单独的业务模块。 分析： 到这一步，基本上就可以服务化了。例如，随着业务的发展一些公用的配置表、字典表等越来越多，这时可以将这些表拆到单独的库中，甚至可以服务化。再有，随着业务的发展孵化出了一套业务模式，这时可以将相关的表拆到单独的库中，甚至可以服务化。 4、垂直分表 概念： 以字段为依据，按照字段的活跃性，将表中字段拆到不同的表（主表和扩展表）中。 结果： 每个表的结构都不一样； 每个表的数据也不一样，一般来说，每个表的字段至少有一列交集，一般是主键，用于关联数据； 所有表的并集是全量数据； 场景： 系统绝对并发量并"
+    },
+    {
+      "slug": "ggml5g3io1lksdas",
+      "title": "大众点评订单系统分库分表实战：如何突破单机瓶颈实现架构跃迁",
+      "url": "/tulingzhouyu/db22bv/ggml5g3io1lksdas",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "大众点评订单系统分库分表实战：如何突破单机瓶颈实现架构跃迁"
+      ],
+      "toc_level": 2,
+      "toc_index": 958,
+      "word_count": 1730,
+      "updated_at": "2025-12-17T12:06:45.000Z",
+      "primary_category": "mysql-sharding",
+      "primary_category_name": "分库分表",
+      "related_categories": [
+        "mysql-sharding",
+        "project-system-design",
+        "performance-optimization",
+        "observability-troubleshooting",
+        "mysql-index-transaction"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "分库分表",
+        "分片",
+        "分片键",
+        "架构设计",
+        "方案",
+        "高并发",
+        "订单",
+        "性能",
+        "优化",
+        "容量",
+        "瓶颈",
+        "线上"
+      ],
+      "summary": "在大流量互联网业务的演进历程中，订单系统往往是承压最重、稳定性要求最高的核心链路。随着业务体量的爆发式增长，单一数据库架构不可避免地会触碰到性能天花板。本文将深度复盘大众点评订单系统如何通过架构重构，从单库单表平滑演进至千亿级分片架构，详解其中的分片策略、路由算法优化以及无损迁移方案。",
+      "excerpt": "在大流量互联网业务的演进历程中，订单系统往往是承压最重、稳定性要求最高的核心链路。随着业务体量的爆发式增长，单一数据库架构不可避免地会触碰到性能天花板。 本文将深度复盘大众点评订单系统如何通过架构重构，从单库单表平滑演进至千亿级分片架构，详解其中的 分片策略、路由算法优化以及无损迁移方案 。 一、 隐患：深海之下的存储危机 在重构启动前，我们的订单单表数据量已突破数亿行，磁盘占用超过 500GB。这种量级的数据规模给系统带来了两个致命的隐患： 性能瓶颈 ：InnoDB 的 B+ 树层级变深，导致磁盘 IO 成为绝对瓶颈。高峰期 TPS 稍有波动，数据库 CPU 就会瞬间飙升，查询延迟呈现指数级增长。 运维死结 ：在如此庞大的表上执行任何 DDL 操作（如加索引、加字段）都无异于在“高速行驶的列车上换轮子”。一次简单的变更可能导致长达数小时的锁表，这对 7x24 小时的交易系统而言是不可接受的风险。 面对这些深海之下的隐患，垂直升级硬件已无济于事，我们必须进行一场彻底的水平拆分（Sharding）手术。 二、 顶层设计：构建 32x32 分片矩阵 分库分表的核心在于如何选择“分片键（Sharding Key）”以及如何规划分片数量。 大众点评的订单业务具有典型的“双主视角”特性： C端用户 ：需要查询“我的订单”。 B端商户 ：需要查询“店铺的流水”。 如果仅按用户 ID 分片，商户查询就会变成跨库的全表扫描；反之亦然。为了兼顾两端，我们放弃了单一维度切分，转而构建了一个立体的分片矩阵。 我们最终确定的方案是 32 个物理库，每个库包含 32 张逻辑表 ，共计 1024 张分表。 为什么是 32？ 32 是 2 的 5 次方，符合计算机二进制处理习惯，且便于后续进行 2 倍扩容（如扩容至 64 库）。 数据隔离 ：物理分库不仅解决了容量问题，更实现了故障域的隔离。单机故障的影响范围被限制在 1/32 以内。 三、 坚如磐石：高可用架构体系 分片架构虽然解决了容量问题，但物理节点的增加也使得单点故障的概率成倍上升。为了保证金融级的可靠性，我们必须构建一套自动化的容灾体系。 我们引入了 MHA (Master High Availability) 配合中间件 Zebra，构建了基于 VIP (Virtual IP) 漂移的高可用方案。 在此架构下，应用层不再直接连接物理 IP，而是连接 VIP。当主库发生宕机时，监控组件会在秒级内感知，并自动将 VIP 漂移至备库。整个切换过程对上层应用完全透明，业务感知仅为一次短暂的连接闪断（重连即可恢复），从而真正实现了 99.99% 的高可用性。 四、 核心创新：基因法 (Genetic ID) 实现 O(1) 路由 在分库分表中最棘手的问题是： 如何不查询映射表（Mapping Table）就能定位分片？ 传统的做法是建立"
+    },
+    {
+      "slug": "dws9bkc0yis7qhg8",
+      "title": "高并发系统设计：分库分表后的非分片键查询",
+      "url": "/tulingzhouyu/db22bv/dws9bkc0yis7qhg8",
+      "toc_path": [
+        "高频面试问题",
+        "fox老师",
+        "高并发系统设计：分库分表后的非分片键查询"
+      ],
+      "toc_level": 2,
+      "toc_index": 1069,
+      "word_count": 1606,
+      "updated_at": "2025-12-29T12:27:14.000Z",
+      "primary_category": "mysql-sharding",
+      "primary_category_name": "分库分表",
+      "related_categories": [
+        "mysql-sharding",
+        "project-system-design",
+        "mysql-index-transaction",
+        "resume-project",
+        "observability-troubleshooting"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "分库分表",
+        "分片",
+        "ShardingSphere",
+        "分片键",
+        "系统设计",
+        "架构设计",
+        "方案",
+        "高并发",
+        "订单",
+        "支付",
+        "MySQL",
+        "索引"
+      ],
+      "summary": "核心考察点：数据库架构设计、分片路由策略 (Sharding Routing)、异构索引 (Heterogeneous Index)、基因法 (Gene Method) 以及 OLTP 与 OLAP 的分离。一、 面试现场：为什么分完表就“瞎”了？面试官问：“",
+      "excerpt": "核心考察点 ： 数据库架构设计 、 分片路由策略 (Sharding Routing) 、 异构索引 (Heterogeneous Index) 、 基因法 (Gene Method) 以及 OLTP 与 OLAP 的分离 。 一、 面试现场：为什么分完表就“瞎”了？ 面试官 问：“ 你们公司的订单表有 2 亿数据，怎么做的分库分表？ ” 候选人 背得滚瓜烂熟：“简单！我们按用户 ID（user_id）取模，分了 16 个库，每个库 64 张表，一共 1024 张表。这样用户查自己的订单特别快，直接定位到具体的表。” 面试官 ：订单表 10 亿数据，按用户 ID ( user_id ) 分了 1024 张表。现在商家想查自己店铺的订单，或者用户想按订单号 ( order_id ) 查，怎么查？ 候选人 ：遍历这 1024 张表...？ 面试官 ：……（挂了） 核心痛点 ： 分库分表最大的代价是 查询维度的丧失 。 分片键 (Sharding Key) ： user_id 。查它很快，路由定位 O(1)。 非分片键 ： merchant_id 或 order_id 。中间件（MyCat/ShardingSphere）不知道数据在哪张表，只能发起 全路由扫描 (Broadcast) 。 后果 ：一条 SQL 裂变成 1024 条 SQL 同时轰炸数据库。并发一高，数据库必死。 二、 核心解法：多维度查询的三板斧 方案 1：异构索引表 (Heterogeneous Index) —— 空间换时间 适用于 查询维度较少且固定 的场景（如：B 端商家要查订单）。 原理 ：既然按 C 端用户分表导致 B 端商家查不了，那就 再造一套表 ，专门按 B 端商家分片。 架构设计 ： C 端主表 ： order_c ，按 user_id 分片。服务于消费者，存全量数据。 B 端异构表 ： order_b ，按 merchant_id 分片。服务于商家。 数据同步 ： ~~ 双写（不推荐） ~~：业务代码写两次，事务复杂，容易不一致。 Canal + MQ （推荐） ：监听 C 端主表的 Binlog，通过 MQ 异步写入 B 端表。虽然有秒级延迟，但实现了 最终一致性 且解耦。 方案 2：基因法 (Gene Method) —— ID 查询的黑科技 适用于 主键 查询 场景（如：已知 order_id 要查订单详情，但分片键是 user_id ）。 千万别为了查 order_id 再去搞一张异构表，太浪费！ 原理 ：将分片键 ( user_id ) 的路由规则（基因） 嵌入 到全局唯一 ID ( order_id ) 中。 实现步骤 ： 定义基因 ：假设分库数为 16（二进制需 4 位）。 提取基因 ： user_id = 99 (二进制 ...01100011 )，取最后 4"
+    },
+    {
+      "slug": "chgdt98fpor0baz5",
+      "title": "5亿用户数据，面试官的‘死亡追问’你敢接吗？",
+      "url": "/tulingzhouyu/db22bv/chgdt98fpor0baz5",
+      "toc_path": [
+        "高频面试问题",
+        "楼兰老师",
+        "5亿用户数据，面试官的‘死亡追问’你敢接吗？"
+      ],
+      "toc_level": 2,
+      "toc_index": 1164,
+      "word_count": 1486,
+      "updated_at": "2025-09-25T14:19:50.000Z",
+      "primary_category": "mysql-sharding",
+      "primary_category_name": "分库分表",
+      "related_categories": [
+        "mysql-sharding",
+        "resume-project",
+        "distributed-lock-id",
+        "project-system-design",
+        "security-auth"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "junior"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "初级/1-3年"
+      ],
+      "keywords": [
+        "分库分表",
+        "分片",
+        "项目",
+        "面试官",
+        "分布式ID",
+        "雪花算法",
+        "方案",
+        "认证"
+      ],
+      "summary": "我敢说，90%的同学在面试时，都掉进过面试八股的陷阱。面试官问：“做过分库分表吗？”，你张口就来：“做过！”然后面试官提一个业务场景：“五亿用户数据，怎么分库分表”。你下意识的就想到那些你背得滚瓜烂熟的面试八股，什么分库分表、垂直分、水平分，脱口而出。你回答得没错，但你可能已经与这个Offer...",
+      "excerpt": "​ 我敢说，90%的同学在面试时，都掉进过面试八股的陷阱。面试官问：“做过分库分表吗？”，你张口就来：“做过！”然后面试官提一个业务场景：“五亿用户数据，怎么分库分表”。你下意识的就想到那些你背得滚瓜烂熟的面试八股，什么分库分表、垂直分、水平分，脱口而出。你回答得没错，但你可能已经与这个Offer失之交臂了。 为什么？因为你要知道，面试最终希望考察的不是你的记忆力，而是你思考问题解决问题的能力。谈到分库分表，表怎么分？数据怎么查？重要业务场景怎么设计？这些才是真正能够打动面试官的。今天，我就带你走完这“从背书到实战”的最后一公里。 我们回到这个经典的面试场景：5亿用户的巨型表t_user，登录缓慢。 (手指向“垂直分表”) 第一刀，垂直拆分。冷热分离， 把不常用的用户资料，拆到【冷表】t_user_profile；把登录要用的认证信息，留在【热表】t_user_auth 。业务上进行一些隔离，这样每次登录时要读的数据就能少一些。 但这样毕竟改变不了数据量太多的本质问题。所以第二刀，水平拆分。把这张最常用的认证表，按 user_id 哈希，切成1024张小表。 好，到此为止，这是所有教科书都会教你的标准流程。但对于一个真实的线上系统，噩梦才刚刚开始。 ​ 此时，一个顶尖的面试官，会立刻抛出他的**“死亡追问” ： 你按 user_id 分片，那用户现在用 username 来登录，你告诉我，数据在哪张表里？难道你要让我的系统去轮询1024张表吗？你的登录接口不是要爆炸吗？”这个问题，就是程序员的试金石！它考验的根本不是你记住了什么，而是你有没有能力去设计一个 优雅、高效、且能预见未来**的系统！而我们的破局点，就是这个听起来有点科幻的—— 基因分片法！ 别眨眼，我们分三步，彻底解构这个方案： 第一步：定义和抽取“分片基因” 。什么是基因？就是我们从 username 身上提取的一段信息。具体操作是，对 username 进行哈希转成数字，然后与 1023 （也就是2的10次方减1）做一次“与”运算，得到一个0到1023的数字。这个数字，实际上就是username的哈希数字二进制表示的最后10位。这就是 username 的“分片基因”，它会最终决定这个用户的数据应该落在哪个分片上。 第二步：改造ID，注入基因！接下来我们还是 采用像雪花算法这类分布式ID算法生成一个原始ID。接下来重点来了。把上一步计算出来的分片基因，像DNA片段一样，注入到原始ID的二进制尾部。具体操作就是先左移流出10个比特位，然后与分片基因进行一次“或”操作。这样新生成的ID二进制尾部就全都是分片基因了。然后，再按照这个分片基因进行正常的数据分片，将数据保存到对应的子表当中。 第三步：双路归一！ 现在，整个架构的任督二脉被打通了！ 当用户用 username 登录 ：我们后台实时计算它的"
+    },
+    {
+      "slug": "icg06374o8ceggk7",
+      "title": "Elasticsearch 核心概念深度解析：从基础到分布式架构",
+      "url": "/tulingzhouyu/db22bv/icg06374o8ceggk7",
+      "toc_path": [
+        "高频面试问题",
+        "鹏宇老师",
+        "Elasticsearch 核心概念深度解析：从基础到分布式架构"
+      ],
+      "toc_level": 2,
+      "toc_index": 1247,
+      "word_count": 3095,
+      "updated_at": "2025-09-28T11:19:38.000Z",
+      "primary_category": "mysql-sharding",
+      "primary_category_name": "分库分表",
+      "related_categories": [
+        "mysql-sharding",
+        "mysql-index-transaction",
+        "java-core",
+        "redis-persistence-cluster",
+        "observability-troubleshooting"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "campus"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "分片",
+        "MySQL",
+        "索引",
+        "Java",
+        "异常",
+        "IO",
+        "序列化",
+        "集群",
+        "线上",
+        "排查",
+        "故障",
+        "日志"
+      ],
+      "summary": "在大数据检索与存储场景中，Elasticsearch（简称 ES）凭借其分布式特性、高效全文检索能力，成为日志分析、电商搜索等领域的核心中间件。本文将结合可视化图表（对应 PPT 截图位置已标注），从 “是什么”“核心概念”“关键技术”“分布式架构” 四个维度，系统拆解 ES 的核心逻辑，适合...",
+      "excerpt": "在大数据检索与存储场景中，Elasticsearch（简称 ES）凭借其分布式特性、高效全文检索能力，成为日志分析、电商搜索等领域的核心中间件。本文将结合可视化图表（对应 PPT 截图位置已标注），从 “是什么”“核心概念”“关键技术”“分布式架构” 四个维度，系统拆解 ES 的核心逻辑，适合初学者入门与开发者巩固基础。 1. 引言：为什么要学 Elasticsearch？ 在面试与实际开发中，ES 常被问及两大问题：“ES 是什么？”“它的核心概念有哪些？”。其本质是一款 基于 Lucene 的分布式全文搜索引擎 ，不仅能实现海量数据的存储，更能通过优化的索引机制快速完成全文检索与数据分析。 2. Elasticsearch 核心定位：基于 Lucene 的分布式引擎 2.1 ES 与 Lucene 的关系 ES 并非从零构建，而是以 Apache Lucene 为 “底层发动机”——Lucene 是一款开源的全文检索工具包，提供了完整的索引构建、查询执行能力，但它仅为 “工具包” 而非 “完整引擎”。ES 在 Lucene 基础上补充了 分布式能力 （如分片、集群）、 统一交互层 （Rest API），最终成为可直接部署的企业级中间件。 Lucene 角色 ：负责底层索引创建、查询计算（ES 的 “核心动力”）； ES 扩展能力 ：分布式存储、跨语言交互、集群管理（让 Lucene 从 “单机工具” 升级为 “分布式系统”）。 2.2 ES 典型应用场景 日志分析 ：收集多服务器日志，通过 ES 快速检索异常日志（如排查线上报错）； 全文检索 ：电商平台商品搜索、音乐 / 视频平台关键词检索（如根据歌词查歌曲）； 数据分析 ：实时统计用户行为、业务指标（如某商品的搜索量排行）。 3. ES 核心概念：从 “数据结构” 到 “操作逻辑” ES 的核心概念需围绕 “数据存储” 与 “数据操作” 展开，最易混淆的是 “Index” 的双重含义，同时可通过与 MySQL 类比快速理解基础结构。 3.1 与 MySQL 概念类比：快速建立认知 ES 的数据模型与关系型数据库（如 MySQL）有相似逻辑，通过类比可快速入门： Elasticsearch 概念 MySQL 对应概念 核心作用 Index（索引） Database（数据库） 文档的顶层容器（6.x 后取消 Type，兼具 “库” 与 “表” 的角色） Type（类型） Table（表） 6.x 后已废除，原用于对 Index 内文档分类 Document（文档） Row（行） ES 最小数据单元（JSON 格式，序列化存储） Field（字段） Column（列） Document 的属性（如 “姓名”“年龄”） Mapping（映射） Schema（表结构） 定义 Field 类型（如文本 / 数字）"
+    },
+    {
+      "slug": "wv8vgug061n4c4w0",
+      "title": "高并发下如何解决数据库性能瓶颈问题",
+      "url": "/tulingzhouyu/db22bv/wv8vgug061n4c4w0",
+      "toc_path": [
+        "三高架构",
+        "高并发下如何解决数据库性能瓶颈问题"
+      ],
+      "toc_level": 1,
+      "toc_index": 1381,
+      "word_count": 1205,
+      "updated_at": "2026-01-04T13:16:20.000Z",
+      "primary_category": "mysql-sharding",
+      "primary_category_name": "分库分表",
+      "related_categories": [
+        "mysql-sharding",
+        "project-system-design",
+        "performance-optimization",
+        "mq-general",
+        "java-concurrency"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle",
+        "expert"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年",
+        "专家/P7+"
+      ],
+      "keywords": [
+        "分库分表",
+        "读写分离",
+        "主从",
+        "架构设计",
+        "方案",
+        "高并发",
+        "订单",
+        "支付",
+        "性能",
+        "优化",
+        "调优",
+        "瓶颈",
+        "MQ",
+        "并发"
+      ],
+      "summary": "在面试中，当面试官抛出“高并发下数据库 CPU 100%、IO 打满怎么办？”这个问题时，90% 的候选人第一反应是：“加索引”、“SQL 调优”、“换 SSD 硬盘”。这些回答错了吗？没错，但得分很低。因为在海量并发面前，单纯的技术调优是杯水车薪，面试官考察的是你的架构演进思维。今天我们就直...",
+      "excerpt": "在面试中，当面试官抛出“高并发下数据库 CPU 100%、IO 打满怎么办？”这个问题时，90% 的候选人第一反应是：“加索引”、“SQL 调优”、“换 SSD 硬盘”。 这些回答错了吗？没错，但得分很低。因为在海量并发面前，单纯的技术调优是杯水车薪，面试官考察的是你的架构演进思维。 今天我们就直入主题，拆解一套从“青铜”到“王者”的数据库抗压打法。 第一阶段：认清误区，拒绝“治标不治本” 首先，你必须明白为什么简单的优化扛不住高并发。 加索引？ 是的，索引能加快查询，但在高并发写入场景下，索引越多，数据库维护 B+ 树的成本越高（分裂、平衡），写入反而越慢 ​ 。 升级硬件？ 靠堆机器、换 SSD 确实能提升性能，但成本高昂且总有物理极限，这不是架构师该有的解决思路 ​ 。 要解决瓶颈，首先要像医生看病一样诊断： 到底是读慢了，还是写慢了？ ​ 。 第二阶段：读多写少？——读写分离 (Read/Write Splitting) 大部分互联网业务（如电商商品页、新闻浏览）都是典型的“读多写少”。 解决方案： 搞一个主库专门负责写（增删改），搞一堆从库专门负责读 ​ 。 原理： 让主库“歇一歇”，只处理写请求，将读压力分摊到多个从库上 ​ 。 ⚠️ 面试坑点：主从同步延迟 面试官一定会追问：“刚写进主库的数据，从库还没同步过来，用户查不到怎么办？” 。 回答策略： 非核心业务（如点赞、评论）： 容忍短暂延迟 ​ 。 核心业务（如支付后查订单）： 强制读主库，保证一致性 ​ 。 第三阶段：写请求打爆？——分库分表 (Sharding) 当主库的写请求也达到瓶颈，或者单表数据量突破千万级，这时候必须动大手术： 拆！ ​ 。 垂直分库 (Vertical Sharding)： 按业务拆分。把用户表、订单表、商品表放到不同的数据库服务器上，专库专用 。 水平分表 (Horizontal Sharding)： 按规则拆分。一张 2 亿条数据的表，按用户 ID 取模拆成 100 张表，每张表只存 200 万条，性能瞬间提升 。 ⚠️ 面试坑点：分库分表的“后遗症” 分库分表不是银弹，它会带来巨大的复杂性（跨库 Join、分布式事务、全局排序等）。 其中最棘手的是：主键 ID 怎么办？ 分表后不能再用数据库自增 ID，否则不同表的 ID 会重复 。 解决方案：雪花算法 (Snowflake) 。 利用 1位符号位 + 41位时间戳 + 10位机器ID + 12位序列号，生成全局唯一且趋势递增的 ID。 第四阶段：架构师的终极防线——层层设防 如果面试时你讲完分库分表就结束了，那你只是一个“高级开发”。真正的架构师明白： 分库分表是最终手段（Last Resort），而不是第一手段 ​ 。 在数据库被打死之前，我们必须筑起高墙： 1. 第一道防线：缓存优先 (Cache Fi"
+    }
+  ]
+}

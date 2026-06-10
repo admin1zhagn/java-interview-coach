@@ -1,0 +1,1510 @@
+{
+  "id": "docker-k8s",
+  "name": "Docker与Kubernetes",
+  "aliases": [
+    "Docker",
+    "Kubernetes",
+    "K8s",
+    "容器",
+    "Pod",
+    "Deployment",
+    "Service"
+  ],
+  "count": 37,
+  "total_word_count": 36545,
+  "articles": [
+    {
+      "slug": "xk7e85ur7dkcv3tw",
+      "title": "应届生简历模板",
+      "url": "/tulingzhouyu/db22bv/xk7e85ur7dkcv3tw",
+      "toc_path": [
+        "面试必看",
+        "面试指导与简历模板",
+        "应届生简历模板"
+      ],
+      "toc_level": 2,
+      "toc_index": 9,
+      "word_count": 534,
+      "updated_at": "2025-02-12T11:46:23.000Z",
+      "primary_category": "docker-k8s",
+      "primary_category_name": "Docker与Kubernetes",
+      "related_categories": [
+        "docker-k8s",
+        "resume-project",
+        "spring-core",
+        "java-core",
+        "performance-optimization"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "campus",
+        "senior",
+        "expert"
+      ],
+      "level_names": [
+        "校招/应届生",
+        "高级/5-8年",
+        "专家/P7+"
+      ],
+      "keywords": [
+        "Docker",
+        "Kubernetes",
+        "容器",
+        "简历",
+        "项目",
+        "Spring",
+        "Java",
+        "性能",
+        "优化"
+      ],
+      "summary": "01-应届毕业生简历(P5+).pdf可选择加入到技术能力中，通用性强面试也不会问的：编程语言能力：列出掌握的编程语言，如C、Java、Python、C++等。框架与工具：熟悉使用的框架（如Spring、Django、React等）和开发工具（如Git、Docker、Jenkins等）。系统设...",
+      "excerpt": "可选择加入到技术能力中，通用性强面试也不会问的： 编程语言能力 ：列出掌握的编程语言，如C、Java、Python、C++等。 框架与工具 ：熟悉使用的框架（如Spring、Django、React等）和开发工具（如Git、Docker、Jenkins等）。 系统设计 ：能够设计和实现高性能、可扩展的系统架构。 算法与数据结构 ：熟练掌握常用算法和数据结构，能够应用于解决实际问题。 问题解决能力 ：能够运用逻辑思维分析和解决复杂问题。 学习能力 ：快速学习新技术和适应新环境的能力。 沟通与协作 ：良好的团队沟通和协作能力，能够与团队成员有效合作。 项目管理 ：熟悉敏捷开发、Scrum或其他项目管理方法。 测试与调试 ：掌握单元测试、集成测试等测试方法，以及调试技巧。 代码质量 ：注重代码的可读性、可维护性和性能优化。 安全性 ：了解常见的安全漏洞和防御措施，能够编写安全的代码。 持续集成/持续部署（CI/CD） ：熟悉自动化构建、测试和部署流程。 容器化技术 ：了解Docker、Kubernetes等容器化技术。 云计算 ：熟悉AWS、Azure、Google Cloud等云服务平台。 版本控制 ：熟练使用Git进行版本控制。 文档编写 ：能够编写清晰的技术文档和用户手册。 用户体验（UX）理解 ：理解用户需求，能够从用户角度出发设计和优化产品。 敏捷开发 ：熟悉敏捷开发流程和实践，如Scrum、Kanban等。 跨文化沟通 ：如果工作涉及国际团队，跨文化沟通能力也是一个加分项。"
+    },
+    {
+      "slug": "oea34yfcdi6ysn1q",
+      "title": "MES智控制造引擎(亮点与难点)",
+      "url": "/tulingzhouyu/db22bv/oea34yfcdi6ysn1q",
+      "toc_path": [
+        "面试必看",
+        "项目亮点和难点",
+        "MES智控制造引擎(亮点与难点)"
+      ],
+      "toc_level": 2,
+      "toc_index": 21,
+      "word_count": 7133,
+      "updated_at": "2025-03-10T11:46:57.000Z",
+      "primary_category": "docker-k8s",
+      "primary_category_name": "Docker与Kubernetes",
+      "related_categories": [
+        "docker-k8s",
+        "spring-core",
+        "distributed-transaction",
+        "performance-optimization",
+        "resume-project"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "Docker",
+        "Kubernetes",
+        "容器",
+        "Spring",
+        "Bean",
+        "循环依赖",
+        "分布式事务",
+        "最终一致性",
+        "本地消息表",
+        "TCC",
+        "性能",
+        "优化",
+        "简历"
+      ],
+      "summary": "项目名称：MES智控制造引擎（Intelligent Manufacturing Engine）项目描述简历描述：MES智控制造引擎系统是制造业的核心信息化系统，用于实现生产计划的执行、生产过程的监控与管理。本项目旨在为企业提供一套完整的MES解决方案，通过优化生产流程、提升生产效率、降低生产...",
+      "excerpt": "项目名称：MES 智控制造引擎（Intelligent Manufacturing Engine） 项目描述 简历描述 ：MES 智控制造引擎系统是制造业的核心信息化系统，用于实现生产计划的执行、生产过程的监控与管理。本项目旨在为企业提供一套完整的MES解决方案，通过优化生产流程、提升生产效率、降低生产成本，并与其他企业信息系统（如ERP、SCADA）实现无缝集成。 面试介绍： 可参看：在MES智控制造引擎系统项目中，我主导了生产计划与看板界面的开发，通过优化模块架构解决了循环依赖问题，并推动了系统与ERP、SCADA的无缝集成。同时，我参与了微服务架构设计，引入分布式事务处理机制，确保了系统的高可用性和数据一致性。最终，系统成功上线后，生产效率提升了20%，设备利用率提高了18%，并显著增强了企业的生产管理能力。 技术栈 后端开发 ：Java、Spring Boot、Spring Cloud、MyBatis 前端开发 ：Vue.js、Element UI 数据库 ：MySQL、Redis 中间件 ：RabbitMQ、Elasticsearch 部署方式 ：Docker容器化部署、Kubernetes集群管理 项目亮点 高度模块化设计 将MES系统拆分为多个独立的微服务模块（如生产计划、物料管理、质量管理等），每个模块独立开发、部署和扩展，降低了系统耦合度，提高了系统的可维护性和可扩展性。 采用Spring Cloud框架实现服务注册与发现、配置中心、网关等功能，确保系统的高可用性和弹性扩展。 实时数据采集与监控 利用RabbitMQ实现生产现场设备数据的实时采集，通过WebSocket将数据推送到前端看板界面，确保生产管理人员能够实时掌握生产进度、设备状态和质量情况。 基于Elasticsearch构建生产数据搜索引擎，支持对海量生产历史数据的快速查询和分析，为生产决策提供数据支持。 与其他系统无缝集成 通过RESTful API与ERP系统集成，实现生产计划的自动下达和生产数据的实时反馈，确保企业资源计划与生产执行的紧密协同。 与SCADA系统集成，获取设备运行状态数据，实现设备的远程监控和故障预警，提高设备利用率。 灵活的看板界面设计 基于Vue.js和Element UI开发的看板界面，支持自定义配置，管理人员可以根据实际需求选择显示的指标和数据维度。 看板界面采用响应式设计，适配多种终端设备（如大屏、电脑、平板），方便管理人员随时随地查看生产情况。 高性能与高可用性 使用Docker容器化部署，结合Kubernetes集群管理，实现服务的快速部署、弹性伸缩和故障自愈。 通过Redis缓存和数据库读写分离技术，优化系统性能，确保在高并发生产场景下系统的稳定运行。 项目难点 循环依赖问题 在生产计划模块和物料管理模块之间存在复杂的业务依赖关系，导致在某"
+    },
+    {
+      "slug": "buq9eupo8u6561nv",
+      "title": "Nacos的服务注册表结构是怎样的？",
+      "url": "/tulingzhouyu/db22bv/buq9eupo8u6561nv",
+      "toc_path": [
+        "SpringCloud",
+        "Nacos的服务注册表结构是怎样的？"
+      ],
+      "toc_level": 1,
+      "toc_index": 583,
+      "word_count": 201,
+      "updated_at": "2023-09-11T05:10:40.000Z",
+      "primary_category": "docker-k8s",
+      "primary_category_name": "Docker与Kubernetes",
+      "related_categories": [
+        "docker-k8s",
+        "redis-persistence-cluster",
+        "spring-cloud",
+        "java-core",
+        "spring-core"
+      ],
+      "question_type": "other",
+      "question_type_name": "其他问题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "Service",
+        "Cluster",
+        "集群",
+        "SpringCloud",
+        "Nacos",
+        "Java",
+        "String",
+        "Spring"
+      ],
+      "summary": "Nacos采用了数据的分级存储模型，最外层是Namespace，用来隔离环境。然后是Group，用来对服务分组。接下来就是服务（Service）了，一个服务包含多个实例，但是可能处于不同机房，因此Service下有多个集群（Cluster），Cluster下是不同的实例（Instance）。对...",
+      "excerpt": "Nacos 采用了数据的分级存储模型，最外层是 Namespace ，用来隔离环境。然后是 Group ，用来对服务分组。接下来就是服务（ Service ）了，一个服务包含多个实例，但是可能处于不同机房，因此 Service 下有多个集群（ Cluster ）， Cluster 下是不同的实例（ Instance ）。 对应到Java代码中，Nacos采用了一个多层的Map来表示。结构为Map<String, Map<String, Service>>，其中最外层Map的key就是namespaceId，值是一个Map。内层Map的key是group拼接serviceName，值是Service对象。Service对象内部又是一个Map，key是集群名称，值是Cluster对象。而Cluster对象内部维护了Instance的集合。"
+    },
+    {
+      "slug": "avii2bbb4f0zog4h",
+      "title": "请解释一下Dubbo的泛化调用（Generic Service）是什么？它适用于什么场景？",
+      "url": "/tulingzhouyu/db22bv/avii2bbb4f0zog4h",
+      "toc_path": [
+        "Dubbo",
+        "高级",
+        "请解释一下Dubbo的泛化调用（Generic Service）是什么？它适用于什么场景？"
+      ],
+      "toc_level": 2,
+      "toc_index": 732,
+      "word_count": 546,
+      "updated_at": "2023-09-01T07:00:41.000Z",
+      "primary_category": "docker-k8s",
+      "primary_category_name": "Docker与Kubernetes",
+      "related_categories": [
+        "docker-k8s",
+        "microservices-governance",
+        "performance-optimization",
+        "java-core"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "Service",
+        "服务治理",
+        "性能",
+        "异常"
+      ],
+      "summary": "Dubbo是一个开源的分布式服务框架，用于构建高性能、可扩展的分布式应用。Dubbo的泛化调用（Generic Service）是一种特殊的调用方式，允许消费者在不事先了解提供者接口定义的情况下，通过泛化的方式调用远程服务。这种调用方式适用于以下情景： 接口不可知或动态变化的情况： 泛化调用可...",
+      "excerpt": "Dubbo是一个开源的分布式服务框架，用于构建高性能、可扩展的分布式应用。Dubbo的泛化调用（Generic Service）是一种特殊的调用方式，允许消费者在不事先了解提供者接口定义的情况下，通过泛化的方式调用远程服务。这种调用方式适用于以下情景： 接口不可知或动态变化的情况： 泛化调用可以解决消费者在不知道具体接口定义的情况下仍然能够调用远程服务。这在一些场景中很有用，例如消费者和提供者之间的接口定义可能经常变化，或者消费者需要动态调用多个不同接口的服务。 跨语言调用： 如果消费者和提供者使用不同的编程语言，而且没有共享的接口定义，泛化调用可以作为一种通用的调用方式，使得跨语言调用变得可能。 泛化调试： 在开发和调试阶段，泛化调用可以帮助开发人员快速验证提供者的功能，而无需依赖具体的接口定义和实现。 服务治理和版本兼容： 在服务治理场景中，消费者可能需要通过泛化调用来动态获取提供者的接口和方法信息，从而适应不同版本的服务。 泛化调用的实现机制是，消费者通过构建一个泛化的参数对象，包含了远程调用所需的服务名、方法名以及参数列表。然后，消费者将泛化的参数对象发送给提供者，提供者根据参数对象的信息执行相应的方法调用，并将结果返回给消费者。由于泛化调用不依赖于具体的接口定义，因此在使用时需要注意参数和返回值的类型转换以及异常处理等问题。"
+    },
+    {
+      "slug": "qy0tv673n6qlq6lq",
+      "title": "如何处理Dubbo中的版本兼容性问题？举例说明不同版本之间如何调用服务。",
+      "url": "/tulingzhouyu/db22bv/qy0tv673n6qlq6lq",
+      "toc_path": [
+        "Dubbo",
+        "高级",
+        "如何处理Dubbo中的版本兼容性问题？举例说明不同版本之间如何调用服务。"
+      ],
+      "toc_level": 2,
+      "toc_index": 734,
+      "word_count": 670,
+      "updated_at": "2023-09-01T07:38:01.000Z",
+      "primary_category": "docker-k8s",
+      "primary_category_name": "Docker与Kubernetes",
+      "related_categories": [
+        "docker-k8s",
+        "spring-cloud",
+        "microservices-governance",
+        "java-core",
+        "devops-release"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "Service",
+        "注册中心",
+        "服务治理",
+        "发布"
+      ],
+      "summary": "Dubbo提供了版本兼容性的支持，允许在服务的不同版本之间进行调用。版本兼容性问题主要涉及到服务接口的变更，包括新增方法、删除方法、修改方法参数等情况。以下是处理Dubbo中版本兼容性问题的一些方法： 接口设计遵循规范： 在设计服务接口时，应该遵循良好的接口设计原则，考虑到可能的变更情况。尽量...",
+      "excerpt": "Dubbo提供了版本兼容性的支持，允许在服务的不同版本之间进行调用。版本兼容性问题主要涉及到服务接口的变更，包括新增方法、删除方法、修改方法参数等情况。以下是处理Dubbo中版本兼容性问题的一些方法： 接口设计遵循规范： 在设计服务接口时，应该遵循良好的接口设计原则，考虑到可能的变更情况。尽量保持接口稳定，避免频繁地修改接口，以减少版本兼容性的问题。 使用版本号： 在Dubbo服务接口上可以添加 version 属性，用于区分不同版本的接口。消费者和提供者都可以声明所使用的版本，从而在服务治理过程中进行匹配和调用。 使用泛化调用： 如果在消费者端不知道具体的接口定义，或者服务接口发生了较大的变化，可以使用Dubbo的泛化调用（Generic Service）来调用服务。泛化调用不依赖于具体的接口定义，适用于版本兼容性问题较大的情况。 适配器模式： 在服务接口发生变化时，可以引入适配器模式来实现新旧版本的兼容性。旧版本的接口可以通过适配器转换成新版本的接口调用。 服务版本注册： 在Dubbo的注册中心中，可以为不同版本的服务提供者注册不同的路径，使得消费者可以根据版本选择调用相应的提供者。 示例场景： 假设有一个名为 UserService 的服务接口，初始版本是1.0.0，包含了一个查询用户信息的方法 getUserInfo 。后续需要新增一个方法 updateUserInfo ，于是发布了新版本2.0.0。 ​ 版本号配置： 在服务提供者的Dubbo配置中，设置版本号。 消费者调用： 在消费者端，可以指定调用的版本。 通过使用版本号进行区分，消费者可以在不同版本之间选择调用合适的服务接口，从而实现版本兼容性的问题处理。"
+    },
+    {
+      "slug": "pa0ivzreph7addll",
+      "title": "请解释一下Dubbo的SPI（Service Provider Interface）机制是什么？在Dubbo中如何使用SPI？",
+      "url": "/tulingzhouyu/db22bv/pa0ivzreph7addll",
+      "toc_path": [
+        "Dubbo",
+        "高级",
+        "请解释一下Dubbo的SPI（Service Provider Interface）机制是什么？在Dubbo中如何使用SPI？"
+      ],
+      "toc_level": 2,
+      "toc_index": 740,
+      "word_count": 403,
+      "updated_at": "2023-09-01T07:42:17.000Z",
+      "primary_category": "docker-k8s",
+      "primary_category_name": "Docker与Kubernetes",
+      "related_categories": [
+        "docker-k8s",
+        "os-linux"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "Service",
+        "文件"
+      ],
+      "summary": "Dubbo的SPI（Service Provider Interface）机制是一种扩展点加载机制，用于在运行时动态加载、替换或扩展框架的组件实现。SPI机制使得Dubbo的各个模块可以灵活地被扩展和定制，从而实现更好的可扩展性和灵活性。在Dubbo中，SPI机制的核心思想是将接口与实现解耦，...",
+      "excerpt": "Dubbo的SPI（Service Provider Interface）机制是一种扩展点加载机制，用于在运行时动态加载、替换或扩展框架的组件实现。SPI机制使得Dubbo的各个模块可以灵活地被扩展和定制，从而实现更好的可扩展性和灵活性。 在Dubbo中，SPI机制的核心思想是将接口与实现解耦，通过在META-INF目录下的 dubbo 文件夹中提供扩展配置文件，实现接口的自动发现和加载。这使得框架的用户可以根据需要自由地添加、替换或定制实现，而无需修改框架的核心代码。 使用SPI机制的步骤如下： 定义接口：首先需要定义一个接口，该接口将作为扩展点的定义，供扩展实现。 实现接口：在Dubbo中，扩展实现类需要遵循接口的命名规则，即接口名 + &quot;默认扩展名&quot;。例如，接口 com.alibaba.dubbo.rpc.Protocol 的默认扩展名是 dubbo ，则默认扩展实现类的全限定名是 com.alibaba.dubbo.rpc.protocol.dubbo.DubboProtocol 。 创建扩展配置文件：在META-INF目录下的 dubbo 文件夹中，创建以接口全限定名为文件名的配置文件。配置文件中指定扩展实现类的全限定名。 这种方式使得框架的扩展能力变得非常强大，可以根据实际需求进行定制和替换，而无需修改原有的代码。"
+    },
+    {
+      "slug": "rb7gfu08kchy88sx",
+      "title": "千万级实时聊天系统如何设计",
+      "url": "/tulingzhouyu/db22bv/rb7gfu08kchy88sx",
+      "toc_path": [
+        "项目设计场景题",
+        "千万级实时聊天系统如何设计"
+      ],
+      "toc_level": 1,
+      "toc_index": 835,
+      "word_count": 13421,
+      "updated_at": "2025-06-18T08:42:36.000Z",
+      "primary_category": "docker-k8s",
+      "primary_category_name": "Docker与Kubernetes",
+      "related_categories": [
+        "docker-k8s",
+        "project-system-design",
+        "performance-optimization",
+        "mq-rabbitmq",
+        "mq-general"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "campus",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "校招/应届生",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "Kubernetes",
+        "容器",
+        "Service",
+        "系统设计",
+        "架构设计",
+        "方案",
+        "高并发",
+        "性能",
+        "优化",
+        "QPS",
+        "RT",
+        "吞吐"
+      ],
+      "summary": "千万级IM消息系统设计整体架构 核心流程：消息分发流程： 消息拉取流程：长连接消息分发整体架构：k8s集群部署IM 核心功能竞品方案类比前面了解了 IM 系统的常见设计问题，接下来我们再看看业界是怎么设计 IM 系统的。研究业界的主流方案有助于我们深入理解 IM 系统的设计。微信虽然微信很多基...",
+      "excerpt": "千万级IM消息系统设计 整体架构 核心流程： 消息分发流程： 消息拉取流程： 长连接消息分发整体架构： k8s集群部署 IM 核心功能 竞品方案类比 前面了解了 IM 系统的常见设计问题，接下来我们再看看业界是怎么设计 IM 系统的。研究业界的主流方案有助于我们深入理解 IM 系统的设计。 微信 虽然微信很多基础框架都是自研，但这并不妨碍我们理解微信的架构设计。微信采用的主要是：写扩散 + 推拉结合。由于群聊使用的也是写扩散，而写扩散很消耗资源，因此微信群有人数上限（目前是 500）。所以这也是写扩散的一个明显缺点，如果需要万人群就比较难了。可以看出，微信采用了多数据中心架构 微信每个数据中心都是自治的，每个数据中心都有全量的数据，数据中心间通过自研的消息队列来同步数据。为了保证数据的一致性，每个用户都只属于一个数据中心，只能在自己所属的数据中心进行数据读写，如果用户连了其它数据中心则会自动引导用户接入所属的数据中心。而如果需要访问其它用户的数据那只需要访问自己所属的数据中心就可以了。同时，微信使用了三园区容灾的架构，使用 Paxos 来保证数据的一致性。 微信的 ID 设计采用的是：基于申请 DB 步长的生成方式 + 用户级别递增。如下图所示： 微信的序列号生成器由仲裁服务生成路由表（路由表保存了 uid 号段到 AllocSvr 的全映射），路由表会同步到 AllocSvr 跟 Client。如果 AllocSvr 宕机的话会由仲裁服务重新调度 uid 号段到其它 AllocSvr。 钉钉 钉钉最开始使用的是写扩散模型，为了支持万人群，后来貌似优化成了读扩散。 但聊到阿里的 IM 系统，不得不提的是阿里自研的 Tablestore。一般情况下，IM 系统都会有一个自增 ID 生成系统，但 Tablestore 创造性地引入了 主键列自增 ，即把 ID 的生成整合到了 DB 层，支持了用户级别递增（传统 MySQL 等 DB 只能支持表级自增，即全局自增）。 Twitter 什么？Twitter 不是 Feeds 系统吗？不是讨论 IM 的吗？是的，Twitter 是 Feeds 系统，但 Feeds 系统跟 IM 系统其实有很多设计上的共性，研究下 Feeds 系统有助于我们在设计 IM 系统时进行参考。再说了，研究下 Feeds 系统也没有坏处，扩展下技术视野嘛。 Twitter 的自增 ID 设计估计大家都耳熟能详了，即大名鼎鼎的 Snowflake ，因此 ID 是全局递增的。 Twitter 一开始使用的是写扩散模型，Fanout Service 负责扩散写到 Timelines Cache（使用了 Redis），Timeline Service 负责读取 Timeline 数据，然后由 API Services 返回给用户。 但由于写扩散对于大"
+    },
+    {
+      "slug": "qr7ascuugdfwk0g2",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/qr7ascuugdfwk0g2",
+      "toc_path": [
+        "高频面试问题",
+        "赋文老师",
+        "8、深夜，一个“优化”搞挂了系统... 面试官：讲讲如何设计一个不“赌命”的发布系统？",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1303,
+      "word_count": 2323,
+      "updated_at": "2025-10-30T14:03:57.000Z",
+      "primary_category": "docker-k8s",
+      "primary_category_name": "Docker与Kubernetes",
+      "related_categories": [
+        "docker-k8s",
+        "devops-release",
+        "computer-network",
+        "spring-cloud",
+        "observability-troubleshooting"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle",
+        "expert"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年",
+        "专家/P7+"
+      ],
+      "keywords": [
+        "Service",
+        "灰度",
+        "发布",
+        "回滚",
+        "HTTP",
+        "网络",
+        "Feign",
+        "Gateway",
+        "告警",
+        "链路",
+        "CPU"
+      ],
+      "summary": "📎index (4).html面试官：如何设计一个不“赌命”的发布系统？，链接: https://pan.baidu.com/s/1--2B0AeXoxkshhUGsd2oWQ?pwd=7x92 提取码: 7x92 视频口播稿 (5分钟优化版): 深度剖析“不赌命”的发布系统(BGM: 有节...",
+      "excerpt": "面试官：如何设计一个不“赌命”的发布系统？，链接: https://pan.baidu.com/s/1--2B0AeXoxkshhUGsd2oWQ?pwd=7x92 提取码: 7x92 ​ 视频口播稿 (5分钟优化版): 深度剖析“不赌命”的发布系统 (BGM: 有节奏、有深度的科技感电子音乐，开场可以稍微强劲一些) 【开场 - 强力引入问题】 (约45秒) (视频画面：显示 PPT 第 1 页 - 标题页，可以加一些动态特效) &quot;Hello，各位同学！我是赋文老师。今天，我们聊一个每个工程师都绕不开，也绝对不能绕开的话题。 (手指向屏幕) 来，我们先看一个场景。 (--- 快速转场到 PPT 第 2 页 - 痛点图示 ---) 想象一下，一个平平无奇的深夜，你信心满满地合并了一个所谓的‘性能优化’。结果，半小时后，告警系统开始 疯狂报警 ，电话被打爆，APP 首页一片空白... (停顿，加强语气，营造紧张感) 你在一身冷汗中紧急回滚，复盘时才发现，一个极其罕见的并发 bug，被你亲手送上了生产环境，引发了 P0 级雪崩！ 你的内心在咆哮：如果当初这个新功能， 只推送给千分之一，不，万分之一的用户 ，是不是就能在灾难发生前，悄无声息地把它扼杀在摇篮里？ 没错！这种‘发布即赌命’的原始工作方式，我们必须终结它！ 所以，当面试官问你：‘同学，来聊聊如何设计一个灰度发布系统？’的时候，他真正想听的，绝对不是‘用 Nginx 按 IP 分点流量’这种 教科书式的标准答案 。他想考察的是，你有没有能力设计一个 平台级的解决方案 ，让发布从一场‘豪赌’，变成一次精准的 科学实验 。&quot; 想彻底拿下面试中这个价值百万的架构问题吗？ 先给视频点个赞 ，我们马上深入架构的内核！&quot; 【核心概念与第一层架构】 (约60秒) (--- 转场到 PPT 第 3 页 - 核心思路 ---) &quot;好， 要落地这套方案 ，核心思路就两步： 流量染色 和 全链路灰度 。 流量染色 ，说白了，就是给流量‘验明正身’。当一个请求进来的时候，我们不再只看它的 IP 地址，而是要像门卫大爷一样，追问三个灵魂问题：你是谁？从哪儿来？要到哪儿去？ (--- 转场到 PPT 第 4 页 - 流量染色详图 ---) 这个‘验明正身’的动作，就发生在系统的最入口—— API 网关 。 看这张图，当一个请求进来，网关会立刻分析它的画像：比如用户 ID 是 123，来自北京，用的是鸿蒙手机。然后，网关会去匹配我们预设的 灰度规则 ，比如‘所有北京地区的鸿蒙用户，都进入新版灰度’。规则命中！‘啪’的一声，网关就会给这个请求盖上一个特殊的‘戳’——在它的 HTTP Header 里，写入一个 x-gray-version: v2 。 这个过程，就叫 流量染色 。它解决了‘识别谁’的"
+    },
+    {
+      "slug": "shwdk0ww8du7z1hx",
+      "title": "Docker快速安装+使用",
+      "url": "/tulingzhouyu/db22bv/shwdk0ww8du7z1hx",
+      "toc_path": [
+        "Docker与K8S",
+        "Docker快速安装+使用"
+      ],
+      "toc_level": 1,
+      "toc_index": 1388,
+      "word_count": 541,
+      "updated_at": "2024-10-27T07:17:57.000Z",
+      "primary_category": "docker-k8s",
+      "primary_category_name": "Docker与Kubernetes",
+      "related_categories": [
+        "docker-k8s",
+        "resume-project",
+        "performance-optimization",
+        "mysql-index-transaction",
+        "mq-rabbitmq"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "Docker",
+        "容器",
+        "MySQL"
+      ],
+      "summary": "安装docker[root@localhost ~]# yum -y install docker手动启动docker[root@localhost ~]# systemctl start docker查看docker状态[root@localhost ~]# systemctl status...",
+      "excerpt": "安装docker 手动启动docker 查看docker状态 配置镜像 由于政策限制， 很多镜像无法使用， 但是也有很多零星的一些镜像可以用，所以最好用魔 设置docker开机自动启动 ​ ​ 在Docker Hub上查找MySQL镜像的页面： MySQL Docker Hub 。 ​ Docker相关命令： ​ 重启Docker服务：systemctl restart docker / service docker restart 关闭Docker服务：docker service docker stop / docker systemctl stop docker 停止容器：docker stop 容器ID 重启容器：docker restart 容器ID 删除容器：docker rm container_id 搜索仓库镜像：docker search 镜像名 查看镜像：docker images 拉取镜像：docker pull 镜像名（或docker pull nginx:xxx ，xxx指版本号） 删除镜像：docker rmi image_id 启动（停止的）容器：docker start 容器ID 启动（新）容器：docker run -it ubuntu /bin/bash（或docker run -p 80:80 -d --name nginx nginx:1.24.0，第一个80宿主机端口，第二个80容器端口） 进入容器：docker attach 容器ID或docker exec -it 容器ID /bin/bash，推荐使用后者。 先启动再设置自启动：docker update --restart=always 容器ID 查看正在运行的容器：docker ps 查看所有容器：docker ps -a 查看docker 日志：docker logs -t -f rabbitmq （docker 容器的默认日志路径/var） 镜像打包：docker save 镜像名称:镜像版本 >打包后的文件名字.tar 将镜像加载到Docker：docker load -i 打包后的文件名字.tar（例子：docker load -i minio.tar） 查看docker内存情况：docker stats -a"
+    },
+    {
+      "slug": "vt4awxuy53tz3kx7",
+      "title": "5分钟带你弄懂什么是K8s",
+      "url": "/tulingzhouyu/db22bv/vt4awxuy53tz3kx7",
+      "toc_path": [
+        "Docker与K8S",
+        "5分钟带你弄懂什么是K8s"
+      ],
+      "toc_level": 1,
+      "toc_index": 1389,
+      "word_count": 955,
+      "updated_at": "2024-04-14T13:32:11.000Z",
+      "primary_category": "docker-k8s",
+      "primary_category_name": "Docker与Kubernetes",
+      "related_categories": [
+        "docker-k8s",
+        "devops-release",
+        "redis-persistence-cluster",
+        "microservices-governance",
+        "observability-troubleshooting"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "Docker",
+        "Kubernetes",
+        "K8s",
+        "容器",
+        "Pod",
+        "部署",
+        "回滚",
+        "集群",
+        "负载均衡",
+        "故障",
+        "监控"
+      ],
+      "summary": "K8s 是什么？K8S 是单词 Kubernetes 的缩写，是用于自动部署、扩缩和管理容器化应用程序的开源系统，K8s 源自Google 15 年生产环境的运维经验，同时凝聚了社区的最佳创意和实践。K8s 是用来解决什么问题的？K8S在基于容器部署的方式上，提供了一个弹性分布式的框架，支持服...",
+      "excerpt": "K8s 是什么？ K8S 是单词 Kubernetes 的缩写， 是用于自动部署、扩缩和管理容器化应用程序的开源系统，K8s 源自 Google 15 年生产环境的运维经验 ，同时凝聚了社区的最佳创意和实践。 K8s 是用来解决什么问题的？ K8S在基于容器部署的方式上，提供了一个弹性分布式的框架，支持服务发现与负载均衡、存储、自动部署回滚、自动计算与调度、自动扩缩容等等一系列操作，目的是方便开发者不再需要关注服务运行细节，K8S能够自动进行容器与Pod调度、扩缩容、自动重建等等操作，保证服务尽可能健康的运行。 这样可能不够直观，问大家几个问题就知道 K8s 是用来干什么的了？ 某个容器发生故障，这个时候我们是不是该启动另一个容器？ 某台机器负载过高，那么我们之后的容器是不是不能部署在这台机器上？ 某个服务请求量突增，我们是不是应该多部署几个运行该服务的容器？ 如果某些容器之间需要相互配合怎么办？比如容器A需要容器B的资源，所以容器A一定要在容器B之后运行。 运行多个容器时，我怎么做到它们的运行结果是原子性的？即要么全部成功，或者全部失败。亦或者如果某一个容器失败，我能够不断重启这个容器以达到我的预期状态。 以上问题，都可以交给K8S来解决，它提供了一系列的功能来帮助我们 轻松管理和编排 容器，以达到我们的预期状态， 简单来说， K8S解放了开发者的双手，能够最大程度的让部署的服务健康运行，同时能够接入很多第三方工具（如服务监控、数据采集等等），满足开发者的定制化需求。 K8s 的工作原理 一个 kubernetes 集群主要是由 控制节点 master 、 工作节点 node 构成，每个节点上都会安装不同的组件。 master：集群的控制平面，负责集群的决策 ( 管理 ) Master 节点上会安装四个重要组件，分别如下： ApiServer : 资源操作的唯一入口，接收用户输入的命令，提供认证、授权、API注册和发现等机制 Scheduler : 负责集群资源调度，按照预定的调度策略将 Pod 调度到相应的 node 节点上 ControllerManager : 负责维护集群的状态，比如程序部署安排、故障检测、自动扩展、滚动更新等 Etcd ：负责存储集群中各种资源对象的信息，相当于 K8S 的数据库 Node：集群的数据平面，负责为容器提供运行环境 ( 干活 ) Node 节点上会安装三个重要组件，分别如下： Kubelet : 负责维护容器的生命周期，即通过控制docker，来创建、更新、销毁容器 KubeProxy : 负责提供集群内部的服务发现和负载均衡 Docker : 负责节点上容器的各种操作 Pod Pod是最小调度单元 Pod里面会包含一个或多个容器（Container） Pod内的容器共享存储及网络，可通过localhost通信"
+    },
+    {
+      "slug": "aynuopfh38rslxms",
+      "title": "简述Kubernetes的工作流程",
+      "url": "/tulingzhouyu/db22bv/aynuopfh38rslxms",
+      "toc_path": [
+        "Docker与K8S",
+        "简述Kubernetes的工作流程"
+      ],
+      "toc_level": 1,
+      "toc_index": 1390,
+      "word_count": 316,
+      "updated_at": "2023-09-05T09:20:30.000Z",
+      "primary_category": "docker-k8s",
+      "primary_category_name": "Docker与Kubernetes",
+      "related_categories": [
+        "docker-k8s",
+        "devops-release",
+        "observability-troubleshooting",
+        "os-linux",
+        "java-concurrency"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "Docker",
+        "Kubernetes",
+        "容器",
+        "Pod",
+        "Deployment",
+        "部署",
+        "监控",
+        "文件"
+      ],
+      "summary": "Kubernetes的工作流程可以分为以下几个步骤：创建一个包含应用程序的Deployment的yml文件，然后通过kubectl客户端工具发送给ApiServer。ApiServer接收到客户端的请求并将资源内容存储到数据库(etcd)中。Controller组件(包含scheduler、r...",
+      "excerpt": "Kubernetes的工作流程可以分为以下几个步骤： 创建一个包含应用程序的Deployment的yml文件，然后通过kubectl客户端工具发送给ApiServer。 ApiServer接收到客户端的请求并将资源内容存储到数据库(etcd)中。 Controller组件(包含scheduler、replication、endpoint)监控资源变化并作出反应。 ReplicaSet检查数据库变化，创建期望数量的pod实例。 Scheduler再次检查数据库变化，发现尚未被分配到具体执行节点(Node)的Pod，然后根据一组相关规则将Pod分配到可以运行它们的节点(Node)上，并更新数据库，记录Pod分配情况。 Kubelet监控数据库变化，管理后续Pod的生命周期，发现被分配到它所在的节点上运行的那些Pod。如果找到新Pod，则会在该节点上运行这个新Pod。例如当有数据发送到主机时，将其路由到正确的pod或容器。 Kubernetes通过以上步骤实现了自动化容器应用的管理和协调，使得容器部署更加简单、可靠和高效。"
+    },
+    {
+      "slug": "ico570y8ntee40ng",
+      "title": "简述Kubernetes中的Deployment、StatefulSet、DaemonSet的区别",
+      "url": "/tulingzhouyu/db22bv/ico570y8ntee40ng",
+      "toc_path": [
+        "Docker与K8S",
+        "简述Kubernetes中的Deployment、StatefulSet、DaemonSet的区别"
+      ],
+      "toc_level": 1,
+      "toc_index": 1391,
+      "word_count": 377,
+      "updated_at": "2023-09-05T09:17:27.000Z",
+      "primary_category": "docker-k8s",
+      "primary_category_name": "Docker与Kubernetes",
+      "related_categories": [
+        "docker-k8s",
+        "observability-troubleshooting",
+        "devops-release"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "Docker",
+        "Kubernetes",
+        "Pod",
+        "Deployment",
+        "监控",
+        "日志",
+        "部署",
+        "回滚"
+      ],
+      "summary": "Kubernetes中的Deployment、StatefulSet和DaemonSet有以下区别：应用场景：Deployment适用于无状态的应用场景。也就是说，即使一个Pod失败，也不需要从这个Pod中恢复数据。一般来说，开发一个有状态的应用程序需要更多的工作，因此无状态的应用程序更为常见...",
+      "excerpt": "Kubernetes中的Deployment、StatefulSet和DaemonSet有以下区别： 应用场景 ： Deployment适用于无状态的应用场景 。也就是说，即使一个Pod失败，也不需要从这个Pod中恢复数据。一般来说，开发一个有状态的应用程序需要更多的工作，因此无状态的应用程序更为常见。 StatefulSet适用于有状态的应用场景 ，例如需要持久化存储的应用程序，每个实例都需要有明确且不变的唯一标识。 DaemonSet适用于在每个节点都需要运行一个或多个Pod的场景 ，例如系统监控、日志采集等任务。 副本控制和调度 ： Deployment的副本可以动态增加或减少，调度和回滚等操作也适用于Deployment。 StatefulSet在启动和停止Pod时需要按照一定的顺序，不能动态地增加或减少Pod副本。 DaemonSet会确保每个节点都有一个Pod运行，且这个Pod不会离开该节点。 存储 ： Deployment不需要特别的存储支持。 StatefulSet需要为每个Pod提供独立的存储，这可以通过后端存储完成。 DaemonSet的每个Pod需要挂载到特定的存储。 总的来说，根据应用场景和需求，可以选择合适的Kubernetes控制器来部署和管理应用程序。"
+    },
+    {
+      "slug": "tns9fz0trvise04a",
+      "title": "在Kubernetes中，如何进行存储管理",
+      "url": "/tulingzhouyu/db22bv/tns9fz0trvise04a",
+      "toc_path": [
+        "Docker与K8S",
+        "在Kubernetes中，如何进行存储管理"
+      ],
+      "toc_level": 1,
+      "toc_index": 1392,
+      "word_count": 215,
+      "updated_at": "2023-09-05T08:47:54.000Z",
+      "primary_category": "docker-k8s",
+      "primary_category_name": "Docker与Kubernetes",
+      "related_categories": [
+        "docker-k8s",
+        "ai-llm"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "Docker",
+        "Kubernetes",
+        "容器",
+        "Pod"
+      ],
+      "summary": "在Kubernetes中，存储管理是通过Volume和Persistent Volume（PV）进行的。Volume是提供持久化存储的抽象概念，映射到Pod内的容器。Kubernetes提供了多种Volume类型，如emptyDir、hostPath、NFS和Ceph等。另一种抽象概念是Per...",
+      "excerpt": "在Kubernetes中， 存储管理是通过Volume和Persistent Volume（PV）进行的 。Volume是提供持久化存储的抽象概念，映射到Pod内的容器。Kubernetes提供了多种Volume类型，如emptyDir、hostPath、NFS和Ceph等。另一种抽象概念是 Persistent Volume Claim（PVC），用于向Pod提供持久化存储资源 。用户可以创建一个PVC，指定所需的Volume类型和大小，然后Kubernetes会自动创建相应的PV并将其绑定到PVC。这样，Pod可以使用PVC来获取持久化存储资源。总之，Kubernetes通过Volume和PV提供了一种灵活的存储管理机制，可以满足不同应用程序的存储需求，提高了应用程序的可移植性和可复用性。 ​"
+    },
+    {
+      "slug": "ox7c3igvu3rz7k0e",
+      "title": "在Kubernetes中，如何实现滚动升级和回滚",
+      "url": "/tulingzhouyu/db22bv/ox7c3igvu3rz7k0e",
+      "toc_path": [
+        "Docker与K8S",
+        "在Kubernetes中，如何实现滚动升级和回滚"
+      ],
+      "toc_level": 1,
+      "toc_index": 1393,
+      "word_count": 202,
+      "updated_at": "2023-09-05T08:37:48.000Z",
+      "primary_category": "docker-k8s",
+      "primary_category_name": "Docker与Kubernetes",
+      "related_categories": [
+        "docker-k8s",
+        "devops-release",
+        "observability-troubleshooting"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "Docker",
+        "Kubernetes",
+        "Pod",
+        "Deployment",
+        "回滚",
+        "故障"
+      ],
+      "summary": "在Kubernetes中，你可以使用滚动更新和回滚机制来实现应用程序的平滑升级和故障恢复。滚动更新是逐步将旧的Pod替换为新的Pod，首先创建一个新的Deployment，然后使用kubectl滚动更新命令来启动这个过程。回滚操作允许你在新的Pod版本出现问题时，自动将Deployment回滚...",
+      "excerpt": "在Kubernetes中，你可以使用滚动更新和回滚机制来实现应用程序的平滑升级和故障恢复。滚动更新是逐步将旧的Pod替换为新的Pod，首先创建一个新的Deployment，然后使用kubectl滚动更新命令来启动这个过程。 回滚操作允许你在新的Pod版本出现问题时，自动将Deployment回滚到之前的版本。通过运行kubectl rollback命令，你可以迅速恢复到以前的Deployment状态，以确保应用程序的稳定性。 这两个机制在Kubernetes中非常有用，它们确保了应用程序的可靠性和可维护性，同时允许进行平滑的升级和故障恢复操作。"
+    },
+    {
+      "slug": "ggezski1dva8wctc",
+      "title": "在Kubernetes中，如何进行日志和监控的管理",
+      "url": "/tulingzhouyu/db22bv/ggezski1dva8wctc",
+      "toc_path": [
+        "Docker与K8S",
+        "在Kubernetes中，如何进行日志和监控的管理"
+      ],
+      "toc_level": 1,
+      "toc_index": 1394,
+      "word_count": 288,
+      "updated_at": "2023-09-05T08:30:05.000Z",
+      "primary_category": "docker-k8s",
+      "primary_category_name": "Docker与Kubernetes",
+      "related_categories": [
+        "docker-k8s",
+        "observability-troubleshooting",
+        "os-linux",
+        "redis-persistence-cluster"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "Docker",
+        "Kubernetes",
+        "容器",
+        "Pod",
+        "监控",
+        "日志",
+        "CPU",
+        "内存",
+        "文件",
+        "集群"
+      ],
+      "summary": "在Kubernetes中，日志和监控的管理可以通过以下方式实现：日志管理：使用kubectl logs命令可以获取指定Pod的日志，比如kubectl logs 。通过Kube-proxy将Pod的日志输出到宿主机的日志文件中，然后通过宿主机的日志轮转策略进行日志的轮转。使...",
+      "excerpt": "在Kubernetes中，日志和监控的管理可以通过以下方式实现： 日志管理 ： 使用kubectl logs命令可以获取指定Pod的日志，比如 kubectl logs <pod-name> 。 通过Kube-proxy将Pod的日志输出到宿主机的日志文件中，然后通过宿主机的日志轮转策略进行日志的轮转。 使用Sidecar的streaming容器将日志输出到stdout，然后通过stdout写入到相应的日志文件中，再通过本地的一个日志轮转策略以及外部的一个agent进行采集。 监控管理 ： 使用kube-apiserver的/metrics端点可以获取集群的各种指标数据，比如CPU使用率、内存使用率等。 使用Prometheus进行监控数据的采集和存储，并使用Grafana进行可视化展示。 使用Heapster对Kubernetes集群进行监控数据的采集和存储。 总之，Kubernetes提供了灵活的日志和监控管理机制，使得用户可以根据自己的需求进行定制化的日志和监控管理。"
+    },
+    {
+      "slug": "eyd2thy8opnvnw19",
+      "title": "在Kubernetes中，如何进行故障恢复和自我修复",
+      "url": "/tulingzhouyu/db22bv/eyd2thy8opnvnw19",
+      "toc_path": [
+        "Docker与K8S",
+        "在Kubernetes中，如何进行故障恢复和自我修复"
+      ],
+      "toc_level": 1,
+      "toc_index": 1395,
+      "word_count": 358,
+      "updated_at": "2023-09-05T08:20:06.000Z",
+      "primary_category": "docker-k8s",
+      "primary_category_name": "Docker与Kubernetes",
+      "related_categories": [
+        "docker-k8s",
+        "observability-troubleshooting",
+        "computer-network"
+      ],
+      "question_type": "troubleshooting",
+      "question_type_name": "故障排查题",
+      "levels": [
+        "senior",
+        "campus"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "Docker",
+        "Kubernetes",
+        "容器",
+        "Pod",
+        "故障",
+        "监控",
+        "日志",
+        "网络"
+      ],
+      "summary": "在Kubernetes中，故障恢复和自我修复是两个核心特性，它们可以确保应用程序的高可用性和稳定性。以下是在Kubernetes中进行故障恢复和自我修复的一些常见方法：故障恢复：Kubernetes可以通过重新启动失败的Pod来自动执行故障恢复。如果一个Pod崩溃或被删除，Kubernetes...",
+      "excerpt": "在Kubernetes中，故障恢复和自我修复是两个核心特性，它们可以确保应用程序的高可用性和稳定性。以下是在Kubernetes中进行故障恢复和自我修复的一些常见方法： 故障恢复： Kubernetes可以通过重新启动失败的Pod来自动执行故障恢复。如果一个Pod崩溃或被删除，Kubernetes将重新启动该Pod并从相同的镜像获取新的容器。 另外，可以通过手动执行 kubectl replace -f <file> 命令来强制重新启动一个Pod。 自我修复： Kubernetes可以监控Pod的状态并根据需要进行自我修复。例如，如果一个Node节点失效，Kubernetes将重新调度该Node上的Pod到其他可用的Node节点上。 Kubernetes还可以根据需要自动修复一些基础组件的问题，例如Kubelet无法提供正确的容器网络配置。 另外，可以通过查看Kubernetes的日志和事件来诊断和解决问题，例如使用 kubectl logs <pod-name> 命令查看Pod的日志，使用 kubectl describe pod <pod-name> 命令查看Pod的事件。 总之，Kubernetes提供了丰富的故障恢复和自我修复机制，使得应用程序的高可用性和稳定性得到了极大的保障。"
+    },
+    {
+      "slug": "cgcwk65bnovnkxfy",
+      "title": "在Kubernetes中，如何实现滚动升级和回滚",
+      "url": "/tulingzhouyu/db22bv/cgcwk65bnovnkxfy",
+      "toc_path": [
+        "Docker与K8S",
+        "在Kubernetes中，如何实现滚动升级和回滚"
+      ],
+      "toc_level": 1,
+      "toc_index": 1396,
+      "word_count": 266,
+      "updated_at": "2023-09-05T08:18:52.000Z",
+      "primary_category": "docker-k8s",
+      "primary_category_name": "Docker与Kubernetes",
+      "related_categories": [
+        "docker-k8s",
+        "devops-release"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "Docker",
+        "Kubernetes",
+        "Pod",
+        "回滚"
+      ],
+      "summary": "在Kubernetes中，滚动升级和回滚可以通过以下步骤实现：滚动升级：创建一个新的Replica Set（RS），它包含新的Pod模板，该模板定义了新的Pod配置。通过增加Replica Set的副本数量，逐渐将流量从旧的Pod转移到新的Pod上。当所有流量都转移到新的Pod上后，可以删除旧...",
+      "excerpt": "在Kubernetes中，滚动升级和回滚可以通过以下步骤实现： 滚动升级： 创建一个新的Replica Set（RS），它包含新的Pod模板，该模板定义了新的Pod配置。 通过增加Replica Set的副本数量，逐渐将流量从旧的Pod转移到新的Pod上。 当所有流量都转移到新的Pod上后，可以删除旧的Pod。 回滚： 创建一个新的Replica Set（RS），它包含旧的Pod模板，该模板定义了旧的Pod配置。 通过减少Replica Set的副本数量，逐渐将流量从新的Pod转移到旧的Pod上。 当所有流量都转移到旧的Pod上后，可以删除新的Pod。 在这些过程中，Kubernetes会根据Pod的状态和所需的副本数量进行自动调度和平衡。通过这种方式，滚动升级和回滚可以在不影响应用程序服务的情况下进行。"
+    },
+    {
+      "slug": "csypw0d0wscydpu8",
+      "title": "请简述Kubernetes中的Etcd的作用和基本原理",
+      "url": "/tulingzhouyu/db22bv/csypw0d0wscydpu8",
+      "toc_path": [
+        "Docker与K8S",
+        "请简述Kubernetes中的Etcd的作用和基本原理"
+      ],
+      "toc_level": 1,
+      "toc_index": 1398,
+      "word_count": 401,
+      "updated_at": "2023-09-05T07:50:58.000Z",
+      "primary_category": "docker-k8s",
+      "primary_category_name": "Docker与Kubernetes",
+      "related_categories": [
+        "docker-k8s",
+        "devops-release",
+        "redis-persistence-cluster",
+        "redis-lock",
+        "distributed-lock-id"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "Docker",
+        "Kubernetes",
+        "容器",
+        "集群",
+        "分布式锁"
+      ],
+      "summary": "Etcd在Kubernetes中扮演着重要的角色，它是键值存储数据库，用于存储Kubernetes集群中所有资源的状态信息。Etcd使用的是Raft协议，通过选举产生领导者（leader）来保证数据的强一致性。Etcd在Kubernetes中的作用：数据存储：Etcd存储了Kubernetes...",
+      "excerpt": "Etcd在Kubernetes中扮演着重要的角色，它是键值存储数据库， 用于存储Kubernetes集群中所有资源的状态信息 。Etcd使用的是Raft协议，通过选举产生领导者（leader）来保证数据的强一致性。 Etcd在Kubernetes中的作用： 数据存储 ：Etcd存储了Kubernetes集群中所有资源的状态信息，包括服务发现、分布式锁、分布式数据队列、分布式通知和协调等功能。 配置管理 ：Etcd还用于存储和配置Kubernetes集群的各种服务信息，如DNS、负载均衡器等。 故障恢复 ：当一个节点发生故障时，Etcd中的数据可以用于快速恢复该节点的功能。 Etcd的基本原理： 分布式存储 ：Etcd采用分布式存储方式，可以配置多节点群集，通过数据同步来保证数据可靠性。 高可用性 ：Etcd通过选举算法来保证在任何时候都有一个领导者节点负责数据的写入和更新，从而保证了数据的强一致性。 数据持久化 ：Etcd中的数据会定期进行持久化存储，即使在系统崩溃时也可以保证数据的完整性。 总的来说，Etcd为Kubernetes提供了稳定、可靠的数据存储服务，使得Kubernetes可以有效地管理、协调和调度大规模的容器化应用。"
+    },
+    {
+      "slug": "fnio7gvhy092w5af",
+      "title": "Kubernetes中的调度器是什么？请简述其作用",
+      "url": "/tulingzhouyu/db22bv/fnio7gvhy092w5af",
+      "toc_path": [
+        "Docker与K8S",
+        "Kubernetes中的调度器是什么？请简述其作用"
+      ],
+      "toc_level": 1,
+      "toc_index": 1399,
+      "word_count": 325,
+      "updated_at": "2023-09-05T07:48:38.000Z",
+      "primary_category": "docker-k8s",
+      "primary_category_name": "Docker与Kubernetes",
+      "related_categories": [
+        "docker-k8s",
+        "redis-persistence-cluster",
+        "algorithm",
+        "performance-optimization"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "Docker",
+        "Kubernetes",
+        "Pod",
+        "集群",
+        "算法",
+        "性能"
+      ],
+      "summary": "Kubernetes中的调度器是kube-scheduler，它的主要作用是在整个集群中根据预定的策略和算法，为新创建的Pod分配最优的工作节点。调度器通过监听API Server，发现新创建且尚未被调度的Pod。然后，它会根据一系列预选策略（Predicates）筛选出满足Pod运行需求的节...",
+      "excerpt": "Kubernetes中的调度器是kube-scheduler，它的主要作用是在整个集群中根据预定的策略和算法， 为新创建的Pod分配最优的工作节点 。 调度器通过监听API Server，发现新创建且尚未被调度的Pod 。然后，它会根据一系列预选策略（Predicates）筛选出满足Pod运行需求的节点列表。接着，在满足预选策略的节点列表中，调度器会根据优选策略为Pod选择最优的节点进行调度。这个优选策略可能考虑了节点的资源可用性、公平性、通信频繁程度等因素。 调度器还负责确保调度的公平性和资源的充分利用 。在实际操作中，用户往往希望Pod的调度策略是可控的，以处理大量复杂的实际问题。因此，平台允许多个调度器并行工作，同时支持自定义调度器。 总的来说，Kubernetes中的调度器是一个关键组件，它通过合理、充分地调度Pod到最优的工作节点上，提高了整个集群的可用性和性能。"
+    },
+    {
+      "slug": "kzgpc291ygqc4wsg",
+      "title": "在Kubernetes中，如何进行服务的负载均衡",
+      "url": "/tulingzhouyu/db22bv/kzgpc291ygqc4wsg",
+      "toc_path": [
+        "Docker与K8S",
+        "在Kubernetes中，如何进行服务的负载均衡"
+      ],
+      "toc_level": 1,
+      "toc_index": 1400,
+      "word_count": 232,
+      "updated_at": "2023-09-05T08:17:50.000Z",
+      "primary_category": "docker-k8s",
+      "primary_category_name": "Docker与Kubernetes",
+      "related_categories": [
+        "docker-k8s",
+        "microservices-governance",
+        "computer-network",
+        "netty-network"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "Docker",
+        "Kubernetes",
+        "容器",
+        "Pod",
+        "Service",
+        "负载均衡",
+        "TCP",
+        "UDP",
+        "HTTP"
+      ],
+      "summary": "在Kubernetes中，你可以通过以下两种方式实现服务的负载均衡：使用Kubernetes的内置负载均衡器：Kubernetes可以通过Service组件实现服务的负载均衡。Service会根据服务后端的Pod IP和端口，将流量均衡地转发给每个Pod。这种方式是基于IP的负载均衡，支持TC...",
+      "excerpt": "在Kubernetes中，你可以通过以下两种方式实现服务的负载均衡： 使用Kubernetes的内置负载均衡器：Kubernetes可以通过Service组件实现服务的负载均衡。Service会根据服务后端的Pod IP和端口，将流量均衡地转发给每个Pod。这种方式是基于IP的负载均衡，支持TCP和UDP协议。 使用第三方负载均衡器：除了Kubernetes的内置负载均衡器，还可以使用第三方负载均衡器，如Nginx、HAProxy等。这些负载均衡器可以作为Kubernetes的边车（Sidecar）容器运行，实现对HTTP流量进行负载均衡。 具体实现方式取决于你的应用场景和需求。如果需要更高级的负载均衡策略，可以考虑使用第三方负载均衡器"
+    },
+    {
+      "slug": "hgx8gs1g3nlqt6ze",
+      "title": "请简述Kubernetes中的Labels和Selectors的作用",
+      "url": "/tulingzhouyu/db22bv/hgx8gs1g3nlqt6ze",
+      "toc_path": [
+        "Docker与K8S",
+        "请简述Kubernetes中的Labels和Selectors的作用"
+      ],
+      "toc_level": 1,
+      "toc_index": 1401,
+      "word_count": 318,
+      "updated_at": "2023-09-05T07:12:39.000Z",
+      "primary_category": "docker-k8s",
+      "primary_category_name": "Docker与Kubernetes",
+      "related_categories": [
+        "docker-k8s",
+        "observability-troubleshooting"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "Docker",
+        "Kubernetes",
+        "Pod",
+        "Service",
+        "监控"
+      ],
+      "summary": "Labels和Selectors是Kubernetes中的重要概念，它们主要用于标识和选择资源对象。Labels是附加在资源对象上的键值对标签。它们具有以下作用：标识和组织资源：Labels可以用于标识和组织Kubernetes中的资源，例如Pod、Service等。每个对象可以拥有多个Lab...",
+      "excerpt": "Labels和Selectors是Kubernetes中的重要概念，它们主要用于标识和选择资源对象。 Labels是附加在资源对象上的键值对标签 。它们具有以下作用： 标识和组织资源 ：Labels可以用于标识和组织Kubernetes中的资源，例如Pod、Service等。每个对象可以拥有多个Labels，这些Labels可以是用户自定义的，也可以是系统自动生成的。 关联和选择资源 ：Labels还可以用于关联和选择资源。通过使用Selectors，我们可以选择具有指定Labels的资源对象，进行批量操作或者监控等。 用于服务发现 ：Labels还可以用于服务发现，通过Label Selector可以找到提供特定服务的Pod。 Selectors是用于选择资源的条件，它们是通过Labels定义的 。Selectors可以选择具有指定Labels的资源对象。Selectors使得我们可以方便地对资源进行筛选和操作。 总之，Labels和Selectors的组合使用使得我们可以方便地管理和组织Kubernetes中的资源，并能够灵活地进行扩展和管理。"
+    },
+    {
+      "slug": "fezu43varlsz2d6r",
+      "title": "Kubernetes中的Service是什么？请简述其作用",
+      "url": "/tulingzhouyu/db22bv/fezu43varlsz2d6r",
+      "toc_path": [
+        "Docker与K8S",
+        "Kubernetes中的Service是什么？请简述其作用"
+      ],
+      "toc_level": 1,
+      "toc_index": 1402,
+      "word_count": 407,
+      "updated_at": "2023-09-05T07:05:00.000Z",
+      "primary_category": "docker-k8s",
+      "primary_category_name": "Docker与Kubernetes",
+      "related_categories": [
+        "docker-k8s",
+        "microservices-governance",
+        "observability-troubleshooting",
+        "redis-persistence-cluster"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "Docker",
+        "Kubernetes",
+        "Pod",
+        "Service",
+        "负载均衡",
+        "故障",
+        "集群"
+      ],
+      "summary": "在Kubernetes中，Service是一个抽象概念，用于将一组Pod定义为提供某种服务的能力。Service定义了一个服务的访问入口地址，前端的应用或者ingress通过这个地址访问其背后一组由Pod副本组成的集群实例。Service的作用主要有以下几点：提供服务的稳定入口：Service...",
+      "excerpt": "在Kubernetes中，Service是一个抽象概念，用于将一组Pod定义为提供某种服务的能力。Service定义了一个服务的访问入口地址，前端的应用或者ingress通过这个地址访问其背后一组由Pod副本组成的集群实例。 Service的作用主要有以下几点： 提供服务的稳定入口：Service为前端的应用程序或者ingress提供了稳定的服务入口，这个入口拥有一个全局唯一的虚拟IP地址，前端的应用可以通过这个IP地址访问后端的Pod集群。 实现负载均衡：Service内部实现了负载均衡机制，它会将所有进入的请求均匀地分配给后端的Pod副本，确保每个请求都能得到正确的响应。 实现故障隔离：当某个Pod发生故障时，Service会自动将该Pod从服务池中剔除，保证请求不会被故障的Pod处理，从而实现了故障隔离。 实现服务发现：Service允许前端的应用程序通过Label Selector来找到提供特定服务的Pod，从而实现了服务的自动发现。 总之，Service是Kubernetes中用于定义和抽象服务的核心资源对象，它为前端的应用程序提供了稳定的服务入口，并通过负载均衡、故障隔离和服务发现等机制提高了系统的可用性和可靠性。"
+    },
+    {
+      "slug": "qv2l3gwigh4k9095",
+      "title": "Kubernetes中的Pod是什么？请简述其生命周期",
+      "url": "/tulingzhouyu/db22bv/qv2l3gwigh4k9095",
+      "toc_path": [
+        "Docker与K8S",
+        "Kubernetes中的Pod是什么？请简述其生命周期"
+      ],
+      "toc_level": 1,
+      "toc_index": 1403,
+      "word_count": 357,
+      "updated_at": "2023-09-05T07:03:59.000Z",
+      "primary_category": "docker-k8s",
+      "primary_category_name": "Docker与Kubernetes",
+      "related_categories": [
+        "docker-k8s",
+        "redis-persistence-cluster",
+        "computer-network",
+        "observability-troubleshooting"
+      ],
+      "question_type": "other",
+      "question_type_name": "其他问题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "Docker",
+        "Kubernetes",
+        "容器",
+        "Pod",
+        "集群",
+        "网络",
+        "监控"
+      ],
+      "summary": "在Kubernetes中，Pod是资源对象的最小单位，是运行应用程序容器的最小独立单位。Pod由一个或多个容器组成，这些容器共享相同的网络命名空间、IP地址和端口。Pod的生命周期包括以下几个阶段：创建阶段：当用户提交一个Pod定义到Kubernetes集群时，APIServer会创建该Pod...",
+      "excerpt": "在Kubernetes中， Pod是资源对象的最小单位，是运行应用程序容器的最小独立单位。 Pod由一个或多个容器组成，这些容器共享相同的网络命名空间、IP地址和端口。 Pod的生命周期包括以下几个阶段： 创建阶段：当用户提交一个Pod定义到Kubernetes集群时，APIServer会创建该Pod的资源对象。之后，Pod控制器会开始监控这个Pod的创建过程。 启动阶段：当Pod中的所有容器都创建成功后，Pod会进入启动阶段。在这个阶段，会启动Pod中的所有容器，并等待它们就绪。 运行阶段：当所有容器都成功启动后，Pod会进入运行阶段，此时Pod处于就绪状态，可以接收流量。 停止阶段：当Pod的生命周期结束或者被终止时，它会进入停止阶段。在这个阶段，Pod中的所有容器都会被终止。 在Pod的生命周期中，可能会发生一些事件，例如初始化容器的运行、容器的启动和停止、容器的存活性探测和就绪性探测等。这些事件是否发生取决于Pod的定义和配置。"
+    },
+    {
+      "slug": "bn9wi3r3m9dpfeou",
+      "title": "请简述Kubernetes的基本概念和核心组件",
+      "url": "/tulingzhouyu/db22bv/bn9wi3r3m9dpfeou",
+      "toc_path": [
+        "Docker与K8S",
+        "请简述Kubernetes的基本概念和核心组件"
+      ],
+      "toc_level": 1,
+      "toc_index": 1404,
+      "word_count": 486,
+      "updated_at": "2023-09-05T06:38:22.000Z",
+      "primary_category": "docker-k8s",
+      "primary_category_name": "Docker与Kubernetes",
+      "related_categories": [
+        "docker-k8s",
+        "redis-persistence-cluster",
+        "devops-release",
+        "java-collections",
+        "performance-optimization"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "Docker",
+        "Kubernetes",
+        "容器",
+        "Pod",
+        "Service",
+        "集群",
+        "部署",
+        "集合",
+        "容量"
+      ],
+      "summary": "Kubernetes（也称为k8s）是一个开源的容器编排系统，用于自动化应用程序容器的部署、扩展和管理。Kubernetes的基本概念包括：节点（Node）：节点是运行应用程序容器的计算实例。每个节点都运行Kubelet和Docker引擎，并由Master节点进行管理和协调。Master：Ma...",
+      "excerpt": "Kubernetes（也称为k8s）是一个开源的容器编排系统，用于自动化应用程序容器的部署、扩展和管理。 Kubernetes的基本概念包括： 节点（Node） ：节点是运行应用程序容器的计算实例。每个节点都运行Kubelet和Docker引擎，并由Master节点进行管理和协调。 Master ：Master是Kubernetes的控制节点，负责管理整个集群，并协调节点的工作。它由三个组件组成：API Server（负责API服务）、Controller Manager（负责容器编排）和Scheduler（负责容器调度）。 Pod ：Pod是Kubernetes的基本单位，包含一个或多个相关的容器。这些容器在同一个Node上运行，共享相同的网络命名空间、IP地址和端口。 Service ：Service是一个抽象层，定义了Pod的逻辑集合，并提供了访问它们的策略（如IP地址和端口）。 Kubernetes的核心组件包括： APIServer ：负责API服务，处理所有集群级别的资源创建、调度和扩展等请求。 Controller Manager ：负责管理集群的状态。例如，如果某个Node失效，Controller Manager会发现这个事实，并指导Kubelet重新启动在那上面运行的Pod。 Scheduler ：负责在集群中找到适当的节点来运行Pod。它考虑了各种因素，如节点的处理能力、内存、磁盘容量等。 Kubelet ：是Master节点在每个Node上的“眼线”。它定期向API Server汇报Node的状态，并接受Master的指令以采取适当的行动。 这些组件共同协作，使得Kubernetes能够以自动化的方式管理、调度和运行容器化应用程序。"
+    },
+    {
+      "slug": "fgoq0axgqgnhp77o",
+      "title": "请简述Docker和LXC的区别",
+      "url": "/tulingzhouyu/db22bv/fgoq0axgqgnhp77o",
+      "toc_path": [
+        "Docker与K8S",
+        "请简述Docker和LXC的区别"
+      ],
+      "toc_level": 1,
+      "toc_index": 1405,
+      "word_count": 308,
+      "updated_at": "2023-09-05T06:29:13.000Z",
+      "primary_category": "docker-k8s",
+      "primary_category_name": "Docker与Kubernetes",
+      "related_categories": [
+        "docker-k8s",
+        "os-linux",
+        "performance-optimization"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "Docker",
+        "容器",
+        "操作系统",
+        "Linux",
+        "进程",
+        "性能"
+      ],
+      "summary": "Docker和LXC在以下四个方面存在差异：镜像管理：Docker将应用的所有配置打包到一个容器中，具有可移植性。LXC仅仅实现了进程沙盒化，并不能在不同机器上进行移植。范围和规模：Docker不仅可以运行在Linux环境，还可以运行在Windows和macOS等其他操作系统上，适用范围广泛。...",
+      "excerpt": "Docker和LXC在以下四个方面存在差异： 镜像管理：Docker将应用的所有配置打包到一个容器中，具有可移植性。LXC仅仅实现了进程沙盒化，并不能在不同机器上进行移植。 范围和规模：Docker不仅可以运行在Linux环境，还可以运行在Windows和macOS等其他操作系统上，适用范围广泛。而LXC仅能在Linux环境下运行。 流行程度：Docker由于其简洁的API、用户友好的界面和文档以及社区的积极采用，所以在开发人员和管理员中更受欢迎。相比之下，LXC在开发人员和管理员中并不那么流行。 工具支持：Docker拥有大量的工具和库，可以轻松地与其他容器技术集成，而LXC在这方面相对较弱。 总结来说，Docker和LXC在镜像管理、使用范围、流行程度和工具支持方面存在差异。Docker更适用于大规模的容器管理，而LXC更适合于对性能要求极高的场景。"
+    },
+    {
+      "slug": "bens87u0rux44l4t",
+      "title": "什么是Docker Swarm？请简述其作用和使用场景",
+      "url": "/tulingzhouyu/db22bv/bens87u0rux44l4t",
+      "toc_path": [
+        "Docker与K8S",
+        "什么是Docker Swarm？请简述其作用和使用场景"
+      ],
+      "toc_level": 1,
+      "toc_index": 1406,
+      "word_count": 354,
+      "updated_at": "2023-09-05T06:28:30.000Z",
+      "primary_category": "docker-k8s",
+      "primary_category_name": "Docker与Kubernetes",
+      "related_categories": [
+        "docker-k8s",
+        "microservices-governance",
+        "redis-persistence-cluster",
+        "devops-release",
+        "computer-network"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "Docker",
+        "容器",
+        "负载均衡",
+        "集群",
+        "部署",
+        "网络"
+      ],
+      "summary": "Docker Swarm是Docker公司推出的用于管理Docker集群的工具，可以将多个Docker节点组织成一个单一的虚拟主机，实现对Docker资源的统一管理和调度。Docker Swarm的作用主要有以下几点：集群管理：Docker Swarm可以将多个Docker节点组织起来，形成一...",
+      "excerpt": "Docker Swarm是Docker公司推出的用于管理Docker集群的工具 ，可以将多个Docker节点组织成一个单一的虚拟主机，实现对Docker资源的统一管理和调度。 Docker Swarm的作用主要有以下几点： 集群管理：Docker Swarm可以将多个Docker节点组织起来，形成一个统一的虚拟主机，用户可以通过一个入口统一管理这些节点上的Docker资源。 服务编排：Docker Swarm提供了一套丰富的API，可以通过定义声明式配置文件，自动完成复杂的服务部署、扩缩容和升级等操作。 跨主机网络：Docker Swarm内置了对Docker网络插件的支持，用户可以很方便地部署跨主机的容器集群服务。 负载均衡：Docker Swarm可以自动实现负载均衡，根据容器的负载情况自动调整实例数量。 使用Docker Swarm的场景包括但不限于以下情况： 需要快速扩展容器规模，以满足业务需求。 需要高可用性，要求容器服务不中断。 需要跨多个主机运行容器，以实现负载均衡和容灾。 需要自动化部署和管理容器服务，以提高效率。 ​"
+    },
+    {
+      "slug": "rom9qfq3573znyct",
+      "title": "什么是Docker Compose？请简述其作用和使用场景",
+      "url": "/tulingzhouyu/db22bv/rom9qfq3573znyct",
+      "toc_path": [
+        "Docker与K8S",
+        "什么是Docker Compose？请简述其作用和使用场景"
+      ],
+      "toc_level": 1,
+      "toc_index": 1407,
+      "word_count": 330,
+      "updated_at": "2023-09-05T06:27:23.000Z",
+      "primary_category": "docker-k8s",
+      "primary_category_name": "Docker与Kubernetes",
+      "related_categories": [
+        "docker-k8s",
+        "devops-release",
+        "os-linux",
+        "redis-cache"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "Docker",
+        "容器",
+        "部署",
+        "文件",
+        "缓存"
+      ],
+      "summary": "Docker Compose是一个用于定义和运行多个Docker容器的工具。它使用YAML文件来配置应用程序的服务，并允许您通过一个命令来启动、停止和重启应用中的所有服务。Docker Compose的主要作用是简化容器的管理和部署。它使得多个容器能够以正确的顺序和依赖关系启动，并确保它们在运...",
+      "excerpt": "Docker Compose是一个用于定义和运行多个Docker容器的工具 。它使用YAML文件来配置应用程序的服务，并允许您通过一个命令来启动、停止和重启应用中的所有服务。 Docker Compose的主要作用是简化容器的管理和部署。 它使得多个容器能够以正确的顺序和依赖关系启动，并确保它们在运行时可以相互通信。这使得开发人员可以更容易地处理复杂的Docker环境，尤其是在需要多个容器协同工作的场景下。 使用Docker Compose的场景包括但不限于以下情况： 需要构建和运行多个容器的应用程序，例如Web应用、数据库和缓存等。 需要在不同环境（如开发、测试、生产）中部署相同应用程序，但需要配置不同的容器数量或镜像版本。 需要快速启动和停止应用程序，例如在开发或测试过程中。 总之，Docker Compose是一个强大的工具，可以帮助开发人员和管理员更好地管理和部署Docker容器化的应用程序。"
+    },
+    {
+      "slug": "acs8ymfeddy9dpng",
+      "title": "在使用Docker时，如何为容器创建一个可访问的网络",
+      "url": "/tulingzhouyu/db22bv/acs8ymfeddy9dpng",
+      "toc_path": [
+        "Docker与K8S",
+        "在使用Docker时，如何为容器创建一个可访问的网络"
+      ],
+      "toc_level": 1,
+      "toc_index": 1408,
+      "word_count": 330,
+      "updated_at": "2023-09-05T06:24:59.000Z",
+      "primary_category": "docker-k8s",
+      "primary_category_name": "Docker与Kubernetes",
+      "related_categories": [
+        "docker-k8s",
+        "computer-network"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "Docker",
+        "容器",
+        "网络"
+      ],
+      "summary": "在使用Docker时，可以通过以下两种方式为容器创建一个可访问的网络：使用默认的网络：Docker的默认网络模式是bridge模式，它会自动创建一个网络，并将容器连接到该网络。容器的网络配置可以在创建容器时通过--network参数指定。例如，使用以下命令创建一个使用默认网络的容器：docke...",
+      "excerpt": "在使用Docker时，可以通过以下两种方式为容器创建一个可访问的网络： 使用默认的网络 ：Docker的默认网络模式是bridge模式，它会自动创建一个网络，并将容器连接到该网络。容器的网络配置可以在创建容器时通过--network参数指定。例如，使用以下命令创建一个使用默认网络的容器： 这将在bridge网络中创建一个容器，并将容器的8000端口映射到主机的8000端口。 创建自定义网络 ：Docker还支持创建自定义的网络，以便容器可以连接到其他容器或外部网络。可以使用docker network create命令创建自定义网络。例如，使用以下命令创建一个名为my_network的自定义网络： 然后，在创建容器时使用--network参数指定要使用的网络。例如，使用以下命令创建一个使用my_network网络的容器： 这将在my_network网络中创建一个容器，并将容器的8000端口映射到主机的8000端口。"
+    },
+    {
+      "slug": "lg3thlrkpf2zi6kx",
+      "title": "当一个Docker容器运行异常时，如何通过Docker命令查看日志信息",
+      "url": "/tulingzhouyu/db22bv/lg3thlrkpf2zi6kx",
+      "toc_path": [
+        "Docker与K8S",
+        "当一个Docker容器运行异常时，如何通过Docker命令查看日志信息"
+      ],
+      "toc_level": 1,
+      "toc_index": 1409,
+      "word_count": 393,
+      "updated_at": "2023-09-05T06:23:27.000Z",
+      "primary_category": "docker-k8s",
+      "primary_category_name": "Docker与Kubernetes",
+      "related_categories": [
+        "docker-k8s",
+        "observability-troubleshooting",
+        "ai-llm",
+        "java-core",
+        "os-linux"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "Docker",
+        "容器",
+        "日志",
+        "异常",
+        "文件"
+      ],
+      "summary": "当一个Docker容器运行异常时，你可以使用Docker命令查看容器的日志信息。有三种方法可以实现：使用docker logs命令。该命令可以查看容器的日志输出。例如，要查看名为\"my-container\"的容器的日志，可以运行以下命令：docker logs my-container默认情况...",
+      "excerpt": "当一个Docker容器运行异常时，你可以使用Docker命令查看容器的日志信息。有三种方法可以实现： 使用 docker logs 命令。该命令可以查看容器的日志输出。例如，要查看名为&quot;my-container&quot;的容器的日志，可以运行以下命令： 默认情况下， docker logs 命令将显示容器的全部日志内容。如果你只想查看最新的几行日志，可以使用 -tail 选项指定行数，如： 这会显示最新的10行日志。 进入容器内部查看日志。首先使用 docker ps 命令找到容器的ID，然后运行以下命令进入容器的命令行界面： 进入容器后，你可以使用 cat 或 less 等命令查看日志文件。日志文件通常位于 /var/log/ 目录下。 使用 docker attach 命令实时查看容器日志。该命令允许你实时跟踪容器的日志输出。例如，要查看名为&quot;my-container&quot;的容器的日志，可以运行以下命令： 这会附加到容器的标准输出和标准错误输出，实时显示容器的日志信息。注意，一旦你使用 docker attach 进入容器后，将无法再退出容器。如果要退出，可以按下 Ctrl + C 组合键强制中断容器运行。"
+    },
+    {
+      "slug": "aikcw5e9saiqvo1y",
+      "title": "如何将一个Docker镜像上传到Docker Hub",
+      "url": "/tulingzhouyu/db22bv/aikcw5e9saiqvo1y",
+      "toc_path": [
+        "Docker与K8S",
+        "如何将一个Docker镜像上传到Docker Hub"
+      ],
+      "toc_level": 1,
+      "toc_index": 1410,
+      "word_count": 316,
+      "updated_at": "2023-09-05T06:23:48.000Z",
+      "primary_category": "docker-k8s",
+      "primary_category_name": "Docker与Kubernetes",
+      "related_categories": [
+        "docker-k8s"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "Docker"
+      ],
+      "summary": "要将一个Docker镜像上传到Docker Hub，可以按照以下步骤进行操作：在Docker Hub中创建一个新的存储库。点击右上角\"Create Repository\"按钮，给存储库取一个名字，并选择是公有存储库还是私有存储库。在本地构建Docker镜像。进入包含Dockerfile的目录，...",
+      "excerpt": "要将一个Docker镜像上传到Docker Hub，可以按照以下步骤进行操作： 在Docker Hub中创建一个新的存储库。点击右上角&quot;Create Repository&quot;按钮，给存储库取一个名字，并选择是公有存储库还是私有存储库。 在本地构建Docker镜像。进入包含Dockerfile的目录，使用以下命令构建镜像： 这里的 [username] 是您的Docker Hub用户名， [repository] 是您在Docker Hub上创建的存储库名称， [tag] 是镜像的标签。例如： 登录Docker Hub。在本地使用以下命令登录： 输入您的Docker Hub用户名和密码进行登录。 将本地构建的Docker镜像推送到Docker Hub。使用以下命令： 这里的 [username] 是您的Docker Hub用户名， [repository] 是您在Docker Hub上创建的存储库名称， [tag] 是镜像的标签。例如： 上传过程中，Docker将会逐层上传镜像的每个层，并计算每个层的SHA256哈希值。在上传完成后，可以在Docker Hub上看到已上传的镜像。"
+    },
+    {
+      "slug": "agxx8047cc5io7vl",
+      "title": "请解释Docker的镜像、容器、仓库的概念",
+      "url": "/tulingzhouyu/db22bv/agxx8047cc5io7vl",
+      "toc_path": [
+        "Docker与K8S",
+        "请解释Docker的镜像、容器、仓库的概念"
+      ],
+      "toc_level": 1,
+      "toc_index": 1411,
+      "word_count": 339,
+      "updated_at": "2023-09-05T06:17:35.000Z",
+      "primary_category": "docker-k8s",
+      "primary_category_name": "Docker与Kubernetes",
+      "related_categories": [
+        "docker-k8s",
+        "os-linux",
+        "computer-network",
+        "security-auth",
+        "ai-llm"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "Docker",
+        "容器",
+        "操作系统",
+        "Linux",
+        "进程",
+        "文件",
+        "网络",
+        "安全",
+        "权限"
+      ],
+      "summary": "Docker的镜像、容器、仓库是Docker技术中的三个核心概念，以下是它们的解释：镜像（Image）：镜像是一个只读的模板，它包含了运行应用程序所需的环境和文件。例如，一个镜像可以包含一个完整的Ubuntu操作系统环境，里面仅安装了Apache或用户需要的其它应用程序。镜像可以用来创建Doc...",
+      "excerpt": "Docker的镜像、容器、仓库是Docker技术中的三个核心概念，以下是它们的解释： 镜像（Image）：镜像是一个只读的模板，它包含了运行应用程序所需的环境和文件。例如，一个镜像可以包含一个完整的Ubuntu操作系统环境，里面仅安装了Apache或用户需要的其它应用程序。镜像可以用来创建Docker容器。 容器（Container）：容器是从镜像创建的运行实例。它可以被启动、停止、删除，每个容器都是相互隔离的、保证安全的平台，可以看作是一个简易版的Linux环境（包括root用户权限、进程空间、用户空间和网络空间等）和运行在其中的应用程序。 仓库（Repository）：仓库是存放所有的镜像文件的场所。Docker Hub是一个公共仓库，供用户下载和存储镜像。用户也可以在本地网络内创建一个私有仓库。 理解这三个概念对于使用Docker技术非常重要，它们之间的关系可以通过Docker的命令行工具或者API进行操作和管理。"
+    },
+    {
+      "slug": "uhpcqgkaepu3pux2",
+      "title": "在使用Docker时，如何处理容器之间共享数据以及与宿主机之间的数据共享",
+      "url": "/tulingzhouyu/db22bv/uhpcqgkaepu3pux2",
+      "toc_path": [
+        "Docker与K8S",
+        "在使用Docker时，如何处理容器之间共享数据以及与宿主机之间的数据共享"
+      ],
+      "toc_level": 1,
+      "toc_index": 1412,
+      "word_count": 354,
+      "updated_at": "2023-09-04T14:23:35.000Z",
+      "primary_category": "docker-k8s",
+      "primary_category_name": "Docker与Kubernetes",
+      "related_categories": [
+        "docker-k8s",
+        "computer-network",
+        "os-linux",
+        "ai-llm"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "Docker",
+        "容器",
+        "网络",
+        "文件"
+      ],
+      "summary": "在使用Docker时，容器之间以及与宿主机之间的数据共享可以通过以下方式处理：容器之间的数据共享：使用Docker的网络：多个容器可以使用同一网络，通过网络共享数据。使用共享卷：创建一个可以由多个容器共享的卷，通过将卷挂载到多个容器中，实现数据共享。使用数据卷容器：创建一个专门用于存储数据的容...",
+      "excerpt": "在使用Docker时，容器之间以及与宿主机之间的数据共享可以通过以下方式处理： 容器之间的数据共享： 使用Docker的网络：多个容器可以使用同一网络，通过网络共享数据。 使用共享卷：创建一个可以由多个容器共享的卷，通过将卷挂载到多个容器中，实现数据共享。 使用数据卷容器：创建一个专门用于存储数据的容器，然后多个容器通过挂载该容器的卷来共享数据。 容器与宿主机之间的数据共享： 使用-v选项：在运行docker run命令时，通过-v选项将宿主机的目录或卷挂载到容器内。例如，使用docker run -v /host/directory:/container/directory命令可以将宿主机上的目录挂载到容器内。 使用Docker数据卷：创建一个数据卷容器，并将宿主机上的目录或文件挂载到该容器的卷上。然后，其他容器可以通过挂载该数据卷容器的卷来共享数据。 以上是处理容器之间以及与宿主机之间数据共享的一些常见方法。根据实际情况选择适合的方法来实现数据共享。"
+    },
+    {
+      "slug": "lcyfvxvbyer7rfvz",
+      "title": "请简述Docker和Kubernetes的区别",
+      "url": "/tulingzhouyu/db22bv/lcyfvxvbyer7rfvz",
+      "toc_path": [
+        "Docker与K8S",
+        "请简述Docker和Kubernetes的区别"
+      ],
+      "toc_level": 1,
+      "toc_index": 1413,
+      "word_count": 326,
+      "updated_at": "2023-09-04T12:06:18.000Z",
+      "primary_category": "docker-k8s",
+      "primary_category_name": "Docker与Kubernetes",
+      "related_categories": [
+        "docker-k8s",
+        "redis-persistence-cluster",
+        "devops-release"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "Docker",
+        "Kubernetes",
+        "容器",
+        "集群",
+        "部署"
+      ],
+      "summary": "Docker和Kubernetes都是开源的容器化技术，但它们在设计理念、功能和应用场景上存在明显的区别。设计理念：Docker追求简洁和易用性，它主要关注容器层面的管理和调度，提供了一系列的自动化部署、配置和管理工具。而Kubernetes则更注重容器编排层面的功能，提供了更强大的集群管理、...",
+      "excerpt": "Docker和Kubernetes都是开源的容器化技术，但它们在设计理念、功能和应用场景上存在明显的区别。 设计理念：Docker追求简洁和易用性，它主要关注容器层面的管理和调度，提供了一系列的自动化部署、配置和管理工具。而Kubernetes则更注重容器编排层面的功能，提供了更强大的集群管理、服务发现、资源调度等能力。 功能：Docker提供了创建、运行和停止容器的基本功能，以及镜像管理、构建和分享等生命周期管理功能。而Kubernetes除了提供这些基本功能外，还具备更高级的特性，如自动扩缩容、滚动升级、自我修复等。 应用场景：对于单个应用或小型应用集群，Docker可以提供足够的支持。但对于大型的、复杂的容器化应用，Kubernetes在管理、调度、资源分配等方面具有更强的优势。 总之，Docker更适合小型应用或开发环境，而Kubernetes更适合大型生产环境和复杂的容器化应用。"
+    },
+    {
+      "slug": "wx6tgsx6e0xu96xn",
+      "title": "解释一下Docker和Kubernetes在容器化应用程序中的作用",
+      "url": "/tulingzhouyu/db22bv/wx6tgsx6e0xu96xn",
+      "toc_path": [
+        "Docker与K8S",
+        "解释一下Docker和Kubernetes在容器化应用程序中的作用"
+      ],
+      "toc_level": 1,
+      "toc_index": 1414,
+      "word_count": 493,
+      "updated_at": "2023-09-04T05:45:41.000Z",
+      "primary_category": "docker-k8s",
+      "primary_category_name": "Docker与Kubernetes",
+      "related_categories": [
+        "docker-k8s",
+        "devops-release",
+        "redis-persistence-cluster",
+        "microservices-governance",
+        "observability-troubleshooting"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "Docker",
+        "Kubernetes",
+        "容器",
+        "部署",
+        "集群",
+        "负载均衡",
+        "监控",
+        "日志"
+      ],
+      "summary": "Docker和Kubernetes都是容器化技术中的关键组件，但它们在容器生态系统中扮演的角色和目标略有不同。Docker主要关注单个容器的创建、管理和运行。它提供了一种轻量级的虚拟化方式，允许开发者将应用程序及其依赖项打包到一个可移植的容器中，并在不同的环境中以相同的方式运行。这有助于简化开...",
+      "excerpt": "Docker和Kubernetes都是容器化技术中的关键组件，但它们在容器生态系统中扮演的角色和目标略有不同。 Docker主要关注单个容器的创建、管理和运行。它提供了一种轻量级的虚拟化方式，允许开发者将应用程序及其依赖项打包到一个可移植的容器中，并在不同的环境中以相同的方式运行。这有助于简化开发、测试和部署过程，减少应用程序之间的冲突和依赖问题。Docker提供了一种标准的容器格式，可以运行在几乎任何操作系统上，并且提供了一些功能，如容器监控、日志管理、服务发现等。 而Kubernetes（k8s）则是一种容器编排系统，用于自动化容器的部署、扩展和管理。它的主要目标是简化大规模容器应用程序的管理。Kubernetes能够在多个节点上调度、管理和扩展容器，实现容器的负载均衡和自动恢复。它提供了一整套功能，如服务发现、存储管理、自动扩容、滚动更新等，以支持容器应用程序的生命周期管理。这使得运维人员可以轻松地管理大规模的容器集群，并确保容器的稳定性和可靠性。 因此，可以说Docker和Kubernetes在容器化应用程序中各自扮演着重要的角色。Docker主要关注单个容器的创建、管理和运行，而Kubernetes则侧重于整个容器集群的自动化部署和管理。在实际应用中，这两个技术通常一起使用，以实现现代、可扩展的应用程序部署。"
+    },
+    {
+      "slug": "qdoq3gl80luf1c98",
+      "title": "请解释一下什么是 Docker，以及它在云环境中的应用",
+      "url": "/tulingzhouyu/db22bv/qdoq3gl80luf1c98",
+      "toc_path": [
+        "Docker与K8S",
+        "请解释一下什么是 Docker，以及它在云环境中的应用"
+      ],
+      "toc_level": 1,
+      "toc_index": 1415,
+      "word_count": 268,
+      "updated_at": "2023-09-03T09:57:39.000Z",
+      "primary_category": "docker-k8s",
+      "primary_category_name": "Docker与Kubernetes",
+      "related_categories": [
+        "docker-k8s",
+        "devops-release",
+        "os-linux",
+        "observability-troubleshooting"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "Docker",
+        "容器",
+        "发布",
+        "部署",
+        "Linux",
+        "监控",
+        "日志"
+      ],
+      "summary": "Docker是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的容器中，然后发布到任何流行的Linux机器上，也可以实现轻量级的虚拟化。在云环境中，Docker的应用非常广泛。首先，Docker的轻量级特性使得它可以快速部署和运行应用程序，减少了资源的浪费和管理的复杂性...",
+      "excerpt": "Docker是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的容器中，然后发布到任何流行的Linux机器上，也可以实现轻量级的虚拟化。 在云环境中，Docker的应用非常广泛。首先，Docker的轻量级特性使得它可以快速部署和运行应用程序，减少了资源的浪费和管理的复杂性。其次，Docker的容器化方式使得应用程序具备可移植性，可以在不同的云平台上轻松迁移和部署。此外，Docker还提供了一些高级功能，如镜像管理、容器监控和日志管理等，可以帮助运维人员更好地管理和维护应用程序。 总之，Docker是一个非常重要的工具，可以帮助开发者在云环境中更快速、更高效地开发和部署应用程序。"
+    },
+    {
+      "slug": "nqgdusolgpe1sk4l",
+      "title": "什么是Servicemesh、Serverless",
+      "url": "/tulingzhouyu/db22bv/nqgdusolgpe1sk4l",
+      "toc_path": [
+        "云计算",
+        "什么是Servicemesh、Serverless"
+      ],
+      "toc_level": 1,
+      "toc_index": 1420,
+      "word_count": 613,
+      "updated_at": "2024-08-21T11:32:22.000Z",
+      "primary_category": "docker-k8s",
+      "primary_category_name": "Docker与Kubernetes",
+      "related_categories": [
+        "docker-k8s",
+        "microservices-governance",
+        "observability-troubleshooting",
+        "security-auth",
+        "java-core"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "campus"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "Service",
+        "熔断",
+        "重试",
+        "超时",
+        "负载均衡",
+        "故障",
+        "监控",
+        "日志",
+        "安全",
+        "认证",
+        "加密"
+      ],
+      "summary": "Servicemesh和Serverless是与现代云计算和分布式系统架构相关的两个不同概念。以下是对这两个术语的解释：Service MeshService Mesh是一种用于处理微服务之间通信的基础设施层。它在应用程序架构中提供对微服务通信的管理。这包括服务发现、负载均衡、故障恢复、指标监...",
+      "excerpt": "Servicemesh和Serverless是与现代云计算和分布式系统架构相关的两个不同概念。以下是对这两个术语的解释： Service Mesh Service Mesh是一种用于处理微服务之间通信的基础设施层。它在应用程序架构中提供对微服务通信的管理。这包括服务发现、负载均衡、故障恢复、指标监控和可观测性。Service Mesh通常通过对服务间的网络流量进行透明代理来管理这些功能。它的目标是解决传统微服务架构中网络通信的复杂性，提高系统的可靠性、安全性和可观察性。 特点： 流量管理 ：支持复杂的路由规则，流量转移，负载平衡等。 安全性 ：支持服务间的安全通信，包括加密和认证。 监控和可观测性 ：提供详细的请求级别的监控和日志信息。 故障恢复 ：提供重试、超时、熔断等机制，提高系统弹性。 常见的Service Mesh实现包括Istio、Linkerd和Consul Connect等。 Serverless Serverless是一种云计算执行模型，开发者可以编写和部署代码而无需管理底层的服务器。也称为“无服务器架构”，它是事件驱动的，并允许开发者将焦点放在代码逻辑上，而不是基础设施。Serverless通常与FaaS（Function as a Service）结合使用，这意味着开发者上传的代码在特定事件触发时由云提供商自动运行。 特点： 无需管理服务器 ：开发者无需关心管理操作系统、服务器配置与维护。 按需扩展 ：基于事件的函数在必要时自动扩展。 按实际使用付费 ：计费通常基于代码被调用的次数和消耗的时间。 快速开发和部署 ：更加专注于业务逻辑，实现快速迭代。 常见的Serverless平台包括AWS Lambda、Azure Functions和Google Cloud Functions等。 这两个技术解决方案都致力于简化和优化现代应用程序的开发和运维，但它们解决的问题和使用的场景略有不同。"
+    },
+    {
+      "slug": "tlc1mq3w2g1b4pbe",
+      "title": "什么是IaaS、PaaS、SaaS以及它们之间的区别",
+      "url": "/tulingzhouyu/db22bv/tlc1mq3w2g1b4pbe",
+      "toc_path": [
+        "云计算",
+        "什么是IaaS、PaaS、SaaS以及它们之间的区别"
+      ],
+      "toc_level": 1,
+      "toc_index": 1421,
+      "word_count": 846,
+      "updated_at": "2024-08-21T11:34:35.000Z",
+      "primary_category": "docker-k8s",
+      "primary_category_name": "Docker与Kubernetes",
+      "related_categories": [
+        "docker-k8s",
+        "os-linux",
+        "computer-network",
+        "devops-release",
+        "project-system-design"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "Service",
+        "操作系统",
+        "网络",
+        "部署",
+        "方案"
+      ],
+      "summary": "IaaS、PaaS 和 SaaS 是云服务模型的三个主要类别，每个类别提供不同级别的管理和控制，它们之间的区别主要在于用户与服务提供商之间管理责任的划分。以下是对这三个云服务模型的详细解释：IaaS（Infrastructure as a Service, 基础设施即服务）IaaS 提供最基础...",
+      "excerpt": "IaaS、PaaS 和 SaaS 是云服务模型的三个主要类别，每个类别提供不同级别的管理和控制，它们之间的区别主要在于用户与服务提供商之间管理责任的划分。以下是对这三个云服务模型的详细解释： IaaS（Infrastructure as a Service, 基础设施即服务） IaaS 提供最基础的计算资源，包括虚拟化的硬件、存储和网络。用户可以自由地配置和管理操作系统、应用程序和中间件等。 控制 ：用户拥有对操作系统、存储、应用程序、选定的网络组件等的最大控制权。 管理责任 ：用户需负责操作系统的安装和管理、安全配置及应用程序的部署。 灵活性 ：提供最大的灵活性和自定义能力，适合需要精细控制基础设施的企业。 常见提供商 ：Amazon Web Services (AWS) EC2、Microsoft Azure VMs、Google Compute Engine等。 PaaS（Platform as a Service, 平台即服务） PaaS 提供一整套应用程序开发和部署环境，包括操作系统、编程语言执行环境、数据库和 web 服务器等。 控制 ：用户主要控制应用程序和数据库，底层的操作系统和基础设施由提供商管理。 管理责任 ：用户不需要管理底层基础设施和操作系统，这减少了管理负担。 效率 ：简化了开发和部署过程，开发人员可以专注于编程而不是基础设施管理。 常见提供商 ：Google App Engine、Microsoft Azure App Service、AWS Elastic Beanstalk等。 SaaS（Software as a Service, 软件即服务） SaaS 提供完整的软件解决方案，用户通过网络访问软件应用程序，通常通过订阅模式付费。 控制 ：用户通常只需负责软件的配置和使用，所有的管理和维护由服务提供商负责。 管理责任 ：更新、维护和安全性等全部由提供商负责，用户无需关心底层系统。 使用便捷 ：用户可以快速使用软件，无需安装和配置，适合希望快速应用解决方案的企业。 常见提供商 ：Google Workspace、Microsoft 365、Salesforce等。 它们之间的区别 管理控制 ：IaaS 提供最大程度的控制，PaaS 提供部分控制，而 SaaS 则最少。 管理复杂性 ：IaaS 的管理复杂性最高，因为用户需管理操作系统层面的配置；PaaS 次之，因为用户只需管理应用层；SaaS 则最简单，用户无需管理任何基础设施。 灵活性和定制化 ：IaaS 提供了最高的灵活性和定制能力，允许用户根据需要调整环境；PaaS 提供适度的灵活性；SaaS 提供最低的灵活性和定制能力。 通过上述区别，企业可以根据自身的需要选择合适的云服务模式，平衡管理复杂度和灵活性需求。"
+    }
+  ]
+}

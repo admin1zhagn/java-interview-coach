@@ -1,0 +1,1984 @@
+{
+  "id": "resume-project",
+  "name": "简历与项目表达",
+  "aliases": [
+    "简历",
+    "项目",
+    "亮点",
+    "难点",
+    "如何回答",
+    "面试官",
+    "STAR",
+    "CRUD",
+    "包装",
+    "面经"
+  ],
+  "count": 45,
+  "total_word_count": 60861,
+  "articles": [
+    {
+      "slug": "dwrlxcihwh7r3grg",
+      "title": "如何在1个月内面试突击",
+      "url": "/tulingzhouyu/db22bv/dwrlxcihwh7r3grg",
+      "toc_path": [
+        "面试必看",
+        "面试指导与简历模板",
+        "如何在1个月内面试突击"
+      ],
+      "toc_level": 2,
+      "toc_index": 5,
+      "word_count": 1085,
+      "updated_at": "2025-03-16T11:24:20.000Z",
+      "primary_category": "resume-project",
+      "primary_category_name": "简历与项目表达",
+      "related_categories": [
+        "resume-project",
+        "algorithm",
+        "spring-cloud",
+        "performance-optimization",
+        "project-system-design"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "senior",
+        "middle",
+        "campus"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "简历",
+        "项目",
+        "面试官",
+        "算法",
+        "链表",
+        "二叉树",
+        "排序",
+        "查找",
+        "性能",
+        "优化",
+        "系统设计",
+        "方案"
+      ],
+      "summary": "如果你最近急着要面试，如何在1个月内快速突击准备呢？首先，我们要知道面试官通常会从技术广度、技术深度、基础功底、系统设计和项目经验这几个方面来考察面试者。先说技术广度。技术广度就是你在开发过程中需要掌握的各种技术，比如分布式服务框架像dubbo和spring cloud，Redis缓存技术，R...",
+      "excerpt": "如果你最近急着要面试，如何在1个月内快速突击准备呢？ 首先 ，我们要知道面试官通常会从 技术广度、技术深度、基础功底、系统设计和项目经验 这几个方面来考察面试者。 先说 技术广度 。技术广度就是你在开发过程中需要掌握的各种技术，比如分布式服务框架像dubbo和spring cloud，Redis缓存技术，RocketMQ消息队列，Elasticsearch搜索引擎等等。大公司可能还会考察分布式事务、微服务架构、分布式锁、性能优化、Java虚拟机优化、Web Server优化、数据库优化等等。 如果你平时就很勤奋 ，过去几年一直在学习，那么你可以快速回顾自己的笔记，把各种常见技术的核心原理和项目实践都回忆起来，形成一个知识网络。 如果你平时不那么勤奋 ，或者工作时间不长，那也没关系，你可以把技术广度涉及的各种点罗列出来，到 面试突击宝典 中找这些技术点的常见面试问题和核心原理，通过快速了解这些技术，建立 基本认知 ，避免面试时一问三不知。 接下来是 技术深度 。面试官可能会问你对哪个技术比较熟悉，这时候千万不要随便乱说，因为一旦你说出某个技术，面试官可能会深入到源码级别来问你各种底层机制和原理。所以你需要在几天内通过“死记硬背+软磨硬泡”的方式，力争对某个技术有一些稍微底层的 理解 ，这样在面试时能给出比普通工程师更好的回答。 然后是 基础功底 。我的建议是，如果还有1个月要去面试，那你最起码用几天时间，网上搜三五十个最常见、最典型的算法题，反复练习，务必熟练。你需要熟练到可以在白纸上一遍手写出没有bug的代码。比如经典排序算法及其时空复杂度分析，经典查找算法，栈、队列、链表、二叉树等常见数据结构的算法题都要熟练掌握。当然，最好的积累还是在平时，比如每天在leetcode上花半小时刷一个算法题，坚持一年你就刷了至少300道，坚持两年就有七八百道，这样面试时就不用担心任何基础性手写算法的问题了。 最后就是 项目实战场景题 。这部分内容在最近几年的面试中尤为常见，可能仅靠8股文无法应付。这就需要你熟悉自己的项目的前提下，去抠细节，想优化。可参看突击宝典中的几十个场景题，还有面试突击的那几个技术栈视频。将技术栈的深度和相关问题解决方案，相关优化能力结合自己的项目业务。要整理自己的表达，争取能hold住三高的额项目设计和关键疑难问题的解答。 总结一下，技术广度上，如果你有积累就回顾笔记，没有积累就上网快速了解各个技术点；技术深度上，选择一个你熟悉的技术，深入理解底层原理；基础功底上，反复练习常见的算法题，确保能手写出没有bug的代码。最后就是项目场景题，一定要结合自己熟悉的项目深入细节业务抠细节，想优化。 关于系统设计和项目经验这块可以参考面试突击直播+录播的视频，希望这些方法能帮助你在1个月内做好面试准备，拿到心仪的offer。 ​"
+    },
+    {
+      "slug": "qeklorngps4a8c2r",
+      "title": "简历上的Java项目没亮点怎么办",
+      "url": "/tulingzhouyu/db22bv/qeklorngps4a8c2r",
+      "toc_path": [
+        "面试必看",
+        "面试指导与简历模板",
+        "简历上的Java项目没亮点怎么办"
+      ],
+      "toc_level": 2,
+      "toc_index": 6,
+      "word_count": 628,
+      "updated_at": "2024-08-26T14:28:15.000Z",
+      "primary_category": "resume-project",
+      "primary_category_name": "简历与项目表达",
+      "related_categories": [
+        "resume-project",
+        "spring-boot",
+        "project-system-design",
+        "java-core",
+        "spring-core"
+      ],
+      "question_type": "resume_project",
+      "question_type_name": "简历项目题",
+      "levels": [
+        "senior",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "简历",
+        "项目",
+        "亮点",
+        "难点",
+        "面试官",
+        "SpringBoot",
+        "方案",
+        "高并发",
+        "Java",
+        "Spring"
+      ],
+      "summary": "如果你觉得简历上的Java项目都很一般，有几个方法可以让你的项目看起来更有技术含量。首先，你可以在平时工作中多给自己设立一些技术挑战。比如说，你现在负责的是一个OA办公系统，只有几十个人用，技术上可能就是简单的SSM框架，没用到SpringBoot，也没有微服务、缓存这些高并发高可用的技术。看...",
+      "excerpt": "如果你觉得简历上的Java项目都很一般，有几个方法可以让你的项目看起来更有技术含量。首先，你可以在平时工作中多给自己设立一些技术挑战。比如说，你现在负责的是一个OA办公系统，只有几十个人用，技术上可能就是简单的SSM框架，没用到SpringBoot，也没有微服务、缓存这些高并发高可用的技术。看起来确实很普通，但你可以假设一下，如果这个系统是给一个世界500强公司用的，有上万人使用，那就需要更复杂的技术架构了。你可以在工作中给自己制造这样的难题，然后去解决它们，这样不仅提升了自己的技术能力，也为面试积累了更多有技术含量的项目经验。 项目经验一般都是要长期积累的，如果你急着面试，也可以在面试前做一些短期的突击准备。你可以反复思考你目前负责的系统，看看能不能引入一些新的技术架构，采用更好的技术方案来应对各种冲击。虽然你可能没有时间实际去实现这些方案，但你可以通过网上查找国内大型互联网公司的技术架构方案，看看他们用了哪些高大上的技术，解决了哪些技术难点。然后在面试的时候，你可以向面试官阐述你对项目的一些思考和技术方案，这样即使你的项目本身不高端，也能通过你的思考和方案展示出你的技术能力。 总之，不管是长期积累还是短期突击，关键是要多思考，多总结，把项目中的技术难点和解决方案展示出来。这样一来，你的项目就不会显得那么low了，面试官也能看到你的技术亮点，自然更容易拿到好的offer。记住，做总比不做强，多思考总比不思考强，这样你在面试中就能有更多的技术交流和探讨的内容，不至于让项目显得毫无亮点。 ​"
+    },
+    {
+      "slug": "sw7xchocbmp4vczb",
+      "title": "拜托，别再背八股文了，现在都会结合项目场景问",
+      "url": "/tulingzhouyu/db22bv/sw7xchocbmp4vczb",
+      "toc_path": [
+        "面试必看",
+        "面试指导与简历模板",
+        "拜托，别再背八股文了，现在都会结合项目场景问"
+      ],
+      "toc_level": 2,
+      "toc_index": 8,
+      "word_count": 1002,
+      "updated_at": "2024-11-01T07:52:02.000Z",
+      "primary_category": "resume-project",
+      "primary_category_name": "简历与项目表达",
+      "related_categories": [
+        "resume-project",
+        "project-system-design",
+        "redis-cache",
+        "netty-network",
+        "java-core"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle",
+        "expert"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年",
+        "专家/P7+"
+      ],
+      "keywords": [
+        "简历",
+        "项目",
+        "面试官",
+        "CRUD",
+        "系统设计",
+        "架构设计",
+        "方案",
+        "高并发",
+        "秒杀",
+        "Redis",
+        "缓存",
+        "雪崩",
+        "Netty"
+      ],
+      "summary": "作为一个工作了16年的架构师，给大家讲讲项目经验这块面试会怎么问，一般我会让面试者先说一下他们项目的整体架构，讲一下用了哪些技术和核心的业务思路。比如，如果面试者说他们公司用了Dubbo作为服务框架，我会进一步问Dubbo底层的通信框架是什么，是Netty还是Mina，然后再问底层的NIO是什...",
+      "excerpt": "作为一个工作了16年的架构师，给大家讲讲项目经验这块面试会怎么问，一般我会让面试者先说一下他们项目的整体架构，讲一下用了哪些技术和核心的业务思路。比如，如果面试者说他们公司用了Dubbo作为服务框架，我会进一步问Dubbo底层的通信框架是什么，是Netty还是Mina，然后再问底层的NIO是什么，网络通信里的长连接和短连接是什么，是否看过Dubbo的源码，源码中对并发技术的运用有哪些印象深刻的地方。通过这些问题，我可以深入了解面试者对技术的掌握程度，如果你只是单纯背八股的CRUD工程师，被问到这些原理时基本都会懵圈。 接着，我会深入到项目的业务细节，好的面试官会掌握一个原则：死扣细节。比如，如果面试者说用了Redis，我会进一步问哪个业务场景用了Redis，业务流程是什么，具体选用了哪种数据结构存放什么数据，数据的过期时间是什么，如果缓存过期了，数据兜底方案是什么，如何设计的key，为什么要这么设计，用Redis的过程中有没有碰到一些困难的问题，比如缓存与数据库不一致、缓存雪崩等问题，具体怎么解决的。通过这些问题，我可以看出面试者对技术的实践有多深，是否经历过复杂业务架构下的分布式系统设计和开发。 如果面试者面试的是 中级岗位 ，我会看他们是否 技术整体OK ， 独立负责过核心模块的开发 ，对 各种技术有一定的实践经验 。如果是 高级或资深岗位 ，我会看他们是否 带领一个小团队独立负责 过一个 有一定复杂度和难度的完整系统的架构设计和开发 。如果是 架构师岗位 ，我会要求他们在公司里 主导过很多人协作完成的大型而且复杂的项目 群，对 大型系统架构 有 深度的思考 和 整体的把控 ，项目要有足够的 技术挑战 ，比如 大用户量、高并发、海量数据等 。 然后，我会考察 系统设计能力 ，尤其是 高级工程师及以上 的岗位。我会用一些 业务场景 来问面试者 如何设计系统架构 ，比如 如何设计一个电商秒杀系统架构 ， 如何设计一个消息推送系统架构 ， 双11大促时如何设计系统的动态扩容/缩容机制 。这些问题可以考察面试者的 架构设计思维 ，尤其是 针对没接触过的业务场景 。 最后，对于有 项目管理经验的同学 我会考察他是 如何管理项目 ， 把控项目进度 以及 团队协作 的，还有 沟通表达能力 如何， 性格是否踏实 ， 是否有责任心 等等。 通过以上问题可以全面考察面试者的 技术面是否完整 ， 是否有几个技术领域有足够的深度 ， 做过什么样的项目 ， 项目的实践经验如何 ， 把控过多大的团队和项目 ，对 全新业务场景的系统设计能力如何 ， 基本功如何 ， 综合素质如何 等等。 大家听完可以结合你自己的项目思考下以上类似的问题！"
+    },
+    {
+      "slug": "kw8ziidim4eddn5o",
+      "title": "工作2-5年简历模板",
+      "url": "/tulingzhouyu/db22bv/kw8ziidim4eddn5o",
+      "toc_path": [
+        "面试必看",
+        "面试指导与简历模板",
+        "工作2-5年简历模板"
+      ],
+      "toc_level": 2,
+      "toc_index": 10,
+      "word_count": 21,
+      "updated_at": "2025-04-13T11:29:28.000Z",
+      "primary_category": "resume-project",
+      "primary_category_name": "简历与项目表达",
+      "related_categories": [
+        "resume-project",
+        "java-core"
+      ],
+      "question_type": "resume_project",
+      "question_type_name": "简历项目题",
+      "levels": [
+        "junior",
+        "senior"
+      ],
+      "level_names": [
+        "初级/1-3年",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "简历",
+        "Java"
+      ],
+      "summary": "01-中高级工程师.pdf02-高级Java研发工程师（P6）.pdf",
+      "excerpt": ""
+    },
+    {
+      "slug": "gg10lcn61f1qr6cr",
+      "title": "工作5-8年简历模板",
+      "url": "/tulingzhouyu/db22bv/gg10lcn61f1qr6cr",
+      "toc_path": [
+        "面试必看",
+        "面试指导与简历模板",
+        "工作5-8年简历模板"
+      ],
+      "toc_level": 2,
+      "toc_index": 11,
+      "word_count": 7,
+      "updated_at": "2024-08-30T13:35:11.000Z",
+      "primary_category": "resume-project",
+      "primary_category_name": "简历与项目表达",
+      "related_categories": [
+        "resume-project",
+        "java-core"
+      ],
+      "question_type": "resume_project",
+      "question_type_name": "简历项目题",
+      "levels": [
+        "senior",
+        "expert"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "专家/P7+"
+      ],
+      "keywords": [
+        "简历",
+        "Java"
+      ],
+      "summary": "06-Java高级工程师.docx",
+      "excerpt": ""
+    },
+    {
+      "slug": "lm845tytcabqmf1t",
+      "title": "工作8年以上简历模板",
+      "url": "/tulingzhouyu/db22bv/lm845tytcabqmf1t",
+      "toc_path": [
+        "面试必看",
+        "面试指导与简历模板",
+        "工作8年以上简历模板"
+      ],
+      "toc_level": 2,
+      "toc_index": 12,
+      "word_count": 11,
+      "updated_at": "2023-09-04T08:37:28.000Z",
+      "primary_category": "resume-project",
+      "primary_category_name": "简历与项目表达",
+      "related_categories": [
+        "resume-project",
+        "java-core"
+      ],
+      "question_type": "resume_project",
+      "question_type_name": "简历项目题",
+      "levels": [
+        "expert",
+        "senior"
+      ],
+      "level_names": [
+        "专家/P7+",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "简历",
+        "Java"
+      ],
+      "summary": "03-Java架构师简历模板(P6+或P7).docx",
+      "excerpt": ""
+    },
+    {
+      "slug": "wbsmb2zbq9chxaft",
+      "title": "年薪百万P7+简历模板",
+      "url": "/tulingzhouyu/db22bv/wbsmb2zbq9chxaft",
+      "toc_path": [
+        "面试必看",
+        "面试指导与简历模板",
+        "年薪百万P7+简历模板"
+      ],
+      "toc_level": 2,
+      "toc_index": 13,
+      "word_count": 9,
+      "updated_at": "2024-08-30T13:38:31.000Z",
+      "primary_category": "resume-project",
+      "primary_category_name": "简历与项目表达",
+      "related_categories": [
+        "resume-project",
+        "java-core"
+      ],
+      "question_type": "resume_project",
+      "question_type_name": "简历项目题",
+      "levels": [
+        "expert",
+        "senior"
+      ],
+      "level_names": [
+        "专家/P7+",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "简历",
+        "Java"
+      ],
+      "summary": "04-Java架构师简历模板(P7+).pdf",
+      "excerpt": ""
+    },
+    {
+      "slug": "khoxnu9ic24hcd7e",
+      "title": "简历优化模板",
+      "url": "/tulingzhouyu/db22bv/khoxnu9ic24hcd7e",
+      "toc_path": [
+        "面试必看",
+        "面试指导与简历模板",
+        "简历优化模板"
+      ],
+      "toc_level": 2,
+      "toc_index": 14,
+      "word_count": 7,
+      "updated_at": "2025-03-16T11:16:35.000Z",
+      "primary_category": "resume-project",
+      "primary_category_name": "简历与项目表达",
+      "related_categories": [
+        "resume-project",
+        "performance-optimization"
+      ],
+      "question_type": "resume_project",
+      "question_type_name": "简历项目题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "简历",
+        "优化"
+      ],
+      "summary": "简历优化模板.pdf",
+      "excerpt": ""
+    },
+    {
+      "slug": "apbcfyk28dhe7w38",
+      "title": "简历全是 CRUD？3 个 “合法包装” 技巧，让你的 Controller-Service-Dao 讲出阿里 P7 的味道！",
+      "url": "/tulingzhouyu/db22bv/apbcfyk28dhe7w38",
+      "toc_path": [
+        "面试必看",
+        "项目亮点和难点",
+        "简历全是 CRUD？3 个 “合法包装” 技巧，让你的 Controller-Service-Dao 讲出阿里 P7 的味道！"
+      ],
+      "toc_level": 2,
+      "toc_index": 16,
+      "word_count": 1453,
+      "updated_at": "2026-01-25T05:44:15.000Z",
+      "primary_category": "resume-project",
+      "primary_category_name": "简历与项目表达",
+      "related_categories": [
+        "resume-project",
+        "java-collections",
+        "redis-cache",
+        "docker-k8s",
+        "observability-troubleshooting"
+      ],
+      "question_type": "resume_project",
+      "question_type_name": "简历项目题",
+      "levels": [
+        "junior",
+        "middle",
+        "senior"
+      ],
+      "level_names": [
+        "初级/1-3年",
+        "中级/3-5年",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "简历",
+        "项目",
+        "亮点",
+        "难点",
+        "面试官",
+        "CRUD",
+        "包装",
+        "HashMap",
+        "ConcurrentHashMap",
+        "Redis",
+        "缓存",
+        "穿透"
+      ],
+      "summary": "写在开头最近帮大家改简历，我发现 90% 的 Java 程序员都面临同一个死局： “Fox 老师，我工作 3 年了，每天都在写 Controller-Service-Dao，做的全是 CRUD（增删改查）。简历上写不出东西，面试官问稍微深一点就挂，怎么破？”这其实是行业的",
+      "excerpt": "写在开头 最近帮大家改简历，我发现 90% 的 Java 程序员都面临同一个死局： “Fox 老师，我工作 3 年了，每天都在写 Controller-Service-Dao，做的全是 CRUD （增删改查）。简历上写不出东西，面试官问稍微深一点就挂，怎么破？” 这其实是行业的 “隐性门槛” 。 面试官心里很清楚，绝大多数业务都是 CRUD。但为什么有的人能拿 30k，有的人只能拿 15k？ 区别不在于你“做了什么”，而在于你“挖了多深”。 今天 Fox 不讲虚的，教你 3 个 “合法包装” 技巧。哪怕你做的只是最简单的管理后台，也能讲出 阿里 P7 架构师 的味道！ 技巧一：把“功能实现”包装成“故障解决” 面试官最烦的就是听流水账。如果你想让他眼前一亮，就得学会 “讲故事” ——而且是 “惊心动魄” 的故事。 👇 一张图看懂话术区别： 初级回答：我用了 Redis 加快查询。 高薪回答：我解决了缓存穿透导致 DB CPU 飙升 100% 的事故。 ✅ 高薪包装术（故障驱动法）： 不要讲顺风顺水的故事，要讲生产事故。 面试官最喜欢听的是： 原本好好的 -> 突然出事了 -> 你怎么排查 -> 怎么解决 。 话术模板： “面试官，这个项目虽然业务逻辑不复杂，但在高并发下遇到了 严重的缓存穿透问题 。 当时我发现数据库 CPU 突然飙升到 100%，排查日志发现是有黑产在疯狂请求不存在的商品 ID，导致 Redis 缓存完全失效，流量全部打穿到了 DB。 后来我没有简单地加防火墙，而是 引入了 布隆过滤器 （Bloom Filter） ，在缓存层之前拦截掉了 99% 的非法请求。同时，为了防止误判，我还设计了一套异步重建机制……” 技巧二：把“技术选型”包装成“架构思考” ❌ 初级回答（平庸）： “因为 ConcurrentHashMap 线程安全，所以我们用它做本地缓存。” 💡 面试官潜台词： “这人没经验，不知道 Map 只进不出会导致 OOM 吗？” ✅ 高薪包装术（防患于未然）： 真正的架构师，在选型时考虑的永远是 稳定性 和 边界情况 。 话术模板： “在设计本地缓存时，我没有盲目使用 ConcurrentHashMap 。 虽然它线程安全，但我看过源码，它 缺乏自动过期（TTL）和内存淘汰机制 。在生产环境中，如果缓存数据持续增长，极易导致 OOM（内存溢出） 。 所以我最终引入了 Caffeine （Spring Boot 默认缓存组件）。 我深入研究过它的 Window TinyLfu 算法 ，发现它比普通的 LRU 算法命中率更高。我配置了 maximumSize 和 expireAfterWrite ，既保证了热点数据的高效读取，又完美规避了内存泄漏的风险。” 👉 核心逻辑： 从“只会用 API”进阶到“考虑系统稳定性”。面试官一听就"
+    },
+    {
+      "slug": "mqald938blceuvpy",
+      "title": "面试问到项目问题如何回答",
+      "url": "/tulingzhouyu/db22bv/mqald938blceuvpy",
+      "toc_path": [
+        "面试必看",
+        "项目亮点和难点",
+        "面试问到项目问题如何回答"
+      ],
+      "toc_level": 2,
+      "toc_index": 17,
+      "word_count": 463,
+      "updated_at": "2024-12-20T01:50:27.000Z",
+      "primary_category": "resume-project",
+      "primary_category_name": "简历与项目表达",
+      "related_categories": [
+        "resume-project",
+        "project-system-design",
+        "performance-optimization",
+        "java-core",
+        "java-concurrency"
+      ],
+      "question_type": "resume_project",
+      "question_type_name": "简历项目题",
+      "levels": [
+        "senior",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "项目",
+        "亮点",
+        "难点",
+        "如何回答",
+        "STAR",
+        "方案",
+        "高并发",
+        "性能",
+        "优化",
+        "并发"
+      ],
+      "summary": "作为应对项目场景面试题，我建议可以从以下几个方面来准备和回答：准备阶段梳理1-2个具有代表性的项目经验，包括业务场景、技术架构、解决方案等针对每个项目，准备性能优化、高并发、数据一致性等典型技术难点总结项目中的失败教训和成长经验回答框架（STAR法则）Situation：简要描述项目背景和面临...",
+      "excerpt": "作为应对项目场景面试题，我建议可以从以下几个方面来准备和回答： 准备阶段 梳理1-2个具有代表性的项目经验，包括业务场景、技术架构、解决方案等 针对每个项目，准备性能优化、高并发、数据一致性等典型技术难点 总结项目中的失败教训和成长经验 回答框架（STAR法则） Situation：简要描述项目背景和面临的问题 Task：明确你在项目中的职责和要解决的具体任务 Action：详细说明解决问题的思路和具体实施步骤 Result：阐述最终结果和产生的价值 技术亮点展示 解释技术选型的考虑因素（性能、可用性、成本等） 分析方案的优劣势，以及为什么选择当前方案 展示对底层原理的理解和掌握程度 适时引入相关的设计模式和架构原则 重点注意事项 保持叙述的逻辑性和条理性 突出个人的贡献和思考 适度引入技术细节，避免过于表面 准备相关的数据支撑，如性能提升指标 表现出解决问题的主动性和创新思维 常见陷阱避免 不要过分夸大个人角色 避免技术描述过于空泛 不要回避项目中的问题和挑战 保持实事求是的态度 如果遇到没有相关经验的场景，可以这样应对： 诚实说明没有直接经验 分析类似场景的解决方案 展示解决问题的思路和学习能力 表达对新技术的学习兴趣"
+    },
+    {
+      "slug": "kn82gynirlia8usd",
+      "title": "数字化农业病虫害监测（亮点与难点）",
+      "url": "/tulingzhouyu/db22bv/kn82gynirlia8usd",
+      "toc_path": [
+        "面试必看",
+        "项目亮点和难点",
+        "数字化农业病虫害监测（亮点与难点）"
+      ],
+      "toc_level": 2,
+      "toc_index": 23,
+      "word_count": 3839,
+      "updated_at": "2025-03-16T08:33:23.000Z",
+      "primary_category": "resume-project",
+      "primary_category_name": "简历与项目表达",
+      "related_categories": [
+        "resume-project",
+        "security-auth",
+        "performance-optimization",
+        "project-system-design",
+        "computer-network"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle",
+        "campus"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "简历",
+        "项目",
+        "亮点",
+        "难点",
+        "如何回答",
+        "安全",
+        "JWT",
+        "权限",
+        "RBAC",
+        "加密",
+        "性能",
+        "优化",
+        "系统设计"
+      ],
+      "summary": "由于该学员需要隐藏基本信息和只需优化简历中这两项目其他内容就不在此显示了（比如技术栈补充，工作经验简化，项目优化2-3即可）重点优化优化项目亮点和难点部分。附面试相关业务问答参考。数字化农业病虫害监测项目项目描述：构建了一套基于人工智能和区块链的农业病害监测系统，实现病害快速识别、传播趋势预测...",
+      "excerpt": "由于该学员需要隐藏基本信息和只需优化简历中这两项目其他内容就不在此显示了（比如技术栈补充，工作经验简化，项目优化2-3即可） 重点优化优化项目亮点和难点部分。附面试相关业务问答参考。 数字化农业病虫害监测项目 项目描述 ： 构建了一套基于人工智能和区块链的农业病害监测系统，实现病害快速识别、传播趋势预测及精准防控。项目采用 LightGBM 算法实现高精度病害识别，结合 SIR 模型预测病害传播趋势，并通过轻量级区块链技术确保预警信息的可靠性。系统已在农田试点应用，显著提升病害防控效率，带动当地就业 15 人，获省级 “互联网 +” 大赛三等奖。 打造全面覆盖农业病害防控全流程的数字化系统，融合多源数据，运用先进算法实现病害快速精准识别、传播趋势预测，借助区块链保障数据可靠，已在多地试点应用，成效显著。 核心亮点 ： 病虫害智能识别与预警系统 (技术亮点) 识别准确率 ：通过LightGBM算法训练，对常见农业病虫害的识别准确率达到92.3%。 预警及时性 ：利用SIR模型结合实时气象数据，提前3-7天预测病虫害爆发趋势。 数据可靠性 ：轻量级区块链技术确保通知记录不可篡改，查询效率提升40%。 高性能数据交互系统 (技术亮点) 响应时间优化 ：优化MySQL索引后，核心接口平均响应时间从500ms降至350ms，缩短30%。 数据交互量 ：系统上线后稳定运行，日均处理12万条数据交互记录。 安全访问控制 ：基于JWT的权限管理模块，月均防止100+次非法访问尝试。 农业病虫害防控流程数字化 (业务点 3-5年) 流程完整度 ：实现从病虫害监测到防控通知的全流程数字化，涉及6个主要业务环节。 就业带动 ：项目实施期间直接带动就业15人，涵盖开发、运维、数据分析等岗位。 奖项荣誉 ：项目成果在省级“互联网+”大赛中获得三等奖，获得投资意向200万元。 技术难点及解决方案 ： 病虫害识别准确性问题 （实际问题） ● 收集覆盖15种主要农作物、30类常见病虫害的10万张图像数据 ● 使用OpenCV进行图像增强，扩充数据集规模30%，训练LightGBM模型，提升模型泛化能力。 系统性能与稳定性 （性能优化） ● 优化数据库连接池配置，减少数据库连接等待时间 ● 实现数据缓存机制，减轻服务器压力 ● 采用异步处理方式，提升系统响应速度 数据安全与权限管理 （安全性设计） ● 基于JWT开发细粒度权限控制，确保数据访问安全 ● 对敏感数据进行加密存储和传输，防止数据泄露 ● 设计防刷限流机制，有效防止恶意攻击 病虫害预测辅助项目 核心亮点 ： 病虫害精准识别与预测系统 (技术亮点) ● 基于YOLOv8算法实现病虫害的精准识别，识别速度达到实时要求 ● 结合深度信念网络（DBN）模型预测病虫害趋势，预测准确率提高20% ● 利用GPS精准定位实现无人机区域喷洒，提升"
+    },
+    {
+      "slug": "ne6isno6nv9knfxl",
+      "title": "电商中台系统（亮点与难点）",
+      "url": "/tulingzhouyu/db22bv/ne6isno6nv9knfxl",
+      "toc_path": [
+        "面试必看",
+        "项目亮点和难点",
+        "电商中台系统（亮点与难点）"
+      ],
+      "toc_level": 2,
+      "toc_index": 24,
+      "word_count": 1539,
+      "updated_at": "2025-04-14T07:12:08.000Z",
+      "primary_category": "resume-project",
+      "primary_category_name": "简历与项目表达",
+      "related_categories": [
+        "resume-project",
+        "project-system-design",
+        "mysql-index-transaction",
+        "performance-optimization",
+        "distributed-transaction"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "expert",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "专家/P7+",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "简历",
+        "项目",
+        "亮点",
+        "难点",
+        "如何回答",
+        "方案",
+        "高并发",
+        "秒杀",
+        "订单",
+        "支付",
+        "库存",
+        "限流",
+        "MySQL",
+        "性能",
+        "分布式事务"
+      ],
+      "summary": "首先这份简历是7年经验，除了项目还有不少地方需要优化（比如技术栈补充，工作经验简化，项目优化2-3即可），当然这里只更新项目相关。重点优化最近这个电商中台的系统。项目名称：SASS化电商中台系统项目描述：本项目聚焦于电商中台系统的SASS化重构，利用SASS的嵌套、变量、混合和继承等功能，实现...",
+      "excerpt": "首先这份简历是 7年经验 ，除了项目还有不少地方需要优化（比如技术栈补充，工作经验简化，项目优化2-3即可），当然这里只更新项目相关。重点优化最近这个电商中台的系统。 项目名称： SASS化 电商中台系统 项目描述： 本项目聚焦于电商中台系统的SASS化重构，利用SASS的嵌套、变量、混合和继承等功能，实现样式代码的高效复用与精简，提升样式表的模块化与可维护性。同时，通过优化系统架构，采用微服务设计，确保系统的高性能、高可用性和高扩展性，满足电商业务的快速发展需求。 技术架构： SpringBoot+SpringCloud +Sharding-jdbc+Mysql+Redis+Rocketmq 核心亮点和难点： 秒杀抢购活动优化 实现了多层拦截分摊，过滤掉大部分无效请求，分摊了服务处理压力，多级缓存(本地缓存+Redis集群)架构，将热点产品信息查询延迟控制在100ms以内。 设计库存分布式锁 ，将独占锁结合库存优化成分段锁 ，细化锁粒度。成功降低 了独占锁失败率 ，实现订单峰值1000+TPS的稳定处理 使用Rocketmq实现商城活动抢单的流量削峰 ，如积分秒杀活动和活动日等。通过异步处理订单保存 ，解决了用户下单需等待服务器响应的问题 ，提升了客户使用体验度 使用分库分表技术，解决了亿级订单数据存储问题（视情况写） 会员端接口请求缓慢、带宽占比高和代码维护性差的问题 技术方案：对工程业务功能进行拆分并分别部署到不同集群，提高单机性能和稳定性；精简接口返回字段，减少数据传输量；遵循高聚合低耦合原则对代码进行重构，优化代码结构和逻辑。 效果：成功解决接口请求缓慢问题，提高接口响应速度，增强代码的可维护性和可读性，提升系统整体性能。 订单数据一致性问题 实现了基于TCC模式的分布式事务处理机制，确保订单与支付状态的最终一致性 设计了订单状态机，通过状态流转实现订单全生命周期的有效管理 采用补偿机制处理分布式事务异常，确保数据最终一致性 针对Mysql主库CPU使用率过高的问题 技术方案：归档处理历史数据至归档存储，减少主库数据负载；优化查询频率高的SQL语句，包括添加索引和重写SQL；对包含大字段的表进行拆表处理，分离大字段存储；分离读写操作，读操作走从库，写操作走主库。 效果：有效降低CPU使用率，提高查询效率，减轻主库负载压力，提升系统整体性能和稳定性。 MySQL读库CPU使用率过高的问题 技术方案：限制导出和导入的最大数据量，减少CPU负载压力；优化查询语句和使用更好索引；避免联合查询表，改为单表查询；重构代码采用更高效查询方式。 效果：提高查询效率，减少CPU使用率，降低数据冗余查询和IO开销，确保系统在高并发读取时的稳定性和响应速度。 系统安全性强化 实施了包括用户认证、授权控制和数据加密等一系列安全措施，构建全方位的安全防护体系，确保系统数据和"
+    },
+    {
+      "slug": "xrsf54wva6nqig14",
+      "title": "金融科技CRM客户管理系统（亮点与难点）",
+      "url": "/tulingzhouyu/db22bv/xrsf54wva6nqig14",
+      "toc_path": [
+        "面试必看",
+        "项目亮点和难点",
+        "金融科技CRM客户管理系统（亮点与难点）"
+      ],
+      "toc_level": 2,
+      "toc_index": 25,
+      "word_count": 2229,
+      "updated_at": "2025-03-10T11:35:09.000Z",
+      "primary_category": "resume-project",
+      "primary_category_name": "简历与项目表达",
+      "related_categories": [
+        "resume-project",
+        "spring-cloud",
+        "performance-optimization",
+        "mysql-index-transaction",
+        "redis-cache"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle",
+        "senior",
+        "expert"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年",
+        "专家/P7+"
+      ],
+      "keywords": [
+        "项目",
+        "亮点",
+        "难点",
+        "Spring Cloud",
+        "性能",
+        "优化",
+        "吞吐",
+        "MySQL",
+        "事务",
+        "Redis",
+        "缓存"
+      ],
+      "summary": "部分学员真实CRM项目没什么亮点和难点，投出去面试机会可能不多，特优化如下一份以供参考：CRM客户管理系统项目经验项目概述主导了CRM客户管理系统的全生命周期开发。该项目旨在为一家快速发展的金融科技公司构建一套高效、智能且可扩展的客户关系管理系统，以提升客户体验、促进销售增长并增强市场竞争力。...",
+      "excerpt": "部分学员真实CRM项目没什么亮点和难点，投出去面试机会可能不多，特优化如下一份以供参考： CRM客户管理系统项目经验 项目概述 主导了CRM客户管理系统的全生命周期开发。该项目旨在为一家快速发展的金融科技公司构建一套高效、智能且可扩展的客户关系管理系统，以提升客户体验、促进销售增长并增强市场竞争力。系统采用了先进的AI智能体技术，以实现更智能的客户互动和更高效的业务处理。 技术栈 后端框架 ：Spring Boot、Spring Cloud AI智能体 ：自然语言处理（NLP）、机器学习（ML）框架、AI智能体开发平台 数据库 ：MySQL、Redis 前端技术 ：Vue.js、Element UI 其他 ：Dubbo、RabbitMQ、Elasticsearch、ShardingSphere、MyBatis-Plus、JWT、OAuth2 项目亮点与成果 系统架构优化问题 ，采用 微服务架构设计 ，取得 提升了系统的可维护性和可扩展性效果 ： 基于Spring Cloud构建微服务架构，将系统划分为客户管理、销售自动化、市场营销、客户服务等多个独立的服务模块，实现了服务的独立开发、部署与扩展。 通过引入Netflix Eureka进行服务注册与发现，确保各个微服务之间能够高效通信。利用Spring Cloud Config集中管理配置信息，方便统一管理和维护。 整个架构设计遵循了高内聚、低耦合的原则，使得系统在面对业务变化时能够快速响应和调整，提升了系统的灵活性和可扩展性。 客户互动效率问题 ，采用 AI智能体集成 ，取得 提升客户体验和销售效率效果 ： 引入AI智能体技术，实现智能客服机器人，能够自动回答常见问题，减少客户等待时间，提升客户满意度。 利用AI智能体进行销售线索的智能推荐，根据客户行为数据和偏好信息，为销售团队提供精准的销售线索，提高销售转化率。 通过自然语言处理（NLP）技术，实现对客户咨询的智能理解和回复，提高了客户互动的效率和质量。 数据处理性能问题 ，采用 高性能数据处理优化 ，取得 提高了数据查询和写入的效率效果 ： 利用MyBatis-Plus对MySQL数据库进行优化，通过编写高效的SQL语句、使用缓存策略和连接池优化，显著提高了数据查询和写入的效率。 结合Redis缓存技术，将频繁访问的数据缓存到内存中，减少了对数据库的直接访问，进一步提升了系统的响应速度。 在数据处理过程中，采用了异步处理和批量操作的方式，合理利用系统资源，提高了数据处理的吞吐量。 系统质量保障问题 ，采用 自动化测试与持续集成 ，取得 确保代码质量和系统稳定性效果 ： 引入自动化测试框架，如JUnit、Mockito等，对各个服务模块进行单元测试、集成测试和接口测试，确保代码质量和系统稳定性。 结合Jenkins实现持续集成，代码提交后自动触发构建、测试"
+    },
+    {
+      "slug": "ommxackyh9wlac7w",
+      "title": "政府市政平台(亮点与难点)",
+      "url": "/tulingzhouyu/db22bv/ommxackyh9wlac7w",
+      "toc_path": [
+        "面试必看",
+        "项目亮点和难点",
+        "政府市政平台(亮点与难点)"
+      ],
+      "toc_level": 2,
+      "toc_index": 27,
+      "word_count": 0,
+      "updated_at": "2024-12-25T11:38:08.000Z",
+      "primary_category": "resume-project",
+      "primary_category_name": "简历与项目表达",
+      "related_categories": [
+        "resume-project"
+      ],
+      "question_type": "resume_project",
+      "question_type_name": "简历项目题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "项目",
+        "亮点",
+        "难点"
+      ],
+      "summary": "",
+      "excerpt": ""
+    },
+    {
+      "slug": "mi5gudzqmfs1k3cz",
+      "title": "Sun-Club程序员社区项目",
+      "url": "/tulingzhouyu/db22bv/mi5gudzqmfs1k3cz",
+      "toc_path": [
+        "面试必看",
+        "项目亮点和难点",
+        "Sun-Club程序员社区项目"
+      ],
+      "toc_level": 2,
+      "toc_index": 34,
+      "word_count": 1602,
+      "updated_at": "2025-02-18T05:48:18.000Z",
+      "primary_category": "resume-project",
+      "primary_category_name": "简历与项目表达",
+      "related_categories": [
+        "resume-project",
+        "performance-optimization",
+        "security-auth",
+        "project-system-design",
+        "spring-core"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "简历",
+        "项目",
+        "亮点",
+        "难点",
+        "包装",
+        "性能",
+        "优化",
+        "吞吐",
+        "安全",
+        "认证",
+        "鉴权",
+        "权限",
+        "Spring"
+      ],
+      "summary": "上面这位学员简历的项目二没突出亮点和难点，投出去面试机会可能不多，经过和老师沟通后，着重优化了第二个项目《Sun-Club程序员社区》，优化如下：项目名称：Sun-Club程序员社区项目描述：Sun-Club程序员社区是一个专为程序员设计的在线学习平台，目前注册用户规模10000+，日均活跃用...",
+      "excerpt": "上面这位学员简历的项目二没突出亮点和难点，投出去面试机会可能不多，经过和老师沟通后，着重优化了第二个项目《Sun-Club程序员社区》，优化如下： 项目名称： Sun-Club程序员社区 项目描述： Sun-Club程序员社区是一个专为程序员设计的在线学习平台， 目前注册用户规模10000+，日均活跃用户1000+。 它利用微服务架构和领域驱动设计（DDD）思想，实现了一个高效的题库管理系统和智能化的面试训练平台。该项目集成了Spring Boot、Spring Cloud Alibaba等先进技术，提供了统一认证、权限管理以及动态题目处理等核心功能，旨在通过优化学习资源和训练流程，提升程序员的技能和面试准备效率。 技术栈与工具： Spring Boot, Spring Cloud Alibaba, MyBatis-Plus + MySQL + Redis + kafka + Sa-Token 核心亮点： 高效的题库管理系统 技术架构 ：采用Spring Boot, Spring Cloud Alibaba, MyBatis-Plus等技术栈，构建了一个高效的题库管理系统。 领域驱动设计（DDD） ：通过领域驱动设计优化题目和鉴权模块，增强了系统的独立性和灵活性，便于未来扩展。 智能化的面试训练平台 智能化训练 ：实现一个智能化的面试训练平台，通过微服务架构和领域驱动设计（DDD）思想，提高了面试训练的效率和效果。 微信登录集成 ：微信登录微服务封装与集成，实现与微信公众号的对接，封装微信回调处理逻辑，提升用户登录便捷性。 统一认证与权限管理 RBAC模型 ：使用RBAC鉴权模型结合Sa-Token框架，统一实现了网关层的Token校验以及权限验证，确保每次请求的合法性及用户身份的准确性。 数据库优化 ：通过引入分类、题目、标签三个核心维度，优化了数据库架构，进一步提升了题目管理的灵活性与展示效果。 题目类型处理引擎设计 工厂模式和策略模式 ：采用工厂模式和策略模式对不同题目类型的处理逻辑进行解耦，增强了代码的可维护性和扩展性。 动态题目生成 ：通过工厂模式动态生成题目类型实例，使用策略模式处理题目的不同逻辑，提高了系统的灵活性。 系统性能优化 复杂SQL优化 ：结合业务场景优化复杂SQL，将查询时间从30秒级优化到1秒内，提高数据库访问效率。 读写分离 ：实现读写分离，利用多级缓存减少数据库访问压力，提升系统整体吞吐量。 安全性设计 细粒度权限控制 ：实现了基于RBAC的细粒度权限控制，确保系统的安全性。 防刷限流机制 ：设计防刷限流机制，有效防止恶意攻击，保障系统稳定运行。 数据加密 ：实现敏感数据加密存储和传输机制，保护用户数据安全。 技术难点及解决方案： 文档处理性能优化： 设计基于MinIO的分布式文件存储方案，支持PB级文档存储 实现文档断点续传"
+    },
+    {
+      "slug": "xgv1mu3hgx55avxg",
+      "title": "蚂蚁金服面试",
+      "url": "/tulingzhouyu/db22bv/xgv1mu3hgx55avxg",
+      "toc_path": [
+        "面试必看",
+        "最全面经",
+        "蚂蚁金服面试"
+      ],
+      "toc_level": 2,
+      "toc_index": 90,
+      "word_count": 749,
+      "updated_at": "2023-09-05T11:19:38.000Z",
+      "primary_category": "resume-project",
+      "primary_category_name": "简历与项目表达",
+      "related_categories": [
+        "resume-project",
+        "java-collections",
+        "jvm-memory-gc",
+        "os-linux",
+        "spring-core"
+      ],
+      "question_type": "resume_project",
+      "question_type_name": "简历项目题",
+      "levels": [
+        "senior",
+        "campus"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "项目",
+        "难点",
+        "面试官",
+        "面经",
+        "HashMap",
+        "ConcurrentHashMap",
+        "JVM",
+        "垃圾回收",
+        "内存模型",
+        "调优",
+        "Linux",
+        "线程",
+        "Spring"
+      ],
+      "summary": "蚂蚁金服面试分享第一面10.4(电话面试)1.自我介绍2.项目情况： 1&gt; 选择最为熟悉的一到两个项目说明，提及该项目中的难点问题，以及如何针对该项目的开展 2&gt; 为什么做这个项目(避免被动安排这个话题) 3&gt; 解释项目中遇到的难点是如何攻克，最难的点是什么。3.基础模块考察(面试官问) 1&gt;...",
+      "excerpt": "蚂蚁金服面试分享 第一面10.4(电话面试) 1.自我介绍 2.项目情况： 1> 选择最为熟悉的一到两个项目说明，提及该项目中的难点问题，以及如何针对该项目的开展 2> 为什么做这个项目(避免被动安排这个话题) 3> 解释项目中遇到的难点是如何攻克，最难的点是什么。 3.基础模块考察(面试官问) 1> 模块化的好处 2> http协议 3> HashMap和ConcurrentHashMap的区别，以及两者的优缺点 4> 数据库(事物，加锁，ORM) 5> JVM原理 6> jdk源码，以及线程(关键在线程)，Java垃圾回收机制 7> Linux 了解多少 8> 对设计模式的看法和认知 9> 关于树的算法题-二叉树的锯齿形层次遍历 第二面10.18(现场面试) 1.背景了解： 1> 为什么选择编程这条路？ 2> 平常有没有自学，对待自学有没有好的方式方法 3> 平常喜欢看些什么书籍 2.项目考察:（面试官会挑选你在电话中没有提及的项目进行提问） 1> 项目最终实现效果 2> 项目具体部分使用的设计模式并简述选择理由 3> 项目运行过程中成员是否曾就某一点发生争执？作为Leader你是如何解决的？具体事例？ 3.技术考察: 1> 数据库的范式 2> JVM内存模型及调优 3> 用过哪些算法？选择其一进行具体说明，为何会使用该算法？ 4> 如何解决高并发问题 5> 为什么我们要使用Spring呢？ 6> Spring底层代码了解多少？有没有进行解析进行再次封装？ 7> Linux 库函数和内核的调用 8> 你了解JAVA虚拟机吗？能解释一下底层的模块吗？ 9> 有写过分布式的业务吗？ 10> 分布式存储呢？ 11> 你觉得分布式的话会遇到什么问题呢？ （这个地方给自己挖了个坑，提及到了CAP问题，然而自己并不知道） 4.LintCode 算法题 - 最小子串覆盖。 5.想要问的问题(这里要表现的虚心好学即可) 第三面10.22(HR面试) 1.业余爱好 2.你觉得你在项目运行过程中作为Leader是否最大限度发挥了队员的优势？具体事例？ 3.如何看待阿里在大数据方面的投入？对蚂蚁金服的发展有什么看法？ 4.职业规划 总结：适当藏拙，谨慎作答，尽量将话题引向自己熟悉的方向，引导面试官跟着你的思维进行提问"
+    },
+    {
+      "slug": "sd0wk5ebvsi5i8hw",
+      "title": "腾讯&阿里&携程面试",
+      "url": "/tulingzhouyu/db22bv/sd0wk5ebvsi5i8hw",
+      "toc_path": [
+        "面试必看",
+        "最全面经",
+        "腾讯&阿里&携程面试"
+      ],
+      "toc_level": 2,
+      "toc_index": 93,
+      "word_count": 3385,
+      "updated_at": "2023-09-05T15:16:46.000Z",
+      "primary_category": "resume-project",
+      "primary_category_name": "简历与项目表达",
+      "related_categories": [
+        "resume-project",
+        "java-core",
+        "algorithm",
+        "performance-optimization",
+        "jvm-memory-gc"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "campus",
+        "senior"
+      ],
+      "level_names": [
+        "校招/应届生",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "项目",
+        "难点",
+        "面试官",
+        "面经",
+        "算法",
+        "二叉树",
+        "动态规划",
+        "优化",
+        "RT",
+        "堆",
+        "栈"
+      ],
+      "summary": "阿里一面没打招呼突击电话面试（30min）地点ok？时间ok？（base杭州，暑期，全部ok ok ok）简单自我介绍一下，项目经历选一个说说？项目中对于没有标签的数据，怎么处理，还有什么别的方法？（我用的远程监督，别的还有one-shot zero-shot label embedding）...",
+      "excerpt": "阿里 一面 没打招呼突击电话面试（30min） 地点ok？时间ok？（base杭州，暑期，全部ok ok ok）简单自我介绍一下，项目经历选一个说说？ 项目中对于没有标签的数据，怎么处理，还有什么别的方法？（我用的远程监督，别的还有one-shot zero-shot label embedding） 假设一个情景题，微博创立初期，短文本，10w数据集，无监督，分类怎么做（我答的用label embedding做或者用embedding+聚类kmeans） embedding怎么实现？（fasttext or word2vec，不能用BERT，数据量大不合适）补充：你说的是词向量，句子向量怎么做呢（+average pooling最常用，还有别的方法没列举） 除了你说的方法，还有别的方法可以吗？U-learning听说过吗？（没听清？啥learing？这个真不知道，只听说过Q-learning） kmeans的k怎么选择，这么做效果好吗？为什么？（k不知道，具体情况具体分析吧（编不出来了），效果不好） 那如果不用聚类，别的方法怎么做，提示：抽取关键字（关键字抽取可以用词与句子做相似度匹配） 按你说的做不具有通用性， 那如果是长文本，又怎么做，有什么区别（长文本用词频统计+停用词过滤） 你没回答出我想要的答案，因为一个微博可能属于多个类别（多类别无监督分类） 快排知道吗？稳定不？（不稳定，因为会交换顺序） bagging、boosting知道吗？（知道，属于ensemble，叽里哇啦叽里哇啦） 用啥语言，用啥框架（python，pytorch） 反问：实习时间？ 反问：表现如何？ 个人体会：面试官人超好，很客气。感觉工程能力还有待提高，很多东西还是停留在理论上。kmeans自己挖的坑，无语了。。。后面问了大佬，这个情景题可能是LDA之类的主题模型，或者是手动标记数据，再训练。或者是用迁移学习。 二面 约好的电话面试（30min） 自我介绍，问论文（简单介绍一下） 问比赛，效果怎么样，名次之类的（问啥答啥） 二叉树有了解吗，遍历有哪些（前中后层次）项目用过哪些数据结构（好像没有，都是用python做的） 动态规划了解吗，解释一下，填表是怎么做的（吧啦吧啦） 操作系统了解吗？（本科学过，现在忘了。。） Linux会用吗（会，一般用来跑实验和配环境）Linux debug的时候怎么做的（我用的nohup，输出log日志来debug） 计算机网络学过吗？（本科学过，现在忘了。。）那学过哪些课（ML DeepL NLP）DeepL的课程作业有吗（没） BERT模型说一下，历史、演变说一下（RNN、LSTM、ELMo、Attention、Transformer、GPT、BERT、Auto-Encoder、Auto-Regression、Positional Encoder"
+    },
+    {
+      "slug": "nzzn4r5i0q20gemp",
+      "title": "线程调用2次start会怎样",
+      "url": "/tulingzhouyu/db22bv/nzzn4r5i0q20gemp",
+      "toc_path": [
+        "并发编程",
+        "线程调用2次start会怎样"
+      ],
+      "toc_level": 1,
+      "toc_index": 266,
+      "word_count": 496,
+      "updated_at": "2024-06-03T07:51:16.000Z",
+      "primary_category": "resume-project",
+      "primary_category_name": "简历与项目表达",
+      "related_categories": [
+        "resume-project",
+        "java-concurrency",
+        "os-linux",
+        "performance-optimization",
+        "java-core"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "面试官",
+        "并发",
+        "线程",
+        "Java",
+        "异常"
+      ],
+      "summary": "各种各样五花八门的面试题让你防不胜防！     今天一个5年经验的小伙伴去面试被问到：线程调用2次start会怎样，  直接就没答上来， 这没做过啊！ 谁有事没事调用2次start()。哈喽大家好！我是徐庶， 如果有打算面试的同学， 我这里有一份80万字面试题资料， 各种你没见过的面试题都总结...",
+      "excerpt": "​ 各种各样 五花八门的面试 题让你 防不胜防 ！ 今天一个5年经验的小伙伴去面试被问到： 线程调用2次start 会怎样， 直接就没答上来， 这没做过啊 ！ 谁有事没事调用2次start() 。 ​ 哈喽大家好！我是徐庶， 如果有打算面试的同学， 我这里有一份80万字面试题资料， 各种你没见过的面试题都总结在里面 ，需要的小伙伴在评论区扣666. ​ 我们知道 ， 虽然很多八股文面试题中说 Java创建线程的方式有3种、4种，或者更多种 ，但实际上他们 底层都是new Thread() ​ 那当 创建完一个Thread ，这时线程处于 NEW状态 ，那这时 调用start() 方法，会让线程 进入到RUNNABLE状态 。 那如果在 RUNNABLE的线程再次调用start呢 ？其实就会 线程状态的异常 。 ​ 那面试官接着问， 为什么会报错呢 ？ 这个时候很多人 想楱面试官 ， 其实没什么这么多为什么， 就是底层源码在 调用start() 方法的时候 针对状态 做了判断 ， 如果 不是NEW状态就会 报线程状态的 异常 。 ​ 那面试官接着继续问！ 如果 线程执行完，再调用一次start 又会怎么样 ？ 那 线程 运行完会进入TERMINATED 状态 ！ 也不是NEW状态！ 所以肯定也是报错啊！ ​ 所以这个面试题说白了就是 另一种线程状态的考核方式 ， 你要知道 线程有几种状态 ， 只要知道线程只能是 刚NEW 出来的才可以start() ; 记住了没有！ 如果看完有帮助那还是得给徐庶老师一个三连哈， 这样我才有继续更新的动力！"
+    },
+    {
+      "slug": "cb2gdq7s7dydefer",
+      "title": "启动线程为何调用start而不是run方法",
+      "url": "/tulingzhouyu/db22bv/cb2gdq7s7dydefer",
+      "toc_path": [
+        "并发编程",
+        "启动线程为何调用start而不是run方法"
+      ],
+      "toc_level": 1,
+      "toc_index": 270,
+      "word_count": 916,
+      "updated_at": "2026-01-08T05:55:50.000Z",
+      "primary_category": "resume-project",
+      "primary_category_name": "简历与项目表达",
+      "related_categories": [
+        "resume-project",
+        "java-concurrency",
+        "os-linux",
+        "performance-optimization",
+        "java-core"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "expert"
+      ],
+      "level_names": [
+        "专家/P7+"
+      ],
+      "keywords": [
+        "面试官",
+        "并发",
+        "线程",
+        "锁",
+        "synchronized",
+        "操作系统",
+        "Linux",
+        "Java",
+        "异常"
+      ],
+      "summary": "一、 标准面试回答模版（建议背诵）面试官： 启动线程为何调用 start() 而不是 run()？Fox版标准回答：“这不仅是方法名的区别，更是资源调度和方法调用的区别。run() 只是普通方法调用",
+      "excerpt": "一、 标准面试回答模版（建议背诵） 面试官： 启动线程为何调用 start() 而不是 run() ？ Fox版标准回答： “这不仅是方法名的区别，更是 资源调度 和 方法调用 的区别。 run() 只是普通方法调用 ： 如果直接调用 run() ，它仅仅是在 当前线程 （比如 main 线程）中调用了一个普通的 Java 方法。代码会 顺序执行 ，不会创建新的调用栈，也就无法实现并发。 start() 才是启动线程 ： 调用 start() 方法时，JVM 会执行一系列复杂的底层操作： 首先检查线程状态（确保未被启动过）。 然后调用 private native void start0() 本地方法。 关键点 ： start0() 会请求操作系统分配系统级资源，创建一个新的 原生线程（Native Thread） ，并分配新的 程序计数器 和 虚拟机栈 。 最后，这个新诞生的线程会自动回调 run() 方法。 一句话总结：调用 run() 是在‘原来的路’上跑，调用 start() 是修了一条‘新的路’去跑。 ” 二、 代码层面对比（Talk is cheap） 这段代码直接打印出执行线程的名字，真相一目了然。 ​ 三、 源码级解析（Fox 杀手锏） 如果面试官想深挖，你要能把 JDK 里的 start() 方法逻辑说出来，这才是 P7 级别的回答 。 打开 java.lang.Thread 源码： ​ 解析： synchronized ： start 方法是加锁的，保证了状态检查和启动过程的原子性。 start0() ：这是一个 native 方法。在 JVM (Hotspot) 的 C++ 源码中，它最终会调用操作系统的 API（如 Linux 的 pthread_create ）来真正创建一个内核级线程。 只有当这个内核线程创建成功后，JVM 才会回调 Java 层面的 run() 方法。 四、 Fox的避坑指南 如果面试官追问： “如果我非要调用两次 start() 会怎么样？” 回答： “会抛出 IllegalThreadStateException 异常。 因为 start() 方法第一行就在检查 threadStatus 。 一旦线程启动，状态就变了（不再是 NEW），即使线程执行完变成了 TERMINATED 状态，也不能再次复用 start() 重新启动。 线程是属于一次性消耗品，想复用任务，请用线程池！ ” ​ 附录 ：start的jvm源码分析 ​"
+    },
+    {
+      "slug": "xa5ncygcogxlln05",
+      "title": "说下你对DDD的理解",
+      "url": "/tulingzhouyu/db22bv/xa5ncygcogxlln05",
+      "toc_path": [
+        "SpringCloud",
+        "说下你对DDD的理解"
+      ],
+      "toc_level": 1,
+      "toc_index": 567,
+      "word_count": 1333,
+      "updated_at": "2026-01-19T11:45:04.000Z",
+      "primary_category": "resume-project",
+      "primary_category_name": "简历与项目表达",
+      "related_categories": [
+        "resume-project",
+        "docker-k8s",
+        "spring-core",
+        "spring-cloud",
+        "project-system-design"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "expert",
+        "junior"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "专家/P7+",
+        "初级/1-3年"
+      ],
+      "keywords": [
+        "项目",
+        "面试官",
+        "CRUD",
+        "Service",
+        "Spring",
+        "SpringCloud",
+        "订单"
+      ],
+      "summary": "一、 标准面试回答模版（建议背诵）面试官： 谈谈你对 DDD 的理解，你在项目中是怎么落地的？Fox版标准回答： “如果你上来就跟我谈‘四层架构’、‘Repository’，那你只是学了 DDD 的皮毛。 DDD 不是一套框架，而是一种处理高度复杂业务的思维方式。我对 DDD 的理解，分为‘战...",
+      "excerpt": "一、 标准面试回答模版（建议背诵） 面试官： 谈谈你对 DDD 的理解，你在项目中是怎么落地的？ Fox版标准回答： “如果你上来就跟我谈‘四层架构’、‘Repository’，那你只是学了 DDD 的皮毛。 DDD 不是一套框架，而是一种 处理高度复杂业务的思维方式 。 我对 DDD 的理解，分为‘ 战略设计’和‘战术设计’ 两个层面： 战略设计（Strategic Design）—— 这是架构师的战场： 核心是为了 划定边界 。通过 通用语言（Ubiquitous Language） 和业务专家对齐认知，识别出 核心域、支撑域和通用域 。 最重要的是划分 限界上下文（Bounded Context） 。在微服务架构中，一个限界上下文通常就对应一个微服务。这解决了‘微服务怎么拆’的世界级难题。 战术设计（Tactical Design）—— 这是程序员的战场： 核心是为了 保证业务逻辑的高内聚 。 我们要定义 聚合（Aggregate） 和 聚合根（Aggregate Root） 来保证数据的一致性边界。 我们要区分 实体（Entity） 和 值对象（Value Object） 。 最关键的是，我们要摒弃 贫血模型（Anemic Model） ，转向 充血模型（Rich Model） ，把业务逻辑封装在领域对象内部，而不是散落在 Service 层。 一句话总结： DDD 的本质，是 让软件架构与业务领域保持高度一致 ，从而控制业务复杂度。” 二、 核心原理与代码层面的体现 1. 场景一：贫血模型 vs 充血模型（最能体现 DDD 味道的地方） 面试官潜台词： 你写的代码是面向对象（OO）还是面向过程？ 贫血模型（传统 Spring 开发模式）： User 对象只有 @Data (Getter/Setter)。 业务逻辑全在 UserService 里。 Fox 点评： “这不叫面向对象，这叫**‘披着对象外衣的面向过程’**。Service 层臃肿不堪，Entity 沦为单纯的数据载体。” 充血模型（DDD 模式）： User 对象拥有业务行为。 代码演示： ​ 2. 场景二：值对象（Value Object）的妙用 面试官潜台词： 你知道什么是不可变对象吗？ 地址（Address） 就是个典型的值对象。 它没有 ID，只有属性（省、市、区）。 两个地址如果属性完全一样，它们就是相等的。 代码体现： 在 DDD 中，修改地址 不是 user.setProvince(&quot;xx&quot;) ，而是直接 替换 整个对象： user.changeAddress(new Address(&quot;北京&quot;, &quot;海淀&quot;, ...)) 。 三、 Fox 的深度解析 如果面试官追问：“ DDD 这么好，为什么国内很多公司推行不下去"
+    },
+    {
+      "slug": "pxf2btgv0sg5uyy0",
+      "title": "策略模式在实际项目中的灵活应用",
+      "url": "/tulingzhouyu/db22bv/pxf2btgv0sg5uyy0",
+      "toc_path": [
+        "设计模式",
+        "策略模式在实际项目中的灵活应用"
+      ],
+      "toc_level": 1,
+      "toc_index": 783,
+      "word_count": 404,
+      "updated_at": "2025-01-25T06:36:03.000Z",
+      "primary_category": "resume-project",
+      "primary_category_name": "简历与项目表达",
+      "related_categories": [
+        "resume-project",
+        "java-core",
+        "algorithm"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "项目",
+        "算法"
+      ],
+      "summary": "下面我将通过一个具体的电商促销策略案例，详细阐述策略模式的实际应用：// 定义促销策略接口   public interface PromotionStrategy {       double calculatePrice(double originalPrice);   }    // 具...",
+      "excerpt": "下面我将通过一个具体的电商促销策略案例，详细阐述策略模式的实际应用： 策略模式优势： 开闭原则：新增策略无需修改现有代码 算法独立性：各策略相互解耦 运行时动态切换策略 消除大量条件语句 提高代码可维护性 实践建议： 策略数量不宜过多，避免类爆炸 策略之间应该是平等的 优先使用组合，而非继承 结合工厂模式管理策略创建 通过这种设计，电商平台可以轻松应对不同节日、不同场景的促销策略，实现灵活的价格计算逻辑。"
+    },
+    {
+      "slug": "kz7izsczlmi86027",
+      "title": "购物车系统怎么设计",
+      "url": "/tulingzhouyu/db22bv/kz7izsczlmi86027",
+      "toc_path": [
+        "项目设计场景题",
+        "购物车系统怎么设计"
+      ],
+      "toc_level": 1,
+      "toc_index": 827,
+      "word_count": 34,
+      "updated_at": "2026-01-22T14:48:14.000Z",
+      "primary_category": "resume-project",
+      "primary_category_name": "简历与项目表达",
+      "related_categories": [
+        "resume-project"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "项目"
+      ],
+      "summary": "此处为语雀视频卡片，点击链接查看：项目场景面试：购物车系统怎么设计.mp4",
+      "excerpt": ""
+    },
+    {
+      "slug": "ir2n1zxegmny481u",
+      "title": "OA、ERP这些CRUD的项目如何提炼亮点",
+      "url": "/tulingzhouyu/db22bv/ir2n1zxegmny481u",
+      "toc_path": [
+        "项目设计场景题",
+        "OA、ERP这些CRUD的项目如何提炼亮点"
+      ],
+      "toc_level": 1,
+      "toc_index": 832,
+      "word_count": 3465,
+      "updated_at": "2025-09-24T11:23:30.000Z",
+      "primary_category": "resume-project",
+      "primary_category_name": "简历与项目表达",
+      "related_categories": [
+        "resume-project",
+        "redis-cache",
+        "project-system-design",
+        "redis-lock",
+        "java-concurrency"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "junior",
+        "senior",
+        "middle"
+      ],
+      "level_names": [
+        "初级/1-3年",
+        "高级/5-8年",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "简历",
+        "项目",
+        "亮点",
+        "面试官",
+        "STAR",
+        "CRUD",
+        "包装",
+        "Redis",
+        "缓存",
+        "穿透",
+        "击穿",
+        "方案",
+        "分布式锁",
+        "并发"
+      ],
+      "summary": "要让 OA/ERP 这类 “CRUD 表象” 的项目体现亮点，核心不是 “造假”，而是挖掘隐藏的技术深度、业务价值和个人解决问题的能力—— 把 “简单执行” 转化为 “主动优化、解决痛点、创造价值” 的故事。下面从「简历包装维度」和「面试聊细节的切入点」两方面，给你具体可落地的方案。一、简历包...",
+      "excerpt": "要让 OA/ERP 这类 “CRUD 表象” 的项目体现亮点，核心不是 “造假”，而是 挖掘隐藏的技术深度、业务价值和个人解决问题的能力 —— 把 “简单执行” 转化为 “主动优化、解决痛点、创造价值” 的故事。下面从「简历包装维度」和「面试聊细节的切入点」两方面，给你具体可落地的方案。 一、简历包装：从 5 个核心维度 “提炼亮点”（附案例） OA/ERP 的本质是 “解决企业内部效率 / 成本问题”，但多数人只写 “做了 XX 模块”，却没说 “解决了什么痛点、用了什么技术、带来了什么结果”。简历要做的就是把 “CRUD 动作” 转化为 “价值输出”，用「STAR 法则（场景 - 任务 - 行动 - 结果）」+「数据化」呈现。 维度 1：业务价值 —— 从 “功能开发” 到 “降本增效” 企业招人的核心是 “解决业务问题”，先把项目和 “效率提升、成本降低、风险规避” 绑定，瞬间脱离 “纯 CRUD” 标签。 反面案例 ：“开发 OA 系统的请假审批模块，实现请假申请、审批功能。” 正面案例 ：“针对公司 3000 + 员工‘手动请假审批（邮件 + Excel 统计）耗时 2 天 / 次、HR 月均花 120 小时核对考勤’的痛点，负责 OA 请假审批模块的设计与开发；通过对接 HR 考勤系统自动同步数据、集成流程引擎实现审批节点动态配置，最终审批时长缩短至 1 小时内，HR 月均统计时间减少 90 小时，考勤数据误差率从 8% 降至 0.5%。” 挖掘方向 ： 你的模块覆盖多少用户？（如 “支撑全国 5 个分公司、1000 + 销售使用的 ERP 客户管理模块”） 替代了什么低效的旧模式？（手动 Excel、线下签字、多系统重复录入） 带来了多少可量化的提升？（时间缩短 XX%、成本减少 XX 元、误差率降低 XX%） 维度 2：技术深度 —— 从 “用框架” 到 “解难题” CRUD 背后藏着大量技术细节，比如 “数据量大了怎么处理？并发冲突怎么解决？跨系统数据怎么同步？”，把这些 “隐性技术决策” 挖出来，就是亮点。 反面案例 ：“用 Spring Boot+MyBatis 开发 ERP 库存模块。” 正面案例 ：“负责 ERP 库存模块的核心开发，面对‘日均 10 万 + 库存变动记录、采购 / 销售 / 仓库三端并发更新导致数据不一致’的问题：1）采用 MyBatis-Plus 实现基础 CRUD，同时自定义 SQL 优化库存查询（添加联合索引、避免全表扫描），将‘库存余量查询’接口响应时间从 800ms 压减至 150ms；2）引入 Redisson 分布式锁解决并发更新冲突，结合 Seata TCC 模式保证‘库存扣减 + 订单创建’的事务一致性，上线后库存数据不一致率为 0，支持单日 3 万 + 订单峰值。” 挖掘方向（OA/ERP 高频"
+    },
+    {
+      "slug": "vf52k9nqsw3oveqs",
+      "title": "面试问到项目场景问题如何应对",
+      "url": "/tulingzhouyu/db22bv/vf52k9nqsw3oveqs",
+      "toc_path": [
+        "项目设计场景题",
+        "面试问到项目场景问题如何应对"
+      ],
+      "toc_level": 1,
+      "toc_index": 885,
+      "word_count": 463,
+      "updated_at": "2024-12-20T01:39:53.000Z",
+      "primary_category": "resume-project",
+      "primary_category_name": "简历与项目表达",
+      "related_categories": [
+        "resume-project",
+        "project-system-design",
+        "performance-optimization",
+        "java-core",
+        "java-concurrency"
+      ],
+      "question_type": "resume_project",
+      "question_type_name": "简历项目题",
+      "levels": [
+        "senior",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "项目",
+        "亮点",
+        "难点",
+        "STAR",
+        "方案",
+        "高并发",
+        "性能",
+        "优化",
+        "并发"
+      ],
+      "summary": "作为应对项目场景面试题，我建议可以从以下几个方面来准备和回答：准备阶段梳理1-2个具有代表性的项目经验，包括业务场景、技术架构、解决方案等针对每个项目，准备性能优化、高并发、数据一致性等典型技术难点总结项目中的失败教训和成长经验回答框架（STAR法则）Situation：简要描述项目背景和面临...",
+      "excerpt": "作为应对项目场景面试题，我建议可以从以下几个方面来准备和回答： 准备阶段 梳理1-2个具有代表性的项目经验，包括业务场景、技术架构、解决方案等 针对每个项目，准备性能优化、高并发、数据一致性等典型技术难点 总结项目中的失败教训和成长经验 回答框架（STAR法则） Situation：简要描述项目背景和面临的问题 Task：明确你在项目中的职责和要解决的具体任务 Action：详细说明解决问题的思路和具体实施步骤 Result：阐述最终结果和产生的价值 技术亮点展示 解释技术选型的考虑因素（性能、可用性、成本等） 分析方案的优劣势，以及为什么选择当前方案 展示对底层原理的理解和掌握程度 适时引入相关的设计模式和架构原则 重点注意事项 保持叙述的逻辑性和条理性 突出个人的贡献和思考 适度引入技术细节，避免过于表面 准备相关的数据支撑，如性能提升指标 表现出解决问题的主动性和创新思维 常见陷阱避免 不要过分夸大个人角色 避免技术描述过于空泛 不要回避项目中的问题和挑战 保持实事求是的态度 如果遇到没有相关经验的场景，可以这样应对： 诚实说明没有直接经验 分析类似场景的解决方案 展示解决问题的思路和学习能力 表达对新技术的学习兴趣"
+    },
+    {
+      "slug": "lorrcwg9qhgaeo7l",
+      "title": "拜托，别再背八股文了，现在都会结合项目场景问",
+      "url": "/tulingzhouyu/db22bv/lorrcwg9qhgaeo7l",
+      "toc_path": [
+        "项目设计场景题",
+        "拜托，别再背八股文了，现在都会结合项目场景问"
+      ],
+      "toc_level": 1,
+      "toc_index": 887,
+      "word_count": 932,
+      "updated_at": "2024-07-15T14:21:18.000Z",
+      "primary_category": "resume-project",
+      "primary_category_name": "简历与项目表达",
+      "related_categories": [
+        "resume-project",
+        "project-system-design",
+        "redis-cache",
+        "netty-network",
+        "java-core"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle",
+        "expert"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年",
+        "专家/P7+"
+      ],
+      "keywords": [
+        "项目",
+        "面试官",
+        "系统设计",
+        "架构设计",
+        "方案",
+        "高并发",
+        "秒杀",
+        "Redis",
+        "缓存",
+        "Netty",
+        "NIO",
+        "IO"
+      ],
+      "summary": "作为一个工作了16年的架构师，给大家讲讲项目经验这块面试会怎么问，一般我会让面试者先说一下他们项目的整体架构，讲一下用了哪些技术和核心的业务思路。比如，如果面试者说他们公司用了Dubbo作为服务框架，我会进一步问Dubbo底层的通信框架是什么，是Netty还是Mina，然后再问底层的NIO是什...",
+      "excerpt": "作为一个工作了 16年的架构师 ，给大家讲讲 项目经验 这块面试会怎么问，一般我会让面试者先说一下他们项目的整体架构，讲一下用了哪些技术和核心的业务思路。比如，如果面试者说他们公司用了Dubbo作为服务框架，我会进一步问Dubbo底层的通信框架是什么，是Netty还是Mina，然后再问底层的NIO是什么，网络通信里的长连接和短连接是什么，是否看过Dubbo的源码，源码中对并发技术的运用有哪些印象深刻的地方。通过这些问题，我可以深入了解面试者对技术的掌握程度。 接着，我会深入到 项目的业务细节 ，好的面试官会掌握一个原则： 死扣细节 。比如，如果面试者说用了 Redis ，我会进一步问 哪个业务场景用了Redis ，业务流程是什么，具体选用了 哪种数据结构存放什么数据 ，数据的 过期时间 是什么，如果 缓存过期 了，数据 兜底方案是什么 ， 如何设计的key ， 为什么要这么设计 ，数据放在Redis里是哪个业务来查Redis，为什么要这样做， 如果不用Redis会怎么样 。通过这些问题，我可以看出面试者对 技术的实践有多深 ，是否经历过 复杂业务架构 下的 分布式系统设计和开发 。 如果面试者面试的是 中级岗位 ，我会看他们是否 技术整体OK ， 独立负责过核心模块的开发 ，对 各种技术有一定的实践经验 。如果是 高级或资深岗位 ，我会看他们是否 带领一个小团队独立负责 过一个 有一定复杂度和难度的完整系统的架构设计和开发 。如果是 架构师岗位 ，我会要求他们在公司里 主导过很多人协作完成的大型而且复杂的项目 群，对 大型系统架构 有 深度的思考 和 整体的把控 ，项目要有足够的 技术挑战 ，比如 大用户量、高并发、海量数据等 。 然后，我会考察系统设计能力，尤其是高级工程师及以上的岗位。我会用一些 业务场景 来问面试者如何设计系统架构，比如如何设计一个电商秒杀系统架构，如何设计一个消息推送系统架构，双11大促时如何设计系统的动态扩容/缩容机制。这些问题可以考察面试者的架构设计思维，尤其是针对没接触过的业务场景。 最后，对于有 项目管理经验的同学 我会考察他是 如何管理项目 ， 把控项目进度 以及 团队协作 的，还有 沟通表达能力 如何， 性格是否踏实 ， 是否有责任心 等等。 通过以上问题可以全面考察面试者的技术面是否完整，是否有几个技术领域有足够的深度，做过什么样的项目，项目的实践经验如何，把控过多大的团队和项目，对全新业务场景的系统设计能力如何，基本功如何，综合素质如何等等。"
+    },
+    {
+      "slug": "ggapefm27n8gcuie",
+      "title": "【GIT】你还不知道Merge和Rebase的区别吗？",
+      "url": "/tulingzhouyu/db22bv/ggapefm27n8gcuie",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "【GIT】你还不知道Merge和Rebase的区别吗？"
+      ],
+      "toc_level": 2,
+      "toc_index": 1010,
+      "word_count": 1590,
+      "updated_at": "2025-11-07T05:29:34.000Z",
+      "primary_category": "resume-project",
+      "primary_category_name": "简历与项目表达",
+      "related_categories": [
+        "resume-project",
+        "observability-troubleshooting",
+        "java-core",
+        "security-auth"
+      ],
+      "question_type": "resume_project",
+      "question_type_name": "简历项目题",
+      "levels": [
+        "expert",
+        "campus"
+      ],
+      "level_names": [
+        "专家/P7+",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "项目",
+        "排查",
+        "日志",
+        "异常",
+        "安全"
+      ],
+      "summary": "前言：为何要关心分支合并策略？在现代软件开发中，Git已成为版本控制的绝对标准。而分支 (Branch) 作为Git的精髓，使得并行开发、功能迭代和Bug修复变得轻而易举。然而，当我们将辛苦开发的成果合并回主干时，git merge 和 git rebase",
+      "excerpt": "前言：为何要关心分支合并策略？ 在现代软件开发中，Git已成为版本控制的绝对标准。而分支 (Branch) 作为Git的精髓，使得并行开发、功能迭代和Bug修复变得轻而易举。然而，当我们将辛苦开发的成果合并回主干时， git merge 和 git rebase 这两个最常用的命令，却常常让初学者感到困惑，甚至让一些有经验的开发者心存畏惧。 选择不同的合并策略，不仅会影响你的提交历史（commit history）是否干净、可读，更直接关系到团队协作的效率和代码维护的成本。一个混乱、难以追溯的提交历史，是项目管理的噩梦。因此，理解并精通 merge 与 rebase ，是每一位专业开发者的必备技能。 一、Git Merge：忠实记录每一次“相遇” git merge 的核心是 尊重并保留历史 。如上图所示，它会创建一个特殊的“合并提交”（Merge Commit），这个提交就像一个项目日志，明确宣告：“在此时此刻， feature 分支的工作成果正式汇入 release 分支。” 这个新提交拥有两个父节点，分别指向两个合并前的分支末端。这种结构忠实地记录了代码演进的真实路径——包括每一次的分叉与汇合。它提供了完整的可追溯性，让我们能清晰地知道每一段代码来自哪个开发分支，为代码审计和问题排查提供了坚实的基础。 二、Git Rebase：让你的提交历史“宛如新生” git rebase 的目标是 创造一个更整洁、更具叙事性的线性历史 。它通过“变基”操作，将你的分支“嫁接”到目标分支的最新位置。 这个过程会 重写（Re-write） 你的提交历史。原有的提交（C、D）被废弃，取而代之的是拥有全新哈希值的新提交（C'、D'）。最终效果仿佛你的功能开发从一开始就是在 release 分支的最新版本上进行的。这种线性的历史非常清晰，易于阅读和理解，就像在读一个按时间顺序讲述的故事。当它再合并到主干时，通常会以“快进”（Fast-forward）方式进行，不产生额外的合并提交。 三、核心禁忌：为何绝不能Rebase公共分支？ 黄金法则：永远不要对一个已被推送到远程、且团队共享的分支执行 rebase 操作。 rebase 的“重写历史”特性是其强大之处，也是其危险所在。当你对一个公共分支 rebase 并强制推送后，你实际上是销毁了团队成员所依赖的共同历史基线，并用一个全新的、不兼容的版本取而代之。 对于其他成员来说，远程仓库的历史突然“变异”了。他们本地的提交历史与这个新的远程历史不再有共同的祖先。因此，Git会拒绝他们的推送，以防止进一步破坏历史。解决这种“历史分叉”的冲突非常痛苦和耗时，是团队协作中的一场噩梦。 四、实战指南：何时用Merge，何时用Rebase？ 上图的决策流程，源于两种策略各自的核心价值。 优先选择 Git Merge 的场景，本质上是“安全优"
+    },
+    {
+      "slug": "mxyidxwg6tivafh5",
+      "title": "布隆过滤器，你真的懂吗？",
+      "url": "/tulingzhouyu/db22bv/mxyidxwg6tivafh5",
+      "toc_path": [
+        "高频面试问题",
+        "楼兰老师",
+        "布隆过滤器，你真的懂吗？"
+      ],
+      "toc_level": 2,
+      "toc_index": 1129,
+      "word_count": 2412,
+      "updated_at": "2025-11-24T13:52:41.000Z",
+      "primary_category": "resume-project",
+      "primary_category_name": "简历与项目表达",
+      "related_categories": [
+        "resume-project",
+        "redis-cache",
+        "project-system-design",
+        "os-linux",
+        "java-collections"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "campus",
+        "senior",
+        "expert"
+      ],
+      "level_names": [
+        "校招/应届生",
+        "高级/5-8年",
+        "专家/P7+"
+      ],
+      "keywords": [
+        "简历",
+        "面试官",
+        "Redis",
+        "架构设计",
+        "方案",
+        "内存",
+        "HashSet"
+      ],
+      "summary": "简历上谁都会写着“精通 Redis”、“擅长处理海量数据”吧？现在面试官问：“现在有 10 亿条黑名单数据，给你 512MB 内存，怎么判断一个 ID 是否在黑名单里？”你立刻回答：“用布隆过滤器。”这一步谁都会。但面试官紧接着会问你下面一些关键问题：布隆过滤器怎么支持数据删除？比如这个黑名单...",
+      "excerpt": "简历上谁都会写着“精通 Redis”、“擅长处理海量数据”吧？ 现在面试官问：“现在有 10 亿条黑名单数据，给你 512MB 内存，怎么判断一个 ID 是否在黑名单里？” 你立刻回答：“用布隆过滤器。” 这一步谁都会。但面试官紧接着会问你下面一些关键问题： 布隆过滤器怎么支持数据删除？比如这个黑名单用户洗白了，怎么将他踢出去？ 2如果不支持删除，工程上如何解决数据更新滞后的问题？ 在这个过程中，布隆过滤器的误判率（False Positive）和漏判率（False Negative）如何控制？ 这三个问题一问出来，就没有那个业务场景那么简单了。很多人支支吾吾半天，最后只会憋出一句：“布隆过滤器……好像不能删吧？” 这就是你简历上写的“精通架构设计”？说不清楚这些工程中实际遇到的问题，你的技术深度在面试官眼里几乎为零。 基础原理与核心价值 要回答这些问题，首先要弄清楚布隆过滤器的基础原理。 布隆过滤器本质上就是一个很长的位图（BitMap）以及 K 个哈希函数。当数据到来时，我不存原始数据，而是通过 K 个哈希函数计算出 K 个位置，并将这些位图中对应的位置都置为 1。 例如，用户 A 的哈希映射结果是 [1, 4, 7]，而用户 B 的哈希映射结果是 [4, 9, 10]。需要特别注意的位置 4：发生了哈希冲突，这意味着两个不同的用户映射到了同一个位置。 查询时，再次通过哈希函数计算数据。如果这 K 个位置全是 1，说明此数据可能存在；如果有任何一个是 0，说明该数据一定不存在。 关于布隆过滤器的设计，主要有以下几方面的考虑： ​ 极致空间效率 ： 布隆过滤器不存储原始数据，而是仅存储位（Bit）。这样，它能够将存储数据的空间需求降至最低。例如，如果使用 HashSet 存储 10 亿个 Long 型 ID，光数据本身就需要约 8GB 内存，这还不包括对象头的开销。而布隆过滤器只需几百兆内存就能容纳这些数据，这样在处理海量数据时，就极大地减少了内存占用。 极速查询 ： 布隆过滤器查询速度与数据集的大小无关，只与哈希函数的数量有关。通过 K 个哈希函数来判断数据是否存在，布隆过滤器可以在常数时间内完成查询操作。因此布隆过滤器非常适合那些需要高速查询的场景。 ​ 数据安全 ： 布隆过滤器不存储明文信息，这样就具有天然的数据脱敏特性。这一点在敏感数据的存储与查询中非常关键，保证了用户信息的隐私与安全性。 致命缺陷 然而，布隆过滤器也存在几个致命缺陷，需特别注意： ​ 存在误判（False Positive） ： 布隆过滤器判断“该数据存在”，但实际上这个数据可能并不存在。这就是他在设计上的根本问题。在业务中需要合理设计，避免造成误解。 ​ 无法删除数据 ： 这是布隆过滤器最大的缺陷！后面也会介绍在工程上如何避免出现问题。 ​ 容量难以扩展 ： 布隆过滤器在初始化"
+    },
+    {
+      "slug": "iwwsi3dx1eff6ual",
+      "title": "大模型面试必杀技：如何保证实时性和多轮对话一致性？",
+      "url": "/tulingzhouyu/db22bv/iwwsi3dx1eff6ual",
+      "toc_path": [
+        "高频面试问题",
+        "楼兰老师",
+        "大模型面试必杀技：如何保证实时性和多轮对话一致性？"
+      ],
+      "toc_level": 2,
+      "toc_index": 1132,
+      "word_count": 3800,
+      "updated_at": "2025-11-03T09:05:27.000Z",
+      "primary_category": "resume-project",
+      "primary_category_name": "简历与项目表达",
+      "related_categories": [
+        "resume-project",
+        "performance-optimization",
+        "ai-llm",
+        "project-system-design",
+        "redis-cache"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle",
+        "campus"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "项目",
+        "难点",
+        "面试官",
+        "性能",
+        "优化",
+        "QPS",
+        "吞吐",
+        "AI",
+        "大模型",
+        "Prompt",
+        "系统设计",
+        "方案",
+        "Redis"
+      ],
+      "summary": "【开场】今天咱们聊一个大模型面试中的高频难题：如何保证实时性和多轮对话一致性？这道题看似简单，实则非常考验你的综合能力。回答好了，能让面试官眼前一亮；回答不好，很容易暴露你对系统设计和工程实践的理解不足。那么，如何才能给出一个让面试官满意的答案呢？咱们一步步来拆解。【第一部分：面试官到底想听什...",
+      "excerpt": "【开场】 今天咱们聊一个大模型面试中的高频难题： 如何保证实时性和多轮对话一致性？ 这道题看似简单，实则非常考验你的综合能力。回答好了，能让面试官眼前一亮；回答不好，很容易暴露你对系统设计和工程实践的理解不足。 那么，如何才能给出一个让面试官满意的答案呢？咱们一步步来拆解。 【第一部分：面试官到底想听什么？】 首先你得明白，面试官问这道题，背后到底想考察你什么？ 其实就三点： 第一，业务理解能力。 你懂不懂用户对&quot;快&quot;&quot;稳&quot;&quot;顺&quot;的真实需求？用户不愿意等太久，系统不能老出错，聊天不能前言不搭后语，这些你都得心里有数。 第二，系统性思考。 你能不能把这个复杂问题拆开，找到关键矛盾，然后给出一套完整的、有层次的解决方案？这考验的是你的思维深度。 第三，工程落地意识。 你说的方案能不能真正落地？有没有考虑到实际工程中的各种坑？有没有架构和优化的意识？这些都是面试官重点关注的。 【第二部分：答题思路怎么组织？】 明白了面试官的意图，接下来咱们看看怎么组织答案。我建议按三步走： 第一步，先总览场景。 开头先把问题场景说清楚，比如这道题主要应用在聊天助手、智能客服、问答系统这些场景，核心诉求就是两个：实时性和多轮对话的上下文一致性。 第二步，针对难点给方案。 然后分别针对这两个难点，给出具体的解决方案。实时性怎么优化？一致性怎么保证？每个点都要讲清楚。 第三步，体现工程意识。 最后别忘了展现你的工程深度，聊聊不同场景下的权衡和取舍，给出一些可量化的评估指标，如果有实际经验，再分享点落地案例和效果数据，这样就更有说服力了。 【第三部分：实时性怎么优化？】 好，咱们先看第一个难点：实时性。怎么让响应速度飞起来？我总结了四大手段。 1. 模型侧优化 首先从模型本身入手。大模型虽然能力强，但推理慢，怎么办？用轻量化技术。 比如 量化 ，把32位浮点数压缩到8位整数，推理速度能提升3到4倍，精度损失却很小。 再比如 蒸馏 ，用大模型当老师，训练一个小模型当学生，小模型能保留大模型90%的能力，但推理速度提升5到10倍，这在工程上非常实用。 还有 裁剪 ，把模型里那些冗余的参数和层给删掉，精简结构，速度自然就快了。 2. 工程加速 第二个手段是工程加速。这个主要靠分布式和并行技术。 比如 分布式推理 ，多个GPU节点并行工作，整体吞吐量就上去了。 再比如 张量并行 ，把一个大模型拆到多张显卡上，每张卡负责一部分计算，这样单个请求的推理速度也能加快。 还有 批处理 ，把多个用户请求打包在一起推理，GPU利用率能提升不少。这些技术组合起来，效果非常明显。 3. 缓存机制 第三个手段是缓存。很多问题用户会反复问，比如&quot;今天天气怎么样&quot;&quot;你们的退款政策是什么&quot;，这些高频问题可以提前算好答案，"
+    },
+    {
+      "slug": "txetkrf16lm0t0xd",
+      "title": "【面试核武器】一个视频彻底搞懂分布式一致性",
+      "url": "/tulingzhouyu/db22bv/txetkrf16lm0t0xd",
+      "toc_path": [
+        "高频面试问题",
+        "楼兰老师",
+        "【面试核武器】一个视频彻底搞懂分布式一致性"
+      ],
+      "toc_level": 2,
+      "toc_index": 1158,
+      "word_count": 1885,
+      "updated_at": "2025-09-30T09:16:41.000Z",
+      "primary_category": "resume-project",
+      "primary_category_name": "简历与项目表达",
+      "related_categories": [
+        "resume-project",
+        "project-system-design",
+        "distributed-transaction",
+        "mq-rocketmq",
+        "devops-release"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle",
+        "campus"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "项目",
+        "面试官",
+        "方案",
+        "库存",
+        "最终一致性",
+        "RocketMQ",
+        "回滚"
+      ],
+      "summary": "面试经常被问到：“同学，来聊聊分布式一致性？”然后，你是不是心里咯噔一下，冷汗都快出来了？别怕！今天，我们就用一个视频的时间，把这个让无数英雄好汉“折腰”的知识点，彻底拿下！看完保证你下次面试，自信满满，轻松通关！那么，到底啥是“分布式一致性”？说白了，就是你有很多台服务器，比如一个电商系统，...",
+      "excerpt": "面试经常被问到：“同学，来聊聊分布式一致性？” 然后，你是不是心里咯噔一下，冷汗都快出来了？ 别怕！今天，我们就用一个视频的时间，把这个让无数英雄好汉“折腰”的知识点，彻底拿下！看完保证你下次面试，自信满满，轻松通关！ ​ 那么，到底啥是“分布式一致性”？ 说白了，就是你有很多台服务器，比如一个电商系统，节点A、B、C都存着商品库存。当一个用户下单，库存减少了，你怎么保证所有服务器上的库存数量都同步更新了？ 你看，就像这样，节点A说库存还剩10个，节点B却说还剩9个，这下好了，顾客来了到底听谁的？系统就乱套了！ 再举个生动的例子，这就好像你和兄弟们开了家联营超市，每个人管一个货架，账本必须随时对得上，不然就是糊涂账！分布式一致性，就是要解决这个“对账”的难题。 ​ 当然啦，这个“对账”的严格程度也不一样，分成了三种模型。 第一种， 强一致性 。绝对的老大哥，最严格！要求数据一旦更新，所有节点必须立刻、马上看到最新的数据，一刻都不能等。像银行转账、金融交易这种场景，一分钱都不能错，就得用它。 第二种， 弱一致性 。这就有点“佛系”了，允许数据在不同节点之间存在一小会儿的延迟和不一致。 而我们最常见的，是它的一个特例—— 最终一致性 。它不要求“立刻”，但保证“最终”大家的数据会是一样的。比如你发个朋友圈，好友晚几秒钟看到，问题不大。这是绝大多数分布式系统的选择，因为它在一致性和性能之间取得了很好的平衡。 ​ 好了，理论听完了，那具体怎么做呢？先来看看老前辈—— 二阶段提交 ，简称2PC。 它有个“协调者”大哥和一堆“参与者”小弟。 第一阶段，大哥先挨个问：“兄弟们，这事儿能办不？”，小弟们如果都觉得OK，就回复“可以”。 第二阶段，大哥看所有人都同意了，就大手一挥：“全体执行！”，大家一起提交事务。 听起来很美好，对吧？但它的问题非常致命！这也是面试基本都会问到的。 它是一个“同步阻塞”的过程，只要有一个小弟卡住了，所有人都得等着。更要命的是，如果协调者大哥自己挂了，所有小弟就群龙无首，直接原地“懵逼”，不知道该提交还是回滚。 你: 为了解决2PC的问题，人们又搞出了它的“补丁版”—— 三阶段提交 ，3PC。 它在2PC的基础上，增加了一个“CanCommit”的预备阶段，还引入了超时机制，减少了之前那种“干等”的阻塞情况。 虽然好了一点，但还是没能从根本上解决数据不一致的问题。所以，它现在用得也比较少了。 接下来，重量级选手登场！ Paxos算法 ！ 它就是神！是分布式一致性领域的“圣经”！理论上完美解决了分布式一致性问题。 每个节点有三个角色：提议者，负责发起提案、接受者，负责参与投票、学习者，负责看戏并同步结果。基本的流程就是提议者Proposer会提议一个值，同时带上提议的编号N，询问大家同意吗？ 投票者 Acceptor，的投票逻辑就是只要你的编号够"
+    },
+    {
+      "slug": "zcx3rqg9b275zfiw",
+      "title": "用户密码，连系统都不能知道",
+      "url": "/tulingzhouyu/db22bv/zcx3rqg9b275zfiw",
+      "toc_path": [
+        "高频面试问题",
+        "楼兰老师",
+        "用户密码，连系统都不能知道"
+      ],
+      "toc_level": 2,
+      "toc_index": 1166,
+      "word_count": 1301,
+      "updated_at": "2025-09-24T12:26:51.000Z",
+      "primary_category": "resume-project",
+      "primary_category_name": "简历与项目表达",
+      "related_categories": [
+        "resume-project",
+        "security-auth",
+        "algorithm",
+        "project-system-design",
+        "observability-troubleshooting"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "campus"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "项目",
+        "面试官",
+        "安全",
+        "权限",
+        "加密",
+        "算法",
+        "方案",
+        "线上"
+      ],
+      "summary": "口播文案有位朋友在最近面试的时候突然被面试官问了一句你们项目的用户名密码是怎么保存的这位朋友都没有思考顺口就说直接保存到数据库里呗小心这一句话就会彻底暴露出你的小白本质再说什么你有几年工作经历那都没有用了大家好我是楼兰这次呢我用一张图带你彻底看懂在真实项目当中用户密码到底应该怎么处理从方案到算...",
+      "excerpt": "口播文案 ​ 有位朋友在最近面试的时候 突然被面试官问了一句 你们项目的用户名密码是怎么保存的 这位朋友都没有思考 顺口就说直接保存到数据库里呗 小心这一句话 就会彻底暴露出你的小白本质 再说什么你有几年工作经历 那都没有用了 大家好我是楼兰 这次呢我用一张图 带你彻底看懂 在真实项目当中 用户密码到底应该怎么处理 从方案到算法 一步步给你讲透 帮你保持住高手的风范 轻松收割offer 先看最基础的明文存储 这是最不用思考的方法 用户输一个1314520 那数据库里面就存一个1314520 任何算法都不需要用这种方式呢 简单高效 验证密码也简单 但是且不说 一旦遇到了黑客 所有密码就都一览无余了 而且一旦你的系统数据比较敏感 你也很难防止 内部有数据库操作权限的人 不会偷偷看一下用户的关键密码 这在真实项目当中 直接明文保存密码 是被列为绝对禁用的 方案比较好一点的方式呢 是进行哈希的加密 哈希加密算法就像一个搅拌机 原始密码输入进来之后 哈希算法 就会算出一个看不懂的乱码出来 在数据库里保存的就是一些乱码 那么即使黑客看到了数据库里的数据 也无法直接拿到原始密码 常用的哈希算法 如MD5 SHA256等 都还能够保证 加密后的密文 是不能够逆运算推算出原始密文的 这样可以进一步保证用户密码的 安全性不过这也意味着 应用系统自己 也不知道用户的原始密文是多少 登录后 只能通过加密后的密文来进行核对 但这样就足够安全了吗 还不够对于哈希算法的研究 黑客可一点不比程序员差 黑客会提前算好常用密码的乱码 做成一本词典 业界称为彩虹表 获取到用户密码的密文后 只要和彩虹表中的密文进行比对 就能破解出用户的原始密码来 但是彩虹表保存常用密码毕竟有限 所以现在很多系统 都会推荐用户 设置一些复杂的密码组合 比如必须包含字母数字符号的组合等 还有很多系统 会要求用户定时的修改密码 这都是在为了 加大黑客破解密码的难度 但是这种方法呢 毕竟属于治标不治本 真正成熟的终极防御方案是加盐 这里的盐可不是炒菜加的盐 是一段随机的字符串 在进行哈希计算前 给密码随机的加上一把盐 这样加出来的密文就更加混乱了 当然这种方案也有高下之分 有些时候呢 程序员会偷懒 给整个系统设置一个固定的盐 但这个盐还是会有泄露的风险 更严谨的方式是 给每个人设置不同的盐 简单点的 可以使用用户ID的某几位做盐 高端点的 会在每次生成密码时 也随机生成一个盐 比如bcrypt算法就是这样一种算法 它在每次生成一个新的盐 再把盐一起加密到密文当中 这样就彻底断绝了 黑客破解用户密码的念想 当然程序员对密码的思考 其实远远不止验证个用户名和密码 这么简单 其实之前对于密码的设计 一个很重要的原则就是只验证不窥探 系统只能正向的验证 你输入的密码是否正确 但是永远无法从存储的乱码中 反推出你的原始密码 所以你"
+    },
+    {
+      "slug": "qksya94kkdx6n5bi",
+      "title": "简历项目优化提示词",
+      "url": "/tulingzhouyu/db22bv/qksya94kkdx6n5bi",
+      "toc_path": [
+        "高频面试问题",
+        "徐庶老师",
+        "简历项目优化提示词"
+      ],
+      "toc_level": 2,
+      "toc_index": 1264,
+      "word_count": 425,
+      "updated_at": "2025-12-08T06:11:40.000Z",
+      "primary_category": "resume-project",
+      "primary_category_name": "简历与项目表达",
+      "related_categories": [
+        "resume-project",
+        "project-system-design",
+        "performance-optimization",
+        "java-core",
+        "java-concurrency"
+      ],
+      "question_type": "resume_project",
+      "question_type_name": "简历项目题",
+      "levels": [
+        "senior",
+        "expert"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "专家/P7+"
+      ],
+      "keywords": [
+        "简历",
+        "项目",
+        "亮点",
+        "难点",
+        "面试官",
+        "架构设计",
+        "方案",
+        "高并发",
+        "性能",
+        "优化",
+        "调优",
+        "并发"
+      ],
+      "summary": "# 职责描述你是一个java架构师，我的项目很普通 ，我需要你分析我已有项目业务特色，帮我优化简历的项目，挖掘亮点，增加个人职责栏的开发亮点，每个项目至少加5点，遵循格式：在XX业务下， 通过XX技术，解决XX问题，达到XX效果的 格式。 并且每个点下方提供详细解决方案面试回答的答案，技术方案...",
+      "excerpt": "# 职责描述 你是一个java架构师，我的项目很普通 ，我需要你分析我已有项目业务特色，帮我优化简历的项目，挖掘亮点，增加个人职责栏的开发亮点，每个项目至少加5点，遵循格式：在XX业务下， 通过XX技术，解决XX问题，达到XX效果的 格式。 并且每个点下方提供详细解决方案面试回答的答案，技术方案一定要详细不能空虚，并且分析面试官可能会深入拷打的相关面试题。 ## 按以下亮点进行挖掘： 1. 技术能力 高并发处理：优化系统以支持大量用户同时访问。 性能调优：针对应用程序的响应速度和效率进行优化。 海量数据优化：处理大规模数据集的有效算法和存储解决方案。 架构设计：设计系统架构以支持可扩展性和高可用性。 代码设计：采用最佳实践进行代码组织，以提高可读性和可维护性。 2. 问题解决能力 线上突发问题解决：及时响应和处理生产环境中的突发问题。 难点技术问题解决：面对复杂技术挑战时寻找有效的解决方案。 跨团队协作：结合不同团队的意见和技术整合资源解决问题。 微信公众号：程序员徐庶，欢迎加入我的社区内有我微信。"
+    },
+    {
+      "slug": "kqptgh9yli2z2hp3",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/kqptgh9yli2z2hp3",
+      "toc_path": [
+        "高频面试问题",
+        "徐庶老师",
+        "面试官：百万人同时点赞怎么设计",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1268,
+      "word_count": 20,
+      "updated_at": "2025-11-17T11:25:00.000Z",
+      "primary_category": "resume-project",
+      "primary_category_name": "简历与项目表达",
+      "related_categories": [
+        "resume-project"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "面试官"
+      ],
+      "summary": "📎抖音级点赞架构PPT演示 (动画最终修复版 V2).html",
+      "excerpt": ""
+    },
+    {
+      "slug": "gcvrc23naerombgo",
+      "title": "18、面试官：如何实现一个“动态Trace”功能，允许在线上不停机的情况下，对任意方法的入参和返回值进行“快照”？",
+      "url": "/tulingzhouyu/db22bv/gcvrc23naerombgo",
+      "toc_path": [
+        "高频面试问题",
+        "赋文老师",
+        "18、面试官：如何实现一个“动态Trace”功能，允许在线上不停机的情况下，对任意方法的入参和返回值进行“快照”？"
+      ],
+      "toc_level": 2,
+      "toc_index": 1286,
+      "word_count": 0,
+      "updated_at": "2025-11-07T06:00:34.000Z",
+      "primary_category": "resume-project",
+      "primary_category_name": "简历与项目表达",
+      "related_categories": [
+        "resume-project",
+        "observability-troubleshooting"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "面试官",
+        "线上"
+      ],
+      "summary": "",
+      "excerpt": ""
+    },
+    {
+      "slug": "xmb3dg1u5122oq0i",
+      "title": "程序员 35 岁就失业？别被年龄焦虑 PUA 了！3 个真因 + 4 条破局路，帮你稳到退休",
+      "url": "/tulingzhouyu/db22bv/xmb3dg1u5122oq0i",
+      "toc_path": [
+        "高频面试问题",
+        "诸葛老师",
+        "程序员 35 岁就失业？别被年龄焦虑 PUA 了！3 个真因 + 4 条破局路，帮你稳到退休"
+      ],
+      "toc_level": 2,
+      "toc_index": 1349,
+      "word_count": 4090,
+      "updated_at": "2025-09-19T02:52:11.000Z",
+      "primary_category": "resume-project",
+      "primary_category_name": "简历与项目表达",
+      "related_categories": [
+        "resume-project",
+        "redis-cache",
+        "project-system-design",
+        "performance-optimization",
+        "jvm-memory-gc"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "campus",
+        "expert",
+        "senior"
+      ],
+      "level_names": [
+        "校招/应届生",
+        "专家/P7+",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "简历",
+        "项目",
+        "CRUD",
+        "Redis",
+        "缓存",
+        "方案",
+        "高并发",
+        "库存",
+        "性能",
+        "优化",
+        "调优",
+        "JVM"
+      ],
+      "summary": "每天打开招聘软件，看到 “35 岁以下优先” 的标注；刷到 “某大厂裁掉中年程序员” 的新闻；听同事吐槽 “一把年纪还和应届生抢基础开发岗”—— 你是不是也忍不住慌了：“难道程序员真的只能干到 35 岁？”其实 “35 岁危机” 从来不是 “年龄原罪”，而是被误解的 “能力与价值不匹配”。今天...",
+      "excerpt": "每天打开招聘软件，看到 “35 岁以下优先” 的标注；刷到 “某大厂裁掉中年程序员” 的新闻；听同事吐槽 “一把年纪还和应届生抢基础开发岗”—— 你是不是也忍不住慌了：“难道程序员真的只能干到 35 岁？” 其实 “35 岁危机” 从来不是 “年龄原罪”，而是被误解的 “能力与价值不匹配”。今天就拆解程序员 35 岁焦虑的真相：企业到底为什么 “裁中年人”？哪些坑会让你陷入危机？以及普通人如何避开陷阱，把职业生命线拉长到 40 岁、50 岁。 一、先破误区：企业不 “裁 35 岁”，只 “裁没价值的人” “35 岁淘汰程序员” 的说法，最早源于公务员考试的年龄限制，后来被互联网裁员、中年财务压力等话题放大，慢慢变成了 “行业魔咒”。但真相是： 没有任何企业会把 “35 岁” 作为硬性淘汰标准，包括阿里、腾讯、字节这些大厂。 我认识的 40 岁以上程序员不在少数：有人是阿里 P8 级别的架构师，有人是字节某业务线的技术负责人，还有人在中小公司带团队做核心项目。他们能留下来，核心不是 “年龄小”，而是 “能为公司创造不可替代的价值”。 企业裁员的真正逻辑，从来是 “业务优先”，和年龄无关： 比如某大厂原本靠社交业务起家，看到短视频风口，立刻招了几百人组建 3 个短视频研发团队，搞 “内部赛马 + 外部竞争”。如果业务做成了、能盈利，团队就成核心部门，员工股票翻倍、年终奖拿到手软；但如果业务没起色、达不到预期，不管你是 30 岁的资深工程师，还是刚签约的应届生，整个团队都会被 “一刀切”—— 这也是很多应届生被 “毁三方” 的原因。 说白了，企业经营的本质是 “扩张业务、抢占市场”，我们普通员工就是推动业务的 “燃料”。但燃料也分 “高效燃料” 和 “低效燃料”： 年轻人时间多、学习新技术快、薪资要求相对低，能快速适配新业务，是 “性价比高的燃料”； 中年人如果没形成 “不可替代的能力”，反而因为家庭压力要求高薪，又跟不上业务迭代速度，就会变成 “性价比低的燃料”—— 裁员时自然会先被考虑。 所以别再纠结 “35 岁” 这个数字，真正该警惕的是： 到了 35 岁，你是否还在和 25 岁的应届生抢 “写 CRUD” 的基础岗？ 二、35 岁危机的 3 个真因：别让这些坑毁了你的职业 很多程序员以为 “年龄到了就会被裁”，但实际上，35 岁陷入危机的人，大多是踩了这 3 个坑： 1. 坑 1：选业务太随意，把命运赌在 “不稳定的赛道” 有些程序员找工作只看 “薪资高不高”，不看 “业务有没有前景”，结果业务黄了，自己也跟着失业。 比如前几年社区团购风口，很多人冲着 “年薪 40 万” 去小公司做社区团购系统，结果国家政策调整、资本撤退，不到半年业务就停了，整个团队被裁。这些程序员再找工作时发现，社区团购相关的技术经验几乎用不上，只能重新学其他业务，成本极高。 还有人进"
+    },
+    {
+      "slug": "es9uazz9gqc7aqdy",
+      "title": "计算机岗位怎么选？本科 / 硕士薪资差 2 倍？这份「学历 - 岗位 - 薪资」指南，帮你避开就业坑",
+      "url": "/tulingzhouyu/db22bv/es9uazz9gqc7aqdy",
+      "toc_path": [
+        "高频面试问题",
+        "诸葛老师",
+        "计算机岗位怎么选？本科 / 硕士薪资差 2 倍？这份「学历 - 岗位 - 薪资」指南，帮你避开就业坑"
+      ],
+      "toc_level": 2,
+      "toc_index": 1351,
+      "word_count": 3836,
+      "updated_at": "2025-09-19T02:49:25.000Z",
+      "primary_category": "resume-project",
+      "primary_category_name": "简历与项目表达",
+      "related_categories": [
+        "resume-project",
+        "algorithm",
+        "java-core",
+        "ai-llm",
+        "os-linux"
+      ],
+      "question_type": "resume_project",
+      "question_type_name": "简历项目题",
+      "levels": [
+        "campus",
+        "senior",
+        "middle"
+      ],
+      "level_names": [
+        "校招/应届生",
+        "高级/5-8年",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "简历",
+        "项目",
+        "算法",
+        "LeetCode",
+        "Java",
+        "AI",
+        "操作系统",
+        "Linux",
+        "进程",
+        "线程"
+      ],
+      "summary": "很多计算机专业的同学都会陷入迷茫：到底选哪个岗位能拿高薪？学历是不是真的决定薪资上限？ 有人纠结 “Java 卷不卷”“C++ 岗位少不少”，有人担心 “二本学历能不能进大厂”“硕士读了值不值”—— 其实这些问题，都能从 “学历 + 岗位” 的对应关系里找到答案。今天就从「本科」和「硕士」两个...",
+      "excerpt": "很多计算机专业的同学都会陷入迷茫： 到底选哪个岗位能拿高薪？学历是不是真的决定薪资上限？ 有人纠结 “Java 卷不卷”“C++ 岗位少不少”，有人担心 “二本学历能不能进大厂”“硕士读了值不值”—— 其实这些问题，都能从 “学历 + 岗位” 的对应关系里找到答案。 今天就从「本科」和「硕士」两个维度，拆解计算机岗位的选择逻辑、薪资范围，以及最容易踩的坑，帮你清晰规划就业方向，避免 “学了 3 年却找不到工作” 的尴尬。 一、本科计算机：就业核心在「开发」，这 3 个坑别踩 大部分本科生毕业后，就业方向会高度集中在 各类开发岗 ，少数会选择运维、测试、网络相关岗位。薪资跨度很大（月薪 4k - 年薪 30w+），但选对方向、做好准备，哪怕是双非本科，也能拿到不错的 offer。 1. 本科岗位分布：开发是主力，运维 / 测试慎选 先明确本科阶段的岗位优先级： 开发岗 > 运维 / 测试 / 网络岗 ，不是鄙视，而是从 “岗位数量、薪资天花板、发展前景” 综合考量的建议。 开发岗：岗位多、包容性强，是本科生首选 不管是前端、后端（Java/Go/Python）、嵌入式开发，本质都是 “学习现有技术，根据需求实现业务 / 产品”—— 比如做一个 APP、开发一个网页、写一套硬件控制程序。 这类岗位的核心优势是： ① 岗位数量多：几乎所有互联网、科技公司都需要开发，从大厂到小公司，需求全覆盖； ② 学历包容性强：二本、双非、211、985 都有对应的机会，不会因为 “不是 985” 就直接卡简历； ③ 薪资上限高：优秀的双非本科能进大厂拿 30w + 年薪，普通本科也能拿到 8k-15k / 月。 运维 / 测试 / 网络岗：岗位少、两极分化严重，慎选 这类岗位的薪资范围在月薪 4k - 年薪 20w，但存在两个致命问题： ① 岗位数量少：比开发岗少 50% 以上，竞争反而更激烈； ② 工作内容两极分化： 进大厂 / 大公司：做网络架构设计、性能优化、安全防护，技术含量高、薪资高（15k-20k / 月）； 进小公司：日常就是 “调设备、修打印机、测 bug”，技术成长慢，3 年经验薪资可能还没开发岗 1 年经验高。 如果你对运维 / 测试特别感兴趣，建议先了解目标公司的具体工作内容，再决定是否入行。 2. 本科开发岗薪资：学历决定下限，能力决定上限 很多人以为 “学历差 = 薪资差”，但实际是 “学历决定能投哪些公司，能力决定在公司里拿多少薪资”。以下是不同学历本科生的薪资范围（应届生，非特殊地区），供你参考： 学历层次 应届生薪资范围（年薪） 典型去向 二本 6w-9w（月薪 5k-7k） 中小公司、外包公司 双非一本 8w-12w（月薪 7k-10k） 中大型公司、部分大厂外包 211 12w-20w 大厂子公司、中大厂 985 15w-30w+ 一线大厂、"
+    },
+    {
+      "slug": "shltect7fimgaa12",
+      "title": "46.混合精度训练的实现步骤及Loss Scaling作用",
+      "url": "/tulingzhouyu/db22bv/shltect7fimgaa12",
+      "toc_path": [
+        "AI大模型面试",
+        "46.混合精度训练的实现步骤及Loss Scaling作用"
+      ],
+      "toc_level": 1,
+      "toc_index": 1452,
+      "word_count": 1733,
+      "updated_at": "2025-07-14T07:45:31.000Z",
+      "primary_category": "resume-project",
+      "primary_category_name": "简历与项目表达",
+      "related_categories": [
+        "resume-project",
+        "performance-optimization",
+        "ai-llm",
+        "java-concurrency",
+        "java-core"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "项目",
+        "性能",
+        "优化",
+        "AI",
+        "大模型"
+      ],
+      "summary": "一、答题思路在回答混合精度训练的实现步骤及Loss Scaling作用时，可以按照以下思路进行：混合精度训练的基本概念：首先解释什么是混合精度训练，为什么要使用混合精度训练。实现步骤：详细描述混合精度训练的具体实现步骤，包括权重备份、损失放大、精度累加等技术点。Loss Scaling的作用：...",
+      "excerpt": "一、答题思路 在回答混合精度训练的实现步骤及Loss Scaling作用时，可以按照以下思路进行： 混合精度训练的基本概念 ：首先解释什么是混合精度训练，为什么要使用混合精度训练。 实现步骤 ：详细描述混合精度训练的具体实现步骤，包括权重备份、损失放大、精度累加等技术点。 Loss Scaling的作用 ：解释Loss Scaling的作用及其重要性。 真实项目案例 ：结合一个真实的项目案例，具体说明混合精度训练的实现过程和Loss Scaling的应用。 总结 ：总结混合精度训练的优势和注意事项。 二、项目案例 假设我们有一个大型的自然语言处理（NLP）项目，需要训练一个基于Transformer架构的语言模型。由于模型的参数量非常大，训练过程中显存占用较高，容易导致训练效率低下甚至训练失败。因此，我们决定采用混合精度训练来优化训练过程。 三、示例回答 1. 混合精度训练的基本概念 混合精度训练是一种在深度学习模型训练过程中同时使用单精度（FP32）和半精度（FP16）浮点数的技术。其主要目的是通过减少显存占用和加快计算速度来提高训练效率，同时尽量避免精度损失。 2. 实现步骤 混合精度训练的实现步骤主要包括以下几个方面： 权重备份（Weight Backup） ： 在训练开始前，将模型的权重从FP32格式备份到FP16格式。这样可以在前向传播和反向传播过程中使用FP16进行计算，减少显存占用。 由于FP16的数值范围较小，容易发生溢出或下溢，因此需要保留FP32格式的权重备份，以便在需要时恢复权重。 损失放大（Loss Scaling） ： 由于FP16的数值范围较小，直接计算损失函数可能会导致梯度下溢（即梯度值变为0）。为了避免这种情况，需要对损失函数进行放大。 具体做法是在计算损失函数时，将损失值乘以一个较大的常数（如2^16），然后再进行反向传播。这样可以确保梯度值不会因为FP16的数值范围限制而变为0。 反向传播完成后，需要将梯度值除以相同的常数，以恢复原始的梯度值。 精度累加（Precision Accumulated） ： 在反向传播过程中，梯度的累加操作需要使用FP32格式，以保证精度。 具体做法是在计算梯度时，先将FP16格式的梯度转换为FP32格式，然后进行累加操作，最后再将累加结果转换回FP16格式。 动态损失缩放（Dynamic Loss Scaling） ： 为了进一步提高训练的稳定性和效率，可以使用动态损失缩放技术。 动态损失缩放会根据梯度的值动态调整损失放大的倍数。如果梯度值较大，则适当减小损失放大的倍数；如果梯度值较小，则适当增大损失放大的倍数。 这样可以在保证梯度值不溢出的前提下，尽可能提高计算效率。 3. Loss Scaling的作用 Loss Scaling的主要作用是防止在混合精度训练过程中梯度下溢。由于FP16的"
+    },
+    {
+      "slug": "yvvgpg4zluofw7fq",
+      "title": "43.对比SFT、RLHF、DPO的优劣",
+      "url": "/tulingzhouyu/db22bv/yvvgpg4zluofw7fq",
+      "toc_path": [
+        "AI大模型面试",
+        "43.对比SFT、RLHF、DPO的优劣"
+      ],
+      "toc_level": 1,
+      "toc_index": 1455,
+      "word_count": 1071,
+      "updated_at": "2025-07-14T07:45:33.000Z",
+      "primary_category": "resume-project",
+      "primary_category_name": "简历与项目表达",
+      "related_categories": [
+        "resume-project",
+        "performance-optimization",
+        "ai-llm",
+        "project-system-design",
+        "security-auth"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "项目",
+        "难点",
+        "优化",
+        "瓶颈",
+        "AI",
+        "大模型",
+        "方案",
+        "安全"
+      ],
+      "summary": "一、答题思路回答需围绕三大核心维度展开：技术原理对比：阐明SFT、RLHF、DPO的核心机制差异项目实践分析：结合真实案例说明各技术的实施难点与效果场景适配性：根据任务需求（数据/算力/效果）给出选型建议二、项目案例：医疗问答系统优化背景需求某三甲医院需构建AI问诊系统，要求：回答准确率 ≥9...",
+      "excerpt": "一、答题思路 回答需围绕三大核心维度展开： 技术原理对比 ：阐明SFT、RLHF、DPO的核心机制差异 项目实践分析 ：结合真实案例说明各技术的实施难点与效果 场景适配性 ：根据任务需求（数据/算力/效果）给出选型建议 二、项目案例：医疗问答系统优化 背景需求 某三甲医院需构建AI问诊系统，要求： 回答准确率 ≥95% 拒绝有害建议（如药物滥用） 支持实时更新最新医学指南 技术方案演进 阶段 技术方案 关键操作 效果对比 1 SFT微调 20万条医患对话+医学文献训练GPT-3 准确率82%，存在5%有害建议风险 2 RLHF强化 500组医生标注偏好数据训练RM+PPO迭代 准确率94%，有害建议率降至0.3% 3 DPO优化 200组精标偏好对直接优化策略 准确率96%，训练耗时减少70% 三、示例回答 （一）技术原理与优劣对比 1. SFT（监督微调） 原理 ：在预训练模型上使用标注数据（输入-输出对）进行有监督训练 优势 ： 训练稳定（简单梯度下降） 数据利用率高（1万条数据即可见效） 劣势 ： 无法学习人类偏好（如拒绝有害回答） 易出现“机械复制”问题（案例中直接拷贝文献导致错误用药建议） 2. RLHF（人类反馈强化学习） 原理 ： 优势 ： 对齐人类价值观（医疗案例有害建议率↓98%） 支持复杂行为学习（如拒绝回答不确定问题） 劣势 ： 训练成本极高（需5000组标注数据+百卡级GPU集群） 流程复杂（RM训练不稳定，PPO需精细调参） 3. DPO（直接偏好优化） 原理 ：用偏好数据直接优化策略，数学等效于RLHF但省去RM训练 优势 ： 训练效率提升3倍（医疗案例仅需200组数据） 避免PPO的不稳定性 劣势 ： 依赖高质量参考模型（需强SFT基础） 多轮对话能力弱于RLHF （二）项目实践关键发现 数据成本对比 SFT：20万条问答对（标注成本￥8万） RLHF：500组偏好排序（医生标注成本￥12万） DPO：200组精标对比数据（成本￥3万） 灾难性遗忘解决方案 RLHF阶段添加KL散度惩罚项，使医疗知识遗忘率从15%降至3% $$R_{total} = R_{RM}(x,y) - \\beta D_{KL}(\\pi_\\theta(y|x) \\parallel \\pi_{SFT}(y|x))$$ 实时更新机制 DPO方案通过每周注入新药指南数据，迭代速度比RLHF快4倍 （三）场景选型建议 场景 推荐技术 原因 快速业务落地（<1月） DPO 10天内完成数据标注到模型部署 安全敏感场景 RLHF 有害内容控制精度达99.9% 小样本领域（法律/考古） SFT 千级数据即可获得可用模型 四、总结 技术演进本质 ： SFT解决“正确性” → RLHF解决“安全性/人性化” → DPO解决“效率瓶颈” 工业落地洞察 ： 医疗/金融等高风险领"
+    },
+    {
+      "slug": "lclpu9a6lvfsvs8y",
+      "title": "42.LoRA的原理及参数量计算",
+      "url": "/tulingzhouyu/db22bv/lclpu9a6lvfsvs8y",
+      "toc_path": [
+        "AI大模型面试",
+        "42.LoRA的原理及参数量计算"
+      ],
+      "toc_level": 1,
+      "toc_index": 1456,
+      "word_count": 1086,
+      "updated_at": "2025-07-14T07:45:33.000Z",
+      "primary_category": "resume-project",
+      "primary_category_name": "简历与项目表达",
+      "related_categories": [
+        "resume-project",
+        "ai-llm",
+        "performance-optimization",
+        "jvm-memory-gc",
+        "observability-troubleshooting"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "项目",
+        "AI",
+        "大模型",
+        "LLM",
+        "优化",
+        "调优"
+      ],
+      "summary": "一、答题思路回答需覆盖四大核心：LoRA原理：低秩分解思想、训练与推理机制 参数量计算：公式拆解、对比全量微调秩r选择经验：任务复杂度、显存限制、效果平衡的量化策略项目案例：真实场景中r值调优过程及效果对比二、项目案例案例1：医疗问答系统微调（7B模型）背景任务：将通用LLM适配医疗术语和诊断...",
+      "excerpt": "一、答题思路 回答需覆盖四大核心： LoRA原理 ：低秩分解思想、训练与推理机制 参数量计算 ：公式拆解、对比全量微调 秩r选择经验 ：任务复杂度、显存限制、效果平衡的量化策略 项目案例 ：真实场景中r值调优过程及效果对比 二、项目案例 案例1：医疗问答系统微调（7B模型） 背景 任务 ：将通用LLM适配医疗术语和诊断逻辑 挑战 ：显存限制（4×A100 40GB），需高效微调 LoRA配置 参数量计算 原模型参数量：70亿 LoRA参数量： 每层可训练参数 = r × (d_in + d_out) 以 q_proj 层为例（d_in=4096, d_out=4096）： 8 × (4096 + 4096) = 65,536 总可训练参数 ≈ 420万（仅占原模型0.06%） r值选择依据 实验对比： r值 显存占用 医疗术语准确率 r=4 18GB 76.2% r=8 22GB 82.5% r=16 30GB 83.1% 结论 ：r=8性价比最优，准确率接近r=16，显存节省33% 案例2：代码生成模型优化（13B模型） 背景 任务 ：提升Python代码补全能力 挑战 ：需快速迭代适配新框架（PyTorch→JAX） r值调优策略 动态调整：初始r=32（高复杂度任务）→ 收敛后降至r=16 效果 ： 高秩阶段：快速学习新语法（BLEU↑12%） 低秩阶段：固化知识，减少过拟合（推理速度↑40%） 关键经验 高秩（r≥32）适用场景：语法结构重构、跨模态对齐 低秩（r≤8）适用场景：风格迁移、防过拟合 三、示例回答 1. LoRA原理 核心思想 ：用低秩矩阵近似参数更新量 数学表达： ΔW = B × A （B∈ℝ^{d×r}, A∈ℝ^{r×k}） 训练机制 ： 冻结原模型权重，仅训练A、B A用高斯初始化，B零初始化（确保训练初始ΔW=0） 推理合并 ： W_new = W_orig + B·A （零延迟） ✅ 优势 ：避免显存爆炸，支持多任务快速切换 2. 参数量计算 公式 ： 以LLaMA-7B调整query层为例 ： 每层d_in=d_out=4096 调整层数：32层 r=8时： 8 × (4096+4096) × 32 = 2.1M 占比 ：2.1M/7B ≈ 0.03%（全量微调需280GB显存，LoRA仅需24GB） 3. 秩r选择经验（三层决策法） 因素 策略 典型案例 任务复杂度 高：r=32-64（跨模态/语法重构） 代码翻译（Python→C++） 显存限制 低：r=4-8（对话生成/风格迁移） 医疗问答（4×A100 40GB） 效果平衡 动态调整：训练初期r↑→后期r↓ 代码生成模型优化 4. 项目实战验证 金融报告生成场景 （Bloom-7B模型） 需求 ：适配券商行业术语 r值实验 ： r=4：术语准确率68%，显存18"
+    },
+    {
+      "slug": "zi7s53s6ykd0gi6d",
+      "title": "32.Transformer的编码器-解码器结构工作流程",
+      "url": "/tulingzhouyu/db22bv/zi7s53s6ykd0gi6d",
+      "toc_path": [
+        "AI大模型面试",
+        "32.Transformer的编码器-解码器结构工作流程"
+      ],
+      "toc_level": 1,
+      "toc_index": 1466,
+      "word_count": 2228,
+      "updated_at": "2025-07-14T07:45:34.000Z",
+      "primary_category": "resume-project",
+      "primary_category_name": "简历与项目表达",
+      "related_categories": [
+        "resume-project",
+        "project-system-design",
+        "computer-network",
+        "performance-optimization",
+        "ai-llm"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "项目",
+        "面试官",
+        "方案",
+        "订单",
+        "网络",
+        "性能",
+        "优化",
+        "AI",
+        "大模型"
+      ],
+      "summary": "一、答题思路当面试官询问Transformer的编码器-解码器结构工作流程时，需要从理论到实践进行结构化回答。以下是答题的框架思路：理论部分：解释Transformer的基本架构，包括编码器和解码器的组成。详细说明编码器和解码器的工作流程，包括自注意力机制、多头注意力、前馈神经网络等核心组件。...",
+      "excerpt": "一、答题思路 当面试官询问Transformer的编码器-解码器结构工作流程时，需要从理论到实践进行结构化回答。以下是答题的框架思路： 理论部分 ： 解释Transformer的基本架构，包括编码器和解码器的组成。 详细说明编码器和解码器的工作流程，包括自注意力机制、多头注意力、前馈神经网络等核心组件。 强调位置编码、残差连接和层归一化等技术的作用。 实践部分 ： 结合真实项目案例，说明如何在项目中应用Transformer的编码器-解码器结构。 分析项目中的具体需求，以及如何通过调整模型参数和结构来满足这些需求。 讨论项目中遇到的挑战和解决方案。 示例回答 ： 提供一个具体的示例，展示编码器-解码器结构在实际项目中的应用。 通过代码片段或流程图辅助说明。 总结 ： 总结Transformer编码器-解码器结构的优势和局限性。 展望未来可能的改进方向和应用场景。 二、项目案例 案例背景：机器翻译系统 在一个机器翻译项目中，我们需要将英文翻译成中文。项目使用了Transformer的编码器-解码器结构，具体实现如下： 数据准备 ： 收集并清洗了大量的英文-中文平行语料。 对文本进行分词和编码，生成词嵌入。 模型架构 ： 编码器：6层，每层包含多头自注意力机制和前馈神经网络。 解码器：6层，每层包含掩码多头自注意力机制、编码器-解码器注意力机制和前馈神经网络。 使用位置编码来捕捉序列中的顺序信息。 训练过程 ： 使用交叉熵损失函数和Adam优化器。 采用学习率预热和衰减策略。 在训练过程中使用了标签平滑技术来防止过拟合。 推理过程 ： 使用束搜索（beam search）来生成翻译结果。 通过调整束宽和长度惩罚系数来优化生成质量。 挑战与解决方案 ： 长序列处理 ：通过增加位置编码的维度和调整注意力头数来提升长序列的处理能力。 低资源语言 ：通过迁移学习和数据增强技术来提升低资源语言的翻译质量。 案例背景：智能客服系统 在另一个智能客服项目中，我们使用Transformer的编码器-解码器结构来实现多轮对话管理： 数据准备 ： 收集了大量的客服对话数据，包括用户提问和客服回答。 对对话数据进行清洗和标注，生成结构化数据。 模型架构 ： 编码器：4层，专注于理解用户输入的语义。 解码器：4层，生成连贯且符合上下文的回答。 使用预训练的词嵌入来提升模型的表现。 训练过程 ： 使用了联合训练策略，同时优化编码器和解码器。 通过对抗训练来提升模型的鲁棒性。 推理过程 ： 在生成回答时，结合了上下文信息和历史对话记录。 使用温度参数（temperature）来控制生成结果的多样性。 挑战与解决方案 ： 上下文依赖 ：通过引入额外的注意力机制来捕捉长距离依赖。 多轮对话一致性 ：通过引入对话状态跟踪模块来保持对话的一致性。 三、示例回答 示例：机器翻译系统中的编码器-解码器"
+    },
+    {
+      "slug": "zcyggxfpw1lz6178",
+      "title": "31.对比AE、VAE、GAN的生成机制",
+      "url": "/tulingzhouyu/db22bv/zcyggxfpw1lz6178",
+      "toc_path": [
+        "AI大模型面试",
+        "31.对比AE、VAE、GAN的生成机制"
+      ],
+      "toc_level": 1,
+      "toc_index": 1467,
+      "word_count": 1647,
+      "updated_at": "2025-07-14T07:45:34.000Z",
+      "primary_category": "resume-project",
+      "primary_category_name": "简历与项目表达",
+      "related_categories": [
+        "resume-project",
+        "computer-network",
+        "ai-llm",
+        "java-core",
+        "performance-optimization"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "项目",
+        "网络",
+        "AI",
+        "大模型",
+        "异常",
+        "性能"
+      ],
+      "summary": "一、答题思路在面试中被问到对比AE（自动编码器）、VAE（变分自动编码器）、GAN（生成对抗网络）的生成机制时，可以从以下几个方面进行回答：基本原理：简要介绍每种模型的基本原理和工作机制。生成机制：详细解释每种模型的生成过程和机制。优缺点：分析每种模型的优缺点，包括生成质量、训练稳定性、计算复...",
+      "excerpt": "一、答题思路 在面试中被问到对比AE（自动编码器）、VAE（变分自动编码器）、GAN（生成对抗网络）的生成机制时，可以从以下几个方面进行回答： 基本原理 ：简要介绍每种模型的基本原理和工作机制。 生成机制 ：详细解释每种模型的生成过程和机制。 优缺点 ：分析每种模型的优缺点，包括生成质量、训练稳定性、计算复杂度等。 应用场景 ：举例说明每种模型在不同应用场景中的表现和适用性。 实际案例 ：结合真实项目案例，具体说明每种模型的应用和效果。 二、项目案例 假设我们在一个图像生成项目中，需要生成高质量的图像。我们尝试了AE、VAE和GAN三种模型，并记录了它们的表现和效果。 三、示例回答 1. 基本原理 自动编码器（AE） ：AE是一种无监督学习模型，主要用于数据的降维和特征提取。它由编码器和解码器两部分组成。编码器将输入数据压缩成一个低维的表示，解码器再将这个低维表示还原成原始数据。AE的目标是最小化输入数据和输出数据之间的重构误差。 变分自动编码器（VAE） ：VAE是AE的一种扩展，它在编码器和解码器之间引入了概率分布。VAE不仅学习数据的表示，还学习数据的概率分布。编码器输出的是数据的均值和方差，解码器根据这些均值和方差生成新的数据。VAE的目标是最小化重构误差和KL散度（Kullback-Leibler divergence）。 生成对抗网络（GAN） ：GAN由生成器和判别器两部分组成。生成器的任务是生成尽可能逼真的数据，判别器的任务是区分生成的数据和真实的数据。通过对抗训练，生成器不断改进生成的数据质量，直到判别器无法区分生成的数据和真实的数据。 2. 生成机制 AE的生成机制 ： 输入数据通过编码器被压缩成一个低维的表示。 解码器将这个低维表示还原成原始数据。 通过最小化输入数据和输出数据之间的重构误差，AE学习到数据的有效表示。 VAE的生成机制 ： 输入数据通过编码器被压缩成一个低维的表示，这个表示包括均值和方差。 从均值和方差中采样得到一个潜在向量。 解码器根据这个潜在向量生成新的数据。 通过最小化重构误差和KL散度，VAE学习到数据的概率分布。 GAN的生成机制 ： 生成器生成假数据。 判别器判断生成的数据是真是假。 生成器和判别器通过对抗训练不断改进，直到生成器生成的数据无法被判别器区分。 3. 优缺点 AE的优点 ： 简单易懂，易于实现。 可以用于数据的降维和特征提取。 生成的数据具有一定的重构质量。 AE的缺点 ： 生成的数据质量不高，容易出现模糊和失真。 缺乏生成新数据的能力。 VAE的优点 ： 生成的数据质量较高，具有一定的多样性。 学习到数据的概率分布，可以进行采样生成新数据。 具有一定的抗噪能力。 VAE的缺点 ： 训练过程较为复杂，需要调节超参数。 生成的数据质量有时不如GAN。 GAN的优点 ： 生成的数据质量高，逼真度高"
+    },
+    {
+      "slug": "kw4qu491075z4t4w",
+      "title": "28.大模型评估指标BLEU、ROUGE、Perplexity适用场景",
+      "url": "/tulingzhouyu/db22bv/kw4qu491075z4t4w",
+      "toc_path": [
+        "AI大模型面试",
+        "28.大模型评估指标BLEU、ROUGE、Perplexity适用场景"
+      ],
+      "toc_level": 1,
+      "toc_index": 1470,
+      "word_count": 1576,
+      "updated_at": "2025-07-14T07:45:34.000Z",
+      "primary_category": "resume-project",
+      "primary_category_name": "简历与项目表达",
+      "related_categories": [
+        "resume-project",
+        "ai-llm",
+        "project-system-design",
+        "observability-troubleshooting",
+        "performance-optimization"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "campus",
+        "expert"
+      ],
+      "level_names": [
+        "校招/应届生",
+        "专家/P7+"
+      ],
+      "keywords": [
+        "项目",
+        "面试官",
+        "AI",
+        "大模型",
+        "方案",
+        "监控",
+        "性能",
+        "优化"
+      ],
+      "summary": "根据要求，我将结合真实项目案例，分点解析BLEU、ROUGE、Perplexity三大评估指标的适用场景，并提供示例回答框架。内容严格遵循您要求的格式，专业性与可读性并重。一、答题思路指标本质对比BLEU：基于精确率的机器翻译评估，侧重译文与参考译文的词汇匹配 ROUGE：基于召回率的文本生成...",
+      "excerpt": "根据要求，我将结合真实项目案例，分点解析BLEU、ROUGE、Perplexity三大评估指标的适用场景，并提供示例回答框架。内容严格遵循您要求的格式，专业性与可读性并重。 一、答题思路 指标本质对比 BLEU ：基于精确率的机器翻译评估，侧重译文与参考译文的词汇匹配 ROUGE ：基于召回率的文本生成评估，关注关键信息覆盖率 Perplexity ：语言模型内在评估，衡量概率分布预测能力 项目选择原则 覆盖三大应用场景：机器翻译（BLEU）、摘要生成（ROUGE）、语言模型训练（Perplexity） 使用工业级案例：电商翻译系统、医疗报告生成、金融领域预训练 结构化逻辑 二、项目案例 ▶ 案例1：BLEU在跨境电商翻译系统中的应用 项目背景 ：为全球速卖通（AliExpress）搭建商品描述翻译系统，支持中/英/西/俄四语互译 关键问题 ： 长文本翻译时BLEU-4分数与人工评分相关性仅0.35（超过30字符的句子） 文化特定词汇（如中文“旗袍”→西班牙语“vestido tradicional chino”）导致分值虚低 解决方案 ： 分块评估策略 ：将商品描述拆分为标题/参数/描述三部分独立计算BLEU 混合评估机制 ： 效果提升 ：人工评估相关性提升至0.62，阿拉伯语服装类目GMV增长17% ▶ 案例2：ROUGE在医疗报告生成系统中的应用 项目背景 ：协和医院ICU监护报告自动生成系统，输入为生命体征时序数据+医生手写笔记 核心发现 ： ROUGE-L的F1值达0.68时，仍有23%的关键临床指标遗漏（如“血钾浓度5.9mmol/L→危急值”） ROUGE-2对医学术语组合（如“急性心衰伴房颤”）的召回率比ROUGE-1高41% 优化方案 ： 领域增强评估 ： 分层评估机制 ：生命体征参数（ROUGE-1）与诊断结论（ROUGE-L）分开评估 上线效果 ：临床关键信息漏报率从23%降至6%，报告审核时间缩短40% ▶ 案例3：Perplexity在金融风控模型预训练中的应用 项目背景 ：建设银行信贷风险语言模型，处理企业财报/合同/舆情文本 痛点分析 ： 通用领域模型（PPL=32）在金融文本上PPL飙升至89 PPL每降低10点，风险分类准确率提升约3.2%（实测数据） 实施路径 ： 领域自适应预训练 ： 使用50GB金融语料（财报60%/合同25%/研报15%） 动态Curriculum Learning：从简单财报→复杂合同渐进训练 PPL监控策略 ： 成果 ：金融领域PPL降至41，企业贷款欺诈检测F1-score提升12.7% 三、示例回答（面试场景） 面试官 ：请说明BLEU在长文本翻译评估中的局限性及贵团队的解决方案 候选人 ： “在速卖通商品翻译项目中，我们发现BLEU-4对超过30字符的句子评估失真。例如西班牙语商品描述中，文"
+    },
+    {
+      "slug": "dlrtel78p76hf258",
+      "title": "26.解释Prefix LM与Causal LM的区别",
+      "url": "/tulingzhouyu/db22bv/dlrtel78p76hf258",
+      "toc_path": [
+        "AI大模型面试",
+        "26.解释Prefix LM与Causal LM的区别"
+      ],
+      "toc_level": 1,
+      "toc_index": 1472,
+      "word_count": 964,
+      "updated_at": "2025-07-14T07:45:34.000Z",
+      "primary_category": "resume-project",
+      "primary_category_name": "简历与项目表达",
+      "related_categories": [
+        "resume-project",
+        "performance-optimization",
+        "ai-llm",
+        "jvm-memory-gc"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "expert"
+      ],
+      "level_names": [
+        "专家/P7+"
+      ],
+      "keywords": [
+        "项目",
+        "性能",
+        "优化",
+        "调优",
+        "AI",
+        "大模型"
+      ],
+      "summary": "一、答题思路定义对比：明确Prefix LM和Causal LM的核心差异（注意力机制、输入输出方式）。 应用场景分析：结合具体任务需求（如生成、理解、多轮对话）说明两者适用性。项目案例结合：通过真实场景（如智能客服、文本生成）展示差异。总结：归纳选择依据及互补性。二、项目案例案例1：智能客服...",
+      "excerpt": "一、答题思路 定义对比 ：明确Prefix LM和Causal LM的核心差异（注意力机制、输入输出方式）。 应用场景分析 ：结合具体任务需求（如生成、理解、多轮对话）说明两者适用性。 项目案例结合 ：通过真实场景（如智能客服、文本生成）展示差异。 总结 ：归纳选择依据及互补性。 二、项目案例 案例1：智能客服多轮对话系统 需求 ：需理解用户历史对话，生成连贯回复。 Prefix LM应用 ： 输入结构 ：将历史对话作为前缀输入，生成回复时可见上下文。 优势 ：支持多轮上下文依赖，避免重复提问或信息遗漏。 示例 ： Causal LM局限性 ：无法直接利用历史对话信息，需依赖外部状态管理。 案例2：新闻标题生成 需求 ：根据文本内容自动生成简洁标题。 Causal LM应用 ： 输入结构 ：仅输入正文内容，按顺序生成标题。 优势 ：无需上下文干扰，专注生成目标内容。 示例 ： Prefix LM不适用 ：标题生成仅需当前内容，前缀会引入冗余信息。 三、示例回答 Prefix LM与Causal LM的区别及应用场景 核心差异 Prefix LM ： 注意力机制 ：输入层双向注意力（可访问前缀信息），输出层单向注意力。 输入结构 ：输入包含前缀（如历史对话、文档标题），生成时可见前缀。 Causal LM ： 注意力机制 ：严格自回归，输出仅依赖已生成内容。 输入结构 ：输入仅为当前任务内容（如单段文本）。 应用场景 Prefix LM适用场景 ： 多轮对话系统 ：需结合历史对话生成连贯回复（如客服机器人）。 文档摘要 ：需理解全文上下文生成摘要（如法律文书摘要）。 Causal LM适用场景 ： 文本生成任务 ：独立生成内容（如诗歌、故事续写）。 机器翻译 ：按顺序生成目标语言（如中译英）。 示例对比 任务 Prefix LM Causal LM 智能客服回复 输入历史对话，生成上下文相关回复 不适用（需外部状态管理） 新闻标题生成 不适用（需避免前缀干扰） 输入正文，自回归生成标题 文档翻译 输入原文前缀，生成目标语言 按原文顺序逐句生成目标语言 四、总结 选择依据 ： 若任务依赖上下文（如多轮对话、长文档理解），优先选择 Prefix LM 。 若任务仅需自回归生成（如文本创作、翻译），选择 Causal LM 更高效。 互补性 ： 在复杂系统（如文档问答）中，可结合两者：Prefix LM处理上下文理解，Causal LM生成答案。 实际建议 ：根据数据特点和任务需求灵活选择，必要时通过模型微调优化性能。"
+    },
+    {
+      "slug": "oga89cdsv8ob5ra8",
+      "title": "25.LayerNorm vs BatchNorm的适用场景",
+      "url": "/tulingzhouyu/db22bv/oga89cdsv8ob5ra8",
+      "toc_path": [
+        "AI大模型面试",
+        "25.LayerNorm vs BatchNorm的适用场景"
+      ],
+      "toc_level": 1,
+      "toc_index": 1473,
+      "word_count": 1466,
+      "updated_at": "2025-07-14T07:45:34.000Z",
+      "primary_category": "resume-project",
+      "primary_category_name": "简历与项目表达",
+      "related_categories": [
+        "resume-project",
+        "performance-optimization",
+        "devops-release",
+        "ai-llm",
+        "project-system-design"
+      ],
+      "question_type": "resume_project",
+      "question_type_name": "简历项目题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "项目",
+        "性能",
+        "优化",
+        "RT",
+        "部署",
+        "AI",
+        "大模型",
+        "方案"
+      ],
+      "summary": "一、答题思路在回答LayerNorm与BatchNorm的适用场景时，需从技术原理、核心差异、典型场景三个维度切入，并结合真实项目案例说明两者的选择逻辑。以下是结构化思路：技术原理对比LayerNorm：对单个样本的所有特征维度进行归一化，消除特征间差异，适合处理变长序列（如文本）。 Batc...",
+      "excerpt": "一、答题思路 在回答LayerNorm与BatchNorm的适用场景时，需从 技术原理、核心差异、典型场景 三个维度切入，并结合真实项目案例说明两者的选择逻辑。以下是结构化思路： 技术原理对比 LayerNorm ：对单个样本的所有特征维度进行归一化，消除特征间差异，适合处理变长序列（如文本）。 BatchNorm ：对同一批次内同一特征维度进行归一化，依赖批次统计量，适合图像等固定尺寸输入。 核心差异总结 维度 LayerNorm BatchNorm 归一化维度 特征维度（特征间） 批次维度（样本间） 依赖数据量 不依赖批次大小，适用于动态序列 依赖批次大小，小批量下效果不稳定 适用场景 NLP（Transformer）、RNN CV（CNN）、固定尺寸输入 项目案例结合 案例1 ：在文本分类任务中，使用LayerNorm解决Transformer长序列梯度消失问题。 案例2 ：在图像分割任务中，BatchNorm加速训练收敛并提升模型稳定性。 二、项目案例 案例1：LayerNorm在NLP长文本分类中的应用 背景 ：某电商公司需构建商品评论情感分析模型，输入文本长度不一（50-500词），使用Transformer编码器。 问题 ： 普通归一化方法导致梯度爆炸/消失，长文本训练不稳定。 不同长度文本的隐藏层分布差异大，影响模型泛化。 解决方案 ： LayerNorm集成 ：在Transformer的每个子层（多头注意力、FFN）后添加LayerNorm，稳定特征分布。 动态序列处理 ：通过LayerNorm的per-sample归一化，消除长序列中位置偏差。 实施细节 ： 效果 ： 训练损失降低32%，验证准确率提升18%。 长文本（>200词）的梯度波动减少45%。 案例2：BatchNorm在医学图像分割中的优化 背景 ：某医院需开发眼底血管病变分割模型，输入为512x512 RGB图像，使用UNet架构。 问题 ： 小批量训练（batch_size=4）导致BatchNorm统计量噪声大，分割边缘模糊。 不同患者图像的亮度差异影响模型鲁棒性。 解决方案 ： BatchNorm调整 ：在卷积层后添加BatchNorm，加速收敛并抑制过拟合。 数据增强 ：通过亮度归一化减少跨样本差异。 实施细节 ： 效果 ： Dice系数提升12%，模型训练时间缩短20%。 不同设备（GPU/CPU）部署时性能一致性提高。 三、示例回答 问题 ：LayerNorm和BatchNorm的适用场景有何不同？请结合实际项目说明。 回答结构 ： 技术原理对比 LayerNorm ：对单个样本所有特征维度归一化 BatchNorm ：对同一批次内同一特征维度归一化，依赖批次统计量 适用场景差异 LayerNorm适用场景 ： 自然语言处理（NLP） ： Transformer"
+    },
+    {
+      "slug": "dcbept28bs932bvr",
+      "title": "21.微调时模型遗忘怎么解决",
+      "url": "/tulingzhouyu/db22bv/dcbept28bs932bvr",
+      "toc_path": [
+        "AI大模型面试",
+        "21.微调时模型遗忘怎么解决"
+      ],
+      "toc_level": 1,
+      "toc_index": 1477,
+      "word_count": 1498,
+      "updated_at": "2025-07-14T07:45:35.000Z",
+      "primary_category": "resume-project",
+      "primary_category_name": "简历与项目表达",
+      "related_categories": [
+        "resume-project",
+        "project-system-design",
+        "observability-troubleshooting",
+        "performance-optimization",
+        "ai-llm"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "campus"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "项目",
+        "方案",
+        "监控",
+        "优化",
+        "RT",
+        "容量",
+        "AI",
+        "大模型"
+      ],
+      "summary": "一、答题思路模型遗忘（Catastrophic Forgetting）的解决核心是平衡新旧知识保留，可从以下维度切入：数据层面：混合原始任务数据与新任务数据训练策略：正则化约束/学习率控制/渐进式学习模型架构：多任务学习/Adapter模块/模型融合评估监控：新旧任务指标同步验证首先，模型遗忘...",
+      "excerpt": "一、答题思路 模型遗忘（Catastrophic Forgetting）的解决核心是 平衡新旧知识保留 ，可从以下维度切入： 数据层面 ：混合原始任务数据与新任务数据 训练策略 ：正则化约束/学习率控制/渐进式学习 模型架构 ：多任务学习/Adapter模块/模型融合 评估监控 ：新旧任务指标同步验证 首先，模型遗忘通常指的是在微调过程中，模型在新任务上表现提升的同时，对原有任务的能力下降。解决这个问题需要从多个角度考虑，比如数据、训练策略、模型结构等。可能的方法包括数据增强、保留原始任务数据、正则化技术、多任务学习、渐进式微调、模型融合等。需要先明确这些方法的基本原理，然后结合实际案例来说明。 接下来是项目案例。要结合真实项目，分点结构化解答。比如新闻分类模型的微调，转向医疗文本分类时出现的遗忘问题。需要具体说明问题现象，比如准确率下降，然后采取的解决方案，比如混合原始数据、正则化、动态调整学习率、多任务学习等，最后结果如何提升。 然后示例回答要简洁专业，分点清晰，用项目中的具体数据支撑。最后总结要简明扼要，强调综合策略的重要性。 需要注意的是，回答需要既专业又通俗易懂，所以需要避免过于技术化的术语，或者至少解释清楚。同时，面试回答可能需要展示问题分析、解决方法和实际应用能力，所以案例部分要具体，展示实际效果。 是否有其他方法，如EWC（弹性权重巩固）或者重放缓冲区？可能需要提到，但在项目案例中可能选择更常见的方法，如数据混合和正则化，以确保易懂性。另外，是否需要考虑模型容量是否足够？如果模型太小，微调可能导致覆盖原有知识，但可能属于另一个问题，不属于遗忘的主要解决方向，但可以提及。 在项目案例中，需要具体说明步骤和每个步骤的效果，比如保留10%原始数据，L2正则化参数设置，学习率调整策略等，这样显得更真实。 总结时，要强调没有单一解决方案，需要根据具体情况选择组合策略，并提到监控和评估的重要性，确保新旧任务平衡。 现在整合这些思路，确保结构清晰，逻辑连贯，用词准确但易懂。 二、真实项目案例：医疗文本分类模型微调 项目背景 在将通用新闻分类BERT模型微调为医疗文本分类模型时，发现原新闻分类准确率从92%骤降至68%，同时医疗任务准确率仅达81% 解决方案 数据混合策略 保留10%原始新闻分类数据（约5万条）与医疗数据混合训练 通过TF-IDF筛选与新任务语义相似的原始样本 正则化约束 采用弹性权重固化（EWC）算法，冻结关键神经元权重 公式： 设置λ=0.3，保留关键参数80%原始值 渐进式学习率 底层参数使用1e-5学习率，顶层分类层用5e-4 采用余弦退火策略： 动态评估机制 每500步验证新旧任务准确率 设置任务平衡系数：当旧任务下降>5%时，增强原始数据采样权重20% 实施效果 医疗任务准确率提升至89% 新闻分类任务恢复至85% 训练时间增加1"
+    },
+    {
+      "slug": "vfcdglwwrmmrcadg",
+      "title": "17.什么是大模型epoch和学习率",
+      "url": "/tulingzhouyu/db22bv/vfcdglwwrmmrcadg",
+      "toc_path": [
+        "AI大模型面试",
+        "17.什么是大模型epoch和学习率"
+      ],
+      "toc_level": 1,
+      "toc_index": 1481,
+      "word_count": 2161,
+      "updated_at": "2025-07-14T07:45:36.000Z",
+      "primary_category": "resume-project",
+      "primary_category_name": "简历与项目表达",
+      "related_categories": [
+        "resume-project",
+        "ai-llm",
+        "performance-optimization",
+        "project-system-design",
+        "jvm-memory-gc"
+      ],
+      "question_type": "resume_project",
+      "question_type_name": "简历项目题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "项目",
+        "面试官",
+        "AI",
+        "大模型",
+        "优化",
+        "调优",
+        "RT",
+        "方案"
+      ],
+      "summary": "以下是从面试开发工程师岗位的专业回答框架，结合实际项目案例（金融领域文本生成模型训练）项目背景参数设置与调优效果验证关键发现示例回答答题思路（结构化拆解）基础定义：用技术+业务双视角解释概念Epoch：模型遍历全体训练数据的完整周期，相当于\"学习资料通读次数\"学习率：参数更新的步长幅度，控制模...",
+      "excerpt": "以下是从面试开发工程师岗位的专业回答框架，结合实际项目案例（金融领域文本生成模型训练） 项目背景 参数设置与调优 效果验证 关键发现 示例回答 答题思路（结构化拆解） 基础定义 ：用技术+业务双视角解释概念 Epoch：模型遍历全体训练数据的完整周期，相当于&quot;学习资料通读次数&quot; 学习率：参数更新的步长幅度，控制模型&quot;学习速度&quot; 核心关系 ： 学习率过大 → 震荡不收敛（步子太大错过最优解） 学习率过小 → 收敛缓慢（原地踏步） Epoch不足 → 欠拟合（没学透知识点） Epoch过多 → 过拟合（死记硬背训练题） 工程实践 ： 学习率预热（Warmup） 动态衰减策略（Cosine/Step） 早停机制（Early Stopping） 真实项目案例（金融领域文本生成模型训练） 项目背景 为某券商开发研报摘要生成系统，使用LLaMA-7B模型在20万份中文金融文档上微调 参数设置与调优 Epoch设计 ： 基线设置：10 epoch（常规NLP任务常用值） 实际表现：验证集Loss在第6 epoch开始波动上升（过拟合信号） 最终方案：采用早停策略，实际训练5 epoch即停止 学习率策略 ： 初始值：3e-5（参考HuggingFace推荐值） 动态调整： 异常处理：当梯度范数超过阈值时自动缩减学习率 学习率5e-5 指的是什么？ 好的，用户问“学习率5e-5 指的是什么？”。首先，我需要确定用户的知识背景。他们可能对机器学习的术语有一定了解，但可能不是特别深入。学习率是优化算法中的一个重要参数，尤其是在训练神经网络时。学习率5e-5中的“5e-5”是科学计数法，表示5乘以10的负5次方，也就是0.00005。 学习率（Learning Rate）是机器学习中最核心的超参数之一，而 5e-5 是科学计数法表示的具体数值。用通俗语言解释如下： 通俗解释 5e-5 = 0.00005 ，表示模型每次参数更新的「步长幅度」。 相当于告诉模型： ▸ 每次从错误中学习时，调整参数的力度是 0.00005 ▸ 步子太大（如 0.1）容易「跨过」最优解 ▸ 步子太小（如 1e-6）会导致学习效率低下 为什么是5e-5？ 预训练模型微调 ： BERT、GPT等大模型的官方推荐学习率通常在 1e-5 到 5e-5 之间 例：HuggingFace Transformers库的默认学习率是 5e-5 原因：大模型参数已预训练收敛，需小幅度调整避免破坏已有知识 对比实验数据（某对话生成项目） ： 学习率 验证集Loss 生成质量评分 1e-4 震荡不收敛 61% 5e-5 稳定下降 83% 1e-5 收敛缓慢 76% 物理意义举例 ： 当模型预测错误时，参数调整幅度为： [ \\Delta w = 0.00005 \\times \\text{"
+    }
+  ]
+}

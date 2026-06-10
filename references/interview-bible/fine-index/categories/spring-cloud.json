@@ -1,0 +1,1173 @@
+{
+  "id": "spring-cloud",
+  "name": "Spring Cloud与微服务",
+  "aliases": [
+    "Spring Cloud",
+    "SpringCloud",
+    "Feign",
+    "Gateway",
+    "Sentinel",
+    "注册中心",
+    "配置中心",
+    "Nacos"
+  ],
+  "count": 26,
+  "total_word_count": 54982,
+  "articles": [
+    {
+      "slug": "zb2lmi2kvgoqrwtc",
+      "title": "银行信贷系统(亮点与难点)",
+      "url": "/tulingzhouyu/db22bv/zb2lmi2kvgoqrwtc",
+      "toc_path": [
+        "面试必看",
+        "项目亮点和难点",
+        "银行信贷系统(亮点与难点)"
+      ],
+      "toc_level": 2,
+      "toc_index": 22,
+      "word_count": 3808,
+      "updated_at": "2025-03-18T09:07:23.000Z",
+      "primary_category": "spring-cloud",
+      "primary_category_name": "Spring Cloud与微服务",
+      "related_categories": [
+        "spring-cloud",
+        "mysql-index-transaction",
+        "resume-project",
+        "project-system-design",
+        "performance-optimization"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle",
+        "campus"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "SpringCloud",
+        "Feign",
+        "Gateway",
+        "Sentinel",
+        "Nacos",
+        "MySQL",
+        "索引",
+        "事务",
+        "锁",
+        "简历",
+        "项目",
+        "亮点",
+        "性能"
+      ],
+      "summary": "Java高级开发-女生.pdf上面这位学员简历的项目没什么亮点和难点，投出去面试机会可能不多，经过和老师沟通后，着重优化了第二个项目《信贷金融级分布式系统》，这个项目本质上就是一个分布式信贷系统，优化如下：信贷金融级分布式系统 | （5年以上 / Java高级/架构）技术架构：SpringCl...",
+      "excerpt": "上面这位学员简历的项目没什么亮点和难点，投出去面试机会可能不多，经过和老师沟通后，着重优化了第二个项目《 信贷金融级分布式系统 》，这个项目本质上就是一个 分布式信贷系统 ，优化如下： ​ 信贷金融级分布式系统 | （5年以上 / Java高级/架构） 技术架构 ：SpringCloud Alibaba微服务/MySQL集群/Redis分布式缓存/Seata分布式事务/Nacos服务治理/Vue3前端 项目规模 ：支撑日均10万+信贷业务请求，管理超500亿授信资产 项目描述 ： 本项目是面向全行业务需求打造的金融级风控系统，每日处理交易金额达数十亿，服务覆盖银行内部数十个业务部门以及上万家合作商户。系统基于先进的微服务架构构建，主要包含风险识别、风险评估、风险监控、风险预警和风险处置五大核心模块，全面覆盖信贷业务、支付结算、信用卡业务等关键领域，为银行的稳健运营提供坚实的风险防控保障。 核心贡献与技术创新 高可用微服务架构设计 主导设计基于SpringCloud的微服务解决方案，解耦出授信审批、客户画像、风控核验等8个业务域服务，服务间调用延迟降低至35ms（原单体架构180ms） 设计分级熔断策略：核心服务线程隔离+滑动时间窗熔断，系统可用性从99.3%提升至99.97% 分布式事务一致性突破 攻克跨服务事务难题，采用「Seata AT模式+业务补偿」混合方案： 基础事务通过Seata全局锁实现ACID 长周期业务实现TCC型补偿接口，补偿成功率提升至99.2% 设计异步对账机制，实现每天500万+金融交易的自动核对 高并发性能调优 解决日终批量处理性能瓶颈： 引入Disruptor框架重构批处理引擎，吞吐量从1200TPS提升至6500TPS 设计二级缓存策略（Redis+Caffeine），热点客户信息查询响应<50ms 主导MySQL分库分表方案，采用基因法分片策略，支撑单表亿级数据OLTP 全链路风控体系构建 设计授信决策引擎：集成50+风控规则模型，实时计算授信额度 实现敏感操作双录审计，通过区块链存证关键审批流水 开发实时反欺诈模块，基于Flink实现毫秒级规则触发，拦截异常请求日均2000+次 全链路安全性体系构建 从传输→权限→检测→追溯构建完整链条：满足《商业银行信息科技风险管理指引》等监管要求 防范新型攻击：供应链攻击、API渗透、内部人员数据泄露 处理日均10万+请求时保障安全策略不降低系统性能 技术攻坚亮点 自研分布式ID生成器 ：结合雪花算法与机房号设计，ID生成性能达12万+/s，解决全局ID冲突问题 智能限流系统 ：基于Sentinel开发动态流量权重分配模块，大促期间核心服务SLA保障率100% 全链路压测体系 ：构建基于Jmeter的压测平台，提前识别3处分布式锁竞争问题，系统扩容成本降低40% 全链路安全性体系构建 ："
+    },
+    {
+      "slug": "bc44no2mis8redbn",
+      "title": "💎微服务面试合集",
+      "url": "/tulingzhouyu/db22bv/bc44no2mis8redbn",
+      "toc_path": [
+        "SpringCloud",
+        "💎微服务面试合集"
+      ],
+      "toc_level": 1,
+      "toc_index": 562,
+      "word_count": 18306,
+      "updated_at": "2024-06-21T13:15:01.000Z",
+      "primary_category": "spring-cloud",
+      "primary_category_name": "Spring Cloud与微服务",
+      "related_categories": [
+        "spring-cloud",
+        "spring-core",
+        "microservices-governance",
+        "resume-project",
+        "observability-troubleshooting"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle",
+        "expert"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年",
+        "专家/P7+"
+      ],
+      "keywords": [
+        "Spring Cloud",
+        "SpringCloud",
+        "Feign",
+        "Gateway",
+        "Sentinel",
+        "注册中心",
+        "配置中心",
+        "Nacos",
+        "Spring",
+        "服务治理",
+        "限流",
+        "熔断"
+      ],
+      "summary": "概念1.微服务有什么好处？ 微服务优点很多，但是我们通常说一个东西好肯定会跟另一个东西比较， 通常说微服务好会和单体项目进行比较。以下是微服务相对于单体项目的一些显著好处：首先，让我们讨论单体项目的一些主要缺点：单体项目的缺点：可扩展性受限： 单体应用通常在可扩展性方面受到限制，因为整个应用程...",
+      "excerpt": "概念 1.微服务有什么好处？ 微服务优点很多，但是我们通常说一个东西好肯定会跟另一个东西比较， 通常说微服务好会和单体项目进行比较。以下是微服务相对于单体项目的一些显著好处： 首先，让我们讨论单体项目的一些主要缺点： 单体项目的缺点： 可扩展性受限： 单体应用通常在可扩展性方面受到限制，因为整个应用程序必须一起扩展。这意味着即使只有一个组件需要更多资源，也必须扩展整个应用程序，这可能会导致资源浪费。 难以维护和更新： 随着时间的推移，单体应用程序往往变得越来越庞大和复杂，难以理解、维护和更新。每次修改都可能引发意想不到的影响。 高风险： 单体应用程序中的一个小错误或故障可能会导致整个应用程序崩溃，因此存在较高的风险。此外，长时间不更新的单体应用可能会受到安全威胁。 技术栈限制： 单体应用程序通常使用相同的技术栈，这可能会限制您在项目中使用最新的技术和工具的能力。 团队协作复杂： 单体应用程序的所有组件都在一个代码库中，这可能导致开发团队之间的冲突和协作问题，尤其在大型团队中更为突出。 现在，让我们看看微服务项目的一些优点： 微服务项目的优点： 可扩展性： 微服务架构允许您根据需要独立地扩展单个服务，而不必扩展整个应用程序，这提供了更高的可扩展性。 灵活性和快速开发： 微服务允许开发团队独立设计、开发和部署服务，这提高了灵活性，允许团队更快地推出新功能和更新。 故障隔离和容错性： 单个微服务的故障通常不会影响其他服务，提高了应用程序的容错性，同时更容易识别和解决故障。 技术多样性： 微服务允许您选择适合每个服务的最佳技术栈，这有助于充分利用各种技术和工具的优势。 独立部署和维护： 微服务可以独立部署和维护，这减少了风险，使团队能够更快速地进行修复和更新。 团队协作： 不同团队可以独立工作在不同服务上，这提高了团队的自治和协作能力，减少了冲突。 总的来说，微服务项目通过提供更高的可扩展性、灵活性和容错性，以及更容易管理的部署和维护过程，有助于克服单体应用程序的一些限制和缺点。但请注意，微服务架构也会引入一些新的复杂性，需要更多的管理和监控。选择适合您项目需求的架构取决于多种因素。 2.微服务带来了哪些挑战？ ​ 成本挑战： 基础设施成本增加： 微服务应用通常需要更多的基础设施资源，例如服务器、容器管理、负载均衡器等，这可能导致运营成本增加。 开发和维护成本： 管理多个微服务的开发、测试、部署和维护需要更多的工程师资源，这可能导致开发和维护成本上升。 复杂性挑战： 分布式系统复杂性： 微服务应用是分布式系统，涉及多个独立运行的服务，这增加了系统的复杂性，包括网络通信、故障处理和事务管理等方面。 服务发现和治理： 管理多个微服务的发现、注册、版本控制和路由需要额外的复杂性，例如使用服务网格或API网关。 部署挑战： 自动化部署需求： 为了有效地部署多个微服务，需要建"
+    },
+    {
+      "slug": "mwr22wwg7p40zbfi",
+      "title": "Sentinel 与Hystrix的区别是什么",
+      "url": "/tulingzhouyu/db22bv/mwr22wwg7p40zbfi",
+      "toc_path": [
+        "SpringCloud",
+        "Sentinel 与Hystrix的区别是什么"
+      ],
+      "toc_level": 1,
+      "toc_index": 563,
+      "word_count": 1244,
+      "updated_at": "2026-01-19T11:38:10.000Z",
+      "primary_category": "spring-cloud",
+      "primary_category_name": "Spring Cloud与微服务",
+      "related_categories": [
+        "spring-cloud",
+        "performance-optimization",
+        "project-system-design",
+        "os-linux",
+        "microservices-governance"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "Spring Cloud",
+        "SpringCloud",
+        "Sentinel",
+        "配置中心",
+        "Nacos",
+        "性能",
+        "QPS",
+        "吞吐",
+        "秒杀",
+        "限流",
+        "降级",
+        "熔断"
+      ],
+      "summary": "一、 标准面试回答模版（建议背诵）面试官： 谈谈 Sentinel 和 Hystrix 的区别，为什么现在大家都在用 Sentinel？Fox版标准回答： “这个问题其实是在问：‘你的技术栈是不是还停留在 2018 年？’ Hystrix 是微服务熔断界的‘鼻祖’，但它已经停止维护（Maint...",
+      "excerpt": "一、 标准面试回答模版（建议背诵） 面试官： 谈谈 Sentinel 和 Hystrix 的区别，为什么现在大家都在用 Sentinel？ Fox版标准回答： “这个问题其实是在问：‘你的技术栈是不是还停留在 2018 年？’ Hystrix 是微服务熔断界的‘鼻祖’，但它已经 停止维护（Maintenance Mode） 了。而 Sentinel 是阿里的‘当红炸子鸡’。 我对这两者的区别，总结为**‘一个核心差异，三个维度碾压’**： 核心差异（隔离策略）： Hystrix： 强依赖 线程池隔离（Thread Pool） 。它为每个依赖服务创建一个独立的线程池。优点是隔离彻底、支持异步；缺点是 线程上下文切换开销大 ，影响吞吐量。 Sentinel： 默认使用 信号量隔离（Semaphore） （也就是计数器）。优点是 轻量级、性能极致 （几乎无损耗）；缺点是不支持异步（但在大多数 RPC 调用场景下，同步等待才是常态）。 维度一：流量整形的丰富度（Flow Control）： Hystrix 的流控很弱，基本只能基于 QPS 阈值。 Sentinel 的流控是 全维度 的：支持 QPS、线程数、 冷启动预热（Warm Up） 、 排队等待（匀速器） ，甚至支持 热点参数限流 （比如只限制 id=1 的商品请求）。 维度二：熔断降级的灵活度： Hystrix 主要看 异常比率 或 响应时间 。 Sentinel 除了这些，还支持 异常数 ，且恢复策略更智能。 维度三：系统自适应保护： Sentinel 有一个独门绝技—— System Adaptive Protection 。它能根据 系统负载（Load）、CPU 使用率 自动限流，这是 Hystrix 完全不具备的。” 二、 核心原理层面的体现（代码与机制） 1. 场景一：隔离策略的性能之争 面试官潜台词： 为什么 Hystrix 的性能不如 Sentinel？ Hystrix 的线程池隔离： Fox 点评： “在海量并发下，Hystrix 制造了成千上万个线程，CPU 光是忙着 线程切换（Context Switch） 就累死了，哪还有精力处理业务？” Sentinel 的信号量隔离： Fox 点评： “Sentinel 的逻辑就像 门口的保安 ，手里拿个计数器。人满了就拦住，没满就放行。 没有线程切换，只有原子操作 ，这性能能不快吗？” 三、 Fox 的深度解析（ 选型策略） 如果面试官追问：“ 那 Hystrix 是不是一无是处？Sentinel 有什么坑吗？ ” Fox版解析： 1. 这里的‘坑’在于生态和维护： “ Listen carefully! Hystrix 已经‘死’了（Netflix 宣布不再开发新功能）。如果你的项目是新起的 Spring Cloud Alibaba 架构，强行"
+    },
+    {
+      "slug": "hcnphqavvzuggvow",
+      "title": "Nacos中的Namespace是什么？如何使用它来组织和管理微服务",
+      "url": "/tulingzhouyu/db22bv/hcnphqavvzuggvow",
+      "toc_path": [
+        "SpringCloud",
+        "Nacos中的Namespace是什么？如何使用它来组织和管理微服务"
+      ],
+      "toc_level": 1,
+      "toc_index": 565,
+      "word_count": 1153,
+      "updated_at": "2026-01-19T11:41:01.000Z",
+      "primary_category": "spring-cloud",
+      "primary_category_name": "Spring Cloud与微服务",
+      "related_categories": [
+        "spring-cloud",
+        "docker-k8s",
+        "resume-project",
+        "ai-llm",
+        "jvm-memory-gc"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "expert",
+        "campus",
+        "senior"
+      ],
+      "level_names": [
+        "专家/P7+",
+        "校招/应届生",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "SpringCloud",
+        "Nacos",
+        "Service",
+        "项目",
+        "面试官",
+        "AI",
+        "堆"
+      ],
+      "summary": "一、 标准面试回答模版（建议背诵）面试官： 谈谈你对 Nacos Namespace 的理解，你是怎么用它的？Fox版标准回答： “Look at me! 如果你只回答‘Namespace 是命名空间，用来做隔离的’，那只能打 50 分。 你要从 Nacos 的‘数据模型三元组’说起。我对 N...",
+      "excerpt": "一、 标准面试回答模版（建议背诵） 面试官： 谈谈你对 Nacos Namespace 的理解，你是怎么用它的？ Fox版标准回答： “ Look at me! 如果你只回答‘Namespace 是命名空间，用来做隔离的’，那只能打 50 分。 你要从 Nacos 的‘数据模型三元组’说起。 我对 Nacos Namespace 的理解，核心在于它是 最粗粒度的资源隔离维度 。 在 Nacos 的数据模型设计中，层级是这样的： Namespace > Group > Service/DataId 。 核心定义： Namespace（命名空间）主要用于实现 环境隔离 （Environment Isolation）。 默认情况下，Nacos 有一个保留的 Namespace 叫 public 。 但在实际生产中，我们绝对不会把所有配置都堆在 public 里，那是‘灾难现场’。 使用场景： 我们通常用 Namespace 来区分 开发环境（Dev）、测试环境（Test）、生产环境（Prod） 。 Dev 环境 的微服务，只去读取 Dev Namespace 下的配置。 Prod 环境 的微服务，只去读取 Prod Namespace 下的配置。 这样就从物理层面保证了配置的安全性，绝对不会出现‘在测试环境改了配置，结果把生产环境搞挂了’这种低级事故。” 二、 实战层面的体现（配置与代码） 1. 场景一：配置文件的差异 面试官潜台词： 你真的在项目里配置过吗？ 错误示范（小白写法）： 什么都不配，默认使用 public 。这就好比你把家里卧室、厕所、厨房的东西全堆在客厅里，乱成一锅粥。 正确示范（生产写法）： 在 bootstrap.properties 或 bootstrap.yml 中显式指定 Namespace 的 ID （注意：是填 ID，不是填名称！）。 2. 场景二：控制台的视觉隔离 Fox 点评： “当你打开 Nacos 控制台，你应该看到的是干净清爽的标签页：‘Dev’、‘Test’、‘Prod’。 如果不切 Namespace，你甚至根本搜不到别的环境的配置。这就是 物理隔离 带来的安全感。” 三、 Fox 的深度解析 如果面试官追问：“ Namespace 和 Group 都能做隔离，它们有什么区别？怎么配合使用？ ” Fox版解析： 1. 设计哲学的区别： “ Listen carefully! 这两者的维度完全不同。 Namespace (命名空间)： 是 纵向 切分。它代表的是**‘不同的世界’**。 比如：北京机房 vs 上海机房，或者 租户 A vs 租户 B，或者 Dev vs Prod。 它们之间是 老死不相往来 的。 Group (分组)： 是 横向 切分。它代表的是**‘同一个世界里的不同模块’**。 比如：在 Prod 环境"
+    },
+    {
+      "slug": "lt1vsgvuwy5lsqtb",
+      "title": "在微服务架构中，网关的作用是什么",
+      "url": "/tulingzhouyu/db22bv/lt1vsgvuwy5lsqtb",
+      "toc_path": [
+        "SpringCloud",
+        "在微服务架构中，网关的作用是什么"
+      ],
+      "toc_level": 1,
+      "toc_index": 566,
+      "word_count": 1245,
+      "updated_at": "2026-01-19T11:46:32.000Z",
+      "primary_category": "spring-cloud",
+      "primary_category_name": "Spring Cloud与微服务",
+      "related_categories": [
+        "spring-cloud",
+        "docker-k8s",
+        "spring-core",
+        "security-auth",
+        "resume-project"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "Spring Cloud",
+        "SpringCloud",
+        "Gateway",
+        "Sentinel",
+        "Nacos",
+        "Service",
+        "Spring",
+        "鉴权",
+        "JWT",
+        "简历",
+        "面试官"
+      ],
+      "summary": "一、 标准面试回答模版（建议背诵）面试官： 在微服务架构中，网关的作用是什么？为什么我们需要它？Fox版标准回答： “ 如果你只回答‘网关是用来转发请求的’，那你只看到了第一层。 网关的本质是微服务架构中的‘统一门面’（Facade Pattern）。我对网关的理解，可以概括为‘一个入口，四个...",
+      "excerpt": "一、 标准面试回答模版（建议背诵） 面试官： 在微服务架构中，网关的作用是什么？为什么我们需要它？ Fox版标准回答： “ 如果你只回答‘网关是用来转发请求的’，那你只看到了第一层。 网关的本质是微服务架构中的‘ 统一门面’（Facade Pattern） 。 我对网关的理解，可以概括为 ‘一个入口，四个核心职责’ ： 一个入口（Unified Entry）： 它是所有客户端（App、Web、小程序）和后端微服务之间的 唯一入口 。 客户端不需要知道后端几百个服务的具体 IP 和端口，只需要找网关就行。这就实现了 客户端与服务端的解耦 。 四个核心职责 统一鉴权（Authentication）： ‘保安’的角色。你不能在每个微服务里都去校验 Token，那代码重复率太高了。鉴权逻辑必须上移到网关，校验通过后，把用户信息（User ID）塞进 Header 传给下游。 动态路由（Dynamic Routing）： ‘调度员’的角色。根据请求路径（ /order/** 或 /user/** ），把请求转发给 Nacos/Eureka 里注册的对应服务实例。 限流熔断（Rate Limiting）： ‘大坝’的角色。当流量洪峰来了，网关是第一道防线。利用 Sentinel 或 Redis 令牌桶算法，在入口处把多余的请求拦住，保护后端服务不被压垮。 协议转换（Protocol Conversion）： ‘翻译官’的角色。对外暴露的是 RESTful (HTTP/JSON)，对内可能是性能更好的 RPC (Dubbo/gRPC)。网关负责这层协议的转换。” 二、 核心原理与场景层面的体现 1. 场景一：统一鉴权的架构演进 面试官潜台词： 鉴权到底该在哪里做？ 没有网关时（反例）： Service A 要校验 Token，Service B 也要校验 Token... 一旦鉴权逻辑变了（比如从 JWT 换成 OAuth2），你要改几十个服务的代码。这是 架构设计的耻辱 。 有网关时（正例）： Client -> Gateway (校验 Token -> 解析 UserID -> Header.add(&quot;X-User-Id&quot;, id) ) -> Service A 。 Service A 根本不需要懂 JWT，它只需要从 Header 里拿 X-User-Id 就行了。这叫 关注点分离 。 2. 场景二：BFF 模式 (Backend for Frontend) 面试官潜台词： 手机端和 PC 端需要的数据不一样怎么办？ Fox 点评： “手机屏幕小，只需要 3 个字段；PC 屏幕大，需要 10 个字段。如果共用一个接口，手机端会浪费流量（Over-fetching）。 网关的 BFF 能力： 我们可以针对不同的客户端，建立不同的网关或者路由聚合逻辑"
+    },
+    {
+      "slug": "kfaxscfgk5uasyg0",
+      "title": "阿里的Sentinel底层是如何实现限流的？超过限流数的请求如何处理？直接丢弃吗？",
+      "url": "/tulingzhouyu/db22bv/kfaxscfgk5uasyg0",
+      "toc_path": [
+        "SpringCloud",
+        "阿里的Sentinel底层是如何实现限流的？超过限流数的请求如何处理？直接丢弃吗？"
+      ],
+      "toc_level": 1,
+      "toc_index": 569,
+      "word_count": 751,
+      "updated_at": "2025-05-05T11:31:51.000Z",
+      "primary_category": "spring-cloud",
+      "primary_category_name": "Spring Cloud与微服务",
+      "related_categories": [
+        "spring-cloud",
+        "project-system-design",
+        "microservices-governance",
+        "java-core",
+        "spring-core"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "SpringCloud",
+        "Sentinel",
+        "高并发",
+        "限流",
+        "超时",
+        "异常",
+        "Spring"
+      ],
+      "summary": "一、Sentinel的底层限流实现机制1. 限流的核心思想Sentinel主要采用滑动时间窗口结合计数器的原理进行流量统计和限流判断，也融合了令牌桶、漏桶等思想。核心目标是在单位时间内只能通过限定的请求数，超出则触发限流。2. 滑动窗口结构时间窗口划分：Sentinel将统计时间（如1秒）切成...",
+      "excerpt": "一、Sentinel的底层限流实现机制 1. 限流的核心思想 Sentinel主要采用 滑动时间窗口结合计数器 的原理进行流量统计和限流判断，也融合了令牌桶、漏桶等思想。核心目标是 在单位时间内只能通过限定的请求数 ，超出则触发限流。 2. 滑动窗口结构 时间窗口划分 ：Sentinel将统计时间（如1秒）切成多个格子（如每格100ms），每个格子记录当前格子的请求数。 窗口滑动 ：每次有请求进来，根据时间戳判断属于哪个格子，并刷新对应计数。多个格子的统计值累加得出单位时间的总请求数。 核心数据结构 ：底层常用 LeapArray 这类循环队列管理时间窗口，保障统计高并发下的效率和准确度。 3. 阈值判断 每当有新请求进来时： Sentinel会计算当前时间窗口累计的请求数。 若超过限流阈值，则进入 限流逻辑 。 二、超过限流数的请求如何处理？直接丢弃吗？ Sentinel提供了 多种限流处理策略 ，通过配置FlowRule的controlBehavior参数决定。 1. 常用处理方式 controlBehavior 处理方式 说明 0（默认） 直接拒绝 超过阈值的请求立即被拒绝，直接返回异常 1 匀速排队（漏桶） 超过阈值的请求以固定速率排队等待 2 预热 刚启动时先低速允许，通过预热逐步上升 默认行为：直接拒绝 若未特殊配置，Sentinel是 直接丢弃（快速失败） 超过阈值的请求，并返回“限流”异常（如BlockException），这样下游系统不会因为过量流量被压垮。 匀速排队模式（漏桶思想） 若选择该模式，超过阈值的请求会被短时间排队处理，超时再丢弃。 预热模式 常用于服务刚启动的流量缓升场景，避免冷启动雪崩。 三、如何配置与适用场景 通过 流控规则 （FlowRule）灵活选择对应策略，如： 高频接口建议用直接拒绝（0），以免耗尽资源。 部分容忍等待的请求可用匀速排队（1）。 所有策略都能通过Sentinel Dashboard动态配置和变更。 总结 Sentinel底层主要采用 滑动窗口+计数器 限流，部分场景引入令牌桶/漏桶思想。 超过限流数的请求 默认会被直接拒绝 （丢弃）；可配置为排队或预热模式。 具体选择哪种处理方式，要根据业务容忍度和实际需求配置。"
+    },
+    {
+      "slug": "dgv3u0dofn6o7tos",
+      "title": "SkyWalking中的数据是如何收集和传输的",
+      "url": "/tulingzhouyu/db22bv/dgv3u0dofn6o7tos",
+      "toc_path": [
+        "SpringCloud",
+        "SkyWalking中的数据是如何收集和传输的"
+      ],
+      "toc_level": 1,
+      "toc_index": 571,
+      "word_count": 416,
+      "updated_at": "2023-09-11T07:07:12.000Z",
+      "primary_category": "spring-cloud",
+      "primary_category_name": "Spring Cloud与微服务",
+      "related_categories": [
+        "spring-cloud",
+        "observability-troubleshooting",
+        "spring-core",
+        "performance-optimization",
+        "jvm-memory-gc"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "SpringCloud",
+        "监控",
+        "告警",
+        "链路",
+        "Spring",
+        "性能"
+      ],
+      "summary": "SkyWalking中的数据主要通过以下步骤进行收集和传输：数据采集：SkyWalking的探针（probe）会与应用程序进行集成，从而可以获取到应用程序运行时的各种数据，包括但不限于请求响应时间、调用链路、系统资源使用情况等。这些数据随后被发送到SkyWalking的数据收集器（backen...",
+      "excerpt": "SkyWalking中的数据主要通过以下步骤进行收集和传输： 数据采集 ：SkyWalking的探针（probe）会与应用程序进行集成，从而可以获取到应用程序运行时的各种数据，包括但不限于请求响应时间、调用链路、系统资源使用情况等。这些数据随后被发送到SkyWalking的数据收集器（backend）中。 数据传输 ：SkyWalking的数据收集器接收到探针发送的数据后，会对数据进行一些必要的处理，例如数据清洗、过滤和汇总等。处理后的数据将被存储在SkyWalking的数据存储组件中，这一组件在SkyWalking的配置文件中被称为“database”。 数据消费 ：SkyWalking的数据存储组件不仅可以将收集到的数据存储在本地，还可以将数据发送给其他系统进行进一步的处理和消费。例如，SkyWalking可以将数据发送给可视化组件（UI），从而可以在图形化界面中查看和监控应用程序的性能数据。SkyWalking还可以将数据发送给告警系统，以便在性能问题发生时及时通知相关人员。 在SkyWalking的数据传输过程中，可能会使用到GRPC等协议进行高效的数据传输。而在数据消费阶段，SkyWalking也支持多种不同的数据处理和消费方式，具体方式可以在配置中进行设置。"
+    },
+    {
+      "slug": "iq3xku3g91gkg06n",
+      "title": "如果 Sentinel 的异常处理规则不满足需求，应该怎么办？",
+      "url": "/tulingzhouyu/db22bv/iq3xku3g91gkg06n",
+      "toc_path": [
+        "SpringCloud",
+        "如果 Sentinel 的异常处理规则不满足需求，应该怎么办？"
+      ],
+      "toc_level": 1,
+      "toc_index": 578,
+      "word_count": 193,
+      "updated_at": "2023-09-11T06:06:50.000Z",
+      "primary_category": "spring-cloud",
+      "primary_category_name": "Spring Cloud与微服务",
+      "related_categories": [
+        "spring-cloud",
+        "java-core",
+        "spring-core",
+        "docker-k8s",
+        "jvm-memory-gc"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "SpringCloud",
+        "Sentinel",
+        "异常",
+        "Spring",
+        "容器"
+      ],
+      "summary": "如果 Sentinel 的默认异常处理机制无法满足您的需求，您可以选择自定义异常处理规则。Sentinel 允许您通过自定义实现 BlockedExceptionHandler 接口，然后将自定义的异常处理器对象交给 Spring 容器进行管理。您可以根据实际业务需求，定制化异常处理策略，例如...",
+      "excerpt": "如 果 Sentinel 的默认异常处理机制无法满足您的需求，您可以选择自定义异常处理规则。 Sentinel 允许您通过自定义实现 BlockedExceptionHandler 接口，然后将自定义的异常处理器对象交给 Spring 容器进行管理。 您可以根据实际业务需求，定制化异常处理策略，例如全局兜底处理、日志打印、空指针检查等。 同时，您还可以在处理器中加入自定义的业务逻辑，例如对异常进行分类、统计和反馈等。 这样，您可以根据具体的应用场景和业务需求，灵活地扩展 Sentinel 的异常处理能力。"
+    },
+    {
+      "slug": "gbfb13gd6lzavg4v",
+      "title": "Sentinel 是什么？它是如何工作的？",
+      "url": "/tulingzhouyu/db22bv/gbfb13gd6lzavg4v",
+      "toc_path": [
+        "SpringCloud",
+        "Sentinel 是什么？它是如何工作的？"
+      ],
+      "toc_level": 1,
+      "toc_index": 579,
+      "word_count": 558,
+      "updated_at": "2023-09-11T05:56:12.000Z",
+      "primary_category": "spring-cloud",
+      "primary_category_name": "Spring Cloud与微服务",
+      "related_categories": [
+        "spring-cloud",
+        "project-system-design",
+        "microservices-governance",
+        "java-core",
+        "spring-core"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "SpringCloud",
+        "Sentinel",
+        "降级",
+        "熔断",
+        "Java",
+        "Spring"
+      ],
+      "summary": "Sentinel 是阿里巴巴开源的一款分布式服务架构的轻量级流量控制产品，它主要以流量为切入点，从流量控制、熔断降级、系统负载保护等多个维度来帮助您保护服务的稳定性。Sentinel 的基本概念包括资源、规则和处理器。资源是 Sentinel 的关键概念，可以是 Java 应用程序中的任何内容...",
+      "excerpt": "Sentinel 是阿里巴巴开源的一款分布式服务架构的轻量级流量控制产品，它主要以流量为切入点，从流量控制、熔断降级、系统负载保护等多个维度来帮助您保护服务的稳定性。 Sentinel 的基本概念包括资源、规则和处理器。资源是 Sentinel 的关键概念，可以是 Java 应用程序中的任何内容，例如由应用程序提供的服务，或由应用程序调用的其它应用提供的服务，甚至可以是一段代码。规则是围绕资源的实时状态设定的，可以包括流量控制规则、熔断降级规则以及系统保护规则，所有规则可以动态实时调整。 Sentinel 的主要功能有： 流量控制 ：Sentinel 可以控制每个服务或接口的并发请求数量，避免因为并发请求过多导致服务崩溃。 熔断降级 ：当某个服务或接口不可用时，Sentinel 可以自动触发熔断机制，避免因单个服务或接口故障导致整个系统的瘫痪。 系统负载保护 ：Sentinel 通过控制系统的整体负载，避免因系统过载导致服务性能下降甚至崩溃。 Sentinel 的工作原理主要分为三个步骤： 数据采集 ：Sentinel 通过代理模式将流量数据采集到自身，并进行数据清洗和整合。 策略计算 ：根据预先设定的规则和算法，Sentinel 计算并判断是否需要控制流量、熔断降级或保护系统负载。 结果执行 ：根据计算结果，Sentinel 对流量进行控制、熔断降级或保护系统负载等操作，以保障服务的稳定性。 总之，Sentinel 作为一款轻量级流量控制产品，适用于各种分布式服务架构，能够帮助您有效地保护服务的稳定性，提高系统的可用性和容错性。"
+    },
+    {
+      "slug": "hlz5p0zurwcgag11",
+      "title": "谈谈Ribbon和Feign区别",
+      "url": "/tulingzhouyu/db22bv/hlz5p0zurwcgag11",
+      "toc_path": [
+        "SpringCloud",
+        "谈谈Ribbon和Feign区别"
+      ],
+      "toc_level": 1,
+      "toc_index": 582,
+      "word_count": 403,
+      "updated_at": "2023-09-11T05:32:19.000Z",
+      "primary_category": "spring-cloud",
+      "primary_category_name": "Spring Cloud与微服务",
+      "related_categories": [
+        "spring-cloud",
+        "microservices-governance",
+        "netty-network",
+        "computer-network",
+        "java-core"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "SpringCloud",
+        "Feign",
+        "负载均衡",
+        "HTTP",
+        "Java",
+        "注解"
+      ],
+      "summary": "在分布式系统的微服务构建中，Ribbon和Feign都是Netflix开发的Java库。Ribbon是一个客户端负载均衡器，作用在于多个微服务实例间分发请求，提升可用性和性能。它可与各种HTTP客户端如RestTemplate配合使用来发送HTTP请求并进行负载均衡。Feign则是一个声明式的...",
+      "excerpt": "在分布式系统的微服务构建中，Ribbon和Feign都是Netflix开发的Java库。 Ribbon是一个客户端负载均衡器 ，作用在于多个微服务实例间分发请求，提升可用性和性能。它可与各种HTTP客户端如RestTemplate配合使用来发送HTTP请求并进行负载均衡。 Feign则是一个声明式的HTTP客户端 ，通过编写接口来定义对远程微服务的需求。Feign使用注解和模板方法简化了远程调用的编写，使得调用远程服务的代码更加清晰和简洁。它更注重简洁的声明式编程模型，你只需编写接口并使用注解描述HTTP请求，Feign会在运行时生成实现类来执行实际的HTTP请求。 Ribbon和Feign都用于构建分布式系统中的微服务，但两者在用途、编程模型和集成上存在差异。 Ribbon更注重负载均衡 ，需要配合其他库如RestTemplate来发送http请求，而Feign则采用声明式编程模型，只需编写接口和注解即可。此外，Ribbon提供了自定义负载均衡策略的能力，而 Feign通常与Ribbon一起使用以实现负载均衡 。 总的来说，如果你需要更多的控制和自定义负载均衡策略，可以选择Ribbon；如果你更喜欢简洁的声明式编程模型，可以选择Feign。"
+    },
+    {
+      "slug": "spfvu14fptvuc6un",
+      "title": "Nacos、Eureka、Zookeeper注册中心的区别",
+      "url": "/tulingzhouyu/db22bv/spfvu14fptvuc6un",
+      "toc_path": [
+        "SpringCloud",
+        "Nacos、Eureka、Zookeeper注册中心的区别"
+      ],
+      "toc_level": 1,
+      "toc_index": 584,
+      "word_count": 326,
+      "updated_at": "2023-09-05T06:11:02.000Z",
+      "primary_category": "spring-cloud",
+      "primary_category_name": "Spring Cloud与微服务",
+      "related_categories": [
+        "spring-cloud",
+        "spring-core",
+        "microservices-governance",
+        "jvm-memory-gc"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "SpringCloud",
+        "注册中心",
+        "Nacos",
+        "Spring",
+        "服务治理"
+      ],
+      "summary": "Nacos、Eureka和Zookeeper都是常用的注册中心，它们在功能和实现方式上存在一些不同。Nacos除了作为注册中心外，还提供了配置管理、服务发现和事件通知等功能。Nacos默认情况下采用AP架构保证服务可用性，CP架构底层采用Raft协议保证数据的一致性。Nacos适合作为微服务注...",
+      "excerpt": "Nacos、Eureka和Zookeeper都是常用的注册中心，它们在功能和实现方式上存在一些不同。 Nacos除了作为注册中心外，还提供了配置管理、服务发现和事件通知等功能。Nacos默认情况下采用AP架构保证服务可用性，CP架构底层采用Raft协议保证数据的一致性。Nacos适合作为微服务注册中心和配置管理中心，支持快速发现、配置管理和服务治理等功能。 Eureka是只提供注册中心功能的工具，它的设计理念是AP，即保证服务的可用性，不保证一致性。Eureka的各个节点之间相互注册，只要有一台Eureka节点存在，整个微服务就可以通讯。 而Zookeeper相比前两者，除了注册中心的功能，还提供了分布式协调服务，比如通知、公告、配置管理等。Zookeeper采用CP设计，可以保证数据的一致性，但是牺牲了一部分服务的可用性。Zookeeper适用于需要分布式协调服务的场景，如配置管理、命名服务等。 ​"
+    },
+    {
+      "slug": "elzhqhz3tpllp5kc",
+      "title": "说下Hystrix与Sentinel的区别",
+      "url": "/tulingzhouyu/db22bv/elzhqhz3tpllp5kc",
+      "toc_path": [
+        "SpringCloud",
+        "说下Hystrix与Sentinel的区别"
+      ],
+      "toc_level": 1,
+      "toc_index": 585,
+      "word_count": 345,
+      "updated_at": "2023-09-05T05:47:39.000Z",
+      "primary_category": "spring-cloud",
+      "primary_category_name": "Spring Cloud与微服务",
+      "related_categories": [
+        "spring-cloud",
+        "microservices-governance",
+        "project-system-design",
+        "java-thread-pool",
+        "spring-core"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "Spring Cloud",
+        "SpringCloud",
+        "Sentinel",
+        "熔断",
+        "降级",
+        "超时",
+        "高并发",
+        "线程池",
+        "Spring"
+      ],
+      "summary": "Hystrix和Sentinel都是服务熔断器，用于提高分布式系统的弹性。它们的主要区别在于实现方式、适用场景和资源模型设计。Hystrix基于命令模式设计，将外部资源的调用封装在命令对象中，通过线程池或信号量来实现隔离。它提供了丰富的配置选项，如线程池大小、超时时间等，以实现对系统资源的有力...",
+      "excerpt": "Hystrix和Sentinel都是服务熔断器，用于提高分布式系统的弹性。它们的主要区别在于实现方式、适用场景和资源模型设计。 Hystrix基于命令模式设计，将外部资源的调用封装在命令对象中，通过线程池或信号量来实现隔离。它提供了丰富的配置选项，如线程池大小、超时时间等，以实现对系统资源的有力控制。Hystrix更适用于需要高并发、快速响应的场景，因为它可以快速隔离和恢复故障。 Sentinel则基于流量控制和熔断降级的思想，可以与Spring Cloud、gRPC、Dubbo等框架集成。它通过定义资源规则和应用策略来实现对系统资源的控制。Sentinel更适用于需要流量控制和熔断降级的场景，它可以根据系统负载和响应时间来实现自动熔断和降级操作。 总之，Hystrix和Sentinel都是服务熔断器，用于提高系统的弹性。它们在实现方式、适用场景和资源模型设计等方面存在一些不同。具体选择哪个工具取决于系统的具体需求和场景。"
+    },
+    {
+      "slug": "mbskkmpmp51kfgms",
+      "title": "单体应用、SOA 和微服务架构有什么区别",
+      "url": "/tulingzhouyu/db22bv/mbskkmpmp51kfgms",
+      "toc_path": [
+        "SpringCloud",
+        "单体应用、SOA 和微服务架构有什么区别"
+      ],
+      "toc_level": 1,
+      "toc_index": 586,
+      "word_count": 354,
+      "updated_at": "2023-09-05T05:46:25.000Z",
+      "primary_category": "spring-cloud",
+      "primary_category_name": "Spring Cloud与微服务",
+      "related_categories": [
+        "spring-cloud",
+        "spring-core",
+        "devops-release",
+        "computer-network",
+        "jvm-memory-gc"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "SpringCloud",
+        "Spring",
+        "部署",
+        "网络"
+      ],
+      "summary": "单体应用、SOA和微服务架构都是不同的架构风格，适用于不同的情况。单体应用像一个整体，所有的功能都打包在一个应用中。这种架构风格容易部署和测试，但随着系统规模的扩大，它的灵活性和可维护性会降低。SOA是一种面向服务的架构风格，将系统划分为多个独立的服务。这些服务可以通过网络调用，并且可以跨平台...",
+      "excerpt": "单体应用、SOA和微服务架构都是不同的架构风格，适用于不同的情况。 单体应用像一个整体，所有的功能都打包在一个应用中 。这种架构风格容易部署和测试，但随着系统规模的扩大，它的灵活性和可维护性会降低。 SOA是一种面向服务的架构风格，将系统划分为多个独立的服务 。这些服务可以通过网络调用，并且可以跨平台、跨语言进行交互。SOA的优点是提供了跨系统的服务复用和松散耦合的交互方式，但实现SOA需要投入大量的工作，包括服务的定义、接口的选择、协议的制定等。 微服务架构进一步将系统划分为多个小型、独立的服务 ，每个服务都是一个单独的应用程序，可以独立部署、运行和扩展。微服务架构具有更高的灵活性和可维护性，适用于复杂的大型系统，强调服务的自治和独立性。但是，实施微服务架构也需要投入大量的工作，包括服务的定义、通信机制的选择、服务的管理等。"
+    },
+    {
+      "slug": "yqqhckxs252oulrg",
+      "title": "你对微服务是怎么理解的",
+      "url": "/tulingzhouyu/db22bv/yqqhckxs252oulrg",
+      "toc_path": [
+        "SpringCloud",
+        "你对微服务是怎么理解的"
+      ],
+      "toc_level": 1,
+      "toc_index": 587,
+      "word_count": 304,
+      "updated_at": "2023-09-05T05:09:02.000Z",
+      "primary_category": "spring-cloud",
+      "primary_category_name": "Spring Cloud与微服务",
+      "related_categories": [
+        "spring-cloud",
+        "spring-core",
+        "devops-release",
+        "netty-network",
+        "computer-network"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "SpringCloud",
+        "Spring",
+        "部署",
+        "HTTP"
+      ],
+      "summary": "微服务是一种架构思想，它将应用程序拆分为一系列小型、独立的服务，每个服务负责处理一项特定业务功能。这种架构风格的特点是服务之间松散耦合、独立部署和运行。微服务架构使得开发人员可以更加专注于单个服务的开发与测试，降低了系统的复杂性，提高了系统的可维护性和可扩展性。同时，每个服务可以根据具体的业务...",
+      "excerpt": "微服务是一种架构思想，它将应用程序拆分为一系列小型、独立的服务，每个服务负责处理一项特定业务功能。这种架构风格的特点是 服务之间松散耦合、独立部署和运行 。微服务架构使得开发人员可以更加专注于单个服务的开发与测试，降低了系统的复杂性，提高了系统的可维护性和可扩展性。同时，每个服务可以根据具体的业务需求选择合适的语言、工具进行构建，提高了系统的灵活性和可维护性。在微服务架构中， 服务之间通过轻量级的通信机制（如RPC、HTTP等）进行通信 ，每个服务都可以独立地进行部署、扩展和升级，从而提高了系统的可靠性和可用性。总的来说，微服务架构思想使得应用程序更加灵活、可维护和可扩展，为构建高效、可靠的大型应用程序提供了有力支持。"
+    },
+    {
+      "slug": "sfc9ryrw76m22ywd",
+      "title": "微服务设计的9种设计模式",
+      "url": "/tulingzhouyu/db22bv/sfc9ryrw76m22ywd",
+      "toc_path": [
+        "SpringCloud",
+        "微服务设计的9种设计模式"
+      ],
+      "toc_level": 1,
+      "toc_index": 588,
+      "word_count": 678,
+      "updated_at": "2024-09-29T13:51:38.000Z",
+      "primary_category": "spring-cloud",
+      "primary_category_name": "Spring Cloud与微服务",
+      "related_categories": [
+        "spring-cloud",
+        "java-core",
+        "observability-troubleshooting",
+        "spring-core",
+        "os-linux"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "expert"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "专家/P7+"
+      ],
+      "keywords": [
+        "SpringCloud",
+        "Gateway",
+        "故障",
+        "日志",
+        "CPU",
+        "Spring",
+        "进程",
+        "内存"
+      ],
+      "summary": "下图是微软团队建议如何在微服务架构中使用这些模式：文中提到的 9 个模式包括：外交官模式（Ambassador），防腐层（Anti-corruption layer），后端服务前端（Backends for Frontends），舱壁模式（Bulkhead），网关聚合（Gateway Aggr...",
+      "excerpt": "下图是微软团队建议如何在微服务架构中使用这些模式： 文中提到的 9 个模式包括：外交官模式（Ambassador），防腐层（Anti-corruption layer），后端服务前端（Backends for Frontends），舱壁模式（Bulkhead），网关聚合（Gateway Aggregation），网关卸载（Gateway Offloading），网关路由（Gateway Routing），挎斗模式（Sidecar）和绞杀者模式（Strangler）。这些模式绝大多数也是目前业界比较常用的模式，如： 外交官模式（Ambassador）可以用与语言无关的方式处理常见的客户端连接任务，如监视，日志记录，路由和安全性（如 TLS）。 防腐层（Anti-corruption layer）介于新应用和遗留应用之间，用于确保新应用的设计不受遗留应用的限制。 后端服务前端（Backends for Frontends）为不同类型的客户端（如桌面和移动设备）创建单独的后端服务。这样，单个后端服务就不需要处理各种客户端类型的冲突请求。这种模式可以通过分离客户端特定的关注来帮助保持每个微服务的简单性。 舱壁模式（Bulkhead）隔离了每个工作负载或服务的关键资源，如连接池、内存和 CPU。使用舱壁避免了单个工作负载（或服务）消耗掉所有资源，从而导致其他服务出现故障的场景。这种模式主要是通过防止由一个服务引起的级联故障来增加系统的弹性。 网关聚合（Gateway Aggregation）将对多个单独微服务的请求聚合成单个请求，从而减少消费者和服务之间过多的请求。 挎斗模式（Sidecar）将应用程序的辅助组件部署为单独的容器或进程以提供隔离和封装。 设计模式是对针对某一问题域的解决方案，它的出现也代表了工程化的可能。随着微服务在业界的广泛实践，相信这个领域将会走向成熟和稳定，笔者期望会有更多的模式和实践出现，帮助促进这一技术的进一步发展。感兴趣的读者可以参考微软的 微服务设计模式 一文以及 Azure 架构中心 的资料为自己的微服务选择合适的模式或者提出新的模式。"
+    },
+    {
+      "slug": "dfxggp7s5g4bk86i",
+      "title": "Dubbo中的服务注册中心有哪些？请分别介绍它们的特点和适用场景。",
+      "url": "/tulingzhouyu/db22bv/dfxggp7s5g4bk86i",
+      "toc_path": [
+        "Dubbo",
+        "高级",
+        "Dubbo中的服务注册中心有哪些？请分别介绍它们的特点和适用场景。"
+      ],
+      "toc_level": 2,
+      "toc_index": 737,
+      "word_count": 590,
+      "updated_at": "2023-09-01T07:40:45.000Z",
+      "primary_category": "spring-cloud",
+      "primary_category_name": "Spring Cloud与微服务",
+      "related_categories": [
+        "spring-cloud",
+        "devops-release",
+        "os-linux"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "注册中心",
+        "Nacos",
+        "文件"
+      ],
+      "summary": "Dubbo支持多种类型的服务注册中心，用于管理和维护服务的元数据、提供者信息以及消费者信息。不同的服务注册中心适用于不同的场景和需求。以下是Dubbo支持的几种常见的服务注册中心及其特点： ZooKeeper： ZooKeeper是Dubbo默认支持的服务注册中心之一。它是一个分布式的协调服务...",
+      "excerpt": "Dubbo支持多种类型的服务注册中心，用于管理和维护服务的元数据、提供者信息以及消费者信息。不同的服务注册中心适用于不同的场景和需求。以下是Dubbo支持的几种常见的服务注册中心及其特点： ZooKeeper： ZooKeeper是Dubbo默认支持的服务注册中心之一。它是一个分布式的协调服务，可以用于存储服务的元数据和提供者信息。ZooKeeper提供了高可用性和稳定性，支持观察者模式，当服务状态发生变化时，可以及时通知消费者。适用于中小规模的分布式系统，提供可靠的服务注册和发现能力。 Consul： Consul是一个轻量级的服务发现和配置工具，Dubbo也支持使用Consul作为服务注册中心。Consul提供了健康检查、多数据中心支持等特性，适用于需要强大的服务发现和健康检查能力的场景。 Nacos： Nacos是一个全新的服务发现和配置管理平台，支持Dubbo作为服务注册中心。Nacos提供了服务发现、配置管理、动态路由等功能，适用于微服务架构下的注册中心需求。 Eureka： Eureka是Netflix开源的服务发现组件，Dubbo也支持使用Eureka作为服务注册中心。Eureka提供了高可用性、自我保护机制等特性，适用于需要高可用性的服务注册和发现场景。 Etcd： Etcd是一个分布式键值存储系统，Dubbo可以使用Etcd作为服务注册中心。Etcd提供了一致性、高可用性的特性，适用于需要分布式存储的服务注册和发现需求。 每种服务注册中心都有其特点和适用场景，选择合适的注册中心取决于业务需求、系统架构以及对高可用性和稳定性的要求。在Dubbo中，你可以通过配置文件来选择使用哪种服务注册中心，以满足不同的场景需求。"
+    },
+    {
+      "slug": "zbvp3hmd1o3feuxm",
+      "title": "如何实现Dubbo跨集群的服务调用？",
+      "url": "/tulingzhouyu/db22bv/zbvp3hmd1o3feuxm",
+      "toc_path": [
+        "Dubbo",
+        "高级",
+        "如何实现Dubbo跨集群的服务调用？"
+      ],
+      "toc_level": 2,
+      "toc_index": 738,
+      "word_count": 455,
+      "updated_at": "2023-09-01T07:41:06.000Z",
+      "primary_category": "spring-cloud",
+      "primary_category_name": "Spring Cloud与微服务",
+      "related_categories": [
+        "spring-cloud",
+        "redis-persistence-cluster",
+        "os-linux"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "注册中心",
+        "集群",
+        "文件"
+      ],
+      "summary": "实现Dubbo跨集群的服务调用可以通过配置不同的注册中心和分组来实现。Dubbo支持在同一个应用中通过不同的注册中心和分组来调用不同集群的服务，从而实现跨集群的服务调用。以下是具体的步骤：配置不同的注册中心： 在Dubbo的配置文件中，可以配置多个不同的注册中心，每个注册中心对应一个集群。例如...",
+      "excerpt": "实现Dubbo跨集群的服务调用可以通过配置不同的注册中心和分组来实现。Dubbo支持在同一个应用中通过不同的注册中心和分组来调用不同集群的服务，从而实现跨集群的服务调用。以下是具体的步骤： 配置不同的注册中心： 在Dubbo的配置文件中，可以配置多个不同的注册中心，每个注册中心对应一个集群。例如，你可以配置两个ZooKeeper注册中心，分别对应不同的集群。 配置服务分组： 在Dubbo的服务提供者和消费者端，可以通过设置 group 属性来指定服务分组。这样可以将不同的服务分组对应到不同的集群上。 跨集群调用： 在消费者端，你可以根据不同的服务分组来调用不同集群的服务。 通过配置不同的注册中心和设置服务分组，你可以在Dubbo中实现跨集群的服务调用。这样可以灵活地管理和调用不同集群的服务，满足多集群环境下的需求。"
+    },
+    {
+      "slug": "angcs6ww4o0wzr9i",
+      "title": "如果需要部署上万服务实例，现有的服务注册中心能否抗住？如何优化？",
+      "url": "/tulingzhouyu/db22bv/angcs6ww4o0wzr9i",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "如果需要部署上万服务实例，现有的服务注册中心能否抗住？如何优化？"
+      ],
+      "toc_level": 2,
+      "toc_index": 988,
+      "word_count": 1784,
+      "updated_at": "2025-11-23T14:24:28.000Z",
+      "primary_category": "spring-cloud",
+      "primary_category_name": "Spring Cloud与微服务",
+      "related_categories": [
+        "spring-cloud",
+        "performance-optimization",
+        "java-collections",
+        "redis-persistence-cluster",
+        "redis-cache"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle",
+        "expert"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年",
+        "专家/P7+"
+      ],
+      "keywords": [
+        "注册中心",
+        "Nacos",
+        "性能",
+        "优化",
+        "调优",
+        "瓶颈",
+        "HashMap",
+        "ConcurrentHashMap",
+        "Cluster",
+        "集群",
+        "缓存"
+      ],
+      "summary": "一、 引言：10,000+ 实例的极限挑战在微服务架构演进中，服务实例数量的增长通常被视为业务繁荣的勋章。然而，对于基础架构团队来说，当实例规模突破“万级”大关时，这枚勋章往往会瞬间变成一枚定时炸弹。很多团队在初期使用默认配置的注册中心（无论是 Zookeeper 还是 Nacos 1.x）时...",
+      "excerpt": "一、 引言：10,000+ 实例的极限挑战 在微服务架构演进中，服务实例数量的增长通常被视为业务繁荣的勋章。然而，对于基础架构团队来说，当实例规模突破“万级”大关时，这枚勋章往往会瞬间变成一枚定时炸弹。 很多团队在初期使用默认配置的注册中心（无论是 Zookeeper 还是 Nacos 1.x）时岁月静好，但一旦扩容至上万实例，作为微服务“心脏”的注册中心往往会突然骤停。 面对这种量级的挑战，简单的堆机器配置往往无济于事。本文将复盘一次真实的性能调优实战，提供一套从客户端到服务端、再到架构层面的全链路优化方案。 二、 核心瓶颈分析：为什么默认配置抗不住？ 要解决问题，首先要理解问题。在万级实例场景下，注册中心主要面临三大维度的“风暴”冲击： 写压力：心跳风暴 (Heartbeat Storm) 默认情况下，每个服务实例每隔几秒（通常是 5秒）就会向注册中心发送一次心跳保活请求。 计算 ： 10,000 个实例 * (1次/5秒) = 2,000 TPS 。 隐患 ： 这看起来不高，但考虑到网络抖动引发的重试机制，以及注册中心内部需要将这些心跳状态同步给集群内的其他节点（Raft/Distro协议开销），实际写压力会成倍增加，导致 CPU 飙升。 读压力：查询与订阅风暴 (Fetch/Subscribe Storm) 服务发现的核心是“感知变化”。 全量拉取的代价 ： 1万个实例的元数据（IP、端口、Tags、配置信息）体积巨大，可能达到几十 MB。如果几千个消费者同时发起全量拉取，网卡带宽会瞬间被打满，导致网络阻塞。 推送风暴 ： 当一个服务上下线时，注册中心需要将变更推送到所有订阅者。万级规模下的广播风暴足以拖垮整个集群。 协议开销：CP 模型的天然缺陷 如果使用 Zookeeper（CP 模型），万级实例意味着大量的临时节点（Ephemeral Nodes）。 ZAB 协议瓶颈 ： 一旦发生网络抖动导致 Leader 重选举，或者大量客户端重连，ZK 需要进行全量数据同步，期间集群不可用（Stop The World），这对于高可用要求的微服务是致命的。 三、 优化策略：从减负到质变 针对上述瓶颈，我们将优化方案拆解为三个阶段，层层递进。 第一阶段：客户端侧优化 —— “减负” 客户端是压力的源头，优化客户端行为性价比最高。 开启增量同步 (Delta Fetch) ： 原理 ： 客户端不再每次拉取全量注册表，而是只拉取“变化”的部分（Hash比对）。 效果 ： 网络流量可降低 90% 以上 。 调整拉取与心跳频率 ： 适当增大 registry-fetch-interval （如从 30s 调至 60s）和心跳间隔。在万级规模下，牺牲秒级的实时性换取系统的稳定性是必要的权衡。 本地缓存容灾 (Local Cache) ： 兜底机制 ： 即使注册中心完全"
+    },
+    {
+      "slug": "eno1ik1d3t12l8zs",
+      "title": "Nacos技术面试系列",
+      "url": "/tulingzhouyu/db22bv/eno1ik1d3t12l8zs",
+      "toc_path": [
+        "高频面试问题",
+        "fox老师",
+        "Nacos技术面试系列"
+      ],
+      "toc_level": 2,
+      "toc_index": 1071,
+      "word_count": 3016,
+      "updated_at": "2025-10-30T05:53:55.000Z",
+      "primary_category": "spring-cloud",
+      "primary_category_name": "Spring Cloud与微服务",
+      "related_categories": [
+        "spring-cloud",
+        "redis-persistence-cluster",
+        "docker-k8s",
+        "resume-project",
+        "mysql-index-transaction"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "senior",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "注册中心",
+        "配置中心",
+        "Nacos",
+        "集群",
+        "Kubernetes",
+        "K8s",
+        "容器",
+        "Pod",
+        "简历",
+        "项目",
+        "面试官",
+        "MySQL"
+      ],
+      "summary": "简历一写就是微服务项目，什么服务注册、配置中心。面试一问 Nacos 怎么实现服务发现，让你设计一个注册中心，你会怎么做？你绞尽脑汁想了半天，就蹦出了几个词：什么心跳机制、配置推送、集群部署。问你\"心跳机制具体怎么实现的\"，你支支吾吾半天说不清楚。问你临时实例和永久实例有什么区别，你磕磕巴巴说...",
+      "excerpt": "简历一写就是微服务项目，什么服务注册、配置中心。面试一问 Nacos 怎么实现服务发现，让你设计一个注册中心，你会怎么做？ 你绞尽脑汁想了半天，就蹦出了几个词：什么心跳机制、配置推送、集群部署。 问你&quot;心跳机制具体怎么实现的&quot;，你支支吾吾半天说不清楚。 问你临时实例和永久实例有什么区别，你磕磕巴巴说&quot;一个临时一个永久&quot;，这不是废话吗？ 问你 Nacos 的 AP 和 CP 模式是什么意思，你居然反问我&quot;CAP 理论是啥？&quot; 这就是你简历上写的&quot;精通微服务、精通 Nacos、精通分布式架构&quot;？ Look at me! 要实现一个注册中心，你首先要知道什么是服务注册。服务启动的时候，把自己的 IP、端口、服务名等信息报告给 Nacos，这就是服务注册。消费者想调用某个服务，去 Nacos 查询这个服务有哪些实例，这就是服务发现。 那服务注册上去之后，Nacos 怎么知道这个服务还活着呢？Tell me why, why baby why？ 用心跳机制啊！服务每隔几秒钟（默认 5 秒）向 Nacos 发送一次心跳，告诉 Nacos：&quot;我还活着呢！&quot;如果 Nacos 在一定时间内（默认 15 秒）没收到心跳，就认为这个服务挂了，把它标记为不健康。再过一段时间（默认 30 秒）还是没有心跳，直接把这个实例从注册表里删除。 那么问题来了，如果服务真的挂了，被删除了，那这很合理。但如果只是网络抖动，心跳包丢了几个，服务就被删除了，岂不是很冤？怎么办？ 回头看，临时实例和永久实例搞清楚。Nacos 的实例分两种： 临时实例（默认） ：服务自己主动发心跳，心跳停了就自动剔除。适合那些会动态扩缩容的服务，比如你的微服务应用。 永久实例 ：Nacos 主动去探测服务健康状态，即使服务挂了也不会删除，只是标记为不健康。适合那些数据库、第三方服务等相对固定的实例。 那临时实例的问题还是没解决啊，网络抖动导致误删怎么办？嗯哼？ Look at me! Nacos 有一个保护阈值机制。你可以给每个服务设置一个保护阈值（0 到 1 之间的小数），比如设置为 0.5。当健康实例数 / 总实例数 < 0.5 的时候，说明超过一半的实例都不健康了，这时候 Nacos 就会触发保护机制：把所有实例（包括不健康的）都返回给消费者。 为什么要这么做？因为大量实例同时不健康，很可能不是服务真的挂了，而是网络出问题了或者 Nacos 自己出问题了。这时候与其让消费者一个实例都拿不到导致服务全挂，不如把不健康的实例也返回，让消费者试着调用，说不定还能调通呢。这就是&quot;雪崩保护&quot;的思想。 那这样就能保证不出问题了吗？嗯哼？ 更复杂的来了！Nacos 不仅是注册中心，还是配置中心。你把配置写到 "
+    },
+    {
+      "slug": "riik1yggmy6yuaqv",
+      "title": "如何设计一个注册中心？",
+      "url": "/tulingzhouyu/db22bv/riik1yggmy6yuaqv",
+      "toc_path": [
+        "高频面试问题",
+        "fox老师",
+        "如何设计一个注册中心？"
+      ],
+      "toc_level": 2,
+      "toc_index": 1092,
+      "word_count": 3474,
+      "updated_at": "2025-09-29T06:53:20.000Z",
+      "primary_category": "spring-cloud",
+      "primary_category_name": "Spring Cloud与微服务",
+      "related_categories": [
+        "spring-cloud",
+        "docker-k8s",
+        "project-system-design",
+        "redis-persistence-cluster",
+        "microservices-governance"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle",
+        "campus"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "注册中心",
+        "Nacos",
+        "方案",
+        "秒杀",
+        "订单",
+        "支付",
+        "库存",
+        "限流",
+        "集群",
+        "超时",
+        "负载均衡"
+      ],
+      "summary": "在微服务架构里，注册中心就像 “服务间的通讯录”—— 没有它，订单服务找不到库存服务的 IP，用户服务不知道支付服务在哪，整个微服务体系会陷入 “失联” 困境。很多开发者天天用 Nacos、Eureka，却答不出 “注册中心到底怎么设计”，今天我们从 “痛点出发”，一步步拆解注册中心的核心逻辑...",
+      "excerpt": "在微服务架构里，注册中心就像 “服务间的通讯录”—— 没有它，订单服务找不到库存服务的 IP，用户服务不知道支付服务在哪，整个微服务体系会陷入 “失联” 困境。很多开发者天天用 Nacos、Eureka，却答不出 “注册中心到底怎么设计”，今天我们从 “痛点出发”，一步步拆解注册中心的核心逻辑，带你从 0 到 1 搞懂设计思路。 一、先想清楚：为什么需要注册中心？ 在设计之前，得先明白 “注册中心要解决什么问题”。没有注册中心的微服务，会面临两个致命痛点： 手动维护 IP，效率低且易出错 当微服务只有 2-3 个时，我们可以在代码里写死 IP（比如订单服务调用库存服务时，直接写 192.168.1.100:8080 ）。但当服务扩到 20 个、200 个，或者某个服务扩容到 10 台机器时，问题就来了： 每次服务上线 / 下线，都要手动修改所有依赖它的服务的配置； 一旦输错 IP，就会导致服务调用失败，排查起来极其耗时。 服务状态不可知，请求可能发往故障节点 假设库存服务有 3 台机器，其中 1 台突然宕机，但订单服务不知道，仍然往这台故障机器发请求，会导致大量调用失败。没有注册中心，服务无法感知彼此的 “存活状态”，容错能力为 0。 而注册中心的核心价值，就是解决这两个痛点： 让服务 “自动登记身份”，让调用方 “自动找到存活的服务” ，彻底摆脱手动维护 IP 的麻烦。 二、注册中心的核心组件：5 个模块搭起骨架 一个能用的注册中心，不需要多复杂，核心是 5 个组件： 服务注册模块、服务注册表、心跳检测模块、服务发现模块、集群高可用模块 。我们逐个拆解，像搭积木一样拼出完整逻辑。 1. 组件 1：服务注册 —— 服务的 “入职打卡” 作用 ：新服务启动后，主动告诉注册中心 “我上线了，这是我的信息”。 实现逻辑 ： 服务启动时，通过 HTTP/RPC 协议向注册中心发送 “注册请求”，请求里包含关键信息： 服务名（比如 inventory-service ，标识 “这是库存服务”）； 服务实例信息（IP 地址、端口号，比如 192.168.1.101:8080 ）； 元数据（可选，比如 “机房 = 北京”“环境 = 生产”，用于后续筛选）。 注册中心收到请求后，验证服务合法性（比如是否在白名单内），通过后将信息存入 “服务注册表”。 举个例子 ：库存服务 1 号机启动，向注册中心发请求：“我是 inventory-service ，IP 是 192.168.1.101:8080，在上海机房”—— 注册中心把这条信息记下来，完成 “入职打卡”。 2. 组件 2：服务注册表 —— 服务的 “通讯录” 作用 ：存储所有服务的 “身份信息”，是注册中心的核心数据结构。 设计要点 ： 数据结构：用 “哈希表” 最合适， key=服务名 ， value=该服务的所有实"
+    },
+    {
+      "slug": "egixccofhgv4t8o0",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/egixccofhgv4t8o0",
+      "toc_path": [
+        "高频面试问题",
+        "fox老师",
+        "如何设计一个注册中心？",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1093,
+      "word_count": 1171,
+      "updated_at": "2025-09-29T06:48:57.000Z",
+      "primary_category": "spring-cloud",
+      "primary_category_name": "Spring Cloud与微服务",
+      "related_categories": [
+        "spring-cloud",
+        "project-system-design",
+        "resume-project",
+        "redis-persistence-cluster",
+        "microservices-governance"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "注册中心",
+        "Nacos",
+        "订单",
+        "库存",
+        "面试官",
+        "集群",
+        "负载均衡"
+      ],
+      "summary": "口播文案你是不是也这样？天天用 Nacos、Eureka 当注册中心，可面试官一挑眉：“来，给我设计个注册中心呗？” 你立马大脑空白？别急，今天咱从 0 开始捋，看完你也能跟面试官掰扯明白！先想个场景：你公司就 2 个微服务（订单 + 库存），调用的时候写死 IP 就行；可要是扩到 20 个、...",
+      "excerpt": "口播文案 你是不是也这样？天天用 Nacos、Eureka 当注册中心，可面试官一挑眉：“来，给我设计个注册中心呗？” 你立马大脑空白？别急，今天咱从 0 开始捋，看完你也能跟面试官掰扯明白！ 先想个场景：你公司就 2 个微服务（订单 + 库存），调用的时候写死 IP 就行；可要是扩到 20 个、200 个服务呢？今天加个用户服务，明天库存服务扩容 3 台，你总不能挨个改代码里的 IP 吧？改到半夜不说，还容易写错 —— 这就是没注册中心的坑！ 那注册中心到底要解决啥？核心就一个：“让服务之间不用记 IP，也能找到对方”。咱一步步凑零件，跟搭积木似的！ 第一个问题：服务刚启动，咋让别人知道自己来了？—— 得有 “入职打卡”！就是 “服务注册”。比如库存服务启动后，主动给注册中心发个消息：“我是库存服务，IP 是 192.168.1.100，端口 8080，能提供扣库存功能”。注册中心收到后，得记下来啊 —— 所以得有个 “服务注册表”，就像公司的通讯录，谁叫啥、在哪、能干啥，一目了然。 第二个问题：服务跑着跑着崩了，注册中心还以为它活着，把请求导过去咋办？—— 得有 “定期报平安”！就是 “心跳检测”。服务每隔 30 秒给注册中心发个 “我还活着” 的信号（心跳包），要是超过 1 分钟没收到，注册中心就知道 “这服务凉了”，立马从 “通讯录” 里删掉它。你想啊，要是员工三天没打卡，公司不得以为他离职了？一个理！ 第三个问题：订单服务想调用库存服务，咋知道哪个库存服务还活着？—— 得有 “查通讯录”！就是 “服务发现”。订单服务启动时，先跟注册中心说：“我要找库存服务”，注册中心就把当前活着的库存服务列表（比如 3 台机器的 IP）发给它。订单服务拿到列表后，再选一个调用（比如负载均衡挑个闲的），不用自己记 IP，多省事！ 第四个问题：要是注册中心自己崩了，所有服务都找不到对方了，这不全完了？—— 得有 “多个人值班”！就是 “注册中心集群”。不能只搞一个注册中心，得部署 3 台、5 台，它们之间互相同步 “服务注册表”（比如 A 收到新服务，立马告诉 B 和 C）。就算其中一台崩了，剩下的还能干活，这就是 “高可用”。跟公司前台不能只一个人，得有替补一个意思！ 第五个问题：服务太多，订单服务只想找 “北京机房的库存服务”，咋筛选？—— 得加 “标签过滤”！注册中心给服务加 “元数据”，比如库存服务启动时标上 “机房 = 北京，环境 = 生产”。订单服务查的时候说：“我要北京机房的生产环境库存服务”，注册中心就只返回符合条件的，精准定位，不浪费时间。 现在你再捋捋：服务注册（入职打卡）+ 服务注册表（通讯录）+ 心跳检测（报平安）+ 服务发现（查通讯录）+ 集群（多值班）—— 这不就是个完整的注册中心吗？跟你用的 Nacos、Eureka 核心逻辑一模一样！ "
+    },
+    {
+      "slug": "pe1puy9tq2hbknes",
+      "title": "字节一面：Nginx 能替 Spring Cloud Gateway 吗？为什么？",
+      "url": "/tulingzhouyu/db22bv/pe1puy9tq2hbknes",
+      "toc_path": [
+        "高频面试问题",
+        "fox老师",
+        "字节一面：Nginx 能替 Spring Cloud Gateway 吗？为什么？"
+      ],
+      "toc_level": 2,
+      "toc_index": 1104,
+      "word_count": 2808,
+      "updated_at": "2025-09-30T07:37:54.000Z",
+      "primary_category": "spring-cloud",
+      "primary_category_name": "Spring Cloud与微服务",
+      "related_categories": [
+        "spring-cloud",
+        "spring-core",
+        "project-system-design",
+        "microservices-governance",
+        "resume-project"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "campus",
+        "senior",
+        "middle"
+      ],
+      "level_names": [
+        "校招/应届生",
+        "高级/5-8年",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "Spring Cloud",
+        "Gateway",
+        "Sentinel",
+        "注册中心",
+        "配置中心",
+        "Nacos",
+        "Spring",
+        "方案",
+        "订单",
+        "支付",
+        "库存",
+        "限流"
+      ],
+      "summary": "生成在后端面试中，“Nginx 和 Spring Cloud Gateway 能否互相替代” 是一道高频题，也是很多候选人容易栽跟头的地方 —— 如果只简单答 “能” 或 “不能”，大概率只能拿到基础分；但要是讲清二者的定位差异、能力边界和协作逻辑，就能让面试官眼前一亮。今天我们就从 “破题逻...",
+      "excerpt": "生成在后端面试中，“Nginx 和 Spring Cloud Gateway 能否互相替代” 是一道高频题，也是很多候选人容易栽跟头的地方 —— 如果只简单答 “能” 或 “不能”，大概率只能拿到基础分；但要是讲清二者的定位差异、能力边界和协作逻辑，就能让面试官眼前一亮。今天我们就从 “破题逻辑” 到 “实战方案”，彻底讲透这个问题。 一、先破题：不能简单说 “能” 或 “不能”，核心看 “定位” 很多人纠结 “替代与否”，本质是没搞懂二者的设计目标 —— 它们从诞生起就不是 “竞争关系”，而是面向不同场景的 “分工伙伴”。用一个通俗的比喻就能理清：如果把微服务系统比作一个 “商业园区”，那么 Nginx 是小区门口的 “保安” ， Spring Cloud Gateway 是大楼里的 “管家” 。 保安（Nginx）的核心职责是 “守好大门”：它管的是从互联网进入园区的 “南北向流量”—— 比如用户从手机 APP 发过来的请求、第三方系统的接口调用。这份工作的核心诉求是 “稳” 和 “快”：要扛住每秒几万甚至几十万的并发请求，挡住黑客的恶意攻击（比如 DDoS），还要把流量均匀分给园区内的入口（比如多台 Web 服务器），追求极致的高性能和稳定性，不掺杂复杂的业务逻辑。 管家（Spring Cloud Gateway）的核心职责是 “协调内部”：它管的是园区内各栋大楼（微服务）之间的 “东西向流量”—— 比如订单服务要调用库存服务扣减库存、用户服务要调用支付服务发起付款。这份工作的核心诉求是 “灵活” 和 “精准”：要能根据业务规则动态调整调用路径，处理复杂的权限校验、流量控制，还要适配服务的动态扩缩容，必须和业务逻辑深度绑定。 你看，让保安去管大楼内部的 “谁能调用谁、调用多少次”，他不懂业务规则；让管家去门口扛并发、挡黑客，他没那个 “硬实力”。二者的定位差异，决定了 “替代” 从根源上不成立。 二、关键能力 PK：两个核心场景，看清二者的不可替代性 光说定位可能有点抽象，我们结合微服务架构中两个 “刚需场景”，看 Nginx 和 Spring Cloud Gateway 的能力差异 —— 这也是面试官最关心的 “实战细节”。 场景 1：动态路由 —— 微服务扩缩容的 “命脉” 大促期间，你的 “库存服务” 因为流量暴增，从 3 台服务器扩容到 30 台 —— 这时候，请求该怎么精准转发到新增的 27 台机器上？ Spring Cloud Gateway：自动、无感知 它天生和微服务生态深度绑定：只要库存服务在 Nacos、Eureka 这类注册中心完成注册，Gateway 就能实时拉取最新的服务实例列表。新增的 27 台机器无需人工干预，Gateway 会自动把请求转发过去，整个过程 “零配置变更、零服务重启”。哪怕大促后库存服务缩容到 5 台，Ga"
+    },
+    {
+      "slug": "rkdtni9koko3fxlf",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/rkdtni9koko3fxlf",
+      "toc_path": [
+        "高频面试问题",
+        "fox老师",
+        "字节一面：Nginx 能替 Spring Cloud Gateway 吗？为什么？",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1105,
+      "word_count": 1254,
+      "updated_at": "2025-10-07T05:15:33.000Z",
+      "primary_category": "spring-cloud",
+      "primary_category_name": "Spring Cloud与微服务",
+      "related_categories": [
+        "spring-cloud",
+        "spring-core",
+        "computer-network",
+        "project-system-design",
+        "resume-project"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "Spring Cloud",
+        "Gateway",
+        "注册中心",
+        "Nacos",
+        "Spring",
+        "高并发",
+        "订单",
+        "库存",
+        "限流",
+        "熔断",
+        "项目",
+        "面试官"
+      ],
+      "summary": "📎Nginx VS Gateway.html通过网盘分享的文件：Nginx能替代Spring Cloud Gateway吗？.mp4链接: https://pan.baidu.com/s/1Fi8NhaCmXRonIYHS9vTVBA?pwd=d6fv 提取码: d6fv口播文案Hello，...",
+      "excerpt": "​ 通过网盘分享的文件：Nginx能替代Spring Cloud Gateway吗？.mp4 链接: https://pan.baidu.com/s/1Fi8NhaCmXRonIYHS9vTVBA?pwd=d6fv 提取码: d6fv ​ 口播文案 Hello，大家好。今天我们聊一个面试里的高频题，也是很多人容易搞混的一个知识点： Nginx 和 Spring Cloud Gateway，到底能不能互相替代？ 如果你直接回答“能”或者“不能”，其实都只答对了一半。想让面试官眼前一亮，你需要讲清楚它们背后的逻辑。 首先，你得明白，他俩的 定位完全不同 。 一个简单的比喻： Nginx 是小区的‘保安’，Spring Cloud Gateway 是大楼里的‘管家’。 保安（Nginx）守在小区大门口，管的是从外面互联网进来的流量，我们叫它“ 南北向流量 ”。他的职责是扛住高并发，挡住黑客攻击，做负载均衡。他追求的是极致的 高性能 和 稳定性 。 而管家（Gateway）站在大楼里面，负责协调内部各个部门之间的调用，这叫“ 东西向流量 ”。比如订单服务要调用库存服务。他的核心是 业务灵活性 ，要能动态地处理各种复杂的内部规则。 所以，你让保安去处理大楼内部的精细活，他干不来。你让管家去大门口和黑客硬碰硬，他也扛不住。 光说定位可能有点抽象，我们来看两个最关键的能力差异。 第一，动态路由能力。 这是微服务架构的命脉。想象一下，大促期间，你的库存服务从3台扩容到了30台。 用 Spring Cloud Gateway ，它能自动从 Nacos 或 Eureka 这样的注册中心里，实时拿到最新的服务列表。整个过程是自动的，无感知的。 如果换成 Nginx ，你就得手动去修改配置文件，把那27个新地址加进去，然后执行 nginx -s reload 。在复杂的线上环境，手动操作不仅慢，而且风险极高。 第二，精细化流控能力。 比如，你想实现一个复杂的业务规则：给VIP用户每秒100次请求权限，普通用户每秒10次，并且只针对某个特定的商品查询接口。 在 Spring Cloud Gateway 里，这可以通过写一个自定义的 Filter 来实现，逻辑清晰，和业务代码结合紧密。 而在 Nginx 里，要实现这个功能，你大概率需要写一段复杂的 Lua 脚本。这不仅维护困难，而且大量的 Lua 脚本还可能会拖慢 Nginx 本身的性能，等于废掉了它最大的优势。 所以你看，Nginx 强在 处理标准化的、无业务逻辑的流量 。而 Gateway 强在 处理动态的、有复杂业务逻辑的流量 。 那么，在真实的项目里，到底该怎么用？ 最佳实践不是“二选一”，而是“ 强强联合 ”。我们通常会搭建一个分层的网关架构。 最外层，放 Nginx。 把它当成“流量防火墙”。所有外部流量先进来，Nginx"
+    },
+    {
+      "slug": "wsvnsur7189g2nha",
+      "title": "别再死记硬背了！8分钟带你从零构建高并发微服务体系",
+      "url": "/tulingzhouyu/db22bv/wsvnsur7189g2nha",
+      "toc_path": [
+        "高频面试问题",
+        "楼兰老师",
+        "别再死记硬背了！8分钟带你从零构建高并发微服务体系"
+      ],
+      "toc_level": 2,
+      "toc_index": 1127,
+      "word_count": 2768,
+      "updated_at": "2025-11-25T13:15:48.000Z",
+      "primary_category": "spring-cloud",
+      "primary_category_name": "Spring Cloud与微服务",
+      "related_categories": [
+        "spring-cloud",
+        "redis-cache",
+        "project-system-design",
+        "mysql-sharding",
+        "resume-project"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle",
+        "senior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "SpringCloud",
+        "Gateway",
+        "Sentinel",
+        "注册中心",
+        "Nacos",
+        "Redis",
+        "缓存",
+        "穿透",
+        "击穿",
+        "雪崩",
+        "方案",
+        "高并发",
+        "分库分表",
+        "简历"
+      ],
+      "summary": "打破“点状思维”，建立“体系化认知”最近我在帮粉丝看简历，发现一个特别普遍的问题。 大家都在简历上写“精通微服务”、“熟悉高并发”，但一到模拟面试环节，我问一个最经典的问题： “如果现在给你一个百万并发的业务场景，你的微服务系统从头到尾该怎么设计？”90%的人第一反应是什么？ “用 Redis...",
+      "excerpt": "打破“点状思维”，建立“体系化认知” 最近我在帮粉丝看简历，发现一个特别普遍的问题。 大家都在简历上写“精通微服务”、“熟悉高并发”，但一到模拟面试环节，我问一个最经典的问题： “如果现在给你一个百万并发的业务场景，你的微服务系统从头到尾该怎么设计？” 90%的人第一反应是什么？ “用 Redis加缓存”、“用 MQ异步解耦”、“用SpringCloud加机器”。这里说一点，那里说一点，跟报菜名似的，一个个技术往外蹦。听得我都头晕脑胀的。 我试着提醒他们：“用Redis就行了吗？或者不用Redis就做不了缓存加速了吗？能不能成体系一点”？ 很多人的反应往往是不知所措。 如果面试官真的问你这个问题，考的绝对不是你知不知道某个工具，而是看你有没有 “成体系的架构思维” 。看你能不能从并发这个问题出发，把微服务整个链路梳理清楚了。做到这一点，就算有些具体技术，你记得不是很熟练，面试官也会相信你能解决问题。但是如果做不到这一点，你会再多技术，面试官也永远只会考虑性价比。在AI时代，这基本上就意味着这场面试崩了。 说这么多什么意思？ 今天这期视频，我就把这个庞大的高并发问题拆解成三个核心招式。 在讲具体的工具（比如 Nacos、Sentinel）之前，我会先带你搞懂 “为什么要这么设计”，也就是背后的设计哲学 。听完这期视频，下次面试再遇到这种题，按这个思路来组织，先给面试官讲出一套逻辑闭环，再加上一些你自己的技术细节，保证答完你自己都会觉得很爽。 觉得这种“授人以渔”的方式有帮助的，先把赞点上，我们马上开始！ 第一招：拆分（化整为零，突破单点瓶颈） 好，面对百万并发，第一招，永远是“ 拆 ”。 核心思路是什么？ 是 “分而治之” 。 单体架构就像一辆马车，马再强壮跑得也慢；微服务就是动车组，每节车厢都有动力，还能根据情况自行组装。 第一步：服务拆分与治理。 我们把庞大的单体，按业务领域拆分成用户、订单、支付、库存这些独立的服务。 但拆完之后，服务A怎么找到服务B？几百个服务实例IP变来变去怎么办？ 这时候，我们需要一个“通讯录”，也就是 注册中心 。 至于落地工具，现在首推 Nacos。&#x20; 怎么工作的？ 你要告诉面试官： “服务启动时，后端服务自动把自己的 IP 端口注册到 Nacos；调用方通过 Nacos 获取健康实例列表，配合 Ribbon 或 LoadBalancer 做负载均衡。” 这里有个加分项： 提到 Nacos 的 动态配置管理 。 “百万并发下，我需要动态调整线程池参数或者日志级别，不用重启服务，Nacos 配置一改，全量下发，这才是云原生时代的玩法。” 第二步：数据拆分。 服务拆了，数据库如果还是同一个，那数据库就是那个被累死的“马”。 所以， 垂直分库 是必须的，做到专库专用。这样可以解决服务太多，数据库连接数太多的问题，减少数据库的"
+    },
+    {
+      "slug": "toechilky5zhu5c2",
+      "title": "面试官问：Sentinel 的工作原理是怎样的？（深度解析 + 实战代码）",
+      "url": "/tulingzhouyu/db22bv/toechilky5zhu5c2",
+      "toc_path": [
+        "高频面试问题",
+        "鹏宇老师",
+        "面试官问：Sentinel 的工作原理是怎样的？（深度解析 + 实战代码）"
+      ],
+      "toc_level": 2,
+      "toc_index": 1197,
+      "word_count": 4375,
+      "updated_at": "2025-12-01T06:50:50.000Z",
+      "primary_category": "spring-cloud",
+      "primary_category_name": "Spring Cloud与微服务",
+      "related_categories": [
+        "spring-cloud",
+        "project-system-design",
+        "microservices-governance",
+        "java-core",
+        "observability-troubleshooting"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "Spring Cloud",
+        "Sentinel",
+        "配置中心",
+        "Nacos",
+        "高并发",
+        "秒杀",
+        "订单",
+        "支付",
+        "库存",
+        "限流",
+        "降级",
+        "熔断",
+        "Java"
+      ],
+      "summary": "在分布式系统架构中，流量雪崩、服务过载、依赖故障等问题一直是稳定性保障的核心痛点。而 Sentinel 作为阿里开源的流量治理神器，凭借其轻量级、高性能、功能全面的特性，成为微服务架构中的标配组件。面试官频繁追问其工作原理，本质是考察你对分布式系统稳定性设计的理解 —— 不仅要 “会用”，更要...",
+      "excerpt": "在分布式系统架构中，流量雪崩、服务过载、依赖故障等问题一直是稳定性保障的核心痛点。而 Sentinel 作为阿里开源的流量治理神器，凭借其轻量级、高性能、功能全面的特性，成为微服务架构中的标配组件。面试官频繁追问其工作原理，本质是考察你对分布式系统稳定性设计的理解 —— 不仅要 “会用”，更要 “懂原理、能落地、善选型”。 本文将从基本概念、核心能力、工作原理、核心策略、实战场景、工具对比六个维度，结合代码示例深度解析 Sentinel，帮你全面搞定这个高频面试题。 一、什么是 Sentinel？—— 分布式系统的 “流量治理管家” 1.1 基本概念 Sentinel 是一款面向分布式系统的 流量控制框架 ，以 “流量” 为核心切入点，提供限流、熔断、降级、系统保护等全方位的流量治理能力，最终目标是保障服务稳定性。 其核心特性可概括为三点： 出身硬核：源于阿里双 11 流量防护技术，经过高并发场景验证； 性能优异：轻量级设计，毫秒级响应速度，资源占用极低； 易集成：支持 Spring Cloud、Dubbo、Spring Boot 等主流框架，配置灵活。 1.2 流量治理定位 Sentinel 在分布式系统中扮演四大角色，共同构成完整的流量治理体系： ![图 1：Sentinel 流量治理定位](### 此处插入 PPT 中 “流量治理定位” 相关截图 ###) 流量守护者：拦截异常流量，防止服务被击垮； 流量控制器：按需调控流量分发，避免资源浪费； 流量整形器：削峰填谷，让流量平稳流入系统； 流量分析器：实时监控流量指标，为决策提供数据支撑。 二、核心能力矩阵 ——Sentinel 能做什么？ Sentinel 的核心能力围绕 “流量治理” 展开，覆盖从流量控制到系统保护的全场景需求，具体可分为四大模块： ![图 2：Sentinel 核心能力矩阵](### 此处插入 PPT 中 “核心能力矩阵” 相关截图 ###) 2.1 流量控制（核心能力） 流量控制是 Sentinel 的 “看家本领”，通过限制接口的 QPS、并发数等指标，避免流量超出服务承载能力。支持的核心策略包括： QPS / 并发线程数限流：限制单位时间内的请求数或并发处理线程数； 集群流量控制：在集群维度分配流量配额，避免单节点过载； 热点参数限流：对高频访问的参数（如秒杀商品 ID）单独限流； 自适应限流：根据服务响应时间、CPU 使用率动态调整限流阈值。 2.2 熔断降级（故障隔离） 当下游服务出现故障（如超时、异常率飙升）时，熔断机制会主动切断调用链路，避免故障扩散，同时提供服务自愈能力： 慢调用比例熔断：当慢调用占比超过阈值时触发熔断； 异常比例熔断：当调用异常率超过阈值时触发熔断； 异常数熔断：当单位时间内异常数超过阈值时触发熔断； 熔断恢复机制：熔断后经过指定时长，进入半开状态"
+    },
+    {
+      "slug": "we1lwvdivqbggu3h",
+      "title": "8、深夜，一个“优化”搞挂了系统... 面试官：讲讲如何设计一个不“赌命”的发布系统？",
+      "url": "/tulingzhouyu/db22bv/we1lwvdivqbggu3h",
+      "toc_path": [
+        "高频面试问题",
+        "赋文老师",
+        "8、深夜，一个“优化”搞挂了系统... 面试官：讲讲如何设计一个不“赌命”的发布系统？"
+      ],
+      "toc_level": 2,
+      "toc_index": 1302,
+      "word_count": 3203,
+      "updated_at": "2025-10-27T08:16:12.000Z",
+      "primary_category": "spring-cloud",
+      "primary_category_name": "Spring Cloud与微服务",
+      "related_categories": [
+        "spring-cloud",
+        "devops-release",
+        "observability-troubleshooting",
+        "spring-core",
+        "resume-project"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle",
+        "expert"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年",
+        "专家/P7+"
+      ],
+      "keywords": [
+        "Spring Cloud",
+        "Feign",
+        "Gateway",
+        "注册中心",
+        "Nacos",
+        "灰度",
+        "发布",
+        "回滚",
+        "故障",
+        "监控",
+        "告警",
+        "链路",
+        "Spring"
+      ],
+      "summary": "凌晨一点，P0 故障告警。你刚上线的新版推荐算法，因为一个隐藏的并发问题，搞挂了整个首页。紧急回滚后，你一身冷汗地复盘：如果新功能只推送给千分之一的用户，这场 P0 事故本可避免。这种把每次发布都变成一场“赌上职业生涯”的经历，是所有工程师的噩梦，也是系统设计必须解决的核心痛点。在面试中，当面...",
+      "excerpt": "凌晨一点，P0 故障告警。你刚上线的新版推荐算法，因为一个隐藏的并发问题，搞挂了整个首页。 紧急回滚后，你一身冷汗地复盘：如果新功能只推送给千分之一的用户，这场 P0 事故本可避免。这种把每次发布都变成一场“赌上职业生涯”的经历，是所有工程师的噩梦，也是系统设计必须解决的核心痛点。 在面试中，当面试官看似随意地问出“如何设计一个灰度发布系统？”时，他其实是在考察你是否具备终结这种噩梦的架构能力。他想知道，你是否能设计一个系统，让发布从一场“豪赌”变成一次“精准的科学实验”。 “用 Nginx 按 IP 分点流量？” 如果你这么回答，那这次面试可能就止步于此了。因为面试官真正关心的是一系列更棘手的现实问题： 场景一：外科手术式的精准发布 “业务想让 上海地区、用着鸿蒙系统、App 版本是 10.5 的新注册用户，看到新的UI界面。你的流量策略怎么定？每次都去改服务器配置吗？” 场景二：微服务下的“幽灵漂移” “一个被灰度命中的请求，要依次经过 A、B、C 三个服务，其中B到C还是异步调用。如何保证它在每一层都准确地被新版本处理，而不是在服务 B ‘漂移’到了老版本？” 场景三：用数据说话的 A/B 对比 “我想同时上线‘算法A’和‘算法B’，用 真实用户的点击率 来决定哪个更好。这和灰度发布是一回事吗？你的系统如何支持这种‘赛马’机制？” 这些问题的背后，直指一个核心冲突： 业务对“灵活创新”的渴求，与分布式系统对“稳定可靠”的铁律之间的永恒矛盾。 面试官真正要考察的，是你能否设计一个 平台级、可复用 的解决方案，来优雅地化解这个矛盾。所以，问题的本质是： 如何设计一个支持动态规则、全链路流量隔离、并能与业务指标结合的通用灰度发布与 A/B 测试平台？ 要完美解答，我们需要像剥洋葱一样，层层递进。 第一层：给流量打上“身份标签”—— 流量染色 要实现精细化控制，我们不能再依赖粗糙的 IP，而是要给流量一个明确的“身份”，我们称之为**“灰度标记” (Gray Tag) 。为请求打上这个标记的过程，就是 “流量染色” (Traffic Dyeing)**。 问：这个“身份”从哪里来？ 答：在请求的最入口，通常是 API 网关 。网关层会根据当前用户的属性（如 UserID、地理位置、设备型号）和平台预设的灰度规则，动态地为这个请求生成一个“灰度标记”。 问：标记放在哪里才能一路传递下去？ 答：放在一个能贯穿整个调用链路的“信使”身上。一个完整的微服务系统包含同步调用和异步调用，所以标记的传递也需要覆盖这两种场景。 HTTP 调用 ：这是最经典、最通用的方式。将标记放在 HTTP Header 中，例如 x-gray-version: v2.1 。 RPC 调用（如 Dubbo/gRPC） ：几乎所有的 RPC 框架都提供了类似 HTTP Header 的机制，用"
+    }
+  ]
+}

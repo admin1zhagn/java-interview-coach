@@ -1,0 +1,4760 @@
+{
+  "id": "computer-network",
+  "name": "计算机网络",
+  "aliases": [
+    "TCP",
+    "UDP",
+    "HTTP",
+    "HTTPS",
+    "DNS",
+    "三次握手",
+    "四次挥手",
+    "网络"
+  ],
+  "count": 126,
+  "total_word_count": 66991,
+  "articles": [
+    {
+      "slug": "ggq27mk8xlt2uwzv",
+      "title": "💎面试官识人手册",
+      "url": "/tulingzhouyu/db22bv/ggq27mk8xlt2uwzv",
+      "toc_path": [
+        "面试必看",
+        "面试指导与简历模板",
+        "💎面试官识人手册"
+      ],
+      "toc_level": 2,
+      "toc_index": 4,
+      "word_count": 116,
+      "updated_at": "2025-06-19T00:56:49.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "resume-project",
+        "netty-network",
+        "jvm-memory-gc",
+        "devops-release"
+      ],
+      "question_type": "resume_project",
+      "question_type_name": "简历项目题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "简历",
+        "面试官",
+        "栈"
+      ],
+      "summary": "面试管识人：理论上此篇主要是给担任面试官的小伙伴的，但应聘者能做到知己知彼不是更好吗。招聘识人流程：计划目标制定， 面试技术栈，面试场景，面试反馈/决策天明荐语：流程-模板仅供参考，请勿照搬！话不多说，先上大图：更多细节可：验证码TiMihttps://www.processon.com/em...",
+      "excerpt": "面试管识人 ：理论上此篇主要是给担任面试官的小伙伴的，但应聘者能做到知己知彼不是更好吗。 招聘识人流程： 计划目标制定， 面试技术栈，面试场景，面试反馈/决策 天明 荐语：流程-模板仅供参考，请勿照搬！ 话不多说，先上大图： 更多细节可：验证码TiMi https://www.processon.com/embed/6845273c451e8a0318499649?cid=6845273c451e8a031849964c"
+    },
+    {
+      "slug": "pngo33i92ss0uz3s",
+      "title": "网络和操作系统基础篇",
+      "url": "/tulingzhouyu/db22bv/pngo33i92ss0uz3s",
+      "toc_path": [
+        "面试必看",
+        "大厂真题",
+        "阿里面试真题",
+        "网络和操作系统基础篇"
+      ],
+      "toc_level": 3,
+      "toc_index": 47,
+      "word_count": 7990,
+      "updated_at": "2025-04-22T06:02:37.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "ai-llm",
+        "observability-troubleshooting",
+        "os-linux"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "campus",
+        "middle",
+        "senior"
+      ],
+      "level_names": [
+        "校招/应届生",
+        "中级/3-5年",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "TCP",
+        "UDP",
+        "HTTP",
+        "DNS",
+        "三次握手",
+        "四次挥手",
+        "网络",
+        "AI",
+        "故障",
+        "链路",
+        "操作系统",
+        "进程"
+      ],
+      "summary": "网络基础TCP三次握手三次握手过程：客户端——发送带有SYN标志的数据包——服务端一次握手Client进入syn_sent状态；服务端——发送带有SYN/ACK标志的数据包——客户端二次握手服务端进入syn_rcvd；客户端——发送带有ACK标志的数据包——服务端三次握手连接就进入Establ...",
+      "excerpt": "网络基础 TCP三次握手 三次握手过程： 客户端——发送带有SYN标志的数据包——服务端一次握手Client进入syn_sent状态； 服务端——发送带有SYN/ACK标志的数据包——客户端二次握手服务端进入syn_rcvd； 客户端——发送带有ACK标志的数据包——服务端三次握手连接就进入 Established 状态； 为什么三次： 主要是为了建立可靠的通信信道，保证客户端与服务端同时具备发送、接收数据的能力。 为什么两次不行？ 1、防止已失效的请求报文又传送到了服务端，建立了多余的链接，浪费资源。 2、两次握手只能保证单向连接是畅通的。（为了实现可靠数据传输，TCP协议的通信双方，都必须维护一个序列号，以标识发送出去的数据包中，哪些是已经被对方收到的。三次握手的过程即是通信双方相互告知序列号起始值，并确认对方已经收到了序列号起始值的必经步骤；如果只是两次握手，至多只有连接发起方的起始序列号能被确认，另一方选择的序列号则得不到确认）。 3 、 避免已失效的连接请求干扰 ：在三次握手过程中，如果客户端发出连接请求后意外宕机或网络出现故障等情况，当服务器收到这个错误的连接请求并回复 SYN+ACK 后，由于客户端无法完成第三次握手发送 ACK，服务器在经过一段时间后会自动放弃这个连接请求。如果采用二次握手，服务器可能会一直等待客户端的响应，从而浪费资源。 TCP四次挥手过程 四次挥手过程： 客户端——发送带有FIN标志的数据包——服务端，关闭与服务端的连接，客户端进入FIN-WAIT-1状态。 服务端收到这个FIN，它发回⼀个ACK，确认序号为收到的序号加1，服务端就进入了CLOSE-WAIT状态。 服务端——发送⼀个FIN数据包——客户端，关闭与客户端的连接，客户端就进入FIN-WAIT-2状态。 客户端收到这个FIN，发回ACK报⽂确认，并将确认序号设置为收到序号加1，TIME-WAIT状态。 为什么四次： 因为需要确保客户端与服务端的数据能够完成传输。详细原因： 可靠地关闭双方的发送和接收功能 在 TCP 连接中，每一端都有发送和接收数据的能力，而四次挥手可以确保双方都能正确地关闭自己的发送功能，同时接收到来自对方的数据结束通知。当一方完成数据发送任务后，需要向对方发送一个连接释放报文段（FIN），表示自己已经没有数据要发送了。接收方收到这个 FIN 后，会发送一个确认报文（ACK），但此时接收方可能还有一些数据没有发送完成，所以它不会立即关闭连接，而是会等到自己的数据也全部发送完毕后再向对方发送自己的连接释放报文段（FIN）。发送方收到这个 FIN 后，再发送一个确认报文（ACK），至此，四次挥手完成，连接才完全释放。 确保数据传输的完整性 四次挥手过程中，每一次的报文都有其特定的作用，尤其是确认对方的连接释放请求。通过这种方式，可以确保双方在关闭连"
+    },
+    {
+      "slug": "wyvmp2h6ka9h90yf",
+      "title": "VM虚拟机安装Centos7教程",
+      "url": "/tulingzhouyu/db22bv/wyvmp2h6ka9h90yf",
+      "toc_path": [
+        "综合篇",
+        "VM虚拟机安装Centos7教程"
+      ],
+      "toc_level": 1,
+      "toc_index": 137,
+      "word_count": 357,
+      "updated_at": "2024-11-14T14:44:06.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "java-core",
+        "os-linux"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "网络",
+        "文件"
+      ],
+      "summary": "1.前置准备虚拟机软件： VMware Workstation ProCentos7 ISO 文件.xshell 工具，去官网搞一个，个人使用不要钱如果是从 0 开始，大家不要自己找对应的版本，找对应的班班小姐姐获取相应的软件以及 ISO。已经趟过的坑就不用再浪费时间了，安装本来就是一个不太重...",
+      "excerpt": "1.前置准备 虚拟机软件： VMware Workstation Pro Centos7 ISO 文件 . xshell 工具，去官网搞一个，个人使用不要钱 如果是从 0 开始，大家不要自己找对应的版本，找对应的班班小姐姐获取相应的软件以及 ISO。 已经趟过的坑就不用再浪费时间了，安装本来就是一个不太重要的东西。 2.VM 安装 Centos7 按照图片操作 修改完硬件配置后，点击完成会自动启动 Centos7，默默地等待就行。 补充： 继续： 安装好之后涨这个样子，如果不知道怎么配置网络就开启图形化，在来配置，不会占用多少资源的，开了也可以后续关掉。 登录账号时，选择 Not listed，然后 输入 root 账号，密码之前自己输入的 ​ 至此 NAT 网络连接就已经搞定了。 ​ ​ 不喜欢图形化，使用将上边关闭图形化的命令复制到 xshell 执行。 在 VM 中是没有办法复制的。 ​ ​ 如果你需要使用其他方式配置网络，请联系，更新教程。 ​ ​ 如果网络一直有问题，请使用补充部分的网络重置。"
+    },
+    {
+      "slug": "ul3651zx68pm67dq",
+      "title": "Java私有仓库Nexus搭建",
+      "url": "/tulingzhouyu/db22bv/ul3651zx68pm67dq",
+      "toc_path": [
+        "综合篇",
+        "Java私有仓库Nexus搭建"
+      ],
+      "toc_level": 1,
+      "toc_index": 140,
+      "word_count": 1409,
+      "updated_at": "2023-09-07T11:56:46.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "os-linux",
+        "resume-project",
+        "devops-release"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "操作系统",
+        "文件",
+        "项目",
+        "发布",
+        "部署"
+      ],
+      "summary": "1. 为什么需要搭建私有仓库？1、有些公司都不提供外网给项目组人员，因此就不能使用maven访问远程的仓库地址，所以很有必要在局域网里找一台有外网权限的机器，搭建nexus私服，然后开发人员连到这台私服上，这样的话就可以通过这台搭建了nexus私服的电脑访问maven的远程仓库。而且自己mav...",
+      "excerpt": "为什么需要搭建私有仓库？ 1、有些公司都不提供外网给项目组人员，因此就不能使用maven访问远程的仓库地址，所以很有必要在局域网里找一台有外网权限的机器，搭建nexus私服，然后开发人员连到这台私服上，这样的话就可以通过这台搭建了nexus私服的电脑访问maven的远程仓库。而且自己maven私服更容易维护，由于在内网，公司的开发人员从maven私服迁出jar到本地仓库更快。 2、当需要上传第三方或者自己的jar到maven仓库时，就需要私服了。 如何部署和使用？ 操作系统：Ubuntu18 （虚拟机和云服务器均可） Maven版本： apache-maven-3.6.0 （下载地址： https://archive.apache.org/dist/maven/maven-3/3.6.0/binaries/ ） Nexus版本：nexus-3.58.0 (下载地址： https://www.sonatype.com/products/sonatype-nexus-oss-download ) 配置Maven 将下载好的maven和nexus上传到服务器上（建议软件都安装在/usr/local目录下），下面解压maven 配置环境变量 在最末尾加上 然后再使用下面命令使配置生效 查看是否生效 部署Nexus 解压Nexus 启动 默认端口： 8081 默认账号密码: admin/admin123 修改默认端口 新版本的Nexus的配置文件是在Nexus根目录的 /etc 下的 nexus-default.properties 要修改Nexus的端口，就修改配置文件中的 application-port ，然后重启Nexus服务。 Nexus简单功能介绍 搜索功能 这个就是类似 Maven 仓库上的搜索功能，就是从私服上查找是否有哪些包。 注意： 在Search这级是支持模糊搜索的 浏览 上传 顾名思义就是上传jar包到私服中，可以选择其中一个hosted仓库。通过页面直接上传的方式只是上传了jar包，若这个jar通过Maven依赖了其他jar，那其他项目在下载这个jar时无法取得它的依赖。所以，除非这个jar没有任何依赖，否则还是推荐通过命令行或者IDE的方式上传jar包，这样才会把pom一并上传。 服务器管理和配置 看到这选项是要进行登录的，在右上角点击“Sign In”的登录按钮，输入admin/admin123，登录成功之后，即可看到此功能，如图所示： 仓库 Blob Stores 文件存储的地方，创建一个目录的话，对应文件系统的一个目录。 Repositories 仓库分为三种：Proxy、hosted、group Proxy 这里就是代理的意思，代理中央Maven仓库，当PC访问中央库的时候，先通过Proxy下载到Nexus仓库，然后再从Nexus仓"
+    },
+    {
+      "slug": "wpogs3206ta8ff72",
+      "title": "分布式协议Gossip",
+      "url": "/tulingzhouyu/db22bv/wpogs3206ta8ff72",
+      "toc_path": [
+        "综合篇",
+        "分布式协议Gossip"
+      ],
+      "toc_level": 1,
+      "toc_index": 150,
+      "word_count": 3680,
+      "updated_at": "2023-09-07T11:56:25.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "algorithm",
+        "distributed-transaction",
+        "java-core",
+        "performance-optimization"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "网络",
+        "算法",
+        "二叉树",
+        "查找",
+        "最终一致性",
+        "性能",
+        "优化"
+      ],
+      "summary": "Gossip Protocol也叫Epidemic Protocol（流行病协议），还有其他名称，如流言算法、疫情传播算法等。该协议的发布最早是在1987年8月温哥华举行的第六届ACM分布式计算原理的学术会议上，该论文介绍了几种用于分发更新并推动副本实现一致性的随机算法。该算法非常简单，几乎不...",
+      "excerpt": "Gossip Protocol也叫Epidemic Protocol（流行病协议），还有其他名称，如 流言算法、疫情传播算法 等。 该协议的发布最早是在1987年8月温哥华举行的第六届ACM分布式计算原理的学术会议上，该论文介绍了几种用于分发更新并推动副本实现一致性的随机算法。该算法非常简单，几乎不需要底层通信系统的保证，但它们可以确保每次更新的效果最终都能体现在所有副本中。通过在随机化步骤中选择适当的分布来调整算法的成本和性能。该算法与流行病非常相似，流行病学文献有助于理解其行为。 六度分隔理论 Gossip Protocol 是基于 六度分隔理论（Six Degrees of Separation）哲学 的体现，简单的来说，一个人通过6个中间人可以认识世界任何人，数学公式如下： 即复杂度， 为每个人的朋友圈数量， 为人际宽度。 1506 ＝11,390,625,000,000（约11.4万亿） 意思为每个人朋友圈数量为150人，当人际宽度为6时，大约可以容纳11.4万亿人的体量。 基于 六度分隔理论 得知，任何信息的传播其实非常迅速，而且网络交互次数不会很多。比如Facebook在2016年2月4号做了一个实验：研究了当时已注册的15.9亿使用者资料，发现这个神奇数字的“网络直径”是4.57，翻成白话文意味着每个人与其他人间隔为4.57人。 实现机制 在《Epidemic Algorithms for Replicated Database Maintenance》论文中主要论述了直接邮寄（direct mail）、反熵传播（anti-entropy）、谣言传播（rumor mongering）三种机制来实现数据更新。 Gossip协议主要是通过反熵传播（anti-entropy）、谣言传播（rumor mongering）实现的。 直接邮寄 每个节点更新都会立即从其变更节点邮寄通知到所有其他节点。 机制 时间复杂度 网络流量 优点 缺点 直接邮寄（direct mail） O(n)，n为节点数 1 m n，m为更新消息数，n为节点数 更新效率高 不完全可靠，存在信息传递丢失风险 对于 直接邮寄（direct mail） 这种方式，主要是当节点有数据更新便开始遍历节点池，遍历发送其他所有节点消息来通知自身节点数据的更新情况，实现算法较为简单。由于是一次性遍历通知，在遇到网络通信故障、节点宕机之后恢复等现实情况时没有办法容错和补偿，这是较为致命性的地方，因此极端情况下它是无法保证分布式环境下各节点数据一致性的。 反熵传播 每个节点都会定期随机选择节点池中的一些节点，通过交换数据内容来解决两者之间的任何差异。如上图T1、T2、T3表示不同时间点各节点通知周边节点数据交互的示例。 反熵传播（anti-entropy）中的节点只有两种状态，病原（Suspecti"
+    },
+    {
+      "slug": "mknt2g3ukflkcb0v",
+      "title": "一行代码统计方法耗时",
+      "url": "/tulingzhouyu/db22bv/mknt2g3ukflkcb0v",
+      "toc_path": [
+        "综合篇",
+        "一行代码统计方法耗时"
+      ],
+      "toc_level": 1,
+      "toc_index": 155,
+      "word_count": 950,
+      "updated_at": "2024-09-02T08:01:41.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "spring-core",
+        "spring-boot",
+        "java-core"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "HTTP",
+        "Spring",
+        "SpringBoot",
+        "反射",
+        "异常"
+      ],
+      "summary": "什么是Cool RequestCool Request是一款基于 IntelliJ IDEA 的插件，旨在简化 Spring MVC(Boot) 项目中 API调试调用，提供了强大的参数推测能力、方法耗时追踪、运行时反射调用等能力特色功能统计方法耗时开启耗时追踪Cool Request默认关闭...",
+      "excerpt": "什么是Cool Request Cool Request是一款基于 IntelliJ IDEA 的插件，旨在简化 Spring MVC(Boot) 项目中 API调试调用，提供了强大的参数推测能力、方法耗时追踪、运行时反射调用等能力 特色功能 统计方法耗时 开启耗时追踪 Cool Request默认关闭方法耗时追踪，如果开启后，会影响第一次发起API时的速度，如果不需要耗时追踪，可点击关闭 发起追踪 当正常发起HTTP请求时，Cool Request将分析一次目标方法，根据设置的最大深度，尽可能多的追踪方法，这需要花费一些时间，且视所设置最大深度为定。 自动分析时，如果遇到了对interface形式的调用，则无法分析impl实现的方法，不会统计该方法，解决办法是改用注入impl的类，而不是service，或者使用 添加/取消自定义 方法手动添加impl方法。 添加/取消自定义方法 如果自动分析无法满足需求，可在任意方法体内右击，选择 Cool Request -> Add/Cancel Method To Trace ，添加/取消目标方法。 失效情况 有些原因可能会导致跟踪失效 当Controller内部抛出异常时，Trace将失效，请确保链路中无异常。 非SpringBoot项目 使用了jrebel启动(理论支持，但如果失效，可正常启动重新尝试) 调用任意方法 Cool Request支持在SpringBoot运行时调用任意容器内实例的方法、同时也包括静态方法。 使用教程 在想要调用的方法体内右击，选择CoolRequest->Call this Method 接着点击运行按钮即可。 当然，Cool Request支持大量常见的参数传递 自定义函数 Cool Request拥有最强大得函数支持系统，当HTTP参数想要使用动态参数时，可根据自己需求，编写自定义函数。 函数可使用在任意HTTP参数中，包括请求头、URL参数、Path变量、请求体中。 例如想要增加一个自定义函数，可编写以下代码。 在任意HTTP参数值中，通过 {{函数名}} 来引用此函数。 关闭函数转换 如果想关闭函数转换，可以设置中禁用 发起反射请求 什么反射请求 发射请求可绕过系统中的拦截器，在开发时，可直接使请求进入到Controller方法。 普通HTTP请求的流程如下： 构造HTTP参数 发起HTTP请求 进入Web容器 进入过滤器 进入拦截器 进入Controller 而反射请求可以跳过其中的第3、第4步骤，而第5步是可选的，反射的流程如下： 构造HTTP参数 发起HTTP请求 进入拦截器（可选择是否应用拦截器） 进入Controller 进入参数配置界面，在左侧下拉框选中如下所示： 点击右侧 按钮即可发起反射请求。 Spring网关 Cool Request在网关程序启动后，会自动"
+    },
+    {
+      "slug": "slqi3pzslyqmynug",
+      "title": "过滤器和拦截器有什么区别？",
+      "url": "/tulingzhouyu/db22bv/slqi3pzslyqmynug",
+      "toc_path": [
+        "Java基础",
+        "过滤器和拦截器有什么区别？"
+      ],
+      "toc_level": 1,
+      "toc_index": 178,
+      "word_count": 1657,
+      "updated_at": "2024-09-15T09:02:29.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "spring-core",
+        "spring-boot",
+        "java-core",
+        "netty-network"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "Spring",
+        "Spring Boot",
+        "Java",
+        "反射",
+        "注解"
+      ],
+      "summary": "过滤器（Filter）和拦截器（Interceptor）都是用于解决项目中与请求处理、响应管理和业务逻辑控制相关问题的工具，但它们之间存在明显的区别。接下来，我们将详细探讨这两者的不同之处。实现过滤器和拦截器首先，我们先来看一下二者在 Spring Boot 项目中的具体实现，这对后续理解二者...",
+      "excerpt": "过滤器（Filter）和拦截器（Interceptor）都是用于解决项目中与请求处理、响应管理和业务逻辑控制相关问题的工具，但它们之间存在明显的区别。接下来，我们将详细探讨这两者的不同之处。 实现过滤器和拦截器 首先，我们先来看一下二者在 Spring Boot 项目中的具体实现，这对后续理解二者的区别有很大的帮助。 1.实现过滤器 过滤器可以使用 Servlet 3.0 提供的 @WebFilter 注解，配置过滤的 URL 规则，然后再实现 Filter 接口，重写接口中的 doFilter 方法，具体实现代码如下： 其中： void init(FilterConfig filterConfig)： 容器 启动（初始化 Filter）时会被调用，整个程序运行期只会被调用一次。用于实现 Filter 对象的初始化。 void doFilter(ServletRequest request, ServletResponse response,FilterChain chain)： 具体的过滤功能实现代码，通过此方法对请求进行过滤处理， 其中 FilterChain 参数是用来调用下一个过滤器或执行下一个流程 。 void destroy()： 用于 Filter 销毁前完成相关资源的回收工作。 b) 实现拦截器 拦截器的实现分为两步，第一步，创建一个普通的拦截器，实现 HandlerInterceptor 接口，并重写接口中的相关方法；第二步，将上一步创建的拦截器加入到 Spring Boot 的配置文件中。 2.实现拦截器 实现 HandlerInterceptor 接口并重写 preHandle/postHandle/afterCompletion 方法，具体实现代码如下： 其中： boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handle)： 在请求方法执行前被调用，也就是调用目标方法之前被调用。比如我们在操作数据之前先要验证用户的登录信息，就可以在此方法中实现，如果验证成功则返回 true，继续执行数据操作业务；否则就返回 false，后续操作数据的业务就不会被执行了。 void postHandle(HttpServletRequest request, HttpServletResponse response, Object handle, ModelAndView modelAndView)： 调用请求方法之后执行，但它会在 DispatcherServlet 进行渲染视图之前被执行。 void afterCompletion(HttpServletRequest request, HttpServletResponse re"
+    },
+    {
+      "slug": "gu2sx82aq99rqpxq",
+      "title": "使用OAuth2时，如何存储和传输敏感信息，例如用户名和密码",
+      "url": "/tulingzhouyu/db22bv/gu2sx82aq99rqpxq",
+      "toc_path": [
+        "SpringCloud",
+        "使用OAuth2时，如何存储和传输敏感信息，例如用户名和密码"
+      ],
+      "toc_level": 1,
+      "toc_index": 564,
+      "word_count": 1306,
+      "updated_at": "2026-01-19T11:34:33.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "security-auth",
+        "netty-network",
+        "resume-project",
+        "java-core"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "HTTP",
+        "HTTPS",
+        "安全",
+        "JWT",
+        "权限",
+        "加密",
+        "XSS",
+        "面试官"
+      ],
+      "summary": "一、 标准面试回答模版（建议背诵）面试官： 在 OAuth2 体系下，你怎么处理敏感信息（如用户名密码）的存储和传输？Fox版标准回答： “Look at me! 如果你还在纠结‘客户端怎么加密传输密码’，那你对 OAuth2 的理解就走偏了。 OAuth2 的核心设计理念是 ‘让客户端（Cl...",
+      "excerpt": "一、 标准面试回答模版（建议背诵） 面试官： 在 OAuth2 体系下，你怎么处理敏感信息（如用户名密码）的存储和传输？ Fox版标准回答： “ Look at me! 如果你还在纠结‘客户端怎么加密传输密码’，那你对 OAuth2 的理解就走偏了。 OAuth2 的核心设计理念是 ‘让客户端（Client）永远不要接触用户的密码’ 。 我对这个问题的回答分为三个层面： 传输层面（Transmission）： HTTPS 是底线： 所有的交互（重定向、Token 交换、API 调用）必须全链路强制使用 HTTPS (TLS 1.2+) 。没有 HTTPS，任何加密手段在中间人攻击（MITM）面前都是裸奔。 拒绝 ROPC 模式： 坚决废弃 ‘密码模式’（Resource Owner Password Credentials）。在这种模式下，客户端会接触到用户密码，这是极度不安全的。 推荐流程： 必须使用 授权码模式（Authorization Code） 配合 PKCE （Proof Key for Code Exchange）。在这种模式下，输入密码的动作是在‘授权服务器’的页面上完成的， 客户端连密码的影子都看不到 。 存储层面（Storage）： 密码不存明文： 在授权服务器（Auth Server）端，密码永远不能明文存储，也不能双向加密存储。必须使用 加盐哈希算法 （如 BCrypt 、 Argon2 ）。 Token 不存敏感信息： 很多人喜欢把用户的手机号、身份证直接塞进 JWT 的 Payload 里。 大错特错！ JWT 默认只是 Base64 编码（JWS），谁都能解开。如果非要存，必须使用 JWE (JSON Web Encryption) 进行加密。 客户端防护（Client Side）： BFF 模式： 在浏览器端（SPA/H5），尽量不要把 Access Token 存进 LocalStorage ，容易被 XSS 攻击偷走。 最佳实践： 采用 BFF (Backend for Frontend) 架构，Token 存在后端的 Session 中，前端只拿一个 HttpOnly Cookie 。” 二、 场景与代码层面的体现 1. 场景一：错误的传输方式（ROPC 密码模式 - 这是一个反例！） 面试官潜台词： 千万别说你在用这个模式，除非是自家内部受信任的极老旧系统。 请求报文（危险）： Fox 点评： “看到这个请求了吗？客户端直接持有了 123456 。如果这个 Client 是一个第三方 App，你敢把银行卡密码输给它吗？这就叫 信任崩塌 。” 2. 场景二：正确的存储方式（BCrypt 哈希）面试官潜台词： 数据库里到底存的是什么？ 三、 Fox 的深度解析 如果面试官追问：“ 如果我的 Access Token 被黑客"
+    },
+    {
+      "slug": "bcbdogqk962elhbz",
+      "title": "URL vs URI",
+      "url": "/tulingzhouyu/db22bv/bcbdogqk962elhbz",
+      "toc_path": [
+        "网络专题",
+        "URL vs URI"
+      ],
+      "toc_level": 1,
+      "toc_index": 605,
+      "word_count": 1314,
+      "updated_at": "2024-10-06T13:15:44.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "java-core",
+        "os-linux",
+        "algorithm"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "网络",
+        "Java",
+        "文件",
+        "查找"
+      ],
+      "summary": "互联网的使用因人而异，有些人用它进行研究，有些人则用来交换信息或数据。在我们浏览网站和网页时，常常会遇到 URL 和 URI 这两个术语。由于它们的发音相似，很多人对它们之间的区别并不清楚。URL（统一资源定位符）和 URI（统一资源标识符）在网站的运行中都是不可或缺的，尽管它们常常被混用。什...",
+      "excerpt": "互联网的使用因人而异，有些人用它进行研究，有些人则用来交换信息或数据。在我们浏览网站和网页时，常常会遇到 URL 和 URI 这两个术语。由于它们的发音相似，很多人对它们之间的区别并不清楚。 URL（统一资源定位符） 和 URI（统一资源标识符） 在网站的运行中都是不可或缺的，尽管它们常常被混用。 什么是 URL URI 可以同时表示资源的名称（URN）和位置（URL），而 URL 仅用于描述资源在互联网上的位置。 本文将比较和对比 URL 和 URI，并阐明它们之间的区别。 主要区别在于它们的功能。URI 用于标识资源的名称和位置，而 URL 是 URI 的一个子集，仅用于标识资源的位置。URL 不包含资源的名称或其他信息。它们在目的、使用场景和协议规范等方面也存在差异。 URL 是一种用于识别网页或网站位置的工具。每个网页或网站的地址可能因资源而异， URL 的唯一目的是帮助用户找到目标资源。 用户只需点击 URL，即可访问相关内容。URL 代表“统一资源定位符”，通常由一串字符和地址组成，是在网络上查找信息的常用方式。 URL 包含协议描述，例如以 http 或 https 开头的 Web 资源，或以 ftp 开头的文件资源，甚至以 mailto 开头的电子邮件地址。URL 的主要部分用于协议，其余部分则指向具体资源，如网站名称或程序名称。 什么是 URI URL 和 URN 是构成 URI 的两个 子集 ，分别提供资源的位置和名称。 URI 是一串字符，通过资源的位置和/或名称来标识网络上的资源，允许以标准化的方式识别资源。 URI 可以分为 定位器 、 名称 或 两者 ，表明它可以描述 URL 和 / 或 URN。无论采用哪种方式，URI 中的“identifier”术语都突显了资源的重要性。 URI 的第一类是 URL，它定义了访问资源的方式，并包含资源名称和协议。URN 则需要与其他标识符具有全球唯一性，并具备国际影响力。 什么是 URN URN（统一资源名称） 是一种用于唯一标识资源的标准化方式。与 URL（统一资源定位符）不同，URN 主要关注资源的名称，而不是其位置。 URN 是一种用于标识特定资源的工具，旨在提供一个长期有效的标识符。无论资源的存储位置如何变化，URN 仍然可以用来唯一标识该资源。URN 通常属于特定的命名空间，例如 ISBN（国际标准书号）用于唯一标识书籍。 URN 的结构和格式可能因命名空间而异，但其核心目的是确保资源的唯一性和持久性。URN 在数字图书馆、学术出版和其他需要持久标识符的领域中非常有用，能够有效地支持资源的管理和引用。 URN 与 URL 和 URI的区别 主要区别在于它们的功能。URN 用于提供资源的持久性标识，而 URL 则用于描述资源在互联网上的位置。URN 不包含资源的访问路径或其他信息，因此"
+    },
+    {
+      "slug": "srxghdobuym65m6l",
+      "title": "TCP 和 UDP 协议的区别？",
+      "url": "/tulingzhouyu/db22bv/srxghdobuym65m6l",
+      "toc_path": [
+        "网络专题",
+        "TCP 和 UDP 协议的区别？"
+      ],
+      "toc_level": 1,
+      "toc_index": 607,
+      "word_count": 627,
+      "updated_at": "2023-08-29T06:56:46.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "os-linux"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "TCP",
+        "UDP",
+        "DNS",
+        "网络",
+        "文件"
+      ],
+      "summary": "TCP和UDP是两种在计算机网络中传输数据的不同方式。咱们来看看它们的区别和使用情况吧。首先，就连通性而言：TCP是一种“面向连接”的协议，这意味着发送和接收数据前需要建立一个稳定的连接。这有助于确保数据的可靠性，因为它会有确认和重传机制，防止数据丢失或损坏。而UDP则是“无连接”的协议，发送...",
+      "excerpt": "TCP和UDP是两种在计算机网络中传输数据的不同方式。咱们来看看它们的区别和使用情况吧。 首先，就连通性而言： TCP是一种“面向连接”的协议，这意味着发送和接收数据前需要建立一个稳定的连接。这有助于确保数据的可靠性，因为它会有确认和重传机制，防止数据丢失或损坏。 而UDP则是“无连接”的协议，发送数据时无需建立连接。这使得UDP传输更快，但也可能导致数据在传输中丢失或乱序。 接下来，谈谈可靠性： TCP通过确认和重传机制，确保数据传输的可靠性。即使数据包丢失，TCP会要求重新发送。 UDP不提供确认和重传机制，所以在传输过程中数据包可能会丢失。不过，UDP适用于一些不太关键的应用，比如流媒体和在线游戏。 关于数据传输方式： TCP以字节流的方式传输数据，保证数据顺序和完整性。数据会按照发送的顺序在接收端重建。 UDP将数据划分成数据报，每个数据报都是独立的，可能会以不同的顺序到达接收端。 那么，何时使用它们呢？ 对于需要可靠性和顺序性的场景，比如网页浏览、邮件传输和文件下载，TCP是首选。它确保了数据的完整性和正确的顺序。 而对于实时通信，如在线游戏、视频聊天和语音通话，UDP更合适。UDP避免了TCP连接带来的延迟，适用于低延迟的需求。 流媒体服务，像在线视频和音乐，也常使用UDP。即使丢失一些数据，也不会显著影响观看体验。 DNS查询也是UDP的应用场景，因为单个查询的数据量小且需要快速响应。 综上所述，TCP适用于需要可靠性和顺序性的应用，而UDP则适用于对速度和实时性要求更高的应用。在选择使用哪种协议时，需要根据具体的需求来判断哦！"
+    },
+    {
+      "slug": "dsqhapgfmv21gqe1",
+      "title": "面试官：你知道TCP与UDP的区别吗？",
+      "url": "/tulingzhouyu/db22bv/dsqhapgfmv21gqe1",
+      "toc_path": [
+        "网络专题",
+        "TCP 和 UDP 协议的区别？",
+        "面试官：你知道TCP与UDP的区别吗？"
+      ],
+      "toc_level": 2,
+      "toc_index": 608,
+      "word_count": 1008,
+      "updated_at": "2024-10-10T11:45:29.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "resume-project",
+        "java-core",
+        "os-linux"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "TCP",
+        "UDP",
+        "三次握手",
+        "四次挥手",
+        "网络",
+        "面试官",
+        "文件"
+      ],
+      "summary": "TCP（传输控制协议）和UDP（用户数据报协议）是互联网中两个核心的传输层协议，它们各自采用不同的方式来确保数据从源头传输到目的地。今天就详细探讨TCP与UDP协议的主要区别：1. 连接的建立TCP：TCP (Transmission Control Protocol，传输控制协议) 是一种面...",
+      "excerpt": "TCP（传输控制协议）和UDP（用户数据报协议）是互联网中两个核心的传输层协议，它们各自采用不同的方式来确保数据从源头传输到目的地。今天就详细探讨TCP与UDP协议的主要区别： 1. 连接的建立 TCP ：TCP (Transmission Control Protocol，传输控制协议) 是一种面向连接的协议。这意味着在数据传输开始之前，必须先建立连接。TCP通过三次握手过程来建立连接，确保两端的通信是同步的。 UDP ：UDP (User Datagram Protocol，用户数据报协议) 是一种面向数据报的协议。UDP发送数据之前不需要建立连接，它直接将数据包发送给接收方，不保证数据包的顺序、完整性或可靠性。 TCP 三次握手与四次挥手如下： 2. 数据传输的可靠性 TCP ：提供高可靠性的数据传输。它通过序列号、确认应答、重传机制、流量控制和拥塞控制等技术来确保数据完整无误地传输到接收方。 UDP ：不保证数据传输的可靠性。它发送的数据包可能会丢失、重复或到达顺序错乱，不提供错误恢复功能。 3. 数据传输的速度和效率 TCP ：由于需要进行连接管理、错误检测和恢复，以及维持连接状态，其数据传输速度相对较慢，协议开销较大。 UDP ：由于不需要建立连接，且几乎没有错误恢复机制，使得UDP的数据传输速度较快，协议开销小，效率较高。 4. 报文段 TCP 报文段核心数据如下： 序列号（Sequence Number） ：用于确保报文段的顺序传输，这是TCP提供可靠传输服务的关键部分。 确认号（Acknowledgment Number） ：接收方用它来告诉发送方已成功接收到的数据，是实现可靠传输的另一机制。 数据偏移（Data Offset） ：指出TCP头部的长度，这对于解析变长的选项字段是必要的。 控制位（Control Bits） ：包括SYN、ACK、FIN等标志，用于建立连接、确认收到数据和连接终止。 窗口大小（Window Size） ：用于流量控制，它告诉发送方可以发送的数据量，以防止接收方被过多数据淹没。 校验和（Checksum） ：提供端到端的错误检测能力。 紧急指针（Urgent Pointer） ：当URG标志被设置时，表示报文段中有紧急数据，需要优先处理。 UDP ：UDP报文段核心数据如下： 源端口和目的端口 ：用于标识发送和接收应用程序。 长度 ：指示UDP头部和数据的总长度。 校验和 ：提供端到端的错误检测能力，但在UDP中，这是可选的，因为UDP不保证可靠性。 5. 流量控制和拥塞控制 TCP ：具有流量控制和拥塞控制机制，可以根据网络条件调整数据传输速率，避免网络拥堵。 UDP ：不提供流量控制和拥塞控制机制，发送方的发送速率不会根据网络条件进行调整。 6. 使用场景 TCP ：适用于需要高可靠性的应用，如网页浏览、电"
+    },
+    {
+      "slug": "uie90sh8d3i43knb",
+      "title": "什么是网络延迟（延时）和带宽？它们对网络性能有什么影响？",
+      "url": "/tulingzhouyu/db22bv/uie90sh8d3i43knb",
+      "toc_path": [
+        "网络专题",
+        "什么是网络延迟（延时）和带宽？它们对网络性能有什么影响？"
+      ],
+      "toc_level": 1,
+      "toc_index": 609,
+      "word_count": 557,
+      "updated_at": "2023-08-27T13:20:08.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "performance-optimization",
+        "observability-troubleshooting",
+        "os-linux"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "网络",
+        "性能",
+        "变慢",
+        "文件"
+      ],
+      "summary": "当我们谈论网络性能时，网络延迟和带宽是两个重要的概念。网络延迟（延时） 是指数据从发送端到接收端所需要的时间。可以将其想象成信息在网络中的“旅行时间”。延迟通常以毫秒为单位进行测量。如果网络延迟高，信息就需要更长的时间才能从一个地方传输到另一个地方。这可能会导致在线游戏中的延迟、视频通话中的滞...",
+      "excerpt": "当我们谈论网络性能时，网络延迟和带宽是两个重要的概念。 网络延迟（延时） 是指数据从发送端到接收端所需要的时间。可以将其想象成信息在网络中的“旅行时间”。延迟通常以毫秒为单位进行测量。如果网络延迟高，信息就需要更长的时间才能从一个地方传输到另一个地方。这可能会导致在线游戏中的延迟、视频通话中的滞后以及网页加载速度变慢。 带宽 则是指网络能够传输的数据量，通常以每秒传输的比特数（比如兆比特每秒，Mbps）来表示。带宽决定了网络可以同时传输多少数据。高带宽意味着网络能够同时处理更多的数据，而低带宽可能会导致数据传输变慢或者出现阻塞。 这两者对网络性能有着不同的影响： 网络延迟影响 ：高延迟会导致数据传输的时间延长，从而使得实时交互受到影响。例如，在网络游戏中，高延迟可能导致你的操作与游戏中的实际响应之间存在时间差，从而影响游戏体验。在视频通话中，高延迟可能导致对方说话或移动时出现明显的延迟。 带宽影响 ：高带宽意味着能够同时传输更多的数据，这对于下载大文件、观看高清视频或同时连接多个设备至关重要。但是，带宽并不总是决定一切，因为即使有很高的带宽，如果网络延迟很高，数据传输仍然可能会感到迟缓。 综合来说，网络性能的好坏受到网络延迟和带宽的共同影响。理想情况下，我们希望网络具有低延迟和足够的带宽，以便实现快速的数据传输和实时交互。"
+    },
+    {
+      "slug": "ygz7o9hxgqwud4kr",
+      "title": "请描述一下TCP/IP协议栈，并解释其中的每一层的作用。",
+      "url": "/tulingzhouyu/db22bv/ygz7o9hxgqwud4kr",
+      "toc_path": [
+        "网络专题",
+        "请描述一下TCP/IP协议栈，并解释其中的每一层的作用。"
+      ],
+      "toc_level": 1,
+      "toc_index": 610,
+      "word_count": 662,
+      "updated_at": "2023-08-27T13:19:15.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "jvm-memory-gc",
+        "java-core",
+        "observability-troubleshooting"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "TCP",
+        "UDP",
+        "HTTP",
+        "网络",
+        "栈",
+        "链路"
+      ],
+      "summary": "当我们谈论TCP/IP协议栈，实际上是在讨论计算机网络中的一种通信架构，用于在互联网上发送和接收数据。这个协议栈分为多个层级，每一层都有特定的功能，就像是一座多层的网络大厦。让我来逐层解释一下： 物理层： 这是网络大厦的最底层。它处理物理连接，例如电缆、光纤等。这一层的任务是将比特流传输到连接...",
+      "excerpt": "当我们谈论TCP/IP协议栈，实际上是在讨论计算机网络中的一种通信架构，用于在互联网上发送和接收数据。这个协议栈分为多个层级，每一层都有特定的功能，就像是一座多层的网络大厦。让我来逐层解释一下： 物理层： 这是网络大厦的最底层。它处理物理连接，例如电缆、光纤等。这一层的任务是将比特流传输到连接的设备之间，就像电线传输电流一样。 数据链路层： 这一层负责在直接相连的设备之间传输数据帧，类似于在相邻楼层之间建立桥梁。它解决了物理层的一些问题，如数据在连接中如何传输，如何检测和纠正传输中的错误。 网络层： 这一层像是一个导航系统，负责在不同的网络之间传输数据包。它使用IP地址来寻找目标设备，并且处理数据的路由，确保数据能够从源地址到达目标地址。 传输层： 这一层的作用就像是一名快递员，负责确保数据的可靠传输。它使用TCP协议（Transmission Control Protocol）或UDP协议（User Datagram Protocol），前者提供可靠的、有序的数据传输，后者则更加轻量但不保证可靠性。 会话层： 这一层就像是两个人之间的对话，负责建立、管理和终止数据传输的会话。它可以处理多个应用程序之间的通信，并确保数据按照正确的顺序传输。 表示层： 这一层就像是在不同语言之间进行翻译的翻译家，负责数据的格式转换、加密和压缩，以确保数据能够被正确解释和处理。 应用层： 这是网络大厦的最顶层，最接近用户。在这一层，应用程序通过协议（如HTTP、FTP、SMTP等）与网络进行通信。用户使用的各种应用，如浏览器、电子邮件客户端等，都在这个层级中。 所以，TCP/IP协议栈就是一个多层次的通信体系结构，每一层都有特定的任务和功能，共同协作以确保在互联网上的数据传输顺利进行。"
+    },
+    {
+      "slug": "katy89ba77qzhegx",
+      "title": "什么是HTTP状态码？举例说明几个常见的HTTP状态码及其含义。",
+      "url": "/tulingzhouyu/db22bv/katy89ba77qzhegx",
+      "toc_path": [
+        "网络专题",
+        "什么是HTTP状态码？举例说明几个常见的HTTP状态码及其含义。"
+      ],
+      "toc_level": 1,
+      "toc_index": 614,
+      "word_count": 680,
+      "updated_at": "2023-08-27T13:14:37.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "HTTP",
+        "网络"
+      ],
+      "summary": "HTTP状态码是在客户端（例如浏览器）与服务器之间进行通信时，用于表示服务器对请求的处理结果的三位数字代码。这些状态码提供了关于请求是否成功以及出现了什么问题的信息。通常，HTTP状态码由服务器在响应消息的起始部分发送给客户端。以下是几个常见的HTTP状态码及其含义的口语化解释和示例： 200...",
+      "excerpt": "HTTP状态码是在客户端（例如浏览器）与服务器之间进行通信时，用于表示服务器对请求的处理结果的三位数字代码。这些状态码提供了关于请求是否成功以及出现了什么问题的信息。通常，HTTP状态码由服务器在响应消息的起始部分发送给客户端。 以下是几个常见的HTTP状态码及其含义的口语化解释和示例： 200 OK （请求成功）： 这意味着服务器成功处理了客户端的请求，返回了请求的内容。这是一种正常的状态码。 举例：当你在浏览器中打开一个网页，网页的内容被成功加载并显示出来，就会返回 200 OK 状态码。 404 Not Found （未找到页面）： 当客户端请求的资源在服务器上不存在时，服务器会返回这个状态码。通常用于表示所请求的网页不存在。 举例：你点击一个链接或输入一个URL，但服务器上找不到这个页面，就会返回 404 Not Found 状态码。 500 Internal Server Error （服务器内部错误）： 这表示服务器在处理请求时遇到了问题，可能是服务器程序错误或配置错误等。 举例：当你尝试访问一个网站，但是网站的服务器出现了问题，无法正确响应你的请求，就会返回 500 Internal Server Error 状态码。 302 Found / 301 Moved Permanently （重定向）： 这些状态码表示所请求的资源已经被移动到了其他位置。302 表示暂时性移动，而 301 表示永久性移动。 举例：当你访问一个旧的网页地址，但网站已经将内容迁移到新的地址时，服务器会返回 302 或 301 状态码，告诉你去新的地址获取内容。 400 Bad Request （请求错误）： 如果服务器无法理解客户端的请求，或者请求的参数不正确，就会返回这个状态码。 举例：当你提交一个表单，但是其中的信息格式错误，服务器无法处理你的请求，就会返回 400 Bad Request 状态码。 这些状态码是HTTP通信中常见的一些示例，它们帮助我们了解请求的处理结果，从而更好地理解发生的情况。"
+    },
+    {
+      "slug": "qpnqcegkvn6ebds6",
+      "title": "请解释一下DNS是什么以及它的作用是什么？",
+      "url": "/tulingzhouyu/db22bv/qpnqcegkvn6ebds6",
+      "toc_path": [
+        "网络专题",
+        "请解释一下DNS是什么以及它的作用是什么？"
+      ],
+      "toc_level": 1,
+      "toc_index": 615,
+      "word_count": 380,
+      "updated_at": "2023-08-27T13:13:56.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "DNS",
+        "网络"
+      ],
+      "summary": "当你在互联网上浏览网页或者发送电子邮件时，就像是在大网络中发送和接收信息。但是计算机们需要一种方法来找到彼此，就像人们需要地址来找到朋友的家一样。这就是DNS（域名系统）发挥作用的地方。想象一下，互联网就像一座大城市，里面有无数的房子（网站和服务）。每座房子都有自己的地址，但是用数字来记住每个...",
+      "excerpt": "当你在互联网上浏览网页或者发送电子邮件时，就像是在大网络中发送和接收信息。但是计算机们需要一种方法来找到彼此，就像人们需要地址来找到朋友的家一样。这就是DNS（域名系统）发挥作用的地方。 ​ 想象一下，互联网就像一座大城市，里面有无数的房子（网站和服务）。每座房子都有自己的地址，但是用数字来记住每个地址会很麻烦。所以，DNS 就像是一本大电话簿，它把人们容易记住的网站名字（比如www.example.com）转换成计算机能理解的数字地址（IP 地址，比如192.168.1.1）。 ​ DNS 的作用就是帮助你的计算机找到其他计算机或服务器的位置。当你输入一个网址时，你的计算机会向 DNS 服务器询问：“嘿，我要找的这个网址对应的 IP 地址是多少？”然后 DNS 服务器会告诉你的计算机正确的 IP 地址，这样你的计算机才能准确地连接到目标网站，显示出你想要的页面。 ​ 总之，DNS 就是互联网的导航系统，确保你能够轻松地访问所需的网站和服务，而不必记住复杂的数字地址。"
+    },
+    {
+      "slug": "gwq9aum3apts2klh",
+      "title": "什么是IP地址？IPv4和IPv6有什么区别？",
+      "url": "/tulingzhouyu/db22bv/gwq9aum3apts2klh",
+      "toc_path": [
+        "网络专题",
+        "什么是IP地址？IPv4和IPv6有什么区别？"
+      ],
+      "toc_level": 1,
+      "toc_index": 616,
+      "word_count": 400,
+      "updated_at": "2023-08-27T13:13:15.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "java-core"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "网络"
+      ],
+      "summary": "嗨！IP地址其实就是给互联网上的设备取的一个标签，就像是邮寄信件时写的地址一样。它用来在网络中找到并识别你的电脑、手机或其他设备，以便它们能够相互交流。IPv4和IPv6是两种不同版本的IP地址系统： IPv4（Internet Protocol version 4）：这是早期和现在最常用的I...",
+      "excerpt": "嗨！IP地址其实就是给互联网上的设备取的一个标签，就像是邮寄信件时写的地址一样。它用来在网络中找到并识别你的电脑、手机或其他设备，以便它们能够相互交流。 IPv4和IPv6是两种不同版本的IP地址系统： IPv4（Internet Protocol version 4）：这是早期和现在最常用的IP地址版本。它使用32位二进制数来表示IP地址，通常以四组数字（0到255之间）来表示，中间用点分隔。举个例子，像这样：192.168.1.1。但是，因为IPv4地址的组合有限，随着互联网设备的增多，可用的IPv4地址正在逐渐枯竭。 IPv6（Internet Protocol version 6）：为了解决IPv4地址不足的问题，IPv6被引入了。IPv6使用128位二进制数来表示IP地址，这意味着可以有大量的独特地址。IPv6的表示方式看起来有点奇怪，使用冒号分隔的一串数字和字母，例如：2001:0db8:85a3:0000:0000:8a2e:0370:7334。这样的地址数量足够多，可以支持未来更多的互联网连接。 总之，IP地址就是互联网设备的标识，用于在网络中找到并连接设备。IPv4是早期和常用的版本，而IPv6则是为了应对IP地址不足问题而推出的新版本，具备更大的地址空间。"
+    },
+    {
+      "slug": "yc18ro2k611mxugx",
+      "title": "什么是HTTP协议？",
+      "url": "/tulingzhouyu/db22bv/yc18ro2k611mxugx",
+      "toc_path": [
+        "网络专题",
+        "什么是HTTP协议？"
+      ],
+      "toc_level": 1,
+      "toc_index": 617,
+      "word_count": 402,
+      "updated_at": "2023-08-27T13:11:03.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "performance-optimization",
+        "security-auth"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "HTTP",
+        "HTTPS",
+        "网络",
+        "性能",
+        "安全",
+        "加密"
+      ],
+      "summary": "HTTP（超文本传输协议）是一种用于在计算机网络上进行通信的协议，它是万维网（World Wide Web）的基础。HTTP允许在客户端（例如Web浏览器）和服务器之间传输超文本（如HTML、图片、视频等）以及其他资源。通过HTTP，用户可以通过点击链接、输入URL（统一资源定位符）等方式访问...",
+      "excerpt": "HTTP（超文本传输协议）是一种用于在计算机网络上进行通信的协议，它是万维网（World Wide Web）的基础。HTTP允许在客户端（例如Web浏览器）和服务器之间传输超文本（如HTML、图片、视频等）以及其他资源。通过HTTP，用户可以通过点击链接、输入URL（统一资源定位符）等方式访问互联网上的各种信息资源。 HTTP协议的特点包括： 无状态性（Stateless）： 每个HTTP请求都是独立的，服务器不会保留之前请求的任何信息。这就意味着服务器不会在多次请求之间保持任何关于客户端状态的信息。为了处理状态信息，通常使用Cookie等机制。 基于文本： HTTP的通信内容是以文本形式传输的，这使得它易于调试和查看，但也带来了一些性能方面的问题。HTTPS协议则对HTTP进行了加密以提供安全性。 请求-响应模式： 每个HTTP交互都是由客户端发起一个请求，服务器返回一个响应的模式。 随着时间的推移，HTTP的版本不断更新，以适应网络发展的需要。最初的版本是HTTP/0.9，而目前最常用的版本是HTTP/1.1和HTTP/2。这些版本之间有不同的性能特点和功能支持。"
+    },
+    {
+      "slug": "uvegq65g6ud9t4sg",
+      "title": "解释一下HTTPS，以及它与HTTP的区别是什么？",
+      "url": "/tulingzhouyu/db22bv/uvegq65g6ud9t4sg",
+      "toc_path": [
+        "网络专题",
+        "解释一下HTTPS，以及它与HTTP的区别是什么？"
+      ],
+      "toc_level": 1,
+      "toc_index": 618,
+      "word_count": 620,
+      "updated_at": "2023-08-27T13:12:23.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "security-auth"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "HTTP",
+        "HTTPS",
+        "网络",
+        "安全",
+        "加密"
+      ],
+      "summary": "当你在互联网上浏览网页、发送数据或进行在线交易时，你可能会听说过\"HTTP\"和\"HTTPS\"这两个术语。它们都是用来在你的计算机和网站服务器之间传递数据的协议。不过，它们之间有一些重要的区别。首先，HTTP代表“超文本传输协议”，它是一种用来在网络上传输网页、图片和其他资源的协议。当你在浏览器...",
+      "excerpt": "当你在互联网上浏览网页、发送数据或进行在线交易时，你可能会听说过&quot;HTTP&quot;和&quot;HTTPS&quot;这两个术语。它们都是用来在你的计算机和网站服务器之间传递数据的协议。不过，它们之间有一些重要的区别。 首先，HTTP代表“超文本传输协议”，它是一种用来在网络上传输网页、图片和其他资源的协议。当你在浏览器中输入一个网址或者点击一个链接时，你的计算机会向服务器发送一个HTTP请求，然后服务器会回复一个HTTP响应，将网页内容发送给你的浏览器，然后浏览器会把这些内容呈现出来。 ​ 然而，虽然HTTP在传输数据时非常快捷，但它的安全性相对较低。这就是为什么有了HTTPS，它代表“超文本传输安全协议”。HTTPS在HTTP的基础上添加了一层安全性，保护了你的数据免受恶意攻击者的窃取和篡改。 HTTPS的主要区别在于安全性。在HTTPS连接中，数据被加密，这意味着即使有人拦截了你的数据，他们也无法轻易读取其中的内容。这对于保护敏感信息，如信用卡号码和密码，非常重要。 要实现HTTPS，网站服务器需要获得一个SSL（安全套接层）证书。这个证书由权威的证书颁发机构颁发，它用来验证网站的身份。当你访问一个使用HTTPS的网站时，你的浏览器会与服务器进行握手，验证证书的有效性，并且建立一个安全的加密连接。 ​ 因此，总结一下： HTTP是一种用于在网络上传输数据的协议，但不够安全。 HTTPS在HTTP的基础上加入了安全性，通过加密数据来保护你的隐私和安全。 HTTPS需要SSL证书来验证网站身份，确保你正在与正确的网站通信。 综上所述，HTTPS是一种更加安全的协议，适用于涉及敏感信息和隐私保护的网站和在线交流。"
+    },
+    {
+      "slug": "fgwxfspz7mrifdsy",
+      "title": "阻塞I/O和非阻塞I/O的区别是什么？",
+      "url": "/tulingzhouyu/db22bv/fgwxfspz7mrifdsy",
+      "toc_path": [
+        "网络专题",
+        "阻塞I/O和非阻塞I/O的区别是什么？"
+      ],
+      "toc_level": 1,
+      "toc_index": 620,
+      "word_count": 586,
+      "updated_at": "2023-08-27T08:58:36.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "os-linux",
+        "java-concurrency",
+        "observability-troubleshooting",
+        "performance-optimization"
+      ],
+      "question_type": "troubleshooting",
+      "question_type_name": "故障排查题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "网络",
+        "文件",
+        "并发",
+        "变慢",
+        "性能"
+      ],
+      "summary": "当涉及到I/O（输入/输出）操作时，阻塞和非阻塞是两种不同的处理方式。阻塞I/O（Blocking I/O）：这就像你在排队等待咖啡的时候，直到咖啡准备好为止，你都不能做其他事情。在阻塞I/O中，当程序执行一个I/O操作（比如读取文件或从网络接收数据），它会等待这个操作完成后才继续执行其他任务...",
+      "excerpt": "当涉及到I/O（输入/输出）操作时，阻塞和非阻塞是两种不同的处理方式。 阻塞I/O（Blocking I/O） ：这就像你在排队等待咖啡的时候，直到咖啡准备好为止，你都不能做其他事情。在阻塞I/O中，当程序执行一个I/O操作（比如读取文件或从网络接收数据），它会等待这个操作完成后才继续执行其他任务。如果I/O操作花费的时间较长，程序就会被“阻塞”，无法做其他事情。 非阻塞I/O（Non-blocking I/O） ：这就像你在咖啡店点了一杯咖啡，然后可以继续做其他事情，而不需要等待咖啡准备好。在非阻塞I/O中，程序发送一个I/O请求，但不会等待操作完成。相反，它会继续执行后续的任务，然后稍后检查I/O操作是否完成。如果还没有完成，它可以继续等待或者执行其他操作。 区别 ： 主要区别在于程序在等待I/O操作完成期间是否可以继续执行其他任务。 阻塞I/O：程序执行I/O操作时会被阻塞，无法进行其他任务，直到操作完成。这可能导致程序响应变慢，特别是在处理多个并发I/O操作时。 非阻塞I/O：程序发送I/O请求后可以继续执行其他任务，而不必等待操作完成。这样可以更好地利用系统资源，但需要定期轮询检查操作是否完成，可能会增加一些编程复杂性。 通常，非阻塞I/O会结合一些机制，如轮询（polling）、回调（callbacks）或事件驱动（event-driven）来处理I/O完成的通知。在某些情况下，为了充分发挥系统性能，人们可能会使用非阻塞I/O。然而，它需要更复杂的编程逻辑来处理异步操作，因此在选择哪种方式时需要根据应用程序的特点和要求做出决策。"
+    },
+    {
+      "slug": "zf1bgyptg6yqexhz",
+      "title": "短视频",
+      "url": "/tulingzhouyu/db22bv/zf1bgyptg6yqexhz",
+      "toc_path": [
+        "网络专题",
+        "什么是零拷贝（Zero Copy）技术？它如何减少在数据传输过程中的性能开销？",
+        "短视频"
+      ],
+      "toc_level": 2,
+      "toc_index": 628,
+      "word_count": 280,
+      "updated_at": "2024-06-20T14:08:35.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "os-linux",
+        "observability-troubleshooting",
+        "performance-optimization"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "网络",
+        "Linux",
+        "内存",
+        "文件",
+        "CPU",
+        "性能"
+      ],
+      "summary": "大家好，我是JJ，今天给大家分享一道网络高频面试题：什么是零拷贝技术零拷贝是一种在计算机编程中减少数据复制操作的技术，特别是在处理大量数据传输的场景。在传统的数据传输过程中，数据可能需要在多个缓冲区之间进行多次拷贝，例如从磁盘到内存，再到网络。这不仅增加了延迟，还消耗了CPU资源。而零拷贝技术...",
+      "excerpt": "大家好，我是JJ，今天给大家分享一道网络高频面试题：什么是零拷贝技术 ​ 零拷贝是一种在计算机编程中 减少数据复制操作的技术 ， 特别是在处理大量数据传输的场景 。 ​ 在 传统的数据传输过程 中，数据可能需要在 多个缓冲区之间 进行 多次拷贝 ，例如从磁盘到内存，再到网络。 ​ 这不仅 增加了延迟 ，还 消耗了CPU资源 。 ​ 而 零拷贝技术通过减少或消除这些不必要的数据复制步骤来提高效率 。 ​ 例如，在Linux系统中，可以使用sendfile()系统调用来实现零拷贝。 ​ 这个调用允许数据 直接从文件描述符传输到网络套接字 ，而不需要将数据先复制到应用程序的缓冲区中。 ​ 这样，数据只需要在内核空间进行一次拷贝，减少了CPU的工作量，提高了数据传输的速率。"
+    },
+    {
+      "slug": "zezcqyndgzfky4bf",
+      "title": "什么是HTTP/2协议？NGINX如何支持HTTP/2并提升网站性能？",
+      "url": "/tulingzhouyu/db22bv/zezcqyndgzfky4bf",
+      "toc_path": [
+        "Nginx",
+        "什么是HTTP/2协议？NGINX如何支持HTTP/2并提升网站性能？"
+      ],
+      "toc_level": 1,
+      "toc_index": 708,
+      "word_count": 674,
+      "updated_at": "2023-09-04T11:35:47.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "performance-optimization",
+        "java-concurrency",
+        "java-core"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "HTTP",
+        "HTTPS",
+        "性能",
+        "优化",
+        "并发",
+        "Java"
+      ],
+      "summary": "HTTP/2是一种用于在Web浏览器和服务器之间进行通信的协议，旨在提高网站性能和加载速度。它是HTTP/1.1的继任者，引入了许多优化和改进，以适应现代Web应用的需求。HTTP/2的主要目标是减少延迟、提高效率，以及更好地支持并发请求。以下是HTTP/2的一些特点和优势： 多路复用：HTT...",
+      "excerpt": "HTTP/2是一种用于在Web浏览器和服务器之间进行通信的协议，旨在提高网站性能和加载速度。它是HTTP/1.1的继任者，引入了许多优化和改进，以适应现代Web应用的需求。HTTP/2的主要目标是减少延迟、提高效率，以及更好地支持并发请求。 以下是HTTP/2的一些特点和优势： 多路复用 ：HTTP/2允许在单个连接上并发发送多个请求和响应，从而避免了HTTP/1.1中的队头阻塞问题，提高了并发性能。 头部压缩 ：HTTP/2使用HPACK算法对请求和响应头部进行压缩，减少了传输数据的大小，从而降低了带宽消耗。 服务器推送 ：HTTP/2支持服务器推送，服务器可以在客户端请求前主动发送额外的资源，从而提高页面加载速度。 二进制协议 ：HTTP/2使用二进制编码来传输数据，与HTTP/1.1的文本协议相比，更高效地处理数据。 流量优先级 ：HTTP/2允许给每个流分配优先级，使得浏览器可以更好地决定请求的顺序，提高用户体验。 在NGINX中，你可以通过以下步骤来支持HTTP/2并提升网站性能： 使用更新版本的NGINX ： 确保你正在使用支持HTTP/2的NGINX版本。通常从1.9.5版本开始，NGINX开始支持HTTP/2。 启用SSL/TLS ： HTTP/2在大多数情况下需要使用SSL/TLS来加密连接。因此，你需要配置SSL证书，以便通过HTTPS协议进行通信。 启用HTTP/2模块 ： 在NGINX配置文件中，可以使用 http2 指令启用HTTP/2模块。通常你需要将其添加到 listen 指令中的SSL配置块内。 优化资源 ： 利用HTTP/2的多路复用和服务器推送特性，你可以优化网站资源的加载。确保将CSS、JavaScript和其他静态资源进行合并和最小化，以减少页面加载时间。 通过启用HTTP/2并进行相应的优化，你可以显著提升网站性能，改善用户体验，以及减少资源消耗。需要注意的是，HTTP/2在大多数现代浏览器中得到支持，但仍建议进行兼容性测试，以确保在不同的浏览器中都能正常工作。"
+    },
+    {
+      "slug": "cra9n2tgpb0777ak",
+      "title": "如何在NGINX中实现基于IP的访问控制（IP黑白名单）？",
+      "url": "/tulingzhouyu/db22bv/cra9n2tgpb0777ak",
+      "toc_path": [
+        "Nginx",
+        "如何在NGINX中实现基于IP的访问控制（IP黑白名单）？"
+      ],
+      "toc_level": 1,
+      "toc_index": 709,
+      "word_count": 393,
+      "updated_at": "2023-09-04T11:35:16.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "os-linux",
+        "security-auth",
+        "project-system-design"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "网络",
+        "文件",
+        "安全",
+        "方案"
+      ],
+      "summary": "在NGINX中，你可以使用ngx_http_access_module模块来实现基于IP的访问控制，包括IP黑名单和IP白名单。这允许你限制或允许特定IP地址的访问。以下是如何在NGINX中配置基于IP的访问控制的步骤： 打开NGINX配置文件（通常是nginx.conf或在/etc/ngin...",
+      "excerpt": "在NGINX中，你可以使用 ngx_http_access_module 模块来实现基于IP的访问控制，包括IP黑名单和IP白名单。这允许你限制或允许特定IP地址的访问。以下是如何在NGINX中配置基于IP的访问控制的步骤： 打开NGINX配置文件（通常是 nginx.conf 或在 /etc/nginx 目录中的其他文件）。 在适当的位置，使用 allow 和 deny 指令来配置IP黑白名单。 allow 指定允许的IP地址， deny 指定拒绝的IP地址。可以根据需要在 http 块、 server 块或 location 块中设置。例如： 保存配置文件并重新加载或重启NGINX，以使配置生效。 上述配置将只允许 192.168.1.100 和 10.0.0.0/24 这些IP地址访问相应的位置，而拒绝其他IP地址的访问。 需要注意的是， allow 和 deny 指令的顺序很重要。如果顺序颠倒，可能会导致预期之外的结果。在实际应用中，你可以根据需求配置更复杂的IP黑白名单规则，如使用正则表达式匹配特定IP地址范围等。 此外，为了确保安全性，可以使用防火墙或其他网络安全解决方案，以增加额外的层次的IP访问控制。"
+    },
+    {
+      "slug": "vcgxzq0gicbu9hhg",
+      "title": "什么是DDoS攻击？NGINX如何帮助缓解DDoS攻击？",
+      "url": "/tulingzhouyu/db22bv/vcgxzq0gicbu9hhg",
+      "toc_path": [
+        "Nginx",
+        "什么是DDoS攻击？NGINX如何帮助缓解DDoS攻击？"
+      ],
+      "toc_level": 1,
+      "toc_index": 715,
+      "word_count": 712,
+      "updated_at": "2023-09-04T11:32:45.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "java-concurrency",
+        "microservices-governance",
+        "project-system-design",
+        "mysql-index-transaction"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "senior",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "网络",
+        "并发",
+        "锁",
+        "负载均衡",
+        "方案"
+      ],
+      "summary": "DDoS（分布式拒绝服务）攻击是一种恶意的网络攻击，旨在通过发送大量的请求或流量来超载目标服务器或网络资源，从而使其无法正常工作或提供服务。这种攻击通常涉及多个攻击者，它们可能是通过僵尸计算机（感染的恶意软件控制的计算机）或其他恶意方式协调的，以使攻击更具威力。NGINX（引擎 x）是一个高性...",
+      "excerpt": "DDoS（分布式拒绝服务）攻击是一种恶意的网络攻击，旨在通过发送大量的请求或流量来超载目标服务器或网络资源，从而使其无法正常工作或提供服务。这种攻击通常涉及多个攻击者，它们可能是通过僵尸计算机（感染的恶意软件控制的计算机）或其他恶意方式协调的，以使攻击更具威力。 NGINX（引擎 x）是一个高性能的Web服务器和反向代理服务器，它可以采取一些措施来帮助缓解DDoS攻击： 请求限制和速率限制 ： NGINX允许你设置请求速率限制，这可以帮助防止单个IP地址或用户发送过多的请求。通过使用 limit_req 模块，你可以设置每秒允许的请求数和突发请求的数量，从而限制来自单个源的请求。 连接限制和连接速率限制 ： 除了请求速率限制外，NGINX还可以帮助限制并发连接的数量。使用 limit_conn 模块，你可以设置允许的最大并发连接数，以及每个IP地址的最大连接数。 反向代理缓冲 ： NGINX作为反向代理服务器，可以缓存响应内容并在请求到达时直接提供缓存的内容，而不必每次都将请求传递给后端服务器。这可以减轻后端服务器的负担，从而提高其抵御DDoS攻击的能力。 IP封锁和白名单 ： 使用NGINX的 ngx_http_access_module 模块，你可以设置IP封锁和白名单，从而允许或拒绝特定IP地址的访问。这可以帮助阻止来自已知恶意IP地址的请求。 流量分发和负载均衡 ： NGINX可以用作负载均衡器，将流量分发到多个后端服务器。这样，即使一个服务器受到DDoS攻击，其他服务器仍然可以继续提供服务，从而减轻攻击的影响。 防御机制集成 ： NGINX可以与专门的DDoS防御服务或硬件设备集成，如DDoS防火墙、CDN（内容分发网络）等，以增强其防御能力。 需要注意的是，虽然NGINX可以采取这些措施来帮助缓解DDoS攻击，但对于大规模和复杂的DDoS攻击，可能需要使用专门的DDoS防御解决方案来应对。这些解决方案可以在应用层、网络层和运营商层面上提供更强大的保护。"
+    },
+    {
+      "slug": "vfl7we33wwirep1n",
+      "title": "什么是HTTP长连接和短连接？在NGINX中如何管理这些连接？",
+      "url": "/tulingzhouyu/db22bv/vfl7we33wwirep1n",
+      "toc_path": [
+        "Nginx",
+        "什么是HTTP长连接和短连接？在NGINX中如何管理这些连接？"
+      ],
+      "toc_level": 1,
+      "toc_index": 717,
+      "word_count": 634,
+      "updated_at": "2023-09-04T11:31:35.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "performance-optimization",
+        "java-core",
+        "microservices-governance"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "TCP",
+        "HTTP",
+        "网络",
+        "性能",
+        "超时"
+      ],
+      "summary": "HTTP长连接和短连接是关于客户端（例如浏览器）和服务器之间的连接持续时间的概念。它们在网络通信中起着重要作用，尤其是在Web服务器和客户端之间进行通信时。下面是它们的定义和区别，以及在NGINX中如何管理这些连接：HTTP长连接：长连接也称为持久连接，指的是在单个TCP连接上可以发送多个HT...",
+      "excerpt": "HTTP长连接和短连接是关于客户端（例如浏览器）和服务器之间的连接持续时间的概念。它们在网络通信中起着重要作用，尤其是在Web服务器和客户端之间进行通信时。下面是它们的定义和区别，以及在NGINX中如何管理这些连接： HTTP长连接 ： 长连接也称为持久连接，指的是在单个TCP连接上可以发送多个HTTP请求和响应。 客户端和服务器之间的TCP连接在一段时间内保持打开状态，允许多次请求和响应在同一连接上进行。 这减少了连接的建立和关闭开销，提高了性能和响应时间，特别是在需要加载多个资源的网页中。 HTTP短连接 ： 短连接是指每个HTTP请求和响应都使用单独的TCP连接进行。 每次请求都需要建立新的TCP连接，然后在响应后关闭连接，这增加了连接管理的开销。 在NGINX中，可以通过以下方式管理HTTP长连接和短连接： HTTP长连接的管理 ： NGINX默认支持HTTP长连接，因为它在处理客户端请求时会自动保持连接打开，直到达到超时时间或请求完成。 可以通过调整 keepalive_timeout 指令来控制NGINX在保持连接打开时等待的时间。例如： keepalive_timeout 60s; 将连接保持60秒。 你还可以使用 keepalive_requests 指令设置在同一连接上允许的最大请求数。例如： keepalive_requests 100; 将允许在同一连接上处理100个请求。 HTTP短连接的管理 ： NGINX默认情况下也支持短连接，因为每个HTTP请求和响应都使用单独的TCP连接。 如果要强制关闭连接，可以使用 Connection: close 头部或在响应中包含它，这会告知客户端在响应后关闭连接。 总之，NGINX可以自动管理HTTP长连接和短连接，但你可以通过调整相关的配置指令来影响连接的行为，以满足你的需求。长连接适用于减少连接开销和提高性能，而短连接适用于需要在每个请求之间保持隔离的情况。"
+    },
+    {
+      "slug": "hesqtinz9cmqe0en",
+      "title": "什么是分布式系统",
+      "url": "/tulingzhouyu/db22bv/hesqtinz9cmqe0en",
+      "toc_path": [
+        "分布式",
+        "什么是分布式系统"
+      ],
+      "toc_level": 1,
+      "toc_index": 752,
+      "word_count": 184,
+      "updated_at": "2023-10-15T08:49:21.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "redis-persistence-cluster",
+        "devops-release",
+        "observability-troubleshooting",
+        "performance-optimization"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "junior"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "初级/1-3年"
+      ],
+      "keywords": [
+        "网络",
+        "集群",
+        "部署",
+        "故障",
+        "性能"
+      ],
+      "summary": "薪资：6k-12k岗位：初级开发工程师一个系统   各组件分别部署在不同服务器。彼此通过网络通信和协调的系统。 可以指多个不同组件分布在网络上互相协作，比如说电商网站也可以一个组件的多个副本组成集群，互相协作如同一个组件，比如数据存储服务中为了数据不丢失而采取的多个服务备份冗余，当数据修改时也...",
+      "excerpt": "薪资：6k-12k 岗位：初级开发工程师 一个系统 各组件 分别部署在不同服务器。 彼此通过网络通信和协调的系统。 可以指 多个不同组件 分布在网络上互相协作，比如说电商网站 也可以 一个组件的多个副本 组成集群，互相协作如同一个组件，比如数据存储服务中为了数据不丢失而采取的多个服务备份冗余，当数据修改时也需要通信来复制数据 分布式最早出现的目地首先是解决单点问题，避免单点故障，然后解决了性能问题。"
+    },
+    {
+      "slug": "oupkplvo6znaxeo9",
+      "title": "多租户 SaaS 系统怎么设计",
+      "url": "/tulingzhouyu/db22bv/oupkplvo6znaxeo9",
+      "toc_path": [
+        "项目设计场景题",
+        "多租户 SaaS 系统怎么设计"
+      ],
+      "toc_level": 1,
+      "toc_index": 821,
+      "word_count": 1,
+      "updated_at": "2026-01-30T13:26:40.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "resume-project"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "项目"
+      ],
+      "summary": "https://player.bilibili.com/player.html?bvid=BV1XrzABbE3e&amp;autoplay=0",
+      "excerpt": ""
+    },
+    {
+      "slug": "qipfco0eitf5xdbg",
+      "title": "百万级数据导出怎么设计",
+      "url": "/tulingzhouyu/db22bv/qipfco0eitf5xdbg",
+      "toc_path": [
+        "项目设计场景题",
+        "百万级数据导出怎么设计"
+      ],
+      "toc_level": 1,
+      "toc_index": 822,
+      "word_count": 1,
+      "updated_at": "2026-01-30T13:27:33.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "resume-project"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "项目"
+      ],
+      "summary": "https://player.bilibili.com/player.html?bvid=BV1qGzPBME92&amp;autoplay=0",
+      "excerpt": ""
+    },
+    {
+      "slug": "ngpo83lgfylrs7f7",
+      "title": "评论盖楼系统架构设计与性能优化",
+      "url": "/tulingzhouyu/db22bv/ngpo83lgfylrs7f7",
+      "toc_path": [
+        "项目设计场景题",
+        "评论盖楼系统架构设计与性能优化"
+      ],
+      "toc_level": 1,
+      "toc_index": 823,
+      "word_count": 1,
+      "updated_at": "2026-01-30T13:28:13.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "project-system-design",
+        "performance-optimization",
+        "netty-network",
+        "resume-project"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "架构设计",
+        "性能",
+        "优化",
+        "项目"
+      ],
+      "summary": "https://player.bilibili.com/player.html?bvid=BV1KnrkBNEZ6&amp;autoplay=0",
+      "excerpt": ""
+    },
+    {
+      "slug": "ogn0gsakhp8t37iz",
+      "title": "手机扫码登录功能怎么设计",
+      "url": "/tulingzhouyu/db22bv/ogn0gsakhp8t37iz",
+      "toc_path": [
+        "项目设计场景题",
+        "手机扫码登录功能怎么设计"
+      ],
+      "toc_level": 1,
+      "toc_index": 824,
+      "word_count": 1,
+      "updated_at": "2026-01-22T14:39:21.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "resume-project"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "项目"
+      ],
+      "summary": "https://player.bilibili.com/player.html?bvid=BV1G2k5BiEGg&amp;autoplay=0",
+      "excerpt": ""
+    },
+    {
+      "slug": "xzfs9i19rkrqzlge",
+      "title": "大文件上传与断点续传",
+      "url": "/tulingzhouyu/db22bv/xzfs9i19rkrqzlge",
+      "toc_path": [
+        "项目设计场景题",
+        "大文件上传与断点续传"
+      ],
+      "toc_level": 1,
+      "toc_index": 826,
+      "word_count": 1,
+      "updated_at": "2026-01-22T14:39:56.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "os-linux",
+        "resume-project"
+      ],
+      "question_type": "resume_project",
+      "question_type_name": "简历项目题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "文件",
+        "项目"
+      ],
+      "summary": "https://player.bilibili.com/player.html?bvid=BV1gSk5BeEmV&amp;autoplay=0",
+      "excerpt": ""
+    },
+    {
+      "slug": "bp65e669gauw0b2a",
+      "title": "短信验证码接口怎么防刷",
+      "url": "/tulingzhouyu/db22bv/bp65e669gauw0b2a",
+      "toc_path": [
+        "项目设计场景题",
+        "短信验证码接口怎么防刷"
+      ],
+      "toc_level": 1,
+      "toc_index": 828,
+      "word_count": 1,
+      "updated_at": "2026-01-30T13:33:43.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "resume-project"
+      ],
+      "question_type": "resume_project",
+      "question_type_name": "简历项目题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "项目"
+      ],
+      "summary": "https://player.bilibili.com/player.html?bvid=BV1ea6EByEzi&amp;autoplay=0",
+      "excerpt": ""
+    },
+    {
+      "slug": "sffgec2gotvrgru0",
+      "title": "订单超时自动取消怎么设计",
+      "url": "/tulingzhouyu/db22bv/sffgec2gotvrgru0",
+      "toc_path": [
+        "项目设计场景题",
+        "订单超时自动取消怎么设计"
+      ],
+      "toc_level": 1,
+      "toc_index": 830,
+      "word_count": 1,
+      "updated_at": "2026-01-22T14:43:06.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "project-system-design",
+        "microservices-governance",
+        "netty-network",
+        "resume-project"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "订单",
+        "超时",
+        "项目"
+      ],
+      "summary": "https://player.bilibili.com/player.html?bvid=BV1CMraBaEK2&amp;autoplay=0",
+      "excerpt": ""
+    },
+    {
+      "slug": "ercfbgeuan0gt6wb",
+      "title": "短 URL 生成器设计：百亿短 URL 怎样做到无冲突",
+      "url": "/tulingzhouyu/db22bv/ercfbgeuan0gt6wb",
+      "toc_path": [
+        "项目设计场景题",
+        "短 URL 生成器设计：百亿短 URL 怎样做到无冲突"
+      ],
+      "toc_level": 1,
+      "toc_index": 846,
+      "word_count": 4795,
+      "updated_at": "2024-07-15T14:21:19.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "redis-cache",
+        "performance-optimization",
+        "os-linux"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle",
+        "senior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "HTTP",
+        "网络",
+        "Redis",
+        "缓存",
+        "性能",
+        "吞吐",
+        "容量",
+        "内存",
+        "文件"
+      ],
+      "summary": "在社交媒体上，人们经常需要分享一些URL，但是有些URL可能会很长，比如：https://geek.qq.org/hybrid/pvip?utm_source=geek-pc-discover-banner&amp;utm_term=geek-pc-discover-banner这样长的URL显然体验...",
+      "excerpt": "在社交媒体上，人们经常需要分享一些URL，但是有些URL可能会很长，比如： https://geek.qq.org/hybrid/pvip?utm_source=geek-pc-discover-banner&utm_term=geek-pc-discover-banner 这样长的URL显然体验并不友好。我们期望分享的是一些更短、更易于阅读的短URL，比如像 http://1.cn/ScW4dt 这样的。当用户点击这个短URL的时候，可以重定向访问到原始的链接地址。为此我们将设计开发一个短URL生成器，产品名称是“Fuxi（伏羲）”。 我们预计Fuxi需要管理的短URL规模在百亿级别，并发吞吐量达到数万级别。这个量级的数据对应的存储方案是什么样的？用传统的关系数据库存储，还是有其他更简单的办法？此外，如何提升系统的并发处理能力呢？这些是我们今天要重点考虑的问题。 1 需求分析 短URL生成器，也称作短链接生成器，就是将一个比较长的URL生成一个比较短的URL，当浏览器通过短URL生成器访问这个短URL的时候，重定向访问到原始的长URL目标服务器，访问时序图如下。 对于需要展示短URL的应用程序，由该应用调用短URL生成器生成短URL，并将该短URL展示给用户，用户在浏览器中点击该短URL的时候，请求发送到短URL生成器（短URL生成器以HTTP服务器的方式对外提供服务，短URL域名指向短URL生成器），短URL生成器返回HTTP重定向响应，将用户请求重定向到最初的原始长URL，浏览器访问长URL服务器，完成请求服务。 1.1 短URL生成器的用例图 用户client程序可以使用短URL生成器Fuxi为每个长URL生成唯一的短URL，并存储起来。 用户可以访问这个短URL，Fuxi将请求重定向到原始长URL。 生成的短URL可以是Fuxi自动生成的，也可以是用户自定义的。用户可以指定一个长URL对应的短URL内容，只要这个短URL还没有被使用。 管理员可以通过web后台检索、查看Fuxi的使用情况。 短URL有有效期（2年），后台定时任务会清理超过有效期的URL，以节省存储资源，同时回收短URL地址链接资源。 1.2 性能指标估算 Fuxi的 存储容量 和 并发量 估算如下。 预计每月新生成短URL 5亿条，短URL有效期2年，那么总URL数量120亿。 s m a l l 5 亿 t i m e s 12 月 t i m e s 2 年 = 120 亿 𝑠 𝑚 𝑎 𝑙 𝑙 5 亿 𝑡 𝑖 𝑚 𝑒 𝑠 12 月 𝑡 𝑖 𝑚 𝑒 𝑠 2 年 = 120 亿 存储空间 - 每条短URL数据库记录大约1KB，那么需要总存储空间12TB（不含数据冗余备份）。 s m a l l 120 亿 t i m e s 1 K B = 12 T "
+    },
+    {
+      "slug": "hv7t6xfxra7cpusi",
+      "title": "Restful API设计最佳实践",
+      "url": "/tulingzhouyu/db22bv/hv7t6xfxra7cpusi",
+      "toc_path": [
+        "项目设计场景题",
+        "Restful API设计最佳实践"
+      ],
+      "toc_level": 1,
+      "toc_index": 873,
+      "word_count": 6292,
+      "updated_at": "2024-07-15T14:21:21.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "java-core",
+        "java-concurrency",
+        "resume-project"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "junior",
+        "middle",
+        "senior"
+      ],
+      "level_names": [
+        "初级/1-3年",
+        "中级/3-5年",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "HTTP",
+        "网络",
+        "Java",
+        "项目",
+        "CRUD",
+        "包装"
+      ],
+      "summary": "本次分享内容REST API介绍REST API设计建议：资源命名、参数传递、错误状态、版本划分等一个文章API的设计案例REST API常见问题1.什么是 REST API？REST API 是当今最常见的 Web 接口形式之一 ，在确保客户端和服务器之间的顺利通信方面发挥了重要作用。你可以...",
+      "excerpt": "本次分享内容 REST API介绍 REST API设计建议：资源命名、参数传递、错误状态、版本划分等 一个文章API的设计案例 REST API常见问题 1.什么是 REST API？ REST API 是当今最常见的 Web 接口形式之一 ，在确保客户端和服务器之间的顺利通信方面发挥了重要作用。 你可以把客户端看作前端，把服务器看作后端。 客户端（前端）和服务器（后端）之间的通信通常不是直接的。因此，我们使用 API（应用编程接口），作为客户端和服务器之间的中介。 因为 API 在这种 client–server 通信中起着至关重要的作用，所以我们在设计 API 时应该遵循最佳实践。这有助于开发人员更好地维护和使用它们。 本次讲解创建 REST API 时可以遵循的一些最佳实践。这将帮助大家创建高效，安全，易于使用和维护的 API。 什么是 REST API？ REST 是 Representational State Transfer 的缩写。它是由 Roy Fielding 博士在 2000 年他的博士 论文 中提出一种软件架构风格，用于指导网络应用的设计和开发，使得 Web API（网络应用编程接口）更加简单、灵活、可扩展和易于理解。 任何遵循 REST 设计原则的 API 都被称为 RESTful API。 简单地说，REST API 是两台计算机通过 HTTP（超文本传输协议）进行通信的媒介，与客户端和服务器的通信方式相同。 REST API 使用 URL 唯一标识和定位 RESTful 服务中的资源，一个完整的 URL 结构如下： 2.REST API 设计建议 1. 用名词表示资源 当你设计一个 REST API 时，端点应该使用名词而非动词。 这是因为 HTTP 方法已经以动词形式执行基本的 CRUD（创建、读取、更新、删除）操作。 GET、POST、PUT、PATCH 和 DELETE 是最常见的 HTTP 动词。还有其他非 HTTP 标准动词，如 COPY、PURGE、LINK、UNLINK 等等。 因此，举例来说，一个端点不应该是这样的： 它应该是这样的： 2. 用复数名词表示集合 如果 URL 表示的资源是一个集合应该使用复数名词。 如果你有一个像 https://mysite.com/post/123 这样的端点，用 DELETE 请求删除一个帖子，或用 PUT 或 PATCH 更新一个帖子，可能是可以的，但它没有告诉用户在这个集合中可能还有一些其他帖子。这就是为什么你的集合应该使用复数的名词。 所以，不应该是 https://mysite.com/post/123 ，而是 https://mysite.com/posts/123 。 3. 端点使用嵌套显示关系 很多时候，不同的端点相互联系，所以你应该对它们进行嵌套，这样更容易"
+    },
+    {
+      "slug": "zrlk12sphvgnaofw",
+      "title": "你们系统有没有防盗链，怎么做的？",
+      "url": "/tulingzhouyu/db22bv/zrlk12sphvgnaofw",
+      "toc_path": [
+        "项目设计场景题",
+        "你们系统有没有防盗链，怎么做的？"
+      ],
+      "toc_level": 1,
+      "toc_index": 884,
+      "word_count": 767,
+      "updated_at": "2024-12-18T07:23:18.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "spring-core",
+        "resume-project",
+        "java-core"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "HTTP",
+        "网络",
+        "AOP",
+        "项目"
+      ],
+      "summary": "一、什么是盗链防盗链是指一种保护网络资源的技术，用于防止未经授权的第三方直接引用或盗用服务器上的资源。通过限制非法访问来源（如他人网站或爬虫程序），防盗链确保资源只能被合法、授权的用户正常访问。当用户通过合法渠道（如直接访问网站或应用）请求资源时，服务器会验证来源是可信的，允许访问。 当某些非...",
+      "excerpt": "一、什么是盗链 防盗链是指一种保护网络资源的技术，用于防止未经授权的第三方直接引用或盗用服务器上的资源。通过限制非法访问来源（如他人网站或爬虫程序），防盗链确保资源只能被合法、授权的用户正常访问。 当用户通过合法渠道（如直接访问网站或应用）请求资源时，服务器会验证来源是可信的，允许访问。 当某些非法来源（如爬虫、恶意程序或其他不被授权的引用）试图盗用资源时，防盗链机制会识别来源不合法，拒绝提供资源。 基于HTTP协议的referer 基于HTTP协议中的 referer做防盗链，可以从网关层或者利用AOP、Filter拦截器实现。 使用Nginx在网关层做防盗链，目前是最简单的方式之一。通过拦截访问资源的请求，valid_referers 关键字定义了白名单，校验请求头中referer地址是否为本站，如不是本站请求，rewrite 转发请求到指定的警告页面。在 server 或者 location 配置模块中加入：valid_referers none blocked，其中 none : 允许没有http_refer的请求访问资源（比如：直接在浏览器输入图片网址）；blocked : 允许不是http://开头的，不带协议的请求访问资源。 这种实现可以限制大多数普通的非法请求，但不能限制有目的的请求，因为可以通过伪造referer信息来绕过。另一种是使用Filter拦截器方式。 可以看到，Filter拦截器的实现方式更加简单，拦截指定请求URL，拿到HttpServletRequest 中 referer值比对是否为本站。 3. Token 验证工具 4. 时间限制验证工具"
+    },
+    {
+      "slug": "ediabbg6y0tbpiom",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/ediabbg6y0tbpiom",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "什么是智能体 (Agent)？什么是工作流 (Workflow)？",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 943,
+      "word_count": 27,
+      "updated_at": "2025-12-29T14:11:34.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "java-core",
+        "ai-llm"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [],
+      "summary": "📎什么是智能体 (Agent)？什么是工作流 (Workflow)？.html链接: https://pan.baidu.com/s/1F8GMIoP5dZ2CU7BTUvdVxg?pwd=kr5v提取码: kr5v",
+      "excerpt": "链接: https://pan.baidu.com/s/1F8GMIoP5dZ2CU7BTUvdVxg?pwd=kr5v 提取码: kr5v"
+    },
+    {
+      "slug": "agxea1la953ipofk",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/agxea1la953ipofk",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "Redis 缓存失效三大经典场景",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 945,
+      "word_count": 18,
+      "updated_at": "2025-12-28T14:22:15.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "redis-cache",
+        "netty-network",
+        "java-core",
+        "ai-llm"
+      ],
+      "question_type": "collection",
+      "question_type_name": "面经题库合集",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "Redis",
+        "缓存"
+      ],
+      "summary": "📎redis三大缓存问题.html链接: https://pan.baidu.com/s/1ixnJYHwVQioSqHRmb8SCCQ?pwd=zvxq提取码: zvxq",
+      "excerpt": "链接: https://pan.baidu.com/s/1ixnJYHwVQioSqHRmb8SCCQ?pwd=zvxq 提取码: zvxq"
+    },
+    {
+      "slug": "avr0c0pzcgc7gai7",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/avr0c0pzcgc7gai7",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "面试官：MySQL 里有 1 亿条加密数据，如何设计索引？",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 947,
+      "word_count": 38,
+      "updated_at": "2025-12-26T09:52:48.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "mysql-index-transaction",
+        "netty-network",
+        "security-auth",
+        "ai-llm"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "MySQL",
+        "索引",
+        "加密"
+      ],
+      "summary": "📎现在有个加密数据放在mysql里，你怎么设计让它尽可能走索引？.html链接: https://pan.baidu.com/s/1Ajt1C2a-MPmHNBDNESBdkw?pwd=pi3x提取码: pi3x",
+      "excerpt": "链接: https://pan.baidu.com/s/1Ajt1C2a-MPmHNBDNESBdkw?pwd=pi3x 提取码: pi3x"
+    },
+    {
+      "slug": "ar6nyhu6myqbb2qg",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/ar6nyhu6myqbb2qg",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "MySQL 同步 ES 的 4种方案：从“双写”到“CDC”的避坑指南",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 951,
+      "word_count": 21,
+      "updated_at": "2025-12-24T14:22:36.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "mysql-index-transaction",
+        "ai-llm",
+        "project-system-design"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "MySQL",
+        "方案"
+      ],
+      "summary": "📎ES与DB一致性架构演进.html链接: https://pan.baidu.com/s/1TVpPZgfLftg4iNff1ycVtw?pwd=p35p提取码: p35p",
+      "excerpt": "链接: https://pan.baidu.com/s/1TVpPZgfLftg4iNff1ycVtw?pwd=p35p 提取码: p35p"
+    },
+    {
+      "slug": "owliz7o8pifqa4ay",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/owliz7o8pifqa4ay",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "假设平台要搞一个活动，10万人在同一秒抢100瓶茅台。该怎么设计后端架构方案",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 953,
+      "word_count": 49,
+      "updated_at": "2025-12-23T13:26:37.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "project-system-design",
+        "ai-llm"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "方案"
+      ],
+      "summary": "📎假设我们平台要搞一个活动，10万人在同一秒抢100瓶茅台。该怎么设计后端架构方案？V2.html链接: https://pan.baidu.com/s/1jXFKlkk08xDro5w6eW4b3A?pwd=3429提取码: 3429",
+      "excerpt": "链接: https://pan.baidu.com/s/1jXFKlkk08xDro5w6eW4b3A?pwd=3429 提取码: 3429"
+    },
+    {
+      "slug": "ef5k9prb2d28oy91",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/ef5k9prb2d28oy91",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "如何设计一个敏感词过滤系统？",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 955,
+      "word_count": 24,
+      "updated_at": "2025-12-22T14:23:48.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "ai-llm"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [],
+      "summary": "📎如何设计一个敏感词过滤系统.html链接: https://pan.baidu.com/s/136XTy971a1e9FSLF0O38uA?pwd=6hyu提取码: 6hyu",
+      "excerpt": "链接: https://pan.baidu.com/s/136XTy971a1e9FSLF0O38uA?pwd=6hyu 提取码: 6hyu"
+    },
+    {
+      "slug": "elgwzur2q8shcz9v",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/elgwzur2q8shcz9v",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "JVM 调优，到底是调什么？",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 957,
+      "word_count": 20,
+      "updated_at": "2025-12-19T08:57:22.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "jvm-memory-gc",
+        "netty-network",
+        "performance-optimization",
+        "ai-llm"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "JVM",
+        "调优"
+      ],
+      "summary": "📎Jvm调优到底是调什么.html链接: https://pan.baidu.com/s/1GukI7FlbJZTphwDsEYbqzA?pwd=dyv2提取码: dyv2",
+      "excerpt": "链接: https://pan.baidu.com/s/1GukI7FlbJZTphwDsEYbqzA?pwd=dyv2 提取码: dyv2"
+    },
+    {
+      "slug": "zd66siw9zcoloq9n",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/zd66siw9zcoloq9n",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "大众点评订单系统分库分表实战：如何突破单机瓶颈实现架构跃迁",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 959,
+      "word_count": 25,
+      "updated_at": "2025-12-18T11:44:50.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "mysql-sharding",
+        "netty-network",
+        "project-system-design",
+        "ai-llm"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "分库分表",
+        "订单"
+      ],
+      "summary": "📎大众点评订单系统分库分表实践.html链接: https://pan.baidu.com/s/1WdS1U8mnoBwVHMc5Ud7_BQ?pwd=xmxp提取码: xmxp",
+      "excerpt": "链接: https://pan.baidu.com/s/1WdS1U8mnoBwVHMc5Ud7_BQ?pwd=xmxp 提取码: xmxp"
+    },
+    {
+      "slug": "bdui36k2ve58p9c3",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/bdui36k2ve58p9c3",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "你真的会微服务拆分吗？事件驱动架构又是什么？",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 961,
+      "word_count": 23,
+      "updated_at": "2025-12-16T14:26:39.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "ai-llm"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [],
+      "summary": "📎EDA：云原生时代的神经系统V2.html链接: https://pan.baidu.com/s/1e9KB6tMLzn5F5f8pX_HGTw?pwd=nxug提取码: nxug",
+      "excerpt": "链接: https://pan.baidu.com/s/1e9KB6tMLzn5F5f8pX_HGTw?pwd=nxug 提取码: nxug"
+    },
+    {
+      "slug": "gesy3o1k694exb4n",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/gesy3o1k694exb4n",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "拒绝慢查询：MySQL 8.0 高性能优化实战指南",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 963,
+      "word_count": 26,
+      "updated_at": "2025-12-15T11:59:34.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "performance-optimization",
+        "netty-network",
+        "mysql-index-transaction",
+        "ai-llm"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "性能",
+        "优化",
+        "MySQL"
+      ],
+      "summary": "📎SQL 性能优化：核心原理与工程实践V2.html链接: https://pan.baidu.com/s/1_76KmsnyAjeI-4VOmnTQVA?pwd=n7aj提取码: n7aj",
+      "excerpt": "链接: https://pan.baidu.com/s/1_76KmsnyAjeI-4VOmnTQVA?pwd=n7aj 提取码: n7aj"
+    },
+    {
+      "slug": "suokug268sus60k6",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/suokug268sus60k6",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "Redis Zset 底层设计：为什么选择跳表而非 B+ 树？",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 965,
+      "word_count": 27,
+      "updated_at": "2025-12-12T09:42:35.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "redis-cache",
+        "netty-network",
+        "ai-llm",
+        "mysql-index-transaction"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "Redis",
+        "B+树"
+      ],
+      "summary": "📎Redis的zset底层为什么用跳表而非B+树？.html链接: https://pan.baidu.com/s/1Ke7q43bJbiD_Bgp2bSTUuw?pwd=tfs7提取码: tfs7",
+      "excerpt": "链接: https://pan.baidu.com/s/1Ke7q43bJbiD_Bgp2bSTUuw?pwd=tfs7 提取码: tfs7"
+    },
+    {
+      "slug": "eux4k1gtqill0fzs",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/eux4k1gtqill0fzs",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "什么？工作三年了，还不知道什么是 Spring 责任链？",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 967,
+      "word_count": 21,
+      "updated_at": "2025-12-11T11:22:07.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "spring-core",
+        "netty-network",
+        "ai-llm"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "Spring"
+      ],
+      "summary": "📎Spring 责任链模式深度解析.html链接: https://pan.baidu.com/s/1cyB5848dzC832DGJuaYzOw?pwd=g49n提取码: g49n",
+      "excerpt": "链接: https://pan.baidu.com/s/1cyB5848dzC832DGJuaYzOw?pwd=g49n 提取码: g49n"
+    },
+    {
+      "slug": "ai7gsgr18oumkt7g",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/ai7gsgr18oumkt7g",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "为什么MySQL用B+树，MongoDB用B树",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 969,
+      "word_count": 15,
+      "updated_at": "2025-12-10T12:11:35.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "mysql-index-transaction",
+        "netty-network",
+        "ai-llm"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "MySQL",
+        "B+树"
+      ],
+      "summary": "📎MySQL B+ vs MongoDB B-TreeV2.html链接: https://pan.baidu.com/s/1UklezdRjSPwMwYtIeB_bSw?pwd=9qxa提取码: 9qxa",
+      "excerpt": "链接: https://pan.baidu.com/s/1UklezdRjSPwMwYtIeB_bSw?pwd=9qxa 提取码: 9qxa"
+    },
+    {
+      "slug": "kf7xfh0klvnvfzg0",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/kf7xfh0klvnvfzg0",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "JVM 垃圾回收的范式转移：从 CMS 到 G1 的底层进化",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 971,
+      "word_count": 19,
+      "updated_at": "2025-12-09T12:29:49.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "jvm-memory-gc",
+        "netty-network",
+        "ai-llm"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "JVM",
+        "GC",
+        "垃圾回收"
+      ],
+      "summary": "📎JVM GC 进化论：CMS vs G1.html链接: https://pan.baidu.com/s/1R0M4J5NVFdfbEiUtb4M6VQ?pwd=r3fa提取码: r3fa",
+      "excerpt": "链接: https://pan.baidu.com/s/1R0M4J5NVFdfbEiUtb4M6VQ?pwd=r3fa 提取码: r3fa"
+    },
+    {
+      "slug": "dtg9u6lm0dvg77oo",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/dtg9u6lm0dvg77oo",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "让你设计一个“迷你滴滴”，你会怎么做？",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 973,
+      "word_count": 29,
+      "updated_at": "2025-12-09T12:23:21.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "ai-llm"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [],
+      "summary": "📎让你设计一个迷你滴滴，你会怎么设计？.html链接: https://pan.baidu.com/s/13nN6zdL7G0HY1ICqlyaFvQ?pwd=bfqi提取码: bfqi",
+      "excerpt": "链接: https://pan.baidu.com/s/13nN6zdL7G0HY1ICqlyaFvQ?pwd=bfqi 提取码: bfqi"
+    },
+    {
+      "slug": "oyxyoiltnbct7c3d",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/oyxyoiltnbct7c3d",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "面试必问：如何介绍你的项目？",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 975,
+      "word_count": 26,
+      "updated_at": "2025-12-05T06:01:55.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "resume-project",
+        "ai-llm"
+      ],
+      "question_type": "resume_project",
+      "question_type_name": "简历项目题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "项目"
+      ],
+      "summary": "📎面试中怎么介绍一下你自己的项目.html链接: https://pan.baidu.com/s/1PZCRV2508K8AAO1DfAquRQ?pwd=dgzp提取码: dgzp",
+      "excerpt": "链接: https://pan.baidu.com/s/1PZCRV2508K8AAO1DfAquRQ?pwd=dgzp 提取码: dgzp"
+    },
+    {
+      "slug": "zo7z4b6sg92r5fll",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/zo7z4b6sg92r5fll",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "缓存穿透：除了布隆过滤器，我们还能怎么“优雅”地防御？",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 977,
+      "word_count": 30,
+      "updated_at": "2025-12-04T06:54:28.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "redis-cache",
+        "netty-network",
+        "java-core",
+        "ai-llm"
+      ],
+      "question_type": "collection",
+      "question_type_name": "面经题库合集",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "缓存",
+        "穿透"
+      ],
+      "summary": "📎缓存穿透：除了布隆过滤器，还能怎么防？.html链接: https://pan.baidu.com/s/1xFP0FIoPVCaGzNeJ5ehs4w?pwd=kxgf提取码: kxgf",
+      "excerpt": "链接: https://pan.baidu.com/s/1xFP0FIoPVCaGzNeJ5ehs4w?pwd=kxgf 提取码: kxgf"
+    },
+    {
+      "slug": "qv7if1dgmeft1lvo",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/qv7if1dgmeft1lvo",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "Redis 底层存储演进与分布式幂等性架构",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 979,
+      "word_count": 24,
+      "updated_at": "2025-12-02T12:08:21.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "redis-cache",
+        "netty-network",
+        "project-system-design",
+        "java-core"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "Redis",
+        "幂等"
+      ],
+      "summary": "📎Redis 深度架构：持久化与幂等性.html链接: https://pan.baidu.com/s/19P2fbPWio1Vh4vW2HIEvOQ?pwd=3gq8提取码: 3gq8",
+      "excerpt": "链接: https://pan.baidu.com/s/19P2fbPWio1Vh4vW2HIEvOQ?pwd=3gq8 提取码: 3gq8"
+    },
+    {
+      "slug": "khybyv8hb4sm7fp3",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/khybyv8hb4sm7fp3",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "MySQL 日志架构深度解析：原子性与数据一致性的基石",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 981,
+      "word_count": 20,
+      "updated_at": "2025-12-01T12:03:36.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "mysql-index-transaction",
+        "netty-network",
+        "observability-troubleshooting",
+        "ai-llm"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "MySQL",
+        "日志"
+      ],
+      "summary": "📎MySQL 日志架构深度解析.html链接: https://pan.baidu.com/s/1_zUZzJUUbZ3Cu1ulz0_zAQ?pwd=wcvx提取码: wcvx",
+      "excerpt": "链接: https://pan.baidu.com/s/1_zUZzJUUbZ3Cu1ulz0_zAQ?pwd=wcvx 提取码: wcvx"
+    },
+    {
+      "slug": "xpy1av4642dmn9dg",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/xpy1av4642dmn9dg",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "HashMap 源码深度解析：为何“8”是链表转树的临界点？",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 983,
+      "word_count": 23,
+      "updated_at": "2025-11-28T08:49:04.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "java-collections",
+        "netty-network",
+        "ai-llm",
+        "algorithm"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "HashMap",
+        "链表"
+      ],
+      "summary": "📎HashMap 深度解析：阈值 8 的秘密.html链接: https://pan.baidu.com/s/1LLPeJFMa-K3B11vW8pEAJg?pwd=m5yf提取码: m5yf",
+      "excerpt": "链接: https://pan.baidu.com/s/1LLPeJFMa-K3B11vW8pEAJg?pwd=m5yf 提取码: m5yf"
+    },
+    {
+      "slug": "yd7uhrg8etfucnrg",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/yd7uhrg8etfucnrg",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "Redis 极限调优：如何在不扩容的情况下实现 QPS 翻倍？",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 985,
+      "word_count": 22,
+      "updated_at": "2025-11-28T07:39:09.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "redis-cache",
+        "performance-optimization",
+        "netty-network",
+        "jvm-memory-gc"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "Redis",
+        "调优",
+        "QPS"
+      ],
+      "summary": "📎Redis 极限调优：QPS 翻倍指南.html链接: https://pan.baidu.com/s/1mikMvWv7eM2CdhC4Hke7HA?pwd=x696提取码: x696",
+      "excerpt": "链接: https://pan.baidu.com/s/1mikMvWv7eM2CdhC4Hke7HA?pwd=x696 提取码: x696"
+    },
+    {
+      "slug": "yxgwps319f29m890",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/yxgwps319f29m890",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "PBAC：从“静态管人”到“动态管事”的架构进化",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 987,
+      "word_count": 26,
+      "updated_at": "2025-11-26T11:40:54.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "mq-general",
+        "ai-llm"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle",
+        "senior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年"
+      ],
+      "keywords": [],
+      "summary": "📎PBAC：基于策略的访问控制架构解析.html链接: https://pan.baidu.com/s/17mQA_rMvaAGMFC3gtNCQNA?pwd=1a6y提取码: 1a6y",
+      "excerpt": "链接: https://pan.baidu.com/s/17mQA_rMvaAGMFC3gtNCQNA?pwd=1a6y 提取码: 1a6y"
+    },
+    {
+      "slug": "oyebozymst5hkf1a",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/oyebozymst5hkf1a",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "如果需要部署上万服务实例，现有的服务注册中心能否抗住？如何优化？",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 989,
+      "word_count": 43,
+      "updated_at": "2025-11-24T13:33:30.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "spring-cloud",
+        "netty-network",
+        "performance-optimization",
+        "devops-release"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "注册中心",
+        "优化",
+        "部署"
+      ],
+      "summary": "📎如果需要部署上万服务实例，现有的服务注册中心能否抗住？如何优化？.html链接: https://pan.baidu.com/s/18cGG_mPw5aw-fsc3uWkTVw?pwd=vuwh提取码: vuwh",
+      "excerpt": "链接: https://pan.baidu.com/s/18cGG_mPw5aw-fsc3uWkTVw?pwd=vuwh 提取码: vuwh"
+    },
+    {
+      "slug": "cv634odstlsdgfgq",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/cv634odstlsdgfgq",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "亿级任务调度：时间轮算法的革命性重构",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 991,
+      "word_count": 25,
+      "updated_at": "2025-11-21T14:04:41.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "algorithm",
+        "ai-llm",
+        "resume-project"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "算法",
+        "面试官"
+      ],
+      "summary": "📎面试官：你知道时间轮算法吗？V4.html链接: https://pan.baidu.com/s/1559xuFt5FBG2IQXZiz2vUg?pwd=6fbx提取码: 6fbx",
+      "excerpt": "链接: https://pan.baidu.com/s/1559xuFt5FBG2IQXZiz2vUg?pwd=6fbx 提取码: 6fbx"
+    },
+    {
+      "slug": "wgiqucs1wghaq36n",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/wgiqucs1wghaq36n",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "分布式锁在高并发场景下应该如何优化？",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 993,
+      "word_count": 29,
+      "updated_at": "2025-11-20T06:33:47.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "java-concurrency",
+        "redis-lock",
+        "distributed-lock-id",
+        "netty-network"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "并发",
+        "锁",
+        "分布式锁"
+      ],
+      "summary": "📎分布式锁在高并发场景下应该如何优化？.html链接: https://pan.baidu.com/s/1jsnbdc4Bde7Ls4JffiONKg?pwd=fbvh提取码: fbvh",
+      "excerpt": "链接: https://pan.baidu.com/s/1jsnbdc4Bde7Ls4JffiONKg?pwd=fbvh 提取码: fbvh"
+    },
+    {
+      "slug": "lcr22n5ivt8qmwgh",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/lcr22n5ivt8qmwgh",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "面试官：怎么手搓一个线程池？",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 995,
+      "word_count": 20,
+      "updated_at": "2025-11-19T06:48:36.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "devops-release",
+        "java-thread-pool",
+        "java-concurrency"
+      ],
+      "question_type": "collection",
+      "question_type_name": "面经题库合集",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "线程池",
+        "线程"
+      ],
+      "summary": "📎怎么手搓一个线程池.html链接: https://pan.baidu.com/s/1Cpqb9WuUw_z-h7PtgFHXvQ?pwd=cipj提取码: cipj",
+      "excerpt": "链接: https://pan.baidu.com/s/1Cpqb9WuUw_z-h7PtgFHXvQ?pwd=cipj 提取码: cipj"
+    },
+    {
+      "slug": "dtw5nqyvuv2ms0ms",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/dtw5nqyvuv2ms0ms",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "如果公司没有消息中间件，如何实现最终一致性事务？",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 997,
+      "word_count": 38,
+      "updated_at": "2025-11-17T12:56:52.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "distributed-transaction",
+        "netty-network",
+        "mysql-index-transaction",
+        "ai-llm"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "最终一致性",
+        "事务"
+      ],
+      "summary": "📎如果公司没有消息中间件，那你们如何实现最终一致性事务？.html链接: https://pan.baidu.com/s/1S63nThoM3ELQkVRnJs1ibw?pwd=67qa提取码: 67qa",
+      "excerpt": "链接: https://pan.baidu.com/s/1S63nThoM3ELQkVRnJs1ibw?pwd=67qa 提取码: 67qa"
+    },
+    {
+      "slug": "fgsl7216a99fyga2",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/fgsl7216a99fyga2",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "面试官：说一下 Nginx 反向代理的作用？",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 999,
+      "word_count": 27,
+      "updated_at": "2025-11-14T09:21:47.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "resume-project",
+        "ai-llm"
+      ],
+      "question_type": "collection",
+      "question_type_name": "面经题库合集",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "面试官"
+      ],
+      "summary": "📎面试官：说一下Nginx反向代理的作用？.html链接: https://pan.baidu.com/s/1_iu9zRLpYQcljc6YuJaDBA?pwd=ickb提取码: ickb",
+      "excerpt": "链接: https://pan.baidu.com/s/1_iu9zRLpYQcljc6YuJaDBA?pwd=ickb 提取码: ickb"
+    },
+    {
+      "slug": "rdewglgnptemb3gb",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/rdewglgnptemb3gb",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "设计一个 Redis分布式锁需要考虑哪些关键问题？",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1001,
+      "word_count": 30,
+      "updated_at": "2025-11-13T11:39:05.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "redis-cache",
+        "redis-lock",
+        "distributed-lock-id",
+        "netty-network"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "Redis",
+        "分布式锁"
+      ],
+      "summary": "📎设计一个Redis分布式锁需要考虑哪些关键问题.html链接: https://pan.baidu.com/s/1KOoswJ25LyJ-iVcHIPA-XQ?pwd=jvey提取码: jvey",
+      "excerpt": "链接: https://pan.baidu.com/s/1KOoswJ25LyJ-iVcHIPA-XQ?pwd=jvey 提取码: jvey"
+    },
+    {
+      "slug": "et91i9qh6vgrycpt",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/et91i9qh6vgrycpt",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "为何 MySQL RR 级别仍会幻读？",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1003,
+      "word_count": 22,
+      "updated_at": "2025-11-12T12:16:18.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "mysql-index-transaction",
+        "netty-network",
+        "ai-llm"
+      ],
+      "question_type": "collection",
+      "question_type_name": "面经题库合集",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "MySQL"
+      ],
+      "summary": "📎为何 MySQL RR 级别仍会幻读？.html链接: https://pan.baidu.com/s/1kvOyQcV4lZRk9ffVS81tfg?pwd=q8cf提取码: q8cf",
+      "excerpt": "链接: https://pan.baidu.com/s/1kvOyQcV4lZRk9ffVS81tfg?pwd=q8cf 提取码: q8cf"
+    },
+    {
+      "slug": "ev95c7n2ngfvpxyl",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/ev95c7n2ngfvpxyl",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "大白话讲解RBAC：从入门到实践的四级模型解析",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1005,
+      "word_count": 25,
+      "updated_at": "2025-11-11T11:54:46.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "security-auth",
+        "netty-network",
+        "ai-llm"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "权限",
+        "RBAC"
+      ],
+      "summary": "📎大白话讲解RBAC四级角色权限模型.html链接: https://pan.baidu.com/s/1JIcVdulIYCyIJmzkn_Hzfg?pwd=etq9提取码: etq9",
+      "excerpt": "链接: https://pan.baidu.com/s/1JIcVdulIYCyIJmzkn_Hzfg?pwd=etq9 提取码: etq9"
+    },
+    {
+      "slug": "kwyn9p59e05e4dpd",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/kwyn9p59e05e4dpd",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "什么是SQL注入？怎么处理？",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1007,
+      "word_count": 23,
+      "updated_at": "2025-11-10T06:33:09.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "security-auth",
+        "netty-network",
+        "ai-llm"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "expert"
+      ],
+      "level_names": [
+        "专家/P7+"
+      ],
+      "keywords": [
+        "SQL注入"
+      ],
+      "summary": "📎什么是SQL注入？怎么处理？V2.html链接: https://pan.baidu.com/s/1V-n-BktOiV0OAmP8Qy0wow?pwd=8ei8提取码: 8ei8",
+      "excerpt": "链接: https://pan.baidu.com/s/1V-n-BktOiV0OAmP8Qy0wow?pwd=8ei8 提取码: 8ei8"
+    },
+    {
+      "slug": "oaso8d53ogal9eul",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/oaso8d53ogal9eul",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "【高频面试】：MyBatis是如何进行分页的？",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1009,
+      "word_count": 20,
+      "updated_at": "2025-11-07T09:06:21.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "mybatis",
+        "netty-network",
+        "ai-llm"
+      ],
+      "question_type": "collection",
+      "question_type_name": "面经题库合集",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "MyBatis"
+      ],
+      "summary": "📎MyBatis是如何进行分页的.html链接: https://pan.baidu.com/s/1CMdIBNH7EMpXSjEcKjn-lA?pwd=wg43提取码: wg43",
+      "excerpt": "链接: https://pan.baidu.com/s/1CMdIBNH7EMpXSjEcKjn-lA?pwd=wg43 提取码: wg43"
+    },
+    {
+      "slug": "ed4byc901ala3nq0",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/ed4byc901ala3nq0",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "【GIT】你还不知道Merge和Rebase的区别吗？",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1011,
+      "word_count": 17,
+      "updated_at": "2025-11-06T14:02:30.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "ai-llm"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [],
+      "summary": "📎Merge和Rebase的区别V2.html链接: https://pan.baidu.com/s/10GYjwi7EMhDwxxSkOJWunA?pwd=dnvn提取码: dnvn",
+      "excerpt": "链接: https://pan.baidu.com/s/10GYjwi7EMhDwxxSkOJWunA?pwd=dnvn 提取码: dnvn"
+    },
+    {
+      "slug": "ngndk54sws977pdi",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/ngndk54sws977pdi",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "在工作中，如何优化接口性能？如何提升接口的响应速度？",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1013,
+      "word_count": 37,
+      "updated_at": "2025-11-05T12:21:08.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "performance-optimization",
+        "netty-network",
+        "mq-general",
+        "ai-llm"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "性能",
+        "优化",
+        "MQ"
+      ],
+      "summary": "📎在工作中，如何优化接口性能？如何提升接口的响应速度？.html链接: https://pan.baidu.com/s/1nok-t_MQLfxAqbtcTh3nKA?pwd=ehfi提取码: ehfi",
+      "excerpt": "链接: https://pan.baidu.com/s/1nok-t_MQLfxAqbtcTh3nKA?pwd=ehfi 提取码: ehfi"
+    },
+    {
+      "slug": "cpc75fg6ak7z37hy",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/cpc75fg6ak7z37hy",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "分布式高频面试题：为什么深度分页是ES性能杀手？",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1015,
+      "word_count": 34,
+      "updated_at": "2025-11-04T09:16:42.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "performance-optimization",
+        "ai-llm"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "性能"
+      ],
+      "summary": "📎分布式高频面试题：为什么深度分页是ES性能杀手？.html链接: https://pan.baidu.com/s/1qC6JqEtrp9FsBYPpR4bS1w?pwd=wtj4提取码: wtj4",
+      "excerpt": "链接: https://pan.baidu.com/s/1qC6JqEtrp9FsBYPpR4bS1w?pwd=wtj4 提取码: wtj4"
+    },
+    {
+      "slug": "pk1gzgp3l4axi67a",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/pk1gzgp3l4axi67a",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "大白话SSO：从概念到OAuth 2.0实战，一次搞定！",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1017,
+      "word_count": 30,
+      "updated_at": "2025-11-03T06:41:35.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "ai-llm"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [],
+      "summary": "📎大白话SSO：从概念到OAuth 2.0实战，一次搞定！.html链接: https://pan.baidu.com/s/1YqVtVZCobzdDiw1mRwt8gg?pwd=ix39提取码: ix39",
+      "excerpt": "链接: https://pan.baidu.com/s/1YqVtVZCobzdDiw1mRwt8gg?pwd=ix39 提取码: ix39"
+    },
+    {
+      "slug": "szzvdk270orfrvx6",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/szzvdk270orfrvx6",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "ES 亿级数据查询优化：从 10 秒到 100 毫秒的实战指南",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1019,
+      "word_count": 38,
+      "updated_at": "2025-10-31T09:00:14.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "ai-llm",
+        "performance-optimization"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "优化"
+      ],
+      "summary": "📎ES 在数据量很大的情况下（数十亿级别）如何提高查询效率？V3.html链接: https://pan.baidu.com/s/1QnZUr7PtzQ1V3e7duJJFJw?pwd=ywsz提取码: ywsz",
+      "excerpt": "链接: https://pan.baidu.com/s/1QnZUr7PtzQ1V3e7duJJFJw?pwd=ywsz 提取码: ywsz"
+    },
+    {
+      "slug": "ownytd8g9sm160q9",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/ownytd8g9sm160q9",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "告别冗长，拥抱优雅——用 Lambda 重构你的 Java 应用",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1021,
+      "word_count": 31,
+      "updated_at": "2025-10-29T13:05:10.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "java-core",
+        "netty-network",
+        "ai-llm"
+      ],
+      "question_type": "collection",
+      "question_type_name": "面经题库合集",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "Java"
+      ],
+      "summary": "📎告别冗长，拥抱优雅——用 Lambda 重构你的 Java 应用.html链接: https://pan.baidu.com/s/1PNXUP1TXwiLDYLYfYr544g?pwd=quha提取码: quha",
+      "excerpt": "链接: https://pan.baidu.com/s/1PNXUP1TXwiLDYLYfYr544g?pwd=quha 提取码: quha"
+    },
+    {
+      "slug": "tiuu84hpkorzp94y",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/tiuu84hpkorzp94y",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "解密JWT：现代Web的无状态通行证",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1023,
+      "word_count": 25,
+      "updated_at": "2025-10-28T11:34:06.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "security-auth",
+        "ai-llm"
+      ],
+      "question_type": "collection",
+      "question_type_name": "面经题库合集",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "JWT"
+      ],
+      "summary": "📎解密JWT：现代Web的无状态通行证.html链接: https://pan.baidu.com/s/1ctZ-AA0owgP03bqKq0tlsA?pwd=ayk8提取码: ayk8",
+      "excerpt": "链接: https://pan.baidu.com/s/1ctZ-AA0owgP03bqKq0tlsA?pwd=ayk8 提取码: ayk8"
+    },
+    {
+      "slug": "dcuqyrqo1fg57xxw",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/dcuqyrqo1fg57xxw",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "XXL-Job 分布式锁疑云：为何主键约束在高并发下“失效”？",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1027,
+      "word_count": 39,
+      "updated_at": "2025-10-27T05:37:59.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "java-concurrency",
+        "redis-lock",
+        "distributed-lock-id",
+        "netty-network"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "并发",
+        "锁",
+        "分布式锁"
+      ],
+      "summary": "📎XXL-Job 分布式锁疑云，为何“主键唯一约束”在高并发下离奇失效？.html链接: https://pan.baidu.com/s/1r3uGeRo07jbCMHVEOnivRA?pwd=k369提取码: k369",
+      "excerpt": "链接: https://pan.baidu.com/s/1r3uGeRo07jbCMHVEOnivRA?pwd=k369 提取码: k369"
+    },
+    {
+      "slug": "gix1rx8a8p4hiuro",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/gix1rx8a8p4hiuro",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "【上线避坑】新版本 5 分钟崩服？灰度 + 蓝绿 + 滚动发布实战",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1029,
+      "word_count": 27,
+      "updated_at": "2025-10-23T13:44:58.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "devops-release",
+        "ai-llm"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "灰度",
+        "发布"
+      ],
+      "summary": "📎灰度、蓝绿和滚动发布到底是什么？.html链接: https://pan.baidu.com/s/1Bt4AVaaJGOCoKCLAqwkfKA?pwd=jfur提取码: jfur",
+      "excerpt": "链接: https://pan.baidu.com/s/1Bt4AVaaJGOCoKCLAqwkfKA?pwd=jfur 提取码: jfur"
+    },
+    {
+      "slug": "woing4ygnrihwlyq",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/woing4ygnrihwlyq",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "分库分表后如何进行跨库 Join？从青铜到王者的五大解决方案",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1031,
+      "word_count": 22,
+      "updated_at": "2025-10-23T13:44:34.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "mysql-sharding",
+        "netty-network",
+        "devops-release",
+        "ai-llm"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "分库分表"
+      ],
+      "summary": "📎分库分表后如何进行跨库 Join.html链接: https://pan.baidu.com/s/1BfVNAY24C-iLbb0-oTOk0A?pwd=2fcd提取码: 2fcd",
+      "excerpt": "链接: https://pan.baidu.com/s/1BfVNAY24C-iLbb0-oTOk0A?pwd=2fcd 提取码: 2fcd"
+    },
+    {
+      "slug": "ldhqmtk1i9w7cux9",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/ldhqmtk1i9w7cux9",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "618 改表喜提 3 页报告？千万级订单表加字段这么干！",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1033,
+      "word_count": 34,
+      "updated_at": "2025-10-23T13:44:09.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "project-system-design",
+        "ai-llm"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "订单"
+      ],
+      "summary": "📎618 改表喜提 3 页报告？千万级订单表加字段这么干！.html链接: https://pan.baidu.com/s/1oUO6fH4-ab_FJUtueTA9dw?pwd=316h提取码: 316h",
+      "excerpt": "链接: https://pan.baidu.com/s/1oUO6fH4-ab_FJUtueTA9dw?pwd=316h 提取码: 316h"
+    },
+    {
+      "slug": "dpyinzog2rw6p8h4",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/dpyinzog2rw6p8h4",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "阿里面试：全国14亿人，统计出重名最多的前100个姓名",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1035,
+      "word_count": 35,
+      "updated_at": "2025-10-20T07:39:58.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "ai-llm"
+      ],
+      "question_type": "collection",
+      "question_type_name": "面经题库合集",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [],
+      "summary": "📎阿里面试：全国14亿人，统计出重名最多的前100个姓名V2.html链接: https://pan.baidu.com/s/1rpKQU0c095ShCSlj3vKthg?pwd=uj7m提取码: uj7m",
+      "excerpt": "链接: https://pan.baidu.com/s/1rpKQU0c095ShCSlj3vKthg?pwd=uj7m 提取码: uj7m"
+    },
+    {
+      "slug": "bv09ir4q9pm18f5b",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/bv09ir4q9pm18f5b",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "秋招热点：如何保证MySQL与Redis数据一致性",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1037,
+      "word_count": 28,
+      "updated_at": "2025-10-20T07:39:35.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "mysql-index-transaction",
+        "redis-cache",
+        "netty-network",
+        "ai-llm"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "MySQL",
+        "Redis"
+      ],
+      "summary": "📎秋招热点：如何保证MySQL与Redis数据一致性.html链接: https://pan.baidu.com/s/1mm9PgaOUzhqAwoxXG3rbHw?pwd=xxmn提取码: xxmn",
+      "excerpt": "链接: https://pan.baidu.com/s/1mm9PgaOUzhqAwoxXG3rbHw?pwd=xxmn 提取码: xxmn"
+    },
+    {
+      "slug": "aor2zxlpf4zht7f1",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/aor2zxlpf4zht7f1",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "2000万数据，Redis只存20万：如何精准抓取热点？",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1039,
+      "word_count": 29,
+      "updated_at": "2025-10-20T07:39:18.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "redis-cache",
+        "netty-network",
+        "ai-llm"
+      ],
+      "question_type": "collection",
+      "question_type_name": "面经题库合集",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "Redis"
+      ],
+      "summary": "📎2000w数据，Redis只存20w，如何精准抓取热点？V2.html链接: https://pan.baidu.com/s/1X2nb-1xLNnQqFhVfILQqzw?pwd=s2s9提取码: s2s9",
+      "excerpt": "链接: https://pan.baidu.com/s/1X2nb-1xLNnQqFhVfILQqzw?pwd=s2s9 提取码: s2s9"
+    },
+    {
+      "slug": "epiofc8mtrc2p374",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/epiofc8mtrc2p374",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "百万用户同时抢券，Redis热点key性能瓶颈怎么突破？",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1041,
+      "word_count": 36,
+      "updated_at": "2025-10-15T05:05:27.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "redis-cache",
+        "performance-optimization",
+        "netty-network",
+        "ai-llm"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "Redis",
+        "性能",
+        "瓶颈"
+      ],
+      "summary": "📎百万用户同时抢1万张券，Redis热点key性能瓶颈怎么突破？.html链接: https://pan.baidu.com/s/1qT6p0Gt8ruE9F61reYMntA?pwd=qswf提取码: qswf",
+      "excerpt": "链接: https://pan.baidu.com/s/1qT6p0Gt8ruE9F61reYMntA?pwd=qswf 提取码: qswf"
+    },
+    {
+      "slug": "bw8x6p574sp3dnz6",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/bw8x6p574sp3dnz6",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "图解：40亿个QQ号，1G内存限制下实现去重（相同QQ号保留1个）",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1043,
+      "word_count": 37,
+      "updated_at": "2025-10-14T05:37:17.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "performance-optimization",
+        "mq-general",
+        "os-linux"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "内存"
+      ],
+      "summary": "📎40亿个QQ号，1G内存限制下实现去重（相同QQ号保留1个）V2.html链接: https://pan.baidu.com/s/1nYmqPS5_4qrhcfaYF8iJVg?pwd=wbde 提取码: wbde",
+      "excerpt": "链接: https://pan.baidu.com/s/1nYmqPS5_4qrhcfaYF8iJVg?pwd=wbde 提取码: wbde"
+    },
+    {
+      "slug": "otp6agn1fcz9g4ps",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/otp6agn1fcz9g4ps",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "订单服务调用时间从200ms飙升至1.5s，如何排查？",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1045,
+      "word_count": 30,
+      "updated_at": "2025-10-14T05:37:09.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "project-system-design",
+        "observability-troubleshooting",
+        "ai-llm"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "订单",
+        "排查"
+      ],
+      "summary": "📎订单服务调用时间从200ms飙升至1.5s,如何排查？.html链接: https://pan.baidu.com/s/1g7tLu6j6NnbydvVXk3YF5A?pwd=abrc 提取码: abrc",
+      "excerpt": "链接: https://pan.baidu.com/s/1g7tLu6j6NnbydvVXk3YF5A?pwd=abrc 提取码: abrc"
+    },
+    {
+      "slug": "mgdl6ck0h89ywqmf",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/mgdl6ck0h89ywqmf",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "阿里二面：如何保证消息队列的顺序性？工作3年了还不会，有点扎心！",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1047,
+      "word_count": 43,
+      "updated_at": "2025-10-14T05:36:39.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "mq-general",
+        "netty-network",
+        "mq-rabbitmq",
+        "ai-llm"
+      ],
+      "question_type": "collection",
+      "question_type_name": "面经题库合集",
+      "levels": [
+        "junior",
+        "middle"
+      ],
+      "level_names": [
+        "初级/1-3年",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "消息队列",
+        "队列"
+      ],
+      "summary": "📎阿里二面：如何保证消息队列的顺序性？工作3年了还不会，有点扎心！.html链接: https://pan.baidu.com/s/1RQUjW-fnq2vH7D5R2ba9Nw?pwd=x1em 提取码: x1em",
+      "excerpt": "链接: https://pan.baidu.com/s/1RQUjW-fnq2vH7D5R2ba9Nw?pwd=x1em 提取码: x1em"
+    },
+    {
+      "slug": "ht7w9ors9pl2qyr0",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/ht7w9ors9pl2qyr0",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "扎心！线上服务宕机时，如何保证数据100%不丢失？—— RabbitMQ高可靠性终极指南",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1049,
+      "word_count": 33,
+      "updated_at": "2025-10-14T05:36:33.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "mq-rabbitmq",
+        "netty-network",
+        "observability-troubleshooting",
+        "ai-llm"
+      ],
+      "question_type": "troubleshooting",
+      "question_type_name": "故障排查题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "RabbitMQ",
+        "线上"
+      ],
+      "summary": "📎扎心！线上服务宕机时，如何保证数据100%不丢失？.html链接: https://pan.baidu.com/s/1g9mXoQRJWzQEgwe6_jtjPQ?pwd=bgpz 提取码: bgpz",
+      "excerpt": "链接: https://pan.baidu.com/s/1g9mXoQRJWzQEgwe6_jtjPQ?pwd=bgpz 提取码: bgpz"
+    },
+    {
+      "slug": "gahykw64i016w1co",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/gahykw64i016w1co",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "电商大促如何落地 TCC 事务，避免“钱扣了，货没发”？",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1051,
+      "word_count": 47,
+      "updated_at": "2025-10-14T05:36:15.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "distributed-transaction",
+        "mysql-index-transaction",
+        "ai-llm"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "TCC",
+        "事务"
+      ],
+      "summary": "📎电商大促如何落地 TCC 事务，避免核心链路 “库存扣了钱没扣、钱扣了积分没加”？.html链接: https://pan.baidu.com/s/1OHxKRGS7vLmzffgBBSGwFw?pwd=um9d 提取码: um9d",
+      "excerpt": "链接: https://pan.baidu.com/s/1OHxKRGS7vLmzffgBBSGwFw?pwd=um9d 提取码: um9d"
+    },
+    {
+      "slug": "rgb3wvl6w2pm8ixu",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/rgb3wvl6w2pm8ixu",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "双十一 秒杀重复支付多扣钱，怎么避免才不被用户骂？",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1053,
+      "word_count": 35,
+      "updated_at": "2025-10-14T05:35:55.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "project-system-design",
+        "netty-network",
+        "ai-llm"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "秒杀",
+        "支付"
+      ],
+      "summary": "📎双十一秒杀重复支付多扣钱，怎么避免才不被用户骂？.html链接: https://pan.baidu.com/s/1hQD_3hXolGAKqspZ3YGFtw?pwd=9gir 提取码: 9gir",
+      "excerpt": "链接: https://pan.baidu.com/s/1hQD_3hXolGAKqspZ3YGFtw?pwd=9gir 提取码: 9gir"
+    },
+    {
+      "slug": "zhxsq8ugpfkd9ekb",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/zhxsq8ugpfkd9ekb",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "双十一10万用户订单消息卡爆！查不到物流，怎么快速处理不引发退单？",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1055,
+      "word_count": 43,
+      "updated_at": "2025-10-07T05:24:13.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "project-system-design",
+        "ai-llm"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "订单"
+      ],
+      "summary": "📎双十一 10 万用户订单消息卡爆！查不到物流，怎么快速处理不引发退单？.html链接: https://pan.baidu.com/s/1qpnLk52_Veo1mFf35V3jSw?pwd=7emr 提取码: 7emr",
+      "excerpt": "链接: https://pan.baidu.com/s/1qpnLk52_Veo1mFf35V3jSw?pwd=7emr 提取码: 7emr"
+    },
+    {
+      "slug": "vr5y1yngl1nrypoh",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/vr5y1yngl1nrypoh",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "为什么大麦10W人抢同一场演唱会门票，系统还能秒响应不崩？",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1057,
+      "word_count": 27,
+      "updated_at": "2025-10-07T05:27:12.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "ai-llm"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [],
+      "summary": "📎为什么10W人抢某麦门票，系统不崩？.html链接: https://pan.baidu.com/s/1EdcoT8nbWd9U1kvWDKMKJA?pwd=7wsh 提取码: 7wsh",
+      "excerpt": "链接: https://pan.baidu.com/s/1EdcoT8nbWd9U1kvWDKMKJA?pwd=7wsh 提取码: 7wsh"
+    },
+    {
+      "slug": "hshv2l6ugu73r4tg",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/hshv2l6ugu73r4tg",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "为什么12306总显示“有票”，点进去却“已售罄”？",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1059,
+      "word_count": 49,
+      "updated_at": "2025-09-30T06:56:59.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "ai-llm",
+        "netty-network",
+        "performance-optimization",
+        "mysql-sharding"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "主从"
+      ],
+      "summary": "📎为什么 12306 显示 “余票 2 张”，点进去却没有？不是手慢，是主从延迟的脏数据坑了你！.html链接: https://pan.baidu.com/s/1-X5msDSAcuRtaRQ1oEf0BQ?pwd=aijp 提取码: aijp",
+      "excerpt": "链接: https://pan.baidu.com/s/1-X5msDSAcuRtaRQ1oEf0BQ?pwd=aijp 提取码: aijp"
+    },
+    {
+      "slug": "gi8rkzyqgzm0dfud",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/gi8rkzyqgzm0dfud",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "一个3人团，剩1个名额，100人同时抢…我把从崩溃到高可用的架构演进讲透了",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1061,
+      "word_count": 17,
+      "updated_at": "2025-09-28T05:11:19.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "ai-llm"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [],
+      "summary": "📎拼单服务设计.html链接: https://pan.baidu.com/s/1xDq1FGiDwWUiDG6DJB3-LQ?pwd=n1e8 提取码: n1e8",
+      "excerpt": "链接: https://pan.baidu.com/s/1xDq1FGiDwWUiDG6DJB3-LQ?pwd=n1e8 提取码: n1e8"
+    },
+    {
+      "slug": "glzliseo34ekie7y",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/glzliseo34ekie7y",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "从“面试雷区”到“架构之选”：彻底搞懂订单超时自动关闭",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1065,
+      "word_count": 26,
+      "updated_at": "2025-09-24T14:10:05.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "project-system-design",
+        "microservices-governance",
+        "ai-llm"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "订单",
+        "支付",
+        "超时"
+      ],
+      "summary": "📎订单系统超时未支付如何自动关闭.html链接: https://pan.baidu.com/s/1jQlmrq5rKTPmZPEMCNnUlQ?pwd=jhan 提取码: jhan",
+      "excerpt": "链接: https://pan.baidu.com/s/1jQlmrq5rKTPmZPEMCNnUlQ?pwd=jhan 提取码: jhan"
+    },
+    {
+      "slug": "nc7hqv22rsk1n8in",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/nc7hqv22rsk1n8in",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "消息幂等（去重）如何解决？来看看这个方案！",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1067,
+      "word_count": 23,
+      "updated_at": "2025-09-23T05:58:36.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "project-system-design",
+        "ai-llm"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "方案",
+        "幂等"
+      ],
+      "summary": "📎消息幂等（去重）如何解决.html链接: https://pan.baidu.com/s/1koDqiQejkd5WVK4Lox_y-g?pwd=cw6i 提取码: cw6i",
+      "excerpt": "链接: https://pan.baidu.com/s/1koDqiQejkd5WVK4Lox_y-g?pwd=cw6i 提取码: cw6i"
+    },
+    {
+      "slug": "hglb4yywdnqzf9qb",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/hglb4yywdnqzf9qb",
+      "toc_path": [
+        "高频面试问题",
+        "fox老师",
+        "假设堆内存配置为 8GB，在 G1 垃圾收集器中，多大的对象会被判定为大对象？",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1078,
+      "word_count": 64,
+      "updated_at": "2025-10-26T06:27:50.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "jvm-memory-gc",
+        "netty-network",
+        "os-linux",
+        "ai-llm"
+      ],
+      "question_type": "collection",
+      "question_type_name": "面经题库合集",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "垃圾回收",
+        "堆",
+        "内存"
+      ],
+      "summary": "📎G1垃圾回收器揭秘：8GB内存下的“巨无霸”对象 (1).html 堆内存配置为 8GB，在 G1 垃圾收集器中，多大的对象会被判定为大对象？.mp4链接: https://pan.baidu.com/s/10wLem494GBhoeFbV-nXJcg 提取码: xcqk",
+      "excerpt": "堆内存配置为 8GB，在 G1 垃圾收集器中，多大的对象会被判定为大对象？.mp4 链接: https://pan.baidu.com/s/10wLem494GBhoeFbV-nXJcg 提取码: xcqk"
+    },
+    {
+      "slug": "gfhpdusxowoh0yvt",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/gfhpdusxowoh0yvt",
+      "toc_path": [
+        "高频面试问题",
+        "fox老师",
+        "AOP 面试别再只说 “面向切面”！实战案例 + 动态代理原理避坑指南",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1080,
+      "word_count": 32,
+      "updated_at": "2025-10-26T06:29:24.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "spring-core",
+        "netty-network",
+        "os-linux",
+        "ai-llm"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "AOP",
+        "文件"
+      ],
+      "summary": "通过网盘分享的文件：说说 AOP 是什么，怎么用的？.mp4链接: https://pan.baidu.com/s/1U8MZAFbpKnUHexoPFD6azA 提取码: thb5",
+      "excerpt": "通过网盘分享的文件：说说 AOP 是什么，怎么用的？.mp4 链接: https://pan.baidu.com/s/1U8MZAFbpKnUHexoPFD6azA 提取码: thb5"
+    },
+    {
+      "slug": "gi1wlo2fhtuhuyvq",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/gi1wlo2fhtuhuyvq",
+      "toc_path": [
+        "高频面试问题",
+        "fox老师",
+        "平台每天有 1000 万张优惠券过期，怎么设计处理系统",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1082,
+      "word_count": 43,
+      "updated_at": "2025-10-26T06:29:39.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "os-linux",
+        "ai-llm"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "文件"
+      ],
+      "summary": "通过网盘分享的文件：平台每天有 1000 万张优惠券过期，怎么设计处理系统？.mp4链接: https://pan.baidu.com/s/1Ynv6Uys-fcGZsDJnUQRdew 提取码: dzcc",
+      "excerpt": "通过网盘分享的文件：平台每天有 1000 万张优惠券过期，怎么设计处理系统？.mp4 链接: https://pan.baidu.com/s/1Ynv6Uys-fcGZsDJnUQRdew 提取码: dzcc"
+    },
+    {
+      "slug": "han6aer68hzsu9id",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/han6aer68hzsu9id",
+      "toc_path": [
+        "高频面试问题",
+        "fox老师",
+        "为何 QQ 忘记密码只能重置？从密码安全架构看腾讯的防御逻辑",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1113,
+      "word_count": 810,
+      "updated_at": "2025-09-28T11:38:47.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "security-auth",
+        "os-linux",
+        "ai-llm"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "安全",
+        "加密",
+        "文件"
+      ],
+      "summary": "📎为何 QQ 忘记密码只能重置？.html通过网盘分享的文件：忘记密码后QQ为什么不告诉你原密码，你只能重置密码？.mp4链接: https://pan.baidu.com/s/1UXj1nxOW2EpVlONzoJ-ryA?pwd=mpb7 提取码: mpb7口播文案：咱谁没遇过这事儿啊！...",
+      "excerpt": "通过网盘分享的文件：忘记密码后QQ为什么不告诉你原密码，你只能重置密码？.mp4 链接: https://pan.baidu.com/s/1UXj1nxOW2EpVlONzoJ-ryA?pwd=mpb7 提取码: mpb7 ​ 口播文案： 咱谁没遇过这事儿啊！QQ 密码忘了，点 “找回” 吧，结果只能重新设个新的 —— 你是不是也纳闷：腾讯系统里明明存着我密码，咋就不能直接告诉我呢？今天我把这事给你扒得明明白白，看完你保准得说 “原来腾讯这是为了安全，够讲究！” 先问你个扎心的：你以为系统里存的，就是你设的 “1314520” 那串数字？大错特错！要是真直接存原文，（指向【危险的明文存储】图），黑客一旦闯进去，你所有密码全暴露，这锅腾讯可背不起，你账号也废了啊！ 所以第一步就得把密码 “搅碎”—— 用哈希加密（指向【魔法搅拌机】图）。你输 “1314520”，系统一处理，就变成 “4f3d7a...” 这种乱码。这玩意最牛的是 “不可逆”，就算黑客偷到这串乱码，也跟看天书似的，根本猜不出原密码是啥。 但别高兴太早！黑客有 “作弊神器”—— 彩虹表（指向【黑客的反击】图）。他们早把 “123456”“abc123” 这些大家常用的密码，提前算好对应的哈希乱码，做成一本大词典。只要偷到你的乱码，一查词典就知道原密码，那些图省事设弱密码的，一下就中招了！ 这时候就得上终极防御：加盐（指向【终极防御】图）。简单说，就是给你密码加一段随机小尾巴，比如 “1314520” 再加上 “% t7#k”，然后一起做哈希。关键是每个人的 “盐” 都不一样，就算你和别人密码相同，最后出来的乱码也完全不一样，黑客那本词典直接就废了！ 现在你明白为啥不能给你原密码了吧？看最后这图（指向【只验证，不窥探】图）：你登录时，系统是把你新输的密码，加上专属的 “盐” 做哈希，再跟数据库里存的乱码比对 —— 对得上就让你进，对不上就不让进。但想从乱码反推原密码，比把打碎的鸡蛋拼回去还难，根本做不到！ 最后提醒一句：重置密码别偷懒设 “123456”，加个大小写字母、再来个特殊符号，比如 “Qq1314!@#”，让黑客连猜的机会都没有！下次再有人问 “QQ 咋不能查原密码”，直接把这视频甩给他看，让他也懂懂这里面的门道～"
+    },
+    {
+      "slug": "uewotwqris58vmdh",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/uewotwqris58vmdh",
+      "toc_path": [
+        "高频面试问题",
+        "fox老师",
+        "订单过亿，怎么分库分表？",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1117,
+      "word_count": 49,
+      "updated_at": "2025-09-21T05:13:04.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "mysql-sharding",
+        "project-system-design",
+        "netty-network",
+        "resume-project"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "分库分表",
+        "订单",
+        "面试官"
+      ],
+      "summary": "📎订单过亿，怎么分库分表？.html通过网盘分享的文件：面试官：订单过亿怎么分库分表？.mp4链接: https://pan.baidu.com/s/1FM60j_Wjx3z_o5M334uw2Q?pwd=nhan 提取码: nhan",
+      "excerpt": "通过网盘分享的文件：面试官：订单过亿怎么分库分表？.mp4 链接: https://pan.baidu.com/s/1FM60j_Wjx3z_o5M334uw2Q?pwd=nhan 提取码: nhan ​ ​"
+    },
+    {
+      "slug": "hsackh7d3g3gg2nl",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/hsackh7d3g3gg2nl",
+      "toc_path": [
+        "高频面试问题",
+        "楼兰老师",
+        "百万并发下的ID生成架构演进",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1123,
+      "word_count": 47,
+      "updated_at": "2025-12-10T05:29:20.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "java-concurrency",
+        "netty-network",
+        "os-linux",
+        "ai-llm"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "并发",
+        "文件"
+      ],
+      "summary": "通过网盘分享的文件：百万并发下的ID生成架构演进链接: https://pan.baidu.com/s/1Wvs1NJPX7sGs7D_rykqSzQ 提取码: 6f4s📎百万并发下的ID生成架构演进.html",
+      "excerpt": "通过网盘分享的文件：百万并发下的ID生成架构演进 链接: https://pan.baidu.com/s/1Wvs1NJPX7sGs7D_rykqSzQ 提取码: 6f4s"
+    },
+    {
+      "slug": "ft3s8dmqd8qv300z",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/ft3s8dmqd8qv300z",
+      "toc_path": [
+        "高频面试问题",
+        "楼兰老师",
+        "DDD教你破解数据库表设计难题",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1135,
+      "word_count": 41,
+      "updated_at": "2025-11-03T09:06:17.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "os-linux",
+        "ai-llm"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "文件"
+      ],
+      "summary": "通过网盘分享的文件：表结构设计，你还在靠经验吗？DDD帮你设计表结构链接: https://pan.baidu.com/s/1s_B4u5p9DGENFM5CPrq99Q 提取码: t482",
+      "excerpt": "通过网盘分享的文件：表结构设计，你还在靠经验吗？DDD帮你设计表结构 链接: https://pan.baidu.com/s/1s_B4u5p9DGENFM5CPrq99Q 提取码: t482"
+    },
+    {
+      "slug": "dcwpiz326r3328s6",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/dcwpiz326r3328s6",
+      "toc_path": [
+        "高频面试问题",
+        "楼兰老师",
+        "性能优化必修课-如何统计接口耗时",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1137,
+      "word_count": 50,
+      "updated_at": "2025-10-30T13:56:54.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "performance-optimization",
+        "netty-network",
+        "os-linux",
+        "ai-llm"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "senior",
+        "expert"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "专家/P7+"
+      ],
+      "keywords": [
+        "性能",
+        "优化",
+        "文件"
+      ],
+      "summary": "📎架构师如何统计接口耗时.html通过网盘分享的文件：性能优化必修课-如何进行接口耗时统计链接: https://pan.baidu.com/s/1aOAMiJYJ5MZye2CsH3QttQ 提取码: yybs",
+      "excerpt": "通过网盘分享的文件：性能优化必修课-如何进行接口耗时统计 链接: https://pan.baidu.com/s/1aOAMiJYJ5MZye2CsH3QttQ 提取码: yybs"
+    },
+    {
+      "slug": "vh4azaqw5604xy1k",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/vh4azaqw5604xy1k",
+      "toc_path": [
+        "高频面试问题",
+        "楼兰老师",
+        "如何设计微服务熔断方案",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1143,
+      "word_count": 41,
+      "updated_at": "2025-10-20T09:44:31.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "project-system-design",
+        "microservices-governance",
+        "netty-network",
+        "os-linux"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "方案",
+        "熔断",
+        "文件"
+      ],
+      "summary": "📎微服务熔断方案解析.html通过网盘分享的文件：如何设计微服务熔断体系链接: https://pan.baidu.com/s/1VdMLeUX0BKnDCgEy6qHpkw 提取码: qk9t",
+      "excerpt": "通过网盘分享的文件：如何设计微服务熔断体系 链接: https://pan.baidu.com/s/1VdMLeUX0BKnDCgEy6qHpkw 提取码: qk9t"
+    },
+    {
+      "slug": "otwz83iaro8piv1g",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/otwz83iaro8piv1g",
+      "toc_path": [
+        "高频面试问题",
+        "楼兰老师",
+        "一网打尽MySQL各种锁",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1147,
+      "word_count": 33,
+      "updated_at": "2025-10-17T13:31:58.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "mysql-index-transaction",
+        "java-core",
+        "java-concurrency",
+        "netty-network"
+      ],
+      "question_type": "collection",
+      "question_type_name": "面经题库合集",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "MySQL",
+        "锁",
+        "Java"
+      ],
+      "summary": "📎一网打尽Java锁.html通过网盘分享的文件：一网打尽Java锁链接: https://pan.baidu.com/s/1aUP9hZZy-ugezHGSa7BSLw 提取码: 4nkh",
+      "excerpt": "通过网盘分享的文件：一网打尽Java锁 链接: https://pan.baidu.com/s/1aUP9hZZy-ugezHGSa7BSLw 提取码: 4nkh"
+    },
+    {
+      "slug": "xii3lxyibk0evhoy",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/xii3lxyibk0evhoy",
+      "toc_path": [
+        "高频面试问题",
+        "楼兰老师",
+        "面试官：讲讲 Raft？我笑了。一次彻底搞懂 Raft 核心机制",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1149,
+      "word_count": 51,
+      "updated_at": "2025-10-13T07:54:06.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "resume-project",
+        "netty-network",
+        "os-linux",
+        "ai-llm"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "面试官",
+        "文件"
+      ],
+      "summary": "通过网盘分享的文件：面试官：讲讲 Raft？我笑了。一次彻底搞懂 Raft 核心机制链接: https://pan.baidu.com/s/1UZhYYSRxGXQckHnn1rd3IA 提取码: mgy4📎Raft算法深度解析.html",
+      "excerpt": "通过网盘分享的文件：面试官：讲讲 Raft？我笑了。一次彻底搞懂 Raft 核心机制 链接: https://pan.baidu.com/s/1UZhYYSRxGXQckHnn1rd3IA 提取码: mgy4 ​"
+    },
+    {
+      "slug": "pwqm71zmou6z5d3n",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/pwqm71zmou6z5d3n",
+      "toc_path": [
+        "高频面试问题",
+        "楼兰老师",
+        "如何提高系统稳定性？AI时代的工程师护城河",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1151,
+      "word_count": 57,
+      "updated_at": "2025-10-10T12:18:50.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "ai-llm",
+        "netty-network",
+        "os-linux",
+        "observability-troubleshooting"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "AI",
+        "文件",
+        "线上"
+      ],
+      "summary": "通过网盘分享的文件：如何提高系统稳定性？AI时代的工程师护城河链接: https://pan.baidu.com/s/1UgUk1trQJoWlFjJOquXk4w 提取码: a4ps📎如何提高系统稳定性，减少线上事故?.html",
+      "excerpt": "通过网盘分享的文件：如何提高系统稳定性？AI时代的工程师护城河 链接: https://pan.baidu.com/s/1UgUk1trQJoWlFjJOquXk4w 提取码: a4ps"
+    },
+    {
+      "slug": "uwy18ff2yyveh9r0",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/uwy18ff2yyveh9r0",
+      "toc_path": [
+        "高频面试问题",
+        "楼兰老师",
+        "【终极解答】如何保证数据库和缓存双写一致性",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1153,
+      "word_count": 50,
+      "updated_at": "2025-10-09T09:42:44.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "redis-cache",
+        "netty-network",
+        "os-linux",
+        "ai-llm"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle",
+        "senior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "缓存",
+        "缓存一致性",
+        "文件"
+      ],
+      "summary": "通过网盘分享的文件：【终极解答】如何保证数据库和缓存双写一致性链接: https://pan.baidu.com/s/1i6jqccku029l6CawOnc4dA 提取码: bhpi📎缓存一致性架构图.html",
+      "excerpt": "通过网盘分享的文件：【终极解答】如何保证数据库和缓存双写一致性 链接: https://pan.baidu.com/s/1i6jqccku029l6CawOnc4dA 提取码: bhpi"
+    },
+    {
+      "slug": "lswixhn5ln5w7n54",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/lswixhn5ln5w7n54",
+      "toc_path": [
+        "高频面试问题",
+        "楼兰老师",
+        "如何保证消息不丢不重？一次打通三大MQ",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1157,
+      "word_count": 38,
+      "updated_at": "2025-10-08T09:13:51.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "mq-general",
+        "netty-network",
+        "os-linux",
+        "ai-llm"
+      ],
+      "question_type": "collection",
+      "question_type_name": "面经题库合集",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "MQ",
+        "文件"
+      ],
+      "summary": "视频地址：通过网盘分享的文件：MQ选型终极指南链接: https://pan.baidu.com/s/1uGw2xckvmH9TeGD5UImjAQ 提取码: g89s📎MQ产品选型.html",
+      "excerpt": "视频地址：通过网盘分享的文件：MQ选型终极指南 链接: https://pan.baidu.com/s/1uGw2xckvmH9TeGD5UImjAQ 提取码: g89s ​"
+    },
+    {
+      "slug": "qcxxy6lwse3lwhg3",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/qcxxy6lwse3lwhg3",
+      "toc_path": [
+        "高频面试问题",
+        "楼兰老师",
+        "【面试核武器】一个视频彻底搞懂分布式一致性",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1159,
+      "word_count": 52,
+      "updated_at": "2025-09-30T09:16:54.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "os-linux",
+        "ai-llm"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "文件"
+      ],
+      "summary": "视频地址：通过网盘分享的文件：【面试核武器】一个视频彻底搞懂分布式一致性链接:https://pan.baidu.com/s/1zUIG_UyMeRBzKEu8dXHSHg提取码:g4h6📎分布式一致性2.html",
+      "excerpt": "视频地址： 通过网盘分享的文件：【面试核武器】一个视频彻底搞懂分布式一致性 链接: https://pan.baidu.com/s/1zUIG_UyMeRBzKEu8dXHSHg 提取码:g4h6 ​"
+    },
+    {
+      "slug": "nepzocp3nelpse7a",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/nepzocp3nelpse7a",
+      "toc_path": [
+        "高频面试问题",
+        "楼兰老师",
+        "RocektMQ文件存储，普通程序员VS架构师",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1163,
+      "word_count": 46,
+      "updated_at": "2025-09-28T05:39:12.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "os-linux",
+        "mq-rocketmq",
+        "mq-general",
+        "netty-network"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "expert",
+        "middle",
+        "senior"
+      ],
+      "level_names": [
+        "专家/P7+",
+        "中级/3-5年",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "文件",
+        "RocketMQ",
+        "MQ"
+      ],
+      "summary": "📎RocketMQ文件存储.html视频地址：通过网盘分享的文件：RocektMQ文件存储，普通程序员VS架构师链接: https://pan.baidu.com/s/1XygliIngNoKd3EoD8GVI1A 提取码: a5yk",
+      "excerpt": "视频地址： 通过网盘分享的文件：RocektMQ文件存储，普通程序员VS架构师 链接: https://pan.baidu.com/s/1XygliIngNoKd3EoD8GVI1A 提取码: a5yk"
+    },
+    {
+      "slug": "cfe2oxb8s83au3g5",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/cfe2oxb8s83au3g5",
+      "toc_path": [
+        "高频面试问题",
+        "楼兰老师",
+        "5亿用户数据，面试官的‘死亡追问’你敢接吗？",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1165,
+      "word_count": 56,
+      "updated_at": "2025-09-25T14:36:22.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "resume-project",
+        "netty-network",
+        "mysql-sharding",
+        "os-linux"
+      ],
+      "question_type": "collection",
+      "question_type_name": "面经题库合集",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "面试官",
+        "分库分表",
+        "文件"
+      ],
+      "summary": "📎海量用户场景下如何分库分表.html通过网盘分享的文件：5亿用户数据，面试官的‘死亡追问’你敢接吗？链接: https://pan.baidu.com/s/1zSYrbjbg33K1mObiUYLwTQ 提取码: s7pq",
+      "excerpt": "通过网盘分享的文件：5亿用户数据，面试官的‘死亡追问’你敢接吗？ 链接: https://pan.baidu.com/s/1zSYrbjbg33K1mObiUYLwTQ 提取码: s7pq"
+    },
+    {
+      "slug": "wu5koqny8stygkgw",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/wu5koqny8stygkgw",
+      "toc_path": [
+        "高频面试问题",
+        "楼兰老师",
+        "用户密码，连系统都不能知道",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1167,
+      "word_count": 46,
+      "updated_at": "2025-09-24T12:28:33.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "os-linux",
+        "ai-llm"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "文件"
+      ],
+      "summary": "通过网盘分享的文件：用户密码，连系统都不能知道链接: https://pan.baidu.com/s/1wuTc9AtwKJonRUNxk0pxRQ 提取码: zszq📎为何 QQ 忘记密码只能重置？.html",
+      "excerpt": "通过网盘分享的文件：用户密码，连系统都不能知道 链接: https://pan.baidu.com/s/1wuTc9AtwKJonRUNxk0pxRQ 提取码: zszq ​"
+    },
+    {
+      "slug": "hbeg10erpg4czdp0",
+      "title": "讲讲你对计算机网络安全的理解",
+      "url": "/tulingzhouyu/db22bv/hbeg10erpg4czdp0",
+      "toc_path": [
+        "网络安全",
+        "讲讲你对计算机网络安全的理解"
+      ],
+      "toc_level": 1,
+      "toc_index": 1363,
+      "word_count": 470,
+      "updated_at": "2023-09-03T06:52:18.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "security-auth"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "网络",
+        "安全"
+      ],
+      "summary": "计算机网络安全是指保护计算机网络和其相关设备、数据和服务免受未经授权的访问、使用、披露、破坏、干扰或篡改的一系列措施和技术。它的目标是防止恶意入侵、数据泄露、服务中断和其他网络威胁，以确保网络的完整性、可用性和保密性。计算机网络安全对组织和个人至关重要的原因如下：保护机密信息：组织和个人在计算...",
+      "excerpt": "计算机网络安全是指保护计算机网络和其相关设备、数据和服务免受未经授权的访问、使用、披露、破坏、干扰或篡改的一系列措施和技术。 它的目标是防止恶意入侵、数据泄露、服务中断和其他网络威胁，以确保网络的完整性、可用性和保密性。 计算机网络安全对组织和个人至关重要的原因如下： 保护机密信息： 组织和个人在计算机网络上存储和传输大量的敏感信息，包括商业机密、个人隐私、财务数据等。网络安全的保护措施可以防止这些信息被未经授权的人员获取和利用。 维护业务连续性： 计算机网络是现代组织正常运行的基础设施之一。网络攻击和安全漏洞可能导致服务中断、系统崩溃以及数据丢失，影响组织的正常运营。通过确保网络的可用性和稳定性，网络安全有助于保持业务连续性。 防止经济损失： 网络攻击和数据泄露可能导致巨大的经济损失，包括财务损失、声誉受损和法律诉讼等。网络安全措施可以减少这些潜在的风险，并帮助组织避免经济上的损失。 防范个人隐私侵犯： 个人在互联网上的活动越来越多，网络安全的保护直接关系到个人隐私的安全。网络安全的重要性在于保护个人敏感信息、个人身份和个人隐私免受入侵和滥用。"
+    },
+    {
+      "slug": "hcwub7hb5hh14xdm",
+      "title": "什么是网络隐私",
+      "url": "/tulingzhouyu/db22bv/hcwub7hb5hh14xdm",
+      "toc_path": [
+        "网络安全",
+        "什么是网络隐私"
+      ],
+      "toc_level": 1,
+      "toc_index": 1364,
+      "word_count": 268,
+      "updated_at": "2023-09-03T08:57:06.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "security-auth",
+        "os-linux"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "网络",
+        "安全",
+        "加密",
+        "操作系统"
+      ],
+      "summary": "网络隐私是指个人在使用互联网和网络服务时的个人身份、个人信息和在线活动的保护权利。它包括个人身份和个人信息的保护，数据安全的保障，公开信息的选择权和跟踪监视的防范。保护网络隐私的方法包括使用安全密码和身份验证，更新软件和操作系统，小心处理不信任的链接和附件，使用加密连接等。法律和政策也在积极发...",
+      "excerpt": "网络隐私是指个人在使用互联网和网络服务时的 个人身份 、 个人信息 和 在线活动 的保护权利。 它包括 个人身份 和 个人信息的保护 ， 数据安全的保障 ， 公开信息的选择权和跟踪监视的防范 。 保护网络隐私的方法包括使用 安全密码 和 身份验证 ， 更新软件和操作系统 ，小心处理不信任的链接和附件，使用加密连接等。法律和政策也在积极发展，以确保个人信息和数据隐私的保护。 保护网络隐私对于个人和组织来说至关重要，因为它涉及个人隐私权保护、个人信息保护、商业机密保护、数据安全保护以及信任和声誉的维护。通过保护网络隐私，我们可以确保个人的权益得到尊重，并保护组织的商业利益和声誉。"
+    },
+    {
+      "slug": "zmpnsmwpg2y2asnz",
+      "title": "什么是IDS",
+      "url": "/tulingzhouyu/db22bv/zmpnsmwpg2y2asnz",
+      "toc_path": [
+        "网络安全",
+        "什么是IDS"
+      ],
+      "toc_level": 1,
+      "toc_index": 1365,
+      "word_count": 389,
+      "updated_at": "2023-09-03T06:58:20.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "java-core",
+        "devops-release",
+        "os-linux",
+        "security-auth"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "网络",
+        "异常",
+        "部署",
+        "操作系统",
+        "文件",
+        "安全"
+      ],
+      "summary": "IDS是入侵检测系统的缩写。IDS是一种用于监测和识别网络中的恶意活动和入侵行为的安全设备或软件。它通过收集和分析网络流量、日志和事件数据来检测潜在的入侵行为。IDS可以发现并报警关键系统的异常行为，如未经授权的访问、漏洞利用、恶意软件等。它使用各种检测技术和方法，包括基于签名的检测、行为分析...",
+      "excerpt": "IDS是入侵检测系统的缩写。IDS是一种用于监测和识别网络中的恶意活动和入侵行为的安全设备或软件。它通过收集和分析网络流量、日志和事件数据来检测潜在的入侵行为。 IDS可以发现并报警关键系统的异常行为，如未经授权的访问、漏洞利用、恶意软件等。它使用各种检测技术和方法，包括基于签名的检测、行为分析和统计模型等，来判断网络流量是否潜在威胁。当IDS检测到异常或可疑活动时，它会生成警报或通知管理员，以便采取相应的行动。 IDS可以部署在网络中不同的位置，例如网络边界、服务器和终端设备上。根据部署位置的不同，可以将IDS分为两种主要类型：网络IDS和主机IDS。 网络IDS： 部署在网络上的特定位置，监测经过网络的流量。它主要关注网络层和传输层的数据包，检测可能的攻击、扫描和异常行为。 主机IDS： 部署在单个主机或服务器上，监测该主机上的活动和事件。它可以监测操作系统、应用程序和文件系统等层面的异常行为，以便检测潜在的入侵。"
+    },
+    {
+      "slug": "dtg510ogyqp2xkgk",
+      "title": "说说你对蠕虫的理解",
+      "url": "/tulingzhouyu/db22bv/dtg510ogyqp2xkgk",
+      "toc_path": [
+        "网络安全",
+        "说说你对蠕虫的理解"
+      ],
+      "toc_level": 1,
+      "toc_index": 1366,
+      "word_count": 363,
+      "updated_at": "2023-09-03T07:04:15.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "security-auth",
+        "os-linux"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "网络",
+        "安全",
+        "权限",
+        "操作系统"
+      ],
+      "summary": "蠕虫是一种自我复制并独立传播的恶意软件。不同于病毒需要依赖宿主程序来传播，蠕虫利用网络漏洞和弱点直接感染其他计算机或设备。一旦一个设备被感染，蠕虫会迅速且自动化地寻找其他易受攻击的目标并进行传播。蠕虫常常会导致网络拥塞、资源耗尽和服务中断等问题，对网络安全造成威胁。它们可以在无需用户干预的情况...",
+      "excerpt": "蠕虫是一种自我复制并独立传播的恶意软件。 不同于病毒需要依赖宿主程序来传播，蠕虫利用网络漏洞和弱点直接感染其他计算机或设备。一旦一个设备被感染，蠕虫会迅速且自动化地寻找其他易受攻击的目标并进行传播。 蠕虫常常会导致网络拥塞、资源耗尽和服务中断等问题，对网络安全造成威胁。它们可以在无需用户干预的情况下迅速传播，使得恶意活动扩散得更快、更广泛。 蠕虫还可以通过后门等手段开启设备的远程访问权限，这可能导致更严重的安全问题，例如数据盗取、系统瘫痪或被用于发起更大规模的攻击。 为了防范蠕虫攻击，我们应该采取一些关键的安全措施。首先，保持操作系统和应用程序的及时更新，以修补已知的漏洞。其次，使用防病毒软件和防火墙来检测和阻止蠕虫的传播。此外，定期备份重要数据，并遵循网络安全最佳实践，例如使用强密码、限制远程访问等，以减少蠕虫攻击的风险。"
+    },
+    {
+      "slug": "lr34twns9nbre87w",
+      "title": "简要解释所谓的“三明治”攻击",
+      "url": "/tulingzhouyu/db22bv/lr34twns9nbre87w",
+      "toc_path": [
+        "网络安全",
+        "简要解释所谓的“三明治”攻击"
+      ],
+      "toc_level": 1,
+      "toc_index": 1368,
+      "word_count": 561,
+      "updated_at": "2023-09-03T07:18:42.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "security-auth",
+        "netty-network",
+        "os-linux"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "HTTP",
+        "HTTPS",
+        "网络",
+        "安全",
+        "加密",
+        "操作系统"
+      ],
+      "summary": "“三明治”攻击，即中间人攻击，是一种网络安全威胁。在这种攻击中，恶意的第三方插入自己到通信的两个实体之间，以窃取敏感信息或篡改通信内容。攻击者常常通过拦截通信流量并转发到预期目的地的方式进行“三明治”攻击，使通信双方毫不知情。同时，攻击者可以监听、窃取或修改通信内容。举个例子来说明，“三明治”...",
+      "excerpt": "“三明治”攻击，即中间人攻击，是一种网络安全威胁。在这种攻击中，恶意的第三方插入自己到通信的两个实体之间，以窃取敏感信息或篡改通信内容。 攻击者常常通过拦截通信流量并转发到预期目的地的方式进行“三明治”攻击，使通信双方毫不知情。同时，攻击者可以监听、窃取或修改通信内容。 举个例子来说明，“三明治”攻击有点像你寄信给朋友，但在信件到达朋友之前，有个坏人偷走信封，读取信的内容后重新封好，并交给朋友。你和朋友都不知道信件被篡改过。 这种攻击可能会发生在公共Wi-Fi网络上，如咖啡店或机场的无线网络。攻击者可以伪装成合法的Wi-Fi访问点，吸引用户连接并控制他们的数据流量。通过这种方式，攻击者可以窃取用户的登录凭证、银行账户信息等敏感信息。 为了防范“三明治”攻击，用户可采取以下措施： 使用加密的通信协议，如HTTPS，确保数据在传输过程中被加密。 避免在公共Wi-Fi网络上发送敏感信息，尤其涉及金融或个人账户的数据。 使用可信任的虚拟私人网络建立加密隧道，以保护通信免受窃听和篡改。 注意连接的网络和访问点，选择已知和可信赖的网络供应商和访问点。 定期更新设备上的操作系统和安全补丁，修复已知漏洞。 增强密码安全性，避免使用弱密码，并启用多因素身份验证。 通过采取这些预防措施，用户可以降低受到“三明治”攻击的风险。请务必保持警惕和谨慎，确保自己的通信和个人信息的安全。"
+    },
+    {
+      "slug": "vufkrm9aaasmegow",
+      "title": "讲讲你对DoS攻击的理解",
+      "url": "/tulingzhouyu/db22bv/vufkrm9aaasmegow",
+      "toc_path": [
+        "网络安全",
+        "讲讲你对DoS攻击的理解"
+      ],
+      "toc_level": 1,
+      "toc_index": 1369,
+      "word_count": 412,
+      "updated_at": "2023-09-03T09:00:39.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "security-auth",
+        "java-core",
+        "microservices-governance",
+        "netty-network"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "TCP",
+        "网络",
+        "安全",
+        "负载均衡"
+      ],
+      "summary": "DoS（拒绝服务）攻击是一种网络攻击方法，旨在通过向目标系统或网络发送大量的请求、数据包或恶意指令，耗尽其资源，使其无法正常提供服务或导致系统崩溃。DoS攻击通常是由单个计算机或少数几个计算机发起的，攻击者通过占用目标系统的带宽、处理能力或其他关键资源，导致合法用户无法访问该系统或服务。这可能...",
+      "excerpt": "DoS（拒绝服务）攻击是一种网络攻击方法，旨在通过向目标系统或网络发送大量的请求、数据包或恶意指令，耗尽其资源，使其无法正常提供服务或导致系统崩溃。 DoS攻击通常是由单个计算机或少数几个计算机发起的，攻击者通过占用目标系统的带宽、处理能力或其他关键资源，导致合法用户无法访问该系统或服务。这可能会导致服务中断、响应时间延迟或系统崩溃，给目标系统的运营和用户带来严重影响。 DoS攻击可以采取多种方式，如TCP/IP协议栈漏洞利用、资源耗尽攻击、流量洪泛攻击等。攻击者通常会使用特定工具或编写恶意代码来实施攻击。近年来，随着物联网(IoT )的快速发展，利用未经保护的智能设备进行的DoS攻击也越来越常见，形成了所谓的IoT Botnet攻击。 为了防御DoS攻击，网络管理员可以采取一系列的安全措施，例如配置防火墙、入侵检测系统、负载均衡、流量过滤和限制，以及实施入侵防御和流量监控等解决方案。此外，及时更新和修补系统或应用程序的漏洞，加强网络安全培训和意识提高也是重要的预防措施。"
+    },
+    {
+      "slug": "wcycg8xe1krxeade",
+      "title": "什么是DDoS攻击？",
+      "url": "/tulingzhouyu/db22bv/wcycg8xe1krxeade",
+      "toc_path": [
+        "网络安全",
+        "什么是DDoS攻击？"
+      ],
+      "toc_level": 1,
+      "toc_index": 1370,
+      "word_count": 414,
+      "updated_at": "2023-09-17T11:24:58.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "security-auth",
+        "java-core",
+        "observability-troubleshooting",
+        "performance-optimization"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "网络",
+        "安全",
+        "异常",
+        "监控",
+        "性能"
+      ],
+      "summary": "DDoS攻击，全称为分布式拒绝服务攻击，是一种网络安全攻击方式。在DDoS攻击中，攻击者试图通过同时向目标系统发送大量的请求流量或资源消耗来使目标系统不可用。常见的DDoS攻击通常利用了网络上的多台被感染的计算机，这些计算机被称为“僵尸网络”或“僵尸军团”。攻击者通过控制这些僵尸计算机，将它们...",
+      "excerpt": "DDoS攻击，全称为分布式拒绝服务攻击，是一种网络安全攻击方式。在DDoS攻击中，攻击者试图通过同时向目标系统发送大量的请求流量或资源消耗来使目标系统不可用。 常见的DDoS攻击通常利用了网络上的多台被感染的计算机，这些计算机被称为“僵尸网络”或“僵尸军团”。攻击者通过控制这些僵尸计算机，将它们协调起来同时向目标系统发动攻击。这使得目标系统无法承受如此大量的请求，导致系统资源耗尽、服务不可用或响应时间极长。 DDoS攻击的目的通常是让目标系统的正常用户无法正常访问该系统，破坏其业务运行，并可能导致严重的经济损失。此外，DDoS攻击也可以用作一种干扰和破坏目标系统的手段，以牵制防御者并转移注意力。 为了应对DDoS攻击，网站或网络服务提供商可以采取以下措施： 使用专业的DDoS防护设备或服务，能够检测和过滤恶意流量。 配置网络设备，如防火墙和入侵检测系统，以及流量限制和过滤规则。 增加网络带宽，以承受更大的流量压力。 监控网络流量和系统性能，及时发现异常流量并采取应对措施。"
+    },
+    {
+      "slug": "dka9fla8qmf3o0il",
+      "title": "说说你对网络钓鱼和钓鱼网站的理解",
+      "url": "/tulingzhouyu/db22bv/dka9fla8qmf3o0il",
+      "toc_path": [
+        "网络安全",
+        "说说你对网络钓鱼和钓鱼网站的理解"
+      ],
+      "toc_level": 1,
+      "toc_index": 1371,
+      "word_count": 402,
+      "updated_at": "2023-09-03T07:35:05.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "security-auth",
+        "project-system-design",
+        "netty-network"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "HTTP",
+        "HTTPS",
+        "网络",
+        "安全",
+        "支付"
+      ],
+      "summary": "网络钓鱼是一种网络欺诈手段，攻击者伪装成可信赖实体，如银行、支付机构等，通过电子邮件、短信等方式引诱用户提供敏感信息。钓鱼网站是仿冒合法网站，外观相似，用于获取用户账号、密码等敏感信息。钓鱼攻击利用社会工程学，以用户的信任和粗心马虎为基础。攻击者伪装成真实实体，诱导用户点击链接、填写表单或下载...",
+      "excerpt": "网络钓鱼是一种网络欺诈手段，攻击者伪装成可信赖实体，如银行、支付机构等，通过电子邮件、短信等方式引诱用户提供敏感信息。钓鱼网站是仿冒合法网站，外观相似，用于获取用户账号、密码等敏感信息。 钓鱼攻击利用社会工程学，以用户的信任和粗心马虎为基础。攻击者伪装成真实实体，诱导用户点击链接、填写表单或下载附件，进入钓鱼网站输入敏感信息。由于钓鱼网站设计巧妙，很难被察觉，攻击成功率较高。 用户应保持高度警惕，尤其对来自未知发件人或怀疑消息保持警觉。验证发送者身份，通过双重检查发件人邮箱地址或其他渠道确认身份。不轻易点击可疑链接，尤其是通过电子邮件或社交媒体消息。直接输入网址访问敏感网站，关注安全标志如HTTPS、SSL证书。 同时，定期更新安全软件，包括防火墙、反病毒软件和反钓鱼工具。提高网络安全意识，培养良好网络安全习惯，避免过于依赖电子邮件和不寻常来源的信息。通过这些措施，可以减少受到钓鱼攻击的风险，保护个人信息安全。"
+    },
+    {
+      "slug": "tq6cuuc5egfph9sm",
+      "title": "什么是网络扫描和渗透测试",
+      "url": "/tulingzhouyu/db22bv/tq6cuuc5egfph9sm",
+      "toc_path": [
+        "网络安全",
+        "什么是网络扫描和渗透测试"
+      ],
+      "toc_level": 1,
+      "toc_index": 1377,
+      "word_count": 324,
+      "updated_at": "2023-09-03T08:34:49.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "security-auth"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "网络",
+        "安全",
+        "权限"
+      ],
+      "summary": "网络扫描和渗透测试是网络安全领域中的两个重要概念，它们都旨在评估网络和系统的安全性。网络扫描是通过使用专门的扫描工具，对目标网络进行主机和端口扫描，以发现漏洞和安全弱点，评估网络的安全性。渗透测试是一种授权的攻击模拟行为，旨在评估系统和网络的安全性。渗透测试包括信息收集、脆弱性分析、渗透攻击、...",
+      "excerpt": "网络扫描和渗透测试是网络安全领域中的两个重要概念，它们都旨在评估网络和系统的安全性。 网络扫描是通过使用专门的扫描工具，对目标网络进行主机和端口扫描，以发现漏洞和安全弱点，评估网络的安全性。 渗透测试是一种授权的攻击模拟行为，旨在评估系统和网络的安全性。 渗透测试包括 信息收集 、 脆弱性分析 、 渗透攻击 、 权限提升 和 结果报告 等步骤。其目的是通过模拟真实黑客攻击的技术和方法，发现目标系统的潜在漏洞和弱点，并提供改进建议和修复建议，以强化系统的安全性。 需要注意的是，网络扫描和渗透测试必须在合法和授权的范围内进行，以保证不会对目标系统造成非法侵害或损害。 对于个人用户，可以采取适当的安全防范措施，例如使用安全软件、定期更新系统和软件补丁、避免点击未知来源链接等。"
+    },
+    {
+      "slug": "zctu2dzi2mdimegg",
+      "title": "在自己的电脑上搭建我的世界Java版服务器",
+      "url": "/tulingzhouyu/db22bv/zctu2dzi2mdimegg",
+      "toc_path": [
+        "AI大模型",
+        "在自己的电脑上搭建我的世界Java版服务器"
+      ],
+      "toc_level": 1,
+      "toc_index": 1519,
+      "word_count": 826,
+      "updated_at": "2023-10-06T11:48:41.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "java-core",
+        "os-linux",
+        "performance-optimization"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "Java",
+        "文件"
+      ],
+      "summary": "很多朋友，喜欢玩Minecraft，也希望搭建一个服务器，用于和小伙伴联机；并且，拥有服务器后，即使所有玩家都下线，“世界”依旧在运行，玩家可以随时参与其中，说不定一上线，你的好友已经悄悄给你早了一个世界。本次教程将在Windows本地搭建Java版的MC服务器，并用cpolar内网穿透突破局...",
+      "excerpt": "很多朋友，喜欢玩Minecraft，也希望搭建一个服务器，用于和小伙伴联机； 并且，拥有服务器后，即使所有玩家都下线，“世界”依旧在运行，玩家可以随时参与其中，说不定一上线，你的好友已经悄悄给你早了一个世界。 本次教程将在Windows本地搭建Java版的MC服务器，并用cpolar内网穿透突破局域网限制，实现在公网环境下跟小伙伴远程联机，超简单配置，无需公网IP，也不用设置路由器。 如果你的服务器已经搭建成功，并可以正常在局域网内联机，可以直接跳到第三步，在本地配置cpolar内网穿透，创建隧道映射25565端口，实现异地远程联机。 配置服务端 下载MC服务端，最新版的服务器端可以官网下载 Minecraft服务器下载地址： Minecraft 官方版本：https://www.minecraft.net/zh-hans/download/server Minecraft Forge版本：http://files.minecraftforge.net/ Minecraft Spigot版本：https://www.spigotmc.org/ Minecraft Farbic：http://fabricmc.net/ 城通网盘镜像站：https://url57.ctfile.com/d/26158157-38513858-513480；访问密码：6146 博客镜像站：https://tool.mintimate.cn/data/Minecraft_Mirror ​ 运行服务端 第一次启动以后 ，你会看到文件夹有多出来一些文件，找到eula.txt这个文件并打开，将eula=false改为eula=true，然后保存。 打开 server.properties 文件，做如下改动： online-mode=false （关闭正版验证），其他改动可以按照自己的喜好。至此服务器已经配置完毕，服务器的设置详情都在 server.properties 。 再次执行服务端启动命令即可 。 客户端下载 我个人推荐用官方启动器或者HMCL启动器；其他第三方启动器，不好说，如果服务器建好，端口也放行，但是连接不上，建议用HMCL或者官方启动器。 下载地址 官方启动器： https://minecraft.net/ HMCL启动器下载： https://hmcl.huangyuhui.net/download 官方和HMCL的公网有可能进不去，为提供镜像下载： https://url57.ctfile.com/d/26158157-39233167-4af7b9 （访问密码：6146） 常见问题 登入失败:无效会话(请尝试重启游戏及启动器) 原因很简单：你并没有用Minecraft的正版账号登录。解决方法很简单：正版账号登录游戏或服务器关闭正版账号验证：将 online-mode"
+    },
+    {
+      "slug": "vz99ihzxosq0sstz",
+      "title": "进阶网络通信",
+      "url": "/tulingzhouyu/db22bv/vz99ihzxosq0sstz",
+      "toc_path": [
+        "GoLang",
+        "进阶网络通信"
+      ],
+      "toc_level": 1,
+      "toc_index": 1523,
+      "word_count": 6167,
+      "updated_at": "2025-06-18T08:41:38.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "java-core",
+        "resume-project",
+        "os-linux"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "junior",
+        "campus"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "初级/1-3年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "TCP",
+        "UDP",
+        "HTTP",
+        "三次握手",
+        "四次挥手",
+        "网络",
+        "BIO",
+        "NIO",
+        "IO",
+        "项目",
+        "面试官",
+        "CRUD"
+      ],
+      "summary": "课程介绍通信的本质：TCP/IP通信原理：网络分层TCP如何确保可靠性传递：三次握手四次挥手BIO/NIO： ServerSocket Socket 多路复用 （原理源码详细讲解Epoll）\t\t标准库net包的使用Go语言标准库里提供的 net 包，支持基于 IP 层、TCP/UDP 层及更高...",
+      "excerpt": "课程介绍 通信的本质： TCP/IP通信原理：网络分层 TCP如何确保可靠性传递：三次握手四次挥手 BIO/NIO： ServerSocket Socket 多路复用 （原理源码详细讲解Epoll） 标准库net包的使用 Go语言标准库里提供的 net 包，支持基于 IP 层、TCP/UDP 层及更高层面（如 HTTP、FTP、SMTP）的网络操作，其中用于 IP 层的称为 Raw Socket。 重要函数：net.Listen() 服务端的监听 。 net.Dial()客户端的处理 代码实现： client端 通过标准流 数据传递 客户端传递数据给服务端 关键方法：os.stdin bufio. conn.Write conn.Read 服务端读取 客户端数据 多行写 和 读 bye标志退出 Web开启 net包装类 net/http 主要方法 http.ListenAndServe() http.HandleFunc() 代码实现： 原理图 多个handler 发起Get请求 代码实现： 传递参数 代码实现： Json格式处理 代码实现： 发起Post请求 代码实现： Golang标准库 template templates定义了数据驱动的文本输出，生产html文件的模板在 html/template 包里面。 模板使用插值语法 {{.var}} 也可以使用一些流程控制，列如 if else for range等 主要方法： template.New(&quot;别名&quot;).Parse(&quot;解析的模板&quot;) template.Execute() 自定义模板代码实现： HTML模板 1.定义html页面 2.handle中解析模板文件 (文件目录有问题 路径访问不到问题最好新项目go mod) 代码实现： 注意1 空格 {{ 1 }} {{- 1 -}} -》 1 注意2 注释 /* xxoo */ 注意3 pipeline多连接传递 unix 管道 |前面的命令将运算的结果传递给下一名的最后一个位置 比如下面都会输出 shenzhuan {{ &quot;shenzhuan&quot; }} {{printf &quot;%q&quot; &quot;shenzhuan&quot;}} {{&quot;shenzhuan&quot; | printf &quot;%q&quot; }} {{&quot;zhuan&quot; | printf &quot;%s%s&quot; &quot;shen&quot; |printf &quot;%q&quot;}} {{&quot;shenzhuan&quot; | printf &quot;%s&quot; | printf &quot;%q&quot;}} 注意4 变量的使用 $va"
+    },
+    {
+      "slug": "ihds8qgrl1h2img0",
+      "title": "面试题合集",
+      "url": "/tulingzhouyu/db22bv/ihds8qgrl1h2img0",
+      "toc_path": [
+        "运维&运开",
+        "面试题合集"
+      ],
+      "toc_level": 1,
+      "toc_index": 1525,
+      "word_count": 13602,
+      "updated_at": "2025-05-25T11:45:19.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "os-linux",
+        "observability-troubleshooting",
+        "docker-k8s",
+        "performance-optimization"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "campus",
+        "middle"
+      ],
+      "level_names": [
+        "校招/应届生",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "TCP",
+        "UDP",
+        "HTTP",
+        "DNS",
+        "三次握手",
+        "网络",
+        "操作系统",
+        "Linux",
+        "内存",
+        "文件",
+        "排查",
+        "故障",
+        "Docker",
+        "性能"
+      ],
+      "summary": "写在开篇首先运维可翻看前面的章节比如：操作系统，网络专题，网络安全，Docker和K8S之类。毕竟作为开发，运维的事情多多少少要做一些，而运维主要是负责保障系统、软件等的稳定运行和高效管理。工作内容包括系统安装部署、配置管理、性能监控、故障排查、安全维护、备份恢复、容量规划等。运维和运维开发目...",
+      "excerpt": "写在开篇 首先运维可翻看前面的章节比如：操作系统，网络专题，网络安全，Docker和K8S之类。毕竟作为开发，运维的事情多多少少要做一些，而运维 主要是负责保障系统、软件等的稳定运行和高效管理。工作内容包括系统安装部署、配置管理、性能监控、故障排查、安全维护、备份恢复、容量规划等。 运维和运维开发目前来说对学历要求没后端那么高，基本薪资也还行，尤其是会云原生那一套的情况下，通常只有中大厂才需要。不过，天花板会相对低些，哪怕能定制云原生那一套甚至二开。 ​ 基础知识 运维是什么？主要工作内容有哪些？ 运维（Operations）主要是负责保障系统、软件等的稳定运行和高效管理。工作内容包括系统安装部署、配置管理、性能监控、故障排查、安全维护、备份恢复、容量规划等。 解释一下常见的运维指标（CPU 使用率、内存使用率、磁盘 I/O、网络带宽等）的含义以及它们的正常范围大概是什么？ CPU 使用率 ：表示系统中中央处理器资源被使用的程度。正常范围因系统负载类型而异，一般服务器在日常运行中平均使用率低于 80% 较为理想，如果持续高于该值可能导致系统响应变慢、任务积压。 内存使用率 ：反映内存被占用的情况。通常操作系统的内存管理会预留一部分空间用于缓存等，正常情况下内存使用率在 50% - 80% 左右比较合理，如果接近 100% 可能会引发频繁的虚拟内存交换（swap），影响系统性能。 磁盘 I/O ：衡量磁盘读写操作的性能指标。包括 IOPS（每秒输入 / 输出操作数）等。不同存储设备和应用场景下正常范围差异较大，例如对于普通的机械硬盘，顺序读写速度可能在几十 MB/s 到几百 MB/s，而 IOPS 可能达到几百到上千；对于 SSD（固态硬盘），顺序读写速度可达到数千 MB/s，IOPS 甚至上万。如果磁盘 I/O 长时间处于高负载，如 I/O 等待时间过长，会导致应用程序响应迟缓。 网络带宽 ：指单位时间内网络能够传输的数据量，通常以bps（比特每秒）为单位。正常范围取决于网络连接的带宽大小和业务需求。例如，企业内部办公网络可能规划为 100Mbps - 1Gbps，只要实际数据流量不超过带宽上限就能正常工作，但如果带宽被耗尽，会出现网络拥塞、数据传输延迟等问题。 常见的操作系统有哪些？它们在运维场景中的特点与应用是什么？ Windows Server ：界面友好，易于管理，集成众多服务如 Active Directory 域服务、DNS、DHCP 等，在企业内部办公环境、小型服务器部署中广泛应用，适合对图形化操作和兼容性要求较高的场景。 Linux（如 CentOS、Ubuntu 等） ：开源免费，稳定性高，安全性强，资源占用相对较低，灵活的命令行操作和丰富的软件生态，在服务器架设（如 Web 服务器、数据库服务器）、云平台、大型数据中心等领域占据主导地位。"
+    },
+    {
+      "slug": "tqmc2kyk46zhmug0",
+      "title": "一线互联网Java面试核心点(80万字)",
+      "url": "/tulingzhouyu/db22bv/tqmc2kyk46zhmug0",
+      "toc_path": [],
+      "toc_level": null,
+      "toc_index": null,
+      "word_count": 21,
+      "updated_at": "2024-04-10T09:15:32.000Z",
+      "primary_category": "computer-network",
+      "primary_category_name": "计算机网络",
+      "related_categories": [
+        "computer-network",
+        "netty-network",
+        "java-core"
+      ],
+      "question_type": "other",
+      "question_type_name": "其他问题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "Java"
+      ],
+      "summary": "八十万字面试宝典访问地址：https://www.yuque.com/tulingzhouyu/db22bv访问密码见下图",
+      "excerpt": "八十万字面试宝典访问地址： https://www.yuque.com/tulingzhouyu/db22bv 访问 密码见下图"
+    }
+  ]
+}

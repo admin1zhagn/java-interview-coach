@@ -1,0 +1,2146 @@
+{
+  "id": "os-linux",
+  "name": "操作系统与Linux",
+  "aliases": [
+    "操作系统",
+    "Linux",
+    "进程",
+    "线程",
+    "内存",
+    "文件",
+    "上下文切换"
+  ],
+  "count": 50,
+  "total_word_count": 83323,
+  "articles": [
+    {
+      "slug": "gspgyeys4ozne4uk",
+      "title": "☯️ 达梦数据库安装使用教程",
+      "url": "/tulingzhouyu/db22bv/gspgyeys4ozne4uk",
+      "toc_path": [
+        "系列篇",
+        "☯️ 达梦数据库安装使用教程"
+      ],
+      "toc_level": 1,
+      "toc_index": 113,
+      "word_count": 1779,
+      "updated_at": "2025-05-06T12:15:41.000Z",
+      "primary_category": "os-linux",
+      "primary_category_name": "操作系统与Linux",
+      "related_categories": [
+        "os-linux",
+        "ai-llm",
+        "observability-troubleshooting",
+        "devops-release"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "操作系统",
+        "Linux",
+        "文件",
+        "AI",
+        "日志",
+        "部署"
+      ],
+      "summary": "1.前言随着大环境的发展，很多公司开始逐步迁移使用国产数据库代替原有的数据库，为了让大家更加方便的学习，本篇文章给大家带来国产数据库-达梦的安装教程2.环境准备达梦数据库支持Windows、Linux和Unix操作系统，我们学习的话在本机使用VM安装一个Centos，然后去达梦官网下载适用自己...",
+      "excerpt": "1.前言 随着大环境的发展，很多公司开始逐步迁移使用国产数据库代替原有的数据库，为了让大家更加方便的学习，本篇文章给大家带来国产数据库-达梦的安装教程 2.环境准备 达梦数据库支持Windows、Linux和Unix操作系统，我们学习的话在本机使用VM安装一个Centos，然后 去 达梦官网下载 适用自己平台的安装包。 达梦正式版需要授权，自学选择试用版就可以了。本教程使用的是VM安装的centos7.2。所以选择X86架构、Centos7的安装包。 3.安装 为了更好的管理用户与资源消耗，我们可以添加一个用户组专门处理达梦数据库。 3.1.添加用户 3.2.切换到dmdba账户，查看限制信息，使用root账户修改dmdba用户资源限制 验证是否修改成功： 3.3.统一管理应用 3.4.关闭防火墙 3.5.安装依赖包 检查依赖包是否正常，缺少哪个依赖就安装哪个即可。注意需要使用root用户才能安装 安装后重新检查： 3.6.上传安装包，解压安装包并挂载镜像文件 切换到dmdba用户 ，然后进入mnt目录查看文件；调用bin文件开始安装，如果没有安装图形化软件将出现以下提示 3.7.本机安装Xmanager 3.8.图形化安装 3.8.1.安装完后Xmanager，linux指定本机端口，然后图形化安装 3.8.2.启用图形化之后，使用默认配置即可，一直下一步 3.8.3.学习使用，不用填写key，直接下一步 3.8.4.注意安装到对应的自定义目录，并且安装文件夹需要是空的。 3.8.5.安装完成之后，一定不要直接点OK，认真观看提示。 3.8.6.到这一步之后，先复制软件提供的命令，然后使用root账号执行 3.8.7.点击OK-->finish 3.8.8.点击init初始化数据库，出现以 ​ 下界面，开始创建数据库，又或者是使用tool目录下的工具初始化数据库 3.9.初始化数据库 3.9.1.观察下达梦数据库的安装目录 3.9.2.使用命令创建数据库 3.9.3.需要修改下数据库对应文件所在位置 3.9.4.下一步之后，可以修改数据名称与实例名 3.9.5.设置统一密码，我这边设置：dameng123 3.9.6.选择提供完整示例demo 3.9.7.点击finish完成，然后开始创建，同样注意提示，用root账号执行相应命令 3.9.8.执行完成之后，可以用以下命令检查状态，没有问题点击OK，然后finish 3.9.9.再次执行命令，OK-->finish 3.9.10.进入data目录查看文件 3.10.使用tool目录下的 disql 登录数据库，至此图形化安装完成 3.11.删除数据库 删除数据库，包括删除数据库的数据文件、日志文件、控制文件和初始化参数文件。 为了保证删除数据库成功，必须保证dmserver已关闭。可以使用数据库配置工具来删"
+    },
+    {
+      "slug": "vecuyu37dugscmio",
+      "title": "1G内存，如何快速判某个无符号整数是否在40亿数据中",
+      "url": "/tulingzhouyu/db22bv/vecuyu37dugscmio",
+      "toc_path": [
+        "综合篇",
+        "1G内存，如何快速判某个无符号整数是否在40亿数据中"
+      ],
+      "toc_level": 1,
+      "toc_index": 133,
+      "word_count": 3750,
+      "updated_at": "2025-05-13T14:24:47.000Z",
+      "primary_category": "os-linux",
+      "primary_category_name": "操作系统与Linux",
+      "related_categories": [
+        "os-linux",
+        "project-system-design",
+        "java-core",
+        "mysql-sharding",
+        "algorithm"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "内存",
+        "文件",
+        "方案",
+        "Java",
+        "分片",
+        "数组"
+      ],
+      "summary": "方案一：流式读取实时比对核心思想分块读取文件，实时遍历比对目标值。实现步骤分块读取：使用 BufferedInputStream 设置512MB缓冲区。实时比对：遍历当前内存块中的所有整数。示例代码import java.io.*;  public class StreamChecker { ...",
+      "excerpt": "方案一：流式读取实时比对 核心思想 分块读取文件，实时遍历比对目标值。 实现步骤 分块读取 ：使用 BufferedInputStream 设置512MB缓冲区。 实时比对 ：遍历当前内存块中的所有整数。 示例代码 计算过程 数据总量 ：40亿个整数 × 4字节 = 16GB。 读取时间 ： 机械硬盘（100MB/s）：16GB / 100MB/s ≈ 163秒 ≈ 2.7分钟。 SSD（500MB/s）：16GB / 500MB/s ≈ 32秒。 优缺点 优点 缺点 1. 无需预处理，零额外内存占用 1. 单次查询时间极长（2分钟以上） 2. 实现简单 2. 多次查询需重复全量读取文件 方案二：位图 核心思想 每个整数直接映射到512MB位图中的二进制位。 内存计算 位图大小 ： 2 32 位 = 8 2 32 字节 = 536 , 870 , 912 字节 ≈ 512 MB 覆盖范围 ：所有32位整数（0 ≤ x < 4,294,967,296）。 示例代码 优缺点 优点 缺点 1. 查询时间 O ( 1 ) ，零误判 1. 仅支持32位整数（最大42.9亿） 2. 内存固定（512MB） 2. 无法处理超范围数据 扩展点： 位图为何无法处理超出范围的数据？ 1. 位图的内存分配与整数范围 (1) 位图设计原理 位图大小 ：位图需要覆盖所有可能的整数取值。 对于 32位无符号整数 ，取值范围为 0 ≤ x < 2 32 （即0到4,294,967,295）。 所需内存计算： 映射规则 ： 每个整数 x 直接映射到位图中的第 x 个二进制位，存在则置1，否则为0。 (2) 超范围数据的处理问题 如果输入的整数超过32位（例如64位整数），位图方案将面临以下问题： 问题 原因 内存爆炸性增长 64位整数范围是 0 ≤ x < 2 64 ，位图需 2 64 位 ≈ 2 EB （远超1G内存限制）。 索引计算错误 在位图代码中，索引计算基于32位逻辑，高位数据会被截断或溢出，导致错误映射。 2. Java代码示例分析 (1) 代码逻辑 (2) 超范围数据的崩溃场景 假设输入整数为64位的 x = 5,000,000,000 （超过32位最大值4,294,967,295）： 索引计算溢出： Java中 int 类型为32位有符号整数，当 num 超过 231−1 时，计算结果可能为负值或错误值。 数组越界： 若强行用 long 存储 num ，但 index 仍为 int 类型： 此时 index = 5,000,000,000 / 8 = 625,000,000 ，但 int 最大正值为 2 31 − 1 = 2 , 147 , 483 , 647 ，未溢出。 致命问题 ：位图仅覆盖32位整数（0到4.29亿），而 num=50亿 超出范围，但代码仍会错误地将其"
+    },
+    {
+      "slug": "dzx7r7rgk290gcxb",
+      "title": "给定100亿个int整数，给你1G内存，设计算法快速找出出现次数不超过2次的整数？",
+      "url": "/tulingzhouyu/db22bv/dzx7r7rgk290gcxb",
+      "toc_path": [
+        "综合篇",
+        "给定100亿个int整数，给你1G内存，设计算法快速找出出现次数不超过2次的整数？"
+      ],
+      "toc_level": 1,
+      "toc_index": 134,
+      "word_count": 4970,
+      "updated_at": "2025-10-09T05:32:21.000Z",
+      "primary_category": "os-linux",
+      "primary_category_name": "操作系统与Linux",
+      "related_categories": [
+        "os-linux",
+        "algorithm",
+        "java-collections",
+        "resume-project",
+        "project-system-design"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "操作系统",
+        "内存",
+        "文件",
+        "算法",
+        "数组",
+        "排序",
+        "HashMap",
+        "面试官",
+        "系统设计",
+        "方案"
+      ],
+      "summary": "有小伙伴去字节面试，遇到了这么一道算法题。面试官：给定100亿个int整数，给你1G内存，设计算法快速找出出现次数不超过2次的整数？ 小伙伴支支吾吾说了半天，面试官不太满意，面试挂了。这是一个非常经典的面试题，它看似是在考察算法，但实际上背后在考察你处理海量数据（Big Data）的系统设计思...",
+      "excerpt": "有小伙伴去字节面试，遇到了这么一道算法题。 面试官： 给定100亿个int整数，给你1G内存，设计算法快速找出出现次数不超过2次的整数？ 小伙伴支支吾吾说了半天，面试官不太满意，面试挂了。 这是一个非常经典的面试题，它看似是在考察算法，但实际上背后在考察你处理 海量数据（Big Data） 的系统设计思维和工程能力，特别是当数据无法一次性装入内存时的处理策略。 面试官问这个问题，想听到的绝对不是一个简单的循环或者一个普通的哈希表。他想考察你以下几点： 约束意识 ：你是否立刻意识到“100亿个整数”和“1G内存”是核心矛盾？ 估算能力 ：你能否快速计算出100亿个整数需要多大存储，1G内存能存下多少数据？ 工程方法 ：当内存不足时，你是否知道业界通用的处理方法（如分治、哈希分桶、外部排序等）？ 算法权衡 ：你是否能想到并比较不同方案的优劣（例如 I/O 次数、空间复杂度、实现复杂度）？ 下面我将提供两种核心解法，从“通用工程解法”到“极致空间优化解法”，你可以像剥洋葱一样层层深入地回答。 解法一：哈希分桶 (Hash Partitioning) - 通用大数据解法 这是最经典、最通用的处理方式，可以应对各种类似的海量数据问题。 适合所有 “ 海量数据 + 小内存 ” 场景，是面试中 “保底且通用” 的思路，核心逻辑是 “ 分而治之 ”。 第一步：数据估算与分桶策略 计算总数据量 ：一个 int 整数通常是4字节。100亿个整数的总大小为： 100 * 10^8 * 4 bytes = 40 * 10^9 bytes = 40 GB 计算内存限制 ：我们有1GB内存。为了安全起见（需要留出空间给哈希表结构本身、操作系统开销等），我们设定每个小文件的处理规模为500MB。 确定分桶数量 ：需要的桶（临时小文件）数量为： 40 GB / 500 MB = 40 * 1024 MB / 500 MB ≈ 82 为了方便哈希取模，我们可以选择一个比82大的2的幂次方，比如 128个桶。 第二步：算法流程 整个过程分为两个主要阶段： 分桶 (Map) 和 独立统计 (Reduce) 。 【分桶阶段 - Map】 在磁盘上创建128个临时文件，命名为 bucket_0.tmp 到 bucket_127.tmp 。 顺序读取40GB的源文件（一次只读一小块到内存缓冲区）。 对每一个读到的整数 num ，计算其哈希值并取模： index = hash(num) % 128 。 将该整数 num 追加写入到对应的 bucket_{index}.tmp 文件中。 核心保障 ：通过哈希分桶，我们保证了 所有相同的整数必然会进入到同一个临时文件中 。 【统计阶段 - Reduce】 独立处理 ：现在我们有了128个大小约500MB的小文件。我们可以依次对每个文件进行处理。 内存计数 ："
+    },
+    {
+      "slug": "qd7qptxemek4ra6u",
+      "title": "Java五种文件拷贝方式",
+      "url": "/tulingzhouyu/db22bv/qd7qptxemek4ra6u",
+      "toc_path": [
+        "Java基础",
+        "Java五种文件拷贝方式"
+      ],
+      "toc_level": 1,
+      "toc_index": 171,
+      "word_count": 756,
+      "updated_at": "2025-03-02T09:09:01.000Z",
+      "primary_category": "os-linux",
+      "primary_category_name": "操作系统与Linux",
+      "related_categories": [
+        "os-linux",
+        "java-core",
+        "performance-optimization",
+        "netty-network",
+        "security-auth"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "内存",
+        "文件",
+        "Java",
+        "IO",
+        "性能",
+        "优化",
+        "NIO",
+        "加密"
+      ],
+      "summary": "在 Java 中，文件拷贝主要有以下几种方式，不同场景下效率差异显著。以下从实现方式、效率对比和适用场景三方面详细解析：一、文件拷贝的 5 种实现方式1. 传统字节流拷贝（FileInputStream + FileOutputStream）public static void main(St...",
+      "excerpt": "在 Java 中，文件拷贝主要有以下几种方式，不同场景下效率差异显著。以下从 实现方式 、 效率对比 和 适用场景 三方面详细解析： 一、文件拷贝的 5 种实现方式 1. 传统字节流拷贝（ FileInputStream + FileOutputStream ） 特点 ：基础方法，直接逐字节或缓冲区读写。 效率 ：最低（适合小文件）。 2. 缓冲流优化拷贝（ BufferedInputStream + BufferedOutputStream ） 特点 ：通过缓冲区减少 I/O 次数。 效率 ：比传统字节流提升 2~5 倍。 3. NIO Files.copy 方法（Java 7+） 特点 ：单行代码完成拷贝，底层自动优化。 效率 ：接近最高效（适合大多数场景）。 4. NIO FileChannel 通道拷贝 特点 ：利用通道（Channel）直接传输数据。 效率 ：大文件性能最佳（利用零拷贝技术）。 5. 内存映射文件拷贝（ MappedByteBuffer ） 特点 ：将文件映射到内存直接操作。 效率 ：适合超大文件（但实现复杂，需谨慎处理内存）。 二、效率对比（1GB 文件测试） 方法 耗时（毫秒） 适用场景 传统字节流 4500~5000 小文件（<10MB） 缓冲流 1200~1500 通用场景 Files.copy 800~1000 简单代码 + 快速开发 FileChannel.transfer 600~800 大文件（>100MB） 内存映射文件 500~700 超大文件（>1GB） 三、如何选择最高效方式？ 小文件（<10MB） 直接使用 Files.copy ，代码简洁且性能足够。 大文件（100MB~1GB） 优先选择 FileChannel.transferTo() ，利用零拷贝减少内核态与用户态数据复制。 超大文件（>1GB） 用内存映射文件（ MappedByteBuffer ），但需注意： 避免频繁映射/释放内存（开销大）。 处理内存溢出风险（ OutOfMemoryError ）。 通用场景 Files.copy 或缓冲流，平衡代码可读性与性能。 四、终极建议 优先使用 Files.copy ：Java 7+ 自带优化，简单高效。 大文件必用 FileChannel ：性能碾压传统流。 避免手动逐字节读写 ：除非处理特殊格式（如加密流）。"
+    },
+    {
+      "slug": "zavyny1zab3iozkb",
+      "title": "Java中的基本数据类型有哪些？它们的大小是多少？",
+      "url": "/tulingzhouyu/db22bv/zavyny1zab3iozkb",
+      "toc_path": [
+        "Java基础",
+        "Java中的基本数据类型有哪些？它们的大小是多少？"
+      ],
+      "toc_level": 1,
+      "toc_index": 189,
+      "word_count": 269,
+      "updated_at": "2023-09-04T11:35:18.000Z",
+      "primary_category": "os-linux",
+      "primary_category_name": "操作系统与Linux",
+      "related_categories": [
+        "os-linux",
+        "java-core",
+        "performance-optimization"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "内存",
+        "Java"
+      ],
+      "summary": "在Java中，基本数据类型有以下几种：整数类型：byte：1字节，在内存中范围为-128到127short：2字节，在内存中范围为-32768到32767int：4字节，在内存中范围为约-21亿到21亿long：8字节，在内存中范围为约-922亿亿到922亿亿浮点数类型：float：4字节，在...",
+      "excerpt": "在Java中，基本数据类型有以下几种： 整数类型： byte：1字节，在内存中范围为-128到127 short：2字节，在内存中范围为-32768到32767 int：4字节，在内存中范围为约-21亿到21亿 long：8字节，在内存中范围为约-922亿亿到922亿亿 浮点数类型： float：4字节，在内存中约范围为±3.40282347E+38F（有效位数为6-7位） double：8字节，在内存中约范围为±1.79769313486231570E+308（有效位数为15位） 字符类型： char：2字节，在内存中范围为0到65535，表示一个Unicode字符 布尔类型： boolean：1位，在内存中只能表示true或false 上述大小是Java语言规范中定义的标准大小，表示它们在内存中占用的字节数。请注意，不同的编译器和平台可能会略有差异，但通常情况下这些标准大小是适用的。"
+    },
+    {
+      "slug": "dvve4rb0xe18nqfu",
+      "title": "线程数设定成多少更合适",
+      "url": "/tulingzhouyu/db22bv/dvve4rb0xe18nqfu",
+      "toc_path": [
+        "并发编程",
+        "线程数设定成多少更合适"
+      ],
+      "toc_level": 1,
+      "toc_index": 265,
+      "word_count": 699,
+      "updated_at": "2024-08-11T11:25:32.000Z",
+      "primary_category": "os-linux",
+      "primary_category_name": "操作系统与Linux",
+      "related_categories": [
+        "os-linux",
+        "java-concurrency",
+        "observability-troubleshooting",
+        "java-thread-pool",
+        "performance-optimization"
+      ],
+      "question_type": "troubleshooting",
+      "question_type_name": "故障排查题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "线程",
+        "上下文切换",
+        "并发",
+        "监控",
+        "CPU",
+        "线程池",
+        "性能"
+      ],
+      "summary": "设定合适的线程数是设计高效并发程序的关键之一。适当的线程数取决于多个因素，包括：CPU核数：对于计算密集型任务，线程数通常与可用的CPU核心数相同。IO操作：对于I/O密集型任务，因为线程大部分时间在等待，可以使用多于核心数的线程。任务性质：任务的性质和线程上下文切换的开销也是考虑的因素。理论...",
+      "excerpt": "设定合适的线程数是设计高效并发程序的关键之一。适当的线程数取决于多个因素，包括： CPU核数 ：对于计算密集型任务，线程数通常与可用的CPU核心数相同。 IO操作 ：对于I/O密集型任务，因为线程大部分时间在等待，可以使用多于核心数的线程。 任务性质 ：任务的性质和线程上下文切换的开销也是考虑的因素。 理论指导 计算密集型任务 ：建议线程数 = CPU核心数。例如，假设有8核CPU，可以启动8个线程来充分利用所有CPU资源。 I/O密集型任务 ：建议线程数稍高于核心数，通常采用的策略是 线程数 = 核心数 * (1 + 线程等待时间/线程计算时间) 。 代码示例 以下是一个简单线程池的示例，展示如何根据CPU核心数设置线程池： 关键点 合理配置线程池 ：根据计算任务和I/O任务的比例合理配置线程池的大小可以提高应用程序的性能。 测量等待时间 ：在I/O密集型任务中，精确测量线程等待时间与计算时间的比例有助于更准确地配置线程数。 资源限制 ：注意系统的资源限制，过多的线程可能导致上下文切换的开销增加，同时消耗过多的系统资源。 负载测试 ：实际应用中，需要通过负载测试和性能监控来调整线程数，以达到最佳性能。 这种配置方法遵循了通用的指导原则，但在实践中需要根据具体的应用场景、系统配置和性能要求进行动态调整。"
+    },
+    {
+      "slug": "hga4qyehlx72yhmy",
+      "title": "说说进程和线程的区别",
+      "url": "/tulingzhouyu/db22bv/hga4qyehlx72yhmy",
+      "toc_path": [
+        "并发编程",
+        "说说进程和线程的区别"
+      ],
+      "toc_level": 1,
+      "toc_index": 268,
+      "word_count": 1158,
+      "updated_at": "2026-01-08T05:48:24.000Z",
+      "primary_category": "os-linux",
+      "primary_category_name": "操作系统与Linux",
+      "related_categories": [
+        "os-linux",
+        "java-concurrency",
+        "java-core",
+        "jvm-memory-gc",
+        "resume-project"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "操作系统",
+        "Linux",
+        "进程",
+        "线程",
+        "内存",
+        "文件",
+        "并发",
+        "锁",
+        "Java",
+        "JVM",
+        "OOM",
+        "堆"
+      ],
+      "summary": "一、 标准面试回答模版（建议背诵）面试官： 说说进程和线程的区别。Fox版标准回答：“进程和线程是操作系统中并发执行的两个核心概念，它们的根本区别在于职责不同。根本区别（定义）：进程（Process）是操作系统进行资源分配（内存、文件句柄等）的最小单位。线程（Thread）是操作系统进行CPU...",
+      "excerpt": "一、 标准面试回答模版（建议背诵） 面试官： 说说进程和线程的区别。 Fox版标准回答： “进程和线程是操作系统中并发执行的两个核心概念，它们的根本区别在于 职责不同 。 根本区别（定义） ： 进程（Process）是操作系统进行资源分配 （内存、文件句柄等）的最小单位。 线程（Thread）是操作系统进行CPU调度和执行 的最小单位。 内存空间与资源 ： 进程 之间是 完全隔离 的，每个进程都有独立的地址空间。一个进程崩溃一般不会影响其他进程。 线程 共享所属进程的堆内存（Heap）和方法区（Method Area），但每个线程拥有自己独立的 程序计数器（PC）和虚拟机栈（Stack） 。所以，一个线程OOM或野指针崩溃，往往会导致整个进程挂掉。 开销与性能 ： 进程 的创建、销毁和切换（Context Switch）开销非常大，因为涉及到页表的切换和CPU缓存的失效。 线程 的切换开销小得多，只需要保存和恢复寄存器上下文，不涉及内存地址空间的切换。 通信方式 ： 进程间通信（IPC） 比较麻烦，需要通过管道、消息队列、共享内存等机制。 线程间通信 非常方便，直接通过读写共享变量（配合锁机制）即可。” 二、 代码层面对比（Java视角的实证） 口说无凭，上代码。这段代码能直观地展示： 进程是启动另一个程序，线程是在当前程序里分身。 1. 进程 (Process) 在 Java 中启动一个进程，相当于让操作系统再开一个独立的工厂。 ​ 2. 线程 (Thread) 在 Java 中启动一个线程，是在当前 JVM 进程内部增加一个执行流。 ​ 三、 Fox的独家解析（降维打击面试官） 如果想拿高薪，光背上面的八股文不够，你得甩出这个 操作系统内核级 的视角： 1. &quot;伪&quot;线程（Linux视角的真相）： &quot;面试官，其实在 Linux 内核（Java 的主要运行环境）看来， 根本没有严格意义上的‘线程’！ Linux 把线程看作是 轻量级进程（LWP - Light Weight Process） 。 无论是 fork() 创建进程，还是 pthread_create() 创建线程，底层调用的都是同一个内核函数 clone() 。 区别仅仅在于传参不同： 创建 进程 时，不传 CLONE_VM ，完全复制一份内存空间。 创建 线程 时，传入 CLONE_VM ，复用父进程的内存空间。 所以，Java 线程本质上是 映射到操作系统的原生内核级线程（KLT） 上的，这也是为什么 Java 线程很多时候受限于操作系统资源的原因。&quot; 2. 为什么栈要私有？（关键理解）： &quot;面试官，虽然线程共享内存，但 虚拟机栈（Stack）必须私有 。 因为线程是执行任务的，每个任务的方法调用链、局部变量、执行进度都是独立的。如果栈也共享"
+    },
+    {
+      "slug": "sxh84cgxodzcys5r",
+      "title": "JAVA 守护线程和本地线程的区别",
+      "url": "/tulingzhouyu/db22bv/sxh84cgxodzcys5r",
+      "toc_path": [
+        "并发编程",
+        "JAVA 守护线程和本地线程的区别"
+      ],
+      "toc_level": 1,
+      "toc_index": 269,
+      "word_count": 856,
+      "updated_at": "2026-01-08T06:01:07.000Z",
+      "primary_category": "os-linux",
+      "primary_category_name": "操作系统与Linux",
+      "related_categories": [
+        "os-linux",
+        "java-concurrency",
+        "jvm-memory-gc",
+        "java-core",
+        "resume-project"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "middle",
+        "expert"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "专家/P7+"
+      ],
+      "keywords": [
+        "线程",
+        "文件",
+        "并发",
+        "JVM",
+        "GC",
+        "垃圾回收",
+        "OOM",
+        "Java",
+        "面试官"
+      ],
+      "summary": "一、 标准面试回答模版（建议背诵）面试官： Java 中守护线程和用户线程有什么区别？Fox版标准回答：“它们的主要区别在于 JVM 什么时候离开（退出）。定义不同：用户线程（User Thread）：也叫前台线程，是执行业务逻辑的主力。JVM 启动时的 main 线程就是用户线程。",
+      "excerpt": "一、 标准面试回答模版（建议背诵） 面试官： Java 中守护线程和用户线程有什么区别？ Fox版标准回答： “它们的主要区别在于 JVM 什么时候离开（退出） 。 定义不同 ： 用户线程（User Thread） ：也叫前台线程，是执行业务逻辑的主力。JVM 启动时的 main 线程就是用户线程。 守护线程（Daemon Thread） ：是后台运行的‘服务员’，为用户线程提供服务（比如 GC 线程、心跳检测）。 生命周期不同（核心区别） ： JVM 的退出原则 ：JVM 会检查当前系统中是否还有 用户线程 在运行。 只要还有一个 用户线程 活着，JVM 就不会退出。 如果所有的 用户线程 都结束了，只剩下 守护线程 ，JVM 会直接退出， 并且不会等待守护线程执行完 。 创建方式 ： 默认创建的线程都是用户线程。 必须在调用 start() 之前 ，调用 setDaemon(true) 才能将其设置为守护线程。” 二、 代码层面对比 这段代码展示了： 当主线程（用户线程）结束时，守护线程就算在死循环里，也会立马暴毙。 三、 Fox的独家解析（避坑指南） 如果面试官问：“守护线程有什么坑？” 或者 “能用守护线程写文件吗？” Look at me! 这时候要抛出这个 P7级的生产事故点 ： “ 绝对不能用守护线程去进行文件读写或 I/O 操作！ Why? 因为守护线程没有‘优雅关闭’机制。 当用户线程全部结束后，JVM 发现只剩守护线程，它会 直接粗暴地终止 守护线程。 这会导致一个严重后果： 守护线程中的 finally 代码块可能根本不会被执行！ 如果你在 finally 里写了 close() 释放流资源，或者回滚事务，这些操作统统会失效，导致数据损坏或资源泄露。 所以，守护线程通常只用于：垃圾回收、心跳检测、或者本地缓存的清理等不涉及关键数据一致性的场景。” ​ 拓展： 阿里一面：OOM后JVM一定会退出吗？为什么？"
+    },
+    {
+      "slug": "cc9qdabbp7bzsp9f",
+      "title": "JAVA 中用到的线程调度算法是什么",
+      "url": "/tulingzhouyu/db22bv/cc9qdabbp7bzsp9f",
+      "toc_path": [
+        "并发编程",
+        "JAVA 中用到的线程调度算法是什么"
+      ],
+      "toc_level": 1,
+      "toc_index": 273,
+      "word_count": 956,
+      "updated_at": "2026-01-08T06:12:11.000Z",
+      "primary_category": "os-linux",
+      "primary_category_name": "操作系统与Linux",
+      "related_categories": [
+        "os-linux",
+        "java-core",
+        "java-concurrency",
+        "observability-troubleshooting",
+        "algorithm"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "操作系统",
+        "Linux",
+        "线程",
+        "Java",
+        "并发",
+        "CPU",
+        "算法"
+      ],
+      "summary": "一、 标准面试回答模版（建议背诵）面试官： Java 中用到的线程调度算法是什么？Fox版标准回答：“Java 虚拟机本身并不直接实现复杂的线程调度算法，而是委托给底层的操作系统来处理。核心模式：抢占式调度 (Preemptive Scheduling)Java 的线程（Platform Th...",
+      "excerpt": "一、 标准面试回答模版（建议背诵） 面试官： Java 中用到的线程调度算法是什么？ Fox版标准回答： “Java 虚拟机本身 并不直接实现 复杂的线程调度算法，而是 委托给底层的操作系统 来处理。 核心模式：抢占式调度 (Preemptive Scheduling) Java 的线程（Platform Thread）是 1:1 映射 到操作系统的内核级线程（KLT）上的。 因此，Java 采用的是 抢占式优先级调度 算法。 机制 ：每个线程都有机会获得 CPU 时间片。当一个线程的时间片用完，或者有一个更高优先级的线程就绪，操作系统会强制剥夺当前线程的 CPU 使用权，切换给下一个线程。这也避免了单线程独占 CPU 导致系统假死。 辅助机制：优先级 (Priority) Java 提供了 Thread.setPriority(1~10) 方法，但这只是给操作系统的一个**‘建议’（Hint）**。 操作系统不一定采纳。因为不同 OS 的优先级等级不一样（比如 Linux 的 nice 值），Java 的 1-10 无法完美映射，甚至在某些场景下会被 OS 忽略。 特例（JDK 21+ 虚拟线程）： 如果是 JDK 21 引入的 虚拟线程（Virtual Thread） ，则由 JVM 内部的调度器（基于 ForkJoinPool ）进行 协作式调度 ，不再完全依赖 OS。” 二、 代码层面对比 面试时，写这段代码证明“ Java 的优先级是不靠谱的 ”，能直接证明你懂底层实现。 ​ 三、 深度解析（Fox 杀手锏：时间片与协同式） 如果面试官追问：“除了抢占式，还有什么调度方式？Java 为什么不用？” 回答： “除了抢占式，还有 协同式调度 (Cooperative Scheduling) 。 协同式 ：线程执行时间由线程自己控制，线程不主动让出 CPU（比如调用 yield ），别的线程就永远没机会执行。 Java 不用的原因 ：太危险！如果一个线程写了死循环或者阻塞了，整个 JVM 甚至整个系统都会卡死（参考 Windows 3.x 时代）。 抢占式的好处 ：系统拥有最高控制权，通过 时间片轮转（Time Slicing） ，保证所有线程雨露均沾，任何一个线程挂了都不会拖垮整个系统。” 四、 避坑指南（关于 Yield） 面试中经常会问到 Thread.yield() 。 Fox 提醒： “ Thread.yield() 本质上也是一种基于抢占式调度的‘礼让’ 行为。 它告诉 CPU：‘我现在不急，可以把时间片让给 同优先级 或 更高优先级的线程’。 但是！这依然只是个 建议 。CPU 可能完全无视这个建议，刚让出去，下一毫秒又调度回你了。所以在生产业务逻辑中， 千万不要依赖 yield 来控制执行顺序！ ”"
+    },
+    {
+      "slug": "kp757d5raw03feeg",
+      "title": "什么是线程调度器和时间分片",
+      "url": "/tulingzhouyu/db22bv/kp757d5raw03feeg",
+      "toc_path": [
+        "并发编程",
+        "什么是线程调度器和时间分片"
+      ],
+      "toc_level": 1,
+      "toc_index": 286,
+      "word_count": 1022,
+      "updated_at": "2026-01-08T08:12:14.000Z",
+      "primary_category": "os-linux",
+      "primary_category_name": "操作系统与Linux",
+      "related_categories": [
+        "os-linux",
+        "java-concurrency",
+        "observability-troubleshooting",
+        "mysql-sharding",
+        "java-core"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "操作系统",
+        "线程",
+        "上下文切换",
+        "并发",
+        "CPU",
+        "分片",
+        "Java"
+      ],
+      "summary": "一、 标准面试回答模版（建议背诵）面试官： 什么是线程调度器（Thread Scheduler）和时间分片（Time Slicing）？Fox版标准回答：“这两个概念是操作系统实现多任务并发的基石。线程调度器 (Thread Scheduler)：它是操作系统内核（OS Kernel）中的一个...",
+      "excerpt": "一、 标准面试回答模版（建议背诵） 面试官： 什么是线程调度器（Thread Scheduler）和时间分片（Time Slicing）？ Fox版标准回答： “这两个概念是 操作系统实现多任务并发 的基石。 线程调度器 (Thread Scheduler) ： 它是操作系统内核（OS Kernel）中的一个 核心模块 。 职责 ：它负责决定在任意时刻， 哪个线程 应该获得 CPU 的使用权，以及获得 多长时间 。 Java 的关系 ：Java 的线程是映射到操作系统原生线程（KLT）上的，所以 Java 虚拟机（JVM）通常 不直接控制调度 ，而是把这项工作全权委托给操作系统的调度器。 时间分片 (Time Slicing) ： 它是调度器实现 抢占式调度（Preemptive Scheduling）的一种机制 。 原理 ：CPU 的时间被切分成一个个极短的时间段，称为‘时间片’（Time Quantum）（通常是几十毫秒）。 过程 ：调度器分配给当前线程一个时间片。当时间片用完，不管线程任务有没有做完，操作系统都会 强制剥夺 它的 CPU 使用权（触发上下文切换），把 CPU 让给下一个就绪的线程。 目的 ：让多个线程看起来像是在‘同时’运行（并发），防止一个长耗时的任务独占 CPU 导致系统卡死。” 二、 代码层面的体现 虽然我们无法写代码直接控制 OS 调度器，但我们可以通过 Thread.yield() 来观察时间分片的作用。 yield() 的本质 ：就是告诉调度器，“我的时间片虽然还没用完，但我愿意主动放弃，提前交出 CPU”。 ​ 运行结果分析： 你会看到 &quot;线程A&quot; 和 &quot;线程B&quot; 交替打印。如果没有时间分片（或者不用 yield），在单核逻辑下，一个高优先级的循环很容易跑完才轮到下一个。 三、 Fox的深度解析 如果面试官问： “时间片设置得越短越好吗？或者越长越好吗？” 这是考察你对 上下文切换开销 的理解。 Fox版回答： “ 绝对不是！这是一把双刃剑。 如果时间片太短（比如 1ms）： 后果 ：系统会频繁进行 上下文切换（Context Switch） 。 代价 ：每次切换都要保存寄存器、刷新缓存（TLB/L1/L2）。假设切换一次消耗 0.1ms，如果时间片只有 1ms，那 10% 的 CPU 算力 都浪费在‘切换’这件事上了，真正干活的时间变少了。 如果时间片太长（比如 1000ms）： 后果 ：系统的**响应性（Responsiveness）**变差。 代价 ：用户会感觉电脑‘卡顿’。如果你点击一个按钮，处理线程要等别人的 1秒钟时间片跑完才能拿到 CPU，那用户体验就崩了。 结论： 现代操作系统的默认时间片通常在 10ms ~ 100ms 之间，这是一个在‘吞吐量’和‘响应时间’之间博"
+    },
+    {
+      "slug": "umi779pu6e7pggq1",
+      "title": "内存泄漏和内存溢出的区别",
+      "url": "/tulingzhouyu/db22bv/umi779pu6e7pggq1",
+      "toc_path": [
+        "JVM",
+        "内存泄漏和内存溢出的区别"
+      ],
+      "toc_level": 1,
+      "toc_index": 311,
+      "word_count": 714,
+      "updated_at": "2024-08-09T07:45:05.000Z",
+      "primary_category": "os-linux",
+      "primary_category_name": "操作系统与Linux",
+      "related_categories": [
+        "os-linux",
+        "java-core",
+        "jvm-memory-gc",
+        "performance-optimization",
+        "java-collections"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "内存",
+        "Java",
+        "JVM",
+        "垃圾回收",
+        "性能",
+        "集合"
+      ],
+      "summary": "内存泄漏和内存溢出是两个常见的内存问题，它们的性质和原因不同，但都可能对应用程序的性能和稳定性产生严重影响。内存泄漏（Memory Leak）定义：内存泄漏指的是程序未能释放已不再使用的对象或者资源，从而导致内存的浪费。在Java中，内存泄漏通常是由于对象的引用没有被正确清除，使得垃圾回收无法...",
+      "excerpt": "内存泄漏和内存溢出是两个常见的内存问题，它们的性质和原因不同，但都可能对应用程序的性能和稳定性产生严重影响。 内存泄漏（Memory Leak） 定义 ： 内存泄漏指的是程序未能释放已不再使用的对象或者资源，从而导致内存的浪费。在Java中，内存泄漏通常是由于对象的引用没有被正确清除，使得垃圾回收无法回收这些对象所占用的内存。 特点 ： 不会立即导致程序崩溃，但会缓慢地消耗内存，最终可能导致内存不足。 在Java应用中，常常由于集合类中保留了不再使用的对象引用而产生。 示例代码（Java）： 在这个例子中，对象不断被添加到列表中，但列表的内容没有被清理，导致一直占用内存。 内存溢出（Out of Memory） 定义 ： 内存溢出是指程序在申请内存时，没有足够的内存可用，导致无法正常分配，从而抛出 OutOfMemoryError 。这是由于程序已使用的内存超过了JVM为其分配的最大内存限制。 特点 ： 通常会导致程序崩溃或终止。 因为未能限制内存使用而直接超过JVM配置的内存上限。 示例代码（Java）： 在这个例子中，程序试图分配一个巨大的数组，这通常会导致 java.lang.OutOfMemoryError: Requested array size exceeds VM limit 错误。 区别总结 内存泄漏 是因为不再使用的对象无法被垃圾回收，持续消耗内存，引起资源浪费，但不一定马上导致程序崩溃。 内存溢出 是程序试图使用超过可用最大内存的资源，直接导致程序失败。 为避免这些问题，开发者应仔细管理对象的生命周期，适时释放不再需要的资源，并监测和调整应用程序的内存使用情况，确保其在预期范围内。"
+    },
+    {
+      "slug": "dscnsm29h9onlxvz",
+      "title": "什么是堆外内存",
+      "url": "/tulingzhouyu/db22bv/dscnsm29h9onlxvz",
+      "toc_path": [
+        "JVM",
+        "什么是堆外内存"
+      ],
+      "toc_level": 1,
+      "toc_index": 313,
+      "word_count": 783,
+      "updated_at": "2024-08-09T07:43:45.000Z",
+      "primary_category": "os-linux",
+      "primary_category_name": "操作系统与Linux",
+      "related_categories": [
+        "os-linux",
+        "jvm-memory-gc",
+        "java-core",
+        "performance-optimization",
+        "netty-network"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "senior",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "操作系统",
+        "内存",
+        "JVM",
+        "GC",
+        "垃圾回收",
+        "堆",
+        "Java",
+        "IO",
+        "性能",
+        "Netty",
+        "NIO"
+      ],
+      "summary": "堆外内存（Off-Heap Memory）是指Java应用程序在堆内存之外的内存区域进行的内存分配。JVM的堆内存（Heap Memory）是用于大部分Java对象的分配，而堆外内存允许在JVM控制之外管理内存，这种内存通常是通过操作系统的直接内存分配来实现的。堆外内存的特点性能优势：堆外内存...",
+      "excerpt": "堆外内存（Off-Heap Memory）是指Java应用程序在堆内存之外的内存区域进行的内存分配。JVM的堆内存（Heap Memory）是用于大部分Java对象的分配，而堆外内存允许在JVM控制之外管理内存，这种内存通常是通过操作系统的直接内存分配来实现的。 堆外内存的特点 性能优势 ： 堆外内存可以减少垃圾回收（Garbage Collection）带来的停顿时间，因为它不参与普通的JVM垃圾回收过程。 提供更好的内存管理和减少了GC造成的性能波动。 使用局限 ： 手动管理导致更大复杂性：开发者需要显式释放堆外内存，避免内存泄露。 不支持GC，所以必须非常小心管理生命周期。 应用场景 ： 大数据和分布式系统中需要处理大量数据时。 需要高性能、低延迟的应用程序，如游戏服务器或金融系统。 缓存系统，如Memcached、Redis等。 如何使用堆外内存 在Java中，使用堆外内存的常见方法是通过NIO（New I/O）中的 ByteBuffer 类来实现。具体步骤如下： 使用 ByteBuffer.allocateDirect() 方法 ： 这个方法用于分配一块直接内存，内存分配在堆外。 读写数据 ： 和普通的 ByteBuffer 用法相似，使用 put 和 get 方法来进行数据写入和读取。 释放内存 ： 虽然Java不提供显式的API来释放直接内存，但可以通过设置映射的ByteBuffer对象为null，并显式调用System.gc()来提示垃圾回收器进行内存清理。 在JDK 9及以上，使用 sun.misc.Cleaner 变得更加复杂，建议使用第三方库如Netty的 PooledByteBufAllocator 来管理资源。 示例代码 注意事项 尽量使用第三方库 ：如Netty或DirectMemory来管理堆外内存，以避免直接内存溢出或泄漏。 限制使用场景 ：应用程序中应谨慎使用堆外内存，避免因内存管理不当导致的性能问题或内存泄漏。 性能监控 ：监控直接内存的使用量（使用工具如VisualVM），确保程序运行的稳定性。 通过正确使用堆外内存，可以显著提高Java应用程序的性能，特别是在需要处理大量数据或需要高性能低延迟的场景。"
+    },
+    {
+      "slug": "xi757wrpuahlnrgg",
+      "title": "JVM对象分配内存如何保证线程安全",
+      "url": "/tulingzhouyu/db22bv/xi757wrpuahlnrgg",
+      "toc_path": [
+        "JVM",
+        "JVM对象分配内存如何保证线程安全"
+      ],
+      "toc_level": 1,
+      "toc_index": 315,
+      "word_count": 633,
+      "updated_at": "2024-08-11T07:16:52.000Z",
+      "primary_category": "os-linux",
+      "primary_category_name": "操作系统与Linux",
+      "related_categories": [
+        "os-linux",
+        "java-concurrency",
+        "jvm-memory-gc",
+        "security-auth",
+        "performance-optimization"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "线程",
+        "内存",
+        "并发",
+        "多线程",
+        "锁",
+        "CAS",
+        "JVM",
+        "堆",
+        "元空间",
+        "安全",
+        "性能",
+        "优化"
+      ],
+      "summary": "在JVM中，为对象分配内存的过程需要确保线程安全，因为在多线程环境下，多个线程可能会同时尝试创建对象。为了保证内存分配的线程安全性，JVM采用了以下几种机制和技术：TLAB（Thread Local Allocation Buffer）：概念：TLAB是一种每个线程私有的内存区域，用于加速对象...",
+      "excerpt": "在JVM中，为对象分配内存的过程需要确保线程安全，因为在多线程环境下，多个线程可能会同时尝试创建对象。为了保证内存分配的线程安全性，JVM采用了以下几种机制和技术： TLAB（Thread Local Allocation Buffer） ： 概念 ：TLAB是一种每个线程私有的内存区域，用于加速对象内存的分配。 作用 ：通过为每个线程分配一个独立的小内存块，线程可以在这个块中直接分配对象，而不需要对共享堆进行同步。 原理 ：当一个线程需要分配对象时，首先会尝试在TLAB中进行分配。如果TLAB有足够的空间，分配过程就是线程安全的，因为没有其他线程访问这个内存块。 不足 ：当TLAB空间不足时，线程需要请求一个新的TLAB或者直接从共享堆中分配，这个过程需要一定的同步机制。 CAS（Compare-And-Swap）机制 ： 概念 ：CAS是一种硬件提供的原子操作，用于无锁（Lock-free）并发编程。 作用 ：JVM在需要直接操作共享堆时，可以使用CAS来实现原子性地更新内存分配指针。 执行过程 ：CAS操作检查一个变量是否等于预期值，如果是，则更新为新值。这种操作是原子的，避免了需要锁机制带来的额外开销。 应用 ：当TLAB耗尽或在涉及到跨线程的堆内存分配时，CAS有效避免了竞争条件。 分代收集 ： 背景 ：虽然不是直接用于线程安全，但分代收集（年轻代、老年代、永久代/元空间）使得内存管理更高效，减少了直接竞争的机会。 结合 ：TLAB一般对年轻代的内存分配进行优化，更加局部化的内存管理有助于线程安全。 通过运用这些机制，JVM能够在多线程环境下高效而安全地进行内存分配，并最大限度地减少同步操作带来的性能损耗。这样设计不仅提升了性能，也保证了对象内存分配的安全性和一致性。"
+    },
+    {
+      "slug": "mwh0psoz0g158miq",
+      "title": "Java进程占用的内存有哪些部分",
+      "url": "/tulingzhouyu/db22bv/mwh0psoz0g158miq",
+      "toc_path": [
+        "JVM",
+        "Java进程占用的内存有哪些部分"
+      ],
+      "toc_level": 1,
+      "toc_index": 322,
+      "word_count": 812,
+      "updated_at": "2024-08-09T07:51:41.000Z",
+      "primary_category": "os-linux",
+      "primary_category_name": "操作系统与Linux",
+      "related_categories": [
+        "os-linux",
+        "jvm-memory-gc",
+        "java-core",
+        "java-concurrency",
+        "performance-optimization"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "操作系统",
+        "进程",
+        "线程",
+        "内存",
+        "JVM",
+        "GC",
+        "垃圾回收",
+        "堆",
+        "栈",
+        "元空间",
+        "Java",
+        "IO",
+        "性能"
+      ],
+      "summary": "Java进程占用的内存主要包括以下几个部分：堆内存（Heap Memory）：用于存储对象实例和数组，是JVM进行自动内存管理的主要区域。垃圾回收（GC）在此区域中进行。堆内存可以通过-Xms和-Xmx选项进行配置，分别设置初始堆大小和最大堆大小。方法区（Method Area）：存放类的元数...",
+      "excerpt": "Java进程占用的内存主要包括以下几个部分： 堆内存（Heap Memory） ： 用于存储对象实例和数组，是JVM进行自动内存管理的主要区域。垃圾回收（GC）在此区域中进行。堆内存可以通过 -Xms 和 -Xmx 选项进行配置，分别设置初始堆大小和最大堆大小。 方法区（Method Area） ： 存放类的元数据，包括类的信息、常量、静态变量和即时编译器编译后代码。在Java 8之前，它被称为永久代（PermGen），而在Java 8及之后版本中，被称为元空间（Metaspace）。 栈内存（Stack Memory） ： 用于线程的生命周期中，存储方法调用和局部变量，每个线程都有自己的栈。栈内存自动分配和释放，不由GC管理。 本地方法栈（Native Method Stack） ： 容纳了调用Native方法（即非Java代码如C/C++代码）的线程栈，它是与操作系统相关的。 程序计数器（Program Counter Register） ： 每个线程都有自己的程序计数器，它指示当前正在执行的字节码指令地址。 直接内存（Direct Memory） ： 直接内存是在Java中使用NIO（Non-blocking IO）进行高性能I/O时使用的。它使用的是操作系统的内存，绕过了JVM的堆和堆外内存。 示例代码 内存部分的解释 堆内存 ：在内存分配的循环中创建了多个实例对象，它们存储于堆内存中。 栈内存 ： calculateFactorial 方法进行递归调用，每次调用在栈上创建新的栈帧以存储局部变量和返回信息。 直接内存 ：使用 ByteBuffer.allocateDirect(1024) 分配直接内存，通常用于高性能I/O操作。 方法区 ： Person 类的信息、字符串“Name”等常量存储在方法区。 本地方法栈和程序计数器 ：此示例中没有演示本地方法栈的显式使用，然而程序执行过程中JVM内部正在使用程序计数器。 总结 Java进程的内存管理非常复杂和高效，通过不同区域的管理实现内存的高效使用和垃圾收集的管理。了解这些内存的分配和使用，是优化Java应用程序性能和调试内存问题的重要基础。"
+    },
+    {
+      "slug": "ri355483wrs69dyk",
+      "title": "说说对象分配规则",
+      "url": "/tulingzhouyu/db22bv/ri355483wrs69dyk",
+      "toc_path": [
+        "JVM",
+        "说说对象分配规则"
+      ],
+      "toc_level": 1,
+      "toc_index": 325,
+      "word_count": 501,
+      "updated_at": "2023-09-04T02:51:10.000Z",
+      "primary_category": "os-linux",
+      "primary_category_name": "操作系统与Linux",
+      "related_categories": [
+        "os-linux",
+        "java-core",
+        "jvm-memory-gc",
+        "java-concurrency",
+        "mysql-index-transaction"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "内存",
+        "Java",
+        "JVM",
+        "垃圾回收",
+        "堆",
+        "锁"
+      ],
+      "summary": "在Java中，对象分配规则是关于如何为新对象分配内存的一套规则，以确保内存的有效使用和对象的正确初始化。以下是关于对象分配的主要规则：内存分配：新对象通常在堆内存中分配内存空间。对象头：在为对象分配内存空间后，Java虚拟机会为对象分配一个对象头。对象头包含了一些关于对象的元信息，如对象的哈希...",
+      "excerpt": "在Java中，对象分配规则是关于如何为新对象分配内存的一套规则，以确保内存的有效使用和对象的 正确初始化 。以下是关于对象分配的主要规则： 内存分配 ：新对象通常在堆内存中分配内存空间。 对象头 ：在为对象分配内存空间后，Java虚拟机会为对象分配一个 对象头 。对象头包含了一些关于对象的 元信息 ，如对象的 哈希码、锁状态、垃圾回收信息 等。 零值初始化 ：在对象内存分配后，所有的成员变量会被初始化为零值。具体的零值取决于变量的数据类型。例如，整数类型会初始化为0，布尔类型会初始化为false，对象引用会初始化为null。 构造函数调用 ：一旦对象内存分配和零值初始化完成，Java虚拟机会调用对象的构造函数。 对象引用 ：最后， new 关键字会返回对象的引用，将这个引用分配给一个变量，以便后续可以通过该变量访问对象的属性和方法。 垃圾回收管理 ：Java虚拟机会自动管理对象的内存。如果对象不再被引用，它会被标记为垃圾，并在适当的时机由垃圾回收器回收，释放占用的内存。 这些规则确保了对象在创建时的正确初始化和内存管理。对于程序员来说，最重要的是编写好构造函数以确保对象在创建后具有合适的初始状态，并且不忘记在不再需要对象时将引用置为null，以便垃圾回收器能够回收不再使用的对象。"
+    },
+    {
+      "slug": "pii32nb0y2o6lsa8",
+      "title": "设置堆内存XMX应该考虑哪些因素",
+      "url": "/tulingzhouyu/db22bv/pii32nb0y2o6lsa8",
+      "toc_path": [
+        "JVM",
+        "设置堆内存XMX应该考虑哪些因素"
+      ],
+      "toc_level": 1,
+      "toc_index": 328,
+      "word_count": 805,
+      "updated_at": "2023-09-04T03:19:07.000Z",
+      "primary_category": "os-linux",
+      "primary_category_name": "操作系统与Linux",
+      "related_categories": [
+        "os-linux",
+        "jvm-memory-gc",
+        "performance-optimization",
+        "java-concurrency",
+        "java-core"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "操作系统",
+        "线程",
+        "内存",
+        "JVM",
+        "垃圾回收",
+        "堆",
+        "栈",
+        "元空间",
+        "调优",
+        "性能",
+        "吞吐",
+        "容量",
+        "并发",
+        "Java"
+      ],
+      "summary": "设置Java堆内存大小（-Xmx参数）是一个重要的性能调优决策，需要考虑多个因素，以确保应用程序在合适的内存限制下运行顺畅，避免内存不足或内存浪费的问题。以下是考虑设置-Xmx参数时需要考虑的因素：应用程序的内存需求：首先要了解应用程序的内存需求。这包括应用程序的数据量、并发用户数、对象创建频...",
+      "excerpt": "设置Java堆内存大小（-Xmx参数）是一个重要的性能调优决策，需要考虑多个因素，以确保应用程序在合适的内存限制下运行顺畅，避免内存不足或内存浪费的问题。以下是考虑设置-Xmx参数时需要考虑的因素： 应用程序的内存需求 ：首先要了解应用程序的内存需求。这包括应用程序的数据量、并发用户数、对象创建频率等。不同的应用程序可能需要不同大小的堆内存。 应用程序的性能需求 ：性能目标对内存大小有很大的影响。如果需要更高的吞吐量和更低的延迟，可能需要分配更多的内存。但要小心不要分配过多，以避免浪费内存。 可用物理内存 ：要考虑服务器或计算机上的可用物理内存量。将-Xmx参数设置为超过物理内存容量的值可能会导致操作系统频繁地进行内存交换，降低性能。 垃圾回收的开销 ：堆内存越大，垃圾回收的开销通常也会增加。大堆内存可能需要更长的垃圾回收暂停时间。因此，要权衡内存大小和垃圾回收开销。 堆内存分代结构 ：Java堆内存通常分为年轻代、老年代和永久代（或元空间，取决于JVM版本）。不同代的分配比例和大小会影响-Xmx的设置。根据应用程序的特性，可以考虑调整不同代的大小。 监控和调整 ：监控应用程序的内存使用情况，使用工具如JVisualVM、JConsole等来观察堆内存的使用情况。根据监控数据进行动态调整-Xmx参数。 应用程序设计 ：合理的应用程序设计也可以影响堆内存需求。避免内存泄漏和不必要的对象创建可以降低内存需求。 并发性需求 ：多线程应用程序通常需要更多的堆内存，因为每个线程都需要一定的内存空间来存储栈帧和局部变量。 JVM版本和垃圾回收器 ：不同的JVM版本和垃圾回收器可能对内存需求有不同的影响。某些垃圾回收器可能更适合大堆内存，而某些适用于小堆内存。 综合考虑这些因素，需要进行实际的性能测试和监控来确定合适的-Xmx参数值。通常建议开始时设置一个合理的初始值，然后通过性能测试和监控来逐渐调整，以满足应用程序的需求并避免不必要的内存浪费。不同的应用程序可能需要不同的内存配置，因此没有一种大小适合所有情况的通用规则。"
+    },
+    {
+      "slug": "fqzdk4xwi7r9nvyn",
+      "title": "什么是指针碰撞",
+      "url": "/tulingzhouyu/db22bv/fqzdk4xwi7r9nvyn",
+      "toc_path": [
+        "JVM",
+        "什么是指针碰撞"
+      ],
+      "toc_level": 1,
+      "toc_index": 336,
+      "word_count": 460,
+      "updated_at": "2023-09-04T06:31:25.000Z",
+      "primary_category": "os-linux",
+      "primary_category_name": "操作系统与Linux",
+      "related_categories": [
+        "os-linux",
+        "algorithm",
+        "jvm-memory-gc",
+        "java-core"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "内存",
+        "算法",
+        "JVM",
+        "垃圾回收",
+        "堆",
+        "Java"
+      ],
+      "summary": "在Java中，指针碰撞是一种垃圾收集算法中用于分配内存的一种方式。它通常用于实现停顿时间较短的垃圾收集器，如复制算法和标记-清除算法。指针碰撞的基本思想是将堆内存分为两个区域：一个是已分配的对象区域，另一个是未分配的空闲区域。通过一个指针来分隔这两个区域。当需要分配对象时，垃圾收集器将对象的大...",
+      "excerpt": "在Java中，指针碰撞是一种垃圾收集算法中用于分配内存的一种方式。它通常用于实现停顿时间较短的垃圾收集器，如复制算法和标记-清除算法。 指针碰撞的基本思想是将堆内存分为两个区域：一个是已分配的对象区域，另一个是未分配的空闲区域。通过一个指针来分隔这两个区域。当需要分配对象时，垃圾收集器将对象的大小与空闲区域的大小进行比较，如果空闲区域足够容纳对象，则将指针碰撞指针向前移动对象的大小，并返回指针碰撞指针的旧值作为对象的起始地址。如果空闲区域不足以容纳对象，则进行垃圾回收操作，释放一些内存后再进行分配。 指针碰撞的优点是分配内存的速度很快，只需简单地移动一个指针即可完成。而且由于已分配的对象区域和未分配的空闲区域是连续的，所以内存的利用率也比较高。 然而，指针碰撞算法的缺点是需要保证堆内存的连续性，即堆内存必须是一块连续的内存空间。这对于某些情况下的内存分配来说可能是一个限制，因为连续的内存空间可能会受到碎片化的影响，导致无法分配足够大的对象。因此，在实际应用中，指针碰撞算法通常与其他内存分配算法结合使用，以克服其局限性。"
+    },
+    {
+      "slug": "po34pzgdern9yghp",
+      "title": "短视频",
+      "url": "/tulingzhouyu/db22bv/po34pzgdern9yghp",
+      "toc_path": [
+        "JVM",
+        "什么是指针碰撞",
+        "短视频"
+      ],
+      "toc_level": 2,
+      "toc_index": 337,
+      "word_count": 412,
+      "updated_at": "2024-06-27T14:05:39.000Z",
+      "primary_category": "os-linux",
+      "primary_category_name": "操作系统与Linux",
+      "related_categories": [
+        "os-linux",
+        "jvm-memory-gc"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "内存",
+        "JVM"
+      ],
+      "summary": "大家好，我是 JJ， 最近观察后台小伙们的留言发现一个很严重问题越基础的问题，越容易难倒一大片，比如说指针碰撞，没想到这也能答不上来指针碰撞是一种用于实现内存分配和回收的技术，通常在垃圾收集器不可用的环境下使用。它的核心思想是通过维护一个指向空闲内存块的指针，来管理和分配内存空间。简单来说，当...",
+      "excerpt": "大家好，我是 JJ， 最近观察后台小伙们的留言发现一个很严重问题 ​ 越基础的问题，越容易难倒一大片 ，比如说指针碰撞，没想到这也能答不上来 ​ 指针碰撞是一种用于实现内存分配和回收的技术，通常在垃圾收集器不可用的环境下使用。 ​ 它的核心思想是通过维护一个指向空闲内存块的指针，来管理和分配内存空间。 ​ 简单来说，当需要分配一块内存时，指针碰撞方法会使用一个特定的指针来指示当前可用的内存位置。 ​ 当分配内存时，该指针会向前移动，指向下一个可用的内存块。 ​ 这种的话，在分配内存时不需要额外的数据结构来追踪空闲内存块 ​ 因为内存空间是连续的，通过移动指针就能够完成分配操作。 ​ 同样地，释放内存时，指针碰撞也可以简单地通过将指针向后移动来标记释放的内存块为空闲状态，从而使其可以再次被分配使用。 ​ 需要注意的是，指针碰撞要求内存分配器能够管理并确保内存空间的连续性，这在某些情况下可能会限制内存的有效利用或者引发内存碎片问题。 ​ 因此，它通常用于对内存分配要求不严格的系统中。"
+    },
+    {
+      "slug": "tunoovec55pkz48b",
+      "title": "什么是Cookie以及它在Web开发中的作用是什么？",
+      "url": "/tulingzhouyu/db22bv/tunoovec55pkz48b",
+      "toc_path": [
+        "网络专题",
+        "什么是Cookie以及它在Web开发中的作用是什么？"
+      ],
+      "toc_level": 1,
+      "toc_index": 613,
+      "word_count": 366,
+      "updated_at": "2023-08-27T13:15:30.000Z",
+      "primary_category": "os-linux",
+      "primary_category_name": "操作系统与Linux",
+      "related_categories": [
+        "os-linux",
+        "computer-network"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "文件",
+        "网络"
+      ],
+      "summary": "Cookie其实就是一种小小的文本文件，存储在你的电脑或设备上。它是网站用来记住你的一些信息的一种方式。在Web开发中，Cookie有很重要的作用。它可以让网站“记住”你，不用每次都要求你输入一遍信息。想象你在一个网上商店购物，你把东西放进购物车，但不想每次去结账时都得重新选一遍商品，这时Co...",
+      "excerpt": "Cookie其实就是一种小小的文本文件，存储在你的电脑或设备上。它是网站用来记住你的一些信息的一种方式。 ​ 在Web开发中，Cookie有很重要的作用。它可以让网站“记住”你，不用每次都要求你输入一遍信息。想象你在一个网上商店购物，你把东西放进购物车，但不想每次去结账时都得重新选一遍商品，这时Cookie就派上用场了。网站会在你浏览时把一些数据，比如你选了哪些商品，保存在Cookie里。这样，当你下次访问该网站时，它能读取这些Cookie，知道你之前选了什么。 ​ 另外，Cookie也可以用来记住登录状态。比如你登录了某个社交媒体账号，它会在Cookie里保存你的登录信息，这样当你刷新页面或关闭再打开浏览器时，你仍然是登录状态，不需要重新输入密码。 ​ 总之，Cookie是网站用来存储和获取你的信息的一种方式，使你的网上体验更加便捷和个性化。但要注意，有时候Cookie也可能被用来跟踪你的浏览习惯，所以在隐私方面还是需要保持警惕。"
+    },
+    {
+      "slug": "fkkq38gi8f2vlu04",
+      "title": "什么是I/O多路复用？",
+      "url": "/tulingzhouyu/db22bv/fkkq38gi8f2vlu04",
+      "toc_path": [
+        "网络专题",
+        "什么是I/O多路复用？"
+      ],
+      "toc_level": 1,
+      "toc_index": 621,
+      "word_count": 493,
+      "updated_at": "2023-08-27T11:32:14.000Z",
+      "primary_category": "os-linux",
+      "primary_category_name": "操作系统与Linux",
+      "related_categories": [
+        "os-linux",
+        "java-concurrency",
+        "performance-optimization",
+        "computer-network"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "操作系统",
+        "Linux",
+        "线程",
+        "文件",
+        "性能",
+        "网络"
+      ],
+      "summary": "I/O多路复用（I/O Multiplexing）是一种计算机编程技术，它允许程序能够同时监视多个输入和输出（I/O）流，而不需要为每个流创建一个独立的线程。这样可以在单个线程中管理多个I/O操作，提高了程序的效率和响应能力。想象一下，你在家里做饭，同时要监视炉子上的锅、烤箱里的食物和水壶里的...",
+      "excerpt": "I/O多路复用（I/O Multiplexing）是一种计算机编程技术，它允许程序能够同时监视多个输入和输出（I/O）流，而不需要为每个流创建一个独立的线程。这样可以在单个线程中管理多个I/O操作，提高了程序的效率和响应能力。 想象一下，你在家里做饭，同时要监视炉子上的锅、烤箱里的食物和水壶里的水。如果你一个个盯着它们等待完成，那么效率就很低下。但如果你可以一边做其他事情，一边关注这些东西，那么你就能更高效地完成任务。这就类似于I/O多路复用，它让一个程序能够同时关注多个I/O任务。 一些常见的I/O多路复用技术包括： select() 函数： 这是早期的一种多路复用方法，允许程序监视多个文件描述符（例如套接字）是否就绪，从而进行读写操作。 poll() 函数： 类似于select()，也是一种多路复用技术，但在某些方面更优越。它克服了select() 的一些限制。 epoll（Linux特有）： 这是在Linux系统上使用的高效多路复用技术。它通过维护一个事件表来跟踪文件描述符的状态变化，可以更好地处理大量的I/O连接。 kqueue（BSD/Mac特有）： 类似于epoll，它是在BSD和Mac操作系统上使用的高性能多路复用机制。 这些技术都有助于在单个线程中处理多个I/O任务，从而提高程序的性能和响应能力。就像你可以一次监视多个炉子一样，程序可以一次处理多个I/O流。"
+    },
+    {
+      "slug": "nswdlolwtg17ufuz",
+      "title": "短视频",
+      "url": "/tulingzhouyu/db22bv/nswdlolwtg17ufuz",
+      "toc_path": [
+        "网络专题",
+        "什么是I/O多路复用？",
+        "短视频"
+      ],
+      "toc_level": 2,
+      "toc_index": 622,
+      "word_count": 313,
+      "updated_at": "2024-06-27T14:35:03.000Z",
+      "primary_category": "os-linux",
+      "primary_category_name": "操作系统与Linux",
+      "related_categories": [
+        "os-linux",
+        "redis-cache",
+        "java-concurrency",
+        "computer-network",
+        "observability-troubleshooting"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "操作系统",
+        "进程",
+        "线程",
+        "文件",
+        "Redis",
+        "并发",
+        "网络",
+        "监控"
+      ],
+      "summary": "居然还有人不知道什么是I/O多路复用，不知道这个问题我实在不能理解，这不是一个Redis 的必考题吗这种八股文都拿不下，还怎么拿 offer 啊。I/O多路复用是操作系统提供的一种机制，用于同时监控多个文件描述符，例如 sockets、文件句柄等。它只能在 至少一个文件描述符准备好进行 I/O...",
+      "excerpt": "居然还有人不知道什么是I/O多路复用，不知道这个问题我实在不能理解，这不是一个Redis 的必考题吗 ​ 这种八股文都拿不下，还怎么拿 offer 啊。 ​ I/O多路复用是操作系统提供的一种机制，用于同时监控多个文件描述符，例如 sockets、文件句柄等。 ​ 它只能在 至少一个文件描述符准备好进行 I/O 操作时才能进行实际的 I/O 操作。 ​ 具体来说，I/O多路复用允许单个进程或线程管理多个网络连接或文件描述符， ​ 无需为每个连接创建额外的进程或线程。 ​ 这种机制利用操作系统内核的能力，通过少量的系统调用来监视和等待多个文件描述符的状态变化，例如它们是否可读、可写。 ​ 常见的 I/O多路复用系统调用包括 select()、poll()、epoll() 等。 ​ 总的来说，I/O多路复用是一种高效处理多个并发 I/O 操作的机制，广泛应用于网络编程和高性能服务器的实现中。"
+    },
+    {
+      "slug": "awtqo38ngq6iysi5",
+      "title": "在Linux中，select、poll和epoll都是用于实现I/O多路复用的方法，请比较优劣和适用场景。",
+      "url": "/tulingzhouyu/db22bv/awtqo38ngq6iysi5",
+      "toc_path": [
+        "网络专题",
+        "在Linux中，select、poll和epoll都是用于实现I/O多路复用的方法，请比较优劣和适用场景。"
+      ],
+      "toc_level": 1,
+      "toc_index": 623,
+      "word_count": 606,
+      "updated_at": "2023-08-27T11:34:31.000Z",
+      "primary_category": "os-linux",
+      "primary_category_name": "操作系统与Linux",
+      "related_categories": [
+        "os-linux",
+        "project-system-design",
+        "java-concurrency",
+        "java-collections",
+        "observability-troubleshooting"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "Linux",
+        "文件",
+        "高并发",
+        "并发",
+        "集合",
+        "监控"
+      ],
+      "summary": "在Linux中，select、poll和epoll都是用于实现I/O多路复用的方法，它们的目标是让一个程序可以同时监控多个I/O操作，以便高效地处理多个文件描述符（sockets、文件等）的读写就绪情况。让我为你解释一下它们的优劣和适用场景： select： 优点： 可移植性好，几乎所有系统都...",
+      "excerpt": "在Linux中，select、poll和epoll都是用于实现I/O多路复用的方法，它们的目标是让一个程序可以同时监控多个I/O操作，以便高效地处理多个文件描述符（sockets、文件等）的读写就绪情况。让我为你解释一下它们的优劣和适用场景： select ： 优点 ： 可移植性好，几乎所有系统都支持。 适用于少量文件描述符，因为在每次调用时都需要线性扫描所有描述符。 缺点 ： 效率较低，因为每次调用都需要扫描整个描述符集合。 最大文件描述符数量有限，通常是1024左右。 不太适用于高并发场景，因为效率会随着描述符数量增加而降低。 poll ： 优点 ： 可移植性也很好，几乎所有系统都支持。 解决了select的最大描述符数量限制问题。 缺点 ： 依然需要线性扫描，效率相对较低，尤其在大量描述符时。 需要维护一个较大的数据结构来存储描述符集合。 epoll ： 优点 ： 高效，适用于高并发场景。它使用了事件通知机制，只返回就绪的文件描述符，避免了线性扫描。 支持水平触发和边缘触发两种模式。 没有描述符数量限制，适合处理大量并发连接。 缺点 ： 只在Linux系统中可用，不太可移植。 对代码的使用稍微复杂一些，需要处理事件循环和回调函数。 适用场景 ： 如果你只需要在少量描述符上进行I/O多路复用，而且希望代码在各种系统上都能工作，可以使用select或poll。 如果你面临高并发场景，需要处理大量连接，那么epoll会是更好的选择，因为它能够更高效地处理大量描述符，避免了线性扫描的性能问题。 总之，select、poll和epoll都有各自的优劣和适用场景，根据你的需求选择合适的方法可以帮助你实现高效的I/O多路复用。"
+    },
+    {
+      "slug": "nbug3bwwxpd5mosq",
+      "title": "什么是零拷贝（Zero Copy）技术？它如何减少在数据传输过程中的性能开销？",
+      "url": "/tulingzhouyu/db22bv/nbug3bwwxpd5mosq",
+      "toc_path": [
+        "网络专题",
+        "什么是零拷贝（Zero Copy）技术？它如何减少在数据传输过程中的性能开销？"
+      ],
+      "toc_level": 1,
+      "toc_index": 627,
+      "word_count": 603,
+      "updated_at": "2023-08-27T11:50:24.000Z",
+      "primary_category": "os-linux",
+      "primary_category_name": "操作系统与Linux",
+      "related_categories": [
+        "os-linux",
+        "performance-optimization",
+        "computer-network",
+        "observability-troubleshooting"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "内存",
+        "文件",
+        "性能",
+        "优化",
+        "网络",
+        "CPU"
+      ],
+      "summary": "零拷贝（Zero Copy）技术是一种在计算机系统中优化数据传输的方法。传统上，在数据从一个地方传输到另一个地方时，需要多次的内存拷贝操作，这会导致性能开销。零拷贝技术的目标就是减少或避免这些不必要的内存拷贝，从而提高数据传输的效率。传统的数据传输过程中，例如从磁盘读取数据到应用程序的内存，通...",
+      "excerpt": "零拷贝（Zero Copy）技术是一种在计算机系统中优化数据传输的方法。传统上，在数据从一个地方传输到另一个地方时，需要多次的内存拷贝操作，这会导致性能开销。零拷贝技术的目标就是减少或避免这些不必要的内存拷贝，从而提高数据传输的效率。 传统的数据传输过程中，例如从磁盘读取数据到应用程序的内存，通常会经历以下步骤： 从磁盘读取数据到内核空间的缓冲区。 将数据从内核空间的缓冲区复制到用户空间的应用程序缓冲区。 零拷贝技术通过优化这些步骤，以减少或避免不必要的数据拷贝。它可以通过以下方式来实现： 直接内存访问（DMA）： 零拷贝技术允许设备（如网络适配器、磁盘控制器等）直接访问系统内存，绕过中间的内核缓冲区。这意味着数据可以从设备直接传输到应用程序的内存，减少了一次内存拷贝。 内存映射： 使用内存映射技术，应用程序可以直接访问磁盘上的文件，而无需将文件内容拷贝到应用程序的缓冲区。这避免了从内核缓冲区到应用程序缓冲区的拷贝。 用户态到用户态的传输： 在一些情况下，数据可以直接从一个应用程序的用户态内存传输到另一个应用程序的用户态内存，而不需要经过内核空间。这也有助于避免不必要的内核拷贝。 零拷贝技术的好处在于它可以大幅减少数据传输过程中的内存拷贝次数，从而降低了CPU和内存的负载，提高了数据传输的效率。这对于高性能的数据传输场景，如网络数据传输、大规模文件操作等，尤其有益。总之，零拷贝技术通过最小化不必要的数据拷贝，优化了数据传输的性能。"
+    },
+    {
+      "slug": "urk973pfiv7tok5q",
+      "title": "Netty的内存池机制怎样设计的",
+      "url": "/tulingzhouyu/db22bv/urk973pfiv7tok5q",
+      "toc_path": [
+        "Netty",
+        "Netty的内存池机制怎样设计的"
+      ],
+      "toc_level": 1,
+      "toc_index": 635,
+      "word_count": 923,
+      "updated_at": "2024-08-05T12:37:23.000Z",
+      "primary_category": "os-linux",
+      "primary_category_name": "操作系统与Linux",
+      "related_categories": [
+        "os-linux",
+        "netty-network",
+        "java-concurrency",
+        "redis-cache",
+        "jvm-memory-gc"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "线程",
+        "内存",
+        "Netty",
+        "多线程",
+        "ThreadLocal",
+        "缓存",
+        "垃圾回收",
+        "堆"
+      ],
+      "summary": "Netty 通过内存池机制来优化内存分配和回收过程，使得性能更加高效和稳定。Netty 的内存池机制主要依赖于 PooledByteBufAllocator 类，并结合了一些策略来实现高效的内存管理。以下是 Netty 内存池机制的详细介绍：1. 内存池设计原则内存重用：通过重用内存，减少频繁...",
+      "excerpt": "Netty 通过内存池机制来优化内存分配和回收过程，使得性能更加高效和稳定。Netty 的内存池机制主要依赖于 PooledByteBufAllocator 类，并结合了一些策略来实现高效的内存管理。以下是 Netty 内存池机制的详细介绍： 1. 内存池设计原则 内存重用 ：通过重用内存，减少频繁的分配和回收操作，降低内存碎片和垃圾回收压力。 分级分配 ：内存块按大小分级进行管理，较小的内存请求从小内存块分配，大的则从大内存块分配。 线程本地缓存（Thread-Local Cache） ：每个线程都有自己的内存缓存(用ThreadLocal实现)，从而减少多线程竞争，提高分配效率。 2. 核心组件及工作流程 Arena Arena 是内存池的核心组件，它管理着内存的分配和释放。根据内存块的大小分为不同的子区域，包括小内存块（Tiny）、中等内存块（Small）和大内存块（Normal）。Arena 还包含了一组内存页（Page）和堆（Chunk），这些都是用于分配内存的基本单元。 PoolChunk 和 PoolSubpage PoolChunk ：表示一大块内存，它被进一步划分为多个 PoolSubpage 。 PoolSubpage ：表示较小的内存单元，用于分配细粒度的内存请求。 PoolThreadCache PoolThreadCache 是每个线程私有的缓存，用于存储最近频繁使用的小内存块。这样可以避免线程间共享内存资源，减少竞争。 ByteBufAllocator ByteBufAllocator 是用户与内存池交互的入口，Netty 提供了两个主要实现： PooledByteBufAllocator 和 UnpooledByteBufAllocator 。前者采用内存池机制，后者则直接在堆内或堆外分配内存。 3. 内存分配流程 请求大小 ：当用户请求分配一定大小的内存时，首先判断请求的大小是否在缓存范围内（Tiny、Small）。 线程本地缓存 ：检查 PoolThreadCache 是否有可用的内存块。如果有，则直接从缓存中获取。 Arena 分配 ：如果线程本地缓存无法满足请求，则会从 Arena 中获取内存。根据请求大小选择合适的 Arena 子区域，并在其中分配内存。 返回 ByteBuf ：最终返回用户一个 ByteBuf ，它封装了实际的内存地址和操作接口。 4. 内存回收 当内存不再使用时，Netty 提供了几种方式来回收内存： 自动回收 ：通过引用计数机制，当 ByteBuf 的引用计数为 0 时，自动回收内存。 显式回收 ：用户可以调用 ByteBuf.release() 方法手动回收内存。 代码示例 以下是一个简单的例子，展示如何在 Netty 中使用 PooledByteBufAllocator 来分配和释放内存： 总"
+    },
+    {
+      "slug": "ugbio6opgz73qh7w",
+      "title": "讲一下 ZooKeeper 的持久化机制",
+      "url": "/tulingzhouyu/db22bv/ugbio6opgz73qh7w",
+      "toc_path": [
+        "Zookeeper",
+        "讲一下 ZooKeeper 的持久化机制"
+      ],
+      "toc_level": 1,
+      "toc_index": 648,
+      "word_count": 387,
+      "updated_at": "2023-09-04T08:05:14.000Z",
+      "primary_category": "os-linux",
+      "primary_category_name": "操作系统与Linux",
+      "related_categories": [
+        "os-linux",
+        "observability-troubleshooting",
+        "performance-optimization",
+        "mysql-index-transaction",
+        "java-core"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "middle",
+        "senior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "内存",
+        "故障",
+        "日志",
+        "性能",
+        "事务"
+      ],
+      "summary": "Zookeeper的持久化机制主要涉及两种数据存储方式：内存存储和磁盘存储。内存存储：这是Zookeeper默认的数据存储方式。在内存存储中，Zookeeper将所有数据保存在内存中，而不是磁盘上。当Zookeeper关闭或发生故障时，内存中的数据会丢失。为了提高性能，Zookeeper采用了...",
+      "excerpt": "Zookeeper的持久化机制主要涉及两种数据存储方式：内存存储和磁盘存储。 内存存储：这是Zookeeper默认的数据存储方式。在内存存储中，Zookeeper将所有数据保存在内存中，而不是磁盘上。当Zookeeper关闭或发生故障时，内存中的数据会丢失。为了提高性能，Zookeeper采用了延迟写盘的策略，即将数据先写入内存，再异步地写入磁盘。这种方式可以减少磁盘I/O操作，提高系统的响应速度。 磁盘存储：为了解决内存存储数据丢失的问题，Zookeeper提供了磁盘存储的持久化方式。在磁盘存储中，Zookeeper将数据保存在磁盘上，并在启动时从磁盘加载数据。为了提高写入性能，Zookeeper采用了两种机制：快照（snapshot）和事务日志（transaction log）。快照是Zookeeper数据树的一个完整拷贝，而事务日志记录了所有的数据更改操作。通过这两种机制，Zookeeper可以在系统故障时恢复数据。 Zookeeper的持久化机制可以根据实际需求进行选择和配置。对于需要高可用性和实时性的场景，可以选择内存存储；对于需要更可靠性和可恢复性的场景，可以选择磁盘存储。"
+    },
+    {
+      "slug": "nryqlgvo87xlxayi",
+      "title": "什么是“零拷贝”？有什么作用？",
+      "url": "/tulingzhouyu/db22bv/nryqlgvo87xlxayi",
+      "toc_path": [
+        "Kafka",
+        "什么是“零拷贝”？有什么作用？"
+      ],
+      "toc_level": 1,
+      "toc_index": 690,
+      "word_count": 5470,
+      "updated_at": "2026-01-22T07:04:23.000Z",
+      "primary_category": "os-linux",
+      "primary_category_name": "操作系统与Linux",
+      "related_categories": [
+        "os-linux",
+        "performance-optimization",
+        "mq-kafka",
+        "observability-troubleshooting",
+        "java-core"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "操作系统",
+        "Linux",
+        "进程",
+        "内存",
+        "文件",
+        "上下文切换",
+        "性能",
+        "优化",
+        "吞吐",
+        "瓶颈",
+        "Kafka",
+        "Consumer",
+        "Java"
+      ],
+      "summary": "零拷贝（Zero-Copy）深度解析：从原理到实战在高性能系统中，\"零拷贝\"是一个频繁出现的关键词。它不仅出现在 Kafka、Netty 等开源项目中，也是提升 I/O 密集型应用性能的重要优化手段。本篇将从底层原理出发，逐步带您理解这一概念。1) \"什么是零拷贝？\"首先，让我们明确一下\"零拷...",
+      "excerpt": "零拷贝（Zero-Copy）深度解析：从原理到实战 在高性能系统中，&quot;零拷贝&quot;是一个频繁出现的关键词。它不仅出现在 Kafka、Netty 等开源项目中，也是提升 I/O 密集型应用性能的重要优化手段。本篇将从底层原理出发，逐步带您理解这一概念。 1) &quot;什么是零拷贝？&quot; 首先，让我们明确一下&quot;零拷贝&quot;的定义： &quot;零拷贝是指在数据传输过程中，避免数据在内存中的多次拷贝，尤其是避免在内核态和用户态之间的数据拷贝。&quot; &quot;不是指真正的零次拷贝&quot; ：&quot;数据最终还是会被物理设备读写，但减少了不必要的内存拷贝操作。&quot; &quot;主要目标&quot; ：&quot;降低 CPU 消耗，提升 I/O 性能，减少上下文切换。&quot; 2) &quot;传统数据传输的问题&quot; 为了理解零拷贝的价值，我们先看看传统方式是如何工作的。 2.1 &quot;场景：文件上传到网络&quot; &quot;传统方式：用户缓冲区读取 → 传输&quot; &quot;分析这个过程&quot; ： &quot;第 1 次拷贝：磁盘 → 内核缓冲区&quot; &quot;操作系统使用 DMA（Direct Memory Access）直接从磁盘读取数据到内核缓冲区。&quot; &quot;这是必需的，因为磁盘 I/O 没有更好的选择。&quot; &quot;第 2 次拷贝：内核缓冲区 → 用户缓冲区&quot; &quot;应用程序调用 read() 系统调用。&quot; &quot;数据从内核缓冲区被拷贝到用户应用的内存缓冲区。&quot; &quot;这是不必要的！如果我们直接使用内核缓冲区的数据呢？&quot; &quot;第 3 次拷贝：用户缓冲区 → 内核缓冲区（Socket）&quot; &quot;应用程序处理完数据后，调用 write() 系统调用将数据发送到网络。&quot; &quot;数据被拷贝到 Socket 对应的内核缓冲区。&quot; &quot;这也是不必要的！如果能直接从第 2 步的内核缓冲区发送呢？&quot; &quot;第 4 次拷贝：内核缓冲区 → 网卡&quot; &quot;操作系统再次使用 DMA 将数据从内核缓冲区发送到网卡。&quot; &quot;这是必需的。&quot; &quot;问题总结&quot; ： &quot;总共 4 次拷贝，其中 2 次不必要。&quot; &quot;频繁的上下文切换（用户态 ↔ 内核态）。&quot; &quot;浪费 CPU 资源执行数据拷贝，而不是有意义的业务逻辑。&quot; 3) &quot;零拷贝的实现方式&quot; 3.1 &quot;方式 1：Mem"
+    },
+    {
+      "slug": "qvz47migqgp36s4y",
+      "title": "解释一下NGINX的工作进程和线程池。如何配置这些以支持多核处理器？",
+      "url": "/tulingzhouyu/db22bv/qvz47migqgp36s4y",
+      "toc_path": [
+        "Nginx",
+        "解释一下NGINX的工作进程和线程池。如何配置这些以支持多核处理器？"
+      ],
+      "toc_level": 1,
+      "toc_index": 711,
+      "word_count": 615,
+      "updated_at": "2023-09-04T11:34:19.000Z",
+      "primary_category": "os-linux",
+      "primary_category_name": "操作系统与Linux",
+      "related_categories": [
+        "os-linux",
+        "java-concurrency",
+        "java-thread-pool",
+        "performance-optimization",
+        "computer-network"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "操作系统",
+        "Linux",
+        "进程",
+        "线程",
+        "并发",
+        "线程池",
+        "性能",
+        "优化",
+        "DNS",
+        "网络"
+      ],
+      "summary": "NGINX的工作进程和线程池是用于处理客户端请求的重要组件。它们的配置可以影响NGINX的性能和并发处理能力。让我们更详细地了解一下这些概念，并探讨如何配置以支持多核处理器。工作进程：NGINX的工作进程是独立运行的进程，每个进程可以处理多个客户端连接和请求。每个工作进程都是单线程的，但通过事...",
+      "excerpt": "NGINX的工作进程和线程池是用于处理客户端请求的重要组件。它们的配置可以影响NGINX的性能和并发处理能力。让我们更详细地了解一下这些概念，并探讨如何配置以支持多核处理器。 工作进程 ： NGINX的工作进程是独立运行的进程，每个进程可以处理多个客户端连接和请求。每个工作进程都是单线程的，但通过事件循环机制，可以异步地处理多个连接和请求。工作进程的数量由 worker_processes 配置项指定。 线程池 ： 线程池是一组线程，用于处理某些任务，如解析DNS、执行SSL加密解密等。默认情况下，NGINX的工作进程不使用线程池。线程池的大小由 worker_threads 配置项指定。 为了配置NGINX以支持多核处理器，你可以采取以下步骤： 设置工作进程数 ： 在NGINX配置中，通过设置 worker_processes 来指定工作进程的数量。通常，可以将工作进程数设置为服务器的CPU核心数的1.5倍左右。这样可以充分利用多核处理器的性能，提高并发处理能力。 设置线程池 （可选）： 如果你希望NGINX的工作进程使用线程池，可以设置 worker_threads 配置项。线程池可以用于执行一些后台任务，如解析DNS等。 事件模型 ： NGINX支持多种事件模型，如 epoll （Linux）、 kqueue （FreeBSD、macOS）等。根据你的操作系统选择合适的事件模型，以充分利用系统的I/O能力。 通过合适地配置工作进程和线程池，以及选择适当的事件模型，你可以优化NGINX以支持多核处理器，提高性能和并发处理能力。注意，配置的优化可能会因服务器硬件、网络环境和负载类型而有所不同。定期的性能监控和测试也是确保优化结果的重要步骤。"
+    },
+    {
+      "slug": "xgbwxgssyf6qnii3",
+      "title": "NGINX如何处理并发请求？你会如何调整NGINX的配置以优化性能？",
+      "url": "/tulingzhouyu/db22bv/xgbwxgssyf6qnii3",
+      "toc_path": [
+        "Nginx",
+        "NGINX如何处理并发请求？你会如何调整NGINX的配置以优化性能？"
+      ],
+      "toc_level": 1,
+      "toc_index": 712,
+      "word_count": 749,
+      "updated_at": "2023-09-04T11:33:57.000Z",
+      "primary_category": "os-linux",
+      "primary_category_name": "操作系统与Linux",
+      "related_categories": [
+        "os-linux",
+        "performance-optimization",
+        "java-concurrency",
+        "redis-cache",
+        "observability-troubleshooting"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "middle",
+        "senior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "Linux",
+        "进程",
+        "线程",
+        "内存",
+        "文件",
+        "性能",
+        "优化",
+        "并发",
+        "缓存",
+        "监控",
+        "CPU"
+      ],
+      "summary": "NGINX是一个事件驱动的异步服务器，可以有效地处理并发请求。它使用事件驱动的方式来管理连接，从而能够同时处理多个连接和请求，而不会阻塞线程或进程。以下是NGINX处理并发请求的基本工作原理： 事件循环：NGINX使用事件循环机制，通过非阻塞I/O和事件通知来处理连接和请求。它监听各种事件，如...",
+      "excerpt": "NGINX是一个事件驱动的异步服务器，可以有效地处理并发请求。它使用事件驱动的方式来管理连接，从而能够同时处理多个连接和请求，而不会阻塞线程或进程。以下是NGINX处理并发请求的基本工作原理： 事件循环 ： NGINX使用事件循环机制，通过非阻塞I/O和事件通知来处理连接和请求。它监听各种事件，如新连接、数据到达等，然后根据事件的类型进行相应的处理。 工作进程 ： NGINX可以配置为多个工作进程，每个进程可以处理多个连接和请求。这使得NGINX能够并行地处理大量请求，从而提高并发处理能力。 多路复用 ： NGINX使用多路复用技术，如epoll（Linux）、kqueue（FreeBSD、macOS）或event ports（Solaris），来同时监听多个连接，从而有效地管理事件并提高效率。 要优化NGINX的性能，可以考虑以下配置调整： 工作进程数 ： 通过适当调整 worker_processes 配置项，你可以指定NGINX的工作进程数。通常建议设置为CPU核心数的1.5倍左右，以便更好地利用系统资源。 连接数限制 ： 使用 worker_connections 配置项可以设置每个工作进程允许的最大连接数。这个值应根据服务器的硬件资源和预期的并发连接数来调整。 Keep-Alive连接 ： 通过启用Keep-Alive连接，可以使客户端在同一连接上发送多个请求，从而减少连接的建立和关闭开销。使用 keepalive_timeout 配置项可以设置Keep-Alive连接的超时时间。 代理缓存和静态文件缓存 ： 配置适当的代理缓存和静态文件缓存，以减轻后端服务器的负载，提高响应速度。 请求限制和速率限制 ： 使用 limit_req 和 limit_conn 模块可以限制每个IP地址的请求速率和并发连接数，从而防止过多的请求占用资源。 启用压缩 ： 启用Gzip压缩可以减小传输数据量，提高性能。 调整缓冲区大小 ： 根据需要调整 client_body_buffer_size 和 client_header_buffer_size 等缓冲区大小，以适应请求的内容大小。 优化内存使用 ： 避免过度分配内存，确保系统有足够的内存来处理连接和请求。 以上只是一些基本的配置调整建议，实际优化需根据具体的应用场景、服务器硬件和网络环境进行调整。监控服务器性能，并根据性能指标进行优化是一个持续的过程。"
+    },
+    {
+      "slug": "iml5fuh005n5i2tz",
+      "title": "NGINX如何处理静态文件？你会如何优化静态文件的传输？",
+      "url": "/tulingzhouyu/db22bv/iml5fuh005n5i2tz",
+      "toc_path": [
+        "Nginx",
+        "NGINX如何处理静态文件？你会如何优化静态文件的传输？"
+      ],
+      "toc_level": 1,
+      "toc_index": 718,
+      "word_count": 637,
+      "updated_at": "2023-09-04T11:30:49.000Z",
+      "primary_category": "os-linux",
+      "primary_category_name": "操作系统与Linux",
+      "related_categories": [
+        "os-linux",
+        "performance-optimization",
+        "computer-network",
+        "redis-cache",
+        "netty-network"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "senior",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "内存",
+        "文件",
+        "性能",
+        "优化",
+        "HTTP",
+        "网络",
+        "缓存"
+      ],
+      "summary": "NGINX可以高效地处理静态文件，这是因为它的设计目标之一就是提供快速的静态文件传输能力。以下是NGINX处理静态文件的方式以及如何优化静态文件传输的一些方法：NGINX处理静态文件的方式： 零拷贝技术：NGINX使用零拷贝技术来最大限度地减少数据从磁盘到网络的复制次数，提高数据传输的效率。 ...",
+      "excerpt": "NGINX可以高效地处理静态文件，这是因为它的设计目标之一就是提供快速的静态文件传输能力。以下是NGINX处理静态文件的方式以及如何优化静态文件传输的一些方法： NGINX处理静态文件的方式： 零拷贝技术 ：NGINX使用零拷贝技术来最大限度地减少数据从磁盘到网络的复制次数，提高数据传输的效率。 事件驱动模型 ：NGINX的事件驱动模型允许它同时处理多个并发连接，从而在高并发环境中有效地传输静态文件。 内存缓存 ：NGINX可以将一部分静态文件缓存在内存中，以加速对这些文件的访问，减少对磁盘的读取操作。 优化静态文件传输的方法： 启用gzip压缩 ：启用gzip压缩可以减小静态文件的大小，从而提高传输速度。NGINX支持在传输过程中对内容进行gzip压缩。 使用CDN ：使用内容分发网络（CDN）可以将静态文件分发到全球各地的服务器节点，从而加速文件传输并减轻原始服务器的负载。 设置长期缓存 ：为静态文件设置适当的缓存时间，让浏览器缓存文件并减少重复下载的次数。这可以通过设置HTTP响应头中的&quot;Cache-Control&quot;和&quot;Expires&quot;字段来实现。 合并文件和使用雪碧图 ：将多个小文件合并为一个大文件，或者将多张图片合并为一个雪碧图，可以减少HTTP请求的次数，提高页面加载速度。 使用适当的文件格式 ：选择适当的图片、视频和其他媒体文件格式，以减小文件大小。例如，使用WebP格式的图片可以更高效地压缩图片。 分布式存储 ：将静态文件存储在分布式存储系统中，如Amazon S3、Google Cloud Storage等，可以提供高可用性和快速的文件传输。 总之，NGINX的优化和配置可以显著改善静态文件传输的性能。结合适当的优化策略，可以确保网站的静态资源在传输过程中快速、高效地加载。"
+    },
+    {
+      "slug": "pzwyn1qb5zdx84nx",
+      "title": "解释组合模式和外观模式，它们如何帮助简化复杂系统的管理和使用？",
+      "url": "/tulingzhouyu/db22bv/pzwyn1qb5zdx84nx",
+      "toc_path": [
+        "设计模式",
+        "解释组合模式和外观模式，它们如何帮助简化复杂系统的管理和使用？"
+      ],
+      "toc_level": 1,
+      "toc_index": 785,
+      "word_count": 767,
+      "updated_at": "2023-09-03T14:33:44.000Z",
+      "primary_category": "os-linux",
+      "primary_category_name": "操作系统与Linux",
+      "related_categories": [
+        "os-linux"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "expert"
+      ],
+      "level_names": [
+        "专家/P7+"
+      ],
+      "keywords": [
+        "文件"
+      ],
+      "summary": "组合模式（Composite Pattern）和外观模式（Facade Pattern）都是结构型设计模式，用于处理复杂系统的管理和使用，但它们解决的问题和应用场景有所不同。组合模式：组合模式关注于将对象组合成树状结构，形成对象的层次结构，从而使得单个对象和组合对象可以被一致地对待。在组合模式...",
+      "excerpt": "组合模式（Composite Pattern）和外观模式（Facade Pattern）都是结构型设计模式，用于处理复杂系统的管理和使用，但它们解决的问题和应用场景有所不同。 组合模式： 组合模式关注于将对象组合成树状结构，形成对象的层次结构，从而使得单个对象和组合对象可以被一致地对待。在组合模式中，一个对象可以包含其他对象，这些对象可以是叶子对象（没有子对象）或组合对象（包含子对象）。 组合模式的目的是让客户端能够以统一的方式处理单个对象和组合对象，从而简化了对复杂层次结构的管理和使用。 适用情况： 当需要表示对象的层次结构，并且希望以统一的方式对待单个对象和组合对象时，可以使用组合模式。例如，在图形界面中创建复杂的嵌套布局。 外观模式： 外观模式关注于提供一个简化的接口，用于访问复杂子系统中的一组接口。它通过引入一个外观类，将复杂的子系统封装起来，客户端只需与外观类交互，无需直接与子系统的多个组件交互。 外观模式的目的是简化客户端的使用，隐藏了子系统的复杂性，使得客户端代码更加清晰、简洁。 适用情况： 当一个复杂的子系统有许多接口，而客户端只需要使用其中的一部分接口时，可以使用外观模式。例如，数据库连接、文件读写等复杂操作可以通过外观模式提供简化的接口。 简化复杂系统的管理和使用： 组合模式和外观模式都有助于简化复杂系统的管理和使用： 组合模式通过对象的组合形成层次结构，使得客户端可以递归地处理对象，而无需关心单个对象和组合对象之间的区别。这种结构有助于管理和使用复杂的嵌套对象。 外观模式通过提供简化的接口，将复杂的子系统封装起来，使得客户端无需了解子系统的复杂性。这样可以减少客户端代码的复杂性，提高可维护性。 综上所述，组合模式和外观模式都是为了简化复杂系统的管理和使用，它们分别通过对象的层次结构和简化接口来实现这一目的。根据具体的需求，可以选择合适的模式来提高系统的可维护性和可用性。"
+    },
+    {
+      "slug": "cqpqaw5fgv297ekg",
+      "title": "工厂方法模式和抽象工厂模式有什么区别？在什么情况下使用它们？",
+      "url": "/tulingzhouyu/db22bv/cqpqaw5fgv297ekg",
+      "toc_path": [
+        "设计模式",
+        "工厂方法模式和抽象工厂模式有什么区别？在什么情况下使用它们？"
+      ],
+      "toc_level": 1,
+      "toc_index": 789,
+      "word_count": 569,
+      "updated_at": "2023-09-03T14:31:27.000Z",
+      "primary_category": "os-linux",
+      "primary_category_name": "操作系统与Linux",
+      "related_categories": [
+        "os-linux"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "操作系统"
+      ],
+      "summary": "工厂方法模式（Factory Method Pattern）和抽象工厂模式（Abstract Factory Pattern）都属于创建型设计模式，但它们在解决问题的方式和应用场景上有一些区别。工厂方法模式：工厂方法模式关注于创建单个产品，它通过定义一个抽象的工厂类，该工厂类包含一个抽象的工厂...",
+      "excerpt": "工厂方法模式（Factory Method Pattern）和抽象工厂模式（Abstract Factory Pattern）都属于创建型设计模式，但它们在解决问题的方式和应用场景上有一些区别。 工厂方法模式： 工厂方法模式关注于创建单个产品，它通过定义一个抽象的工厂类，该工厂类包含一个抽象的工厂方法，具体的产品创建由子类工厂来实现。每个具体的工厂类都负责创建一种具体的产品，这样就实现了产品的创建和工厂的分离。 适用场景： 当一个类无法预知它需要创建的对象的类时，使用工厂方法模式。工厂方法允许子类决定要创建的对象。 当你希望通过继承来扩展和定制一个特定的类，以创建该类的不同实例。 抽象工厂模式： 抽象工厂模式关注于创建一组相关的产品，它引入了一个抽象的工厂接口，该接口包含一组抽象的工厂方法，每个工厂方法用于创建一类相关的产品。具体的工厂类实现了这个抽象工厂接口，从而可以创建一组相关的产品。 适用场景： 当需要创建一组相关的产品，而这些产品之间存在某种关联或约束时，使用抽象工厂模式。例如，创建不同操作系统下的图形界面组件。 当系统要求在不同的产品族之间切换时，使用抽象工厂模式。产品族是指具有相关性的一组产品，例如不同品牌的手机和配件。 总之，工厂方法模式适用于创建单一产品，具有更多的灵活性，而抽象工厂模式适用于创建一组相关的产品，具有更强的扩展性和变化适应性。在选择使用哪个模式时，需要根据实际问题的需求和复杂度来进行判断。"
+    },
+    {
+      "slug": "bge6y0bkwbd07awu",
+      "title": "文件导入导出导致内存溢出如何排查",
+      "url": "/tulingzhouyu/db22bv/bge6y0bkwbd07awu",
+      "toc_path": [
+        "线上问题排查",
+        "文件导入导出导致内存溢出如何排查"
+      ],
+      "toc_level": 1,
+      "toc_index": 807,
+      "word_count": 1090,
+      "updated_at": "2024-08-25T13:53:05.000Z",
+      "primary_category": "os-linux",
+      "primary_category_name": "操作系统与Linux",
+      "related_categories": [
+        "os-linux",
+        "jvm-memory-gc",
+        "observability-troubleshooting",
+        "java-core",
+        "performance-optimization"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "内存",
+        "文件",
+        "JVM",
+        "垃圾回收",
+        "堆",
+        "线上",
+        "排查",
+        "监控",
+        "日志",
+        "Java",
+        "性能",
+        "优化"
+      ],
+      "summary": "在Java应用程序中，文件导入导出导致内存溢出（OutOfMemoryError）是一个常见的问题，特别是在处理大文件时。内存溢出通常是由于程序试图在堆内存中加载过多的数据，超过了JVM的内存限制。下面提供一个详细的排查和解决过程，以及一个具体的示例。排查和优化步骤1. 确认内存溢出日志检查：...",
+      "excerpt": "在Java应用程序中，文件导入导出导致内存溢出（OutOfMemoryError）是一个常见的问题，特别是在处理大文件时。内存溢出通常是由于程序试图在堆内存中加载过多的数据，超过了JVM的内存限制。下面提供一个详细的排查和解决过程，以及一个具体的示例。 排查和优化步骤 1. 确认内存溢出 日志检查 ：确认应用日志中存在 java.lang.OutOfMemoryError: Java heap space 。 监控内存使用 ：使用JVM监控工具（如JConsole、VisualVM）观察内存使用情况。 2. 生成和分析Heap Dump 使用以下JVM参数配置生成Heap Dump： 使用Memory Analyzer Tool（MAT）或Jvisualvm分析Heap Dump，查找内存使用热点，查看哪些对象占用了最多的内存。 3. 代码检查 查看和分析导入导出代码，寻找加载过多数据到内存的地方。 示例问题代码 ： 4. 代码优化 针对文件处理逻辑进行优化，以减少内存占用： 优化策略 ： 逐行处理 ： 而不是将整个文件加载到内存中，逐行读取并处理。 合适的数据结构 ： 如果需要暂存数据，选择合适的、紧凑的数据结构。 流处理 ： 使用Java 8 Streams或其他流处理工具。 临时存储机制 ： 使用临时文件、数据库等外部存储来处理临时数据。 优化后的代码 ： 5. JVM和系统配置 增加堆内存 ：调整JVM参数增加堆内存大小（根据服务器硬件条件评估）。 垃圾回收优化 ：根据应用需求调整垃圾回收器参数。 6. 验证解决方案 测试环境验证 ：在开发或测试环境中使用较大文件进行验证测试。 性能和可靠性测试 ：观察内存使用是否保持稳定。 7. 部署和持续监控 实施改进后部署上线 。 使用APM工具 （如New Relic、Datadog）和JVM监控工具，跟踪内存使用和性能。 具体示例 问题描述 ：一个应用程序在导入大型CSV文件时抛出 OutOfMemoryError ，导致应用崩溃。 具体步骤 ： 确认问题 ：查看日志确定 OutOfMemoryError 发生。 生成Heap Dump ：使用 jmap 命令生成堆转储，并使用MAT分析。 分析结果 ：MAT显示 java.util.ArrayList 使用大量内存，所有文件内容被加载到此集合中。 代码审查与优化 ：使用逐行处理替代整体加载，避免将文件的所有行保存在内存中。 调整JVM设置 ：在进行代码优化的同时，也通过增加 -Xmx 参数调整堆大小。 验证和测试 ：针对不同大小的文件进行测试，以确保内存使用情况稳定。 上线和监控 ：部署更新，同时配置监控警报，快速响应可能的内存问题。 总结 通过逐行处理文件、优化内存使用，以及调整JVM和系统内存设置，可以有效地解决文件导入导出导致的内存溢出问题。确保在开"
+    },
+    {
+      "slug": "df1cwzic7lp7m84y",
+      "title": "如何实现一个文件上传功能",
+      "url": "/tulingzhouyu/db22bv/df1cwzic7lp7m84y",
+      "toc_path": [
+        "项目设计场景题",
+        "如何实现一个文件上传功能"
+      ],
+      "toc_level": 1,
+      "toc_index": 838,
+      "word_count": 4179,
+      "updated_at": "2025-04-28T08:45:00.000Z",
+      "primary_category": "os-linux",
+      "primary_category_name": "操作系统与Linux",
+      "related_categories": [
+        "os-linux",
+        "spring-boot",
+        "spring-core",
+        "project-system-design",
+        "security-auth"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle",
+        "campus"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "线程",
+        "文件",
+        "Spring Boot",
+        "Spring",
+        "AOP",
+        "系统设计",
+        "架构设计",
+        "方案",
+        "库存",
+        "安全",
+        "权限"
+      ],
+      "summary": "这么简单的问题又来了，估计你会觉得面试官看不起谁？这不就是个送分题吗？其实他可能是个送命题！简答：实现一个文件上传功能通常涉及以下几个步骤：前端页面 ：创建一个File输入+一个按钮提交的 HTML 页面。后端逻辑 ：处理前端发送的请求。将这个文件存到某个角落然后告诉前端 你成功了！好的可以回...",
+      "excerpt": "这么简单的问题又来了，估计你会觉得面试官看不起谁？这不就是个送分题吗？其实他可能是个送命题！ 简答： 实现一个文件上传功能通常涉及以下几个步骤： 前端页面 ：创建一个File输入+一个按钮提交的 HTML 页面。 后端逻辑 ：处理前端发送的请求。 将这个文件存到某个角落 然后告诉前端 你成功了！ 好的可以 回家等通知 了，因为这是小学生的回答思路。。。 那要如何回答才算OK呢？关键看你面的岗位，具体要业务以及给多长时间开发。 作为高级或者架构，你可从如下几个方面聊。 整体架构 采用分层架构设计，分为表示层、业务逻辑层、数据访问层和持久层： 表示层 ：提供文件上传的界面，允许用户选择文件并提交上传请求。 业务逻辑层 ：处理文件上传的相关业务逻辑，包括文件类型验证、文件大小限制、文件存储路径生成等。 数据访问层 ：负责将文件信息（如文件名、文件路径、上传时间等）存储到数据库中。 持久层 ：用于存储上传的文件，一般将文件存储在服务器的文件系统中，也可考虑使用分布式文件系统或对象存储服务。 安全设计 文件类型验证 ：严格验证上传文件的类型，只允许特定类型的文件上传，防止恶意文件上传。 文件内容扫描 ：对上传的文件内容进行扫描，检查是否包含恶意代码或病毒。 文件名处理 ：对上传文件的文件名进行处理，避免文件名中包含特殊字符或路径信息，防止路径遍历攻击。 权限控制 ：设置文件存储目录的权限，确保只有授权用户才能访问和修改上传的文件。 技术选型 前端 ：可使用 HTML、CSS、JavaScript 构建文件上传页面，也可结合前端框架如 Vue.js、React 等提高开发效率。 后端 ：采用 Spring Boot 框架，利用其强大的依赖注入、AOP 等特性，简化开发。 存储 ：将文件存储在服务器的文件系统中，也可使用分布式文件系统如 FastDFS 或对象存储服务如阿里云 OSS。 系统流程 用户请求上传页面 ：用户在浏览器中输入文件上传系统的网址，请求上传页面。服务器接收到请求后，返回上传页面给用户。 用户选择文件 ：用户在上传页面中选择要上传的文件。 前端验证 ：前端对用户选择的文件进行基本验证，如文件类型、文件大小等。验证通过后，用户点击上传按钮，将文件提交到后端。 后端接收文件 ：后端接收到文件上传请求后，对文件进行进一步的安全检查，如文件类型验证、文件内容扫描等。 文件存储 ：将文件存储到服务器的文件系统或分布式文件系统中，并生成唯一的文件存储路径。 信息存储 ：将文件的相关信息（如文件名、文件路径、上传时间等）存储到数据库中。 返回上传结果 ：后端将上传结果返回给前端，前端根据返回结果更新页面显示，如显示上传成功消息或失败原因。 性能优化 分块上传 ：对于大文件上传，可采用分块上传的方式，将文件分成多个小块依次上传，提高上传效率和可靠性。 并发控制 ：限制"
+    },
+    {
+      "slug": "gogkqpk8r8gsl7rb",
+      "title": "百万级数据导出 Excel怎么性能优化，避免OOM",
+      "url": "/tulingzhouyu/db22bv/gogkqpk8r8gsl7rb",
+      "toc_path": [
+        "项目设计场景题",
+        "百万级数据导出 Excel怎么性能优化，避免OOM"
+      ],
+      "toc_level": 1,
+      "toc_index": 839,
+      "word_count": 751,
+      "updated_at": "2025-01-08T14:10:30.000Z",
+      "primary_category": "os-linux",
+      "primary_category_name": "操作系统与Linux",
+      "related_categories": [
+        "os-linux",
+        "java-concurrency",
+        "jvm-memory-gc",
+        "performance-optimization",
+        "java-core"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "线程",
+        "内存",
+        "文件",
+        "多线程",
+        "JVM",
+        "OOM",
+        "性能",
+        "优化",
+        "Java"
+      ],
+      "summary": "在导出时，如果一次性导出百万数据是非常慢的， 甚至可能会OOM，所以需要注意内存占用情况，避免内存溢出。可以通过适当调整 JVM 内存参数和多线程分批导出来解决。具体实现步骤如下：1、调整 JVM 内存参数：可以通过设置 JVM 内存参数 -Xms 和 -Xmx 来调整 JVM 内存大小。2、...",
+      "excerpt": "在导出时，如果一次性导出百万数据是非常慢的， 甚至可能会OOM，所以需要注意内存占用情况，避免内存溢出。可以通过适当调整 JVM 内存参数和多线程分批导出来解决。具体实现步骤如下： 1、调整 JVM 内存参数：可以通过设置 JVM 内存参数 -Xms 和 -Xmx 来调整 JVM 内存大小。 ​ 2、使用多线程分批次导出：将数据分成多个批次导出，每次导出一部分数据，避免一次性导出过多数据导致内存溢出，可以显著提高导出效率。 ​ ​ 如何使用 Java 多线程来导出 Excel 文件： 代码地址： https://gitee.com/xscodeit/xushu_springboot_demos/tree/master/ex-quicker ​ 1. 项目结构 在 Java 项目中，我们需要引入 Apache POI 库来操作 Excel 文件。首先，在 Maven 项目中，您需要在 pom.xml 文件中添加以下依赖： ​ 2. 设计类图 我们需要设计一个简单的类图来表示 Excel 导出模块的结构。以下是一个基本的类图： 在这个类图中，我们有三个主要类：ExcelExporter 用于处理 Excel 的导出逻辑，Data 是我们要导出的数据模型，ExportTask 是一个实现了 Runnable 接口的任务，用于多线程导出。 ​ 3. 编写代码 以下是实现这些类的代码示例： ​ 3.1. Data 类 3.2. ExcelExporter 类 3.3. ExportTask 类 1. 2. 4. 主程序 最后，我们需要一个主程序来启动多线程导出： 5. 总结 通过上述示例，我们实现了一个简单的多线程导出 Excel 文件的功能。使用多线程可以大幅提升性能，尤其是在处理大量数据时。希望本文对您理解 Java 多线程导出 Excel 的概念和实现方法有所帮助。"
+    },
+    {
+      "slug": "pcsxcnr5ugt9gho7",
+      "title": "网盘系统设计：万亿 GB 网盘如何实现秒传与限速",
+      "url": "/tulingzhouyu/db22bv/pcsxcnr5ugt9gho7",
+      "toc_path": [
+        "项目设计场景题",
+        "网盘系统设计：万亿 GB 网盘如何实现秒传与限速"
+      ],
+      "toc_level": 1,
+      "toc_index": 853,
+      "word_count": 3947,
+      "updated_at": "2024-07-15T14:21:19.000Z",
+      "primary_category": "os-linux",
+      "primary_category_name": "操作系统与Linux",
+      "related_categories": [
+        "os-linux",
+        "project-system-design",
+        "performance-optimization",
+        "java-concurrency",
+        "computer-network"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "expert",
+        "campus"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "专家/P7+",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "Linux",
+        "线程",
+        "文件",
+        "系统设计",
+        "方案",
+        "高并发",
+        "库存",
+        "QPS",
+        "吞吐",
+        "并发",
+        "网络"
+      ],
+      "summary": "网盘，又称云盘，是提供文件托管和文件上传、下载服务的网站（File hostingservice）。人们通过网盘保管自己拍摄的照片、视频，通过网盘和他人共享文件，已经成为了一种习惯。我们准备开发一个自己的网盘应用系统，应用名称为“DBox”。十几年前曾经有个段子，技术人员对老板说：您不能在公司...",
+      "excerpt": "网盘，又称云盘，是提供文件托管和文件上传、下载服务的网站（File hostingservice）。人们通过网盘保管自己拍摄的照片、视频，通过网盘和他人共享文件，已经成为了一种习惯。我们准备开发一个自己的网盘应用系统，应用名称为“DBox”。 十几年前曾经有个段子，技术人员对老板说：您不能在公司电脑打开您家里电脑的文件，再贵的电脑也不能。事实上，随着网盘技术的成熟，段子中老板的需求已经成为现实：网盘可以自动将家里电脑的文件同步到公司电脑，老板可以在公司的电脑打开家里电脑的文件了。 网盘的主要技术挑战是 海量数据的高并发读写访问。 用户上传的海量数据如何存储？如何避免部分用户频繁读写文件，消耗太多资源，而导致其他的用户体验不佳？我们看下DBox 的技术架构以及如何解决这些问题。 1、需求分析 DBox 的核心功能是提供文件上传和下载服务。基于核心功能，DBox 需要在 服务器 端保存这些文件，并在下载和上传过程中实现断点续传。也就是说，如果上传或下载过程被中断了，恢复之后，还能从中断的地方重新上传或者下载，而不是从头再来。 DBox 还需要实现文件共享的需求。使用 DBox 的不同用户之间可以共享文件，一个用户上传的文件共享给其他用户后，其他用户也可以下载这个文件。 此外，网盘是一个存储和网络密集型的应用，用户文件占据大量 硬盘资源 ，上传、下载需要占用大量网络带宽，并因此产生较高的运营成本。所以用户体验需要向付费用户倾斜，DBox 需要对上传和下载进行 流速控制 ，保证付费用户得到更多的网络资源。DBox 用例图如下。 image-20231201105140483 1、负载指标估算 DBox 的设计目标是支持 10 亿用户注册使用，免费用户最大可拥有 1TB 存储空间。预计日活用户占总用户的 20%，即 2 亿用户。每个活跃用户平均每天上传、下载 4 个文件。 DBox 的 存储量 、 吞吐量 、 带宽负载 估算如下： 总存储量 理论上，总存储空间估算为 10 亿 TB，即 1 万亿 GB。10亿 × 1 TB = 10亿 TB 但考虑到大多数用户并不会完全用掉这个空间，还有很多用户存储的文件其实是和别人重复的（电影、电子书、软件安装包等），真正需要的存储空间大约是这个估算值的 10%，即 1 亿 TB。 QPS 系统需要满足的平均 QPS 约为 10000。2亿 × 4 ÷ （24 × 60 × 60） ≈ 1万 高峰期 QPS 约为平均 QPS 的两倍，即 2 万。 带宽负载 每次上传下载文件平均大小 1MB，所以需要网络带宽负载 10GB/s，即 80Gb/s。1万 × 1 MB = 10 GB / s = 80 Gb / s ，同样，高峰期带宽负载为 160Gb/s。 2、非功能需求 大数据 量存储：10 亿注册用户，1000 亿个文件，约 1 亿"
+    },
+    {
+      "slug": "oly4h8vm5d7p3pxw",
+      "title": "短视频系统设计：如何支持三千万用户同时在线看视频",
+      "url": "/tulingzhouyu/db22bv/oly4h8vm5d7p3pxw",
+      "toc_path": [
+        "项目设计场景题",
+        "短视频系统设计：如何支持三千万用户同时在线看视频"
+      ],
+      "toc_level": 1,
+      "toc_index": 854,
+      "word_count": 4080,
+      "updated_at": "2024-10-28T06:39:49.000Z",
+      "primary_category": "os-linux",
+      "primary_category_name": "操作系统与Linux",
+      "related_categories": [
+        "os-linux",
+        "devops-release",
+        "project-system-design",
+        "performance-optimization",
+        "mysql-index-transaction"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "文件",
+        "发布",
+        "部署",
+        "CD",
+        "系统设计",
+        "方案",
+        "高并发",
+        "性能",
+        "优化",
+        "QPS",
+        "MySQL",
+        "索引"
+      ],
+      "summary": "短视频（short video）通常时长在 15 分钟以内，主要是在移动智能终端上进行拍摄、美化编辑或加特效，并可以在网络社交平台上进行实时分享的一种新型视频形式。短视频具有时间短、信息承载量高等特点，更符合当下网民手机使用行为习惯，短视频的用户流量创造了巨大的商机。我们准备开发一个面向全球用...",
+      "excerpt": "短视频（short video）通常时长在 15 分钟以内，主要是在移动智能终端上进行拍摄、美化编辑或加特效，并可以在网络社交平台上进行实时分享的一种新型视频形式。短视频具有时间短、信息承载量高等特点，更符合当下网民手机使用行为习惯，短视频的用户流量创造了巨大的商机。 我们准备开发一个面向全球用户的短视频应用，用户总量预计 20 亿，应用名称： QuickTok 。 视频文件和其他媒体文件相比，会更大一点，这就意味着存储短视频文件需要更大的存储空间，播放短视频也需要更多的网络带宽。因此，QuickTok 的主要技术挑战是：如何应对高并发用户访问时的网络带宽压力，以及如何存储海量的短视频文件。接下来我们就来看看 QuickTok 的需求与技术架构。 1、需求分析 QuickTok 的核心功能需求非常简单：用户上传视频、搜索视频、观看视频。我们将主要分析非功能需求。 QuickTok 预计用户总量为 20 亿，日活用户约 10 亿，每个用户平均每天浏览 10 个短视频，由此可以预估，短视频日播放量为 100 亿： 10亿 × 10 = 100亿 平均播放 QPS 为 11 万 / 秒： 100亿 ÷ （24 × 60 × 60） ≈ 11万/秒 每秒 11 万用户点击视频，假设用户平均观看 5 分钟，那么同时在观看的视频数就是： 11万/秒 × 5 × 60秒 = 3千万 假设每个短视频的平均播放次数 200 次，那么为了支撑这样体量的播放量，平均需要每秒上传视频数： 11万/秒 ÷ 200 = 550/秒 每个短视频平均大小 100MB，每秒上传至服务器的文件大小为： 100 MB × 550 = 55 GB 视频虽然不是一秒内上传至服务器的，但是这样计算依然没有问题。 每年新增视频需要的存储空间： 55 GB × 60 × 60 × 24 × 365 = 1700 PB 事实上，为了保证视频数据的高可用，不会因为硬盘损坏导致数据丢失，视频文件需要备份存储，QuickTok 采用双副本的备份存储策略，也就是每个视频文件存储三份，需要的总存储空间： 1700 PB × 3 = 5200 PB 而播放视频需要的总带宽： 11万 × 100 MB × 8 bit = 88 Tb 因此，我们需要设计的短视频应用是一个每秒上传 550 个视频文件、11 万次播放、新增165GB 存储以及 88Tb 总带宽的 高并发 应用系统。这个系统呢需要是 高性能的 ，能迅速响应用户的上传和播放操作，也需要是 高可用 的，能面向全球用户提供 7 * 24 小时稳定的服务。 2、概要设计 QuickTok 的核心部署模型如下图： 用户上传视频时，上传请求会通过负载均衡服务器和网关服务器，到达视频上传微服务。 视频上传微服务需要做两件事：一是把上传文件数据流写入视频文件暂存服务器；二是把"
+    },
+    {
+      "slug": "mogs7xbkzigtwzef",
+      "title": "线上问题如何快速排查",
+      "url": "/tulingzhouyu/db22bv/mogs7xbkzigtwzef",
+      "toc_path": [
+        "项目设计场景题",
+        "线上问题如何快速排查"
+      ],
+      "toc_level": 1,
+      "toc_index": 870,
+      "word_count": 3139,
+      "updated_at": "2024-07-15T14:21:20.000Z",
+      "primary_category": "os-linux",
+      "primary_category_name": "操作系统与Linux",
+      "related_categories": [
+        "os-linux",
+        "observability-troubleshooting",
+        "java-concurrency",
+        "jvm-memory-gc",
+        "java-core"
+      ],
+      "question_type": "troubleshooting",
+      "question_type_name": "故障排查题",
+      "levels": [
+        "middle",
+        "senior",
+        "expert"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年",
+        "专家/P7+"
+      ],
+      "keywords": [
+        "操作系统",
+        "进程",
+        "线程",
+        "内存",
+        "文件",
+        "线上",
+        "排查",
+        "故障",
+        "监控",
+        "日志",
+        "CPU",
+        "OOM",
+        "并发",
+        "JVM",
+        "Java"
+      ],
+      "summary": "示例代码troubleshoot-demo.zipjdk版本：17.0.8linux版本：CentOS-7.4.1708本次分享内容1. 硬件问题排查2. 多线程并发问题排查3. 内存溢出问题排查4. CPU飙高问题排查硬件问题排查如果一个实例发生了问题，根据情况选择，要不要着急去重启。如果出...",
+      "excerpt": "示例代码 jdk版本：17.0.8 linux版本：CentOS-7.4.1708 ​ 本次分享内容 1. 硬件问题排查 2. 多线程并发问题排查 3. 内存溢出问题排查 4. CPU飙高问题排查 ​ 硬件问题排查 如果一个实例发生了问题，根据情况选择，要不要着急去重启。如果出现的CPU、内存飙高或者日志里出现了 OOM异常 第一步是隔离，第二步是保留现场，第三步才是问题排查。 隔离 就是把你的这台机器从请求列表里摘除，比如把 nginx 相关的权重设成零。 ​ 现场保留 ​ 瞬时态和历史态 查看比如 CPU、系统内存等，通过历史状态可以体现一个趋势性问题，而这些信息的获取一般依靠监控系统的协作。 保留信息 系统当前网络连接 使用 ss 命令而不是 netstat 的原因，是因为 netstat 在网络连接非常多的情况下，执行非常缓慢。 后续的处理，可通过查看各种网络连接状态的梳理，来排查 TIMEWAIT 或者 CLOSEWAIT，或者其他连接过高的问题，非常有用。 网络状态统计 它能够按照各个协议进行统计输出，对把握当时整个网络状态，有非常大的作用。 在一些速度非常高的模块上，比如 Redis、Kafka，就经常发生跑满网卡的情况。表现形式就是网络通信非常缓慢。 进程资源 通过查看进程，能看到打开了哪些文件，可以以进程的维度来查看整个资源的使用情况，包括每条网络连接、每个打开的文件句柄。同时，也可以很容易的看到连接到了哪些服务器、使用了哪些资源。这个命令在资源非常多的情况下，输出稍慢，请耐心等待。 CPU 资源 主要用于输出当前系统的 CPU 和负载，便于事后排查。 I/O 资源 一般，以计算为主的服务节点，I/O 资源会比较正常，但有时也会发生问题，比如日志输出过多，或者磁盘问题等。此命令可以输出每块磁盘的基本性能信息，用来排查 I/O 问题。 内存问题 free 命令能够大体展现操作系统的内存概况，这是故障排查中一个非常重要的点，比如 SWAP 影响了 GC，SLAB区挤占了 JVM 的内存。 其他全局 dmesg 是许多静悄悄死掉的服务留下的最后一点线索。当然，ps 作为执行频率最高的一个命令，由于内核的配置参数，会对系统和 JVM 产生影响，所以我们也输出了一份。 进程快照，最后的遗言（jinfo） 此命令将输出 Java 的基本进程信息，包括环境变量和参数配置，可以查看是否因为一些错误的配置造成了 JVM 问题 dump 堆信息 jstat 将输出当前的 gc 信息。一般，基本能大体看出一个端倪，如果不能，可将借助 jmap 来进行分析。 堆信息，排查内存泄漏的现象 稍微提一下 jmap 命令，它在 9 版本里被干掉了，取而代之的是 jhsdb，你可以像下面的命令一样使用。 jmap 将会得到当前 Java 进程的 dump 信息。如上所示，其"
+    },
+    {
+      "slug": "scx7x9yu5q1gkruu",
+      "title": "腾讯面试：40亿QQ号，给你1G内存，怎么去重？",
+      "url": "/tulingzhouyu/db22bv/scx7x9yu5q1gkruu",
+      "toc_path": [
+        "数据结构与算法",
+        "腾讯面试：40亿QQ号，给你1G内存，怎么去重？"
+      ],
+      "toc_level": 1,
+      "toc_index": 890,
+      "word_count": 1283,
+      "updated_at": "2025-12-11T07:31:35.000Z",
+      "primary_category": "os-linux",
+      "primary_category_name": "操作系统与Linux",
+      "related_categories": [
+        "os-linux",
+        "project-system-design",
+        "algorithm",
+        "java-collections"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "内存",
+        "方案",
+        "算法",
+        "数组",
+        "排序",
+        "集合"
+      ],
+      "summary": "前段时间，有个小伙伴给我分享了他去腾讯面试的经历。他说被问到了一道去重的面试题：给你40亿个QQ号，要求相同的QQ号码仅保留一个，内存限制为1个G，你会怎么实现？小伙伴由于没有回答好，导致面试挂了。",
+      "excerpt": "前段时间， 有个小伙伴给我分享了他去腾讯面试的经历。他说被 问到了一道去重的面试题： 给你40亿个QQ号，要求 相同的QQ号码仅保留一个 ，内存限制为1个G，你会怎么实现？ 小伙伴由于没有回答好，导致面试挂了。 这其实就是个经典的 海量数据去重问题 ，而且还附带一个让人头疼的条件： 内存限制只有1G！ ​ 1.理解题目：从QQ号和内存限制说起 我们先来分析一下问题本身。 QQ号其实是一串数字，范围是4字节的无符号正整数，也就是32位，理论上最大值接近43亿。所以，如果单纯存储这40亿个QQ号，需要耗费多少内存呢？ 简单计算一下： 总共需要15GB的内存，显然远远超过了题目给的1GB限制。这就需要我们换个思路，不能“硬塞”，要想办法巧妙地存储和处理这些QQ号。 所以问题的本质就是“ 在内存非常有限的情况下，高效实现重复数据的去重 ”。 解决方案有很多，但是主流的方案有两种： 方案1：使用BitMap 方案2：使用布隆过滤器 两者各有千秋，但在本题中，我们使用BitMap更加合适。 2.解决方案：用BitMap的精妙之处化繁为简 2.1 什么是BitMap？ 所谓位图（BitMap）其实就是一个bit数组，即每一个位置都是一个bit，其中的取值可以是0或者1。 通俗点说，BitMap就像一个超级节省空间的“登记簿”。 如果某个QQ号存在，就在对应的“格子”上标记为1； 如果不存在，则是0。 比如，我们需要记录QQ号：1、4、6。传统方法可能需要用3个整型变量，每个4字节，总共12字节。但是BitMap只需要用一个字节（8位），直接把第1、4、6位分别置为1即可，是不是更高效？ 这里节省了 12倍空间。 BitMap最大的优势在于能够用 极小的存储空间 去表示 巨大的数值范围 ，并且支持快速查询、去重等操作。它特别适合这种“有或没有”的问题，不需要存储原始数据。 2.2 如何使用BitMap进行40亿个QQ号去重？ 回到我们的问题：40亿个QQ号， 限制1G内存， 如何用BitMap去重？ 步骤如下： 1）申请一个足够大的BitMap，大小为40亿个bit，也就是： 只需要不到500MB的空间就可以搞定！ 2）遍历这40亿QQ号，把每个号码映射到BitMap中，把对应位置的bit设置为1。 比如，QQ号“12345678”会直接映射到BitMap的第“12345678”个位置，然后置为1，表示它已经出现过。 3）通过 遍历BitMap，找出所有bit值为1的位置 ，这些就是所有的去重后的QQ号。 通过这样的方式，我们用BitMap成功实现了40亿QQ号去重，最大内存消耗也不到500MB， 不会有内存不足的问题。 2.3 BitMap的优缺点 优点： 超极节省内存 相比直接存储数据，BitMap的内存消耗大约只有八分之一甚至更少，非常高效。 操作快 插入、查询、去重"
+    },
+    {
+      "slug": "gf87srmm7otygvcw",
+      "title": "阿里面试：全国14亿人，统计出重名最多的前100个姓名",
+      "url": "/tulingzhouyu/db22bv/gf87srmm7otygvcw",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "阿里面试：全国14亿人，统计出重名最多的前100个姓名"
+      ],
+      "toc_level": 2,
+      "toc_index": 1034,
+      "word_count": 2039,
+      "updated_at": "2025-10-19T05:59:00.000Z",
+      "primary_category": "os-linux",
+      "primary_category_name": "操作系统与Linux",
+      "related_categories": [
+        "os-linux",
+        "java-collections",
+        "jvm-memory-gc",
+        "project-system-design",
+        "performance-optimization"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "内存",
+        "文件",
+        "HashMap",
+        "OOM",
+        "堆",
+        "方案",
+        "性能",
+        "优化",
+        "瓶颈"
+      ],
+      "summary": "本文将探讨一个经典的海量数据处理问题：如何在有限的硬件资源下，从一个包含14亿条记录的姓名文件中，高效地统计出出现频率最高的100个姓名（Top 100）。我们将深入分析两种主流方案：一种是基于内存的理想化方案，另一种是基于分治思想的现实方案。本文旨在提供一个清晰的解决问题的框架，并提炼出可应...",
+      "excerpt": "本文将探讨一个经典的海量数据处理问题：如何在有限的硬件资源下，从一个包含14亿条记录的姓名文件中，高效地统计出出现频率最高的100个姓名（Top 100）。我们将深入分析两种主流方案：一种是基于内存的理想化方案，另一种是基于分治思想的现实方案。本文旨在提供一个清晰的解决问题的框架，并提炼出可应用于其他大规模数据场景的通用范式。 一、 核心矛盾：有限内存 vs 海量数据 在着手解决任何技术问题前，首先需要进行量化分析（Estimation）。 数据规模： 14亿条姓名记录。 内存限制： 假设运行环境为一台主流服务器，可用内存为8GB。 初步估算： 一个中文姓名通常占6-8字节（UTF-8编码），加上换行符和辅助数据结构，我们保守估计每条姓名记录平均占用15字节。那么总数据大小约为： 14亿 * 15字节 ≈ 210亿字节 ≈ 19.5GB 。 结论显而易见： 19.5GB的数据量远超8GB的内存限制 。任何试图将全部数据一次性读入内存进行处理的“朴素”方法，都将导致内存溢出（Out-of-Memory, OOM），使程序或服务器直接崩溃。这便是我们面临的核心矛盾，也是问题求解的起点。 二、 方案一：内存充足的理想化方案 尽管在当前约束下不可行，但我们仍有必要探讨在内存充足（例如，拥有64GB内存的服务器）的情况下，最高效的单机处理方法。这为我们提供了理论上的最优性能基准。 2.1 内存优化利器：Trie树 (前缀树) 要进行频率统计，最简单的工具是哈希表（HashMap）。但对于有大量公共前缀的字符串（如中文姓名，“张”、“王”、“李”姓非常普遍），Trie树是更节省内存的选择。 如上图所示，Trie树将字符串的公共前缀路径进行合并，从而极大减少了冗余存储。我们只需沿着姓名路径遍历树，并在路径的终点节点上更新一个计数器（ count ），即可完成一次频率更新。 2.2 高效找出Top K：小顶堆 在通过Trie树得到所有唯一姓名及其频率后，我们需要从数百万的唯一姓名中找出Top 100。全局排序开销巨大，更优的做法是使用一个大小为K（此处K=100）的小顶堆，它就像一个“守门员”。 小顶堆的工作机制如下： 初始化一个大小为100的空堆。 遍历所有姓名及其频率：若堆未满，直接推入；若堆已满，则将当前元素频率与堆顶（当前Top 100中频率最小的）比较。 若当前元素频率更高，则弹出堆顶，将当前元素推入。 遍历结束后，堆中剩下的100个元素即为全局Top 100。此方法的时间复杂度仅为 O(N log K) 。 方案二：应对内存瓶颈的分治策略 (最终修订版) 回到现实，我们必须在8GB内存内解决问题。此时，**分治（Divide and Conquer）**思想是打破僵局的唯一出路。其核心在于，将无法一次性处理的大问题，拆解成多个可以在内存中单独处理的小问题。 整个"
+    },
+    {
+      "slug": "xcsxy9w4utryabq4",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/xcsxy9w4utryabq4",
+      "toc_path": [
+        "高频面试问题",
+        "fox老师",
+        "全国 14 亿人，怎么统计重名最多的前 100 个姓名",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1087,
+      "word_count": 1255,
+      "updated_at": "2025-10-08T08:11:13.000Z",
+      "primary_category": "os-linux",
+      "primary_category_name": "操作系统与Linux",
+      "related_categories": [
+        "os-linux",
+        "jvm-memory-gc",
+        "resume-project",
+        "algorithm",
+        "performance-optimization"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "campus",
+        "senior"
+      ],
+      "level_names": [
+        "校招/应届生",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "内存",
+        "文件",
+        "堆",
+        "面试官",
+        "排序",
+        "优化"
+      ],
+      "summary": "口播文案兄弟们！最近有个粉丝跟我吐槽：面阿里被问 “全国 14 亿人，怎么统计重名最多的前 100 个姓名”，他就说 “用哈希表计数，再排序取前 100”，结果面试官直接摇头，当场挂了！你是不是也觉得这题简单？但面试官埋了 2 个坑：14 亿数据装不下内存咋办？直接排序效率太低咋办？今天 3 ...",
+      "excerpt": "口播文案 ​ 兄弟们！最近有个粉丝跟我吐槽：面阿里被问 “全国 14 亿人，怎么统计重名最多的前 100 个姓名”，他就说 “用哈希表计数，再排序取前 100”，结果面试官直接摇头，当场挂了！ 你是不是也觉得这题简单？但面试官埋了 2 个坑：14 亿数据装不下内存咋办？直接排序效率太低咋办？今天 3 分钟拆明白，从 “常规思路” 到 “内存受限优化”，连面试加分点都标好，下次你比别人多答 3 步，稳了！ 首先明确：这题不考 “会不会计数”，考的是 “ 大数据场景下的效率和资源控制 ”。咱分两步说，每步都告诉你 “面试怎么说才加分”！ 第一步：内存够时 —— 前缀树 + 小顶堆，效率拉满 别一上来就说 “用哈希表”！姓名是字符串，比如 “张伟”“张丽” 都有 “张” 前缀，用 前缀树（Trie 树） 存，就像字典里 “张” 开头的字放一块，不用重复存 “张” 字 —— 面试提这个 “空间优化点”，面试官先高看你一眼！ 具体咋玩？特简单： 前缀树计数 ：把姓名拆成单个字，比如 “李强” 拆 “李” 和 “强”，拼积木似的顺着前缀树往下接，最后在 “强” 这个节点上记次数 —— 出现 10 万次就标 10 万，遍历一遍 14 亿数据，所有名字的次数就统计完了； 小顶堆筛 Top100 ：别傻乎乎全排序（14 亿数据排序，时间直接炸）！搞个大小 100 的小顶堆：堆没满，直接塞名字和次数；堆满了，要是当前名字次数比堆顶（堆里最少的）多，就把堆顶踢出去，新的塞进来 —— 最后堆里剩的，就是前 100 个重名最多的！ 你看，这两步既省空间（前缀树）又省时间（比全排序快太多，不用记复杂公式），比 “哈希表 + 全排序” 高级多了，面试这么说，基础坑肯定不踩！对了，你之前用前缀树统计过字符串吗？用过的扣 1，没试过的扣 2！ 第二步：关键坑！内存不够咋办？（面试官必问） 刚才的思路，14 亿数据全塞内存早爆了！按每条姓名 10 字节算，14 亿条就是 14GB，远超 2G 限制 —— 这时候得用 “ 分治 + 磁盘辅助 ”，面试把这步说出来，直接体现你 “大数据实战思维”！ 具体 3 步，超落地： 分块读数据 ：把 14 亿条拆成小块，每次只读 100 万条进内存（也就 10MB，连 1G 都不到），绝不多占内存； 每块单独计数 ：这时候用哈希表就够了！统计当前块里每个名字的次数，比如 “张伟” 在这块出现 500 次，就写个文件 “chunk1.txt”，里面记 “张伟 500”； 合并所有块结果 ：把所有分块文件（比如 140 个）读出来，合并计数 ——“张伟” 在 chunk1 是 500，chunk2 是 600，合并后就是 1100，最后再用小顶堆筛 Top100！ 这里有个面试加分点：要是分块文件太多（比如 1000 个），别一个个合并，用 “ 多路归并 ”——"
+    },
+    {
+      "slug": "dg0vts3m4augvwvb",
+      "title": "两个100亿URL的文件怎么找交集？",
+      "url": "/tulingzhouyu/db22bv/dg0vts3m4augvwvb",
+      "toc_path": [
+        "高频面试问题",
+        "fox老师",
+        "两个100亿URL的文件怎么找交集？"
+      ],
+      "toc_level": 2,
+      "toc_index": 1090,
+      "word_count": 3728,
+      "updated_at": "2025-10-07T06:13:48.000Z",
+      "primary_category": "os-linux",
+      "primary_category_name": "操作系统与Linux",
+      "related_categories": [
+        "os-linux",
+        "project-system-design",
+        "resume-project",
+        "mysql-sharding",
+        "performance-optimization"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "junior",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "初级/1-3年",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "内存",
+        "文件",
+        "系统设计",
+        "方案",
+        "面试官",
+        "分片",
+        "读写分离",
+        "性能",
+        "吞吐",
+        "容量",
+        "瓶颈"
+      ],
+      "summary": "在大厂后端、存储或大数据方向的面试中，“100 亿 URL 文件求交集” 是一道典型的 “看似简单，实则考察系统设计能力” 的高频题。很多候选人仅能说出 “用布隆过滤器” 这一单点技术，却在面试官的追问下暴露对 “海量数据处理逻辑、工程落地细节、可扩展性设计” 的认知短板 。本文将从问题痛点拆...",
+      "excerpt": "在大厂后端、存储或大数据方向的面试中，“100 亿 URL 文件求交集” 是一道典型的 “看似简单，实则考察系统设计能力” 的高频题。很多候选人仅能说出 “用布隆过滤器” 这一单点技术，却在面试官的追问下暴露对 “海量数据处理逻辑、工程落地细节、可扩展性设计” 的认知短板 。本文将从 问题痛点拆解→常见误区分析→工业级方案落地→面试考察能力 四个维度，带你掌握这道题的完整解题思路。 一、问题背景：100 亿 URL 背后的核心挑战 在分析方案前，需先明确 “100 亿 URL” 这一量级对应的技术痛点 —— 脱离数据规模谈方案，都是纸上谈兵： 数据量超限 ：按单条 URL 平均 100 字节计算，100 亿条 URL 的总容量约为 10TB （100 亿 ×100 字节 = 10¹¹ 字节 =~10TB），远超单机内存（常规服务器内存为 64GB-256GB），无法通过 “全量加载到内存对比” 实现； 精确性要求 ：URL 作为业务核心数据（如电商商品页、搜索引擎结果页），不允许 “漏判”（将交集 URL 误判为非交集，导致核心资源丢失），仅允许 “极少量误判”（需通过后续逻辑修正）； 可扩展性与实时性 ：实际业务中，URL 库并非静态 —— 每天可能新增数千万条 URL（如爬虫抓取、用户生成），需支持 “实时更新” 与 “动态扩容”，避免系统因数据增长而崩溃； 性能要求 ：交集查询需满足 “低延迟”（如搜索引擎需秒级响应新 URL 是否重复），不能因数据量大而导致查询耗时飙升。 这些痛点决定了： 单一技术无法解决问题，必须通过 “分层过滤 + 分布式扩展” 的架构，平衡 “速度、精度、成本、扩展性” 四大目标 。 二、常见误区：为什么 “只答布隆过滤器” 会挂？ 很多候选人第一反应是 “用布隆过滤器”—— 这一思路本身没错，但 “仅答布隆过滤器” 忽略了工程落地的核心细节，面试官的 “灵魂三问” 正是针对这些漏洞： 误区 1：忽视布隆过滤器的 “误判风险” 布隆过滤器的核心特性是 “无漏判、有可控误判”（误判率通常设为 1%-0.1%），但候选人往往未考虑 “误判的业务影响”： 若误判的 1% 包含核心 URL（如电商爆款商品 URL、政务平台关键页面），布隆过滤器会将 “已存在的核心 URL” 误判为 “新 URL”，导致重复抓取 / 存储，不仅浪费资源，还可能引发 “内容重复展示” 的业务问题； 面试官追问 “误判怎么办”，本质是考察 “如何用后续逻辑修正误判”—— 答案不是 “降低误判率”（过低误判率会导致布隆过滤器内存翻倍），而是 “用精准存储做二次核验”。 误区 2：未计算布隆过滤器的 “内存成本” 与 “分布式适配” 候选人常忽略 “100 亿 URL 的布隆过滤器需要多大内存”，更未考虑 “单机装不下时的解决方案”： 按误判率 1% 计算，布"
+    },
+    {
+      "slug": "db66xetrdwpg0pao",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/db66xetrdwpg0pao",
+      "toc_path": [
+        "高频面试问题",
+        "fox老师",
+        "两个100亿URL的文件怎么找交集？",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1091,
+      "word_count": 1245,
+      "updated_at": "2025-10-07T08:15:59.000Z",
+      "primary_category": "os-linux",
+      "primary_category_name": "操作系统与Linux",
+      "related_categories": [
+        "os-linux",
+        "mysql-sharding",
+        "redis-cache",
+        "distributed-transaction",
+        "project-system-design"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "内存",
+        "文件",
+        "分片",
+        "读写分离",
+        "Redis",
+        "缓存",
+        "分布式事务",
+        "方案"
+      ],
+      "summary": "📎两个100亿URL文件找交集.html口播文案别再栽在 “100 亿 URL 找交集” 上！这才是大厂要的答案兄弟们，要是面试被问 “两个 100 亿 URL 的文件怎么找交集”，你是不是张口就来 “用布隆过滤器啊”？还暗爽自己答得又快又准？我跟你说 —— 这答案只对了半截，另一半错得离谱...",
+      "excerpt": "口播文案 ​ 别再栽在 “100 亿 URL 找交集” 上！这才是大厂要的答案 兄弟们，要是面试被问 “两个 100 亿 URL 的文件怎么找交集”，你是不是张口就来 “用布隆过滤器啊”？还暗爽自己答得又快又准？我跟你说 —— 这答案只对了半截，另一半错得离谱！就这 “半截答案”，不知道刷掉多少想进大厂的候选人！ 我有个朋友，清华硕士，五年大厂后端经验，字节三面就栽在这道题上。他当时特自信，把布隆过滤器的原理说半天，结果面试官没接话，就笑了笑，接着三个问题抛过来，直接给他问懵了：第一问：布隆过滤器有 1% 的误判率，要是这 1% 里有核心 URL—— 比如电商的爆款商品页、搜索引擎的关键结果页，漏了怎么办？第二问：你算过 100 亿 URL 的布隆过滤器要多少内存吗？按 1% 误判率算，得 12GB！单机装不下，你怎么搞分布式？总不能让机器扛崩吧？第三问：要是新 URL 每秒都在加，比如一小时新增 100 万条，你的系统怎么实时更新？总不能更新的时候停服务吧？ 他当场就卡壳了 —— 这才是大厂面试的真正难度：不是考你 “知道什么技术”，而是考你 “怎么用技术解决真问题”！ 那正确答案到底是什么？听好了，这是工业级的三层架构，每一层都有讲究： 第一层！布隆过滤器防线 —— 负责 “快” 先搭一个误判率 1% 的布隆过滤器，算下来也就 12GB 内存，完全能塞进单机。新 URL 过来先过这关：要是布隆过滤器说 “肯定没有”，直接放行，不用走后面流程；要是说 “可能有”，再进下一层。就这一步，能过滤掉 99% 的非重复 URL，速度都是毫秒级，不耽误业务。 第二层！指纹库精准核验 —— 负责 “准” 对那 1% 的 “疑似重复” URL，别直接存原始字符串，太占地方！先算个 SHA-256 指纹，取前 64 位就行，然后把指纹存进 RocksDB—— 这数据库专门吃磁盘，100 亿条指纹也就 80GB，比存原始 URL 省 100 多倍空间！查的时候拿新 URL 的指纹去 RocksDB 碰，有就是真重复，没有就是布隆过滤器误判，100% 精准，绝不漏核心数据。 第三层！分布式扩展架构 —— 负责 “扛造” 要是数据再大，100 亿变 1000 亿？单机顶不住就拆！用一致性哈希把数据分片到 100 台机器，每台机器只管自己那 1/100 的布隆过滤器和 RocksDB，压力直接分摊；查询慢了就搞读写分离 —— 读请求走从库，写请求走主库，再加一层本地缓存，热门 URL 不用次次查磁盘；实时更新怕断服务？用双缓冲策略：一个缓冲给业务查，另一个偷偷更新数据，更新完了无缝切换，用户完全没感觉；再搭动态扩容，数据涨多少都能接得住！ 所以你看，这题考的根本不是 “布隆过滤器” 这个词，而是你的系统思维：第一，会不会权衡取舍 —— 用 1% 的磁盘查询，换 99% 的内存速度"
+    },
+    {
+      "slug": "ftgb3g2hb6mgm1rd",
+      "title": "为什么要用线程池？如何合理配置线程池？",
+      "url": "/tulingzhouyu/db22bv/ftgb3g2hb6mgm1rd",
+      "toc_path": [
+        "高频面试问题",
+        "fox老师",
+        "为什么要用线程池？如何合理配置线程池？"
+      ],
+      "toc_level": 2,
+      "toc_index": 1094,
+      "word_count": 3221,
+      "updated_at": "2025-09-29T08:35:15.000Z",
+      "primary_category": "os-linux",
+      "primary_category_name": "操作系统与Linux",
+      "related_categories": [
+        "os-linux",
+        "java-concurrency",
+        "java-thread-pool",
+        "observability-troubleshooting",
+        "mq-rabbitmq"
+      ],
+      "question_type": "troubleshooting",
+      "question_type_name": "故障排查题",
+      "levels": [
+        "campus",
+        "middle"
+      ],
+      "level_names": [
+        "校招/应届生",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "操作系统",
+        "进程",
+        "线程",
+        "内存",
+        "文件",
+        "上下文切换",
+        "并发",
+        "线程池",
+        "核心线程",
+        "拒绝策略",
+        "阻塞队列",
+        "监控"
+      ],
+      "summary": "一、为什么要用线程池？—— 解决 “手动创建线程” 的 3 大核心痛点手动创建线程（如new Thread()）在并发场景下会暴露资源、性能、管理上的致命问题，线程池的设计本质是 “池化思想”，通过复用线程、统一管理，解决这些痛点：1. 降低资源开销：避免线程 “频繁创建 / 销毁” 的损耗线...",
+      "excerpt": "一、为什么要用线程池？—— 解决 “手动创建线程” 的 3 大核心痛点 手动创建线程（如 new Thread() ）在并发场景下会暴露资源、性能、管理上的致命问题，线程池的设计本质是 “池化思想”，通过复用线程、统一管理，解决这些痛点： 1. 降低资源开销：避免线程 “频繁创建 / 销毁” 的损耗 线程是 重量级资源 ，创建和销毁需要操作系统内核参与（从用户态切换到内核态），且每个线程默认占用 1MB 栈内存（JVM 参数 -Xss 配置）： 手动创建：若每秒有 1000 个请求，每个请求新建 1 个线程，处理完就销毁，每天会创建 8.64 亿个线程，内核态切换和内存分配 / 回收的开销会耗尽 CPU 和内存资源； 线程池：提前创建核心线程并复用，仅在请求峰值时临时创建非核心线程，处理完后放回池中（而非销毁），大幅减少内核态切换和内存开销。 举例 ：Tomcat 的线程池（如 ExecutorService ）处理 HTTP 请求，核心线程长期复用，支撑每秒万级请求而不崩溃，就是靠减少线程创建销毁损耗。 2. 控制并发风险：避免 “线程过多” 导致系统过载 线程过多会引发两个致命问题，线程池通过 “参数限制” 规避风险： 问题 1：上下文切换频繁。CPU 在多个线程间切换需要保存 / 恢复线程状态，切换次数越多，CPU 有效计算时间越少（比如 1000 个线程同时运行，CPU 大部分时间在切换，而非处理业务）； 问题 2：内存溢出（OOM）。每个线程占 1MB 栈内存，1000 个线程就占 1GB，若手动创建无限制线程，会快速耗尽 JVM 堆外内存，导致 OOM。 线程池的解决方案 ：通过 核心线程数 和 最大线程数 限制并发线程数，比如配置最大线程数 200，即使有 1000 个请求，也只会用 200 个线程处理（其余请求入队列），避免 CPU 和内存过载。 3. 统一管理与监控：让并发任务 “可观测、可控制” 手动创建线程无法统一管理，线程池提供了标准化的管理能力： 任务排队：通过 阻塞队列 缓冲请求（如 LinkedBlockingQueue ），避免请求直接被拒绝； 拒绝策略：当线程和队列都满时，通过策略（如 CallerRunsPolicy 让调用者处理、 AbortPolicy 抛异常）优雅处理过载，而非直接崩溃； 监控与调优：支持获取线程池状态（活跃线程数、队列长度、任务拒绝数），结合 Prometheus/Grafana 监控，可及时发现 “线程不足导致队列堆积” 或 “线程过多导致 CPU 过载” 等问题。 ​ 二、如何合理配置线程池？——4 步落地法（从理论到项目） 线程池的核心参数有 5 个： 核心线程数（corePoolSize）、最大线程数（maximumPoolSize）、阻塞队列（workQueue）、拒绝策略（handler"
+    },
+    {
+      "slug": "css4cv6t1p32giph",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/css4cv6t1p32giph",
+      "toc_path": [
+        "高频面试问题",
+        "fox老师",
+        "为什么要用线程池？如何合理配置线程池？",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1095,
+      "word_count": 1431,
+      "updated_at": "2025-09-29T10:57:05.000Z",
+      "primary_category": "os-linux",
+      "primary_category_name": "操作系统与Linux",
+      "related_categories": [
+        "os-linux",
+        "java-concurrency",
+        "observability-troubleshooting",
+        "java-core",
+        "project-system-design"
+      ],
+      "question_type": "troubleshooting",
+      "question_type_name": "故障排查题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "线程",
+        "内存",
+        "文件",
+        "CPU",
+        "IO",
+        "订单",
+        "支付",
+        "库存"
+      ],
+      "summary": "📎线程池线程怎么设置.html口播文案天天用线程池，面试官问线程数咋设？你慌不慌？咱做开发的，天天跟线程池打交道：处理订单用它，同步数据也用它！可一到面试，面试官问 “不同任务线程数咋设”，你是不是只能说 “大概设 20 个？” 别慌！今天咱不光讲原理，还带 3 个真实工作场景，把 CPU ...",
+      "excerpt": "​ ​ 口播文案 天天用线程池，面试官问线程数咋设？你慌不慌？ ​ 咱做开发的，天天跟线程池打交道：处理订单用它，同步数据也用它！可一到面试，面试官问 “不同任务线程数咋设”，你是不是只能说 “大概设 20 个？” 别慌！今天咱不光讲原理，还带 3 个真实工作场景，把 CPU 密集、IO 密集的线程数设置讲透，听完你立马能对标自己的项目！ 先从最常见 的 CPU 密集型场景 说起 —— 比如 “订单金额汇总”！之前公司做月度对账，要把 10 万条订单数据拉出来，算每个用户的总消费额：先过滤无效订单，再按用户 ID 分组，最后累加金额。你猜这任务里 CPU 和 IO 占比多少？整个过程几乎不用查数据库、不用读文件，全是内存里的计算操作，单个任务耗时 150 毫秒，其中 145 毫秒 CPU 都在算，IO 操作就 5 毫秒（顶多读个配置文件），典型的 “CPU 干到冒烟，IO 闲得打盹”！ 这种情况线程数咋设？就按 “CPU 核心数” 来！当时服务器是 16 核的，我把线程数设成 16，跑下来 10 万条数据只用了 2 分钟；后来有人想 “多设线程会不会更快”，改成 32 个，结果反而用了 3 分半 —— 为啥？因为线程多了，CPU 得不停切换任务，光切换就浪费了不少时间！所以记住：CPU 密集任务，线程数≈CPU 核心数，像大数据排序、加密解密这些场景，都这么设！ 再重点说 最容易懵的 IO 密集型场景 ，给你举两个真实例子，你肯定碰到过！ 第一个场景： 调用第三方支付接口 ！比如用户下单后，要调用微信支付的接口生成支付链接。这个过程中，咱的服务干了啥？就传个订单号、金额过去，然后等着微信服务器返回链接 —— 这等待的时间就是 “IO 等待”！我之前测过，单个调用耗时 800 毫秒，其中 780 毫秒都在等微信接口响应，CPU 真正处理参数、解析返回值的时间才 20 毫秒，IO 等待占比高达 97.5%！ 这种场景线程数可不能少！当时服务器是 8 核的，按公式算：8÷(1-0.975)=320 个线程。我设了 300 个线程（留 20 个给其他服务），原本每秒只能处理 10 个调用，改完后每秒能处理 300 个，完全能扛住高峰期的下单量！要是还按 8 个线程设，每秒顶多处理 10 个，用户得一直转圈等支付链接，早投诉了！ 第二个 IO 密集场景： 批量上传 Excel 数据 ！之前做员工信息导入，用户传一个 5 万行的 Excel，服务要先读 Excel 文件（IO），再查数据库判断员工是否已存在（IO），最后插入新员工（IO）。整个任务耗时 1200 毫秒，其中读文件 300 毫秒、查数据库 600 毫秒、写数据库 250 毫秒，CPU 处理数据格式的时间才 50 毫秒，IO 等待占比快 96%！ 当时我用 8 核服务器，按公式算 8÷(1-0.96)=20"
+    },
+    {
+      "slug": "ehwrfy3ctmmnfdt2",
+      "title": "如果服务器非正常断电，如何保证数据安全？",
+      "url": "/tulingzhouyu/db22bv/ehwrfy3ctmmnfdt2",
+      "toc_path": [
+        "高频面试问题",
+        "楼兰老师",
+        "如果服务器非正常断电，如何保证数据安全？"
+      ],
+      "toc_level": 2,
+      "toc_index": 1121,
+      "word_count": 3974,
+      "updated_at": "2025-12-18T06:39:54.000Z",
+      "primary_category": "os-linux",
+      "primary_category_name": "操作系统与Linux",
+      "related_categories": [
+        "os-linux",
+        "mq-rabbitmq",
+        "mq-rocketmq",
+        "mq-kafka",
+        "security-auth"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle",
+        "senior",
+        "junior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年",
+        "初级/1-3年"
+      ],
+      "keywords": [
+        "操作系统",
+        "Linux",
+        "线程",
+        "内存",
+        "文件",
+        "RabbitMQ",
+        "队列",
+        "RocketMQ",
+        "Kafka",
+        "安全"
+      ],
+      "summary": "开场：一场关于“安全感”的幻觉你应该背过很多高可用的面试题把？一堆服务器，一会这个机器挂了，一会那个服务崩了。然后问你怎么保证服务高可用？怎么保证数据不丢失？还没见过这样的面试题的朋友，可以在评论区敲个888，我看看还有多少如此单纯的程序员。这时候很多朋友要吐槽了，这就是典型的“面试造火箭，工...",
+      "excerpt": "开场：一场关于“安全感”的幻觉 你应该背过很多高可用的面试题把？一堆服务器，一会这个机器挂了，一会那个服务崩了。然后问你怎么保证服务高可用？怎么保证数据不丢失？还没见过这样的面试题的朋友，可以在评论区敲个888，我看看还有多少如此单纯的程序员。 这时候很多朋友要吐槽了，这就是典型的“面试造火箭，工作拧螺丝”了。但是，如果抛开这些面试题，真的让你负责一个对数据非常敏感的金融系统，面对非正常断电这种不可抗力，你会怎么保证数据安全呢？你可以把视频先暂停两秒，在评论区留下你的想法。不过，请千万别说你的服务器有UPS这样的答案啊。咱们是来讨论技术的，不是来说相声的。看完视频后，再来看看你的想法是不是成熟。 接下来我们要讨论的核心就两字：刷盘。你可能觉得这东西很理论，工作用不上。那么这次，我也不来虚的。我们会从理论到实战，从RocketMQ、Kafka、RabbitMQ这三个重要的MQ工具来分析下，他们是如何设计刷盘策略的。针对数据安全这个事，他们是怎么“小题撒做”的。 还是要强调。这期内容非常硬核，甚至我估计大部分的朋友看一次是看不明白的。所以，点赞、收藏，这样可以回头多看几遍。我是楼兰，咱们技术走起！ 第一章：你的数据到底怎么丢的？ 首先，我们要搞清楚，为什么服务器断电会丢数据？ 原因很简单： 内存是易失的，硬盘才是永恒的 。废话。这谁都知道。不过这跟数据有什么关系呢？ 我们都知道内存读写快，硬盘读写慢。所以，操作系统为了提升运行速度，也耍了个小聪明。在操作系统的底层，也就是我们常说的内核态，他是不允许用户态的应用程序直接接触磁盘这样的硬件的，只允许应用程序调用内核态暴露的接口-也就是系统调用来完成数据读写。 比如，Linux系统就提供了一个write方法，来完成数据写入。 你只要调用一下write方法，通知操作系统，我要写入数据，剩下的事情就交由操作系统的内核态去完成了。但这时，操作系统耍了个小聪明。他其实并没有真正去写硬盘，只是把数据拷贝到了内存里的 Page Cache页缓存里 ，然后立马骗你说：“写完了，成功了！” 这时候，数据其实还停在内存。 如果这时候断电，Page Cache 里的数据瞬间灰飞烟灭。你以为你存下来了，其实你存了个寂寞。 那要怎么保证数据安全呢？这就需要进行“刷盘”。也就是把页缓存中的数据写入到硬盘当中。这样，即便服务器断电了，硬盘里的数据也不会丢失。 但接下来的问题就是什么时候会刷盘呢？大部分情况下，操作系统是在内核态自己去协调什么时候刷盘的。作为应用程序，你是无法知道操作系统什么时候刷盘的。也就是如果出现非正常断电，作为用户态的应用程序，你也就只能烧个高香，默默祈祷数据不要丢了。 要是这样，那还玩的下去吗？于是，操作系统给我们留了个后门，也是唯一的救命稻草-fsync刷盘。 fsync 的指令非常霸道，它会勒令操作系统： “别废话，现"
+    },
+    {
+      "slug": "amwv9y6fbacb84dx",
+      "title": "JAVA线程池连环问",
+      "url": "/tulingzhouyu/db22bv/amwv9y6fbacb84dx",
+      "toc_path": [
+        "高频面试问题",
+        "伯乐老师",
+        "JAVA线程池连环问"
+      ],
+      "toc_level": 2,
+      "toc_index": 1336,
+      "word_count": 3077,
+      "updated_at": "2025-10-23T01:08:52.000Z",
+      "primary_category": "os-linux",
+      "primary_category_name": "操作系统与Linux",
+      "related_categories": [
+        "os-linux",
+        "java-concurrency",
+        "java-thread-pool",
+        "java-core",
+        "mq-rabbitmq"
+      ],
+      "question_type": "troubleshooting",
+      "question_type_name": "故障排查题",
+      "levels": [
+        "campus",
+        "middle"
+      ],
+      "level_names": [
+        "校招/应届生",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "线程",
+        "内存",
+        "文件",
+        "并发",
+        "多线程",
+        "线程池",
+        "ThreadPoolExecutor",
+        "核心线程",
+        "拒绝策略",
+        "Java",
+        "异常",
+        "IO"
+      ],
+      "summary": "Java 线程池连环问口播面试文案面试场景面试官（以下简称 “面”）：同学你好！今天咱们就围绕 Java 线程池这块知识聊一聊，主要看你对这部分的掌握程度，不用紧张，想到什么就说什么就行。求职者（以下简称 “求”）：好的面试官，我会尽力回答。面试问题与互动面：那咱们先从基础开始，你能简单说说 ...",
+      "excerpt": "Java 线程池连环问口播面试文案 面试场景 面试官（以下简称 “面”）：同学你好！今天咱们就围绕 Java 线程池这块知识聊一聊，主要看你对这部分的掌握程度，不用紧张，想到什么就说什么就行。 求职者（以下简称 “求”）：好的面试官，我会尽力回答。 面试问题与互动 面：那咱们先从基础开始，你能简单说说 “Java 线程池” 到底是什么吗？它主要能解决咱们开发中的什么问题呀？ 求：我理解的话，Java 线程池就是提前创建好一批线程放在 “池子” 里，等有任务要执行的时候，就从池子里拿个线程去跑任务；任务跑完了，这个线程也不直接销毁，而是放回池子里，等着下一个任务来用。它主要解决的是 “频繁创建 / 销毁线程” 的问题 —— 因为创建和销毁线程特别耗 CPU 和内存，要是每次有任务都新创一个线程，频繁操作下来系统性能会变低；而且线程池还能控制同时运行的线程数量，避免线程太多把系统资源占满，另外也方便咱们统一管理和监控这些线程。 面：解释得很清楚！那你知道，创建线程池的时候，有哪些核心参数是必须要考虑的吗？每个参数大概是干嘛用的，能说说不？ 求：主要有 7 个核心参数吧，我一个个说：第一个是 “核心线程数（corePoolSize）”，就是池子里始终要保留的线程数量，哪怕这些线程闲着没事干也不删；第二个是 “最大线程数（maximumPoolSize）”，就是池子最多能创建多少个线程；第三个是 “工作队列（workQueue）”，要是核心线程都在忙，新任务就先放这个队列里等着；第四个是 “线程存活时间（keepAliveTime）”，指的是非核心线程闲着的时候能留多久，超过这个时间就会被销毁；第五个是 “时间单位（unit）”，就是存活时间的单位，比如秒、毫秒这些；第六个是 “线程工厂（threadFactory）”，用来创建新线程的，咱们还能通过它自定义线程的名字、优先级；最后一个是 “拒绝策略（handler）”，要是线程池和工作队列都满了，新任务接不过来，就靠这个策略处理。 面：对这些参数的理解很到位！那结合这些参数，你能跟我说说，一个新任务提交到线程池后，整个处理流程是咋样的不？比如从任务交进去，到线程执行，中间是怎么一步步走的？ 求：流程大概是这样：新任务过来后，先看池子里的线程数够不够核心线程数 —— 要是不够，就直接创个核心线程来跑这个任务；要是核心线程都满了，就把任务丢到工作队列里等着；要是队列也满了，再看当前线程数够不够最大线程数，不够的话就创个非核心线程来执行任务；要是最大线程数也满了，那就只能执行拒绝策略了。等任务跑完，核心线程会留在池子里等新任务，非核心线程要是过了存活时间还没新任务，就会被销毁，直到池子里的线程数回到核心线程数。 面：说得很有条理！不过这里我多问一句 —— 你刚才说 “任务跑完线程放回池子里等新任务”，那线程池到底是怎么做"
+    },
+    {
+      "slug": "oqrbdbigdzwxhz41",
+      "title": "简单解释下什么是恶意软件",
+      "url": "/tulingzhouyu/db22bv/oqrbdbigdzwxhz41",
+      "toc_path": [
+        "网络安全",
+        "简单解释下什么是恶意软件"
+      ],
+      "toc_level": 1,
+      "toc_index": 1374,
+      "word_count": 469,
+      "updated_at": "2023-09-03T07:53:30.000Z",
+      "primary_category": "os-linux",
+      "primary_category_name": "操作系统与Linux",
+      "related_categories": [
+        "os-linux",
+        "computer-network",
+        "security-auth"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "文件",
+        "网络",
+        "安全",
+        "加密"
+      ],
+      "summary": "恶意软件是指具有恶意意图的软件，旨在破坏、窃取信息或滥用计算机系统资源。恶意软件通常在用户不知情的情况下安装或执行，对受感染的系统、数据和个人隐私造成危害。常见类型的恶意软件包括病毒、蠕虫、木马、间谍软件、广告软件和勒索软件。病毒是一种自我复制并感染其他文件或程序的恶意软件，可能会损坏或删除文...",
+      "excerpt": "恶意软件是指具有恶意意图的软件，旨在破坏、窃取信息或滥用计算机系统资源。恶意软件通常在用户不知情的情况下安装或执行，对受感染的系统、数据和个人隐私造成危害。 常见类型的恶意软件包括 病毒 、 蠕虫 、 木马 、 间谍软件 、 广告软件 和 勒索软件 。 病毒是一种自我复制并感染其他文件或程序的恶意软件，可能会损坏或删除文件，破坏系统运行，或等待特定条件触发。 蠕虫是一种通过计算机网络快速传播的自我复制恶意软件，可能导致网络拥塞和系统崩溃。 木马伪装成合法软件，一旦被用户下载或执行，就会在后台执行恶意操作，如盗取敏感信息或远程控制系统。 间谍软件潜入用户设备并监视用户活动，如记录键盘输入、个人资料以及摄像头和麦克风的操作。 广告软件在用户设备上显示大量广告，收集用户信息用于定向广告投放，可能干扰正常使用。 勒索软件加密用户文件并勒索赎金，导致用户无法访问文件，对个人和组织的业务造成损失。 恶意软件通过虚假链接、感染的文件、网络漏洞和垃圾邮件等途径传播。用户应安装可信的安全软件、定期更新系统和应用程序、谨慎打开陌生文件和链接，并定期备份重要数据以保护计算机和数据安全。"
+    },
+    {
+      "slug": "svp2wgg2a8o4a8zd",
+      "title": "解释一下什么是无服务器计算，以及它在云环境中的应用",
+      "url": "/tulingzhouyu/db22bv/svp2wgg2a8o4a8zd",
+      "toc_path": [
+        "云计算",
+        "解释一下什么是无服务器计算，以及它在云环境中的应用"
+      ],
+      "toc_level": 1,
+      "toc_index": 1418,
+      "word_count": 471,
+      "updated_at": "2023-09-04T05:42:01.000Z",
+      "primary_category": "os-linux",
+      "primary_category_name": "操作系统与Linux",
+      "related_categories": [
+        "os-linux",
+        "devops-release",
+        "observability-troubleshooting"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "操作系统",
+        "部署",
+        "监控"
+      ],
+      "summary": "无服务器计算（Serverless Computing）是一种云计算服务模式，它允许开发者在无需关心服务器管理和运维的情况下，构建和运行应用程序。在无服务器计算中，服务商提供了完整的服务器基础设施，包括操作系统、运行时环境、应用程序、数据库等，开发者只需关注自己的核心业务逻辑，而无需管理这些基...",
+      "excerpt": "无服务器计算（Serverless Computing） 是一种云计算服务模式 ，它允许开发者在无需关心服务器管理和运维的情况下，构建和运行应用程序。在无服务器计算中，服务商提供了完整的服务器基础设施，包括操作系统、运行时环境、应用程序、数据库等，开发者只需关注自己的核心业务逻辑，而无需管理这些基础设施。 无服务器计算适用于各种类型的应用程序，特别是那些需要快速迭代、按需伸缩、灵活部署的应用。它可以让开发者专注于解决实际问题，加快开发速度，降低运维成本。 在云环境中，无服务器计算可以大大简化应用程序的部署和管理 。开发者只需关注自己的代码，而无需关心底层基础设施的配置和维护。无服务器计算服务商通常提供了自动化的部署、监控和扩缩容功能，使得应用程序能够根据实际负载进行自动调整，实现了高度的灵活性和可扩展性。 此外， 无服务器计算还可以帮助开发者实现快速集成和敏捷开发 。由于开发者无需关心底层基础设施，可以更快地集成新的功能和特性，实现快速迭代和交付。 总之，无服务器计算在云环境中可以大大简化应用程序的开发、部署和管理，提高效率和灵活性，降低成本和风险，是未来云计算发展的重要趋势之一。"
+    },
+    {
+      "slug": "aqetezzxhp7qvutf",
+      "title": "解释一下云端虚拟化技术如何工作，以及它的重要性",
+      "url": "/tulingzhouyu/db22bv/aqetezzxhp7qvutf",
+      "toc_path": [
+        "云计算",
+        "解释一下云端虚拟化技术如何工作，以及它的重要性"
+      ],
+      "toc_level": 1,
+      "toc_index": 1425,
+      "word_count": 591,
+      "updated_at": "2023-09-03T09:53:04.000Z",
+      "primary_category": "os-linux",
+      "primary_category_name": "操作系统与Linux",
+      "related_categories": [
+        "os-linux",
+        "observability-troubleshooting",
+        "computer-network",
+        "security-auth"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "campus"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "操作系统",
+        "内存",
+        "监控",
+        "CPU",
+        "网络",
+        "安全"
+      ],
+      "summary": "云端虚拟化技术是一种将物理硬件资源虚拟化成多个逻辑资源的技术，它允许在多个操作系统和应用程序之间共享同一台物理计算机。通过虚拟化，一台物理计算机可以被划分为多个虚拟机，每个虚拟机都可以运行不同的操作系统和应用程序。虚拟化的工作流程如下：虚拟化软件（Hypervisor）在物理计算机上创建一个或...",
+      "excerpt": "云端虚拟化技术是一种将物理硬件资源虚拟化成多个逻辑资源的技术，它允许在多个操作系统和应用程序之间共享同一台物理计算机。通过虚拟化，一台物理计算机可以被划分为多个虚拟机，每个虚拟机都可以运行不同的操作系统和应用程序。 虚拟化的工作流程如下： 虚拟化软件（Hypervisor）在物理计算机上创建一个或多个虚拟机。 每个虚拟机都有自己的操作系统和应用程序，但它们共享物理计算机的资源，如CPU、内存和存储。 当虚拟机需要使用资源时，它会通过虚拟化层向物理计算机发出请求。 虚拟化层将这些请求映射到物理计算机的实际资源上。 虚拟机可以通过网络与其他虚拟机进行通信，从而形成一个虚拟的分布式系统。 虚拟化技术的重要性在于它可以提高资源的利用率和灵活性，同时降低成本和管理复杂性。通过虚拟化，多个操作系统和应用程序可以在同一台物理计算机上运行，避免了硬件资源的浪费。此外，虚拟化还使得应用程序和数据可以在不同的平台上迁移和备份，提高了系统的可靠性和可用性。虚拟化还可以简化系统的管理和维护，因为可以集中管理和监控多个虚拟机。 在云计算中，虚拟化技术是构建云基础架构不可或缺的关键技术之一。通过虚拟化，可以在一个物理平台上虚拟出更多的虚拟平台，而其中的每一个虚拟平台都可以作为独立的终端加入云端的分布式系统。这使得云端可以灵活扩展，满足不同应用场景的需求。同时，虚拟化技术还可以提供高可靠性和数据保护，确保云端服务的稳定性和安全性。"
+    },
+    {
+      "slug": "thnro65tussqiu38",
+      "title": "【免费无限GPT-4o】AI编程神器Trae详细上手教程",
+      "url": "/tulingzhouyu/db22bv/thnro65tussqiu38",
+      "toc_path": [
+        "AI大模型",
+        "【免费无限GPT-4o】AI编程神器Trae详细上手教程"
+      ],
+      "toc_level": 1,
+      "toc_index": 1507,
+      "word_count": 9520,
+      "updated_at": "2025-02-18T06:21:56.000Z",
+      "primary_category": "os-linux",
+      "primary_category_name": "操作系统与Linux",
+      "related_categories": [
+        "os-linux",
+        "resume-project",
+        "ai-llm",
+        "java-core",
+        "observability-troubleshooting"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "操作系统",
+        "文件",
+        "项目",
+        "AI",
+        "大模型",
+        "异常",
+        "日志"
+      ],
+      "summary": "什么是 Trae？Trae（/treɪ/）与 AI 深度集成，提供智能问答、代码自动补全以及基于 Agent 的 AI 自动编程能力。使用 Trae 开发项目时，你可以与 AI 灵活协作，提升开发效率。需要注意现在 Trae 不能在国内使用，但是大家魔法一下就好了安装 Trae 并完成初始设置...",
+      "excerpt": "什么是 Trae？ Trae（/treɪ/）与 AI 深度集成，提供智能问答、代码自动补全以及基于 Agent 的 AI 自动编程能力。使用 Trae 开发项目时，你可以与 AI 灵活协作，提升开发效率。 需要注意 现在 Trae 不能在国内使用，但是大家魔法一下就好了 安装 Trae 并完成初始设置 第一步：安装并启动 Trae 前往 Trae 的官网 ，将 Trae 安装至电脑。 启动 Trae。 Trae 首次启动时，你会进入以下页面。 点击 开始 按钮。 Trae 初始配置流程开始。 第二步：选择主题和语言 选择主题。可选项为 暗色 、 亮色 和 深蓝 。 选择显示语言。可选项为 简体中文 和 English 。 若有需要，后续可以在设置中心修改主题和语言。 点击 继续 按钮。 第三步：从 VS Code 或 Cursor 中导入配置 若你的电脑中已安装并配置 VS Code 或 Cursor，你可以点击 从 VS Code 导入 或 从 Cursor 导入 按钮。系统将会从对应的 IDE 中获取插件、IDE 设置、快捷键设置等信息并一键导入到 Trae 中，帮助你快速从其他 IDE 切换到 Trae。 第四步：添加 Trae 相关的命令行 添加 Trae 相关的命令行后，你可以在终端中使用命令行更快速地完成 Trae 相关的操作。例如： 使用 trae 命令快速唤起 Trae。 使用 trae my-react-app 命令在 Trae 中打开一个项目。 点击 安装 `trae` 命令 按钮，然后完成授权流程。 第五步：登录账号 你需要登录 Trae 以使用 AI 能力。Trae 提供了三种登录方式，分别为 Google 账号登录、Github 账号登录、邮箱登录。若你没有账号，也可以新注册一个账号。 点击 登录 按钮，然后根据页面引导完成登录流程。登录后，你将进入 IDE 界面，如下图所示。 第六步：开始使用 Trae 在 Trae 中，开发你的项目，例如： 打开已有的项目或克隆 Git 仓库。 使用 AI 助手从 0 到 1 创建一个新项目。 管理项目 什么是 “工作空间”？ “工作空间” 通常为一个在 Trae 中打开的文件夹。若你的项目较为复杂，也可以将多个文件夹添加至一个 “工作空间”。 创建项目 Trae 提供三种创建项目的方式：导入本地文件夹、克隆 Git 仓库。 方式一：导入本地文件夹 点击左侧面板中央的 打开文件夹 按钮，或在界面左上角点击 选择项目 > 打开文件夹 。 选择文件夹并在 Trae 中将其打开。 你将看到以下授权弹窗： 在 是否信任此文件夹中的文件的作者？ 弹窗中： (可选) 勾选 信任父文件夹“Downloads”中所有文件的作者 。 此后，在 Trae 中打开任何 “Downloads”（下载） 目录下的文件夹将"
+    }
+  ]
+}

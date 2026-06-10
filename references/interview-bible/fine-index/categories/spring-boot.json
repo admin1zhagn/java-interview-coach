@@ -1,0 +1,626 @@
+{
+  "id": "spring-boot",
+  "name": "Spring Boot",
+  "aliases": [
+    "Spring Boot",
+    "SpringBoot",
+    "自动配置",
+    "启动速度",
+    "Starter"
+  ],
+  "count": 15,
+  "total_word_count": 25001,
+  "articles": [
+    {
+      "slug": "vn7vhycdiffiva47",
+      "title": "使用 IDEA 远程 Debug 调试",
+      "url": "/tulingzhouyu/db22bv/vn7vhycdiffiva47",
+      "toc_path": [
+        "综合篇",
+        "使用 IDEA 远程 Debug 调试"
+      ],
+      "toc_level": 1,
+      "toc_index": 141,
+      "word_count": 1451,
+      "updated_at": "2023-09-07T11:55:41.000Z",
+      "primary_category": "spring-boot",
+      "primary_category_name": "Spring Boot",
+      "related_categories": [
+        "spring-boot",
+        "spring-core",
+        "spring-cloud",
+        "java-core",
+        "mybatis"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "异常",
+        "Mapper"
+      ],
+      "summary": "背景有时候我们需要进行远程的debug，本文研究如何进行远程debug，以及使用 IDEA 远程debug的过程中的细节。看完可以解决你的一些疑惑。配置远程debug的服务，以springboot微服务为例(springcloud的应该差不多，我没研究过)。首先，启动springboot需要加...",
+      "excerpt": "背景 有时候我们需要进行远程的debug，本文研究如何进行远程debug，以及使用 IDEA 远程debug的过程中的细节。看完可以解决你的一些疑惑。 配置 远程debug的服务，以springboot微服务为例(springcloud的应该差不多，我没研究过)。首先，启动springboot需要加上特定的参数。 IDEA设置 高低版本的 IDEA 的设置可能界面有点不一样，我用2020.1.1的。大致上差不多，自行摸索。 IDEA打开远程启动的springboot应用程序所对应的 1.选择 Edit Configuration 注意：注意端口别被占用。后续这个端口是用来跟远程的java进程通信的。 可以注意到：切换不同的jdk版本，生成的脚本不一样 选择 jdk1.4 ，则为 这就是你为什么搜其他博客，会有这种配置的原因，其实这个配置也是可行的。但更准确应该按照下面jdk5-8的配置 选择 jdk 5-8 ，则为 选择 jdk9 以上，则为 据说因为jdk9变得安全了，远程调试只允许本地，如果要远程，则需要在端口前配置 * 启动脚本改造 使用第一步得到的 Command line arguments for remote JVM 即可，即 -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=50055 改造后的启动脚本如下: 注意在windows中用 ^ 来进行换行，例如: 说明： 端口可随意自己定，未被占用的都行，但是要和IDEA里的remote中设置的端口一致！其他参数照抄。详细的参数解释可以参照附录或自己搜 remote-debug-0.0.1-SNAPSHOT.jar 改成给你自己的 jar 包名字 我给的脚本是后台运行的，如不需要后台运行，自行去掉 nohup 和 & 启动springboot，启动IDEA里的 细节 细节1：停在本地断点，关闭程序后会继续执行吗? 如果远程调试在自己的断点处停下来了，此时关闭IDEA中的项目停止运行，则还会继续运行执行完剩下的逻辑吗？会的，这点比较不容易记住 以下面的代码为例，在第一行停住了。然后IDEA中停掉，发现停掉之后控制台还是打印了剩下的日志。 细节2：jar包代码和本地不一致会怎么样？ IDEA 里的代码如果不和jar包的一致，会怎么样。 结论：要保证和远程启动的代码一致。 否则你debug的时候的行数会对不上。报错抛异常倒是不会。像这种还是能对得上行数的 比如你调试test1方法，test2方法在test1下面，在test2里加代码，这样并不影响test1中的行号，这种是可以在调试的时候准确反应行号的 细节3：日志打印在哪里？ 日志不会打印在IDEA的控制台上。即System.out 以及 log.info 还是打印在远程的。 细"
+    },
+    {
+      "slug": "slqukz1g48gkng2q",
+      "title": "全托管数据可视化平台，快速搭建运维监控大盘 - 北冥",
+      "url": "/tulingzhouyu/db22bv/slqukz1g48gkng2q",
+      "toc_path": [
+        "综合篇",
+        "全托管数据可视化平台，快速搭建运维监控大盘 - 北冥"
+      ],
+      "toc_level": 1,
+      "toc_index": 143,
+      "word_count": 1283,
+      "updated_at": "2023-09-07T11:53:52.000Z",
+      "primary_category": "spring-boot",
+      "primary_category_name": "Spring Boot",
+      "related_categories": [
+        "spring-boot",
+        "docker-k8s",
+        "observability-troubleshooting",
+        "spring-core",
+        "mysql-index-transaction"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "SpringBoot",
+        "Docker",
+        "Kubernetes",
+        "容器",
+        "监控",
+        "告警",
+        "日志",
+        "Spring",
+        "MySQL"
+      ],
+      "summary": "针对中小型项目实现全托管数据可视化平台环境介绍数据来源：SpringBoot + Actuator数据采集：Prometheus数据展示：Grafana监控维度JVMMySQLRedis服务器信息演示环境UbuntuDockerPrometheus介绍Prometheus是一个开源的系统监控和...",
+      "excerpt": "针对中小型项目实现全托管数据可视化平台 环境介绍 数据来源：SpringBoot + Actuator 数据采集：Prometheus 数据展示：Grafana 监控维度 JVM MySQL Redis 服务器信息 演示环境 Ubuntu Docker Prometheus介绍 Prometheus 是一个开源的系统监控和报警系统，现在已经加入到 CNCF 基金会，成为继 K8S 之后第二个在 CNCF 托管的项目，在 Kubernetes 容器管理系统中，通常会搭配 Prometheus 进行监控，同时也支持多种 exporter 采集数据，还支持 pushgateway 进行数据上报， Prometheus 性能足够支撑上万台规模的集群。 Prometheus 服务器 Prometheus Server 是 Prometheus组件中的核心部分，负责实现对监控数据的获取，存储以及查询。 NodeExporter 业务数据源 业务数据源通过 Pull/Push 两种方式推送数据到 Prometheus Server。 AlertManager 报警管理器 Prometheus 通过配置报警规则，如果符合报警规则，那么就将报警推送到 AlertManager，由其进行报警处理。 可视化监控界面 Prometheus 收集到数据之后，由 WebUI 界面进行可视化图标展示。目前我们可以通过自定义的 API 客户端进行调用数据展示，也可以直接使用 Grafana 解决方案来展示。 简单地说，Prometheus 的实现架构也并不复杂。 其实就是收集数据、处理数据、可视化展示，再进行数据分析进行报警处理 。 但其珍贵之处在于提供了一整套可行的解决方案，并且形成了一整个生态，能够极大地降低我们的研发成本。 Grafana Grafana 是一款用 GO 语言开发的开源数据可视化工具，可以做数据监控和数据统计，带有告警功能。 特点： 可视化 Grafana 拥有快速灵活的客户端图表，面板插件有许多不同方式的可视化指标和日志，官方库中具有丰富的仪表盘插件，比如热图、折线图、图表等多种展示方式，让我们复杂的数据展示的美观而优雅。 报警和通知 可视化地为最重要的指标定义警报规则。Grafana 将持续评估它们，并发送通知。 动态仪表盘 使用模板变量创建动态和可重用的仪表板，这些模板变量作为下拉菜单出现在仪表板顶部。 混合数据源 在同一个图中混合不同的数据源!可以根据每个查询指定数据源。这甚至适用于自定义数据源。 注释 注释来自不同数据源图表。将鼠标悬停在事件上可以显示完整的事件元数据和标记。 过滤器 Grafana 使用 Ad-hoc 过滤器允许动态创建新的键/值过滤器，这些过滤器会自动应用于使用该数据源的所有查询。 搭建篇-SpringBoot配置 怎么创建一个Sprin"
+    },
+    {
+      "slug": "orglz6qr4ggvgcuz",
+      "title": "IDEA + Spring Boot 的三种热加载方案，看完弄懂，不用加班",
+      "url": "/tulingzhouyu/db22bv/orglz6qr4ggvgcuz",
+      "toc_path": [
+        "综合篇",
+        "IDEA + Spring Boot 的三种热加载方案，看完弄懂，不用加班"
+      ],
+      "toc_level": 1,
+      "toc_index": 158,
+      "word_count": 1376,
+      "updated_at": "2024-09-27T12:42:47.000Z",
+      "primary_category": "spring-boot",
+      "primary_category_name": "Spring Boot",
+      "related_categories": [
+        "spring-boot",
+        "spring-core",
+        "resume-project",
+        "java-core",
+        "netty-network"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "Spring Boot",
+        "Spring",
+        "项目",
+        "Java"
+      ],
+      "summary": "背景在日常开发中，我们需要经常修改 Java 代码，手动重启项目，查看修改后的效果。如果在项目小时，重启速度比较快，等待的时间是较短的。但是随着项目逐渐变大，重启的速度变慢，等待时间 1-2 min 是比较常见的。这样就导致我们开发效率降低，影响我们的下班时间，哈哈哈~那么是否有方式能够实现，...",
+      "excerpt": "背景 在日常开发中，我们需要经常修改 Java 代码，手动重启项目，查看修改后的效果。如果在项目小时，重启速度比较快，等待的时间是较短的。但是随着项目逐渐变大，重启的速度变慢，等待时间 1-2 min 是比较常见的。 这样就导致我们开发效率降低，影响我们的下班时间，哈哈哈~那么是否有方式能够实现，在我们修改完 Java 代码之后，能够不重启项目呢？ 答案是有的，通过 热部署 的方式。并且实现的方式还是非常多，接下来就为大家一一展示。 方式一：spring-boot-devtools spring-boot-devtools 是 Spring Boot 提供的 开发者工具 ，它会监控当前应用所在的 classpath 下的文件发生变化，进行 自动重启 。 注意， spring-boot-devtools 并 没有 采用热部署的方式，而是一种 较快的重启方式 。其官方文档解释如下： “FROM 《Spring Boot 2.X 中文文档 —— 开发者工具》 Spring Boot 通过使用两个类加载器来提供了重启技术。 不改变的类（例如，第三方 jar）被加载到 base 类加载器中。 经常处于开发状态的类被加载到 restart 类加载器中。 当应用重启时， restart 类加载器将被丢弃，并重新创建一个新的。这种方式意味着应用重启比 冷启动 要快得多，因为省去 base 类加载器的处理步骤，并且可以直接使用。 在项目中，我们需要在 pom.xml 中，引入 spring-boot-devtools 依赖如下： 演示 ① Run 或者 Debug 运行 Spring Boot 应用。 使用浏览器，访问 http://localhost:8081/HotSwap/01 接口，返回结果为 &quot;No.1&quot; 。 ② 修改 HotSwapController 的 #hotSwap01() 方法，设置返回值为 &quot;No.2&quot; 。 【关键】 我们现在仅仅需要修改了 Java 代码，需要重新编译下代码。点击 IDEA 的菜单 Build -> Build Project ， 手动 进行编译 或者 快捷键编译 Mac：Command + F9 Windows ：Ctrl + F9 此时，IDEA 控制台会看到 Spring Boot 重新启动的日志如下： 所以 spring-boot-devtools 真的不是热部署，而是更快的重启方式。 使用浏览器，再次访问 http://localhost:8081/HotSwap/01 接口，返回结果为 &quot;No.2&quot; ，成功！ ③ 可能有会觉得 手动 Build Project 有点麻烦，IDEA 还提供的 自动编译 的选项。设置方式，点击 IDEA 的菜单 IntelliJ ID"
+    },
+    {
+      "slug": "yog2483rordgfvtl",
+      "title": "Spring Boot 实现OCR图片文字识别",
+      "url": "/tulingzhouyu/db22bv/yog2483rordgfvtl",
+      "toc_path": [
+        "综合篇",
+        "Spring Boot 实现OCR图片文字识别"
+      ],
+      "toc_level": 1,
+      "toc_index": 163,
+      "word_count": 1235,
+      "updated_at": "2025-01-22T14:05:42.000Z",
+      "primary_category": "spring-boot",
+      "primary_category_name": "Spring Boot",
+      "related_categories": [
+        "spring-boot",
+        "java-core",
+        "spring-core",
+        "resume-project",
+        "computer-network"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "Spring Boot",
+        "Java",
+        "Spring",
+        "项目",
+        "网络"
+      ],
+      "summary": "1、前言之前在某一个项目中，客户要求根据上传的文档图片系统自动识别图片内容，这就需要到了OCR技术，我们公司一般做法通常是使用阿里云或腾讯云的OCR图片识别（大厂的训练量更多更大，识别更精准）无奈客户资金有限，又希望我们满足需求，最后我们决定采用开源Tesseract 文字识别 OCR 引擎来...",
+      "excerpt": "1、前言 之前在某一个项目中，客户要求根据上传的文档图片系统自动识别图片内容，这就需要到了 OCR 技术，我们公司一般做法通常是使用 阿里云 或 腾讯云 的 OCR 图片识别（大厂的训练量更多更大，识别更精准）无奈客户资金有限，又希望我们满足需求，最后我们决定采用开源 Tesseract 文字识别 OCR 引擎来实现 Tesseract 是一个功能强大的 OCR 引擎，其发展经历了多个版本的迭代。最初由惠普实验室开发，后由 Google 维护和发展。 Tesseract 通过 神经网络 和图像处理技术，对图像中的文字进行识别和提取。 2、什么是 Tess4J Tess4J 是一个 Java 的 OCR （光学字符识别）库，基于 Tesseract OCR 引擎实现。 Tess4J 为 Java 开发者提供了一个便捷的接口，能够在 Java 项目中轻松调用 Tesseract 的 OCR 功能。 温馨提示 Tess4J 只是就是封装了Tesseract OCR的API，让Java可以直接调用，千万不要错误以为是Tess4J实现的 3、ocr 前置准备 3.1 配置 Tesseract 数据文件 Tess4J 依赖 Tesseract 数据文件来识别不同语言的文本。可以从 Tesseract Github仓库 下载所需语言的训练数据。 如上图所示：Tesseract有三个独立的语言模型存储库 tessdata、tessdata-best、tessdata-fast 他们分别都存储了语言模型，主要有以下区别 数据模型存储库 描述 速度 识别精度 支持再训练 tessdata_best 最好（最准确）的训练LSTM模型 最慢 最高 支持 tessdata 使用“最佳”LSTM模型+遗留模型的快速变体训练模型 均衡 均衡 不支持 tessdata_fast 训练LSTM模型的快速版本 最快 最低 不支持 选择Tesseract最高的 tessdata_best 中文数据文件，下载完成后，将数据文件放在项目的资源目录中， src/main/resources/tessdata 如果你只是处理中文、英文的文字识别，无需将整个库下载，找到chi_sim.traineddata 和eng.traineddata下载即可 如果整个存储库下载过大，大家根据自己的需求下载对应语言版本或者特殊的模型（ 如数学公式：equ.traineddata 模型 ），语言版本参考官方地址： https://tesseract-ocr.github.io/tessdoc/Data-Files.html ​ 4、代码实现 4.1 配置 Maven 依赖 4.2 application 配置 4.3 创建 OCR 服务类 首先，创建一个 OCR 服务类，用于处理图片文字识别的逻辑 4.4 创建OCRC"
+    },
+    {
+      "slug": "hywzs139hpdk0k3v",
+      "title": "💎SpringBoot 面试题集合",
+      "url": "/tulingzhouyu/db22bv/hywzs139hpdk0k3v",
+      "toc_path": [
+        "SpringBoot",
+        "💎SpringBoot 面试题集合"
+      ],
+      "toc_level": 1,
+      "toc_index": 478,
+      "word_count": 14456,
+      "updated_at": "2026-01-09T09:59:48.000Z",
+      "primary_category": "spring-boot",
+      "primary_category_name": "Spring Boot",
+      "related_categories": [
+        "spring-boot",
+        "spring-core",
+        "java-core",
+        "resume-project",
+        "performance-optimization"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "Spring Boot",
+        "SpringBoot",
+        "自动配置",
+        "Starter",
+        "Spring",
+        "Bean",
+        "Java",
+        "String",
+        "注解",
+        "异常",
+        "项目"
+      ],
+      "summary": "1. SpringBoot 使用 Validation 进行参数校验并统一返回校验异常在 SpringBoot项目开发中，有一个观点是不要相信前端传入的参数，因为你不知道用户是怎么操作我们接口的，所以在后端也需要对参数进行校验，这篇文章主要讲讲我们项目中最常使用的验证方案。1.1.1. 引入相...",
+      "excerpt": "SpringBoot 使用 Validation 进行参数校验并统一返回校验异常 在 SpringBoot项目开发中，有一个观点是不要相信前端传入的参数，因为你不知道用户是怎么操作我们接口的，所以在后端也需要对参数进行校验，这篇文章主要讲讲我们项目中最常使用的验证方案。 引入相应的依赖 spring-boot-starter-validation 本质是使用的 Hibernate Validator ，它并没有自己的实现。 Validation的基本校验注解 注解 描述 @Null 验证对象是否为null @NotNull 验证对象是否不为null，无法检查长度为0的字符串 @NotBlank 检查约束字符串是否为null，且被Trim后的长度是否大于0，只适用于字符串，会去掉前后空格 @NotEmpty 检查约束元素是否为NULL或者是EMPTY @AssertTrue 验证Boolean对象是否为true @AssertFalse 验证Boolean对象是否为false @Size(min=, max=) 验证对象（Array、Collection、Map、String）长度是否在给定的范围之内 @Length(min=, max=) 验证注解的元素值长度是否在min和max区间内 @Past 验证Date和Calendar对象是否在当前时间之前 @Future 验证Date和Calendar对象是否在当前时间之后 @Pattern 验证String对象是否符合正则表达式的规则 @Min 验证Number和String对象是否大等于指定的值 @Max 验证Number和String对象是否小等于指定的值 @DecimalMax 被标注的值必须不大于约束中指定的最大值，参数为通过BigDecimal定义的最大值的字符串表示，小数存在精度 @DecimalMin 被标注的值必须不小于约束中指定的最小值，参数为通过BigDecimal定义的最小值的字符串表示，小数存在精度 @Digits 验证Number和String的构成是否合法 @Digits(integer=,fraction=) 验证字符串是否符合指定格式的数字， integer 指定整数精度， fraction 指定小数精度 @Range(min=, max=) 验证注解的元素值在最小值和最大值之间 @Range(min=10000,max=50000,message=&quot;range.bean.wage&quot;) 验证注解的元素值在最小值10000和最大值50000之间，自定义错误信息为&quot;range.bean.wage&quot; @Valid 写在方法参数前，递归地对该对象进行校验，如果关联对象是集合或数组，则对其中的元素进行递归校验；如果是一个map，则对其中的值部分进行校"
+    },
+    {
+      "slug": "wyvnprq4ddp5575i",
+      "title": "如何对SpringBoot配置文件和代码加密",
+      "url": "/tulingzhouyu/db22bv/wyvnprq4ddp5575i",
+      "toc_path": [
+        "SpringBoot",
+        "如何对SpringBoot配置文件和代码加密"
+      ],
+      "toc_level": 1,
+      "toc_index": 479,
+      "word_count": 917,
+      "updated_at": "2026-01-11T05:36:15.000Z",
+      "primary_category": "spring-boot",
+      "primary_category_name": "Spring Boot",
+      "related_categories": [
+        "spring-boot",
+        "spring-core",
+        "security-auth",
+        "os-linux",
+        "project-system-design"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "SpringBoot",
+        "Spring",
+        "安全",
+        "加密",
+        "文件",
+        "方案"
+      ],
+      "summary": "1. 如何对SpringBoot的配置文件进行加密？在某些情况下，我们为了不暴露数据库账号密码等敏感信息，我们需要对配置文件中的敏感信息进行加密处理。# 数据源 spring: datasource: username: root password: 123456 url: jdbc:p6sp...",
+      "excerpt": "如何对SpringBoot的配置文件进行加密？ 在某些情况下，我们为了不暴露数据库账号密码等敏感信息，我们需要对配置文件中的敏感信息进行加密处理。 采用jasypt进行加密: 官网 https://github.com/ulisesbocchio/jasypt-spring-boot 一、配置方式 依赖引入 首先引入jasypt依赖 通过命令生成密文： 依次生成数据库用户名、密码、url 加密后： 运行程序解密： 部署jar包解密： 如何防止SpringBoot的jar反编译？ 场景 最近项目要求部署到其他公司的服务器上，但是又不想将源码泄露出去。要求对正式环境的启动包进行安全性处理，防止客户直接通过反编译工具将代码反编译出来。 方案 第一种方案使用代码混淆 采用 proguard-maven-plugin 插件 在单模块中此方案还算简单，但是现在项目一般都是多模块，一个模块依赖多个公共模块。那么使用此方案就比较麻烦，配置复杂，文档难懂，各模块之间的调用在是否混淆时极其容易出错。 第二种方案使用代码加密 采用 classfinal-maven-plugin 插件 此方案比对上面的方案来说，就简单了许多。直接配置一个插件就可以实现源码的安全性保护。并且可以对yml、properties配置文件以及lib目录下的maven依赖进行加密处理。若想指定机器启动，支持绑定机器，项目加密后只能在特定机器运行。 ClassFinal项目源码地址 项目操作 只需要在启动类的pom.xml文件中加如下插件即可，需要注意的是，改插件时要放到spring-boot-maven-plugin插件后面，否则不起作用。 启动方式 无密码启动 有密码启动 ​"
+    },
+    {
+      "slug": "ygvi85df6cnf9390",
+      "title": "SpringBoot可以同时处理多少请求",
+      "url": "/tulingzhouyu/db22bv/ygvi85df6cnf9390",
+      "toc_path": [
+        "SpringBoot",
+        "SpringBoot可以同时处理多少请求"
+      ],
+      "toc_level": 1,
+      "toc_index": 480,
+      "word_count": 553,
+      "updated_at": "2023-09-08T04:03:43.000Z",
+      "primary_category": "spring-boot",
+      "primary_category_name": "Spring Boot",
+      "related_categories": [
+        "spring-boot",
+        "spring-core",
+        "mysql-optimization",
+        "java-concurrency",
+        "os-linux"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "SpringBoot",
+        "Spring",
+        "count",
+        "并发",
+        "线程"
+      ],
+      "summary": "SpringBoot默认的内嵌容器是Tomcat，也就是我们的程序实际上是运行在Tomcat里的。所以与其说SpringBoot可以处理多少请求，到不如说Tomcat可以处理多少请求。 在SpringBoot中处理请求数量相关的参数有四个： server.tomcat.threads.min-...",
+      "excerpt": "SpringBoot默认的内嵌容器是Tomcat，也就是我们的程序实际上是运行在Tomcat里的。所以与其说SpringBoot可以处理多少请求，到不如说Tomcat可以处理多少请求。 在SpringBoot中处理请求数量相关的参数有四个： server.tomcat.threads.min-spare ：最少的工作线程数，默认大小是10。该参数相当于长期工，如果并发请求的数量达不到10，就会依次使用这几个线程去处理请求。 server.tomcat.threads.max ：最多的工作线程数，默认大小是200。该参数相当于临时工，如果并发请求的数量在10到200之间，就会使用这些临时工线程进行处理。 server.tomcat.max-connections ：最大连接数，默认大小是8192。表示Tomcat可以处理的最大请求数量，超过8192的请求就会被放入到等待队列。 server.tomcat.accept-count ：等待队列的长度，默认大小是100。 如果把Tomcat比作一家饭店的话，那么一个请求其实就相当于一位客人。min-spare就是厨师(长期工)；max是厨师总数(长期工+临时工)；max-connections就是饭店里的座位数量；accept-count是门口小板凳的数量。来的客人优先坐到饭店里面，然后厨师开始忙活，如果长期工可以干的完，就让长期工干，如果长期工干不完，就再让临时工干。图中画的厨师一共15人，饭店里有30个座位，也就是说，如果现在来了20个客人，那么就会有5个人先在饭店里等着。如果现在来了35个人，饭店里坐不下，就会让5个人先到门口坐一下。如果来了50个人，那么饭店座位+门口小板凳一共40个，所以就会有10人离开。 也就是说，SpringBoot同时所能处理的最大请求数量是 max-connections+accept-count ，超过该数量的请求直接就会被丢掉。"
+    },
+    {
+      "slug": "lqg0qisxgkll8wtv",
+      "title": "SpringBoot如何自定义Starter",
+      "url": "/tulingzhouyu/db22bv/lqg0qisxgkll8wtv",
+      "toc_path": [
+        "SpringBoot",
+        "SpringBoot如何自定义Starter"
+      ],
+      "toc_level": 1,
+      "toc_index": 483,
+      "word_count": 513,
+      "updated_at": "2026-01-11T05:36:22.000Z",
+      "primary_category": "spring-boot",
+      "primary_category_name": "Spring Boot",
+      "related_categories": [
+        "spring-boot",
+        "resume-project",
+        "spring-core",
+        "performance-optimization",
+        "java-core"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "Spring Boot",
+        "SpringBoot",
+        "自动配置",
+        "Starter",
+        "项目",
+        "Spring",
+        "Java",
+        "注解"
+      ],
+      "summary": "在开发分布式Springboot项目时， 自定义Starter是一定会用到的。以下是创建自定义Spring Boot Starter的基本步骤：创建项目结构： 创建一个Maven或Gradle项目，确保项目结构符合标准的约定。通常，项目结构包括src/main/java用于存放Java代码和s...",
+      "excerpt": "在开发分布式Springboot项目时， 自定义Starter是一定会用到的。以下是创建自定义Spring Boot Starter的基本步骤： 创建项目结构： 创建一个Maven或Gradle项目，确保项目结构符合标准的约定。通常，项目结构包括 src/main/java 用于存放Java代码和 src/main/resources 用于存放资源文件。 编写自动配置类： 创建一个自动配置类，该类负责配置自定义Starter的功能。在自动配置类上使用 @Configuratio n 注解，并通过其他注解如 @ConditionalOnClass 、 @ConditionalOnProperty 等来定义条件，以确保只有在满足特定条件时才会应用配置 。 提供属性配置： 如果您的Starter需要配置属性 ，可以在 src/main/resources/application.properties 或 src/main/resources/ application.yml 中 定义属性。这些属性可以在自动配置类中使用 @Value 注解注入。 创建 META-INF/spring.factories 文件： 在项目的资源目录中创建 META-INF/spring.factories 文件。在这个文件中， 注册您的自动配置类 ，以便Spring Boot能够自动识别和加载它。 定义Starter依赖： 在自定义Starter的 pom.xml 文件中， 定义Spring Boot的核心依赖 以及您的Starter所依赖的其他库。 测试和文档： 编写单元测试和集成测试，以确保自定义Starter的功能和配置正确。同时，提供详细的文档和示例，以便用户能够正确配置和使用您的Starter。 发布到仓库 ： 将自定义Starter打包，并发布到Maven中央仓库或私有仓库，以便其他项目可以引入和使用。 总之，自定义一个Spring Boot Starter需要遵循上述步骤，其中创建 META-INF/spring.factories 文件是关键，因为它告诉Spring Boot如何自动装配您的功能。这样，其他项目可以方便地引入您的Starter，实现功能的快速集成。"
+    },
+    {
+      "slug": "xu6s6dz8wgfl6ex4",
+      "title": "为什么SpringBoot的jar可以直接运行？",
+      "url": "/tulingzhouyu/db22bv/xu6s6dz8wgfl6ex4",
+      "toc_path": [
+        "SpringBoot",
+        "为什么SpringBoot的jar可以直接运行？"
+      ],
+      "toc_level": 1,
+      "toc_index": 485,
+      "word_count": 368,
+      "updated_at": "2023-09-08T03:32:30.000Z",
+      "primary_category": "spring-boot",
+      "primary_category_name": "Spring Boot",
+      "related_categories": [
+        "spring-boot",
+        "spring-core",
+        "os-linux",
+        "jvm-classloading",
+        "ai-llm"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "Spring Boot",
+        "SpringBoot",
+        "Spring",
+        "线程",
+        "文件",
+        "类加载",
+        "ClassLoader"
+      ],
+      "summary": "Spring Boot的可执行JAR文件之所以可以直接运行，原因如下：第一个关键点： Spring Boot提供了一个Maven插件（spring-boot-maven-plugin），用于将应用程序打包成可执行的JAR文件。通过执行mvn clean package等命令，可以轻松生成可执行...",
+      "excerpt": "Spring Boot的可执行JAR文件之所以可以直接运行，原因如下： 第一个关键点： Spring Boot提供了一个Maven插件（spring-boot-maven-plugin），用于将应用程序打包成可执行的JAR文件。通过执行 mvn clean package 等命令，可以轻松生成可执行JAR。 第二个关键点： 打包生成的JAR文件通常是&quot;Fat JAR&quot;或&quot;Uber JAR&quot;，这意味着它包含了应用程序的所有依赖项，包括第三方库和Spring Boot框架本身。这样，JAR文件就成了一个自包含的单一文件。 第三个关键点： JAR文件包含一个名为 MANIFEST.MF 的清单文件，其中包含了关于JAR文件的元数据信息。其中，主要的信息是 Main-Class ，它指定了启动应用程序的主类。 第四个关键点： Spring Boot的可执行JAR文件通常由 JarLauncher 类启动。 JarLauncher 负责创建一个类加载器（ LaunchedURLClassLoader ），加载 boot-lib 目录下的JAR文件，包括Spring Boot loader相关的类。然后，它在一个新线程中启动应用程序的Main方法，实现应用程序的启动。、 第五 个关键点： 当执行Main方法最终会加载Spring容器、进而创建内嵌Tomcat进行阻塞线程使我们jar包完成web应用的启动"
+    },
+    {
+      "slug": "kd461pbgggzbd0xc",
+      "title": "Springboot的自动配置原理？",
+      "url": "/tulingzhouyu/db22bv/kd461pbgggzbd0xc",
+      "toc_path": [
+        "SpringBoot",
+        "Springboot的自动配置原理？"
+      ],
+      "toc_level": 1,
+      "toc_index": 486,
+      "word_count": 480,
+      "updated_at": "2023-09-08T03:24:09.000Z",
+      "primary_category": "spring-boot",
+      "primary_category_name": "Spring Boot",
+      "related_categories": [
+        "spring-boot",
+        "spring-core",
+        "java-core",
+        "performance-optimization",
+        "os-linux"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "Spring Boot",
+        "SpringBoot",
+        "自动配置",
+        "Spring",
+        "注解",
+        "文件"
+      ],
+      "summary": "引入@EnableAutoConfiguration： 在Spring Boot应用程序的主配置类（通常是带有@SpringBootApplication注解的类）中，通常会引入@EnableAutoConfiguration注解，该注解负责启动自动配置功能。@EnableAutoConfig...",
+      "excerpt": "引入@EnableAutoConfiguration： 在Spring Boot应用程序的主配置类（通常是带有@SpringBootApplication注解的类）中，通常会引入@EnableAutoConfiguration注解，该注解负责启动自动配置功能。 @EnableAutoConfiguration引入了@Import： @EnableAutoConfiguration注解实际上是通过@Import注解引入的。这意味着它会导入其他配置类，这些配置类包含了Spring Boot自动配置的逻辑。 解析@Import注解： 当Spring容器启动时，会解析@Import注解，并加载相应的配置。 deferredImportSelector： 通过@Import导入的配置类中可能包含了一个deferredImportSelector，它的作用是确保Spring Boot的自动配置类在最后加载，以便方便扩展和覆盖。 读取META-INF/spring.factories文件： Spring Boot通过SPI（Service Provider Interface）机制，读取类路径下的META-INF/spring.factories文件，该文件包含了各种自动配置类的配置。 过滤出AutoConfigurationClass： 从spring.factories文件中，Spring Boot会过滤出所有AutoConfigurationClass类型的类，这些类包含了自动配置的具体实现。 条件化加载： 最后，Spring Boot会根据条件（@ConditionalXXX注解）来排除或包含特定的自动配置类。这些条件会根据应用程序的环境和配置动态生效。 总结起来，Spring Boot的自动配置原理是通过@EnableAutoConfiguration注解引入自动配置逻辑，然后解析@Import注解，加载各种配置类，包括deferredImportSelector和自动配置类。通过SPI机制读取spring.factories文件，过滤出自动配置类，并根据条件化配置来动态加载这些类，从而实现自动配置的功能。这种机制使得Spring Boot应用程序可以根据环境和需求自动配置，极大地简化了开发和部署的工作。"
+    },
+    {
+      "slug": "czv9ctblzcu2gt1s",
+      "title": "谈谈你对SpringBoot的理解？",
+      "url": "/tulingzhouyu/db22bv/czv9ctblzcu2gt1s",
+      "toc_path": [
+        "SpringBoot",
+        "谈谈你对SpringBoot的理解？"
+      ],
+      "toc_level": 1,
+      "toc_index": 488,
+      "word_count": 531,
+      "updated_at": "2023-09-07T11:28:09.000Z",
+      "primary_category": "spring-boot",
+      "primary_category_name": "Spring Boot",
+      "related_categories": [
+        "spring-boot",
+        "spring-core",
+        "resume-project",
+        "performance-optimization",
+        "spring-cloud"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "Spring Boot",
+        "SpringBoot",
+        "自动配置",
+        "Starter",
+        "Spring",
+        "Spring Cloud"
+      ],
+      "summary": "内置Starter和自动配置： Spring Boot提供了丰富的内置Starter，这些Starter是预定义的依赖集合，可以轻松集成各种主流框架和技术。同时，Spring Boot通过自动配置大大减少了繁琐的配置工作，让开发人员可以直接开箱即用。零XML配置： Spring Boot采用J...",
+      "excerpt": "内置Starter和自动配置： Spring Boot提供了丰富的内置Starter，这些Starter是预定义的依赖集合，可以轻松集成各种主流框架和技术。同时，Spring Boot通过自动配置大大减少了繁琐的配置工作，让开发人员可以直接开箱即用。 零XML配置： Spring Boot采用JavaConfig的方式进行开发，不需要编写大量的XML配置文件。这种零XML的开发方式让开发更加简洁和可读，同时提高了可维护性。 内置Web容器： Spring Boot内置了多个Web容器，如Tomcat、Jetty、Undertow等，无需外部Web服务器。这意味着您可以将应用程序打包成可执行的JAR文件，直接运行而不需要额外的容器配置，从而简化了部署过程。 微服务支持： Spring Boot与Spring Cloud结合使用，可以轻松快速构建和部署微服务架构。 依赖版本管理： Spring Boot帮助开发人员管理了常用第三方依赖的版本，防止出现版本冲突问题。这样，您可以更专注于业务逻辑，而不用担心依赖的版本兼容性。 监控和管理： Spring Boot自带了监控功能，包括应用程序运行状况监控、内存使用情况、线程池状态、HTTP请求统计等。此外，Spring Boot还提供了优雅关闭应用程序的方式，使得应用程序的管理更加便捷。 总的来说，Spring Boot旨在提供一个快速、高效、开箱即用的开发环境，使开发人员能够更加专注于业务逻辑的实现而不必花费太多时间在繁琐的配置和集成上。它的设计理念是&quot;约定优于配置&quot;，通过合理的默认配置和内置功能，让开发变得更加简单和愉快。"
+    },
+    {
+      "slug": "big13fgmk149wb5l",
+      "title": "SpringBoot为什么默认使用CGLIB",
+      "url": "/tulingzhouyu/db22bv/big13fgmk149wb5l",
+      "toc_path": [
+        "SpringBoot",
+        "SpringBoot为什么默认使用CGLIB"
+      ],
+      "toc_level": 1,
+      "toc_index": 489,
+      "word_count": 400,
+      "updated_at": "2026-01-11T05:24:48.000Z",
+      "primary_category": "spring-boot",
+      "primary_category_name": "Spring Boot",
+      "related_categories": [
+        "spring-boot",
+        "spring-core",
+        "java-core",
+        "performance-optimization",
+        "mysql-index-transaction"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "Spring Boot",
+        "SpringBoot",
+        "Spring",
+        "AOP",
+        "反射",
+        "注解",
+        "性能",
+        "事务"
+      ],
+      "summary": "SpringBoot默认使用CGLIB 原因如下：无需接口： CGLIB能够代理那些没有实现接口的类，而JDK动态代理只能代理实现了接口的类。这使得Spring Boot可以更灵活地使用代理，而无需依赖于接口。AOP支持： Spring Boot广泛使用AOP（面向切面编程）来处理日志、事务、...",
+      "excerpt": "SpringBoot默认使用CGLIB 原因如下： 无需接口： CGLIB能够代理那些没有实现接口的类，而JDK动态代理只能代理实现了接口的类。这使得Spring Boot可以更灵活地使用代理，而无需依赖于接口。 AOP支持： Spring Boot广泛使用AOP（面向切面编程）来处理日志、事务、安全性等横切关注点。CGLIB更适合创建AOP代理，因为它可以代理普通的类而不仅仅是接口，在开发中如果通过反射获得代理目标方法的注解，如果用JDK动态代理将导致无法获取。 可以代理本类方法 ：这意味着即使在同一个类中调用了另一个方法，仍然可以触发代理的行为。这对于某些特定的AOP需求非常有用，因为它允许您在同一类中的方法之间应用切面。这种能力被称为&quot;自我调用&quot;或&quot;内部调用&quot;的代理。 方法调用性能： 一旦代理对象创建完成，实际的方法调用性能可能会因代理方式而异。在JDK 1.8之后，JDK动态代理的方法调用性能相对较好，但CGLIB仍然可能更快，因为CGlib是直接调用父类方法即目标方法，无需像JDK代理还要通过反射进行内部方法栈调用才能到目标方法。"
+    },
+    {
+      "slug": "fgbce9xhs0op86vx",
+      "title": "短视频",
+      "url": "/tulingzhouyu/db22bv/fgbce9xhs0op86vx",
+      "toc_path": [
+        "SpringBoot",
+        "SpringBoot为什么默认使用CGLIB",
+        "短视频"
+      ],
+      "toc_level": 2,
+      "toc_index": 490,
+      "word_count": 369,
+      "updated_at": "2024-05-15T07:58:29.000Z",
+      "primary_category": "spring-boot",
+      "primary_category_name": "Spring Boot",
+      "related_categories": [
+        "spring-boot",
+        "spring-core",
+        "performance-optimization",
+        "jvm-classloading",
+        "resume-project"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "Spring Boot",
+        "SpringBoot",
+        "Spring",
+        "性能",
+        "字节码",
+        "项目"
+      ],
+      "summary": "今天分享一个 SpringBoot中非常有趣的核心问题：为什么 Spring Boot默认使用cglib作为代理实现方式？其实在Spring Boot中，默认使用CGLIB作为代理实现方式背后有着深刻的原因。首先，CGLIB 不受限于接口，因为它能够生成子类作为代理对象，这意味着无论是接口还是...",
+      "excerpt": "今天分享一个 SpringBoot中 非常有趣的核心问题 ： 为什么 Spring Boot默认使用cglib作为代理实现方式 ？ 其实在Spring Boot中，默认使用CGLIB作为代理实现方式背后 有着深刻的原因 。 首先， CGLIB 不受限于接口 ，因为它能够 生成子类作为代理对象 ，这意味着无论是接口还是实现类都可以被代理，这种灵活性为开发者提供了更多的选择空间。 其次呢，CGLIB 利用底层的 字节码技术 来创建动态代理对象， 相比于JDK动态代理 ，它能够绕过反射调用，提高了性能，特别是在大规模对象代理和频繁调用的情况下，性能优势更为显著。 除此之外，CGLIB 还提供了 很多的选项来控制代理行为 ，这对于复杂的代理场景来说尤为重要，我们可以更精细地调整代理对象的行为以满足特定需求。 最后给大家总结一下 ，Spring Boot选择CGLIB作为默认代理实现方式， 既因为 其灵活性和性能优势， 也因为 其提供的更多选项来控制代理行为， 但 在实际项目中，选择代理方式仍应根据具体需求来做出合适的决定。"
+    },
+    {
+      "slug": "fdpw219yfp60w5bz",
+      "title": "有没有优化过 Spring Boot 启动速度",
+      "url": "/tulingzhouyu/db22bv/fdpw219yfp60w5bz",
+      "toc_path": [
+        "高频面试问题",
+        "徐庶老师",
+        "有没有优化过 Spring Boot 启动速度"
+      ],
+      "toc_level": 2,
+      "toc_index": 1261,
+      "word_count": 1062,
+      "updated_at": "2026-04-21T08:21:49.000Z",
+      "primary_category": "spring-boot",
+      "primary_category_name": "Spring Boot",
+      "related_categories": [
+        "spring-boot",
+        "spring-core",
+        "performance-optimization",
+        "resume-project",
+        "java-core"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "Spring Boot",
+        "SpringBoot",
+        "自动配置",
+        "启动速度",
+        "Spring",
+        "Bean",
+        "性能",
+        "优化",
+        "瓶颈",
+        "项目",
+        "面试官",
+        "反射"
+      ],
+      "summary": "面试官问你：有没有优化过 Spring Boot 启动速度？ 怎么回答“加@Lazy?、换 GraalVM?”，那你是真没做过！面试官想听到的是你真实的优化案例，你如何排查、定位和解决实际业务中的启动耗时问题。 Spring Boot 启动慢并不是框架的原罪。为了提供开箱即用的体验，他在启动过...",
+      "excerpt": "面试官问你：有没有优化过 Spring Boot 启动速度？ 怎么回答“加@Lazy?、换 GraalVM?”，那你是真没做过！面试官想听到的是你真实的优化案例，你如何排查、定位和解决实际业务中的启动耗时问题。 Spring Boot 启动慢并不是框架的原罪。为了提供开箱即用的体验，他在启动过程帮我干了很多事情： 启动流程深度解析 Spring Boot 启动过程可分为 6 个核心阶段 ，这里是简要代码示例： 关键阶段分析 应用上下文创建 ：通常耗时 < 100ms，影响较小。 环境准备 ：中等耗时（200~800ms），依赖配置源数量。 自动配置与 Bean 扫描 ：占总耗时的 60%~80% ，性能瓶颈集中在这一步。。其实官方在不断优化（ 从多线程过滤自动配置类 → SpringBoot 3 重构 META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports → 再到 GraalVM 原生镜像。 ）， 但这些都是 “框架内部优化” ， 面试官真正关注的是你如何应对实际业务中的启动耗时。 因为很多时候，启动慢根本不是 SpringBoot 本身的问题，而是你项目里的第三方组件、自定义代码，在启动时做了耗时操作 —— 比如初始化数据库连接、预加载大量数据、自定义钩子函数里的耗时逻辑，这些才是关键！ 核心：先找到耗时在哪里，再优化！关键要懂 Spring 初始化扩展点，精准 debug： 启动性能诊断方法论（30-45秒） 启用启动指标 ：在 application.yml 中设置 spring.main.log-startup-info: true ，查看各步骤耗时。 使用 Spring Boot Actuator ：引入依赖并启用 startup 端点，访问 /actuator/startup 获取详细的启动阶段耗时。 3. 以上2种方式也只能确认你确实哪个阶段慢， 但是你想确认是哪个bean创建慢， 你可以利用bean的创建前后初始化后的扩展点， 来记录耗时时间并且排序。（提供代码） 系统性优化策略（45-55秒） 结合实际经验，以下是五条有效的优化建议： 精确化 @ComponentScan ：避免全包扫描，限制扫描范围。 排除不必要的自动配置 ：在 @SpringBootApplication 中排除无用配置。 启用懒加载 ：全局懒加载，只有在首次使用时创建 Bean，但是有些bean他就是启动的时候就会创建， 比如一个beanA依赖注入另一个beanB, beanB你即便加了懒加载也无济于事 优化重量级组件初始化 ：如数据库连接池预热、调用远程http加载数据等。 这个就只能启动速度和首次访问加载选其一了。 使用 GraalVM 原生镜像 ：启动时间"
+    },
+    {
+      "slug": "vgwb79awp93sui9p",
+      "title": "SpringBoot 快速整合 Open AI",
+      "url": "/tulingzhouyu/db22bv/vgwb79awp93sui9p",
+      "toc_path": [
+        "AI大模型",
+        "SpringBoot 快速整合 Open AI"
+      ],
+      "toc_level": 1,
+      "toc_index": 1518,
+      "word_count": 7,
+      "updated_at": "2024-03-27T13:22:32.000Z",
+      "primary_category": "spring-boot",
+      "primary_category_name": "Spring Boot",
+      "related_categories": [
+        "spring-boot",
+        "spring-core",
+        "computer-network",
+        "ai-llm",
+        "netty-network"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "SpringBoot",
+        "Spring",
+        "AI",
+        "大模型"
+      ],
+      "summary": "代码&amp;文档：https://gitee.com/xscodeit/springboot-openai.git",
+      "excerpt": "代码&文档： https://gitee.com/xscodeit/springboot-openai.git"
+    }
+  ]
+}

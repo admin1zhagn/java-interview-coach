@@ -1,0 +1,751 @@
+{
+  "id": "redis-persistence-cluster",
+  "name": "Redis持久化与集群",
+  "aliases": [
+    "RDB",
+    "AOF",
+    "哨兵",
+    "Cluster",
+    "集群",
+    "主从复制"
+  ],
+  "count": 18,
+  "total_word_count": 20405,
+  "articles": [
+    {
+      "slug": "az3dfpd3u4vq1one",
+      "title": "讲讲主从复制原理与延迟",
+      "url": "/tulingzhouyu/db22bv/az3dfpd3u4vq1one",
+      "toc_path": [
+        "Mysql",
+        "讲讲主从复制原理与延迟"
+      ],
+      "toc_level": 1,
+      "toc_index": 415,
+      "word_count": 357,
+      "updated_at": "2023-08-29T13:52:32.000Z",
+      "primary_category": "redis-persistence-cluster",
+      "primary_category_name": "Redis持久化与集群",
+      "related_categories": [
+        "redis-persistence-cluster",
+        "mysql-sharding",
+        "mysql-index-transaction",
+        "observability-troubleshooting",
+        "performance-optimization"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "主从复制",
+        "主从",
+        "MySQL",
+        "日志",
+        "性能",
+        "优化"
+      ],
+      "summary": "MySQL 的主从复制原理如下： 首先，主库将变更写入 binlog 日志。 从库连接到主库后，有一个 IO 线程负责将 主库的 binlog 日志 复制到自己本地，并写入到 中继日志 中。 然后，从库中有一个 SQL 线程会从中继日志读取 binlog，并执行其中的 SQL 内容，即在从库上再次执行一遍。 以上就是主从复制的原理。那么 主从延迟的原因有哪些呢？ 主库的从库太多，主库需要将 binlog 日志传输给多个从库，导致复制延迟。 在从库执行的 SQL 中存在慢查询语句，会导致整体复制进程的延迟。 如果主库",
+      "excerpt": "MySQL 的主从复制原理如下： 首先，主库将变更写入 binlog 日志。 从库连接到主库后，有一个 IO 线程负责将 主库的 binlog 日志 复制到自己本地，并写入到 中继日志 中。 然后，从库中有一个 SQL 线程会从中继日志读取 binlog，并执行其中的 SQL 内容，即在从库上再次执行一遍。 以上就是主从复制的原理。那么 主从延迟的原因有哪些呢？ 主库的从库太多，主库需要将 binlog 日志传输给多个从库，导致复制延迟。 在从库执行的 SQL 中存在慢查询语句，会导致整体复制进程的延迟。 如果主库的读写压力过大，会导致主库处理 binlog 的速度减慢，进而影响复制延迟。 为了优化主从复制的延迟，我们可以采取以下措施： 减少从库的数量，降低主库的负载，减少复制延迟。 优化慢查询语句，减少从库执行SQL 的延迟。 对主库进行性能优化，减少主库的读写压力，提高 binlog 写入速度。 通过以上措施可以帮助降低主从复制的延迟，提高复制的效率和一致性。"
+    },
+    {
+      "slug": "lefz0ffra2wp5veg",
+      "title": "说说Redis的持久化机制",
+      "url": "/tulingzhouyu/db22bv/lefz0ffra2wp5veg",
+      "toc_path": [
+        "Redis",
+        "说说Redis的持久化机制"
+      ],
+      "toc_level": 1,
+      "toc_index": 526,
+      "word_count": 4869,
+      "updated_at": "2025-06-18T08:35:25.000Z",
+      "primary_category": "redis-persistence-cluster",
+      "primary_category_name": "Redis持久化与集群",
+      "related_categories": [
+        "redis-persistence-cluster",
+        "os-linux",
+        "redis-cache",
+        "java-concurrency",
+        "observability-troubleshooting"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "RDB",
+        "AOF",
+        "操作系统",
+        "进程",
+        "线程",
+        "内存",
+        "文件",
+        "Redis",
+        "并发",
+        "线上",
+        "日志",
+        "CPU"
+      ],
+      "summary": "简答Redis有两种持久化机制：RDB和AOF。RDB是一种快照持久化的方式，它会将Redis在某个时间点的数据状态以二进制的方式保存到硬盘上的一个文件中。RDB持久化可以通过配置定时或手动触发，也可以设置自动触发的条件。RDB的优点是生成的文件比AOF文件更小，恢复速度也更快，适合用于备份和...",
+      "excerpt": "简答 Redis有两种持久化机制： RDB和AOF 。 RDB是一种快照持久化的方式，它会将Redis在某个时间点的数据状态以二进制的方式保存到硬盘上的一个文件中。RDB持久化可以通过配置定时或手动触发，也可以设置自动触发的条件。RDB的优点是生成的文件比AOF文件更小，恢复速度也更快，适合用于备份和灾难恢复。 AOF是一种追加日志持久化方式，它会将Redis执行的写命令追加到一个文件的末尾。当Redis重启时，它会重新执行这些写命令来恢复数据状态。AOF提供了更可靠的持久化方式，因为它可以保证每个写操作都被记录下来，并且不会发生数据丢失的情况。AOF文件可以根据配置进行同步写入硬盘的频率，包括每秒同步、每写入命令同步和禁用同步三种模式。 在使用持久化机制时，可以选择同时使用RDB和AOF，也可以只使用其中一种。同时使用两种方式时，Redis在重启时会先加载AOF文件来恢复数据，如果AOF文件不存在或损坏，则会尝试加载RDB文件。因此，AOF具有更高的优先级。 ​ 应大家要求，上强度 给补充写 深入探讨的追问 给哪些内存数据做快照? Redis 的数据都在内存中，为了提供所有数据的可靠性保证，它执行的是全量快照，也就是说，把内存中的所有数据都记录到磁盘中。但是，RDB 文件就越大，往磁盘上写数据的时间开销就越大。 分为自动触发与手动触发两种 1.redis.conf中配置： save 900 1 //900s内有1个key被修改 save 300 10 //300s内有10个key被修改 save 60 10000 //60s内有10000个key被修改 2.执行命令 shutdown 正常关闭服务 flushall 备份空文件 save 会阻塞 bgsave 后台线程 RDB文件的生成是否会阻塞主线程 Redis 提供了两个手动命令来生成 RDB 文件，分别是 save 和 bgsave。 save：在主线程中执行，会导致阻塞；对于内存比较大的实例会造成长时间阻塞，线上环境不建议使用。 bgsave：创建一个子进程，专门用于写入 RDB 文件，避免了主线程的阻塞，这也是Redis RDB 文件生成的默认配置。 命令实战演示 除了执行命令手动触发之外，Redis内部还存在自动触发RDB 的持久化机制，例如以下场景: 1)使用save相关配置,如“save m n”。表示m秒内数据集存在n次修改时，自动触发bgsave。 2）如果从节点执行全量复制操作，主节点自动执行bgsave生成RDB文件并发送给从节点。 3)执行debug reload命令重新加载Redis 时，也会自动触发save操作。 4）默认情况下执行shutdown命令时，如果没有开启AOF持久化功能则自动执行bgsave。 关闭RDB持久化，在课程讲述的Redis版本（6.2.4）上，是将配置"
+    },
+    {
+      "slug": "qevs327wvd1cvz7l",
+      "title": "REDIS 集群的原理是什么",
+      "url": "/tulingzhouyu/db22bv/qevs327wvd1cvz7l",
+      "toc_path": [
+        "Redis",
+        "REDIS 集群的原理是什么"
+      ],
+      "toc_level": 1,
+      "toc_index": 553,
+      "word_count": 426,
+      "updated_at": "2023-08-30T11:42:10.000Z",
+      "primary_category": "redis-persistence-cluster",
+      "primary_category_name": "Redis持久化与集群",
+      "related_categories": [
+        "redis-persistence-cluster",
+        "redis-cache",
+        "mysql-sharding",
+        "microservices-governance",
+        "observability-troubleshooting"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "集群",
+        "主从复制",
+        "Redis",
+        "分片",
+        "主从",
+        "负载均衡",
+        "故障",
+        "监控"
+      ],
+      "summary": "Redis 集群通过数据分片和主从复制实现了横向扩展和高可用性。它将数据划分为 16384 个哈希槽，并将这些槽均匀地分配到多个节点上。每个节点负责处理一部分槽的数据，实现了数据的分散存储和负载均衡。在集群中，每个哈希槽有一个主节点和多个从节点。主节点负责处理读写请求，而从节点则通过主从复制机...",
+      "excerpt": "Redis 集群通过数据分片和主从复制实现了横向扩展和高可用性。它将数据划分为 16384 个哈希槽 ，并将这些槽均匀地分配到多个节点上。 每个节点 负责 处理一部分槽的数据 ，实现了数据的分散存储和负载均衡。 在集群中，每个哈希槽有一个主节点和多个从节点。 主节点负责处理读写请求 ，而从节点则通过主从复制机制复制主节点的数据， 提供数据的冗余备份和故障恢复功能 。 当主节点发生故障时，集群会 自动进行故障转移 。它会选举一个从节点升级为新的主节点，保证服务的持续可用性。同时，集群管理节点负责监控节点的状态，并协调故障转移过程。 客户端在与 Redis 集群交互时，根据键的哈希值将请求发送到相应的节点。客户端还可以通过集群管理节点获取整个集群的拓扑信息，了解哪些键存储在哪个节点上。 通过数据分片和主从复制，Redis 集群实现了数据水平切分、负载均衡和高可用性。它允许数据规模和吞吐量的线性扩展，并能自动处理节点故障。集群管理节点协调集群状态，客户端通过哈希槽映射与集群交互，从而实现了一个稳定和可靠的 Redis 分布式系统。"
+    },
+    {
+      "slug": "frff2vmhepagf2ym",
+      "title": "REDIS集群方案什么情况下会导致整个集群不可用",
+      "url": "/tulingzhouyu/db22bv/frff2vmhepagf2ym",
+      "toc_path": [
+        "Redis",
+        "REDIS集群方案什么情况下会导致整个集群不可用"
+      ],
+      "toc_level": 1,
+      "toc_index": 554,
+      "word_count": 628,
+      "updated_at": "2023-09-20T07:41:49.000Z",
+      "primary_category": "redis-persistence-cluster",
+      "primary_category_name": "Redis持久化与集群",
+      "related_categories": [
+        "redis-persistence-cluster",
+        "redis-cache",
+        "observability-troubleshooting",
+        "os-linux",
+        "computer-network"
+      ],
+      "question_type": "troubleshooting",
+      "question_type_name": "故障排查题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "集群",
+        "主从复制",
+        "Redis",
+        "故障",
+        "监控",
+        "内存",
+        "网络"
+      ],
+      "summary": "Redis 集群在以下情况下可能导致整个集群不可用：多个主节点同时故障：如果多个主节点同时发生故障，而且它们的从节点无法正常升级为新的主节点，那么整个集群将无法提供读写服务。集群管理节点故障：集群管理节点负责监控集群状态和协调故障转移操作。如果集群管理节点发生故障，并且无法及时恢复或替换，那么...",
+      "excerpt": "Redis 集群在以下情况下可能导致整个集群不可用： 多个主节点同时故障： 如果多个主节点同时发生故障，而且它们的从节点无法正常升级为新的主节点，那么整个集群将无法提供读写服务。 集群管理节点故障： 集群管理节点负责监控集群状态和协调故障转移操作。如果集群管理节点发生故障，并且无法及时恢复或替换，那么集群将失去管理和协调能力，可能导致集群不可用。 网络分区： 如果集群中的节点之间发生网络分区，即无法互相通信，那么可能会引起脑裂（split-brain）问题。在这种情况下，每个分区内的节点可能会认为自己是合法的 Redis 集群，导致数据冲突和不一致性，最终导致整个集群无法正常工作。 配置错误： 如果 Redis 集群的配置出现错误或者某些节点的配置不一致，可能导致集群无法正常运行。 内存不足： 如果集群中的某个节点的内存不足以容纳当前处理的数据量，可能会导致该节点性能下降甚至崩溃，从而影响整个集群的可用性。 为避免整个集群不可用，建议采取以下措施： 配置正确的主从复制和故障转移机制，确保每个主节点都有足够的从节点，并定期进行故障转移测试。 部署多个独立的集群管理节点，以确保高可用性和决策一致性。 定期检查和监控集群配置，确保各个节点之间的配置一致性。 实施网络分区容忍策略，例如使用网络拓扑结构和分布式一致性协议，以减少脑裂问题的发生。 监控集群节点的内存使用情况，及时扩容或优化内存管理，避免内存不足问题。 综上所述，要确保 Redis 集群的高可用性和稳定性，需要合理设计和配置集群架构，并采取适当的监控和容错措施来应对潜在的故障情况。"
+    },
+    {
+      "slug": "hl67tspuodzq5hwb",
+      "title": "熟悉ElasticSearch 集群中搜索数据的过程吗",
+      "url": "/tulingzhouyu/db22bv/hl67tspuodzq5hwb",
+      "toc_path": [
+        "ElasticSearch",
+        "熟悉ElasticSearch 集群中搜索数据的过程吗"
+      ],
+      "toc_level": 1,
+      "toc_index": 601,
+      "word_count": 472,
+      "updated_at": "2023-09-04T11:55:47.000Z",
+      "primary_category": "redis-persistence-cluster",
+      "primary_category_name": "Redis持久化与集群",
+      "related_categories": [
+        "redis-persistence-cluster",
+        "mysql-sharding",
+        "mq-rabbitmq",
+        "algorithm"
+      ],
+      "question_type": "other",
+      "question_type_name": "其他问题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "集群",
+        "分片",
+        "队列",
+        "排序"
+      ],
+      "summary": "是的，我熟悉ElasticSearch集群中搜索数据的过程。ElasticSearch是一个基于Lucene的分布式搜索和分析引擎，它可以将数据存储在集群中的多个节点上，并能够高效地进行分布式搜索和数据分析。在ElasticSearch集群中搜索数据的过程可以分为以下几个步骤：接受请求：Ela...",
+      "excerpt": "是的，我熟悉ElasticSearch集群中搜索数据的过程。 ElasticSearch是一个基于Lucene的分布式搜索和分析引擎，它可以将数据存储在集群中的多个节点上，并能够高效地进行分布式搜索和数据分析。 在ElasticSearch集群中搜索数据的过程可以分为以下几个步骤： 接受请求：ElasticSearch集群中的任何节点都可以接受用户的搜索请求。一旦接收到请求，该节点会将其转发给协调节点（coordinating node）。 路由与寻址：协调节点接收到请求后，根据请求中的路由信息，将请求转发给相应的主分片或副本分片。每个分片都会独立地执行搜索并生成一个优先队列。 分片选择和请求转发：每个分片在本地执行搜索并构建一个大小为from+size的优先队列。优先队列中包含了查询结果按照排序值的顺序排列的文档。同时，协调节点也会将该请求转发给相关的副本分片，并合并它们的结果到自己的优先队列中。 执行搜索计划：一旦所有的分片都完成了搜索并生成了优先队列，协调节点会将所有优先队列合并为一个全局排序后的结果列表。 搜索的后处理：协调节点会对全局排序后的结果列表进行处理，例如进行结果合并、处理搜索结果、返回查询结果等。 返回结果：一旦所有的搜索和后处理都完成了，协调节点会将最终的结果返回给客户端。"
+    },
+    {
+      "slug": "ulffm5acpxkut4bi",
+      "title": "ZooKeeper 集群中服务器之间是怎样通信的",
+      "url": "/tulingzhouyu/db22bv/ulffm5acpxkut4bi",
+      "toc_path": [
+        "Zookeeper",
+        "ZooKeeper 集群中服务器之间是怎样通信的"
+      ],
+      "toc_level": 1,
+      "toc_index": 643,
+      "word_count": 396,
+      "updated_at": "2023-09-04T09:21:41.000Z",
+      "primary_category": "redis-persistence-cluster",
+      "primary_category_name": "Redis持久化与集群",
+      "related_categories": [
+        "redis-persistence-cluster",
+        "computer-network",
+        "netty-network",
+        "observability-troubleshooting"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "集群",
+        "TCP",
+        "网络",
+        "故障"
+      ],
+      "summary": "ZooKeeper集群中的服务器之间使用TCP协议进行通信，这个通信过程包括以下关键部分：Leader和Follower：在ZooKeeper集群中，有一个服务器被选为领导者（Leader），其余服务器成为跟随者（Follower）。Leader负责处理所有客户端请求，而Followers主要...",
+      "excerpt": "ZooKeeper集群中的服务器之间使用TCP协议进行通信，这个通信过程包括以下关键部分： Leader和Follower：在ZooKeeper集群中，有一个服务器被选为领导者（Leader），其余服务器成为跟随者（Follower）。Leader负责处理所有客户端请求，而Followers主要用于接收Leader的数据更新。 通信机制：每个服务器创建TCP连接，使用LearnerHandler实体来处理与其他服务器的网络通信。LearnerHandler的主要职责是接收来自其他服务器的数据更新，并将其传递给应用程序。 客户端请求：客户端通过ZooKeeper客户端库连接到集群中的任一服务器，并向其中一个服务器发送请求。该服务器会将请求传递给Leader或直接处理请求。 数据同步：Leader负责处理客户端请求，并将数据更新广播给所有Followers。Followers会应用这些更新以保持数据一致性。 故障处理：如果Leader服务器发生故障，ZooKeeper使用选举机制来选举新的Leader，以确保集群的高可用性。 总之，ZooKeeper的通信原理是基于客户端/服务器模型的，客户端发送请求，服务器接收和处理请求，然后返回响应。这个通信过程确保了ZooKeeper集群中数据的一致性和高可用性。"
+    },
+    {
+      "slug": "mpmccgit0zct3c8z",
+      "title": "Zookeeper 是如何解决脑裂问题的",
+      "url": "/tulingzhouyu/db22bv/mpmccgit0zct3c8z",
+      "toc_path": [
+        "Zookeeper",
+        "Zookeeper 是如何解决脑裂问题的"
+      ],
+      "toc_level": 1,
+      "toc_index": 645,
+      "word_count": 322,
+      "updated_at": "2023-09-04T09:09:48.000Z",
+      "primary_category": "redis-persistence-cluster",
+      "primary_category_name": "Redis持久化与集群",
+      "related_categories": [
+        "redis-persistence-cluster",
+        "observability-troubleshooting",
+        "project-system-design"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "集群",
+        "故障",
+        "方案"
+      ],
+      "summary": "Zookeeper的解决方案是通过过半机制来避免脑裂问题的发生。具体来说，在Zookeeper的领导者选举过程中，如果某台ZookeeperServer获得了超过半数的选票，则此ZookeeperServer就可以成为Leader。举个简单的例子，如果现在集群中有5台ZookeeperServ...",
+      "excerpt": "Zookeeper的解决方案是通过过半机制来避免脑裂问题的发生。 具体来说，在Zookeeper的领导者选举过程中，如果某台ZookeeperServer获得了超过半数的选票，则此ZookeeperServer就可以成为Leader。举个简单的例子，如果现在集群中有5台ZookeeperServer，那么过半数就是2.5，也就是说，领导者选举的过程中至少要有三台ZookeeperServer投了同一个ZookeeperServer，才会选出来一个Leader。 过半机制中是大于而不是大于等于，目的是为了防止脑裂。因为如果投票结果是大于等于2.5，那么只要有两台机器同时发生故障，就能导致过半数失效，从而引发脑裂问题。而如果是大于2.5，则必须有一台机器故障的同时，另外还有一台机器也故障，才能导致过半数失效，这样就能大大降低脑裂问题的发生概率。 因此，Zookeeper通过过半机制来保证在发生脑裂问题时，集群仍然能够正常工作，避免因为脑裂问题导致集群失效的问题。"
+    },
+    {
+      "slug": "ru9gznnw4c9r0e7r",
+      "title": "Zookeeper脑裂是什么原因导致的",
+      "url": "/tulingzhouyu/db22bv/ru9gznnw4c9r0e7r",
+      "toc_path": [
+        "Zookeeper",
+        "Zookeeper脑裂是什么原因导致的"
+      ],
+      "toc_level": 1,
+      "toc_index": 647,
+      "word_count": 328,
+      "updated_at": "2023-09-04T09:05:36.000Z",
+      "primary_category": "redis-persistence-cluster",
+      "primary_category_name": "Redis持久化与集群",
+      "related_categories": [
+        "redis-persistence-cluster",
+        "computer-network",
+        "observability-troubleshooting",
+        "microservices-governance"
+      ],
+      "question_type": "troubleshooting",
+      "question_type_name": "故障排查题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "集群",
+        "网络",
+        "故障",
+        "超时"
+      ],
+      "summary": "Zookeeper脑裂是指一个集群环境中出现了多个Master节点，导致数据不一致和数据问题。这种情况通常发生在网络故障导致集群中部分节点失去与Master节点的连接，而在这些节点看来，Master节点已经失效，因此它们会选举新的Master节点。在这个过程中，可能会出现多个Master节点，...",
+      "excerpt": "Zookeeper脑裂是指一个集群环境中出现了多个Master节点，导致数据不一致和数据问题。这种情况通常发生在网络故障导致集群中部分节点失去与Master节点的连接，而在这些节点看来，Master节点已经失效，因此它们会选举新的Master节点。在这个过程中，可能会出现多个Master节点，导致脑裂问题。 脑裂问题的主要原因是网络环境不稳定和假死现象。例如，当集群中的部分节点由于网络原因无法连接到Master节点时，这些节点会认为Master节点已经失效，从而发起新的选举。然而，如果网络不稳定，可能会出现Master节点重新进入集群的情况，导致出现多个Master节点。 解决Zookeeper脑裂问题的方法包括： 增加网络稳定性，避免网络故障导致的问题。 调整Zookeeper集群的选举机制和超时设置，使其更适应网络环境和集群架构。 及时发现并处理多个Master节点，避免数据不一致和其他问题的发生。"
+    },
+    {
+      "slug": "up4c4gyp3puktd69",
+      "title": "为什么Zookeeper集群的数目一般为奇数个",
+      "url": "/tulingzhouyu/db22bv/up4c4gyp3puktd69",
+      "toc_path": [
+        "Zookeeper",
+        "为什么Zookeeper集群的数目一般为奇数个"
+      ],
+      "toc_level": 1,
+      "toc_index": 651,
+      "word_count": 304,
+      "updated_at": "2023-09-04T07:48:02.000Z",
+      "primary_category": "redis-persistence-cluster",
+      "primary_category_name": "Redis持久化与集群",
+      "related_categories": [
+        "redis-persistence-cluster"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "集群"
+      ],
+      "summary": "Zookeeper集群的数目一般为奇数个，主要是出于以下两方面的考虑：防止脑裂。如果Zookeeper集群的节点数为偶数个，那么在集群发生脑裂并分成两个均等子集群的情况下，可能导致整个Zookeeper集群都无法正常工作。而如果集群节点数为奇数个，则即使发生脑裂并分成两个子集群，每个子集群都至...",
+      "excerpt": "Zookeeper集群的数目一般为奇数个，主要是出于以下两方面的考虑： 防止脑裂。如果Zookeeper集群的节点数为偶数个，那么在集群发生脑裂并分成两个均等子集群的情况下，可能导致整个Zookeeper集群都无法正常工作。而如果集群节点数为奇数个，则即使发生脑裂并分成两个子集群，每个子集群都至少会有一个节点可以正常工作，从而保证集群的可用性。 便于选举。在Zookeeper集群中，需要选出一个新的leader。在奇数个节点的情况下，当节点数量的一半比另一半多1时，多的那个节点就可以作为投票箱中的一票，确保了选举过程的顺利进行。如果节点数为偶数个，可能会出现半数以上节点与另一半节点投票结果不一致的情况，增加选举的复杂性。 因此，为了确保Zookeeper集群的稳定性和可用性，通常采用奇数个节点。"
+    },
+    {
+      "slug": "bbdebhegggl2f2x6",
+      "title": "Zookeeper 集群中是怎样选举leader的",
+      "url": "/tulingzhouyu/db22bv/bbdebhegggl2f2x6",
+      "toc_path": [
+        "Zookeeper",
+        "Zookeeper 集群中是怎样选举leader的"
+      ],
+      "toc_level": 1,
+      "toc_index": 655,
+      "word_count": 1158,
+      "updated_at": "2023-09-04T07:20:09.000Z",
+      "primary_category": "redis-persistence-cluster",
+      "primary_category_name": "Redis持久化与集群",
+      "related_categories": [
+        "redis-persistence-cluster",
+        "mysql-index-transaction"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "集群",
+        "事务"
+      ],
+      "summary": "zookeeper集群中服务器被划分为以下四种状态：LOOKING：寻找Leader状态。处于该状态的服务器会认为集群中没有Leader，需要进行Leader选举；FOLLOWING：跟随着状态，说明当前服务器角色为Follower；LEADING：领导者状态，表明当前服务器角色为Leader...",
+      "excerpt": "zookeeper集群中服务器被划分为以下四种状态： LOOKING：寻找Leader状态。 处于该状态的服务器会认为集群中没有Leader，需要进行Leader选举 ； FOLLOWING：跟随着状态，说明当前服务器角色为Follower； LEADING：领导者状态，表明当前服务器角色为Leader； OBSERVING：观察者状态，表明当前服务器角色为Observer。 Leader选举的触发时机 集群启动，这个时候需要选举出新的Leader； Leader服务器宕机； ​ 第一次启动Leader选举 假设想在的有三台机器搭建集群： ​ ​ 每个Server发出一个投票投给自己 。当server1启动的时候，为Looking状态，对应的myid记为1，ZXID为0，他先投自己一票，此时他的投票为(1,0);然后需要把自己的选票发给集群中的其他机器。 server2这个时候也启动了，也是Looking状态，也先投自己一票，也就是(2,0)，然后需要把自己的选票发给集群中的其他机器。 接受来自各个服务器的投票。 集群的每个服务器收到投票后，首先判断该投票是否有效，如检查是否是本轮投票、是否来自LOOKING状态的服务器； ​ 处理投票。 针对每一个投票，服务器都需要将别人的投票和自己的投票进行PK，PK的规则如下： 优先检查ZXID。 ZXID比较大的服务器优先作为Leader； 如果ZXID相同，那么就比较myid。 myid较大的服务器作为Leader服务器。 对于Server1而言，它的投票是(1, 0)，接收Server2的投票为(2, 0)，首先会比较两者的ZXID，均为0，再比较myid，此时Server2的myid最大， 于是更新自己的投票为(2, 0)，然后重新投票，对于Server2而言，其无须更新自己的投票，只是再次向集群中所有机器发出上一次投票信息即可。 统计投票 。每次投票后，服务器都会统计投票信息，判断是否已经过半机器接收到相同的投票信息，对于Server1、Server2而言，都统计出集群中已经有两台机器接受了(2, 0)的投票信息，此时便认为已经选出了Leader。 改变服务器状态 。一旦确定了Leader，每个服务器都会更新自己的状态，如果是Follower，那么就变更为FOLLOWING，如果是Leader，就变更为LEADING。 这个时候Server3启动了， 发现集群中已经有了Leader，就建立连接并把自己的状态置为Following。 非第一次启动Leader选举 在zookeeper运行期间，即便有新服务器加入，也不会影响到Leader， 新加入的服务器会将原有的Leader服务器视为Leader，进行同步。但是一旦Leader宕机了，那么整个集群就将暂停对外服务，进行新一轮Leader的选举 ，其过程和启动时"
+    },
+    {
+      "slug": "dgg9lt3fawbnq4ph",
+      "title": "zk 节点宕机如何处理",
+      "url": "/tulingzhouyu/db22bv/dgg9lt3fawbnq4ph",
+      "toc_path": [
+        "Zookeeper",
+        "zk 节点宕机如何处理"
+      ],
+      "toc_level": 1,
+      "toc_index": 656,
+      "word_count": 201,
+      "updated_at": "2023-09-04T06:23:09.000Z",
+      "primary_category": "redis-persistence-cluster",
+      "primary_category_name": "Redis持久化与集群",
+      "related_categories": [
+        "redis-persistence-cluster",
+        "devops-release"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "集群",
+        "部署"
+      ],
+      "summary": "Zookeeper 必须集群部署，推荐配置不少于 3 个节点。Zookeeper 自身也要保证当一个节点宕机时，其他节点会继续提供服务。如果是一个 Follower 宕机，还有 2 台服务器提供访问，因为 Zookeeper 上的数据是有多个副本的，数据并不会丢失。如果是一个 Leader 宕...",
+      "excerpt": "Zookeeper 必须集群部署，推荐配置不少于 3 个节点。Zookeeper 自身也要保证当一个节点宕机时，其他节点会继续提供服务。 如果是一个 Follower 宕机，还有 2 台服务器提供访问，因为 Zookeeper 上的数据是有多个副本的，数据并不会丢失。 如果是一个 Leader 宕机，Zookeeper 会选举出新的 Leader。 因此，Zookeeper 可以容忍一部分节点的宕机，但前提是要保证超过一半的节点是正常工作的。在这种情况下，Zookeeper 集群仍然可以正常提供服务。如果 Zookeeper 节点挂得太多，只剩一半或不到一半节点能工作，集群就会失效。"
+    },
+    {
+      "slug": "go0qlst8dskomdnh",
+      "title": "zk集群数据是如何同步的",
+      "url": "/tulingzhouyu/db22bv/go0qlst8dskomdnh",
+      "toc_path": [
+        "Zookeeper",
+        "zk集群数据是如何同步的"
+      ],
+      "toc_level": 1,
+      "toc_index": 658,
+      "word_count": 297,
+      "updated_at": "2023-09-03T09:37:24.000Z",
+      "primary_category": "redis-persistence-cluster",
+      "primary_category_name": "Redis持久化与集群",
+      "related_categories": [
+        "redis-persistence-cluster",
+        "observability-troubleshooting",
+        "os-linux"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "集群",
+        "日志",
+        "内存"
+      ],
+      "summary": "Zookeeper集群的数据同步过程如下：集群启动时，会先进行领导者选举，确定哪个节点是Leader，哪些节点是Follower和Observer。Leader会和其他节点进行数据同步，采用发送快照和发送Diff日志的方式。集群在工作过程中，所有的写请求都会交给Leader节点来进行处理，从节...",
+      "excerpt": "Zookeeper集群的数据同步过程如下： 集群启动时，会先进行领导者选举，确定哪个节点是Leader，哪些节点是Follower和Observer。 Leader会和其他节点进行数据同步，采用发送快照和发送Diff日志的方式。 集群在工作过程中，所有的写请求都会交给Leader节点来进行处理，从节点只能处理读请求。 Leader节点收到一个写请求时，会通过两阶段提交机制来处理。 Leader节点会将该写请求对应的日志发送给其他Follower节点，并等待Follower节点持久化日志成功。 Follower节点收到日志后会进行持久化，如果持久化成功则发送一个Ack给Leader节点。 当Leader节点收到半数以上的Ack后，就会开始提交，先更新Leader节点本地的内存数据。 然后发送commit命令给Follower节点，Follower节点收到commit命令后也会更新本地内存中的数据。 这样，Zookeeper集群的数据同步就完成了。"
+    },
+    {
+      "slug": "rn1ucrofyz7yt0d5",
+      "title": "RabbitMQ 如何构建集群？",
+      "url": "/tulingzhouyu/db22bv/rn1ucrofyz7yt0d5",
+      "toc_path": [
+        "RabbitMQ",
+        "RabbitMQ 如何构建集群？"
+      ],
+      "toc_level": 1,
+      "toc_index": 698,
+      "word_count": 777,
+      "updated_at": "2023-09-11T09:40:04.000Z",
+      "primary_category": "redis-persistence-cluster",
+      "primary_category_name": "Redis持久化与集群",
+      "related_categories": [
+        "redis-persistence-cluster",
+        "mq-rabbitmq",
+        "mq-general",
+        "performance-optimization",
+        "project-system-design"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "middle",
+        "senior",
+        "campus"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "Cluster",
+        "集群",
+        "RabbitMQ",
+        "队列",
+        "MQ",
+        "性能",
+        "方案"
+      ],
+      "summary": "RabbitMQ 支持两种主要类型的集群：普通集群（Classic Cluster）和镜像集群（Mirrored Cluster）。他们之间有一些重要的区别：普通集群： 这种模式使用Erlang语言天生具备的集群方式搭建。这种集群模式下，集群的各个节点之间只会有相同的元数据，即队列结构，而消息...",
+      "excerpt": "RabbitMQ 支持两种主要类型的集群：普通集群（Classic Cluster）和镜像集群（Mirrored Cluster）。他们之间有一些重要的区别： 普通集群 ： 这种模式使用Erlang语言天生具备的集群方式搭建。这种集群模式下，集群的各个节点之间只会有相同的元数据，即队列结构，而消息不会进行冗余，只存在一个节点中。消费时，如果消费的不是存有数据的节点， RabbitMQ会临时在节点之间进行数据传输，将消息从存有数据的节点传输到消费的节点。很显然，这种集群模式的消息可靠性不是很高。因为如果其中有个节点服务宕机了，那这个节点上的数据就无法消费了，需要等到这个节点服务恢复后才能消费，而这时，消费者端已经消费过的消息就有可能给不了服务端正确应答，服务起来后，就会再次消费这些消息，造成这部分消息重复消费。 另外，如果消息没有做持久化，重启就消息就会丢失。并且，这种集群模式也不支持高可用，即当某一个节点服务挂了后，需要手动重启服务，才能保证这一部分消息能正常消费。所以这种集群模式只适合一些对消息安全性不是很高的场景。而在使用这种模式时，消费者应该尽量的连接上每一个节点，减少消息在集群中的传输。 镜像集群 ： 这种模式是在普通集群模式基础上的一种增强方案，这也就是RabbitMQ的官方HA高可用方案。需要在搭建了普通集群之后再补充搭建。其本质区别在于，这种模式会在镜像节点中间主动进行消息同步，而不是在客户端拉取消息时临时同步。并且在集群内部有一个算法会选举产生master和slave，当一个master挂了后，也会自动选出一个来。从而给整个集群提供高可用能力。这种模式的消息可靠性更高，因为每个节点上都存着全量的消息。而他的弊端也是明显的，集群内部的网络带宽会被这种同步通讯大量的消耗，进而降低整个集群的性能。这种模式下，队列数量最好不要过多 总的来说，普通集群适用于对性能要求高，但可以接受数据丢失的情况。而镜像集群则适用于对数据持久性和可用性有更高要求，并愿意付出一些性能代价的场景。 ​ ​"
+    },
+    {
+      "slug": "lmcnigeghwb3fkhz",
+      "title": "Dubbo的集群容错策略有哪些？它们的工作原理是什么？",
+      "url": "/tulingzhouyu/db22bv/lmcnigeghwb3fkhz",
+      "toc_path": [
+        "Dubbo",
+        "基础",
+        "Dubbo的集群容错策略有哪些？它们的工作原理是什么？"
+      ],
+      "toc_level": 2,
+      "toc_index": 730,
+      "word_count": 674,
+      "updated_at": "2023-09-01T07:37:02.000Z",
+      "primary_category": "redis-persistence-cluster",
+      "primary_category_name": "Redis持久化与集群",
+      "related_categories": [
+        "redis-persistence-cluster",
+        "microservices-governance",
+        "ai-llm",
+        "observability-troubleshooting",
+        "java-core"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "senior",
+        "campus"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "集群",
+        "重试",
+        "故障",
+        "异常"
+      ],
+      "summary": "Dubbo提供了多种集群容错策略，用于处理在分布式环境中可能出现的故障和异常情况，以保障系统的稳定性和可靠性。以下是Dubbo支持的一些集群容错策略及其工作原理： Failover（重试）： 这是默认的容错策略。当调用失败时，Dubbo会自动重试其他可用的提供者实例，直到重试次数达到上限或者成...",
+      "excerpt": "Dubbo提供了多种集群容错策略，用于处理在分布式环境中可能出现的故障和异常情况，以保障系统的稳定性和可靠性。以下是Dubbo支持的一些集群容错策略及其工作原理： Failover（重试）： 这是默认的容错策略。当调用失败时，Dubbo会自动重试其他可用的提供者实例，直到重试次数达到上限或者成功调用为止。该策略适用于服务提供者实例较多、分布式环境中可能存在短暂故障的情况。 Failfast（快速失败）： 调用失败后立即报错，不会进行重试。适用于对响应时间要求较高的场景，以避免在某个提供者实例出现故障时花费过多时间等待。 Failsafe（失败安全）： 调用失败后，Dubbo会记录错误信息，但不会抛出异常，而是直接返回一个默认值。适用于非关键性操作，允许某些调用失败，但不影响整体业务流程。 Failback（失败自动恢复）： 类似于Failover，但是会在后台记录失败的请求，当提供者恢复正常时，会自动将之前失败的请求重新发送。适用于服务提供者故障不稳定，可能出现断断续续的情况。 Forking（并行调用）： 调用多个提供者实例，只要有一个成功返回结果，就将其返回给消费者。适用于对服务的可用性要求较高的情况，通过并行调用提高调用成功的概率。 Broadcast（广播调用）： 将请求发送给所有的提供者实例，只要有一个成功返回结果，就将其返回给消费者。适用于需要同时通知多个提供者的场景，如事件广播。 这些集群容错策略的工作原理基本上是在消费者端对提供者实例进行管理和调度。Dubbo会根据配置的集群容错策略，在发生调用失败时采取不同的处理方式，如重试、快速失败、并行调用等。选择合适的集群容错策略取决于业务需求和系统的可靠性要求。可以通过在消费者端的配置文件中设置 cluster 属性来选择使用哪种集群容错策略。"
+    },
+    {
+      "slug": "ru6w6sosh2m5x153",
+      "title": "Redis 有哪些集群方案？主从、哨兵、Cluster 有啥区别？实际该咋选？",
+      "url": "/tulingzhouyu/db22bv/ru6w6sosh2m5x153",
+      "toc_path": [
+        "高频面试问题",
+        "fox老师",
+        "Redis 有哪些集群方案？主从、哨兵、Cluster 有啥区别？实际该咋选？"
+      ],
+      "toc_level": 2,
+      "toc_index": 1088,
+      "word_count": 1783,
+      "updated_at": "2025-11-09T08:12:39.000Z",
+      "primary_category": "redis-persistence-cluster",
+      "primary_category_name": "Redis持久化与集群",
+      "related_categories": [
+        "redis-persistence-cluster",
+        "mysql-sharding",
+        "project-system-design",
+        "redis-cache",
+        "performance-optimization"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle",
+        "campus"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "哨兵",
+        "Cluster",
+        "集群",
+        "主从复制",
+        "分片",
+        "读写分离",
+        "主从",
+        "方案",
+        "秒杀",
+        "订单",
+        "库存",
+        "Redis"
+      ],
+      "summary": "兄弟们，要是面试被问 “Redis 有哪些集群方案？主从、哨兵、Cluster 有啥区别？实际该咋选？” 千万别慌！很多人要么只报个名字，要么把三者混为一谈，其实面试官要的是 “原理 + 区别 + 落地场景” 的清晰逻辑 —— 今天我用 5 分钟给你拆明白，保准你答得又全又有实战感，比光背概念...",
+      "excerpt": "兄弟们，要是面试被问 “Redis 有哪些集群方案？主从、哨兵、Cluster 有啥区别？实际该咋选？” 千万别慌！很多人要么只报个名字，要么把三者混为一谈，其实面试官要的是 “原理 + 区别 + 落地场景” 的清晰逻辑 —— 今天我用 5 分钟给你拆明白，保准你答得又全又有实战感，比光背概念的人强 10 倍！ 首先先明确：Redis 的集群方案不是凭空来的，是一步步解决 “数据安全→服务不挂→能扛海量数据” 的问题。咱们一个一个说，每个都讲 “核心原理 + 关键特点 + 面试必提的场景”，好记又好用！ 第一个：主从复制（Replication）—— 集群的 “基础款” 你就这么理解：主从复制就是 “一主多从，读写分家”。原理特简单：一个主节点（Master）负责所有写操作，比如存数据、改数据；再配几个从节点（Slave），从主节点那同步数据，专门扛读请求，比如查数据、查缓存。主节点先给从节点发全量数据（像把整个文件拷过去），之后有新写操作，再增量同步（像发修改记录）。 它的好处很直接：一是数据有备份，主节点挂了，从节点有完整数据，不怕丢；二是读写分离，比如主节点扛写 QPS 1 万，3 个从节点能扛读 QPS 3 万，适合读多写少的场景。 但面试一定要说缺点： 主节点挂了，得手动切从节点当新主 ，没有自动切换！所以它只适合 “不那么怕服务断一会儿” 的场景。 比如啥场景用？小公司的区域生鲜电商，商品就 5000 个 SKU，每天订单 2 万单，读请求是写请求的 20 倍 —— 用 “一主二从”，主节点管商品上架、改价格，两个从节点分别对接 APP 和小程序的商品查询，简单够用，人工切一次也不麻烦。 第二个：哨兵模式（Sentinel）—— 主从的 “升级款”，加了 “自动保镖” 说白了，哨兵模式就是给主从复制加了几个 “哨兵进程”，解决 “主节点挂了要手动切” 的痛点。原理是这样：你部署 3 个（奇数个，避免投票平票）哨兵，它们 24 小时盯着主从节点，一旦发现主节点没反应：第一步，先确认是不是真挂了（不是一个哨兵说了算，得多数哨兵同意，这叫主观下线→客观下线）；第二步，选一个从节点升级成新主；第三步，让其他从节点跟新主同步，还告诉客户端 “新主在这，快连过来”—— 全程自动，不用人管。 它的核心优势就是 高可用 ，主节点挂了，10 几秒就能恢复服务，不用等人工。但面试也要提它的短板： 还是单主架构 ，所有写操作还在一个主节点上，数据量太大（比如超 50GB）、写 QPS 太高（比如超 5 万），单机扛不住，它也没辙。 那啥场景用？在线教育平台存用户 Session，日均 10 万活跃用户，Session 数据 30GB（单机装得下），但用户登录后断服务，得重新登录，投诉会炸 —— 用 “一主二从 + 三哨兵”，主节点挂了哨兵自动切，用户完全没感觉，这就刚"
+    },
+    {
+      "slug": "notboxgcc2dgos5r",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/notboxgcc2dgos5r",
+      "toc_path": [
+        "高频面试问题",
+        "fox老师",
+        "Redis 有哪些集群方案？主从、哨兵、Cluster 有啥区别？实际该咋选？",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1089,
+      "word_count": 1787,
+      "updated_at": "2025-10-08T05:55:55.000Z",
+      "primary_category": "redis-persistence-cluster",
+      "primary_category_name": "Redis持久化与集群",
+      "related_categories": [
+        "redis-persistence-cluster",
+        "mysql-sharding",
+        "project-system-design",
+        "redis-cache",
+        "performance-optimization"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle",
+        "campus"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "哨兵",
+        "Cluster",
+        "集群",
+        "主从复制",
+        "分片",
+        "读写分离",
+        "主从",
+        "方案",
+        "秒杀",
+        "订单",
+        "库存",
+        "Redis"
+      ],
+      "summary": "口播文案兄弟们，要是面试被问 “Redis 有哪些集群方案？主从、哨兵、Cluster 有啥区别？实际该咋选？” 千万别慌！很多人要么只报个名字，要么把三者混为一谈，其实面试官要的是 “原理 + 区别 + 落地场景” 的清晰逻辑 —— 今天我用 5 分钟给你拆明白，保准你答得又全又有实战感，比...",
+      "excerpt": "口播文案 兄弟们，要是面试被问 “Redis 有哪些集群方案？主从、哨兵、Cluster 有啥区别？实际该咋选？” 千万别慌！很多人要么只报个名字，要么把三者混为一谈，其实面试官要的是 “原理 + 区别 + 落地场景” 的清晰逻辑 —— 今天我用 5 分钟给你拆明白，保准你答得又全又有实战感，比光背概念的人强 10 倍！ 首先先明确：Redis 的集群方案不是凭空来的，是一步步解决 “数据安全→服务不挂→能扛海量数据” 的问题。咱们一个一个说，每个都讲 “核心原理 + 关键特点 + 面试必提的场景”，好记又好用！ 第一个：主从复制（Replication）—— 集群的 “基础款” 你就这么理解：主从复制就是 “一主多从，读写分家”。原理特简单：一个主节点（Master）负责所有写操作，比如存数据、改数据；再配几个从节点（Slave），从主节点那同步数据，专门扛读请求，比如查数据、查缓存。主节点先给从节点发全量数据（像把整个文件拷过去），之后有新写操作，再增量同步（像发修改记录）。 它的好处很直接：一是数据有备份，主节点挂了，从节点有完整数据，不怕丢；二是读写分离，比如主节点扛写 QPS 1 万，3 个从节点能扛读 QPS 3 万，适合读多写少的场景。 但面试一定要说缺点： 主节点挂了，得手动切从节点当新主 ，没有自动切换！所以它只适合 “不那么怕服务断一会儿” 的场景。 比如啥场景用？小公司的区域生鲜电商，商品就 5000 个 SKU，每天订单 2 万单，读请求是写请求的 20 倍 —— 用 “一主二从”，主节点管商品上架、改价格，两个从节点分别对接 APP 和小程序的商品查询，简单够用，人工切一次也不麻烦。 第二个：哨兵模式（Sentinel）—— 主从的 “升级款”，加了 “自动保镖” 说白了，哨兵模式就是给主从复制加了几个 “哨兵进程”，解决 “主节点挂了要手动切” 的痛点。原理是这样：你部署 3 个（奇数个，避免投票平票）哨兵，它们 24 小时盯着主从节点，一旦发现主节点没反应：第一步，先确认是不是真挂了（不是一个哨兵说了算，得多数哨兵同意，这叫主观下线→客观下线）；第二步，选一个从节点升级成新主；第三步，让其他从节点跟新主同步，还告诉客户端 “新主在这，快连过来”—— 全程自动，不用人管。 它的核心优势就是 高可用 ，主节点挂了，10 几秒就能恢复服务，不用等人工。但面试也要提它的短板： 还是单主架构 ，所有写操作还在一个主节点上，数据量太大（比如超 50GB）、写 QPS 太高（比如超 5 万），单机扛不住，它也没辙。 那啥场景用？在线教育平台存用户 Session，日均 10 万活跃用户，Session 数据 30GB（单机装得下），但用户登录后断服务，得重新登录，投诉会炸 —— 用 “一主二从 + 三哨兵”，主节点挂了哨兵自动切，用户完全没感"
+    },
+    {
+      "slug": "axt9lyf1zmfzu8x9",
+      "title": "Redis 持久化机制有哪些",
+      "url": "/tulingzhouyu/db22bv/axt9lyf1zmfzu8x9",
+      "toc_path": [
+        "高频面试问题",
+        "鹏宇老师",
+        "Redis 持久化机制有哪些"
+      ],
+      "toc_level": 2,
+      "toc_index": 1253,
+      "word_count": 2828,
+      "updated_at": "2025-09-22T06:49:04.000Z",
+      "primary_category": "redis-persistence-cluster",
+      "primary_category_name": "Redis持久化与集群",
+      "related_categories": [
+        "redis-persistence-cluster",
+        "redis-cache",
+        "os-linux",
+        "performance-optimization",
+        "security-auth"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "RDB",
+        "AOF",
+        "Redis",
+        "缓存",
+        "穿透",
+        "雪崩",
+        "操作系统",
+        "进程",
+        "线程",
+        "内存",
+        "文件",
+        "性能",
+        "安全"
+      ],
+      "summary": "1. 引言Redis 作为高性能的纯内存数据库，其核心优势在于内存级读写速度（远超传统磁盘数据库），但这一特性也带来了 “内存数据易失性” 的天生短板 —— 当 Redis 服务崩溃、服务器断电或重启时，内存中的数据会直接丢失，可能导致业务中断（如电商购物车清空、缓存雪崩）。为解决这一问题，R...",
+      "excerpt": "1. 引言 Redis 作为高性能的纯内存数据库，其核心优势在于 内存级读写速度 （远超传统磁盘数据库），但这一特性也带来了 “内存数据易失性” 的天生短板 —— 当 Redis 服务崩溃、服务器断电或重启时，内存中的数据会直接丢失，可能导致业务中断（如电商购物车清空、缓存雪崩）。 为解决这一问题，Redis 提供了 持久化机制 ：在数据写入内存的同时，异步或同步地将数据持久化到磁盘文件中。其核心目标是平衡 “数据安全性”（尽可能少丢数据）、“Redis 性能”（不拖慢读写速度）与 “存储开销”（避免磁盘占用过度），确保 Redis 宕机重启后可从磁盘恢复数据，降低业务损失。 2. 为什么需要 Redis 持久化 2.1 内存数据易失的风险 Redis 数据默认仅存储于内存，若未开启持久化： 服务异常终止（如进程崩溃、机器断电）后，所有数据直接丢失； 重启 Redis 后需重新加载数据（如从数据库全量同步），可能引发 “缓存雪崩”（大量请求穿透到数据库，导致数据库过载）。 2.2 持久化的核心价值 数据恢复 ：Redis 重启时自动加载磁盘中的持久化文件，无需 “从零开始”，快速恢复服务； 灾备保障 ：持久化文件可备份至其他服务器，应对单机硬件故障（如硬盘损坏）； 避免缓存雪崩 ：恢复数据后，缓存层可继续承接请求，减少对数据库的冲击。 3. Redis 持久化的两种核心方式 Redis 持久化分为两大类： RDB 持久化 （默认开启）和 AOF 持久化 （需手动开启），二者实现逻辑与适用场景差异显著。 3.1 RDB 持久化（Redis Database） 3.1.1 定义 RDB 是 快照式持久化 ：在 “特定时间点” 生成内存中所有数据的 全量二进制快照 ，并保存为 .rdb 文件（默认文件名 dump.rdb ）。 3.1.2 触发方式 RDB 触发分为 “自动触发” 和 “手动触发”，核心依赖 bgsave 命令（异步无阻塞），仅 save 命令（同步阻塞）用于特殊场景。 触发类型 具体方式 核心逻辑 注意事项 手动触发 save 命令 由 Redis 主线程直接执行快照生成，期间会 阻塞所有客户端请求 线上环境禁止使用（可能导致服务不可用） 手动触发 bgsave 命令 主线程 fork 一个子进程，由子进程执行快照生成，主线程继续处理请求 无阻塞，推荐线上使用 自动触发 配置文件规则 在 redis.conf 中预设 “时间间隔 + 写操作数” 规则，满足任一规则时自动执行 bgsave 默认规则如下表 RDB 自动触发默认规则 （ redis.conf 配置）： 条件序号 时间间隔（秒） 最少写操作次数 触发逻辑 1 3600（1 小时） 1 1 小时内有 1 次写操作，触发 bgsave 2 300（5 分钟） 100 5 分钟内有 100 "
+    },
+    {
+      "slug": "vrv2zsn2dmr2gx4z",
+      "title": "八张架构图讲透Redis服务端面试核心",
+      "url": "/tulingzhouyu/db22bv/vrv2zsn2dmr2gx4z",
+      "toc_path": [
+        "高频面试问题",
+        "诸葛老师",
+        "八张架构图讲透Redis服务端面试核心"
+      ],
+      "toc_level": 2,
+      "toc_index": 1357,
+      "word_count": 2798,
+      "updated_at": "2025-09-18T08:17:34.000Z",
+      "primary_category": "redis-persistence-cluster",
+      "primary_category_name": "Redis持久化与集群",
+      "related_categories": [
+        "redis-persistence-cluster",
+        "redis-cache",
+        "mysql-sharding",
+        "performance-optimization",
+        "observability-troubleshooting"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle",
+        "campus"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "RDB",
+        "哨兵",
+        "Cluster",
+        "集群",
+        "主从复制",
+        "Redis",
+        "缓存",
+        "分片",
+        "读写分离",
+        "主从",
+        "性能",
+        "容量"
+      ],
+      "summary": "在现代分布式系统中，Redis 凭借其卓越的性能，已成为缓存、消息队列、分布式锁等场景的首选。然而，一个单点的 Redis 实例无疑是系统中最脆弱的环节。为了解决这个问题，一套高可用（High Availability, HA）方案是必不可少的。当面试官问起“Redis 如何保证高可用”，很多...",
+      "excerpt": "在现代分布式系统中，Redis 凭借其卓越的性能，已成为缓存、消息队列、分布式锁等场景的首选。然而，一个单点的 Redis 实例无疑是系统中最脆弱的环节。为了解决这个问题，一套高可用（High Availability, HA）方案是必不可少的。当面试官问起“Redis 如何保证高可用”，很多人会脱口而出“主从集群”。但“主从”和“集群”究竟有何区别？为何有了主从还需要集群，反之亦然？ 本文将遵循一条清晰的演进路径，带您从最基础的主从复制，到哨兵模式，最终深入到分片集群的内部，彻底弄懂 Redis 高可用架构的每一个细节。 第一站：主从复制与哨兵——解决单点故障 为了避免 Redis 服务器宕机导致整个服务不可用的问题，我们引入了最基础的高可用方案： 主从复制（Master-Slave Replication） 。 其核心思想非常简单： 部署一个 主节点（Master） 和多个 从节点（Slave） 。 写操作只在主节点上进行。 从节点通过主从复制协议，实时地从主节点同步数据。 读操作可以分摊到各个从节点上，实现 读写分离 ，提升读取性能。 这样，即使主节点宕机，从节点依然可以提供读服务，同时因为有数据副本的存在，也保证了数据的安全性。 但这引出了一个新问题：主节点宕机后，谁来将从节点提升为新的主节点，恢复写服务呢？这就是**哨兵（Sentinel）**机制的用武之地。 哨兵的核心职责有三点： 监控（Monitoring） ：周期性地检查主从节点是否正常工作。 通知（Notification） ：当被监控的节点出现问题时，通过 API 向管理员或其他应用程序发送通知。 自动故障转移（Automatic Failover） ：当主节点被判定为下线时，哨兵会自动在从节点中选举出一个新的主节点，并将其余从节点指向这个新主，同时通知客户端新的主节点地址。 至此，我们似乎拥有了一套看似完美的 HA 方案。但仔细思考，这套架构仍然存在两大无法回避的瓶颈。 主从架构的瓶颈 容量瓶颈 ：每个节点（无论是主是备）都存储着 全量数据 。当数据量达到几十上百 GB 时，单机的内存资源将不堪重负。巨大的数据量也会严重影响 RDB 持久化和主从全量同步的性能。 写入性能瓶颈 ：所有的写操作都必须在 唯一的 Master 节点 上执行。当并发写入量巨大时，单个 Master 节点的 CPU 和网络带宽会成为整个系统的性能天花板，无法通过增加从节点来水平扩展写入能力。 为了突破这两大瓶颈，Redis 的架构必须再次进化。 第二站：分片集群——为扩展性而生 基于主从架构的瓶颈， Redis 分片集群（Redis Cluster） 应运而生。它彻底改变了数据的存储方式，其核心思想是 数据分片（Sharding） 。 集群不再让每个节点都持有全量数据，而是将所有数据拆分成多个部分，分散地存储在"
+    }
+  ]
+}

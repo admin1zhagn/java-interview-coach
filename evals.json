@@ -1,0 +1,32 @@
+[
+  {
+    "name": "resume_jd_match_backend",
+    "prompt": "我有一份 Java 后端简历和一个微服务岗位 JD，请帮我分析匹配度、优化简历，并生成面试准备清单。",
+    "expected_behavior": [
+      "提取 JD 要求并建立 JD/简历证据矩阵",
+      "指出简历风险点和缺失证据",
+      "给出可直接替换的简历 bullet",
+      "生成围绕项目和技术栈的后端问题与追问"
+    ]
+  },
+  {
+    "name": "project_defense",
+    "prompt": "面试官问我项目难点，我只会说用了 Spring Boot、Redis、MySQL，帮我改成高级一点的回答。",
+    "expected_behavior": [
+      "读取项目表达参考材料",
+      "按功能层、系统层、工程层重构回答",
+      "补充技术取舍、稳定性和结果指标",
+      "提醒不要编造未做过的经验"
+    ]
+  },
+  {
+    "name": "question_bank_from_resume",
+    "prompt": "根据我的简历里写的 Redis、RabbitMQ、MySQL 分库分表，生成 30 道面试题和参考回答。",
+    "expected_behavior": [
+      "调用宝典搜索脚本检索相关知识点",
+      "按技术模块和项目追问分组",
+      "每题包含考察点、优秀回答要点和可能追问",
+      "避免输出纯通用八股题"
+    ]
+  }
+]

@@ -1,0 +1,1844 @@
+{
+  "id": "jvm-memory-gc",
+  "name": "JVM内存与GC",
+  "aliases": [
+    "JVM",
+    "GC",
+    "垃圾回收",
+    "OOM",
+    "内存模型",
+    "堆",
+    "栈",
+    "元空间",
+    "调优"
+  ],
+  "count": 41,
+  "total_word_count": 48492,
+  "articles": [
+    {
+      "slug": "yw7it007q19lkaz1",
+      "title": "说下你对G1垃圾收集器的理解",
+      "url": "/tulingzhouyu/db22bv/yw7it007q19lkaz1",
+      "toc_path": [
+        "面试必看",
+        "大厂真题",
+        "美团面试真题",
+        "说下你对G1垃圾收集器的理解"
+      ],
+      "toc_level": 3,
+      "toc_index": 58,
+      "word_count": 514,
+      "updated_at": "2023-08-28T14:56:24.000Z",
+      "primary_category": "jvm-memory-gc",
+      "primary_category_name": "JVM内存与GC",
+      "related_categories": [
+        "jvm-memory-gc",
+        "os-linux",
+        "java-concurrency",
+        "performance-optimization",
+        "java-core"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "垃圾回收",
+        "堆",
+        "内存",
+        "并发",
+        "性能",
+        "优化",
+        "吞吐"
+      ],
+      "summary": "G1是一种面向服务器端应用的垃圾收集器，是JDK 7版本引入的一项重要特性。G1垃圾收集器以实现低延迟和高吞吐量为目标，适用于大内存、多核处理器的应用场景。G1垃圾收集器的主要特点和工作原理如下：分代收集：G1垃圾收集器将堆内存划分为多个大小相等的区域，每个区域可以是Eden区、Survivo...",
+      "excerpt": "G1是一种面向服务器端应用的 垃圾收集器 ，是 JDK 7 版本引入的一项重要特性。G1垃圾收集器以实现 低延迟 和 高吞吐量 为目标，适用于 大内存、多核处理器 的应用场景。 G1垃圾收集器的主要特点和工作原理如下： 分代收集：G1垃圾收集器将堆内存划分为多个大小相等的区域，每个区域可以是 Eden区、Survivor区或Old区 。G1垃圾收集器采用 分代收集 的思想，将堆内存的回收工作划分为多个小任务，提高了垃圾收集的效率。 并发标记：G1垃圾收集器采用了 并发标记 的方式，即在垃圾收集过程中，可以与应用程序并发执行，减少了垃圾收集对应用程序的影响。并发标记的过程中，G1垃圾收集器使用了一种 增量式的标记 算法，将标记过程分为多个阶段，每个阶段与应用程序 交替执行 。 混合回收：G1垃圾收集器采用了混合回收的方式，即在标记阶段完成后，会选择一部分区域进行垃圾回收。这样可以避免全局的垃圾回收停顿，将 长时间的停顿 分散到多个 小停顿 中，提高了应用程序的 响应性能 。 基于Region的内存管理：G1垃圾收集器通过动态地调整每个Region的大小和分配策略，以适应不同应用场景的需求。 智能的垃圾回收策略：G1垃圾收集器通过智能地选择 回收最多垃圾的区域 来优化垃圾回收的效率。它会根据 垃圾量 和 回收时间 等因素，优先回收垃圾最多的区域，即“ Garbage-First ”策略。"
+    },
+    {
+      "slug": "ayqtrnoptl6opeqy",
+      "title": "京东面试",
+      "url": "/tulingzhouyu/db22bv/ayqtrnoptl6opeqy",
+      "toc_path": [
+        "面试必看",
+        "最全面经",
+        "京东面试"
+      ],
+      "toc_level": 2,
+      "toc_index": 85,
+      "word_count": 1840,
+      "updated_at": "2023-09-05T09:30:40.000Z",
+      "primary_category": "jvm-memory-gc",
+      "primary_category_name": "JVM内存与GC",
+      "related_categories": [
+        "jvm-memory-gc",
+        "mysql-index-transaction",
+        "java-concurrency",
+        "spring-cloud",
+        "os-linux"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "middle",
+        "expert",
+        "senior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "专家/P7+",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "JVM",
+        "GC",
+        "垃圾回收",
+        "调优",
+        "MySQL",
+        "索引",
+        "事务",
+        "锁",
+        "并发",
+        "线程",
+        "SpringCloud",
+        "内存"
+      ],
+      "summary": "先简单做个自我介绍：本⼈是⼯作多年的⼀枚'⽼码农'，对⽐群⾥的年轻朋友们，是有点'⽼'哈，最近⼯作是在⼀家视频⾏业的互联⽹公司⼯作6年以上。大家可能觉得，这个时期出来看机会，是往⽕坑⾥跳吗？个⼈不这么认为，借此疫情的特殊时期，通过企业市场招聘情况也能帮你把握⼀下⼤致业务发展⽅向，这其实是好事。...",
+      "excerpt": "先简单做个自我介绍： 本⼈是⼯作多年的⼀枚'⽼码农'，对⽐群⾥的年轻朋友们，是有点'⽼'哈，最近⼯作是在⼀家视频⾏业的互联⽹公司⼯作6年以上。大家可能觉得，这个时期出来看机会，是往⽕坑⾥跳吗？ 个⼈不这么认为，借此疫情的特殊时期，通过企业市场招聘情况也能帮你把握⼀下⼤致业务发展⽅向，这其实是好事。 当然了，招聘岗位有限，狼多⾁少，岗位竞争肯定⽐往年更加激烈的，所以需要珍惜每⼀个机会。 ⽐如在新浪的⼀位朋友也很缺⼈，内部还在商讨，少量HC还没有正式放开...本次薪资涨幅还算满意，具体就不便透露了。在谈薪资⽅⾯，如果你能提前拿到其他公司Offer，且你之前Base还可以，那么还是容易谈的。 ⾯试结果： 京东、美团⾯试已通过。具体定级对标P7上下这样⼦吧，个⼈理解是资深、专家岗，因为进去也基本都是⼲活的，带⼈与否看情况。 ⾯试流程： 京东、美团多个部⻔都是并⾏⾯试的，这个没有正式谈薪前都是没问题的。 京东：三 / 四⾯技术 + HRBP美团：四⾯技术 + HRBP + 专职HR 个⼈感受美团HR专业性、与候选⼈沟通⽅⾯体验相对更好些，因招⼈旺季，HR也都很忙。 HR职责也会细分，联系协调⾯试的有专⻔的HR、技术⾯过会HRBP⾯试，最后都通过确定职级，然后会有专职HR谈薪资。 ⽽京东HR...，这⽅⾯相对美团吐槽也更多⼀点⼉，所以后⾯同学去引起注意即可，如果你是「不确定」的候选⼈，各种情况可能都会遇到，⼤家知道就好。 京东⾯面试过程总结 ⾯试⽅式:电话⾯试，他们都不露脸呀！好处是不⽤⼿撸代码了。 京东物流：三轮或四轮技术⾯ 通常⼀或⼆⾯是研发同学 （即未来跟你⼀起⼯作的同事）、⼆或三⾯（架构师T7或T8，要给你定级的）、三或四⾯（部⻔负责⼈，也会有技术⾯）。你的定级是在最后两⾯综合来确定的。 【 京东⼀或⼆⾯ 】因为⼀⾯或⼆⾯都是研发同学。 基本都是常⻅的⼀些⾯试题，也不会很深，群⾥同学肯定都会。个⼈在部⻔内曾推⼴过 Apollo 配置中⼼，⾯试官也会让你说出实现原理。 京东内部应该是不使⽤ Dubbo 的，他们的RPC框架叫做「JSF」，内部实现机制 应该是跟 Dubbo 很像。 所以京东⾯试官要问RPC，基本都问到 Dubbo 实现原理，内部扩展机制等等，肯定不会问 JSF 了，也没开源。 【 京东架构师⾯ 】 项⽬问的很详细，说的我很累~ 基本每个项⽬具体实现⽅案、亮点都讲了⼀下，遇到的问题。 具体技术⾯： 1、JVM & GC 1）你们JVM线上使⽤的什么垃圾回收算法？CMS、G1 2）详细说⼀下CMS垃圾回收算法回收过程？4个阶段 3）CMS中的remark阶段⽐较慢，怎么分析和解决？ - XX: +CMSScavengeBeforeRemark Remark前提前来⼀次YGC；增加CMS回收的线程数... 4）线上如何来分析GC问题？ 5）JVM线上是如"
+    },
+    {
+      "slug": "mrh2bz7md12c1vxt",
+      "title": "布隆过滤器",
+      "url": "/tulingzhouyu/db22bv/mrh2bz7md12c1vxt",
+      "toc_path": [
+        "综合篇",
+        "布隆过滤器"
+      ],
+      "toc_level": 1,
+      "toc_index": 148,
+      "word_count": 4849,
+      "updated_at": "2023-09-07T11:55:20.000Z",
+      "primary_category": "jvm-memory-gc",
+      "primary_category_name": "JVM内存与GC",
+      "related_categories": [
+        "jvm-memory-gc",
+        "observability-troubleshooting",
+        "java-collections",
+        "algorithm",
+        "project-system-design"
+      ],
+      "question_type": "troubleshooting",
+      "question_type_name": "故障排查题",
+      "levels": [
+        "senior",
+        "middle",
+        "campus"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "集合",
+        "算法",
+        "数组",
+        "链表",
+        "排序",
+        "系统设计",
+        "方案"
+      ],
+      "summary": "布隆过滤器（英语：Bloom Filter）是 1970 年由布隆提出的。它实际上是一个很长的二进制向量和一系列随机映射函数。主要用于判断一个元素是否在一个集合中。通常我们会遇到很多要判断一个元素是否在某个集合中的业务场景，一般想到的是将集合中所有元素保存起来，然后通过比较确定。链表、树、散列...",
+      "excerpt": "​ 布隆过滤器 （英语：Bloom Filter）是 1970 年由布隆提出的。它实际上是一个很长的二进制向量和一系列 随机映射函数 。主要用于判断一个元素是否在一个集合中。 ​ 通常我们会遇到很多要判断一个元素是否在某个集合中的业务场景，一般想到的是将集合中所有元素保存起来，然后通过比较确定。链表、树、散列表（又叫哈希表，Hash table）等等数据结构都是这种思路。但是随着集合中元素的增加，我们需要的存储空间也会呈现线性增长，最终达到瓶颈。同时检索速度也越来越慢，上述三种结构的检索时间复杂度分别为O(N)，O(log(N))，O(1)。 这个时候，布隆过滤器（Bloom Filter）就应运而生。 ​ 今天，我们将探索 Bloom 过滤器-一种设计简单而优雅的数据结构。我们将深入研究 Bloom 过滤器的基本原理，了解其优点和缺点，并引导您完成使用 Python 实现 Bloom 过滤器的过程。 布隆过滤器是计算机科学中的一个热门话题，特别是在系统设计和优化以及技术面试中。了解这种数据结构以及如何实现它是展示您作为工程师的技能的绝佳方式。 问题 Bloom过滤器要解决的问题很简单-确定元素是否属于数据集。当数据集太大以至于无法放入单个计算机的内存甚至硬盘上时，这项任务变得具有挑战性，特别是在数据存储在多个节点上的分布式系统中。在这种情况下，与磁盘访问相关联的通信开销使任务更具挑战性。 一种概率数据结构的方法 传统的方法，例如迭代数据集并比较每个元素，在大型数据集中可能非常耗时且不切实际（即使我们使用MapReduce或Spark等分布式框架）。我们更喜欢提供接近实时结果的解决方案。 一种可能的解决方案是使用与数据库中使用的索引类似的索引。这些索引包含排序的键和指向数据库中相应元素的指针，这允许我们通过键快速找到元素。然而，在我们的例子中，我们甚至不需要元素的实际值;我们只需要知道给定键的值是否存在。存储实际值将浪费存储空间。 如果我们不需要实际的值，我们可以用一些东西来压缩元素，以避免浪费存储空间。接下来想到的是散列函数的使用，即将任意大小的数据映射到固定大小的数据的函数。我们简单地计算每个元素的哈希值，并在给定的偏移量处将一些值写入数组。在这种情况下，偏移量是哈希值除以数组大小的余数。或者在伪代码中，它看起来像这样： array[hash(element) % size] = 1 逻辑与常规哈希表相同，除了我们不存储具有相同哈希值的元素链以保存空间。 这种方法大大压缩了搜索数据，使其成为我们大型数据集的理想选择。要检查一个元素是否在数据集中，我们只需计算潜在成员的哈希值，并检查相应的数组值是否未设置为零。 要检查元素是否在数据集中，正如您已经猜到的那样，只需计算潜在成员的哈希值并确保相应的数组值未设置为零即可。 但这里有一个缺点... 散列函数在多对"
+    },
+    {
+      "slug": "gr221nqtgcp3oqg5",
+      "title": "IDEA 调试技巧你都知道哪些？",
+      "url": "/tulingzhouyu/db22bv/gr221nqtgcp3oqg5",
+      "toc_path": [
+        "综合篇",
+        "IDEA 调试技巧你都知道哪些？"
+      ],
+      "toc_level": 1,
+      "toc_index": 160,
+      "word_count": 2529,
+      "updated_at": "2024-10-18T08:29:25.000Z",
+      "primary_category": "jvm-memory-gc",
+      "primary_category_name": "JVM内存与GC",
+      "related_categories": [
+        "jvm-memory-gc",
+        "java-core",
+        "os-linux",
+        "java-concurrency",
+        "mysql-optimization"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "middle",
+        "campus"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "堆",
+        "栈",
+        "Java",
+        "异常",
+        "线程",
+        "文件",
+        "count"
+      ],
+      "summary": "在软件开发的过程中，可以说调试是一项基本技能。调试的英文单词为 debug ，顾名思义，就是去除 bug 的意思。俗话说的好，编程就是制造 bug 的过程，所以 debug 的重要性毋庸置疑，如果能熟练掌握调试技能，也就可以很快的定位出代码中的 bug。要知道，看的懂代码不一定写的出代码，写的...",
+      "excerpt": "在 软件开发 的过程中，可以说调试是一项基本技能。调试的英文单词为 debug ，顾名思义，就是去除 bug 的意思。俗话说的好，编程就是制造 bug 的过程，所以 debug 的重要性毋庸置疑，如果能熟练掌握调试技能，也就可以很快的定位出代码中的 bug。要知道，看的懂代码不一定写的出代码，写的出代码不一定能调试好代码，为了能写出没有 bug 的代码，我们必须得掌握一些基本的调试技巧。 工欲善其事，必先利其器。无论你的开发工具是 IntelliJ IDEA 还是 Eclipse ， 调试器 都是标配。在遇到有问题的程序时，合理的利用调试器的跟踪和断点技巧，可以很快的定位出问题原因。虽然说合理利用日志也可以方便定位线上问题，但是日志并不是调试工具，不要在开发环境把 System.out.println 当作调试手段，掌握调试器自带的调试技能才是正道。 一、实战 IDEA 调试技巧 如果你是做 Java 开发的，相信你不会没有听过 IntelliJ IDEA ，和大多数 Java 开发者一样，我一开始的时候也是用 Eclipse 来进行开发，但是自从换了 IDEA 之后，就再也离不开它了，彻底变成了 IDEA 的忠实粉丝 不得不说，JetBrains 这家来自捷克的软件公司真的是良心企业，所出产品皆是精品，除了 IDEA，还有 WebStorm ，PhpStorm，PyCharm 等，风格都是很类似的，一些类似的快捷键包括调试技巧也是通用的。 打开 IDEA 的调试面板，如下图所示，可以大致的将其分成五个部分： 单步跟踪 断点管理 求值表达式 堆栈和线程 变量观察 1.1 单步跟踪 说起调试，估计很多人第一反应就是对程序进行一步一步的跟踪分析，其实 IDEA 提供了很多快捷键来帮助我们跟踪程序，大抵可以列出下面几个技巧： Show Execution Point 调试时往往需要浏览代码，对代码进行分析，有时候在浏览若干个源文件之后就找不到当前执行到哪了，可能很多人会使用 Navigate Back 来返回，虽然也可以返回去，但可能需要点多次返回按钮，相对来说使用这个技巧快速定位到当前调试器正在执行的代码行要更简便。 Step Over 这是最基本的单步命令，每一次都是执行一行代码，如果该行代码有方法会直接跳过，可以说真的是一步一个脚印。 Step In / Force Step In Step Over 会跳过方法的执行，可以观察方法的返回值，但如果需要进到方法里面，观察方法的执行细节，则需要使用 Step In 命令了。另外，Step In 命令也会跳过 jdk 自带的系统方法，如果要跟踪系统方法的执行细节，需要使用 Force Step In 命令。 关于单步的时候忽略哪些系统方法，可以在 IDEA 的配置项 Settings -> Build, Exec"
+    },
+    {
+      "slug": "qwxwgiugvbcrl5np",
+      "title": "如何判断一个对象是否可以被回收",
+      "url": "/tulingzhouyu/db22bv/qwxwgiugvbcrl5np",
+      "toc_path": [
+        "Java基础",
+        "如何判断一个对象是否可以被回收"
+      ],
+      "toc_level": 1,
+      "toc_index": 174,
+      "word_count": 1442,
+      "updated_at": "2024-10-07T12:54:53.000Z",
+      "primary_category": "jvm-memory-gc",
+      "primary_category_name": "JVM内存与GC",
+      "related_categories": [
+        "jvm-memory-gc",
+        "java-core",
+        "algorithm",
+        "os-linux",
+        "java-concurrency"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "campus",
+        "middle"
+      ],
+      "level_names": [
+        "校招/应届生",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "JVM",
+        "GC",
+        "垃圾回收",
+        "堆",
+        "栈",
+        "Java",
+        "String",
+        "异常",
+        "算法",
+        "线程",
+        "内存",
+        "锁"
+      ],
+      "summary": "对象存活判断在堆里存放着几乎所有的Java对象实例，在GC执行垃圾回收之前，首先需要区分出内存中哪些是存活对象，哪些是已经死亡的对象。只有被标记为己经死亡的对象，GC才会在执行垃圾回收时，释放掉其所占用的内存空间，因此这个过程我们可以称为垃圾标记阶段那么在JVM中究竟是如何标记一个死亡对象呢？...",
+      "excerpt": "对象存活判断 在堆里存放着几乎所有的 Java对象 实例，在GC执行垃圾回收之前，首先 需要区分出内存中哪些是存活对象，哪些是已经死亡的对象 。 只有被标记为己经死亡的对象，GC才会在执行垃圾回收时，释放掉其所占用的内存空间，因此这个过程我们可以称为垃圾标记阶段 那么在JVM中究竟是如何标记一个死亡对象呢？简单来说，当一个对象已经不再被任何的存活对象继续引用时，就可以宣判为已经死亡 判断对象存活一般有两种方式： 引用计数算法 和 可达性分析算法 。 引用计数法 引用计数算法（ReferenceCounting）比较简单，对每个对象保存一个整型的引用计数器属性。用于记录对象被引用的情况 对于一个对象A，只要有任何一个对象引用了A，则A的引用计数器就加1；当引用失效时，引用计数器就减1。只要对象A的引用计数器的值为0，即表示对象A不可能再被使用，可进行回收 优点： 实现简单，垃圾对象便于辨识：判定效率高，回收没有延退性 缺点： 它需要单独的字段存储计数器，这样的做法增加了存储空间的开销 每次赋值都需要更新计数器，伴随着加法和减法操作，这增加了时间开销 引用计数器有一个严重的问题，即无法处理循环引用的情况。这是一条致命缺陷，导致在Java的垃圾回收器中没有使用这类算法。 可达性分析算法 概述 相对于引用计数算法而言，可达性分析算法不仅同样具备实现简单和执行高效等特点，更重要的是该算法可以有效地 解决在引用计数算法中循环引用的问题，防止内存泄漏的发生， 这里的可达性分析就是Java、c#选择的。这种类型的垃圾收集通常也叫作追踪性垃圾收集 基本思路 可达性分析算法是以根对象集合（GCRoots就是一组必须活跃的引用）为起始点，按照从上至下的方式搜索被根对象集合所连接的目标对象是否可达 使用可达性分析算法后，内存中的存活对象都会被根对象集合直接或间接连接着，搜索所走过的路径称为引用链 如果目标对象没有任何引用链相连，则是不可达的，就意味着该对象己经死亡，可以标记为垃圾对象 在可达性分析算法中，只有能够被根对象集合直接或者问接连接的对象才是存活对象 GC Roots 在Java 语言中，GC Roots 包括以下几类元素： 虚拟机栈中引用的对象，比如：各个线程被调用方法中使用到的参数、局部变量等 本地方法栈内JNI（通常说的本地方法）引用的对象 方法区中类静态属性引用的对象，比如：Java类的引用类型静态变量 方法区中常量引用的对象，比如：字符串常量池（StringTable）里的引用 所有被同步锁synchronized持有的对象 Java虚拟机内部的引用，基本数据类型对应的class对象，一些常驻的异常对象（如： NullPointerException、OutofMemoryError），系统类加载器 反映java虚拟机内部情况的JMXBean、JVMTI中注册的回"
+    },
+    {
+      "slug": "rsgaomnxz4iidrbg",
+      "title": "工作中最常见的6种OOM问题",
+      "url": "/tulingzhouyu/db22bv/rsgaomnxz4iidrbg",
+      "toc_path": [
+        "Java基础",
+        "工作中最常见的6种OOM问题"
+      ],
+      "toc_level": 1,
+      "toc_index": 177,
+      "word_count": 1257,
+      "updated_at": "2026-01-15T07:35:32.000Z",
+      "primary_category": "jvm-memory-gc",
+      "primary_category_name": "JVM内存与GC",
+      "related_categories": [
+        "jvm-memory-gc",
+        "observability-troubleshooting",
+        "os-linux",
+        "java-core",
+        "java-concurrency"
+      ],
+      "question_type": "troubleshooting",
+      "question_type_name": "故障排查题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "JVM",
+        "GC",
+        "OOM",
+        "堆",
+        "栈",
+        "元空间",
+        "线上",
+        "线程",
+        "内存",
+        "Java",
+        "异常",
+        "IO"
+      ],
+      "summary": "前言今天跟大家一起聊聊线上服务出现OOM问题的6种场景，希望对你会有所帮助。堆内存OOM堆内存OOM是最常见的OOM了。出现堆内存OOM问题的异常信息如下：java.lang.OutOfMemoryError: Java heap space此OOM是由于JVM中heap的最大值，已经不能满足...",
+      "excerpt": "前言 今天跟大家一起聊聊线上服务出现OOM问题的6种场景，希望对你会有所帮助。 堆内存OOM 堆内存OOM是最常见的OOM了。 出现堆内存OOM问题的异常信息如下： 此OOM是由于JVM中heap的最大值，已经不能满足需求了。 举个例子： 这里创建了一个list集合，在一个死循环中不停往里面添加对象。 执行结果： 出现了 java .lang.OutOfMemoryError: Java heap space的堆内存溢出。 很多时候，excel一次导出大量的数据，获取在程序中一次性查询的数据太多，都可能会出现这种OOM问题。 我们在日常工作中一定要避免这种情况。 栈内存OOM 有时候，我们的业务系统创建了太多的线程，可能会导致栈内存OOM。 出现堆内存OOM问题的异常信息如下： 给大家举个例子： 使用一个死循环不停创建线程，导致系统产生了大量的线程。 ​ 如果实际工作中，出现这个问题，一般是由于创建的线程太多，或者设置的单个线程占用内存空间太大导致的。 建议在日常工作中，多用线程池，少自己创建线程，防止出现这个OOM。 栈内存溢出 我们在业务代码中可能会经常写一些 递归 调用，如果递归的深度超过了JVM允许的最大深度，可能会出现栈内存溢出问题。 出现栈内存溢出问题的异常信息如下： 例如： 执行结果： 出现了java.lang.StackOverflowError栈溢出的错误。 我们在写递归代码时，一定要考虑递归深度。即使是使用parentId一层层往上找的逻辑，也最好加一个参数控制递归深度。防止因为数据问题导致无限递归的情况，比如：id和parentId的值相等。 直接内存OOM 直接内存 不是 虚拟机 运行时数据区的一部分，也不是《Java虚拟机规范》中定义的内存区域。 它来源于 NIO ，通过存在堆中的 DirectByteBuffer 操作Native内存，是属于 堆外内存 ，可以直接向系统申请的内存空间。 出现直接内存OOM问题时异常信息如下： 例如下面这样的： 会看到报出来java.lang.OutOfMemoryError: Direct buffer memory直接内存空间不足的异常。 GC OOM GC OOM 是由于JVM在GC时，对象过多，导致内存溢出，建议调整GC的策略。 出现GC OOM问题时异常信息如下： 为了方便测试，我先将idea中的最大和最小堆大小都设置成10M： 例如下面这个例子： ​ 出现这个问题是由于JVM在GC的时候，对象太多，就会报这个错误。 我们需要改变GC的策略。 在老代80%时就是开始GC，并且将-XX:SurvivorRatio（-XX:SurvivorRatio=8）和-XX:NewRatio（-XX:NewRatio=4）设置的更合理。 元空间OOM JDK8 之后使用 Metaspace 来代替 永久"
+    },
+    {
+      "slug": "wmuy5i7pe5f14v3c",
+      "title": "短视频",
+      "url": "/tulingzhouyu/db22bv/wmuy5i7pe5f14v3c",
+      "toc_path": [
+        "Java基础",
+        "final，finally，finalize的区别",
+        "短视频"
+      ],
+      "toc_level": 2,
+      "toc_index": 181,
+      "word_count": 574,
+      "updated_at": "2024-05-05T12:26:50.000Z",
+      "primary_category": "jvm-memory-gc",
+      "primary_category_name": "JVM内存与GC",
+      "related_categories": [
+        "jvm-memory-gc",
+        "java-core"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "垃圾回收",
+        "Java",
+        "异常"
+      ],
+      "summary": "工作三年竟然连final、finally和finalize的区别都搞不清，难怪找不到工作，昨天一个在外包公司的粉丝说公司快不行了，前天hr通知他可以准备找工作了，他很郁闷，没咋准备，抱着试一试的心态出去面试，结果第一个基础问题就答不上来。。他说平时工作中也就用下finally，final和fi...",
+      "excerpt": "工作三年竟然连 final、finally和finalize的区别 都搞不清，难怪找不到工作，昨天一个在外包公司的粉丝说公司快不行了，前天hr通知他可以准备找工作了，他很郁闷，没咋准备，抱着试一试的心态出去面试，结果第一个基础问题就答不上来。。他说平时工作中也就用下finally，final和finalize 用得不多 ， 早忘记了 。。 这种基础面试问题还是有必要准备下哈，万一没答上来面试可能就 没戏了 。 稍微解释下： final： final是一个 修饰符 ，可以用于修饰 类、方法和变量 。 用于修饰类时，表示该类 不能被继承 ，即为 最终类 。 用于修饰方法时，表示该方法 不能被子类重写 。 用于修饰变量时，表示该变量是一个 常量 ，其值不能被修改。 finally： finally是一个 关键字 ，用于定义一个 代码块 ，通常与try-catch结构一起使用。 finally块中的代码无论是否抛出异常， 都会被执行 。 finally块通常用于 释放资源、关闭连接 或 执行必要的清理操作 。 finalize： finalize是 Object类 中的一个方法，被用于 垃圾回收机制 。 finalize方法在 对象被垃圾回收之前 被调用，用于进行 资源释放 或其他 清理操作 。 通常情况下，我们不需要显式地调用finalize方法，而是交由 垃圾回收器自动调用 。 总结一下： final是修饰符，用于限定类、方法和变量的性质。 finally是一个关键字，用于定义一个代码块，在异常处理中用于确保特定代码无论如何都会被执行。 finalize是一个Object类中的方法，用于对象的垃圾回收前的清理操作。 最后，这种基础面试问题如果你没时间复习，我给大家准备了100道最常问的基础问题，点赞关注评论区领取。 ​"
+    },
+    {
+      "slug": "wn5gggtb3uqsehng",
+      "title": "💎 Jvm面试题合集",
+      "url": "/tulingzhouyu/db22bv/wn5gggtb3uqsehng",
+      "toc_path": [
+        "JVM",
+        "💎 Jvm面试题合集"
+      ],
+      "toc_level": 1,
+      "toc_index": 302,
+      "word_count": 1911,
+      "updated_at": "2026-05-14T07:03:24.000Z",
+      "primary_category": "jvm-memory-gc",
+      "primary_category_name": "JVM内存与GC",
+      "related_categories": [
+        "jvm-memory-gc",
+        "os-linux",
+        "java-concurrency",
+        "java-core",
+        "java-collections"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "JVM",
+        "GC",
+        "垃圾回收",
+        "堆",
+        "线程",
+        "内存",
+        "并发",
+        "锁",
+        "Java",
+        "集合"
+      ],
+      "summary": "1. 如何判断对象可以被回收在Java中，对象是否可以被回收通常由垃圾回收器决定。垃圾回收器使用一种称为\"可达性分析\"的算法来确定对象是否可被回收。可达性分析是指如果一个对象无法从任何GC Roots直接或间接访问到，它就被认为是不可达的，可以被垃圾回收。GC Roots是一组特殊的引用，它们...",
+      "excerpt": "如何判断对象可以被回收 在Java中，对象是否可以被回收通常由垃圾回收器决定。垃圾回收器使用一种称为&quot; 可达性分析 &quot;的算法来确定对象是否可被回收。可达性分析是指如果一个对象无法从任何 GC Roots 直接或间接访问到，它就被认为是不可达的，可以被垃圾回收。 GC Roots是一组特殊的引用，它们被认为是程序中可访问对象的 起始点 ，即从这些引用开始，可以追踪到所有仍然被程序引用的对象。 GC Roots通常包括以下几种类型的引用： 局部变量引用 ：在方法中定义的局部变量，包括方法的参数和局部变量，通常被视为GC Roots。这些变量的引用指向了对象的实例。 活动线程引用 ：正在运行的线程的引用通常被视为GC Roots。线程本地存储中的对象也是如此。 静态变量引用 ：静态变量是类的一部分，它们的引用也被视为GC Roots。静态变量存在于类加载器的内存中。 JNI 引用 ：通过Java Native Interface（JNI）创建的本地代码引用也可以被视为GC Roots。这些引用连接了Java堆内存和本地代码的内存。 虚拟机引导类加载器 ：虚拟机内部使用的类加载器引用也是GC Roots。它们通常是一些核心类或库。 什么是三色标记 1.前言 三色标记算法，用于垃圾回收器升级，将STW变为并发标记。STW就是在标记垃圾的时候，必须暂停程序，而使用并发标记，就是程序一边运行，一边标记垃圾。 2. 三色标记算法 2.1.什么是三色： 首先我们需要知道三色标记法就是根据可达性分析，从GC Roots开始进行遍历访问，在遍历对象过程中，按“是否检查过”这个条件将对象标记成三种颜色： 黑色 ： 代表对象已经检查过，且成员对象也被检查过了 。如果有其他对象引用指向了黑色对象，无须重新检查一遍。黑色对象不可能直接（不经过灰色对象）指向某个白色对象。 灰色 ： 代表对象已经检查过，但成员还没全部检查完成 。 白色 ： 代表对象没有被检查 。 在可达性分析刚刚开始的阶段， 所有的对象都是白色的， 若在分析结束的阶段， 仍然是白色的对象， 即代表不可达。 2.2.三色标记过程： 假设现在有白、灰、黑三个集合（表示当前对象的颜色），其遍历访问过程为： 初始时，所有对象都在【白色集合】中； 将 GC Roots直接引用到的对象挪到【灰色集合】中； 从灰色集合中获取对象： 3.1. 将本对象引用到的其他对象全部挪到【灰色集合】中； 3.2. 将本对象挪到【黑色集合】里面。 重复步骤3，直至【灰色集合】为空时结束。 结束后，仍在【白色集合】的对象即为GC Roots不可达，可以进行回收。 需要注意，传统标记方式发生Stop The World时，对象间的引用是不会发生变化的，可以轻松完成标记。 而并发标记在标记期间应用线程还在继续跑，对象间的引用可能发生变化，"
+    },
+    {
+      "slug": "dzstdlvg7yh2q87z",
+      "title": "JVM 内存模型与 JMM 内存模型",
+      "url": "/tulingzhouyu/db22bv/dzstdlvg7yh2q87z",
+      "toc_path": [
+        "JVM",
+        "JVM 内存模型与 JMM 内存模型"
+      ],
+      "toc_level": 1,
+      "toc_index": 303,
+      "word_count": 1220,
+      "updated_at": "2025-05-29T13:45:55.000Z",
+      "primary_category": "jvm-memory-gc",
+      "primary_category_name": "JVM内存与GC",
+      "related_categories": [
+        "jvm-memory-gc",
+        "java-concurrency",
+        "os-linux",
+        "java-core",
+        "mysql-index-transaction"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "JVM",
+        "GC",
+        "垃圾回收",
+        "OOM",
+        "内存模型",
+        "堆",
+        "栈",
+        "元空间",
+        "多线程",
+        "线程",
+        "锁",
+        "volatile",
+        "操作系统",
+        "Java"
+      ],
+      "summary": "在 Java 开发中，JVM 内存模型和 JMM（Java Memory Model） 是两个容易混淆但完全不同的概念。以下是它们的核心区别和联系：1. JVM 内存模型（运行时数据区）定义：JVM 内存模型描述的是 JVM 物理内存的划分，即程序运行时的内存区域。核心区域：内存区域作用线程隔...",
+      "excerpt": "在 Java 开发中， JVM 内存模型 和 JMM（Java Memory Model） 是两个容易混淆但完全不同的概念。以下是它们的核心区别和联系： 1. JVM 内存模型（运行时数据区） 定义 ：JVM 内存模型描述的是 JVM 物理内存的划分 ，即程序运行时的内存区域。 核心区域 ： ​ 内存区域 作用 线程隔离性 溢出错误 程序计数器 记录当前线程执行的字节码位置（线程私有） 私有 无溢出 虚拟机栈 存储方法调用的栈帧（局部变量、操作数栈等） 私有 StackOverflowError 本地方法栈 支持 Native 方法（如 C/C++ 代码） 私有 StackOverflowError 堆 存储对象实例和数组（GC 主战场） 共享 OutOfMemoryError 元空间 存储类信息、常量、静态变量（JDK8 以前称为方法区，使用本地内存） 共享 OutOfMemoryError 关键点 ： 堆是对象分配和垃圾回收的主要区域。 虚拟机栈的每个栈帧对应一个方法调用（局部变量、操作数栈、动态链接、返回地址）。 2. JMM（Java 内存模型） 定义 ：JMM 是 多线程环境下共享数据访问的规范 ， 屏蔽了各种硬件和操作系统的访问差异的， 解决了线程间的 可见性 、 原子性 和 有序性 问题。 核心机制 ： 机制 作用 主内存与工作内存 每个线程有私有工作内存，共享变量存储在主内存中。 内存交互操作 read / load （读取到工作内存）、 use / assign （使用和赋值）、 store / write （写回主内存）。 happens-before 定义操作之间的顺序规则（如锁释放先于获取、 volatile 写先于读等）。 volatile 保证变量的可见性和禁止指令重排序，但不保证原子性。 synchronized 通过锁机制保证原子性、可见性和有序性。 关键点 ： 可见性 ：一个线程修改共享变量后，其他线程能立即看到最新值。 原子性 ：一个操作不可被中断（例如 synchronized 代码块）。 有序性 ：禁止指令重排序优化（例如 volatile 和 happens-before 规则）。 3. 核心区别 维度 JVM 内存模型 JMM（Java 内存模型） 定位 描述物理内存的划分（运行时数据区） 定义多线程共享数据访问的规则 关注点 内存分配、垃圾回收、方法调用栈 线程间共享数据的可见性、原子性、有序性 线程共享性 堆和元空间是共享的，栈是私有的 主内存是共享的，工作内存是私有的 典型问题 内存溢出（OOM）、栈溢出（SOF） 竞态条件、死锁、内存可见性问题 解决方案 调整堆大小（ -Xmx ）、优化代码逻辑 volatile 、 synchronized 、 Lock 等 4. 实际场景示例 场景 1：JVM 内存溢出"
+    },
+    {
+      "slug": "ahp2rce6x25wu4xf",
+      "title": "没有发生oom，但是老年代在缓慢的增长，你认为可能是什么原因",
+      "url": "/tulingzhouyu/db22bv/ahp2rce6x25wu4xf",
+      "toc_path": [
+        "JVM",
+        "没有发生oom，但是老年代在缓慢的增长，你认为可能是什么原因"
+      ],
+      "toc_level": 1,
+      "toc_index": 304,
+      "word_count": 940,
+      "updated_at": "2026-05-14T07:03:29.000Z",
+      "primary_category": "jvm-memory-gc",
+      "primary_category_name": "JVM内存与GC",
+      "related_categories": [
+        "jvm-memory-gc",
+        "java-concurrency",
+        "observability-troubleshooting",
+        "redis-cache",
+        "java-thread-pool"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "JVM",
+        "GC",
+        "堆",
+        "线程",
+        "ThreadLocal",
+        "排查",
+        "堆积",
+        "缓存",
+        "线程池"
+      ],
+      "summary": "其实这道面试题主要是考察大家对对象晋升老年代的条件是否了解，知道了晋升的条件，回答起来也就简单了，接下来我们一起看看一、对象进入老年代的条件（何时才会进入老年代）1. 存活时间（年龄阈值）新生代“Eden”和“Survivor”区：",
+      "excerpt": "其实这道面试题主要是考察大家对对象晋升老年代的条件是否了解，知道了晋升的条件，回答起来也就简单了，接下来我们一起看看 一、对象进入老年代的条件（ 何时才会进入老年代 ） 1. 存活时间（年龄阈值） 新生代“Eden”和“Survivor”区： 新对象首先分配在Eden区，每经历一次Minor GC，没被回收的对象会进入Survivor区（From/To）。 每在Survivor区经历一次GC，年龄+1；达到一定年龄阈值（如默认15，能通过参数 MaxTenuringThreshold 调整）后会晋升到老年代。 2. Survivor区放不下 如果发生Minor GC时，Survivor区无法容纳所有幸存对象，这些对象会被提前晋升到老年代，称为“空间分配担保”。 3. 大对象直接进入老年代 一些大对象（如字节数组、巨型缓存），如果超过一定阈值（可通过 PretenureSizeThreshold 设置），会直接分配到老年代，避免新生代频繁GC造成复制开销。 4. 动态年龄判断 JVM中可能发生“动态年龄判定”：如当前Survivor区已经有相同年龄的对象总大小超了一半，低于该年龄的对象也会整体晋升到老年代。 5. 持有强引用并长时间未被回收 存在被“强引用”持有、长时间无法被GC释放的对象（如静态变量、全局集合等），会随着时间推移最终不断晋升进入老年代。 二、结合进入机制分析老年代缓慢增长的原因 对应上面机制，缓慢增长的常见情形有： 大量长生命周期对象正常晋升 例如全局缓存、线程池、Session数据或业务上确实需要持续存在的大对象，这些自然会“搬家”到老年代，GC也无法主动回收。 内存泄漏导致活动对象不断晋升 比如静态集合、缓存、Listener、ThreadLocal等，引用没有及时清理，导致已不用的对象随着GC不断晋升并长期存活。 频繁出现大对象直接分配到老年代 某些请求、场景下会产生巨型数组、缓冲区，JVM为了避免频繁复制直接将其放到老年代，清理不及时会造成缓慢积压。 Survivor区太小，触发“空间分配担保” 有很多短命对象，但Survivor太小，只好提前把年轻对象搬到老年代，加速老年代堆积。 GC策略与参数不佳 比如 MaxTenuringThreshold 太低（晋升年龄低），大量对象还没“活够”就被迁移到老年代；或者新生代、Survivor比例过小，促使频繁提前晋升。 总结与建议 老年代缓慢增长本质上就是“有越来越多无法被GC回收的对象不断晋升”。 这些对象要么本来就是长命对象、要么被误引用、要么被GC策略误晋升。 优先排查： 代码中缓存相关、全局静态变量、Listener回收、线程池等实现 Survivor空间设置和最大晋升年龄等JVM参数 是否有大量大对象直接分配到老年代 通过heap dump、MAT等工具，观察老年代增长的具体类型"
+    },
+    {
+      "slug": "vuzh472dhqz50xyh",
+      "title": "Java 虚拟机的年轻代，为什么要划分两个 Survivor 区？",
+      "url": "/tulingzhouyu/db22bv/vuzh472dhqz50xyh",
+      "toc_path": [
+        "JVM",
+        "Java 虚拟机的年轻代，为什么要划分两个 Survivor 区？"
+      ],
+      "toc_level": 1,
+      "toc_index": 305,
+      "word_count": 1028,
+      "updated_at": "2025-05-28T13:28:00.000Z",
+      "primary_category": "jvm-memory-gc",
+      "primary_category_name": "JVM内存与GC",
+      "related_categories": [
+        "jvm-memory-gc",
+        "os-linux",
+        "java-core",
+        "performance-optimization",
+        "algorithm"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "JVM",
+        "GC",
+        "垃圾回收",
+        "堆",
+        "内存",
+        "Java",
+        "性能",
+        "优化",
+        "算法"
+      ],
+      "summary": "在Java虚拟机（JVM）的年轻代（Young Generation）中，划分两个Survivor区（通常称为S0和S1）是为了优化垃圾回收（Garbage Collection, GC）的效率，尤其是通过复制算法（Copying Algorithm）来减少内存碎片、降低GC停顿时间，并高效管...",
+      "excerpt": "在Java虚拟机（JVM）的年轻代（Young Generation）中，划分两个Survivor区（通常称为S0和S1）是为了 优化垃圾回收（Garbage Collection, GC）的效率 ，尤其是通过 复制算法（Copying Algorithm） 来减少内存碎片、降低GC停顿时间，并高效管理对象的存活周期。以下是具体原因和实现逻辑： 1. 复制算法 年轻代的设计目标是 快速回收短生命周期对象 。复制算法的核心思想是： 内存分为两块（如S0和S1） ，每次GC只使用其中一块（例如S0）。 当触发Minor GC时，存活的对象会从Eden区和当前使用的Survivor区（如S0） 复制到另一个空闲的Survivor区（如S1） 。 复制完成后，直接清空原Survivor区（S0）和Eden区，避免内存碎片。 优势： 内存无碎片 ：每次复制后，存活对象在目标Survivor区中连续存放，无需处理碎片。 快速回收 ：仅需遍历存活对象并复制，时间复杂度为O(存活对象数量)，而非O(堆大小)。 空间局部性 ：存活对象连续存放，提高缓存命中率。 2. 对象年龄的渐进式晋升 JVM通过 分代年龄（Age） 机制决定对象何时晋升到老年代： 对象每在年轻代存活一次Minor GC，年龄加1。 默认当年龄达到阈值（如15）时，对象晋升到老年代。 两个Survivor区的作用： 交替复制 ：每次Minor GC时，存活对象在两个Survivor区之间复制，年龄逐步增加。 过滤短期对象 ：大部分对象在几次Minor GC后死亡，只有长期存活的对象才会晋升到老年代，减少老年代GC压力。 3. 内存利用率优化 若仅使用一个Survivor区： 内存浪费 ：每次GC后，存活对象需占用整个Survivor区，可能导致内存浪费。 碎片问题 ：多次GC后，Survivor区可能产生碎片，降低内存使用效率。 使用两个Survivor区： 动态平衡 ：每次GC后，存活对象被压缩到另一个Survivor区，保证内存紧凑。 内存利用率最大化 ：两个Survivor区的总大小固定（如年轻代的1/10），交替使用确保空间高效分配。 4. 具体流程示例 对象分配 ： 新对象分配在Eden区。 当Eden区满时，触发Minor GC。 Minor GC过程 ： 存活对象从Eden区和当前Survivor区（如S0）复制到另一个Survivor区（S1）。 对象年龄加1，年龄达标（如15）的对象晋升到老年代。 清空Eden区和S0。 Survivor区切换 ： 下次GC时，存活对象从Eden和S1复制到S0，循环往复。 5. 为什么不能只有一个Survivor区？ 内存碎片 ：多次GC后，存活对象分散在Survivor区，产生碎片。 复制效率低 ：若仅有一个Survivor区，需额外空间存放存活对象，"
+    },
+    {
+      "slug": "na254w56n5uogg0b",
+      "title": "说下对JVM内存模型的理解",
+      "url": "/tulingzhouyu/db22bv/na254w56n5uogg0b",
+      "toc_path": [
+        "JVM",
+        "说下对JVM内存模型的理解"
+      ],
+      "toc_level": 1,
+      "toc_index": 306,
+      "word_count": 516,
+      "updated_at": "2024-08-11T05:35:37.000Z",
+      "primary_category": "jvm-memory-gc",
+      "primary_category_name": "JVM内存与GC",
+      "related_categories": [
+        "jvm-memory-gc",
+        "os-linux",
+        "java-core",
+        "java-concurrency",
+        "mysql-optimization"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "JVM",
+        "GC",
+        "垃圾回收",
+        "内存模型",
+        "堆",
+        "栈",
+        "元空间",
+        "线程",
+        "内存",
+        "Java"
+      ],
+      "summary": "JVM内存模型主要指的是Java虚拟机在运行时管理内存的方式，以及它如何保证线程之间规范而安全地共享数据。JVM内存模型可分为几个关键区域，各自负责不同的功能：JVM内存结构程序计数器（Program Counter Register）：每个线程都有自己的程序计数器，是一个小内存空间。它记录了...",
+      "excerpt": "JVM内存模型主要指的是Java虚拟机在运行时管理内存的方式，以及它如何保证线程之间规范而安全地共享数据。JVM内存模型可分为几个关键区域，各自负责不同的功能： JVM内存结构 程序计数器（Program Counter Register） ： 每个线程都有自己的程序计数器，是一个小内存空间。它记录了当前线程执行的字节码的地址，帮助CPU知道下一步要执行的指令是哪个。这也是唯一一个在JVM规范中不报内存溢出的区域。 Java虚拟机栈（Java Virtual Machine Stack） ： 每个线程也有自己独立的虚拟机栈。栈中保存着由一个个栈帧（Stack Frame）组成的信息。每个栈帧对应一次方法调用，保存局部变量表、操作数栈、动态链接、方法出口等信息。当方法执行完后，栈帧会弹出。 本地方法栈（Native Method Stack） ： 与虚拟机栈类似，但用于处理本机方法。Java程序使用JNI（Java Native Interface）调用其他语言（如C/C++）编写的程序，此时本地方法栈会被使用。 堆（Heap） ： JVM用来存储对象实例和数组。它是所有线程共享的区域，也是垃圾回收的主要区域。Java堆由多个代（年轻代、老年代）构成，这是为了提高GC效率。所有Java对象的实例都在这里分配内存。 方法区（Method Area） ： 也是线程共享的，用于存储已被JVM加载的类信息、常量、静态变量，即时编译后的代码等。Java 8开始将方法区移出了堆内存，成为了一个独立的元空间（Metaspace），并存储在本地内存中。"
+    },
+    {
+      "slug": "voem3pgu98wh39q7",
+      "title": "短视频",
+      "url": "/tulingzhouyu/db22bv/voem3pgu98wh39q7",
+      "toc_path": [
+        "JVM",
+        "说下对JVM内存模型的理解",
+        "短视频"
+      ],
+      "toc_level": 2,
+      "toc_index": 307,
+      "word_count": 735,
+      "updated_at": "2024-05-16T05:48:02.000Z",
+      "primary_category": "jvm-memory-gc",
+      "primary_category_name": "JVM内存与GC",
+      "related_categories": [
+        "jvm-memory-gc",
+        "os-linux",
+        "java-concurrency",
+        "java-core",
+        "spring-boot"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "JVM",
+        "OOM",
+        "内存模型",
+        "堆",
+        "栈",
+        "元空间",
+        "调优",
+        "线程",
+        "内存",
+        "并发",
+        "锁",
+        "Java"
+      ],
+      "summary": "被问烂了的面试题， JVM内存模型，还不会的话一定要听我一分钟介绍一下，面试的时候被问到你会来感谢我。JVM内存模型说白了就是Java虚拟机在运行时使用的内存结构。它最主要的几部分有：堆、栈、方法区和程序计数器。那堆呢.   . 是JVM中最大的一块内存区域，用于存储对象实例。一般通过new创...",
+      "excerpt": "被问烂了的面试题， JVM内存模型，还不会的话一定要听我一分钟介绍一下，面试的时候被问到你会来感谢我。 ​ JVM内存模型说白了就是Java虚拟机在运行时使用的 内存结构 。它最主要的几部分有： 堆、栈、方法区 和 程序计数器 。 那 堆 呢. . 是JVM中最大的一块内存区域，用于存储 对象实例 。一般通过 new 创建出来的对象都存放在堆中。堆被所有 线程共享 ，但是它的访问是 线程不安全 的，我们通常通过 锁的机制 来保证线程安全。 当堆中的对象超出内存无法回收会出现OOM异常，堆的大小可以通过启动参数进行调整，那具体调整方式呢 。。 需要根据你的系统类型、是否高并发和系统资源， 再结合压测进行调整， 详细调整方式大家有兴趣可以点赞，点赞数超过1000我会后续单独出一期调优最佳实践。 那 栈 呢主要 用于存储 方法调用 和 局部变量 。每个线程在运行时都会有一个独立的栈，栈中的每个方法调用，都会创建一个 栈帧 。 栈帧包含了方法的参数、局部变量和返回值等信息。栈中的数据是 线程私有 的，不会被其他线程访问，所以是线程安全的。 当栈的深度被超出，会出现栈溢出 StackOverflowError 异常。 方法区 。 在JDK 8及之后，也可以叫做 元空间 ） 它是 所有线程共享 的内存区域，存储了类的结构信息、常量池、静态变量和方法编译后的字节码等。 方法区也可能发OOM内存出溢（比如 大的静态数据、大量的反射和动态代理生成的类 ）可能消耗大量方法区空间。出 方法区的大小也可以通过启动参数进行调整。 程序计数器 是每个 线程私有 的，用于 记录当前线程执行的字节码指令的地址 。每个线程都有一个独立的程序计数器，用于控制线程的执行流程。 ​ 最后我想说的是：八股文确实烂大街了，但是面试依然会问，我花了几个月时间整理了一份80万字java面试八股文资料，从并发编程,JVM,Mysql,SSM，SpringBoot,Redis,MQ,网络，分布式，微服务，和各种中间件及项目场景解决方案，需要的小伙伴可以在评论区扣666进行领取。"
+    },
+    {
+      "slug": "on1rgvoxqd408u7e",
+      "title": "JVM内存为什么要分代",
+      "url": "/tulingzhouyu/db22bv/on1rgvoxqd408u7e",
+      "toc_path": [
+        "JVM",
+        "JVM内存为什么要分代"
+      ],
+      "toc_level": 1,
+      "toc_index": 308,
+      "word_count": 691,
+      "updated_at": "2024-08-09T06:54:55.000Z",
+      "primary_category": "jvm-memory-gc",
+      "primary_category_name": "JVM内存与GC",
+      "related_categories": [
+        "jvm-memory-gc",
+        "os-linux",
+        "performance-optimization",
+        "algorithm",
+        "java-core"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "JVM",
+        "GC",
+        "垃圾回收",
+        "内存",
+        "性能",
+        "优化",
+        "算法"
+      ],
+      "summary": "JVM内存分代的主要原因是为了提高垃圾回收（Garbage Collection, GC）的效率和性能。这种策略基于“分代假设”，即大部分对象在内存中存活时间很短，少数存活时间长。根据分代假设进行内存管理可以优化GC过程。具体而言，JVM内存分代的理由包括：提高垃圾回收效率：年轻代的对象创建和...",
+      "excerpt": "JVM内存分代的主要原因是为了提高垃圾回收（Garbage Collection, GC）的效率和性能。这种策略基于“分代假设”，即大部分对象在内存中存活时间很短，少数存活时间长。根据分代假设进行内存管理可以优化GC过程。具体而言，JVM内存分代的理由包括： 提高垃圾回收效率 ： 年轻代的对象创建和销毁频繁，通过将这些对象集中在一起，GC可以更高效地处理。年轻代的垃圾回收（Minor GC）通常采用复制算法，只扫描和处理一小部分存活对象，效率非常高。 减少GC停顿时间 ： 短生命周期的对象大多集中在年轻代，通过更频繁但快速的垃圾回收可以快速释放内存，从而减少每次GC停顿时间。老年代的GC（Major GC或Full GC）频率更低，因此对应用程序的停顿影响较小。 优化内存分配 ： 分代允许JVM优化不同生命周期对象的处理机制。将短生命周期的对象与长生命周期对象分开，能够减少老年代的碎片化，避免其过于频繁的垃圾回收操作。 简化内存管理 ： 简化了垃圾回收的过程，使得GC算法可以针对不同对象的生命周期优化内存的利用。年轻代使用Scavenge GC，老年代使用CMS或G1等更加复杂的算法，这些算法分别适合处理不同性质的内存块。 适应实际应用场景 ： 大多数应用程序的对象生命周期符合分代假设，通过这种内存管理方式，能够适配绝大多数应用的行为特征，从而在各种应用中提供优秀的性能。 分代算法的灵活性 ： 根据对象的不同生命周期特点，JVM可以更灵活地选择垃圾回收策略。例如，年轻代可以频繁进行快速的复制回收，而老年代可以使用更多时间进行标记-清除-压缩等操作以减少内存碎片。 通过内存分代，JVM可以更高效、灵活、有针对性地进行垃圾回收，最大化利用内存资源，并降低对应用程序正常执行的影响。这是现代高效内存管理和JVM性能优化的核心机制之一。"
+    },
+    {
+      "slug": "io1zauwmbp314aa4",
+      "title": "对象一定分配在堆中吗",
+      "url": "/tulingzhouyu/db22bv/io1zauwmbp314aa4",
+      "toc_path": [
+        "JVM",
+        "对象一定分配在堆中吗"
+      ],
+      "toc_level": 1,
+      "toc_index": 309,
+      "word_count": 671,
+      "updated_at": "2024-08-09T06:43:11.000Z",
+      "primary_category": "jvm-memory-gc",
+      "primary_category_name": "JVM内存与GC",
+      "related_categories": [
+        "jvm-memory-gc",
+        "os-linux",
+        "performance-optimization",
+        "java-core",
+        "observability-troubleshooting"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "JVM",
+        "垃圾回收",
+        "堆",
+        "栈",
+        "内存",
+        "性能",
+        "优化",
+        "Java",
+        "CPU"
+      ],
+      "summary": "在Java中，传统上我们认为对象是在堆上分配内存的。但是，随着JVM优化技术的发展，尤其是在引入即时编译器（JIT）和逃逸分析（Escape Analysis）技术后，并非所有对象都一定在堆上分配内存。这有以下一些细节：逃逸分析（Escape Analysis）：逃逸分析是一种优化技术，用于确...",
+      "excerpt": "在Java中，传统上我们认为对象是在堆上分配内存的。但是，随着JVM优化技术的发展，尤其是在引入即时编译器（JIT）和逃逸分析（Escape Analysis）技术后，并非所有对象都一定在堆上分配内存。这有以下一些细节： 逃逸分析（Escape Analysis） ： 逃逸分析是一种优化技术，用于确定对象的作用范围。如果JVM通过逃逸分析确定一个对象不会被方法之外的代码访问（即对象不会逃逸出方法），那么JVM可能会选择在栈上分配该对象。 栈上分配（Stack Allocation） ： 如果对象可以被确定为不会逃逸出其方法，则JVM可以在栈上为该对象分配内存。这减少了垃圾回收的压力，因为栈上的内存在方法执行结束后自动释放。 标量替换（Scalar Replacement） ： 如果对象的所有属性都可以独立处理，JVM可能会对对象进行标量替换，将对象分解为其基本类型的成员变量进行优化。这种情况下，原始的对象概念被消除，更谈不上在堆或栈上分配。 寄存器分配（Registers Allocation） ： 在某些情况下，JIT编译器甚至可能将某些对象的内容存放在CPU寄存器中，以提高访问速度。 示例 ：下面是一个简单的代码示例说明逃逸分析可能的影响。 在上面的代码中，如果JVM通过逃逸分析确定 Point p 对象只在 foo 方法中使用，它可能会选择在栈上分配 p 。由于Point对象里就两个int类型的变量，所以JVM还会对Point对象做标量替换，把整个对象就当做int类型的两个变量x和y放在局部变量表里，这样性能更高，都不会在栈上分配对象。当然如果Point对象有成员变量是对象的则不会被标量替换。 总结来说，现代JVM有能力优化对象的内存分配策略，并不局限于堆内存，一些短暂的、不会逃逸出方法的对象可以被分配在栈上甚至被消除。 ​"
+    },
+    {
+      "slug": "hoorfp34vbuknihz",
+      "title": "短视频",
+      "url": "/tulingzhouyu/db22bv/hoorfp34vbuknihz",
+      "toc_path": [
+        "JVM",
+        "对象一定分配在堆中吗",
+        "短视频"
+      ],
+      "toc_level": 2,
+      "toc_index": 310,
+      "word_count": 316,
+      "updated_at": "2024-05-23T12:37:09.000Z",
+      "primary_category": "jvm-memory-gc",
+      "primary_category_name": "JVM内存与GC",
+      "related_categories": [
+        "jvm-memory-gc",
+        "java-core",
+        "os-linux",
+        "algorithm",
+        "performance-optimization"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "JVM",
+        "堆",
+        "栈",
+        "Java",
+        "内存",
+        "数组",
+        "优化"
+      ],
+      "summary": "不会还有人认为 对象一定分配在堆中吧，大家好，我是百里，今天我们就来好好聊聊这个问题：对象一定分配在堆中吗？首先，按照Java的传统观念，对象通常是在堆内存中分配的。这是因为堆内存是JVM中用于存储对象实例和数组的地方。但是，如果我们深入挖掘，就会发现这不是唯一的答案。Java其实提供了一些优...",
+      "excerpt": "不会还有人认为 对象一定分配在堆中吧，大家好，我是百里，今天我们就来好好聊聊这个问题：对象一定分配在堆中吗？ 首先，按照Java的传统观念，对象通常是在堆内存中分配的。这是因为堆内存是JVM中用于存储对象实例和数组的地方。 但是，如果我们深入挖掘，就会发现这不是唯一的答案。Java其实提供了一些优化手段，可以在特定情况下将对象分配在其他地方。 比如，通过逃逸分析，JVM可以确定某些对象不会逃逸出方法作用域，这时就可以在栈上分配对象，从而避免了在堆上分配。 另外，还有一种情况是标量替换，JVM可能会将对象分解为基本类型，并在栈上或寄存器中分配这些基本类型的值。 所以，虽然大多数情况下对象是在堆上分配的，但在某些特定情况下，对象也可以在栈上或者通过标量替换来分配。"
+    },
+    {
+      "slug": "ruez0eorf445inye",
+      "title": "OOM一定会导致JVM退出吗",
+      "url": "/tulingzhouyu/db22bv/ruez0eorf445inye",
+      "toc_path": [
+        "JVM",
+        "OOM一定会导致JVM退出吗"
+      ],
+      "toc_level": 1,
+      "toc_index": 312,
+      "word_count": 810,
+      "updated_at": "2024-08-11T07:03:50.000Z",
+      "primary_category": "jvm-memory-gc",
+      "primary_category_name": "JVM内存与GC",
+      "related_categories": [
+        "jvm-memory-gc",
+        "observability-troubleshooting",
+        "os-linux",
+        "java-concurrency",
+        "java-core"
+      ],
+      "question_type": "troubleshooting",
+      "question_type_name": "故障排查题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "JVM",
+        "OOM",
+        "日志",
+        "线程",
+        "内存",
+        "Java",
+        "异常"
+      ],
+      "summary": "在Java中，发生了OutOfMemoryError（OOM）不一定会导致整个JVM退出。是否退出取决于发生OOM错误的线程和错误处理逻辑。这是一个复杂的问题，具体行为会因应用程序实现方式、错误发生的情境以及错误处理策略而异。情况分析主线程中未处理的OOM：如果在主线程中发生OOM且没有被捕获...",
+      "excerpt": "在Java中，发生了OutOfMemoryError（OOM）不一定会导致整个JVM退出。是否退出取决于发生OOM错误的线程和错误处理逻辑。这是一个复杂的问题，具体行为会因应用程序实现方式、错误发生的情境以及错误处理策略而异。 情况分析 主线程中未处理的OOM ： 如果在主线程中发生OOM且没有被捕获，JVM通常会终止程序并退出。这是因为JVM中没有其他存活的非守护线程来保持程序运行。 子线程中未处理的OOM ： 在非主线程中，如果OOM发生且未被捕获，该线程会停止执行。但如果其他非守护线程仍在运行，JVM不会退出。 捕获并处理OOM ： 如果在代码中捕获并正确处理了OOM错误，JVM则可以继续执行其余的程序代码。合适的错误处理可能包括释放内存资源或提示用户进行适当的操作。 示例代码 以下是一个简单的示例，展示了在不同线程中处理OOM的行为差异： 行为解释 在主线程中，如果未捕获的OOM发生，程序将立即终止。 在线程 thread 中，我们捕获了OOM并进行了打印处理。即使发生了OOM，该子线程停止，但主线程继续执行主线程外的任务。如果没有捕获，子线程停止，但JVM不会退出，因为主线程仍在运行。 此示例代码通过捕获异常展示了如何使程序在发生OOM时继续执行，但开发者应合理处理这些错误以避免不必要的错误传播和程序行为失常。 注意事项 不建议频繁捕获OOM并继续执行程序，因为这样可能表明程序有严重的内存管理问题，应尽量优化内存使用。 在关键路径中发生OOM时，通常应记录日志并考虑安全停机，因为无法保证系统在内存压力下的正确性。"
+    },
+    {
+      "slug": "xzax2z6qgfomcqrn",
+      "title": "堆一定是线程共享的吗",
+      "url": "/tulingzhouyu/db22bv/xzax2z6qgfomcqrn",
+      "toc_path": [
+        "JVM",
+        "堆一定是线程共享的吗"
+      ],
+      "toc_level": 1,
+      "toc_index": 316,
+      "word_count": 630,
+      "updated_at": "2024-08-09T07:29:46.000Z",
+      "primary_category": "jvm-memory-gc",
+      "primary_category_name": "JVM内存与GC",
+      "related_categories": [
+        "jvm-memory-gc",
+        "java-concurrency",
+        "os-linux",
+        "java-core",
+        "performance-optimization"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "JVM",
+        "垃圾回收",
+        "堆",
+        "栈",
+        "元空间",
+        "多线程",
+        "线程",
+        "内存",
+        "Java",
+        "性能",
+        "优化"
+      ],
+      "summary": "在Java虚拟机（JVM）中，堆内存区域通常是线程共享的。这意味着所有的对象实例和数组都在这个共享的堆中分配，并可以被多个线程访问。不过，JVM也提供机制来优化多线程环境下的堆使用，以提高性能和安全性。主要原因和特点共享特性：设计原则：Java是为了支持高效的多线程计算而设计的，所有对象实例通...",
+      "excerpt": "在Java虚拟机（JVM）中，堆内存区域通常是线程共享的。这意味着所有的对象实例和数组都在这个共享的堆中分配，并可以被多个线程访问。不过，JVM也提供机制来优化多线程环境下的堆使用，以提高性能和安全性。 主要原因和特点 共享特性 ： 设计原则 ：Java是为了支持高效的多线程计算而设计的，所有对象实例通常需要在多个线程间共享以实现同步和协作。 便捷性 ：通过将对象存储在共享堆中，多个线程之间可以方便地互相传递对象，支持复杂应用程序的开发。 线程隔离优化 ： TLAB（Thread Local Allocation Buffer） ：尽管堆是共享的，TLAB为每个线程分配了一个独立的内存块，用于快速分配对象。这减少了线程间在堆内存分配时的竞争。 栈上分配（Scalar Replacement）和逃逸分析 ：在某些情况下，如果对象不会逃逸出线程的执行上下文，JVM可能将其优化为栈上分配，而不使用堆。这样实现了线程级别的内存管理。 内存安全 ： 垃圾回收 ：JVM中包括垃圾回收机制来自动管理回收共享堆中的无用对象，这种机制为多线程应用提供了一种有效的方式来释放共享资源。 堆的分代 ： 年轻代、老年代和元空间 ： 年轻代 （也叫新生代）：频繁分配短期存活的对象，通常采用复制算法，回收快速。 老年代 ：存储寿命较长的对象，通常采用标记-清除或者标记-整理算法。 元空间 ：存储类元数据，与内存隔离。 总结 在标准JVM实现中，堆通常是一个共享资源，以支持Java应用程序的多线程特性。然而，通过TLAB和其他优化技术，JVM在逻辑上为线程提供了“局部”分配方式，可以提高内存分配性能和线程安全性。也就是在共享的物理堆上，实现逻辑上的线程隔离内存分配策略。"
+    },
+    {
+      "slug": "fmwbib707hpvgylz",
+      "title": "运行时常量池和字符串常量池的区别",
+      "url": "/tulingzhouyu/db22bv/fmwbib707hpvgylz",
+      "toc_path": [
+        "JVM",
+        "运行时常量池和字符串常量池的区别"
+      ],
+      "toc_level": 1,
+      "toc_index": 318,
+      "word_count": 571,
+      "updated_at": "2024-08-09T07:41:30.000Z",
+      "primary_category": "jvm-memory-gc",
+      "primary_category_name": "JVM内存与GC",
+      "related_categories": [
+        "jvm-memory-gc",
+        "java-core",
+        "os-linux",
+        "performance-optimization"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "JVM",
+        "垃圾回收",
+        "内存模型",
+        "堆",
+        "元空间",
+        "Java",
+        "String",
+        "内存",
+        "优化"
+      ],
+      "summary": "运行时常量池和字符串常量池在Java中有特定的关系，它们的存储位置在JVM内存模型中是有区别的。以下是详细的解释：运行时常量池（Runtime Constant Pool）关系：运行时常量池是每个类或接口的常量池表的一部分，包含了字符串字面量以及其他的编译期常量。字符串常量池可以被视为是运行时...",
+      "excerpt": "运行时常量池和字符串常量池在Java中有特定的关系，它们的存储位置在JVM内存模型中是有区别的。以下是详细的解释： 运行时常量池（Runtime Constant Pool） 关系 ： 运行时常量池是每个类或接口的常量池表的一部分，包含了字符串字面量以及其他的编译期常量。 字符串常量池可以被视为是运行时常量池的一个特殊部分，专门用于字符串字面量的存储和重用。 存储位置 ： 方法区（Method Area） ： 运行时常量池属于方法区的一部分。 在Java 8之前，方法区是永久代（PermGen）的一部分；在Java 8及以后，方法区被转移到元空间（Metaspace）。 字符串常量池（String Constant Pool） 关系 ： 字符串常量池是用于存储字符串字面量的内存区域。当一个新的字符串字面量被声明时，如果字符串常量池中已经存在这个字符串，它将不会创建新的字符串对象，而是返回已经存在的引用。 它是运行时常量池中专门用于字符串管理的部分。 存储位置 ： 堆内存（Heap Memory） ： 从Java 7开始，字符串常量池移到了堆内存中。这种转移有助于减少方法区的内存压力，也更好地支持垃圾回收。 关系总结 运行时常量池 ：用于存储类常量、方法和字段的引用，以及字符串字面量等。 字符串常量池 ：专注于优化字符串使用，通过在堆中存储唯一的字符串实例来减少内存消耗。 位置差别 ： 运行时常量池位于方法区/元空间。 字符串常量池位于堆内存中。 通过这个体系，Java的内存管理在处理常量和字符串数据时变得高效而灵活，尤其是在支持频繁使用字符串的应用程序时。"
+    },
+    {
+      "slug": "visq4rsmvfgex14b",
+      "title": "GC是任意时候都能进行的吗",
+      "url": "/tulingzhouyu/db22bv/visq4rsmvfgex14b",
+      "toc_path": [
+        "JVM",
+        "GC是任意时候都能进行的吗"
+      ],
+      "toc_level": 1,
+      "toc_index": 320,
+      "word_count": 645,
+      "updated_at": "2024-08-11T08:27:01.000Z",
+      "primary_category": "jvm-memory-gc",
+      "primary_category_name": "JVM内存与GC",
+      "related_categories": [
+        "jvm-memory-gc",
+        "security-auth",
+        "os-linux",
+        "java-concurrency",
+        "java-core"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "JVM",
+        "GC",
+        "垃圾回收",
+        "堆",
+        "栈",
+        "安全",
+        "线程",
+        "内存",
+        "Java",
+        "异常"
+      ],
+      "summary": "GC垃圾收集只能在安全点才能进行。在Java虚拟机（JVM）中，**安全点（Safe Point）**是程序执行的某些特定位置。JVM只能在安全点安全地暂停执行，从而进行垃圾回收（GC）等操作。安全点的设定确保了当线程暂停时，程序的状态是可知和一致的。作用垃圾收集：在进行垃圾收集时，JVM需要...",
+      "excerpt": "GC垃圾收集只能在 安全点 才能进行。在Java虚拟机（JVM）中，**安全点（Safe Point）**是程序执行的某些特定位置。JVM只能在安全点安全地暂停执行，从而进行垃圾回收（GC）等操作。安全点的设定确保了当线程暂停时，程序的状态是可知和一致的。 作用 垃圾收集 ： 在进行垃圾收集时，JVM需要暂停所有应用程序线程（GC暂停），以确保不会有线程在操作内存。同时，状态的快照是确定的，以便于GC工作。 堆栈遍历 ： 在执行如线程转储（Thread Dump）等操作时，JVM需要安全地遍历线程栈，这时也需要安全点。 性能损耗最小化 ： 通过在最可能长时间运行的指令设置安全点（例如循环的末端、方法的调用与返回），JVM可以减少程序暂停的频率，从而降低性能损耗。 安全点的触发条件 安全点一般插入在以下几种情况： 方法调用 ：每次方法调用都是一个潜在的安全点。 循环回跳 ：长时间循环中间会插入安全点检查。 异常处理 ：处理异常时，也会检查是否到达安全点。 实际执行中的安全点示例 考虑下面的代码，JVM 在执行时，会对其中的多个位置进行安全点插入： 重要性 最小化暂停时间 ：通过仅在安全点暂停线程，可最大程度减少程序因为GC等操作而暂停执行的时间。 性能和一致性 ：安全点设计能够确保为GC等需要程序一致性暂停的操作提供合适控制，同时尽可能保持程序性能。 总体来说，安全点是JVM优化执行环境的一部分，不同JVM实现可能有不同的安全点管理策略以权衡性能与系统一致性。"
+    },
+    {
+      "slug": "sguahv8u1s2tckek",
+      "title": "什么是三色标记",
+      "url": "/tulingzhouyu/db22bv/sguahv8u1s2tckek",
+      "toc_path": [
+        "JVM",
+        "什么是三色标记"
+      ],
+      "toc_level": 1,
+      "toc_index": 323,
+      "word_count": 798,
+      "updated_at": "2024-08-09T07:59:48.000Z",
+      "primary_category": "jvm-memory-gc",
+      "primary_category_name": "JVM内存与GC",
+      "related_categories": [
+        "jvm-memory-gc",
+        "algorithm",
+        "java-concurrency",
+        "java-collections",
+        "performance-optimization"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "JVM",
+        "GC",
+        "垃圾回收",
+        "栈",
+        "算法",
+        "并发",
+        "集合",
+        "性能"
+      ],
+      "summary": "三色标记法是一种用于垃圾回收算法中的对象标记方法，特别用于标记-清除型垃圾回收器。这种方法通过使用三种颜色（白色、灰色和黑色）来跟踪对象的可达性和垃圾回收状态，以避免对象的重复回收和丢失。三色标记的基本概念白色：表示对象尚未被检查。白色对象可能是垃圾，直到证明它们是可达的。灰色：表示对象被检查...",
+      "excerpt": "三色标记法是一种用于垃圾回收算法中的对象标记方法，特别用于标记-清除型垃圾回收器。这种方法通过使用三种颜色（白色、灰色和黑色）来跟踪对象的可达性和垃圾回收状态，以避免对象的重复回收和丢失。 三色标记的基本概念 白色 ：表示对象尚未被检查。白色对象可能是垃圾，直到证明它们是可达的。 灰色 ：表示对象被检查过，并且其本身是可达的，但其引用的对象还未全部检查。 黑色 ：表示对象和它所有引用的对象都已检查且是可达的。 三色标记步骤 初始化 ：所有对象开始时都是白色。 标记开始 ：从GC Roots开始，根对象标记为灰色。 扫描灰色对象 ： 将灰色对象引用的所有白色对象标记为灰色。 然后将该灰色对象标记为黑色。 重复步骤3 直到没有更多的灰色对象。 清除 ：未标记为黑色的对象为白色，即垃圾，可被回收。 代码示例模拟 以下是一个简单的模拟示例，展示了假设某个对象图的三色标记流程： 解释 对象生成 ：创建若干对象并引用它们。 根集合 ：设定起始对象集，通常指代程序运行时栈、全局引用等。 三色规则应用 ：通过 markGray 和 scanAndBlacken 函数演示从GC Roots开始的标记过程。 最终输出 ：显示对象的颜色状态和引用关系，以验证三色标记的正确性。 使用三色标记的好处 避免循环引用 ：能够正确识别循环引用对象不被误判为不可回收。 并发性增强 ：支持并发标记，减少“Stop-the-World”时间。 渐进性 ：可以执行增量垃圾回收，减小程序暂停。 在实际的垃圾回收算法实现中，如G1和CMS，三色标记法被广泛应用，用于高效地管理内存和提高程序运行的性能。"
+    },
+    {
+      "slug": "xnnlrqaa80pnu0zn",
+      "title": "短视频",
+      "url": "/tulingzhouyu/db22bv/xnnlrqaa80pnu0zn",
+      "toc_path": [
+        "JVM",
+        "什么是三色标记",
+        "短视频"
+      ],
+      "toc_level": 2,
+      "toc_index": 324,
+      "word_count": 506,
+      "updated_at": "2024-05-15T06:13:11.000Z",
+      "primary_category": "jvm-memory-gc",
+      "primary_category_name": "JVM内存与GC",
+      "related_categories": [
+        "jvm-memory-gc",
+        "java-collections",
+        "os-linux",
+        "algorithm",
+        "resume-project"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "junior"
+      ],
+      "level_names": [
+        "初级/1-3年"
+      ],
+      "keywords": [
+        "JVM",
+        "GC",
+        "垃圾回收",
+        "集合",
+        "内存",
+        "算法",
+        "CRUD"
+      ],
+      "summary": "最近有一位工作 3 年的粉丝，在后台留言   面试的时候被问到什么是三色标记法？当时一脸懵逼，天天 CRUD，三色标记是什么鬼啊。其实三色标记法是Java虚拟机中一种用于垃圾回收的算法，主要是用于标记内存中的对象，好确定哪些对象是存活的，哪些对象是可以被回收的。这种算法将内存中的对象分为三种颜...",
+      "excerpt": "最近有一位工作 3 年的粉丝，在后台留言 面试的时候被问到什么是三色标记法？当时一脸懵逼，天天 CRUD，三色标记是什么鬼啊。 其实三色标记法是Java虚拟机中一种用于垃圾回收的算法，主要是用于 标记内存中的对象 ，好确定哪些对象是存活的，哪些对象是可以被回收的。 这种算法将内存中的对象分为 三种颜色 ： 白色 黑色 灰色 白色代表对象还没被扫描过，我们可以理解为是 未知状态 。 黑色代表对象已经被扫描过， 但是 它的引用对象还没被有扫描过 。 灰色代表对象已经被扫描过了， 并且它的引用对象也全都被扫描过了 ，我们可以理解为是 已知状态 。 ​ 在GC开始的时候会将所有对象都标记为白色。 然后 从根对象开始遍历内存中的对象，遍历过程中它会把直接引用对象都标记为灰色，并且把它们加入到灰色集合中。 接着呢 ，会逐个判断灰色集合中的对象是否存在子对象 如果存在就继续放入灰色集合中，如果不存在就标记为黑色，放入到黑色集合中。 然后重复这个过程，直到灰色集合处理为空，也就代表这一轮标记就完成了。 最终 ，所有存活的对象都会被标记为黑色，而未被标记的白色对象就是待回收的垃圾对象。 而垃圾回收器通过三色标记算法 在一定程度上减少了 gc 停顿时间 ， 提高了系统的性能和响应速度 。 以上就是我对三色标记法的理解。"
+    },
+    {
+      "slug": "mrn3lhegmd3glv8m",
+      "title": "对象的大小如何计算",
+      "url": "/tulingzhouyu/db22bv/mrn3lhegmd3glv8m",
+      "toc_path": [
+        "JVM",
+        "对象的大小如何计算"
+      ],
+      "toc_level": 1,
+      "toc_index": 326,
+      "word_count": 433,
+      "updated_at": "2025-02-14T08:51:35.000Z",
+      "primary_category": "jvm-memory-gc",
+      "primary_category_name": "JVM内存与GC",
+      "related_categories": [
+        "jvm-memory-gc",
+        "java-core",
+        "performance-optimization",
+        "resume-project",
+        "algorithm"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "JVM",
+        "Java",
+        "优化",
+        "包装",
+        "排序"
+      ],
+      "summary": "在Java中，对象的大小通常是由对象头，对象的实例数据、和对齐填充组成的。对象的大小计算方法可以简化为以下几个步骤：对象头(Object Header)大小：在32位JVM上：8字节在64位JVM上：未开启指针压缩：16字节开启指针压缩：12字节实例数据(Instance Data)大小：基本...",
+      "excerpt": "在Java中，对象的大小通常是由对象头，对象的实例数据、和对齐填充组成的。对象的大小计算方法可以简化为以下几个步骤： 对象头(Object Header)大小： 在32位JVM上：8字节 在64位JVM上： 未开启指针压缩：16字节 开启指针压缩：12字节 实例数据(Instance Data)大小： 基本数据类型： boolean/byte: 1字节 char/short: 2字节 int/float: 4字节 long/double: 8字节 引用类型： 32位JVM：4字节 64位JVM未压缩：8字节 64位JVM开启指针压缩：4字节 对齐填充(Padding)： 对象大小必须是8字节的整数倍 如果对象头+实例数据的大小不是8的倍数，需要进行填充 计算示例： 在64位JVM，开启指针压缩的情况下： 对象头：12字节 实例数据：4 + 8 + 1 = 13字节 填充：3字节(补齐到8的倍数) 总大小：12 + 13 + 3 = 28字节 注意事项： 可以使用Java Agent或JOL(Java Object Layout)工具精确查看对象大小 不同JVM版本和实现可能会有差异 JVM参数配置会影响对象大小 继承关系中要包含父类的实例数据大小 如果需要优化对象大小，可以： 合理排序字段顺序，减少对齐浪费 使用基本数据类型替代包装类 考虑使用压缩指针 合理使用继承层次"
+    },
+    {
+      "slug": "rwvqepaazk74extg",
+      "title": "常用的JVM启动参数有哪些",
+      "url": "/tulingzhouyu/db22bv/rwvqepaazk74extg",
+      "toc_path": [
+        "JVM",
+        "常用的JVM启动参数有哪些"
+      ],
+      "toc_level": 1,
+      "toc_index": 327,
+      "word_count": 625,
+      "updated_at": "2023-09-04T03:18:23.000Z",
+      "primary_category": "jvm-memory-gc",
+      "primary_category_name": "JVM内存与GC",
+      "related_categories": [
+        "jvm-memory-gc",
+        "java-core",
+        "os-linux",
+        "performance-optimization",
+        "java-concurrency"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "JVM",
+        "GC",
+        "垃圾回收",
+        "堆",
+        "栈",
+        "元空间",
+        "调优",
+        "Java",
+        "线程",
+        "内存",
+        "性能",
+        "并发"
+      ],
+      "summary": "JVM（Java虚拟机）的启动参数用于配置和调整Java应用程序的运行时行为。以下是一些常用的JVM启动参数：-Xmx：指定Java堆内存的最大限制。例如，-Xmx512m 表示最大堆内存为512兆字节。-Xms：指定Java堆内存的初始大小。例如，-Xms256m 表示初始堆内存为256兆字...",
+      "excerpt": "JVM（Java虚拟机）的启动参数用于配置和调整Java应用程序的运行时行为。以下是一些常用的JVM启动参数： -Xmx ：指定Java堆内存的最大限制。例如， -Xmx512m 表示最大堆内存为512兆字节。 -Xms ：指定Java堆内存的初始大小。例如， -Xms256m 表示初始堆内存为256兆字节。 -Xss ：指定每个线程的堆栈大小。例如， -Xss256k 表示每个线程的堆栈大小为256千字节。 -XX:MaxPermSize （对于Java 7及之前的版本）或 -XX:MaxMetaspaceSize （对于Java 8及以后的版本）：指定永久代（Java 7及之前）或元空间（Java 8及以后）的最大大小。 -XX:PermSize （对于Java 7及之前的版本）或 -XX:MetaspaceSize （对于Java 8及以后的版本）：指定永久代（Java 7及之前）或元空间（Java 8及以后）的初始大小。 -Xmn ：指定年轻代的大小。例如， -Xmn256m 表示年轻代大小为256兆字节。 -XX:SurvivorRatio ：指定年轻代中Eden区与Survivor区的大小比例。例如， -XX:SurvivorRatio=8 表示Eden区与每个Survivor区的大小比例为8:1。 -XX:NewRatio ：指定年轻代与老年代的大小比例。例如， -XX:NewRatio=2 表示年轻代和老年代的比例为1:2。 -XX:MaxGCPauseMillis ：设置垃圾回收的最大暂停时间目标。例如， -XX:MaxGCPauseMillis=100 表示垃圾回收的最大暂停时间目标为100毫秒。 -XX:ParallelGCThreads ：指定并行垃圾回收线程的数量。例如， -XX:ParallelGCThreads=4 表示使用4个线程进行并行垃圾回收。 -XX:+UseConcMarkSweepGC ：启用并发标记清除垃圾回收器。 -XX:+UseG1GC ：启用G1（Garbage First）垃圾回收器。 -Dproperty=value ：设置Java系统属性，可以在应用程序中使用 System.getProperty(&quot;property&quot;) 来获取这些属性的值。 这些是一些常见的JVM启动参数，可以根据应用程序的需求和性能调优的目标进行调整。JVM启动参数的使用可以显著影响应用程序的性能和行为，因此在设置这些参数时需要谨慎。同时，JVM支持的启动参数因不同的JVM版本和供应商而有所不同，建议查阅相关文档以获取更详细的信息。"
+    },
+    {
+      "slug": "rdtkqt8fwkx2umg6",
+      "title": "强引用、软引用、弱引用、虚引用的区别",
+      "url": "/tulingzhouyu/db22bv/rdtkqt8fwkx2umg6",
+      "toc_path": [
+        "JVM",
+        "强引用、软引用、弱引用、虚引用的区别"
+      ],
+      "toc_level": 1,
+      "toc_index": 330,
+      "word_count": 829,
+      "updated_at": "2025-04-14T08:32:02.000Z",
+      "primary_category": "jvm-memory-gc",
+      "primary_category_name": "JVM内存与GC",
+      "related_categories": [
+        "jvm-memory-gc",
+        "os-linux",
+        "java-collections",
+        "java-core",
+        "redis-cache"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "JVM",
+        "GC",
+        "垃圾回收",
+        "堆",
+        "内存",
+        "HashMap",
+        "Java",
+        "缓存"
+      ],
+      "summary": "在 Java 中，对象的引用类型分为强引用、软引用、弱引用和虚引用，这些引用类型主要用于测定垃圾回收（GC）何时可以收集对象。这些引用与 GC 的关联以及对象的生命周期有不同的性质和用法。1. 强引用（Strong Reference）特性：默认使用的引用类型。只要强引用存在，垃圾收集器绝对不...",
+      "excerpt": "在 Java 中，对象的引用类型分为强引用、软引用、弱引用和虚引用，这些引用类型主要用于测定垃圾回收（GC）何时可以收集对象。这些引用与 GC 的关联以及对象的生命周期有不同的性质和用法。 1. 强引用（Strong Reference） 特性 ：默认使用的引用类型。只要强引用存在，垃圾收集器绝对不会回收被引用的对象。 用法 ：普通的对象引用就是强引用。例如： 示例 ：只要 strongReference 还在使用中，对象就不会被回收。 2. 软引用（Soft Reference） 特性 ：软引用对象在内存不够用时才会被垃圾回收。如果 JVM 内存充足，软引用对象可能延续存在，这使得软引用适合于实现一些缓存机制。 用法 ：通过 SoftReference 类来定义软引用。 示例 ：如果对象只通过软引用可达，JVM 会在内存不足的情况下回收它。 3. 弱引用（Weak Reference） 特性 ：弱引用对象只要被垃圾收集器检测到即可回收。弱引用对象非常适合于实现 Map 的缓存，当对象只通过弱引用可达时，可以快速释放内存。 用法 ：通过 WeakReference 类来定义弱引用。 示例 ：弱引用主要用于 WeakHashMap，它允许在不需要强保留对象的情况下维护对象到键的映射。 4. 虚引用（Phantom Reference） 特性 ：虚引用并不决定对象的生命周期。当对象只持有虚引用时，垃圾收集时总是会回收。虚引用主要用于对象被垃圾收集器回收时的一些清理工作。 用法 ：通过 PhantomReference 类实现，必须和引用队列（ ReferenceQueue ）一起使用。 示例 ：虚引用常用于跟踪对象何时被从内存中删除，通常用于实现堆外内存回收，通知应用程序对象即将垃圾回收，允许执行回收前的必要清理步骤。 总结 强引用 ：最常见的引用类型，所引用对象不会被垃圾回收。（ 除非置为 null ） 软引用 ：当内存不足时会被回收。 （适合缓存） 弱引用 ：适合实现不需要确保其引用对象强可达的缓存，GC 检测到即可回收。 （如 WeakHashMap ） 虚引用 ：不支持访问引用对象，用于监测对象被回收前的清除。 （需配合ReferenceQueue） 这些引用类型根据对象的生命周期管理和内存回收需求被巧妙设计，适用于不同情境的资源管理策略。"
+    },
+    {
+      "slug": "hqpdhby9s8sh1xrh",
+      "title": "项目中如何选择垃圾回收器",
+      "url": "/tulingzhouyu/db22bv/hqpdhby9s8sh1xrh",
+      "toc_path": [
+        "JVM",
+        "项目中如何选择垃圾回收器"
+      ],
+      "toc_level": 1,
+      "toc_index": 333,
+      "word_count": 952,
+      "updated_at": "2024-08-09T07:56:34.000Z",
+      "primary_category": "jvm-memory-gc",
+      "primary_category_name": "JVM内存与GC",
+      "related_categories": [
+        "jvm-memory-gc",
+        "os-linux",
+        "performance-optimization",
+        "java-concurrency",
+        "java-core"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "JVM",
+        "GC",
+        "垃圾回收",
+        "堆",
+        "线程",
+        "内存",
+        "性能",
+        "优化",
+        "吞吐",
+        "并发",
+        "多线程",
+        "Java"
+      ],
+      "summary": "选择合适的垃圾回收器对Java应用程序的性能和可扩展性至关重要。不同的垃圾回收器适用于不同类型的应用场景。以下是一些常见的垃圾回收器及其适用场景：1. 串行收集器（Serial Collector）特点：使用单线程进行垃圾回收，进行完全的“Stop-The-World”（STW）。适用场景：适...",
+      "excerpt": "选择合适的垃圾回收器对Java应用程序的性能和可扩展性至关重要。不同的垃圾回收器适用于不同类型的应用场景。以下是一些常见的垃圾回收器及其适用场景： 1. 串行收集器（Serial Collector） 特点 ：使用单线程进行垃圾回收，进行完全的“Stop-The-World”（STW）。 适用场景 ：适用于单线程环境或者用于应用程序的数据集较小（通常为单核 CPU 或内存受限的情况）。 为何选择 ：低内存消耗，简单，没有线程交互的复杂性，在小应用中性能可接受。 2. 并行收集器（Parallel Collector） 特点 ：多线程收集器，对年轻代和老年代进行并行标记和清理。 适用场景 ：适用于高吞吐量应用，后台批处理类型的应用程序。 为何选择 ：对响应时间要求不高，而对应用的吞吐量需求较高。 3. CMS收集器（Concurrent Mark-Sweep） 特点 ：对老年代执行并发标记和清理。 适用场景 ：适用于注重降低停顿时间的应用，例如需要快速响应的交互式应用系统。 为何选择 ：适用于需要较短的暂停时间应用，是一些Web服务器或需要较低响应时间的应用的选择。 4. G1垃圾收集器（Garbage First） 特点 ：面向堆较大的多处理器机器，分区域管理内存，能均衡暂停时间。 适用场景 ：适用于大堆（如几GB~几十GB）的应用，追求稳定的响应时间。 为何选择 ：比CMS更现代，针对大内存及多核心优化，具备可预测的暂停时间和更高的效率。 5. Z垃圾收集器（ZGC） 特点 ：极低的暂停时间（通常不到10ms），适合大内存应用。 适用场景 ：特别适合对延迟敏感且使用大量内存（特别是大于几百GB）的应用。 为何选择 ：相较于G1和CMS，ZGC在缩短暂停时间上有更突出的表现，适用于现代大型、多实例化的应用程序。 6. Shenandoah垃圾收集器 特点 ：与ZGC类似，注重超低停顿时间。 适用场景 ：所需内存特别大，并且希望将暂停时间最小化的应用。 为何选择 ：通过并发压缩缩短GC停顿时间，适合需要短暂停顿、高并发的应用场景。 选择垃圾回收器的考量因素 应用类型 ：Web服务、后台服务、实时系统等。 系统资源 ：可用的CPU核心数，内存大小。 响应时间要求 ：应用是否需要极低的响应延迟。 吞吐量要求 ：是否需要最大化应用的吞吐量。 运行环境 ：如容器化应用需要考虑容器的限制和资源分配策略。 选择合适的垃圾回收器应该基于应用程序的具体需求和使用环境，通常需要通过实验和监测来优化配置以满足性能和稳定性的要求。"
+    },
+    {
+      "slug": "qy0y5pewbrrvd926",
+      "title": "说下JVM中一次完整的 GC 流程",
+      "url": "/tulingzhouyu/db22bv/qy0y5pewbrrvd926",
+      "toc_path": [
+        "JVM",
+        "说下JVM中一次完整的 GC 流程"
+      ],
+      "toc_level": 1,
+      "toc_index": 335,
+      "word_count": 910,
+      "updated_at": "2024-08-09T08:05:26.000Z",
+      "primary_category": "jvm-memory-gc",
+      "primary_category_name": "JVM内存与GC",
+      "related_categories": [
+        "jvm-memory-gc",
+        "os-linux",
+        "java-core",
+        "performance-optimization",
+        "algorithm"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "JVM",
+        "GC",
+        "垃圾回收",
+        "堆",
+        "栈",
+        "线程",
+        "内存",
+        "Java",
+        "性能",
+        "优化",
+        "算法",
+        "数组"
+      ],
+      "summary": "Java Virtual Machine (JVM) 中的垃圾回收（GC）机制是自动内存管理的一部分，负责回收不再被引用的对象所占用的内存空间。理解完整的 GC 流程有助于优化 Java 程序的性能。以下是 JVM 中一次完整的 GC 流程：JVM 中的内存区域JVM 的内存区域主要分为以下几...",
+      "excerpt": "Java Virtual Machine (JVM) 中的垃圾回收（GC）机制是自动内存管理的一部分，负责回收不再被引用的对象所占用的内存空间。理解完整的 GC 流程有助于优化 Java 程序的性能。以下是 JVM 中一次完整的 GC 流程： JVM 中的内存区域 JVM 的内存区域主要分为以下几块： 堆（Heap） ：存放对象实例，GC 的主要工作区域。 栈（Stack） ：存放方法参数和局部变量，方法执行时创建销毁。 方法区（Method Area） ：存放类信息、常量、静态变量等。 程序计数器（PC Register） ：线程执行的字节码行号指示器。 垃圾回收的区域 垃圾回收主要在堆中进行，堆又分为年轻代（Young Generation）、老年代（Old Generation）和永久代（JDK 8 及以后的 Metaspace 取代了永久代）。 垃圾回收的步骤 标记（Marking） ：找到所有活动对象。 清除（Sweeping） ：清理未被标记的对象，从而释放内存。 压缩（Compaction） ：对内存进行整理，使得活跃对象移动到一起，避免碎片化（这一步并不是所有垃圾回收算法的必须步骤，如标记-清除算法就不需要此步骤）。 垃圾回收算法 标记-清除 ：首先标记存活对象，然后清除未被标记的对象。 标记-复制 ：将存活对象复制到新的内存区域，适合于年轻代。 标记-压缩 ：标记后，将活跃对象压缩到一起，清除后续无用区。 垃圾回收器示例 下面是使用 Java 的 System.gc() 进行垃圾回收的一个简单代码示例： 分析 对象分配 ：在 main 方法中，大量地分配内存给一个 byte[] 数组。 触发 GC ：通过 System.gc() 请求垃圾回收，这不是强制的，但 JVM 会尽量去执行垃圾回收。 垃圾回收过程 ： JVM 可能会先尝试进行 Minor GC，回收年轻代对象。 如果内存不足，可能触发 Major GC 或 Full GC，回收年轻代 + 老年代对象。 观察垃圾回收 ：建议在 JVM 参数中增加 -verbose:gc 或者使用更详细的 GC 日志选项如 -XX:+PrintGCDetails ，以更好地观察垃圾回收过程： 总结 年轻代和老年代的区别 ：年轻代是短生命周期对象的汇聚地，常被 Minor GC；老年代保存生命周期较长的对象，发生 Major 或 Full GC。 分代回收算法 ：JVM 的分代回收策略最大化性能，年轻代使用复制收集算法，高效清理短命对象；老年代使用标记-整理算法，处理长命对象。 优化 GC 性能 ：通常通过调整堆大小和代大小，以及选择适合的垃圾收集器（如 G1、CMS、Parallel GC 等）来优化 GC 的性能。"
+    },
+    {
+      "slug": "wkzrrp97dyetxr0v",
+      "title": "JVM为什么使用元空间替换了永久代",
+      "url": "/tulingzhouyu/db22bv/wkzrrp97dyetxr0v",
+      "toc_path": [
+        "JVM",
+        "JVM为什么使用元空间替换了永久代"
+      ],
+      "toc_level": 1,
+      "toc_index": 338,
+      "word_count": 755,
+      "updated_at": "2024-08-09T08:05:49.000Z",
+      "primary_category": "jvm-memory-gc",
+      "primary_category_name": "JVM内存与GC",
+      "related_categories": [
+        "jvm-memory-gc",
+        "os-linux",
+        "performance-optimization",
+        "java-core",
+        "observability-troubleshooting"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "JVM",
+        "GC",
+        "垃圾回收",
+        "堆",
+        "元空间",
+        "调优",
+        "操作系统",
+        "内存",
+        "性能",
+        "优化",
+        "容量",
+        "Java"
+      ],
+      "summary": "在 Java 8 中，JVM 对内存管理进行了一个重要的变化，就是用元空间（Metaspace）替代了永久代（PermGen）。这个变更解决了一些持久性的问题，并提供了更多的灵活性和稳定性。以下是为什么 JVM 从永久代转向元空间的几个关键原因：1. 内存限制永久代限制：永久代在 JVM 中存...",
+      "excerpt": "在 Java 8 中，JVM 对内存管理进行了一个重要的变化，就是用元空间（Metaspace）替代了永久代（PermGen）。这个变更解决了一些持久性的问题，并提供了更多的灵活性和稳定性。 以下是为什么 JVM 从永久代转向元空间的几个关键原因： 1. 内存限制 永久代限制 ：永久代在 JVM 中存在一个固定的内存大小限制，通常是通过 JVM 参数 -XX:PermSize 和 -XX:MaxPermSize 设置的。但在实际应用中，预测应用程序所需的永久代大小并不容易，且其固定大小可能会导致 OutOfMemoryError: PermGen space 错误。 元空间优势 ：元空间不是堆的一部分，存放在本机内存（Native Memory）中，不受 JVM 堆大小限制，因此更能有效地利用内存资源。 2. 类和类加载器的生命周期管理 永久代问题 ：由于类及其元数据由永久代持有，因此类加载器和类的动态卸载过程会受到永久代容量的约束。 元空间解决 ：使用元空间减少了对应用程序行为的依赖性，实现更好地管理类及其元数据的内存分配，使类加载器更可靠地执行类的动态卸载。 3. 性能和优化 性能问题 ：在多环境或不同规模的应用程序中，优化和调优永生代（尤其是调整大小）比较复杂，并可能由于设置不当影响性能。 优化改进 ：元空间利用操作系统的内存进行类元数据信息的存储，这使得 JVM 在启动阶段和内存管理上表现更为高效。 4. 减少 Full GC 问题 Full GC： 永久代的垃圾回收会触发 Full GC，这是非常耗时的过程，在高负载系统中影响较大。 消除阻塞 ：元空间独立于堆内存，大大减少了永久代相关的 Full GC 次数，因此在运行时减少了长时间的中断。 5. 更好的监控和调优 监控复杂性 ：永久代的大小不易调整和监控。 增强监控工具 ：通过元空间，可以更容易使用现代工具（如 jcmd 和 jconsole）来监控和调优 Java 应用的内存使用情况。 总结 引入元空间的设计变化让虚拟机层面对类元数据的存储和管理更有效率、灵活性更强，同时降低调试和运维复杂度，提升了 JVM 的性能和稳定性。这使得开发人员不再需要担心 PermGen 的调优及相应的内存管理问题，能更专注于应用的业务逻辑开发。"
+    },
+    {
+      "slug": "itakbe1872na814s",
+      "title": "频繁FullGC问题如何排查",
+      "url": "/tulingzhouyu/db22bv/itakbe1872na814s",
+      "toc_path": [
+        "线上问题排查",
+        "频繁FullGC问题如何排查"
+      ],
+      "toc_level": 1,
+      "toc_index": 808,
+      "word_count": 890,
+      "updated_at": "2025-12-11T07:30:53.000Z",
+      "primary_category": "jvm-memory-gc",
+      "primary_category_name": "JVM内存与GC",
+      "related_categories": [
+        "jvm-memory-gc",
+        "observability-troubleshooting",
+        "os-linux",
+        "performance-optimization",
+        "project-system-design"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "middle",
+        "campus",
+        "expert"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "校招/应届生",
+        "专家/P7+"
+      ],
+      "keywords": [
+        "JVM",
+        "GC",
+        "堆",
+        "线上",
+        "排查",
+        "监控",
+        "日志",
+        "变慢",
+        "内存",
+        "文件",
+        "性能",
+        "优化"
+      ],
+      "summary": "频繁的Full GC（完全垃圾收集）通常表明应用程序在内存管理方面存在问题，可能导致性能下降。以下是排查步骤和一个详细的示例：排查步骤收集GC日志分析GC日志监控JVM内存使用情况分析堆内存",
+      "excerpt": "频繁的Full GC（完全垃圾收集）通常表明应用程序在内存管理方面存在问题，可能导致性能下降。以下是排查步骤和一个详细的示例： 排查步骤 收集GC日志 分析GC日志 监控JVM内存使用情况 分析堆内存 检查代码中的内存使用 调整JVM参数 优化代码 验证改进 详细示例 假设我们有一个大型电子商务网站，最近用户反馈系统响应变慢。运维团队发现服务器频繁出现Full GC，严重影响性能。 1. 收集GC日志 首先，我们需要开启详细的GC日志。在JVM参数中添加： 2. 分析GC日志 使用工具（如GCViewer）分析GC日志，我们发现： Full GC频率：每10分钟一次 每次Full GC耗时：平均3秒 Old Gen使用情况：每次GC后仍然保持在80%以上 GC日志片段示例： 3. 监控JVM内存使用情况 使用工具如VisualVM或JConsole实时监控JVM内存使用。我们观察到： Eden区：频繁被填满后触发Minor GC Survivor区：经常接近满载 Old Gen：持续增长，即使在Full GC后也难以下降 4. 分析堆内存 使用jmap生成堆转储文件： 使用MAT（Memory Analyzer Tool）分析堆转储，发现： 大量的 com.example.Order 对象占用了Old Gen的大部分空间 这些 Order 对象中包含了大量历史订单数据 5. 检查代码中的内存使用 审查相关代码，发现问题： 6. 调整JVM参数 临时调整JVM参数以缓解问题： 7. 优化代码 修改代码以解决根本问题： 同时，实现一个定时任务将处理过的订单数据持久化到数据库，并从内存中清除。 8. 验证改进 重新部署优化后的应用 监控GC活动和内存使用 进行负载测试 结果： Full GC频率降低到每小时1-2次 每次Full GC耗时减少到1秒以内 Old Gen使用率稳定在60%左右 总结 通过这个详细的排查过程，我们： 使用GC日志和监控工具识别了问题 通过堆内存分析找到了内存泄漏的根源 优化了代码中的内存使用模式 调整了JVM参数以更好地适应应用特性 验证了优化效果 这个例子展示了如何系统地排查和解决频繁Full GC问题，涵盖了从问题发现、原因分析到解决方案实施的完整过程。在实际工作中，具体的问题可能更加复杂，但这个方法论可以作为一个基础框架来处理各种GC相关的性能问题。"
+    },
+    {
+      "slug": "bgpy80cw6x7fntek",
+      "title": "OOM问题如何排查",
+      "url": "/tulingzhouyu/db22bv/bgpy80cw6x7fntek",
+      "toc_path": [
+        "线上问题排查",
+        "OOM问题如何排查"
+      ],
+      "toc_level": 1,
+      "toc_index": 809,
+      "word_count": 1113,
+      "updated_at": "2024-08-25T14:26:59.000Z",
+      "primary_category": "jvm-memory-gc",
+      "primary_category_name": "JVM内存与GC",
+      "related_categories": [
+        "jvm-memory-gc",
+        "observability-troubleshooting",
+        "java-core",
+        "os-linux",
+        "performance-optimization"
+      ],
+      "question_type": "troubleshooting",
+      "question_type_name": "故障排查题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "JVM",
+        "GC",
+        "垃圾回收",
+        "OOM",
+        "堆",
+        "元空间",
+        "调优",
+        "线上",
+        "排查",
+        "监控",
+        "告警",
+        "日志",
+        "Java",
+        "性能"
+      ],
+      "summary": "当Java应用程序遇到OOM（OutOfMemoryError）错误时，通常意味着程序超出了可用的内存容量。这可能由于内存泄漏或配置不足导致。以下是详细的排查过程和示例，帮助诊断和解决这种问题。排查步骤1. 确认OOM错误类型首先，需要明确是哪种OOM：java.lang.OutOfMemor...",
+      "excerpt": "当Java应用程序遇到OOM（OutOfMemoryError）错误时，通常意味着程序超出了可用的内存容量。这可能由于内存泄漏或配置不足导致。以下是详细的排查过程和示例，帮助诊断和解决这种问题。 排查步骤 1. 确认OOM错误类型 首先，需要明确是哪种OOM： java.lang.OutOfMemoryError: Java heap space ：堆内存不足。 java.lang.OutOfMemoryError: Metaspace ：元空间不足（JDK 8及以上）。 java.lang.OutOfMemoryError: GC overhead limit exceeded ：GC时间过长。 2. 收集诊断信息 收集以下信息： Error日志 ：找到OOM发生时的日志片段。 Heap dump ：获取堆转储文件（可以使用-XX:+HeapDumpOnOutOfMemoryError来自动生成）。 GC日志 ：启用GC日志以分析垃圾回收活动。 示例JVM参数 ： 3. 分析Heap Dump 使用工具分析堆转储文件，找出内存泄漏的来源或占用最多空间的对象。 工具 ：Eclipse Memory Analyzer (MAT) 分析步骤 ： 加载Heap Dump ：使用MAT打开生成的堆转储文件。 查找大对象 ：使用MAT的“Histogram”视图查看占用内存最大的对象类型。 查找泄漏疑点 ：使用“Leak Suspects Report”功能自动分析可能的内存泄漏点。 示例分析 ： 通过MAT发现 java.util.ArrayList 实例占用了大量的内存，并继续深入查看引用路径。 4. 分析和识别问题代码 检查代码中可能导致OOM的地方。 大对象集合 ：导致内存占用过大的大型集合（如List, Map等）。 长生命周期对象 ：一些不必要的对象拥有比预期更长的生命周期。 常见问题场景 ： 缓存未清理 ：使用自定义缓存，没有合适的过期或清理机制。 无限增长的数据结构 ：例如，把无限的请求数据储存在集合中。 5. 优化代码和配置 解决方法 ： 优化数据结构 ：使用合适的数据结构和集合类。 清理长生命周期对象 ：确保不再需要的对象能够被GC及时回收。 调整JVM参数 ：如果应用确实需要更多内存，适当调整堆大小。 示例代码修复 ： 假设原代码存在问题： 修复后： 配置调优 ： 增加堆大小以适应应用的需要（如果合理）。 6. 验证和监控 运行负载测试验证修改后的程序性能和内存使用。 持续进行内存使用监控，避免再次出现OOM。 示例全面讲解 场景 ：一个Java Web应用程序在高负载测试中抛出 java.lang.OutOfMemoryError: Java heap space 。 步骤回顾 ： 配置JVM参数 以捕捉OOM： 收集Heap Dump 在OO"
+    },
+    {
+      "slug": "yzy3df4d739gz5sd",
+      "title": "1 亿个数据取出最大前 100 个有什么方法",
+      "url": "/tulingzhouyu/db22bv/yzy3df4d739gz5sd",
+      "toc_path": [
+        "项目设计场景题",
+        "1 亿个数据取出最大前 100 个有什么方法"
+      ],
+      "toc_level": 1,
+      "toc_index": 881,
+      "word_count": 456,
+      "updated_at": "2024-08-18T08:29:59.000Z",
+      "primary_category": "jvm-memory-gc",
+      "primary_category_name": "JVM内存与GC",
+      "related_categories": [
+        "jvm-memory-gc",
+        "java-core",
+        "resume-project",
+        "mq-rabbitmq",
+        "algorithm"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "堆",
+        "Java",
+        "项目",
+        "队列",
+        "排序"
+      ],
+      "summary": "要从1亿个数据中找出最大的前100个，通常可以使用堆（Heap）数据结构来实现，特别是最小堆（Min Heap）。以下是一种常见的方法：创建一个最小堆，并将前100个数据插入堆中。遍历剩余的数据，对于每个数据，如果它比堆顶的元素大，就将堆顶元素弹出，然后将当前数据插入堆中。继续遍历所有数据，不...",
+      "excerpt": "要从1亿个数据中找出最大的前100个，通常可以使用堆（Heap）数据结构来实现，特别是最小堆（Min Heap）。 以下是一种常见的方法： 创建一个最小堆，并将前100个数据插入堆中。 遍历剩余的数据，对于每个数据，如果它比堆顶的元素大，就将堆顶元素弹出，然后将当前数据插入堆中。 继续遍历所有数据，不断地维护堆，确保堆中保留的是最大的100个数据。 当遍历完成后，堆中的元素就是前100个最大的数据。 这种方法的时间复杂度是O(N * log(100))，其中N是数据总数，因为在堆中保持了100个元素。这比将所有数据排序的时间复杂度要低得多。 在Java中，你可以使用PriorityQueue（优先队列）来实现最小堆，PriorityQueue默认是最小堆，因此可以很方便地解决这个问题。以下是一个示例代码： 这段代码中，我们使用PriorityQueue来维护最小堆，然后遍历1亿个数据，将前100个最大的数据保存在堆中。最后，我们将堆中的元素取出，就得到了前100个最大的数据。"
+    },
+    {
+      "slug": "bareggdfa4qy0czh",
+      "title": "使用两个队列实现一个栈",
+      "url": "/tulingzhouyu/db22bv/bareggdfa4qy0czh",
+      "toc_path": [
+        "数据结构与算法",
+        "使用两个队列实现一个栈"
+      ],
+      "toc_level": 1,
+      "toc_index": 898,
+      "word_count": 571,
+      "updated_at": "2024-08-30T14:19:01.000Z",
+      "primary_category": "jvm-memory-gc",
+      "primary_category_name": "JVM内存与GC",
+      "related_categories": [
+        "jvm-memory-gc",
+        "mq-rabbitmq",
+        "algorithm"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "栈",
+        "队列",
+        "算法"
+      ],
+      "summary": "使用两个队列实现一个栈的关键在于模拟栈的“后进先出”（LIFO）特性。我们可以通过两个队列来实现栈的基本操作：push（入栈）、pop（出栈）、和peek（查看栈顶元素）。以下是一个实现示例：使用两个队列实现栈设计思路：使用两个队列queue1和queue2。push操作始终在非空队列中进行。...",
+      "excerpt": "使用两个队列实现一个栈的关键在于模拟栈的“后进先出”（LIFO）特性。我们可以通过两个队列来实现栈的基本操作： push （入栈）、 pop （出栈）、和 peek （查看栈顶元素）。以下是一个实现示例： 使用两个队列实现栈 设计思路 ： 使用两个队列 queue1 和 queue2 。 push 操作始终在非空队列中进行。 pop 和 peek 操作通过将元素从一个队列转移到另一个队列来实现，直到剩下最后一个元素。 代码示例 ： 说明 入栈 push ：将元素添加到非空队列中。 出栈 pop ：将元素从一个队列转移到另一个队列，直到剩下最后一个元素，该元素即为栈顶元素，将其移除并返回。 查看栈顶 peek ：类似于 pop ，但不移除最后一个元素，只返回其值。 检查空栈 isEmpty ：判断两个队列是否都为空。 这种实现方式通过两个队列来模拟栈的行为，虽然操作复杂度较高，但可以有效地展示如何利用队列实现栈的功能。"
+    },
+    {
+      "slug": "dovgvw2vx40m0e9x",
+      "title": "实现一个基于数组的栈（Stack）",
+      "url": "/tulingzhouyu/db22bv/dovgvw2vx40m0e9x",
+      "toc_path": [
+        "数据结构与算法",
+        "实现一个基于数组的栈（Stack）"
+      ],
+      "toc_level": 1,
+      "toc_index": 906,
+      "word_count": 561,
+      "updated_at": "2024-08-30T14:18:02.000Z",
+      "primary_category": "jvm-memory-gc",
+      "primary_category_name": "JVM内存与GC",
+      "related_categories": [
+        "jvm-memory-gc",
+        "algorithm",
+        "java-collections",
+        "mysql-index-transaction",
+        "performance-optimization"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "栈",
+        "算法",
+        "数组",
+        "链表",
+        "ArrayList",
+        "索引",
+        "容量"
+      ],
+      "summary": "实现一个基于数组的栈需要定义一个类来管理栈的基本操作，如入栈、出栈、查看栈顶元素等。以下是一个简单的基于数组的栈实现：基于数组的栈实现设计思路：使用一个数组来存储栈的元素。使用一个整数变量top来跟踪栈顶元素的索引。提供基本的栈操作：push（入栈）、pop（出栈）、peek（查看栈顶元素）、...",
+      "excerpt": "实现一个基于数组的栈需要定义一个类来管理栈的基本操作，如入栈、出栈、查看栈顶元素等。以下是一个简单的基于数组的栈实现： 基于数组的栈实现 设计思路 ： 使用一个数组来存储栈的元素。 使用一个整数变量 top 来跟踪栈顶元素的索引。 提供基本的栈操作： push （入栈）、 pop （出栈）、 peek （查看栈顶元素）、 isEmpty （检查栈是否为空）和 isFull （检查栈是否已满）。 代码示例 ： 说明 初始化 ：构造函数 ArrayStack(int capacity) 用于初始化栈的容量和数组。 入栈 push ：在栈顶插入一个元素，并更新 top 索引。 出栈 pop ：移除并返回栈顶元素，更新 top 索引。 查看栈顶 peek ：返回栈顶元素但不移除它。 检查空栈 isEmpty ：判断栈是否为空。 检查满栈 isFull ：判断栈是否已满。 获取栈大小 size ：返回当前栈中元素的数量。 这种基于数组的栈实现简单且高效，但需要注意栈的容量限制。如果需要动态调整栈的大小，可以考虑使用动态数组（如 ArrayList ）或链表来实现。"
+    },
+    {
+      "slug": "brrnhbgbqvgggba4",
+      "title": "讲讲你对线性表 - 栈和队列的理解",
+      "url": "/tulingzhouyu/db22bv/brrnhbgbqvgggba4",
+      "toc_path": [
+        "数据结构与算法",
+        "讲讲你对线性表 - 栈和队列的理解"
+      ],
+      "toc_level": 1,
+      "toc_index": 913,
+      "word_count": 372,
+      "updated_at": "2023-08-31T13:49:57.000Z",
+      "primary_category": "jvm-memory-gc",
+      "primary_category_name": "JVM内存与GC",
+      "related_categories": [
+        "jvm-memory-gc",
+        "mq-rabbitmq",
+        "algorithm",
+        "java-thread-pool",
+        "java-concurrency"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "栈",
+        "队列",
+        "算法",
+        "线程池",
+        "线程"
+      ],
+      "summary": "栈和队列是常见的线性表数据结构。栈采用后进先出的原则。最后插入的元素将第一个被删除或访问。栈主要有入栈和出栈两个操作。入栈将元素添加到栈的顶部，而出栈从栈的顶部移除元素，并返回该元素的值。栈在函数调用和递归、括号匹配、浏览器前进和后退等场景中得到广泛应用。比如函数调用和递归中，每个函数的参数、...",
+      "excerpt": "栈和队列是常见的线性表数据结构。 栈采用后进先出的原则。 最后插入的元素将第一个被删除或访问。 栈主要有入栈和出栈两个操作。入栈将元素添加到栈的顶部，而出栈从栈的顶部移除元素，并返回该元素的值。 栈在函数调用和递归、括号匹配、浏览器前进和后退等场景中得到广泛应用。比如函数调用和递归中，每个函数的参数、局部变量和返回地址都保存在栈中，使得函数能够正确返回。 队列采用先进先出的原则。 最先插入的元素将第一个被删除或访问。队列主要有入队和出队两个操作。入队将元素添加到队列的末尾，而出队从队列的头部移除元素，并返回该元素的值。 队列在广度优先搜索、缓冲区管理、线程池任务调度等场景中得到广泛应用。比如在广度优先搜索中，通过队列实现按层级遍历，常用于寻找最短路径； 总的来说，栈和队列的特点和操作使得它们在算法和软件开发中被广泛使用，能够提高数据的组织和操作效率。"
+    },
+    {
+      "slug": "gee9n3oo80xpsgvg",
+      "title": "JVM 调优，到底是调什么？",
+      "url": "/tulingzhouyu/db22bv/gee9n3oo80xpsgvg",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "JVM 调优，到底是调什么？"
+      ],
+      "toc_level": 2,
+      "toc_index": 956,
+      "word_count": 1509,
+      "updated_at": "2025-12-18T13:42:30.000Z",
+      "primary_category": "jvm-memory-gc",
+      "primary_category_name": "JVM内存与GC",
+      "related_categories": [
+        "jvm-memory-gc",
+        "performance-optimization",
+        "os-linux",
+        "java-concurrency",
+        "java-core"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "senior",
+        "expert",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "专家/P7+",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "JVM",
+        "GC",
+        "垃圾回收",
+        "内存模型",
+        "堆",
+        "栈",
+        "调优",
+        "性能",
+        "优化",
+        "压测",
+        "吞吐",
+        "瓶颈",
+        "并发",
+        "Java"
+      ],
+      "summary": "Java 虚拟机（JVM）是一个高度复杂的运行时环境，其性能表现取决于内存管理、垃圾回收算法以及即时编译器的协同工作。对于资深开发者而言，调优不应止步于对启动参数的试错，而应建立对底层机制的深刻理解。本文将结合可视化模型，深入剖析影响 Java 性能的四大核心维度。1. The Memory",
+      "excerpt": "Java 虚拟机（JVM）是一个高度复杂的运行时环境，其性能表现取决于内存管理、垃圾回收算法以及即时编译器的协同工作。对于资深开发者而言，调优不应止步于对启动参数的试错，而应建立对底层机制的深刻理解。 本文将结合可视化模型，深入剖析影响 Java 性能的四大核心维度。 1. The Memory 在并发编程中，理解 JVM 的内存模型（JMM）是性能优化的基石。如上图所示，我们可以将内存区域划分为 线程私有（Stack）与线程共享（Heap） 两大部分。 栈内存（Stack）：无锁的高速通道 对应图中左侧的独立工作区。每个线程在创建时都会分配私有的虚拟机栈，用于存储局部变量、操作数栈和方法出口信息。 技术特性： 栈内存的分配与回收严格遵循方法调用的生命周期（LIFO），不存在线程安全问题，因此 不需要加锁 ，访问速度极快。 优化启示： 应当充分利用 栈上分配（Stack Allocation）与标量替换 技术。如果一个对象经过逃逸分析（Escape Analysis）被判定未逃逸出当前方法，JVM 会直接在栈上分配该对象，从而完全避免堆内存的分配开销和 GC 压力。 堆内存（Heap）：高并发的竞争热点 对应图中右侧的共享区域。所有的对象实例均在此分配。 技术特性： 由于堆是所有线程共享的，当多线程并发分配内存或修改共享对象时，必须引入 锁（Lock） 或 CAS（Compare-And-Swap）机制来保证数据一致性。这正是系统吞吐量下降的主要诱因。 2. The Cleanup Java 的自动内存管理依赖于垃圾回收器（GC），但这一便利机制伴随着不可忽视的运行时开销—— Stop-The-World (STW) 。 分代收集理论（Generational Hypothesis） JVM 堆内存的设计基于一个经验法则：绝大多数对象都是&quot;朝生夕死&quot;的。因此，堆被划分为 年轻代（Young Gen） 和 老年代（Old Gen） 。 Minor GC ：发生于年轻代，频率高，速度快，主要清理临时对象。 Major/Full GC ：涉及老年代，通常采用标记-整理（Mark-Compact）算法，耗时较长，会导致显著的系统停顿。 吞吐量 vs 延迟 如图所示，GC 线程（清洁工）介入时，业务线程往往需要暂停。调优的本质是在 吞吐量 （业务运行时间 / 总时间）和 低延迟 （单次 STW 的最大停顿）之间寻找平衡点。 优化启示： 理想的 GC 模式是让对象在年轻代即被回收。如果大量短期对象因 Survivor 区过小而过早晋升（Promotion）到老年代，将触发频繁的 Full GC，这是性能急剧下降的典型特征。 3. The Speed Java 常被误解为&quot;解释执行&quot;的语言，实际上，现代 JVM 采用的是 解释器与编"
+    },
+    {
+      "slug": "ehkrth2k904dhs4s",
+      "title": "JVM 垃圾回收的范式转移：从 CMS 到 G1 的底层进化",
+      "url": "/tulingzhouyu/db22bv/ehkrth2k904dhs4s",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "JVM 垃圾回收的范式转移：从 CMS 到 G1 的底层进化"
+      ],
+      "toc_level": 2,
+      "toc_index": 970,
+      "word_count": 1617,
+      "updated_at": "2025-12-09T12:22:54.000Z",
+      "primary_category": "jvm-memory-gc",
+      "primary_category_name": "JVM内存与GC",
+      "related_categories": [
+        "jvm-memory-gc",
+        "java-core",
+        "os-linux",
+        "algorithm",
+        "performance-optimization"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "senior",
+        "expert"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "专家/P7+"
+      ],
+      "keywords": [
+        "JVM",
+        "GC",
+        "垃圾回收",
+        "堆",
+        "调优",
+        "Java",
+        "线程",
+        "内存",
+        "算法",
+        "性能",
+        "吞吐"
+      ],
+      "summary": "在 Java 性能调优的历史长河中，从 CMS (Concurrent Mark Sweep) 到 G1 (Garbage-First) 的过渡，不仅仅是算法的升级，更是一次内存管理思想的范式转移。本文将结合可视化的架构图，深入剖析这两代垃圾回收器在内存布局、算法内核及执行模型上的本质差异。1...",
+      "excerpt": "在 Java 性能调优的历史长河中，从 CMS (Concurrent Mark Sweep) 到 G1 (Garbage-First) 的过渡，不仅仅是算法的升级，更是一次内存管理思想的 范式转移 。本文将结合可视化的架构图，深入剖析这两代垃圾回收器在内存布局、算法内核及执行模型上的本质差异。 1. 核心冲突：物理分代 vs Region 化 在 JDK 8 时代，CMS 是低延迟场景的霸主；但随着堆内存突破 32GB 甚至更大，CMS 的弊端开始显现。JDK 9 之后，G1 正式成为默认收集器，标志着 JVM 进入了“大堆、可预测”的新时代。 2. 内存布局：打破僵化的边界 CMS 的痛点：僵化的物理隔离 CMS 沿用了传统的物理分代模型。年轻代（Young）和老年代（Old）是连续的物理内存块，其边界在启动时（或通过 -Xmn ）一旦划定，就难以动态调整。 扩容难题 ：如果老年代空间不足，必须压缩年轻代空间，这种调整往往伴随着高昂的开销。 连续性要求 ：为了保证指针碰撞（Bump Pointer）分配的高效性，必须要求内存地址连续，这限制了内存管理的灵活性。 G1 的革新：逻辑分代与 Region G1 将堆内存切分为数千个大小相等（1MB~32MB）的 Region 。 角色动态分配 ：一个 Region 上一秒可能是 Eden 区，回收净空后，下一秒就可以被分配为 Old 区。 化整为零 ：这种设计彻底打破了物理隔离，使得 G1 能够根据当前的吞吐量或停顿时间目标，动态调整年轻代和老年代的比例（ -XX:G1NewSizePercent ），从而从容应对业务流量的波峰波谷。 3. 算法内核：彻底终结内存碎片 CMS 的隐患：标记-清除（Mark-Sweep） CMS 的核心算法是“标记-清除”。它只负责把垃圾对象标记出来并清理掉， 不进行内存整理 。 碎片化 ：随着时间推移，老年代会像瑞士奶酪一样布满孔洞。 大对象分配失败 ：当一个大对象需要分配时，虽然总剩余空间足够，但找不到一块连续的内存，被迫触发 Full GC (Serial Old) 。这会导致长时间的 STW（Stop-The-World），是生产环境的噩梦。 G1 的解法：标记-复制（Mark-Compact/Copying） G1 在 Region 之间采用的是“复制”算法。 Evacuation（转移） ：G1 并不是原地清理垃圾，而是将存活对象从“From Region”复制到空的“To Region”。 天然整理 ：在复制的过程中，对象会紧凑排列。因此， G1 每次回收完毕，都在局部完成了内存整理 。这使得 G1 几乎不会因为碎片化问题而触发 Full GC，极大地提升了长期运行的稳定性。 4. 执行模型：建立可预测的 SLA 软实时（Soft Real-Time）的承诺 CM"
+    },
+    {
+      "slug": "pcamdcyypuevq8dv",
+      "title": "全国 14 亿人，怎么统计重名最多的前 100 个姓名",
+      "url": "/tulingzhouyu/db22bv/pcamdcyypuevq8dv",
+      "toc_path": [
+        "高频面试问题",
+        "fox老师",
+        "全国 14 亿人，怎么统计重名最多的前 100 个姓名"
+      ],
+      "toc_level": 2,
+      "toc_index": 1086,
+      "word_count": 2421,
+      "updated_at": "2025-10-10T07:34:43.000Z",
+      "primary_category": "jvm-memory-gc",
+      "primary_category_name": "JVM内存与GC",
+      "related_categories": [
+        "jvm-memory-gc",
+        "os-linux",
+        "algorithm",
+        "resume-project",
+        "project-system-design"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "堆",
+        "内存",
+        "文件",
+        "数组",
+        "链表",
+        "排序",
+        "查找",
+        "面试官",
+        "方案"
+      ],
+      "summary": "最近有小伙伴在面试阿里，遇到这个面试题。全国14亿人，统计出重名最多的前100个姓名小伙伴支支吾吾的说了几句，面试官不满意，面试挂了。 TOP N 统计的面试题，是一道非常常见的题目，大家一定要掌握好。1. 问题描述我们的目标是找出重名人数最多的前100个姓名。为此，我们需要设计一种高效的方法...",
+      "excerpt": "最近有小伙伴在面试阿里，遇到这个面试题。 全国14亿人，统计出重名最多的前100个姓名 小伙伴支支吾吾的说了几句，面试官不满意，面试挂了。 TOP N 统计的面试题，是一道非常常见的题目，大家一定要掌握好。 ​ 1. 问题描述 我们的目标是找出重名人数最多的前100个姓名。为此，我们需要设计一种高效的方法来统计每个名字的出现次数，并快速找到出现次数最多的前100个名字。 2. 问题分析 要实现这个目标，我们需要两个步骤： 选择一种高效的数据结构来统计每个名字出现的次数。 快速找到出现次数最多的前100个名字。 数据结构选择 在选择数据结构时，我们考虑以下几种常见的选项： 数组和链表 ：由于内存浪费和查找效率低下，这些结构不适合处理动态长度和多样性的字符串集合。 哈希表 ：其插入和查找的时间复杂度为O(1)，但极端情况下可能造成冲突，且无法共享前缀。 平衡二叉搜索树 ：支持快速插入和查找，但对字符串操作效率较低。 前缀树（Trie） ：通过共享前缀节点，能够有效节省空间并提高效率，适合存储姓名。 前缀树数据结构演示网站 经过分析，我们选择使用前缀树（Trie）来统计姓名的出现次数。 如何快速筛选出Top 100？ 在确定使用Trie树后，我们需要设计一个高效的方式来筛选出出现次数最多的前100个姓名。直接排序虽然简单，但对大数据量的处理会非常耗时，因此我们采用小顶堆来优化这个过程。 小顶堆数据结构演示网站 使用小顶堆的步骤如下： 初始化一个大小为100的小顶堆。 遍历每个姓名及其出现次数： 如果当前堆的大小小于100，直接将姓名及其出现次数插入堆中。 如果当前姓名的出现次数大于堆顶元素的次数，则替换堆顶元素。 遍历结束后，堆中将包含重名人数最多的前100个姓名。 ​ 3. 解决方案 所以解决这个问题可以使用前缀树 + 小顶堆 以下是Trie树和小顶堆的代码实现： 4. 问题改进：内存受限不超过2G 上面的问题进行改进一下, 如果我们对内存有一个限制,比如:要求内存的使用不能超过2G，怎么解决。 注意，这里的内存受限，尽量使用磁盘处理。 这 在内存受限和需要高效磁盘操作的情况下， 哈希映射 相较于 Trie树 更为合适。Trie树是根据字符粒度组织的，进行磁盘读取时效率较低，而且需要更复杂的磁盘操作。而哈希映射则是基于键值对存储，处理时能以较高的效率进行磁盘读取，代码实现也相对简洁明了。 解决方案 针对大规模数据的处理，我们可以采用分治策略，利用外部排序和哈希映射的方法。具体步骤如下： 分块读取数据 ：将14亿条记录分成多个较小的块，每次读取一部分数据到内存中进行处理。 哈希映射统计词频 ：对每个数据块进行哈希映射，统计每个姓名出现的次数，并将结果写入到磁盘文件。 合并词频统计结果 ：读取所有中间文件，合并各个块的词频统计结果，得到全局的频次分布。 使用小顶堆找"
+    },
+    {
+      "slug": "gnhzou1qlowc3zse",
+      "title": "19、面试官：先不考虑机器配置，垃圾回收器结合业务特性，到底怎么选 ？",
+      "url": "/tulingzhouyu/db22bv/gnhzou1qlowc3zse",
+      "toc_path": [
+        "高频面试问题",
+        "赋文老师",
+        "19、面试官：先不考虑机器配置，垃圾回收器结合业务特性，到底怎么选 ？"
+      ],
+      "toc_level": 2,
+      "toc_index": 1284,
+      "word_count": 2963,
+      "updated_at": "2025-11-24T13:39:52.000Z",
+      "primary_category": "jvm-memory-gc",
+      "primary_category_name": "JVM内存与GC",
+      "related_categories": [
+        "jvm-memory-gc",
+        "project-system-design",
+        "java-concurrency",
+        "java-core",
+        "resume-project"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "junior"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "初级/1-3年"
+      ],
+      "keywords": [
+        "JVM",
+        "GC",
+        "垃圾回收",
+        "堆",
+        "方案",
+        "高并发",
+        "秒杀",
+        "订单",
+        "支付",
+        "库存",
+        "并发",
+        "多线程",
+        "Java"
+      ],
+      "summary": "“先别谈 JVM 参数和机器配置 —— 结合你的业务，到底怎么选垃圾回收器？”相信不少 Java 开发者面试到 JVM 环节时，都会被这个问题问懵。明明背了一堆 Parallel、G1、ZGC 的参数配置，却被面试官一句话拉回 “业务本质”，瞬间语塞。其实面试官的潜台词很明确：你不是 “GC ...",
+      "excerpt": "“先别谈 JVM 参数和机器配置 —— 结合你的业务，到底怎么选垃圾回收器？” 相信不少 Java 开发者面试到 JVM 环节时，都会被这个问题问懵。明明背了一堆 Parallel、G1、ZGC 的参数配置，却被面试官一句话拉回 “业务本质”，瞬间语塞。 其实面试官的潜台词很明确： 你不是 “GC 参数背诵机”，而是能结合业务痛点做技术决策的工程师 。机器配置只是优化项，业务特性才是 GC 选型的根基 —— 这正是高级工程师和初级工程师的核心差距，也是这道题的考核核心。 一、面试官到底在考什么？（直击核心） 很多人会疑惑：“GC 选型怎么可能抛开机器配置？” 面试官要的不是 “忽略配置”，而是 先抓住最核心的矛盾 —— 业务的核心诉求是什么？ 是追求单位时间处理更多任务（高吞吐）？还是要求响应时间绝对稳定（低延迟）？或是高并发下不能有明显停顿（高并发低停顿）？ 不同 GC 的设计目标本就为了解决不同业务痛点： Parallel GC：为 “高吞吐” 而生，牺牲短停顿换效率； G1 GC：为 “低延迟” 平衡，在吞吐和停顿间找最优解； ZGC/Shenandoah：为 “高并发低停顿” 兜底，毫秒级停顿扛住峰值。 面试考的，正是你 “把业务诉求翻译成技术选型” 的逻辑能力 —— 这比记 100 个 JVM 参数更重要。 二、3 个核心业务场景 + GC 选型实战（含代码 + 配图建议） 下面我们用 “业务场景→冲突痛点→选型方案→代码验证→原理拆解” 的逻辑，把 GC 选型讲透。每个场景都对应真实业务，直接可用于面试作答。 场景 1：高吞吐优先 —— 后台批处理、数据同步、报表生成 业务描述 每天凌晨 3 点执行数据同步任务，需处理 1000 万条用户数据，转换后写入数据库； 不在乎单次 GC 停顿（哪怕 200ms），但要求 “总处理时间越短越好”； 对象特征：批量创建、批量回收，以短生命周期对象为主。 冲突痛点 如果选低延迟的 G1，会因为频繁的增量回收消耗 CPU，导致总吞吐下降 —— 批处理业务不需要 “响应快”，只需要 “干活多、干活快”。 选型方案：Parallel Scavenge + Parallel Old（并行 GC 组合） 原理：新生代用 Parallel Scavenge（多线程并行回收），老年代用 Parallel Old（多线程并行 Full GC），最大化利用 CPU 核心，减少垃圾回收的总耗时，优先保证吞吐量。 核心优势：单位时间内处理的任务最多，适合 “吞吐量为王” 的后台任务。 Java 代码示例（模拟批处理场景） java 运行 场景 2：低延迟优先 —— 金融交易、实时接口、支付系统 业务描述 电商支付接口，每秒处理 1000 + 请求，响应时间要求 < 50ms； 绝对不能出现长停顿（比如 500ms 的 Full G"
+    },
+    {
+      "slug": "umekhpvq6w1hegwk",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/umekhpvq6w1hegwk",
+      "toc_path": [
+        "高频面试问题",
+        "赋文老师",
+        "19、面试官：先不考虑机器配置，垃圾回收器结合业务特性，到底怎么选 ？",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1285,
+      "word_count": 1505,
+      "updated_at": "2025-11-28T13:56:48.000Z",
+      "primary_category": "jvm-memory-gc",
+      "primary_category_name": "JVM内存与GC",
+      "related_categories": [
+        "jvm-memory-gc",
+        "project-system-design",
+        "java-concurrency",
+        "resume-project",
+        "computer-network"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "JVM",
+        "GC",
+        "垃圾回收",
+        "堆",
+        "调优",
+        "方案",
+        "高并发",
+        "秒杀",
+        "订单",
+        "支付",
+        "库存",
+        "并发"
+      ],
+      "summary": "📎index (7).html面试官：结合你的业务，到底怎么选垃圾回收器？链接: https://pan.baidu.com/s/1K9U8L4E19NRL3Q64e1nL_Q?pwd=rhwa 提取码: rhwa （开头镜头对准 PPT 第 1 页封面，手指点住 “灵魂拷问” 文字，语气带...",
+      "excerpt": "面试官：结合你的业务，到底怎么选垃圾回收器？ 链接: https://pan.baidu.com/s/1K9U8L4E19NRL3Q64e1nL_Q?pwd=rhwa 提取码: rhwa ​ （开头镜头对准 PPT 第 1 页封面，手指点住 “灵魂拷问” 文字，语气带共鸣）兄弟们！有没有过这种经历？面试聊 JVM，面试官突然一句 “结合你的业务，到底怎么选垃圾回收器？” 直接给你问懵了！背了一堆垃圾回收器的概念，就是不知道如何联系业务讲方案选择？（停顿 1 秒）别慌！今天咱就用5 分钟的时间把 垃圾回收器选型讲透了，下次再被问，你直接照着我的逻辑说，面试保过没问题。 （转场 PPT 第 2 页，手指划左侧逻辑链，语速放缓）回答之前，咱先得搞懂面试官的小心思 —— 他要的绝对不是你背了多少垃圾回收器的概念，而是能结合具体的业务特性选择合适的垃圾回收器！你看左边这个逻辑链：先理解业务的特性→再确定业务的核心诉求→最后给合垃圾回收器的特性进行选型，这三步走对了，选型就不会错！ （再指向右侧三大 GC 目标，手势配合）再看右边，3 个垃圾回收器的目标写得明明白白：Parallel 是 “干活快”，追求的是单位时间处理最多任务，允许 200ms + 停顿；G1 是 “稳”，追求的是响应时间不能乱，停顿要控制在 50ms 内；ZGC 更狠，“又快又稳抗造”，追求的是毫秒级停顿，高并发的能力 —— 这就是咱后面选型的根据！ （转场 PPT 第 3 页场景总览，镜头拉近表格）来，翻到第 3 页，直接上干货！这页有 3 个不同的业务场景对应 3 种不同的GC选择，分别是：批处理用 Parallel，支付用 G1，秒杀用 ZGC！但光记结论不行啊，咱还得知道 “为啥这么选”，接下来我们拆细了讲讲其中的逻辑！ （转场 PPT 第 4 页场景 1，手指点左侧业务信息）第一个问题：你们公司每天凌晨跑 1000 万条数据的报表，就想 “总耗时越短越好”，中间卡 200ms 也能接受 —— 这种情况该选啥？ （再指向右侧原理区，语气肯定）答案就在右边！选 Parallel GC！为什么？因为该垃圾回器的年轻代和老年代都是采用多线程并发回收，不搞那些花里胡哨的并发操作，把 CPU 利用率拉满！再看下面代码，批量创建 1000 万对象，处理完就清，正好匹配 Parallel “批量回收效率高” 的特点，跑报表速度直接拉满！ （转场 PPT 第 5 页场景 2，表情严肃提问题）再翻第 5 页，第二个问题：电商支付接口，每秒 1000 + 请求，用户付完钱一直转圈，超过 50ms 就投诉 —— 这种 “不能卡” 的场景，还能选 Parallel 吗？ （摇头，指向 G1 原理区）当然不行！Parallel 一触发 Full GC 就卡几百毫秒，订单全黄了！这时候得选 G1 GC！你看它的原理：把"
+    },
+    {
+      "slug": "hq2qy2oacfgllmri",
+      "title": "12、面试官：API网关TP99要50ms，你敢用G1吗？我的回答让他沉默了...",
+      "url": "/tulingzhouyu/db22bv/hq2qy2oacfgllmri",
+      "toc_path": [
+        "高频面试问题",
+        "赋文老师",
+        "12、面试官：API网关TP99要50ms，你敢用G1吗？我的回答让他沉默了..."
+      ],
+      "toc_level": 2,
+      "toc_index": 1294,
+      "word_count": 3322,
+      "updated_at": "2025-11-02T14:38:50.000Z",
+      "primary_category": "jvm-memory-gc",
+      "primary_category_name": "JVM内存与GC",
+      "related_categories": [
+        "jvm-memory-gc",
+        "observability-troubleshooting",
+        "resume-project",
+        "project-system-design",
+        "os-linux"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "expert",
+        "campus"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "专家/P7+",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "JVM",
+        "GC",
+        "垃圾回收",
+        "堆",
+        "栈",
+        "调优",
+        "监控",
+        "告警",
+        "日志",
+        "CPU",
+        "项目",
+        "面试官"
+      ],
+      "summary": "【开篇：一个让80%候选人翻车的\"送命题\"】\"兄弟们，今天聊一个让无数技术人栽跟头的面试场景。\"上周，我的一个学员发来私信，说他在某大厂二面被一道题干懵了。面试官问他：\"假设你要设计一个微服务API网关，承载所有外部流量。它的特点是：请求量巨大、处理逻辑轻量、对响应时间极其敏感，TP99要在5...",
+      "excerpt": "【开篇：一个让80%候选人翻车的&quot;送命题&quot;】 &quot;兄弟们，今天聊一个让无数技术人栽跟头的面试场景。&quot; 上周，我的一个学员发来私信，说他在某大厂二面被一道题干懵了。面试官问他： &quot;假设你要设计一个微服务API网关，承载所有外部流量。它的特点是：请求量巨大、处理逻辑轻量、对响应时间极其敏感，TP99要在50ms内。现在，你会选哪款垃圾回收器？怎么调优？&quot; 他当时的回答是：&quot;用G1，因为它是默认的，而且延迟低。&quot; 面试官追问：&quot;G1的MaxGCPauseMillis你会设多少？如果频繁达不到目标怎么办？为什么不考虑ZGC？&quot; 他支支吾吾，答不上来。 这道题的&quot;杀伤力&quot;在哪？它看似在问GC，实则是在拷问你三个致命问题： 你是否真正理解&quot;低延迟&quot;这三个字背后的血与泪？ 你是否知道G1、ZGC在真实高并发场景下会遇到什么&quot;坑&quot;？ 你是否具备从理论到实战、从选型到调优的完整闭环能力？ 今天，我就带你把这道题彻底打通。 ​ 【第一幕：冲突漩涡——当&quot;快&quot;遇上&quot;稳&quot;】 首先，我们必须精准地刻画出这个场景的&quot;人设&quot;： 场景特征： 流量洪峰 ：作为所有请求的入口，瞬时QPS可能达到数万甚至数十万。 对象&quot;朝生夕死&quot; ：每个HTTP请求进来，网关会创建一系列临时对象——Request、Response、Header、Token、Context...这些对象在请求结束后立刻变成垃圾。 看一段典型的网关处理代码： 问：这段代码有什么特点？ 答：对象密集创建、生命周期极短，典型的&quot;用完即扔&quot;模式。 在这种模式下，JVM的Eden区会被疯狂填满，Young GC会非常频繁。而这里就藏着第一个 致命冲突 ： 冲突点1：频繁的Young GC本身没问题，但每次Young GC都会产生短暂的STW（Stop-The-World）。如果这个STW时间不可控，就会直接导致请求延迟飙升，TP99瞬间爆表。 【第二幕：疑问深挖——为什么默认的不一定是最好的？】 很多同学的第一反应是：&quot;JDK 11之后默认是G1，那就用G1呗！&quot; 这个思路没错，但如果你只停留在这个层次，面试官会认为你只是&quot;背八股文&quot;。真正的高手，会进一步思考： 问：G1在这个场景下，会遇到什么&quot;坑&quot;？ 答：关键在于&quot;可预测停顿&quot;这个承诺能否兑现。 G1有个核心参数 -XX:MaxGCPauseMillis ，它允许你设定一个期望的STW目标时间。比如： 这看起来很美好：我告诉G1&quot;每次停顿别超过"
+    },
+    {
+      "slug": "apgint204rl2wmb3",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/apgint204rl2wmb3",
+      "toc_path": [
+        "高频面试问题",
+        "赋文老师",
+        "12、面试官：API网关TP99要50ms，你敢用G1吗？我的回答让他沉默了...",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1295,
+      "word_count": 1695,
+      "updated_at": "2025-11-07T11:00:48.000Z",
+      "primary_category": "jvm-memory-gc",
+      "primary_category_name": "JVM内存与GC",
+      "related_categories": [
+        "jvm-memory-gc",
+        "computer-network",
+        "project-system-design",
+        "performance-optimization",
+        "observability-troubleshooting"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "expert"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "专家/P7+"
+      ],
+      "keywords": [
+        "GC",
+        "垃圾回收",
+        "堆",
+        "调优",
+        "HTTP",
+        "方案",
+        "高并发",
+        "优化",
+        "QPS",
+        "监控",
+        "告警",
+        "日志"
+      ],
+      "summary": "📎index.html链接: https://pan.baidu.com/s/1Cc9_NJvhgJpa_QbYS65EnQ?pwd=antw 提取码: antw 【开场 - 第1页】各位同学，大家好，我是赋文老师！今天跟大家聊一个让80%候选人都翻车的面试送命题。",
+      "excerpt": "链接: https://pan.baidu.com/s/1Cc9_NJvhgJpa_QbYS65EnQ?pwd=antw 提取码: antw 【开场 - 第1页】 各位同学，大家好，我是赋文老师！今天跟大家聊一个让80%候选人都翻车的面试送命题。 上周，我的一个学员去某大厂面试，被问到这样一个问题： &quot;API网关要求TP99在50毫秒以内，垃圾回收器怎么选择？&quot; 他当时的回答是：&quot;用G1，因为它是默认的，延迟也低。&quot; 结果面试官追问：&quot;MaxGCPauseMillis你会设多少？达不到目标怎么办？为什么不考虑ZGC？&quot; 他直接懵了，支支吾吾答不上来。 这道题为什么这么狠？因为它在考你三件事： 你真的懂&quot;低延迟&quot;吗？ 你知道G1和ZGC的坑在哪吗？ 你有没有从选型到调优的完整能力？ 今天，我就带你把这个问题彻底打通！想要完整的技术文章和PPT资料的，一定要看到最后！ （翻页到第2页） 【问题拆解 - 第2页】 好，我们先来看看API网关到底是个什么样的场景。 首先，流量洪峰 ！作为所有外部请求的入口，QPS可能达到数十万级别，这压力可想而知。 其次，对象朝生夕死 ！每个HTTP请求进来，网关会创建一堆临时对象：Request、Response、Token、Context……处理完马上就变成垃圾。 你看这张图，典型的&quot;用完即扔&quot;模式，对吧？ 所以核心矛盾在哪？ 频繁的Young GC会产生STW停顿，也就是Stop-The-World，整个应用暂停！如果这个停顿时间不可控，TP99直接爆表！ 这就是第一个致命冲突点。 （翻页到第3页） 【深挖问题 - 第3页】 很多同学第一反应：&quot;JDK 11之后默认是G1，那就用G1呗！&quot; 但问题来了，G1真的靠谱吗？ G1有个核心参数叫MaxGCPauseMillis，你可以告诉它：&quot;每次停顿别超过20毫秒。&quot; 听起来很美好对吧？但现实是残酷的！ 你看这个真实的GC表现： 正常情况下，Young GC确实只要20毫秒 但流量一突增，Mixed GC就飙到150毫秒 更可怕的是，老年代一旦填满，Full GC直接2.3秒！ 为什么会这样？ 因为G1的&quot;可预测&quot;只是&quot;尽力而为&quot;，不是一定能做到！ 在高并发场景下，对象晋升速度超过老年代回收速度，G1就会失控，从而触发灾难性的Full GC！ 这就是第二个冲突点： G1在极端场景下会击穿你的TP99目标！ （翻页到第4页） 【解决方案1 - 第4页】 那怎么办？我给你两套方案。 第一套：驯服G1，让它不要失控！ 核心策略就一句话： 让对象尽可能死在年轻代！ 具体怎么做？三步走： 第一，加大堆内存！ 不要吝"
+    }
+  ]
+}

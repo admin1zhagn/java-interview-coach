@@ -1,0 +1,628 @@
+{
+  "id": "mq-rabbitmq",
+  "name": "RabbitMQ",
+  "aliases": [
+    "RabbitMQ",
+    "交换机",
+    "队列",
+    "死信",
+    "确认机制"
+  ],
+  "count": 14,
+  "total_word_count": 20020,
+  "articles": [
+    {
+      "slug": "qrdqrru7h9zzgaxg",
+      "title": "Kafka与RabbitMQ相比有什么优势？",
+      "url": "/tulingzhouyu/db22bv/qrdqrru7h9zzgaxg",
+      "toc_path": [
+        "Kafka",
+        "Kafka与RabbitMQ相比有什么优势？"
+      ],
+      "toc_level": 1,
+      "toc_index": 683,
+      "word_count": 5102,
+      "updated_at": "2026-01-22T05:19:16.000Z",
+      "primary_category": "mq-rabbitmq",
+      "primary_category_name": "RabbitMQ",
+      "related_categories": [
+        "mq-rabbitmq",
+        "mq-kafka",
+        "mq-general",
+        "performance-optimization",
+        "java-core"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle",
+        "senior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "RabbitMQ",
+        "交换机",
+        "队列",
+        "Kafka",
+        "Topic",
+        "Partition",
+        "Consumer",
+        "MQ",
+        "消息队列",
+        "性能",
+        "吞吐",
+        "瓶颈",
+        "Java"
+      ],
+      "summary": "1) 核心定位与架构差异了解两种消息系统的设计初衷是理解它们优势差异的关键。Kafka 的定位：分布式提交日志与流处理平台核心概念：Kafka 最初设计为高吞吐量的分布式提交日志（Distributed Commit Log）。它将所有消息视为不可变、有序的事件流，并持久化到磁盘上。数据模型：...",
+      "excerpt": "1) 核心定位与架构差异 了解两种消息系统的设计初衷是理解它们优势差异的关键。 Kafka 的定位：分布式提交日志与流处理平台 核心概念 ：Kafka 最初设计为高吞吐量的分布式提交日志（Distributed Commit Log）。它将所有消息视为不可变、有序的事件流，并持久化到磁盘上。 数据模型 ：以“主题（Topic）”为单位，每个主题又分为多个“分区（Partition）”。消息一旦写入分区，其在分区内的顺序就是固定的，且不可更改。 持久化 ：消息默认持久化到磁盘，并支持配置保留策略（按时间或大小），允许消费者在不同时间点回溯历史消息。 伸缩性 ：通过分区的概念实现天然的水平扩展。生产者可以将消息分发到不同的分区，消费者组中的每个消费者负责消费一个或多个分区，实现高并发处理。 主要优势 ：高吞吐量、低延迟、强持久性、天然的并行处理能力、事件流处理能力（Kafka Streams）。 RabbitMQ 的定位：通用消息代理与灵活路由 核心概念 ：RabbitMQ 是一个传统的消息代理（Message Broker），实现了 AMQP（Advanced Message Queuing Protocol）协议。它注重消息的可靠投递、灵活路由和复杂的消息模式。 数据模型 ：消息发送到“交换机（Exchange）”，交换机根据“绑定（Binding）”规则将消息路由到一个或多个“队列（Queue）”。消费者从队列中获取消息。 持久化 ：支持消息持久化到磁盘，队列也可以持久化，确保消息在 Broker 重启后不丢失。 伸缩性 ：通过集群、镜像队列、Federation 和 Shovel 等机制实现高可用和一定的扩展性。 主要优势 ：灵活的路由能力、支持多种消息模式（点对点、发布/订阅、请求/响应）、可靠投递保障、易于理解和上手。 对比要点总结 数据存储 ： Kafka：持久化的、可回溯的日志。消息在被消费后不会立即删除，可多次消费。 RabbitMQ：消息一旦被消费者确认，通常就会从队列中删除。 扩展方式 ： Kafka：通过增加分区和 Broker 来线性扩展吞吐量和存储。 RabbitMQ：通过增加节点、镜像队列或集群来提高可用性和处理能力，但海量数据流处理能力不如 Kafka。 核心能力 ： Kafka：事件流、大数据处理、日志聚合、数据管道、实时分析。 RabbitMQ：任务队列、应用集成、RPC 模式、通知系统、优先级队列。 2) 传递语义与可靠性（保障消息不丢不重） 在分布式系统中，消息的可靠性至关重要。 Kafka 的传递语义 At-least-once（至少一次） ：这是 Kafka 的默认交付语义。生产者发送消息后，如果 Broker 成功接收并持久化，但生产者未收到确认或网络超时，生产者可能会重试，导致消息重复。消费者也可能在处理消息后崩溃"
+    },
+    {
+      "slug": "gmmoedg89h3z6576",
+      "title": "💎RabbitMQ面试题合集",
+      "url": "/tulingzhouyu/db22bv/gmmoedg89h3z6576",
+      "toc_path": [
+        "RabbitMQ",
+        "💎RabbitMQ面试题合集"
+      ],
+      "toc_level": 1,
+      "toc_index": 694,
+      "word_count": 4435,
+      "updated_at": "2025-04-09T12:49:39.000Z",
+      "primary_category": "mq-rabbitmq",
+      "primary_category_name": "RabbitMQ",
+      "related_categories": [
+        "mq-rabbitmq",
+        "mq-general",
+        "mq-kafka",
+        "performance-optimization",
+        "project-system-design"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "middle",
+        "senior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "RabbitMQ",
+        "交换机",
+        "队列",
+        "死信",
+        "确认机制",
+        "MQ",
+        "消息队列",
+        "Topic",
+        "Consumer",
+        "性能",
+        "优化",
+        "容量"
+      ],
+      "summary": "1. RabbitMQ交换机类型1.1. direct(直连交换机)作为默认交换机。路由键与队列名完全匹配交换机，此种类型交换机，通过RoutingKey路由键将交换机和队列进行绑定， 消息被发送到exchange时，需要根据消息的RoutingKey，来进行匹配，只将消息发送到完全匹配到此R...",
+      "excerpt": "RabbitMQ交换机类型 direct( 直连交换机 ) 作为 默认 交换机。路由键与队列名完全匹配交换机，此种类型交换机，通过RoutingKey路由键将交换机和队列进行绑定， 消息被发送到exchange时，需要根据消息的RoutingKey，来进行匹配，只将消息发送到完全匹配到此RoutingKey的队列。 比如：如果一个队列绑定到交换机要求路由键为“ key ”，则只转发RoutingKey标记为“key”的消息，不会转发&quot;key1&quot;，也不会转发“key.1”等等。它是完全匹配、单播的模式 同一个key可以绑定多个queue队列；当匹配到key1时，queue1和queue2都可以收到消息 fanout( 扇型交换机，广播 ) Fanout，扇出类型交换机，此种交换机，会将消息分发给所有绑定了此交换机的队列，此时RoutingKey参数无效。 fanout类型交换机下发送消息一条，无论RoutingKey是什么，直接 广播消息 ，queue1,queue2,queue3,queue4都可以收到消息 topic( 主题交换机 ) Topic，主题类型交换机，此种交换机与Direct类似，也是需要通过routingkey路由键进行匹配分发，区别在于Topic可以进行模糊匹配，Direct是完全匹配。 Topic中，将routingkey通过&quot;.&quot;来分为多个部分 &quot;*&quot;：代表一个部分 &quot;#&quot;：代表0个或多个部分( 如果绑定的路由键为 &quot;#&quot; 时，则接受所有消息，因为路由键所有都匹配 ) 然后发送一条信息，routingkey为&quot;key1.key2.key3.key4&quot;，那么根据&quot;.&quot;将这个路由键分为了4个部分，此条路由键，将会匹配： key1.key2.key3.*：成功匹配，因为 * 可以代表一个部分 key1.# ：成功匹配，因为#可以代表0或多个部分 *.key2.*.key4： 成功匹配，因为第一和第三部分分别为key1和key3，且为4个部分，刚好匹配 #.key3.key4：成功匹配，#可以代表多个部分，正好匹配中了我们的key1和key2 如果发送消息routingkey为&quot;key1&quot;，那么将只能匹配中 key1.#，#可以代表0个部分 ​ headers( 头部交换机 ) headers 匹配 AMQP 消息的 header 而不是路由键，此外 headers 交换器和 direct 交换器完全一致，但性能差很多，目前几乎用不到了 消费方指定的headers中必须包含一个&quot;x-match&quot;的键。 键&quot;x-match&quot;的值有2个 x-match"
+    },
+    {
+      "slug": "kdvfcowei9i0qp5l",
+      "title": "什么是 RabbitMQ？有什么显著的特点？",
+      "url": "/tulingzhouyu/db22bv/kdvfcowei9i0qp5l",
+      "toc_path": [
+        "RabbitMQ",
+        "什么是 RabbitMQ？有什么显著的特点？"
+      ],
+      "toc_level": 1,
+      "toc_index": 695,
+      "word_count": 613,
+      "updated_at": "2023-09-11T09:14:22.000Z",
+      "primary_category": "mq-rabbitmq",
+      "primary_category_name": "RabbitMQ",
+      "related_categories": [
+        "mq-rabbitmq",
+        "mq-general",
+        "devops-release",
+        "java-core",
+        "mq-rocketmq"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle",
+        "senior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "RabbitMQ",
+        "交换机",
+        "队列",
+        "确认机制",
+        "MQ",
+        "发布",
+        "部署",
+        "Java",
+        "重复消费"
+      ],
+      "summary": "RabbitMQ 是一个开源的消息中间件，使用 Erlang 语言开发。这种语言天生非常适合分布式场景，RabbitMQ 也就非常适用于在分布式应用程序之间传递消息。RabbitMQ 有非常多显著的特点：消息传递模式：RabbitMQ 支持多种消息传递模式，包括发布/订阅、点对点和工作队列等，...",
+      "excerpt": "RabbitMQ 是一个开源的消息中间件，使用 Erlang 语言开发。这种语言天生非常适合分布式场景，RabbitMQ 也就非常适用于在分布式应用程序之间传递消息。RabbitMQ 有非常多显著的特点： 消息传递模式 ：RabbitMQ 支持多种消息传递模式，包括发布/订阅、点对点和工作队列等，使其更灵活适用于各种消息通信场景。 消息路由和交换机 ：RabbitMQ 引入了交换机（Exchange）的概念，用于将消息路由到一个或多个队列。这允许根据消息的内容、标签或路由键进行灵活的消息路由，从而实现更复杂的消息传递逻辑。 消息确认机制 ：RabbitMQ 支持消息确认机制，消费者可以确认已成功处理消息。这确保了消息不会在传递后被重复消费，增加了消息的可靠性。 可扩展性 ：RabbitMQ 是高度可扩展的，可以通过添加更多的节点和集群来增加吞吐量和可用性。这使得 RabbitMQ 适用于大规模的分布式系统。 多种编程语言支持 ：RabbitMQ 提供了多种客户端库和插件，支持多种编程语言，包括 Java、Python、Ruby、Node.js 等，使其在不同技术栈中都能方便地集成和使用。 消息持久性 ：RabbitMQ 允许消息和队列的持久性设置，确保消息在 RabbitMQ 重新启动后不会丢失。这对于关键的业务消息非常重要。 灵活的插件系统 ：RabbitMQ 具有丰富的插件系统，使其可以扩展功能，包括管理插件、数据复制插件、分布式部署插件等。 管理界面 ：RabbitMQ 提供了一个易于使用的 Web 管理界面，用于监视和管理队列、交换机、连接和用户权限等。 总之，RabbitMQ 是一个功能丰富、高度可扩展且灵活的消息中间件，适用于各种分布式应用程序和消息通信需求。它的强大功能和广泛的社区支持使其成为一个流行的消息中间件解决方案。"
+    },
+    {
+      "slug": "pg030f9y8fmsuvbd",
+      "title": "RabbitMQ 和 AMQP 是什么关系？",
+      "url": "/tulingzhouyu/db22bv/pg030f9y8fmsuvbd",
+      "toc_path": [
+        "RabbitMQ",
+        "RabbitMQ 和 AMQP 是什么关系？"
+      ],
+      "toc_level": 1,
+      "toc_index": 696,
+      "word_count": 411,
+      "updated_at": "2023-09-11T09:19:46.000Z",
+      "primary_category": "mq-rabbitmq",
+      "primary_category_name": "RabbitMQ",
+      "related_categories": [
+        "mq-rabbitmq",
+        "mq-general",
+        "spring-boot",
+        "spring-core"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "RabbitMQ",
+        "交换机",
+        "队列",
+        "MQ",
+        "消息队列",
+        "SpringBoot",
+        "Spring"
+      ],
+      "summary": "RabbitMQ 和 AMQP 有着非常密切的关系，但是他们是属于完全不同的两个概念。AMQP： AMQP 不是一个具体的消息中间件产品，而是一个协议规范。他是一个开放的消息产地协议，是一种应用层的标准协议，为面向消息的中间件设计。AMQP 提供了一种统一的消息服务，使得不同程序之间可以通过消...",
+      "excerpt": "RabbitMQ 和 AMQP 有着非常密切的关系，但是他们是属于完全不同的两个概念。 AMQP： AMQP 不是一个具体的消息中间件产品，而是一个协议规范。他是一个开放的消息产地协议，是一种应用层的标准协议，为面向消息的中间件设计。AMQP 提供了一种统一的消息服务，使得不同程序之间可以通过消息队列进行通信。 SpringBoot 框架默认就提供了对 AMQP 协议的支持。 RabbitMQ：RabbitMQ则是一个开源的消息中间件，是一个具体的软件产品。RabbitMQ 使用 AMQP 协议来实现消息传递的标准，但其实他也支持其他消息传递协议，如 STOMP 和 MQTT。RabbitMQ 基于 AMQP 协议定义的消息格式和交互流程，实现了消息在生产者、交换机、队列之间的传递和处理。 总之，AMQP 本质上是一个开放的标准，他不光可以被 RabbitMQ 实现，也可以被其他产品实现。通过这种标准的协议，实际上是可以在不同的消息中间件系统之间进行灵活的消息传递。只不过，目前具体实现这种标准的产品目前并不多，RabbitMQ 则是最有影响力的一个产品。因此，RabbitMQ 成了 AMQP 协议事实上的代表。SpringBoot 框架默认提供的 AMQP 协议支持底层也是基于 RabbitMQ 产品实现的。"
+    },
+    {
+      "slug": "mwg1n1q0us2fqegp",
+      "title": "RabbitMQ 的核心组件有哪些？",
+      "url": "/tulingzhouyu/db22bv/mwg1n1q0us2fqegp",
+      "toc_path": [
+        "RabbitMQ",
+        "RabbitMQ 的核心组件有哪些？"
+      ],
+      "toc_level": 1,
+      "toc_index": 697,
+      "word_count": 498,
+      "updated_at": "2023-09-11T09:30:28.000Z",
+      "primary_category": "mq-rabbitmq",
+      "primary_category_name": "RabbitMQ",
+      "related_categories": [
+        "mq-rabbitmq",
+        "mq-general",
+        "java-core",
+        "computer-network",
+        "performance-optimization"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle",
+        "senior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "RabbitMQ",
+        "交换机",
+        "队列",
+        "MQ",
+        "TCP",
+        "网络"
+      ],
+      "summary": "RabbitMQ的核心组件包括以下几部分，他们共同构成了 RabbitMQ 的基本架构：Broker：RabbitMQ服务器，负责接收和分发消息的应用。Virtual Host：虚拟主机，是RabbitMQ中的逻辑容器，用于隔离不同环境或不同应用程序的信息流。每个虚拟主机都有自己的队列、交换机...",
+      "excerpt": "RabbitMQ的核心组件包括以下几部分，他们共同构成了 RabbitMQ 的基本架构： Broker ：RabbitMQ服务器，负责接收和分发消息的应用。 Virtual Host ：虚拟主机，是RabbitMQ中的逻辑容器，用于隔离不同环境或不同应用程序的信息流。每个虚拟主机都有自己的队列、交换机等设置，可以理解为一个独立的RabbitMQ服务。 Connection 连接 ：管理和维护与RabbitMQ服务器的TCP连接，生产者、消费者通过这个连接和 Broker 建立物理网络连接。 Channel通道 ：是在Connection 内创建的轻量级通信通道，用于进行消息的传输和交互。应用程序通过Channel进行消息的发送和接收。通常一个 Connection 可以建立多个 Channel。 Exchange交换机 ：交换机是消息的中转站，负责接收来自生产者的消息，并将其路由到一个或多个队列中。RabbitMQ 提供了多种不同类型的交换机，每种类型的交换机都有不同的消息路由规则。 Queue队列 ：队列是消息的存储位置。每个队列都有一个唯一的名称。消息从交换机路由到队列，然后等待消费者来获取和处理。 Binding绑定关系 ： Binding 是 Exchange 和 Queue 之间的关联规则，定义了消息如何从交换机路由到特定的队列。 此外，生产者和消费者也是RabbitMQ的核心组件，生产者负责发送消息到Exchange或者 Queue，消费者负责从Queue中订阅和处理消息。 这些核心组件共同构建了 RabbitMQ 的消息传递系统，他们协同工作才能实现消息的可靠传递、路由和业务处理等功能。"
+    },
+    {
+      "slug": "ym0ptogxv1al6hp4",
+      "title": "RabbitMQ 中有哪几种交换机类型？",
+      "url": "/tulingzhouyu/db22bv/ym0ptogxv1al6hp4",
+      "toc_path": [
+        "RabbitMQ",
+        "RabbitMQ 中有哪几种交换机类型？"
+      ],
+      "toc_level": 1,
+      "toc_index": 699,
+      "word_count": 587,
+      "updated_at": "2023-09-11T09:57:53.000Z",
+      "primary_category": "mq-rabbitmq",
+      "primary_category_name": "RabbitMQ",
+      "related_categories": [
+        "mq-rabbitmq",
+        "mq-general",
+        "devops-release",
+        "mq-kafka"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "RabbitMQ",
+        "交换机",
+        "队列",
+        "MQ",
+        "发布",
+        "Topic"
+      ],
+      "summary": "RabbitMQ 支持多种交换机（Exchange）类型，每种类型都用于不同的消息路由和分发策略：Direct Exchange：这种交换机根据消息的路由键（Routing Key）将消息发送到与之完全匹配的队列。只有当消息的路由键与队列绑定时指定的路由键完全相同时，消息才会被路由到队列。这是...",
+      "excerpt": "RabbitMQ 支持多种交换机（Exchange）类型，每种类型都用于不同的消息路由和分发策略： Direct Exchange ： 这种交换机根据消息的路由键（Routing Key）将消息发送到与之完全匹配的队列。只有当消息的路由键与队列绑定时指定的路由键完全相同时，消息才会被路由到队列。这是一种简单的路由策略，适用于点对点通信。 Topic Exchange ： 这种交换机根据消息的路由键与队列绑定时指定的路由键模式（通配符）匹配程度，将消息路由到一个或多个队列。路由键可以使用通配符符号 * （匹配一个单词）和 # （匹配零个或多个单词），允许更灵活的消息路由。用于发布/订阅模式和复杂的消息路由需求。 Headers Exchange ： 这种交换机根据消息的标头信息（Headers）来决定消息的路由，而不是使用路由键。队列和交换机之间的绑定规则是根据标头键值对来定义的，只有当消息的标头与绑定规则完全匹配时，消息才会被路由到队列。适用于需要复杂消息匹配的场景。 Fanout Exchange ： 这种交换机将消息广播到与之绑定的所有队列，无论消息的路由键是什么。用于发布/订阅模式，其中一个消息被广播给所有订阅者。 Default Exchange ： 这是 RabbitMQ 默认实现的一种交换机，它不需要手动创建。当消息发布到默认交换机时，路由键会被解释为队列的名称，消息会被路由到与路由键名称相同的队列。默认交换机通常用于点对点通信，但不支持复杂的路由策略。 这些不同类型的交换机允许你在 RabbitMQ 中实现各种不同的消息路由和分发策略，以满足不同的应用需求。选择适当的交换机类型对于有效的消息传递非常重要。"
+    },
+    {
+      "slug": "tptbdrpcqfgqairx",
+      "title": "RabbitMQ 支持哪些消息模式？",
+      "url": "/tulingzhouyu/db22bv/tptbdrpcqfgqairx",
+      "toc_path": [
+        "RabbitMQ",
+        "RabbitMQ 支持哪些消息模式？"
+      ],
+      "toc_level": 1,
+      "toc_index": 700,
+      "word_count": 332,
+      "updated_at": "2023-09-12T03:33:48.000Z",
+      "primary_category": "mq-rabbitmq",
+      "primary_category_name": "RabbitMQ",
+      "related_categories": [
+        "mq-rabbitmq",
+        "mq-kafka",
+        "mq-general",
+        "devops-release"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "middle",
+        "campus",
+        "senior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "校招/应届生",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "RabbitMQ",
+        "交换机",
+        "Topic",
+        "Consumer",
+        "MQ",
+        "发布"
+      ],
+      "summary": "RabbitMQ 支持多种消息传递模式，这些模式允许应用程序在不同的场景下进行灵活的消息交流。以下是几种最常见的消息分发机制：workQueue 工作序列机制： Producer 将消息发送到 queue，多个 Consumer 同时消费Queue 上的消息。消息会均匀的分配给多个 Consu...",
+      "excerpt": "RabbitMQ 支持多种消息传递模式，这些模式允许应用程序在不同的场景下进行灵活的消息交流。以下是几种最常见的消息分发机制： workQueue 工作序列机制： Producer 将消息发送到 queue，多个 Consumer 同时消费Queue 上的消息。消息会均匀的分配给多个 Consumer 处理。 Publish/Subscribe 订阅发布机制： Producer 只负责将消息发送到exchange交换机上。Exchange 将消息转发到所有订阅的 Queue，并由对应的 Consumer 去进行消费 Routing 基于内容路由机制：在订阅发布机制的基础上，增加一个routingKey，并根据routingKey判断 Exchange 将消息转发到哪些 Queue 上。 Topic 基于话题路由机制：在基于内容路由的基础上，对routingKey增加了模糊匹配的功能。 另外，RabbitMQ 还支持双向同步的 RPC 机制，不过一般用得比较少。这些消息模式允许开发者根据应用程序的需求选择合适的消息通信方式，以满足不同的业务场景和可靠性要求。不同的模式可以用于构建各种类型的分布式系统和应用程序。"
+    },
+    {
+      "slug": "sgow0uv2g78f96yb",
+      "title": "RabbitMQ 如何实现消息的持久化？",
+      "url": "/tulingzhouyu/db22bv/sgow0uv2g78f96yb",
+      "toc_path": [
+        "RabbitMQ",
+        "RabbitMQ 如何实现消息的持久化？"
+      ],
+      "toc_level": 1,
+      "toc_index": 701,
+      "word_count": 301,
+      "updated_at": "2023-09-12T05:43:16.000Z",
+      "primary_category": "mq-rabbitmq",
+      "primary_category_name": "RabbitMQ",
+      "related_categories": [
+        "mq-rabbitmq",
+        "mq-general",
+        "performance-optimization"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "RabbitMQ",
+        "交换机",
+        "队列",
+        "MQ",
+        "性能"
+      ],
+      "summary": "RabbitMQ 允许消息的持久化，以确保即使在 RabbitMQ 服务器重新启动后，消息也不会丢失。RabbitMQ 可以通过以下方式实现消息的持久化：消息持久化：在 RabbitMQ 中，只需要在发送消息时，将delivery_mode属性设置为 2，就可以将消息标记为持久化。队列持久化：...",
+      "excerpt": "RabbitMQ 允许消息的持久化，以确保即使在 RabbitMQ 服务器重新启动后，消息也不会丢失。 RabbitMQ 可以通过以下方式实现消息的持久化： 消息持久化：在 RabbitMQ 中，只需要在发送消息时，将delivery_mode属性设置为 2，就可以将消息标记为持久化。 队列持久化：在 RabbitMQ 中声明队列时，也可以将队列声明为持久化。RabbitMQ 中的队列分为三种不同类型经典队列，仲裁队列和流式队列。其中，经典队列需要将durable属性设置为true。而仲裁队列和流式队列默认必须持久化保存。 交换机持久化：与经典队列类似，RabbitMQ 也可以在声明交换机时，将交换机的 durable 属性设置为true，这样就可以将交换机标记为持久化。 RabbitMQ 的持久化机制会对其性能产生影响。因此，需要根据具体的业务场景和需求来权衡是否需要持久化以及需要哪种类型的持久化。"
+    },
+    {
+      "slug": "pv3vqkfhxeub13f5",
+      "title": "RabbitMQ 是如何实现死信队列的？",
+      "url": "/tulingzhouyu/db22bv/pv3vqkfhxeub13f5",
+      "toc_path": [
+        "RabbitMQ",
+        "RabbitMQ 是如何实现死信队列的？"
+      ],
+      "toc_level": 1,
+      "toc_index": 702,
+      "word_count": 365,
+      "updated_at": "2023-09-18T06:14:58.000Z",
+      "primary_category": "mq-rabbitmq",
+      "primary_category_name": "RabbitMQ",
+      "related_categories": [
+        "mq-rabbitmq",
+        "mq-general",
+        "observability-troubleshooting"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "RabbitMQ",
+        "队列",
+        "死信",
+        "MQ",
+        "日志"
+      ],
+      "summary": "死信队列是 RabbitMQ 提供的一种特殊序列，处理那些无法被正常消费的消息。有三种情况会产生死信：消息被消费者明确拒绝。消息达到预设的过期时间仍没有消费者消费。消息由于队列已经达到最大长度限制而被丢弃。在 RabbitMQ 中，实现死信队列只需要给正常队列增加三个核心参数即可：dead-l...",
+      "excerpt": "死信队列是 RabbitMQ 提供的一种特殊序列，处理那些无法被正常消费的消息。有三种情况会产生死信： 消息被消费者明确拒绝。 消息达到预设的过期时间仍没有消费者消费。 消息由于队列已经达到最大长度限制而被丢弃。 在 RabbitMQ 中，实现死信队列只需要给正常队列增加三个核心参数即可： dead-letter-exchange：指定当前队列对应的死信队列 dead-letter-routing-key：指定消息转入死信队列时的路由键 message-ttl：消息在队列中的过期时间。 接下来，就可以往正常队列中发送消息。如果消息满足了某些条件，就会成为死信，并被重新发送到对应的死信队列中。而此时，RabbitMQ 会在消息的头部添加一些与死信相关的补充信息，例如时间、成为死信的原因、原队列等。应用程序可以按需处理这些补充的信息。 最后，死信队列中的消息都是正常业务处理失败的消息，应用程序需要创建一个消费者来专门处理这些被遗漏的消息。例如记录日志、发送警报等。这样才能保证业务数据的完整性。"
+    },
+    {
+      "slug": "em6ivl0zymhm6ff3",
+      "title": "RabbitMQ 中如何进行事务处理？",
+      "url": "/tulingzhouyu/db22bv/em6ivl0zymhm6ff3",
+      "toc_path": [
+        "RabbitMQ",
+        "RabbitMQ 中如何进行事务处理？"
+      ],
+      "toc_level": 1,
+      "toc_index": 703,
+      "word_count": 403,
+      "updated_at": "2023-09-18T06:36:15.000Z",
+      "primary_category": "mq-rabbitmq",
+      "primary_category_name": "RabbitMQ",
+      "related_categories": [
+        "mq-rabbitmq",
+        "mysql-index-transaction",
+        "mq-general",
+        "java-core",
+        "devops-release"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "RabbitMQ",
+        "队列",
+        "事务",
+        "MQ",
+        "消息队列",
+        "异常",
+        "发布",
+        "回滚"
+      ],
+      "summary": "RabbitMQ 提供了事务处理机制，允许生产者在发送消息时将操作包装在一个事务中，以确保消息的可靠性传递。在 RabbitMQ 中，事务是通过通道（Channel）来实现的。可以通过以下步骤进行事务处理：开启事务：在生产者端，可以通过调用  Channel 的 tx_select 方法来开启...",
+      "excerpt": "RabbitMQ 提供了事务处理机制，允许生产者在发送消息时将操作包装在一个事务中，以确保消息的可靠性传递。在 RabbitMQ 中，事务是通过通道（Channel）来实现的。可以通过以下步骤进行事务处理： 开启事务 ：在生产者端，可以通过调用 Channel 的 tx_select 方法来开启一个事务。这将启动一个新的事务，并将所有后续的消息发布操作放在该事务内。 发送消息 ：接下来在事务中，可以正常发送消息。如果消息发送失败，事务会自动回滚。 提交事务 ：如果事务中所有消息发送成功后，需要提交事务。可以通过调用 Channel 的tx_commit方法提交事务。 处理异常 ：如果在事务过程中发生异常，可以使用 try/catch 快来捕获异常。然后在异常处理过程中，调用 Channel 的 tx_rollback 方法来回滚 RabbitMQ 相关的事务操作。 需要注意的是，RabbitMQ 的事务处理是基于存储过程的，它可以保证在事务中的操作要么全部成功，要么全部失败。但是，由于 RabbitMQ 是一个异步的消息队列系统，事务处理可能会对其性能产生影响。因此，需要根据具体的应用场景和需求来权衡是否需要使用事务以及如何使用事务。"
+    },
+    {
+      "slug": "hy8iyk9a429atmbl",
+      "title": "聊一聊常用的 RabbitMQ 插件",
+      "url": "/tulingzhouyu/db22bv/hy8iyk9a429atmbl",
+      "toc_path": [
+        "RabbitMQ",
+        "聊一聊常用的 RabbitMQ 插件"
+      ],
+      "toc_level": 1,
+      "toc_index": 704,
+      "word_count": 416,
+      "updated_at": "2023-09-12T05:38:31.000Z",
+      "primary_category": "mq-rabbitmq",
+      "primary_category_name": "RabbitMQ",
+      "related_categories": [
+        "mq-rabbitmq",
+        "mq-general",
+        "observability-troubleshooting",
+        "netty-network",
+        "redis-persistence-cluster"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle",
+        "senior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "RabbitMQ",
+        "交换机",
+        "队列",
+        "MQ",
+        "故障",
+        "监控",
+        "WebSocket",
+        "集群"
+      ],
+      "summary": "RabbitMQ 支持许多插件，这些插件可以扩展 RabbitMQ 的功能和特性。以下是一些常用的 RabbitMQ 插件：Management Plugin：RabbitMQ 管理插件提供了一个 Web 管理界面，用于监控和管理 RabbitMQ 服务器。可以查看队列、交换机、连接、通道等的...",
+      "excerpt": "RabbitMQ 支持许多插件，这些插件可以扩展 RabbitMQ 的功能和特性。以下是一些常用的 RabbitMQ 插件： Management Plugin ： RabbitMQ 管理插件提供了一个 Web 管理界面，用于监控和管理 RabbitMQ 服务器。可以查看队列、交换机、连接、通道等的状态，并进行配置和操作。 Shovel Plugin ： Shovel 插件用于将消息从一个 RabbitMQ 服务器传递到另一个 RabbitMQ 服务器，实现消息复制和跨集群通信。它可以用于实现数据复制、故障恢复、数据中心间同步等。 Federation Plugin ： Federation 插件允许不同 RabbitMQ 集群之间建立联合，实现消息的跨集群传递。这对于构建分布式系统、将消息从一个地理位置传递到另一个地理位置非常有用。 STOMP Plugin ： STOMP插件允许使用 STOMP 协议与 RabbitMQ 进行通信。这对于使用非 AMQP 协议的客户端与 RabbitMQ 交互非常有用，例如使用 WebSocket 的 Web 应用程序。 Prometheus Plugin ： Prometheus 插件用于将 RabbitMQ 的性能指标导出到 Prometheus 监控系统，以便进行性能监控和警报。 Delayed Message Plugin ： 延迟消息插件允许发布延迟交付的消息，使你能够在稍后的时间点将消息传递给消费者。这对于实现定时任务、延迟重试等场景非常有用。 这些插件提供了丰富的功能扩展，可以根据需求选择并配置它们，"
+    },
+    {
+      "slug": "dvdoki9pk6g4mo5n",
+      "title": "阿里二面：如何保证消息队列的顺序性？工作3年了还不会，有点扎心！",
+      "url": "/tulingzhouyu/db22bv/dvdoki9pk6g4mo5n",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "阿里二面：如何保证消息队列的顺序性？工作3年了还不会，有点扎心！"
+      ],
+      "toc_level": 2,
+      "toc_index": 1046,
+      "word_count": 2357,
+      "updated_at": "2025-10-10T05:17:54.000Z",
+      "primary_category": "mq-rabbitmq",
+      "primary_category_name": "RabbitMQ",
+      "related_categories": [
+        "mq-rabbitmq",
+        "java-concurrency",
+        "mq-rocketmq",
+        "mq-general",
+        "project-system-design"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle",
+        "senior",
+        "junior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年",
+        "初级/1-3年"
+      ],
+      "keywords": [
+        "队列",
+        "并发",
+        "线程",
+        "锁",
+        "RocketMQ",
+        "MQ",
+        "消息队列",
+        "方案",
+        "订单",
+        "支付"
+      ],
+      "summary": "摘要: 本文将通过一个生动的面试场景，彻底剖析 RocketMQ 中保证消息顺序性的核心原理。我们将告别枯燥的理论，借助一系列精心设计的可视化图表，从“为什么会乱序”的痛点出发，深入探讨发送端和消费端的双重保障机制，并最终给出一份令面试官满意的“满分答案”。面试官靠在椅背上，手指轻轻敲着桌面，...",
+      "excerpt": "摘要 : 本文将通过一个生动的面试场景，彻底剖析 RocketMQ 中保证消息顺序性的核心原理。我们将告别枯燥的理论，借助一系列精心设计的可视化图表，从“为什么会乱序”的痛点出发，深入探讨发送端和消费端的双重保障机制，并最终给出一份令面试官满意的“满分答案”。 面试官靠在椅背上，手指轻轻敲着桌面，看似随意地抛出了一个问题： “看你简历上写了熟悉消息队列，那聊聊吧， 如何保证消息队列的顺序性？ ” 这个问题，就像一把精准的钥匙，旨在打开候选人对分布式系统理解深度的大门。如果你的回答还停留在“一个Topic、一个Partition、一个Consumer”这种教科书式的答案，那么，你可能就危险了。 今天，我们就将这个问题的答案，彻底讲透。 痛点：为什么默认情况会乱序？ 在追求高性能和高吞吐量的设计哲学下，消息队列（以RocketMQ为例）默认会将一个Topic下的消息分散到多个队列（Queue）中，而消费端则会启动多个线程并发地从这些队列中拉取消息进行消费。 这就像一个繁忙的收费站，开设了多个收费口，以求最快地疏导车流。 问题恰恰出在这里。对于同一个业务逻辑（例如，同一个订单），它的消息可能会被分散到不同的队列，并被不同的消费者线程在不同的时间点处理。 比如，“订单创建”消息进入了队列1，被消费者A拿到；而紧随其后的“订单支付”消息进入了队列2，却被手速更快的消费者B先一步处理了。结果就是—— 支付先于创建 ，业务逻辑瞬间崩溃。 这就是高吞吐量带来的“甜蜜的烦恼”： 并发消费打破了“先进先出”（FIFO）的理想模型 。 上图左侧的“并发下的混乱”直观地展示了这个问题：生产者P1（创建）和P2（支付）的消息被不同消费者（C1, C2）无序处理。而右侧，则是我们期望的理想状态：同一业务（订单）的消息，被同一个消费者严格按照发送顺序处理。 那么，如何才能从混乱走向理想？ 发送端：将关联消息送入“同一车道” 解决问题的第一步，是从源头入手。我们必须确保 所有关联的消息，都能被发送到同一个队列中 。 这就好比，我们要强制所有关于“订单A001”的车辆，都必须从“1号收费口”通过。 RocketMQ为此提供了 MessageQueueSelector 接口。我们可以在发送消息时，传入一个自定义的队列选择器。在这个选择器中，根据我们的业务标识（比如 orderId ），通过哈希取模等算法，计算出该消息应该进入哪一个队列。 只要我们的业务标识（ orderId ）是固定的，那么无论发送多少条与该订单相关的消息（创建、支付、完成），它们最终都会落入完全相同的队列中。 如图所示，所有 OrderID 为 &quot;A001&quot; 的消息，经过 MessageQueueSelector 的计算（ hash(&quot;A001&quot;) % 3 = 1 ），都被精准地投递到"
+    },
+    {
+      "slug": "tcqqecfgzhht921a",
+      "title": "扎心！线上服务宕机时，如何保证数据100%不丢失？—— RabbitMQ高可靠性终极指南",
+      "url": "/tulingzhouyu/db22bv/tcqqecfgzhht921a",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "扎心！线上服务宕机时，如何保证数据100%不丢失？—— RabbitMQ高可靠性终极指南"
+      ],
+      "toc_level": 2,
+      "toc_index": 1048,
+      "word_count": 2150,
+      "updated_at": "2025-10-09T09:17:22.000Z",
+      "primary_category": "mq-rabbitmq",
+      "primary_category_name": "RabbitMQ",
+      "related_categories": [
+        "mq-rabbitmq",
+        "mq-general",
+        "redis-persistence-cluster",
+        "observability-troubleshooting",
+        "java-core"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "RabbitMQ",
+        "队列",
+        "确认机制",
+        "MQ",
+        "消息队列",
+        "Cluster",
+        "集群",
+        "线上",
+        "故障",
+        "日志",
+        "Java",
+        "异常"
+      ],
+      "summary": "在分布式系统的世界里，没有什么比数据丢失更让开发者“扎心”的了。当你的线上服务因为一次意外的宕机、网络抖动或是消费者进程崩溃，而导致关键业务数据永久消失时，那种无力感足以摧毁任何一个美好的下午。消息队列（Message Broker）作为现代架构的解耦利器，其自身的可靠性至关重要。今天，我们就...",
+      "excerpt": "在分布式系统的世界里，没有什么比数据丢失更让开发者“扎心”的了。当你的线上服务因为一次意外的宕机、网络抖动或是消费者进程崩溃，而导致关键业务数据永久消失时，那种无力感足以摧毁任何一个美好的下午。 消息队列（Message Broker）作为现代架构的解耦利器，其自身的可靠性至关重要。今天，我们就以广受欢迎的RabbitMQ为例，深入探讨如何构建一个真正“滴水不漏”的消息管道，确保在各种异常情况下，数据都能100%安全。 首先，让我们回顾一下RabbitMQ最经典的核心模型： 看起来很简单，对吗？但在消息从生产者到消费者的这段旅程中，却隐藏着三个致命的“黑洞”。 一、 消息丢失的三大“黑洞” 任何一个环节的疏忽，都可能导致消息石沉大海。 黑洞A (生产者 -> Broker): 生产者发送消息后，因为网络问题或Broker的瞬时故障，消息根本没有成功抵达RabbitMQ。而生产者对此毫不知情，以为已经发送成功。 黑洞B (Broker内部): 消息成功进入了Broker的队列，但它们默认仅存在于内存中。此时如果Broker服务宕机或重启，所有内存中的消息将全部丢失。 黑洞C (Broker -> 消费者): 消费者获取了消息，但在执行业务逻辑的过程中不幸崩溃。由于RabbitMQ的自动确认机制（Auto ACK），Broker会认为该消息已被成功处理，从而将其永久删除。 接下来，我们将针对这三大黑洞，逐一给出终极解决方案。 二、 解法一：发布者确认 (Publisher Confirms) —— 守好第一道门 为了解决“黑洞A”，RabbitMQ提供了强大的 发布者确认（Publisher Confirms） 机制。它改变了生产者“发后即忘”（Fire and Forget）的默认行为，为每一次投递都要求一个明确的“回执”。 其工作流程如下： 生产者将信道（Channel）设置为 confirm 模式。 此后，生产者发出的每条消息都会被分配一个唯一的ID。 当消息成功被Broker接收后，Broker会异步地向生产者发送一个 ACK （确认回执）。 如果Broker因内部错误等原因未能处理该消息，则会发送一个 NACK （否定回执）。 这样，生产者就能清晰地知道每条消息的投递状态，并对失败的NACK消息进行处理（如：记录日志、报警、或进行重试）。 代码实现（以Java为例）： 结论： 发布者确认是保证消息从生产者可靠到达Broker的基石，对于核心业务， 必须开启 。 三、 解法二：Broker的“金库”与“备胎” 解决了入口问题，我们再来加固Broker自身。这里需要双管齐下：持久化（数据金库）和集群高可用（服务备胎）。 1. 持久化 (Persistence) 为了防止“黑洞B”中Broker宕机导致内存消息丢失，我们必须将数据写入磁盘，这就是持久化。 重"
+    },
+    {
+      "slug": "or6h3t6i57l7io5v",
+      "title": "如何保证消息不丢不重？一次打通三大MQ",
+      "url": "/tulingzhouyu/db22bv/or6h3t6i57l7io5v",
+      "toc_path": [
+        "高频面试问题",
+        "楼兰老师",
+        "如何保证消息不丢不重？一次打通三大MQ"
+      ],
+      "toc_level": 2,
+      "toc_index": 1156,
+      "word_count": 2050,
+      "updated_at": "2025-10-07T09:14:34.000Z",
+      "primary_category": "mq-rabbitmq",
+      "primary_category_name": "RabbitMQ",
+      "related_categories": [
+        "mq-rabbitmq",
+        "mq-kafka",
+        "mq-rocketmq",
+        "mq-general",
+        "resume-project"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle",
+        "senior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "RabbitMQ",
+        "队列",
+        "Kafka",
+        "Topic",
+        "Partition",
+        "ISR",
+        "RocketMQ",
+        "事务消息",
+        "顺序消息",
+        "延迟消息",
+        "MQ",
+        "消息队列"
+      ],
+      "summary": "你是不是也经常遇到MQ面试的‘灵魂拷问’：‘RabbitMQ 和 Kafka 怎么选？’，‘怎么保证消息不丢不重？’。很多人背了一堆八股文，但面试官换一个花样问，就支支吾吾。再深入追问一下不同MQ产品的区别，就更说不清了。。”“今天这个视频，就是带你一次性通关。我们会从面试官最关心的核心痛点出...",
+      "excerpt": "你是不是也经常遇到MQ面试的‘灵魂拷问’：‘RabbitMQ 和 Kafka 怎么选？’，‘怎么保证消息不丢不重？’。很多人背了一堆八股文，但面试官换一个花样问，就支支吾吾。再深入追问一下不同MQ产品的区别，就更说不清了。。” “今天这个视频，就是带你 一次性通关 。我们会从面试官最关心的核心痛点出发，把 MQ 三巨头（RabbitMQ、Kafka、RocketMQ）的看家本领扒个底朝天，最后再给你一份可以直接‘抄作业’的选型指南。看完保证你，下次再聊 MQ，就是你给面试官‘上课’！” [核心痛点] “首先，面试官为啥总揪着‘消息不丢不重’不放？因为它就是 MQ 的 命门 ！” “你看这两个场景：” ​ “消息丢失，放电商场景就是用户付了钱，你却没发货；放金融场景，就是转账指令丢了，这可是要上社会新闻的！” ​ “消息重复更搞笑，用户下了一单，你发了两次货，老板得气得跳起来；转账扣了两次款，用户就该跳起来了。” “所以，当面试官问你‘如何保证消息可靠性’时，他真正想听的，是你如何从 生产者、Broker（服务端）、消费者 这三个环节，构建一个完整的‘不丢不重’的保障体系。这，就是考察你的技术深度！” [RabbitMQ 讲解] “好，搞懂了核心矛盾，我们来看第一位选手—— RabbitMQ ，我称它为‘英伦绅士’。” “为啥这么说？因为它非常严谨，遵守 AMQP 协议，每一步都想做到万无一失。” ​ “你看它的防丢策略：” “ 生产者 用 Confirm 机制，确保每条消息都亲眼看着它进了 Broker 的大门。” “ Broker 自己也很靠谱，开启 持久化 ，把消息存进硬盘，就算宕机重启，消息也还在。再配上 镜像队列 ，搞个备份，简直是双保险！” “ 消费者 这边，不能傻傻地拿了消息就完事，得等我自己的业务逻辑（比如数据库操作）都搞定了，再手动发送一个 ACK （确认信号），告诉 Broker：‘我搞定了，你可以放心删了’。” “ 面试加分点来了 ：当面试官问 RabbitMQ 如何去重？标准答案是：‘它本身不保证，主要靠 消费端自己实现幂等性 。’比如用订单 ID 做唯一键存入 Redis，每次消费前都查一下，处理过就不再处理。这个回答一出口，面试官就知道你真实战过！” [Kafka 讲解] “接下来，第二位选手—— Kafka ，这位可是个‘暴躁老哥’，天生就是为了 高吞吐量 而生！” “它的设计哲学跟 RabbitMQ 完全不同，追求的是极致的性能。” (依次指着屏幕上的四个要点) “生产者端，想让消息最可靠？直接把确认级别 acks 设置为 all ！意思是，不仅 Leader 副本收到了，所有小弟（ISR 副本）都说收到了，我才放心。虽然慢了点，但稳如老狗！” “Broker 端，它的 分区副本机制 是精髓。一个 Topic 分成好几个 Par"
+    }
+  ]
+}

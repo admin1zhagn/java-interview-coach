@@ -1,0 +1,3821 @@
+{
+  "id": "java-concurrency",
+  "name": "Java并发",
+  "aliases": [
+    "并发",
+    "多线程",
+    "线程",
+    "锁",
+    "AQS",
+    "volatile",
+    "synchronized",
+    "CAS",
+    "ThreadLocal",
+    "CompletableFuture"
+  ],
+  "count": 87,
+  "total_word_count": 173760,
+  "articles": [
+    {
+      "slug": "cplcclxcob1sg07b",
+      "title": "电商产品详情接口并发编排提升性能",
+      "url": "/tulingzhouyu/db22bv/cplcclxcob1sg07b",
+      "toc_path": [
+        "面试必看",
+        "项目亮点和难点",
+        "电商产品详情接口并发编排提升性能"
+      ],
+      "toc_level": 2,
+      "toc_index": 30,
+      "word_count": 935,
+      "updated_at": "2024-08-20T13:22:27.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "docker-k8s",
+        "performance-optimization",
+        "resume-project",
+        "java-core"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "并发",
+        "CompletableFuture",
+        "Service",
+        "性能",
+        "项目",
+        "亮点",
+        "难点",
+        "Java",
+        "异常"
+      ],
+      "summary": "在现代软件开发中，很多时候我们需要在一个接口中调用多个服务来汇总结果，这种情况下使用并发编排可以显著提升接口性能。CompletableFuture 是 Java 中一个非常强大的工具，用于处理异步编程和并发流。通过它，我们可以在后台执行任务，并在任务完成后合并其结果。项目背景假设我们正在开发...",
+      "excerpt": "在现代软件开发中，很多时候我们需要在一个接口中调用多个服务来汇总结果，这种情况下使用并发编排可以显著提升接口性能。 CompletableFuture 是 Java 中一个非常强大的工具，用于处理异步编程和并发流。通过它，我们可以在后台执行任务，并在任务完成后合并其结果。 项目背景 假设我们正在开发一个电子商务系统的产品详情接口，该接口需要从多个服务获取数据，例如： 产品基本信息服务 产品库存服务 产品定价服务 用户评论服务 每个服务都是独立的，如果串行调用会影响性能。因此，我们将使用 CompletableFuture 并发地调度这些服务提升响应性能。 项目结构 Controller层负责接收请求和返回结果。 Service层设定每个服务的调用逻辑。 使用 CompletableFuture 进行并发编排。 核心代码实现 1. 产品详情实体类 2. Controller层 3. Service层 4. 各个服务类（示例） 下面是其中一个示例服务类，其余服务类可以类似实现： 代码说明 产品详情实体类 ： ProductDetails 类用来封装从不同服务获取的所有产品数据。 Controller层 ： ProductController 提供了一个接口来获取产品详情。它调用 ProductService#getProductDetails 方法，该方法返回一个 CompletableFuture 对象，以异步的方式响应请求。 Service层 ： ProductService 中的 getProductDetails 方法使用 CompletableFuture.supplyAsync 方法并发调用各个子服务。 CompletableFuture.allOf 方法用于等待所有的服务请求完成，然后从各个 CompletableFuture 中获取结果。 thenApply 是一个转换器方法，用于将异步操作的结果转换为最终的 ProductDetails 对象。 各个服务类 ： 每个服务类（如 BasicInfoService 、 StockService 等）代表一个子任务。这些任务被 CompletableFuture 并发调用以提高性能。 项目亮点 提升性能 ： CompletableFuture 提供了一种简单的方式来并发多个异步任务，从而减少总的接口响应时间。 易于维护和扩展 ： 各个服务之间是解耦的，增加新服务只需扩展 CompletableFuture 的组合逻辑，而无需重构现有代码。 非阻塞的异步设计 ： 使用 CompletableFuture 的非阻塞特性，并发调用远程服务或数据库查询，有效地利用系统资源。 异常处理简便 ： CompletableFuture 可以通过 exceptionally 方法进行异常处理，确保系统的稳定性。 这个示"
+    },
+    {
+      "slug": "zaghg96a8rlwdryg",
+      "title": "多线程篇",
+      "url": "/tulingzhouyu/db22bv/zaghg96a8rlwdryg",
+      "toc_path": [
+        "面试必看",
+        "大厂真题",
+        "阿里面试真题",
+        "多线程篇"
+      ],
+      "toc_level": 3,
+      "toc_index": 38,
+      "word_count": 7600,
+      "updated_at": "2024-04-29T12:21:51.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "os-linux",
+        "mysql-index-transaction",
+        "java-thread-pool",
+        "java-core"
+      ],
+      "question_type": "troubleshooting",
+      "question_type_name": "故障排查题",
+      "levels": [
+        "senior",
+        "campus"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "并发",
+        "多线程",
+        "线程",
+        "锁",
+        "volatile",
+        "synchronized",
+        "CAS",
+        "内存",
+        "线程池",
+        "拒绝策略",
+        "Java",
+        "异常"
+      ],
+      "summary": "线程调度1、线程状态线程是cpu任务调度的最小执行单位，每个线程拥有自己独立的程序计数器、虚拟机栈、本地方法栈。线程状态：创建、就绪、运行、阻塞、死亡2、线程状态切换3、阻塞唤醒过程阻塞：这三个方法的调用都会使当前线程阻塞。该线程将会被放置到对该Object的请求等待队列中，然后让出当前对Ob...",
+      "excerpt": "线程调度 1、线程状态 线程是cpu任务调度的最小执行单位，每个线程拥有自己独立的程序计数器、虚拟机栈、本地方法栈。 线程状态：创建、就绪、运行、阻塞、死亡 2、线程状态切换 3、阻塞唤醒过程 阻塞： 这三个方法的调用都会使当前线程阻塞。该线程将会被放置到对该Object的请求等待队列中，然后让出当前对Object所拥有的所有的同步请求。线程会一直暂停所有线程调度，直到下面其中一种情况发生： ① 其他线程调用了该Object的notify方法，而该线程刚好是那个被唤醒的线程； ② 其他线程调用了该Object的notifyAll方法； 唤醒： 线程将会从等待队列中移除，重新成为可调度线程。它会与其他线程以常规的方式竞争对象同步请求。 一旦它重新获得对象的同步请求，所有之前的请求状态都会恢复，也就是线程调用wait的地方的状态。线程将会在之前调用wait的地方继续运行下去。 为什么要出现在同步代码块中： 由于 wait()属于Object方法，调用之后会强制释放当前对象锁，所以在wait() 调用时必须拿到当前对象的监视器monitor对象。因此，wait()方法在同步方法/代码块中调用。 4、wait和sleep区别 wait 方法必须在 synchronized 保护的代码中使用，而 sleep 方法并没有这个要求。 wait 方法会主动释放 monitor 锁，在同步代码中执行 sleep 方法时，并不会释放 monitor 锁。 wait 方法意味着永久等待，直到被中断或被唤醒才能恢复，不会主动恢复，sleep 方法中会定义一个时间，时间到期后会主动恢复。 wait/notify 是 Object 类的方法，而 sleep 是 Thread 类的方法。 5、创建线程方式 实现 Runnable 接口 （优先使用） 实现Callable接口 （有返回值可抛出异常） 继承Thread类 （java不支持多继承） 使用线程池 （底层都是实现run方法） 线程池 优点：通过复用已创建的线程， 降低资源损耗 、线程可以直接处理队列中的任务 加快响应速度 、同时便于 统一监控和管理 。 1、线程池构造函数 参数介绍： 2、线程处理任务过程 当线程池小于corePoolSize，新提交任务将创建一个新线程执行任务，即使此时线程池中存在空闲线程。 当线程池达到corePoolSize时，新提交任务将被放入 workQueue 中，等待线程池中任务调度执行。 当workQueue已满，且 maximumPoolSize 大于 corePoolSize 时，新提交任务会创建新线程执行任务。 当提交任务数超过 maximumPoolSize 时，新提交任务由 RejectedExecutionHandler 处理。 当线程池中超过corePoolSize 线程，空闲时间达到"
+    },
+    {
+      "slug": "si21dgkzd4sq4e2o",
+      "title": "架构设计篇",
+      "url": "/tulingzhouyu/db22bv/si21dgkzd4sq4e2o",
+      "toc_path": [
+        "面试必看",
+        "大厂真题",
+        "阿里面试真题",
+        "架构设计篇"
+      ],
+      "toc_level": 3,
+      "toc_index": 40,
+      "word_count": 4294,
+      "updated_at": "2024-04-29T12:18:52.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "redis-cache",
+        "os-linux",
+        "project-system-design",
+        "mysql-sharding"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle",
+        "campus"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "并发",
+        "多线程",
+        "线程",
+        "锁",
+        "Redis",
+        "缓存",
+        "热key",
+        "进程",
+        "内存",
+        "系统设计",
+        "架构设计",
+        "方案",
+        "分库分表"
+      ],
+      "summary": "一、社区系统的架构系统拆分通过DDD领域模型，对服务进行拆分，将一个系统拆分为多个子系统，做成SpringCloud的微服务。微服务设计时要尽可能做到少扇出，多扇入，根据服务器的承载，进行客户端负载均衡，通过对核心服务的上游服务进行限流和降级改造。一个服务的代码不要太多，1 万行左右，两三万撑...",
+      "excerpt": "一、社区系统的架构 系统拆分 通过DDD领域模型，对服务进行拆分，将一个系统拆分为多个子系统，做成SpringCloud的微服务。微服务设计时要尽可能做到少扇出，多扇入，根据服务器的承载，进行客户端负载均衡，通过对核心服务的上游服务进行限流和降级改造。 一个服务的代码不要太多，1 万行左右，两三万撑死了吧。 大部分的系统，是要进行 多轮拆分 的，第一次拆分，可能就是将以前的多个模块该拆分开来了，比如说将电商系统拆分成 订单系统、商品系统、采购系统、仓储系统、用户系统 等等吧。 但是后面可能每个系统又变得越来越复杂了，比如说采购系统里面又分成了 供应商管理系统、采购单管理系统 ，订单系统又拆分成了 购物车系统、价格系统、订单管理 系统。 CDN、Nginx静态缓存、JVM缓存 利用Java的模板thymeleaf可以将页面和数据动态渲染好，然后通过Nginx直接返回。动态数据可以从redis中获取。其中redis里的数据由一个缓存服务来进行消费指定的变更服务。 商品数据，每条数据是 10kb。100 条数据是 1mb，10 万条数据是 1g。常驻内存的是 200 万条商品数据，占用内存是 20g，仅仅不到总内存的 50%。目前高峰期每秒就是 3500 左右的请求量。 缓存 Redis cluster，10 台机器，5主5从，5 个节点对外提供读写服务， 每个节点的读写高峰 QPS 可能可以达到每秒 5 万， 5 台机器最多是 25 万读写请求每秒 。 32G 内存+ 8 核 CPU + 1T 磁盘，但是分配给 Redis 进程的是 10g 内存 ，一般线上生产环境，Redis 的内存尽量不要超过 10g，超过 10g 可能会有问题。 因为每个主实例都挂了一个从实例，所以是 高可用的 ，任何一个主实例宕机，都会自动故障迁移，Redis 从实例 会自动变成主实例 继续提供读写服务。 MQ 可以通过消息队列对微服务系统进行 解耦 ，异步调用的更适合微服务的扩展 同时可以应对秒杀活动中[应对高并发写请求](# 6、应对高并发的写请求)，比如kafka在毫秒延迟基础上可以实现10w级吞吐量 针对 IOT流量洪峰 做了一些特殊的优化，保证消息的及时性 同时可以使用消息队列保证分布式系统 最终一致性 分库分表 分库分表，可能到了最后数据库层面还是免不了抗高并发的要求，好吧，那么就 将一个数据库拆分为多个库，多个库来扛更高的并发；然后将一个表拆分为多个 表，每个表的数据量保持少一点，提高 sql 跑的性能。 在通讯录、订单和商城商品模块超过千万级别都应及时考虑分表分库。 读写分离 读写分离，这个就是说大部分时候数据库可能也是读多写少，没必要所有请求都 集中在一个库上吧，可以搞个主从架构，主库写入，从库读取，搞一个读写分离。读流量太多的时候，还可以加更多的从库。比如 统计监控类"
+    },
+    {
+      "slug": "mgfanm75ihe1rdho",
+      "title": "说下ThreadLocal的底层实现原理及常用场景",
+      "url": "/tulingzhouyu/db22bv/mgfanm75ihe1rdho",
+      "toc_path": [
+        "面试必看",
+        "大厂真题",
+        "京东面试真题",
+        "说下ThreadLocal的底层实现原理及常用场景"
+      ],
+      "toc_level": 3,
+      "toc_index": 78,
+      "word_count": 514,
+      "updated_at": "2023-08-24T13:30:20.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "os-linux",
+        "java-core",
+        "java-collections",
+        "mysql-index-transaction"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "多线程",
+        "线程",
+        "ThreadLocal",
+        "内存",
+        "Java",
+        "HashMap",
+        "事务"
+      ],
+      "summary": "ThreadLocal是Java中的一个线程封闭工具类，它提供了一种在多线程环境下保持变量的线程隔离机制。ThreadLocal的底层实现原理可以简单描述如下：每个Thread对象都维护了一个ThreadLocalMap对象。ThreadLocalMap是一个用于存储ThreadLocal变量...",
+      "excerpt": "ThreadLocal是Java中的一个线程封闭工具类，它提供了一种在多线程环境下保持变量的线程隔离机制。ThreadLocal的底层实现原理可以简单描述如下： 每个Thread对象都维护了一个ThreadLocalMap对象。ThreadLocalMap是一个用于存储ThreadLocal变量的数据结构，它的实现类似于HashMap，但是只能存储当前线程的变量。 每个ThreadLocal对象在初始化时都会得到一个唯一的ThreadLocal.ThreadLocalMap.Entry对象作为键值对的键，这个Entry对象持有ThreadLocal对象的弱引用。 每个ThreadLocal对象作为键，在ThreadLocalMap中对应一个特定的值。当通过ThreadLocal对象的get()方法获取值时，实际是通过当前线程的ThreadLocalMap对象找到对应的值。 当ThreadLocal对象失去引用时，由于ThreadLocalMap中的Entry对象只持有ThreadLocal对象的弱引用，而不是强引用，因此在下一次垃圾回收时，Entry对象将会被回收，同时对应的值也会被回收。 ThreadLocal的常用场景包括： 保存线程私有数据：通过ThreadLocal，可以在一个线程中将变量与其他线程隔离开来，保证线程安全。 数据库连接管理：每个线程都可以拥有自己的数据库连接，避免了在多线程环境下的数据库连接共享问题。 用户登录信息管理：在Web应用中，可以通过ThreadLocal来存储和获取用户的登录信息，避免了传递和存储用户信息的麻烦。 事务管理：线程可以通过ThreadLocal存储事务上下文，用于管理事务的提交、回滚等操作。 需要注意的是，ThreadLocal虽然能够实现线程隔离，但过度使用ThreadLocal也会导致内存泄露的问题，因此在使用时需谨慎考虑。"
+    },
+    {
+      "slug": "ogohewh0scvo86fg",
+      "title": "多线程同步有哪些方法",
+      "url": "/tulingzhouyu/db22bv/ogohewh0scvo86fg",
+      "toc_path": [
+        "面试必看",
+        "大厂真题",
+        "京东面试真题",
+        "多线程同步有哪些方法"
+      ],
+      "toc_level": 3,
+      "toc_index": 79,
+      "word_count": 553,
+      "updated_at": "2023-08-24T13:11:47.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "os-linux",
+        "mysql-optimization",
+        "mysql-index-transaction",
+        "ai-llm"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "多线程",
+        "线程",
+        "锁",
+        "count"
+      ],
+      "summary": "在多线程环境中，可以使用以下几种方法来进行线程间的同步：Synchronized 关键字：使用Synchronized关键字可以将方法或代码块标记为同步代码，确保同一时间只有一个线程可以执行该代码块或方法。Synchronized关键字可以用于对实例方法、静态方法和代码块进行同步操作。Reen...",
+      "excerpt": "在多线程环境中，可以使用以下几种方法来进行线程间的同步： Synchronized 关键字：使用Synchronized关键字可以将方法或代码块标记为同步代码，确保同一时间只有一个线程可以执行该代码块或方法。Synchronized关键字可以用于对实例方法、静态方法和代码块进行同步操作。 ReentrantLock 类：ReentrantLock是Java提供的可重入锁，使用它可以在代码中显式地获取和释放锁。相比于Synchronized关键字，ReentrantLock提供了更多的高级功能，如公平性、可中断等。 CountDownLatch 类：CountDownLatch是一个计数器，用来控制线程等待其他线程完成操作。通过CountDownLatch，可以让一个或多个线程等待其他线程完成之后再继续执行。通过调用CountDownLatch的countDown()方法来减少计数，调用await()方法来阻塞等待，直到计数为0。 CyclicBarrier 类：CyclicBarrier也是一个计数器，它可以使一组线程在达到某个共同点之前相互等待。与CountDownLatch不同的是，CyclicBarrier可以重用，当计数达到设定值时，所有等待线程将被释放并继续执行。 Semaphore 类：Semaphore是一种控制访问计数的信号量，用来控制同时访问某个资源的线程数量。Semaphore可以指定许可数量，当线程访问共享资源时，需要先获得一个许可，如果没有许可则需要等待。 Wait 和 Notify/NotifyAll 方法：这些方法是Object类中的方法，用于实现线程间的等待和通知机制。通过调用wait()方法，线程可以释放锁并进入等待状态，直到其他线程调用notify()或notifyAll()方法来唤醒等待线程。 这些方法可以根据具体的需求和场景来选择使用。需要注意的是，多线程同步时要小心避免死锁和资源竞争等问题，确保线程安全性。"
+    },
+    {
+      "slug": "rmhg9t2n32852v4a",
+      "title": "什么是可重入锁ReentrantLock",
+      "url": "/tulingzhouyu/db22bv/rmhg9t2n32852v4a",
+      "toc_path": [
+        "面试必看",
+        "大厂真题",
+        "京东面试真题",
+        "什么是可重入锁ReentrantLock"
+      ],
+      "toc_level": 3,
+      "toc_index": 81,
+      "word_count": 460,
+      "updated_at": "2023-08-24T13:14:04.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "mysql-index-transaction",
+        "os-linux",
+        "observability-troubleshooting",
+        "java-core"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "线程",
+        "锁",
+        "死锁",
+        "Java"
+      ],
+      "summary": "可重入锁（ReentrantLock）是一种支持重入的锁机制，也被称为递归锁。重入锁是指同一个线程可以多次获得同一个锁而不会发生死锁。具体来说，当一个线程获取了可重入锁后，可以多次对该锁进行加锁操作，每次加锁都要对应一次解锁操作。而对于其他线程来说，只有当获取到该锁后，才能进行加锁操作。在Ja...",
+      "excerpt": "可重入锁（ReentrantLock）是一种支持重入的锁机制，也被称为递归锁。重入锁是指同一个线程可以多次获得同一个锁而不会发生死锁。 具体来说，当一个线程获取了可重入锁后，可以多次对该锁进行加锁操作，每次加锁都要对应一次解锁操作。而对于其他线程来说，只有当获取到该锁后，才能进行加锁操作。 在Java中，ReentrantLock是可重入锁的一个具体实现。与Synchronized关键字相比，ReentrantLock提供了更多的功能和灵活性，比如可设置公平性、可定时、可中断等。 可重入锁的一个重要特性是，同一个线程可以对同一个锁多次调用lock()方法，而每次调用必须要对应一次unlock()方法，否则其他线程无法获取到锁。这种机制保证了线程在获取锁后，能够多次进入同步代码块，从而避免了死锁的发生。 可重入锁对于递归调用非常有用，当一个线程在执行方法A的过程中，需要调用方法B，而方法B又需要获取同一个锁时，可重入锁能够将这个操作合理地进行处理，使得方法B可以成功获取锁而不产生死锁。 总结：可重入锁是一种支持重入的锁机制，同一个线程可以多次获取同一个锁而不会发生死锁。在Java中，ReentrantLock是可重入锁的一个具体实现，通过它可以实现更灵活和精细的锁控制。"
+    },
+    {
+      "slug": "eh1o1xlp382qfchi",
+      "title": "阿里面试P6+",
+      "url": "/tulingzhouyu/db22bv/eh1o1xlp382qfchi",
+      "toc_path": [
+        "面试必看",
+        "最全面经",
+        "阿里面试P6+"
+      ],
+      "toc_level": 2,
+      "toc_index": 84,
+      "word_count": 1977,
+      "updated_at": "2023-09-05T15:13:21.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "resume-project",
+        "mysql-index-transaction",
+        "spring-core",
+        "redis-cache"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle",
+        "senior",
+        "campus"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "并发",
+        "多线程",
+        "线程",
+        "锁",
+        "AQS",
+        "volatile",
+        "ThreadLocal",
+        "简历",
+        "项目",
+        "难点",
+        "面试官",
+        "面经"
+      ],
+      "summary": "前言这次去阿里面试的是我老东家的好朋友，我们之前都是一个项目组的，一起吃饭，一起洗脚，一起。。。他们公司最近也裁员了，不过他是裁员前去的阿里，不知道谁捞到他简历了，莫名就走了流程，他莫名的就面了7轮过了。他想着行情这么不好，要不就去了，去了之后，他们公司就裁员了。。。总之今年大环境真的很差，大...",
+      "excerpt": "前言 这次去阿里面试的是我老东家的好朋友，我们之前都是一个项目组的，一起吃饭，一起洗脚，一起。。。 他们公司最近也裁员了，不过他是裁员前去的阿里，不知道谁捞到他简历了，莫名就走了流程，他莫名的就面了7轮过了。 他想着行情这么不好，要不就去了，去了之后，他们公司就裁员了。。。 总之今年大环境真的很差，大家都时刻做好准备，我朋友简历上是写了精通dubbo的源码，所以你们会发现，面试中dubbo的问题很多，他面经写得算是比较简单，但是真实问的过程肯定会扣肯定细节。 正文 面试总共花费20天左右，包含4轮电话面试、1轮笔试、1轮主管视频面试、1轮hr视频面试 第一轮 电话面试（基础知识为主，约2小时）： 1，先自我介绍，包含日常工作 2，基础知识 1）多线程（ThreadLocal（问了父子线程怎么共享数据 interitableThreadLocals）、lock和sync区别（问HashMap1.7、1.8区别时带出）、AQS原理（执行过程源码，入队出队的细节，源码细节）、CountDownLatch和CyclicBarrier的区别是什么源码级别、volatile从指令重排序，内存屏障，聊到总线风暴）所占比重较大 2）数据库（mysql索引（聚集索引、非聚集索引、索引结构（顺带会问各种树的特性）、执行计划、count1*区别、举例优化sql、MVCC和事务隔离级别的关系、间隙锁、行锁（和多线程混合问的，乐观锁悲观锁等）、唯一索引和普通索引的区别聊到了changeBuffer，聊了页分裂合页合并）比重较大 3）jvm调优（可达性分析算法中根节点有哪些、cms和G1区别、怎样GC调优、怎样排查CPU彪高、内存彪高、逃逸分析） 4）redis数据结构、跳跃表、redis qps能上多少，怎么知道的、sentinel和cluster区别和各自适用场景、redis cluster集群同步过程、redis单线程为什么快、多大叫大key、热key产生原因和后果以及怎么解决、本地缓存需要高时效性怎么办..... 5）spring的作用、spring循环依赖怎么解决（说出三级缓存源码细节）、spring aop原理（动态代理）、spring bean生命周期（源码细节，以及各个位置的设计思路，有什么可扩展的） 6）dubbo服务暴露和引用过程，负载均衡策略，容错机制在哪里实现的源码 7）项目中碰到的问题。 8）为什么换工作，如果通过会直接说有笔试题，和你确认笔试时间。 第二轮 笔试两道题，第一题写代码，第二题写技术方案，以查询为主，考察锁粒度、时间粒度上的细节点。 第三轮 电话面试（解决方案为主，约1.5个小时）1，自我介绍、项目介绍 2，说到缓存穿透，让我设计一个防止缓存穿透的解决方案，简单的就是存null值，但肯定会深究，可以结合布隆过滤器，设计分布式系统，里面又会问到流量"
+    },
+    {
+      "slug": "gd98aqe6nn6e73qq",
+      "title": "金三银四精选面试题系列-徐庶",
+      "url": "/tulingzhouyu/db22bv/gd98aqe6nn6e73qq",
+      "toc_path": [
+        "系列篇",
+        "金三银四精选面试题系列-徐庶"
+      ],
+      "toc_level": 1,
+      "toc_index": 97,
+      "word_count": 4614,
+      "updated_at": "2024-02-20T11:24:47.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "os-linux",
+        "mysql-index-transaction",
+        "java-thread-pool",
+        "jvm-memory-gc"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "middle",
+        "senior",
+        "junior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年",
+        "初级/1-3年"
+      ],
+      "keywords": [
+        "并发",
+        "线程",
+        "锁",
+        "AQS",
+        "CAS",
+        "ThreadLocal",
+        "操作系统",
+        "进程",
+        "内存",
+        "文件",
+        "索引",
+        "事务",
+        "线程池",
+        "JVM"
+      ],
+      "summary": "Java中有哪几种方式来创建线程执行任务？薪资：8-12k岗位：初级开发工程师1. 继承Thread类/**  * 作者：徐庶  */ public class XushuThread extends Thread{       public static void main(String[]...",
+      "excerpt": "Java中有哪几种方式来创建线程执行任务？ 薪资：8-12k 岗位：初级开发工程师 1. 继承Thread类 ​ 总结：重写的是run()方法，而不是start()方法，但是占用了继承的名额，Java中的类是单继承的。 ​ 讲到单继承，我们应该注意，java中的接口是可以多继承的 2. 实现Runnable接口 总结：实现Runnable接口，实现run()方法，使用依然要用到Thread，这种方式更常用 有时候，我们会直接使用匿名内部类的方式或者Lambda表达式的方式： 3. 实现Callable接口 总结：实现Callable接口，实现call()方法，得使用Thread+FutureTask配合，这种方式支持拿到异步执行任务的结果 ​ 4. 利用线程池来创建线程 总结：实现Callable接口或者Runnable接口都可以，由ExecutorService来创建线程 ​ 注意，工作中不建议使用Executors来创建线程池 总结 以上几种方式，底层都是基于Runnable。 为什么不建议使用Executors来创建线程池？ 薪资：10k-20k 岗位：中级开发工程师 1. FixedThreadPool 当我们使用Executors创建FixedThreadPool时，对应的构造方法为： 发现创建的队列为LinkedBlockingQueue，是一个无界阻塞队列，如果使用该线程池执行任务，如果任务过多就会不断的添加到队列中，任务越多占用的内存就越多，最终可能耗尽内存，导致OOM。 ​ 2. SingleThreadExecutor 当我们使用Executors创建SingleThreadExecutor时，对应的构造方法为： 也是LinkedBlockingQueue，所以同样可能会耗尽内存。 总结 除开有可能造成OOM之外，我们使用Executors来创建线程池也不能自定义线程的名字，不利于排查问题，所以建议直接使用ThreadPoolExecutor来定义线程池，这样可以灵活控制。 ​ 线程池有哪几种状态？每种状态分别表示什么？ 薪资：10k-15k 岗位：初级开发工程师 1. RUNNING Accept new tasks and process queued tasks 表示线程池正常运行，既能接受新任务，也会正常处理队列中的任务 2. SHUTDOWN Don't accept new tasks, but process queued tasks 当调用线程池的shutdown()方法时，线程池就进入SHUTDOWN状态，表示线程池处于正在关闭状态，此状态下 线程池不会接受新任务 ，但是会 继续把队列中的任务处理完 3. STOP Don't accept new tasks, don't process queued tasks, a"
+    },
+    {
+      "slug": "tupelds42978mtt8",
+      "title": "💧Java并发专题面试常见问题整理",
+      "url": "/tulingzhouyu/db22bv/tupelds42978mtt8",
+      "toc_path": [
+        "系列篇",
+        "💧Java并发专题面试常见问题整理"
+      ],
+      "toc_level": 1,
+      "toc_index": 102,
+      "word_count": 19286,
+      "updated_at": "2025-10-26T12:35:20.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "os-linux",
+        "java-core",
+        "algorithm",
+        "resume-project"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle",
+        "campus"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "并发",
+        "多线程",
+        "线程",
+        "锁",
+        "synchronized",
+        "ThreadLocal",
+        "操作系统",
+        "进程",
+        "内存",
+        "文件",
+        "上下文切换",
+        "Java",
+        "算法"
+      ],
+      "summary": "1.并行与并发有什么区别？并行和并发都是指多个任务同时执行的概念，但是它们之间有着明显的区别。并行：多个任务在同一时刻同时运行，通常需要使用多个处理器或者多核处理器来实现。例如，一个计算机同时执行多个程序、多个线程或者多个进程时，就是采用并行的方式来处理任务，这样能够提高计算机的处理效率。并发...",
+      "excerpt": "1.并行与并发有什么区别？ 并行和并发都是指多个任务同时执行的概念，但是它们之间有着明显的区别。 并行： 多个任务在同一时刻同时运行，通常需要使用多个处理器或者多核处理器来实现。例如，一个计算机同时执行多个程序、多个线程或者多个进程时，就是采用并行的方式来处理任务，这样能够提高计算机的处理效率。 并发： 多个任务同时进行，但是这些任务的执行是交替进行的，即一个任务执行一段时间后，再执行另外一个任务。它是通过操作系统的协作调度来实现各个任务的切换，达到看上去同时进行的效果。例如，一个多线程程序中的多个线程就是同时运行的，但是因为 CPU 只能处理一个线程，所以在任意时刻只有一个线程在执行，线程之间会通过竞争的方式来获取 CPU 的时间片。 总的来说，虽然并行和并发都是多任务处理的方式，但是并行是采用多核处理器等硬件实现任务同步执行，而并发则是通过操作系统的调度算法来合理地分配系统资源，使得多个任务看上去同时执行。 2.说说什么是进程和线程? 进程和线程是操作系统中的概念，用于描述程序运行时的执行实体。 进程： 一个程序在执行过程中的一个实例，每个进程都有自己独立的地址空间，也就是说它们不能直接共享内存。进程的特点包括： 需要占用独立的内存空间； 可以并发地执行多个任务； 进程之间需要通过进程间通信（IPC）来交换数据； 线程： 进程中的一个执行单元，一个进程中可以包含多个线程，这些线程共享进程的内存空间。线程的特点包括： 线程共享进程内存空间，可以方便、高效地访问变量； 同一个进程中的多个线程可以并发地执行多个任务； 线程之间切换开销小，可以实现更细粒度的控制，例如 UI 线程控制界面刷新，工作线程进行耗时的计算等。 线程相比于进程，线程的创建和销毁开销较小，上下文切换开销也较小，因此线程是实现多任务并发的一种更加轻量级的方式。 3. 说说线程有几种创建方式？ Java中创建线程主要有三种方式： 定义Thread类的子类，并重写该类的run方法 定义Runnable接口的实现类，并重写该接口的run()方法 定义Callable接口的实现类，并重写该接口的call()方法，一般配合FutureTask使用 4.为什么调用start()方法时会执行run()方法，那怎么不直接调用run()方法？ JVM执行start方法，会先创建一个线程，由创建出来的新线程去执行thread的run方法，这才起到多线程的效果。 start()和run()的主要区别如下： start方法可以启动一个新线程，run方法只是类的一个普通方法而已，如果直接调用run方法，程序中依然只有主线程这一个线程。 start方法实现了多线程，而run方法没有实现多线程。 start不能被重复调用，而run方法可以。 start方法中的run代码可以不执行完，就继续执行下面的代码，也就是说进行了 "
+    },
+    {
+      "slug": "kdhefpgyi2dbcn2b",
+      "title": "🚛 一分钟拿下一道面试题",
+      "url": "/tulingzhouyu/db22bv/kdhefpgyi2dbcn2b",
+      "toc_path": [
+        "系列篇",
+        "🚛 一分钟拿下一道面试题"
+      ],
+      "toc_level": 1,
+      "toc_index": 118,
+      "word_count": 21411,
+      "updated_at": "2024-09-23T07:41:33.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "java-core",
+        "os-linux",
+        "java-collections",
+        "java-thread-pool"
+      ],
+      "question_type": "troubleshooting",
+      "question_type_name": "故障排查题",
+      "levels": [
+        "campus",
+        "middle"
+      ],
+      "level_names": [
+        "校招/应届生",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "并发",
+        "多线程",
+        "线程",
+        "锁",
+        "Java",
+        "String",
+        "equals",
+        "IO",
+        "内存",
+        "集合",
+        "HashMap",
+        "ArrayList",
+        "线程池"
+      ],
+      "summary": "1.int和Integer有什么区别？基本类型/包装类型：Integer是int的包装类型，int则是java的一种基本数据类型。空值表示：Integer的默认值是null，int的默认值是0。类型转换：int通过强制类型转换为其他类型，如 long，float 或double。Integer...",
+      "excerpt": "​ 1.int和Integer有什么区别？ 基本类型/包装类型： Integer是int的 包装类型 ，int则是java的一种 基本数据类型 。 空值表示： Integer的默认值是null，int的默认值是0。 类型转换： int通过强制类型转 换为其他类型，如 long，float 或double。Integer使用相应的 方法进行 ​ 类型转换 ，如intValue() 将其转换为 int 值。 在集合中的使用： 集合类（如 List、Set 等）只能存储对象，不能直接存储基本类型的值。因此，如果要在 集合中存储整数 ，必须 使用 Integer类型 而不是int类型。 2.== 与 equals 有什么区别？ ==： 用于 基本类型 比较时， 比较值 是否相等； 用于 引用类型 比较时， 比较对象的内存地址 是否相等。 equals： 默认是 比较对象的内存地址 ，但大多数类都会 重写equals方法 来改变默认的行为，使其 比较对象的内容 而不是 对象的内存地址 。比如 String、Integer 重写了equals方法变成比较值是否相等。 3.final 在 java 中有什么作用？ 定义常量： 使用final关键字可以 将变量声明为常量 ，一旦初始化后就不能再修改其值。 禁止继承： 当用final 修饰类 时，表示该类是 最终的 ，不允许被其他类继承。 禁止方法重写： 当用final 修饰方法 时，表示该方法 不可被子类重写 。 禁止参数重新赋值： 当用final 修饰方法的参数 时，表示参数的值在方法体内 不能被改变 。 线程安全性： 当用final 修饰对象时 ，表示该对象的 引用不能被修改 ，但对象本身的 状态是可变的 。这可以确保在多线程环境下，该对象的引用不会被改变，从而避免潜在的并发问题。 4.Java中常用于操作字符串的类有哪些？ String： 不可变 的字符串类，提供了多种 字符串操作 方法。如拼接、截取、 查找 等。 StringBuilder： 可变 的字符串类， 非线程安全 ，适用于频繁修改字符串的情况。 StringBuffer： 可变 的字符串类， 线程安全 ，适用于多线程环境。 StringUtils： Apache Commons Lang 库中的一个 工具类 ，提供了各种字符串操作方法。例如 判断是否为空 、去除空格、 大小写转换 等。 5.String类的常用方法有哪些？ equals()： 比较字符串是否 相等 。 indexOf()： 返回第一个匹配子串的 起始索引 。 substring()： 返回从 起始位置（包含） 到 结束位置（不包含） 的子字符串。 startsWith()： 检查 字符串是否以 指定的前缀开头 。 replaceAll()： 使用给定的 替换字符串 替换所有匹配给定正则表达"
+    },
+    {
+      "slug": "pf0y1xsbv1g3zb29",
+      "title": "Java中止线程的三种方式",
+      "url": "/tulingzhouyu/db22bv/pf0y1xsbv1g3zb29",
+      "toc_path": [
+        "Java基础",
+        "Java中止线程的三种方式"
+      ],
+      "toc_level": 1,
+      "toc_index": 175,
+      "word_count": 1648,
+      "updated_at": "2024-10-28T12:16:25.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "os-linux",
+        "java-core",
+        "resume-project",
+        "security-auth"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "线程",
+        "锁",
+        "文件",
+        "Java",
+        "异常",
+        "安全"
+      ],
+      "summary": "停止一个线程通常意味着在线程处理任务完成之前停掉正在做的操作，也就是放弃当前的操作。在 Java 中有以下 3 种方法可以中止正在运行的线程：使用退出标志，使线程正常退出，也就是当 run() 方法完成后线程中止。使用 stop() 方法强行中止线程，但是不推荐使用这个方法，该方法已被弃用。使...",
+      "excerpt": "停止一个线程通常意味着在线程处理任务完成之前停掉正在做的操作，也就是放弃当前的操作。 在 Java 中有以下 3 种方法可以中止正在运行的线程： 使用退出标志，使线程正常退出，也就是当 run() 方法完成后线程中止。 使用 stop() 方法强行中止线程，但是不推荐使用这个方法，该方法已被弃用。 使用 interrupt 方法中断线程。 1. 使用标志位中止线程（推荐） 在 run() 方法执行完毕后，该线程就中止了。但是在某些特殊的情况下，run() 方法会被一直执行；比如在服务端程序中可能会使用 while(true) { ... } 这样的循环结构来不断的接收来自客户端的请求。此时就可以用修改标志位的方式来结束 run() 方法。 2. 使用 stop() 中止线程（不推荐） Thread.stop() 方法可以强行中止线程的执行。然而，这种方法是不安全的，因为它不保证线程资源的正确释放和清理，可能导致数据不一致和资源泄露等问题，因此已被官方弃用。 通过查看 JDK 的 API，我们会看到 java.lang.Thread 类型提供了一系列的方法如 start()、stop()、resume()、suspend()、destory()等方法来管理线程。但是除了 start() 之外，其它几个方法都被声名为已过时（deprecated）。 虽然 stop() 方法确实可以停止一个正在运行的线程，但是这个方法是不安全的，而且该方法已被弃用，最好不要使用它。 JDK 文档中还引入用一篇文章来解释了弃用这些方法的原因： 《Why are Thread.stop, Thread.suspend and Thread.resume Deprecated?》 为什么弃用stop： 调用 stop() 方法会立刻停止 run() 方法中剩余的全部工作，包括在 catch 或 finally 语句中的，并抛出ThreadDeath异常(通常情况下此异常不需要显示的捕获)，因此可能会导致一些清理性的工作的得不到完成，如文件，数据库等的关闭。 调用 stop() 方法会立即释放该线程所持有的所有的锁，导致数据得不到同步，出现数据不一致的问题。 3. 使用 interrupt() 中断线程 现在我们知道了使用 stop() 方式停止线程是非常不安全的方式，那么我们应该使用什么方法来停止线程呢？答案就是使用 interrupt() 方法来 中断线程 。 需要明确的一点的是：interrupt() 方法并不像在 for 循环语句中使用 break 语句那样干脆，马上就停止循环。调用 interrupt() 方法仅仅是在当前线程中打一个停止的标记，并不是真的停止线程。 也就是说，线程中断并不会立即中止线程，而是通知目标线程，有人希望你中止。至于目标线程收到通知后会如何处理，则完全"
+    },
+    {
+      "slug": "hbohn489lvvimwca",
+      "title": "如何实现线程的同步",
+      "url": "/tulingzhouyu/db22bv/hbohn489lvvimwca",
+      "toc_path": [
+        "Java基础",
+        "如何实现线程的同步"
+      ],
+      "toc_level": 1,
+      "toc_index": 200,
+      "word_count": 404,
+      "updated_at": "2023-09-04T12:34:28.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "os-linux",
+        "java-core",
+        "mysql-optimization",
+        "mysql-index-transaction"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "并发",
+        "线程",
+        "锁",
+        "synchronized",
+        "Java"
+      ],
+      "summary": "线程的同步是为了保证多个线程按照特定的顺序、协调地访问共享资源，避免数据不一致和竞争条件等问题。在Java中，常见的线程同步方式有以下几种：使用synchronized关键字：通过在方法或代码块前加上synchronized关键字，确保同一时间只有一个线程可以执行标记为同步的代码。这样可以避免...",
+      "excerpt": "线程的同步是为了保证多个线程按照特定的顺序、协调地访问共享资源，避免数据不一致和竞争条件等问题。 在Java中，常见的线程同步方式有以下几种： 使用synchronized关键字： 通过在方法或代码块前加上synchronized关键字，确保同一时间只有一个线程可以执行标记为同步的代码。这样可以避免多个线程同时访问共享资源造成的数据不一致问题。 使用ReentrantLock类： 它是一个可重入锁，通过调用lock()和unlock()方法获取和释放锁。与synchronized不同，ReentrantLock提供了更灵活的同步控制，例如可实现公平性和试锁等待时间。 使用wait()、notify()和notifyAll()方法： 这些方法是Object类的方法，允许线程间进行协作和通信。通过调用wait()方法使线程进入等待状态，然后其他线程可以通过notify()或notifyAll()方法唤醒等待的线程。 使用CountDownLatch和CyclicBarrier： 它们是并发工具类，用于线程之间的同步和等待。CountDownLatch可用于等待一组线程完成操作，而CyclicBarrier用于等待一组线程互相达到屏障位置。 选择适合的同步方式会根据具体需求和场景而定。在使用任何同步机制时，需要注意避免死锁和性能问题，合理设计同步范围和粒度。"
+    },
+    {
+      "slug": "smvpftyn0rowlbxc",
+      "title": "什么是守护线程？与普通线程的区别",
+      "url": "/tulingzhouyu/db22bv/smvpftyn0rowlbxc",
+      "toc_path": [
+        "Java基础",
+        "什么是守护线程？与普通线程的区别"
+      ],
+      "toc_level": 1,
+      "toc_index": 201,
+      "word_count": 388,
+      "updated_at": "2023-09-04T12:38:22.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "os-linux",
+        "jvm-memory-gc",
+        "java-core",
+        "observability-troubleshooting"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "线程",
+        "JVM",
+        "垃圾回收",
+        "Java",
+        "日志"
+      ],
+      "summary": "守护线程是在程序运行时在后台提供一种支持性的线程。与普通线程相比，守护线程有以下几个区别：终止条件：当所有用户线程结束时，守护线程会自动停止。换句话说，守护线程不会阻止程序的终止，即使它们还没有执行完任务。生命周期：守护线程的生命周期与主线程或其他用户线程无关。当所有的非守护线程都结束时，JV...",
+      "excerpt": "守护线程是在程序运行时在后台提供一种支持性的线程。与普通线程相比，守护线程有以下几个区别： 终止条件： 当所有用户线程结束时，守护线程会自动停止。换句话说，守护线程不会阻止程序的终止，即使它们还没有执行完任务。 生命周期： 守护线程的生命周期与主线程或其他用户线程无关。当所有的非守护线程都结束时，JVM 将会退出并停止守护线程的执行。 线程优先级： 守护线程的优先级默认与普通线程一样。优先级较高的守护线程也不能够保证在其他线程之前执行。 资源回收： 守护线程通常被用于执行一些后台任务，例如垃圾回收、日志记录、定时任务等。当只剩下守护线程时，JVM 会自动退出并且不会等待守护线程执行完毕。 需要注意的是，守护线程与普通线程在编写代码时没有太大的区别。可以通过将线程的 setDaemon(true) 方法设置为 true ，将普通线程转换为守护线程。 总结起来，守护线程在程序运行过程中提供了一种支持性的服务，会在所有的用户线程结束时自动停止。"
+    },
+    {
+      "slug": "wg6cczzk8k7b71ug",
+      "title": "notify()和 notifyAll()有什么区别",
+      "url": "/tulingzhouyu/db22bv/wg6cczzk8k7b71ug",
+      "toc_path": [
+        "Java基础",
+        "notify()和 notifyAll()有什么区别"
+      ],
+      "toc_level": 1,
+      "toc_index": 213,
+      "word_count": 279,
+      "updated_at": "2023-09-05T11:49:21.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "os-linux",
+        "java-core",
+        "mysql-index-transaction",
+        "ai-llm"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "线程",
+        "锁",
+        "Java",
+        "异常"
+      ],
+      "summary": "在Java中，notify()和notifyAll()都属于Object类的方法，用于实现线程间的通信。notify()方法用于唤醒在当前对象上等待的单个线程。如果有多个线程同时在某个对象上等待（通过调用该对象的wait()方法），则只会唤醒其中一个线程，并使其从等待状态变为可运行状态。具体是...",
+      "excerpt": "在Java中，notify()和notifyAll()都属于Object类的方法，用于实现线程间的通信。 notify()方法 用于唤醒在当前对象上等待的单个线程。如果有多个线程同时在某个对象上等待（通过调用该对象的wait()方法），则只会唤醒其中一个线程，并使其从等待状态变为可运行状态。具体是哪个线程被唤醒是不确定的，取决于线程调度器的实现。 notifyAll()方法 用于唤醒在当前对象上等待的所有线程。如果有多个线程在某个对象上等待，调用notifyAll()方法后，所有等待的线程都会被唤醒并竞争该对象的锁。其中一个线程获得锁后继续执行，其他线程则继续等待。 需要注意的是，notify()和notifyAll()方法只能在同步代码块或同步方法内部调用，并且必须拥有与该对象关联的锁。否则会抛出IllegalMonitorStateException异常。"
+    },
+    {
+      "slug": "wqkpqm3bbp3qn6tz",
+      "title": "说说你对懒汉模式和饿汉模式的理解",
+      "url": "/tulingzhouyu/db22bv/wqkpqm3bbp3qn6tz",
+      "toc_path": [
+        "Java基础",
+        "说说你对懒汉模式和饿汉模式的理解"
+      ],
+      "toc_level": 1,
+      "toc_index": 229,
+      "word_count": 307,
+      "updated_at": "2023-09-06T07:02:04.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "os-linux",
+        "jvm-classloading",
+        "security-auth",
+        "performance-optimization"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "多线程",
+        "线程",
+        "锁",
+        "类加载",
+        "安全",
+        "性能"
+      ],
+      "summary": "懒汉模式和饿汉模式都是单例模式的实现方式，用于确保一个类只有一个实例存在。懒汉模式：在首次使用时才进行对象的初始化，延迟加载实例。它可以避免不必要的资源消耗，但在多线程环境下需要考虑线程安全和同步开销。饿汉模式：在类加载时就进行对象的初始化，无论是否需要。它通过类加载机制保证线程安全性，而且获...",
+      "excerpt": "懒汉模式和饿汉模式都是单例模式的实现方式，用于确保一个类只有一个实例存在。 懒汉模式： 在首次使用时才进行对象的初始化，延迟加载实例。它可以避免不必要的资源消耗，但在多线程环境下需要考虑线程安全和同步开销。 饿汉模式： 在类加载时就进行对象的初始化，无论是否需要。它通过类加载机制保证线程安全性，而且获取实例的性能开销较小。但它没有延迟加载的特性，可能浪费一些资源。 选择懒汉模式还是饿汉模式取决于具体需求。如果需要延迟加载且对性能要求不高，可以选择懒汉模式。如果要通过类加载机制保证线程安全且对象创建成本较低，可以选择饿汉模式。也可以结合两种模式的优点，使用双重检查锁、静态内部类等方式实现单例模式，提高线程安全性和性能。"
+    },
+    {
+      "slug": "uou4g1qccpxzmzow",
+      "title": "synchronized的实现原理",
+      "url": "/tulingzhouyu/db22bv/uou4g1qccpxzmzow",
+      "toc_path": [
+        "Java基础",
+        "synchronized的实现原理"
+      ],
+      "toc_level": 1,
+      "toc_index": 232,
+      "word_count": 428,
+      "updated_at": "2023-09-05T13:26:33.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "mysql-index-transaction",
+        "java-core",
+        "os-linux",
+        "jvm-memory-gc"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "线程",
+        "锁",
+        "synchronized",
+        "Java",
+        "JVM"
+      ],
+      "summary": "synchronized是Java语言中最基本的线程同步机制，它通过互斥锁来控制线程对共享变量的访问。具体实现原理如下：synchronized的实现基础是对象内部的锁（也称为监视器锁或管程），每个锁关联着一个对象实例。当synchronized作用于某个对象时，它就会尝试获取这个对象的锁，如...",
+      "excerpt": "synchronized是Java语言中最基本的线程同步机制，它通过互斥锁来控制线程对共享变量的访问。 具体实现原理如下： synchronized的实现基础是对象内部的锁（也称为监视器锁或管程），每个锁关联着一个对象实例。 当synchronized作用于某个对象时，它就会尝试获取这个对象的锁，如果锁没有被其他线程占用，则当前线程获取到锁，并可以执行同步代码块；如果锁已经被其他线程占用，那么当前线程就会阻塞在同步块之外，直到获取到锁才能进入同步块。 synchronized还支持作用于类上，此时它锁住的是整个类，而不是类的某个实例。在这种情况下，由于只有一个锁存在，所以所有使用该类的线程都需要等待锁的释放。 在JVM内部，每个Java对象都有头信息，其中包含了对象的一些元信息和状态标志。synchronized通过修改头信息的状态标志来实现锁的获取和释放。 synchronized还支持可重入性，即在同一个线程中可以多次获取同一个锁，这样可以避免死锁问题。 Java虚拟机会通过锁升级的方式来提升synchronized的效率，比如偏向锁、轻量级锁和重量级锁等机制，使得在竞争不激烈的情况下，synchronized的性能可以达到与非同步代码相当的水平。"
+    },
+    {
+      "slug": "cdedugvumxqan49b",
+      "title": "synchronized锁优化",
+      "url": "/tulingzhouyu/db22bv/cdedugvumxqan49b",
+      "toc_path": [
+        "Java基础",
+        "synchronized锁优化"
+      ],
+      "toc_level": 1,
+      "toc_index": 233,
+      "word_count": 366,
+      "updated_at": "2023-09-05T13:21:08.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "mysql-index-transaction",
+        "performance-optimization",
+        "os-linux",
+        "java-core"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "并发",
+        "线程",
+        "锁",
+        "synchronized",
+        "性能",
+        "优化",
+        "上下文切换",
+        "Java"
+      ],
+      "summary": "synchronized还有一种重要的优化方式，即锁的优化技术。在Java 6及以上版本中，JVM引入了偏向锁、轻量级锁和重量级锁的概念来提高锁的性能。这些优化方式的原理如下：偏向锁：偏向锁是指当一个线程获取到锁之后，会在对象头中记录下该线程的标识，下次再进入同步块时，无需进行额外的加锁操作，...",
+      "excerpt": "synchronized还有一种重要的优化方式，即锁的优化技术。在Java 6及以上版本中，JVM引入了偏向锁、轻量级锁和重量级锁的概念来提高锁的性能。这些优化方式的原理如下： 偏向锁： 偏向锁是指当一个线程获取到锁之后，会在对象头中记录下该线程的标识，下次再进入同步块时，无需进行额外的加锁操作，从而提高性能。 轻量级锁： 当多个线程对同一个锁进行争夺时，JVM会使用轻量级锁来避免传统的重量级锁带来的性能消耗。它采用自旋的方式，即不放弃CPU的执行时间，尝试快速获取锁，避免线程阻塞和上下文切换的开销。 重量级锁： 当多个线程对同一个锁进行强烈争夺时，JVM会升级为重量级锁，此时线程会进入阻塞状态，等待锁的释放。这种方式适用于竞争激烈的情况，但会带来较大的性能开销。 锁优化技术是为了提高synchronized的并发性能，根据锁的竞争程度和持有时间的长短选择相应的锁状态，使得多个线程能够更高效地共享资源。"
+    },
+    {
+      "slug": "zgg7tno09sf5o8wv",
+      "title": "讲讲你对ThreadLocal的理解",
+      "url": "/tulingzhouyu/db22bv/zgg7tno09sf5o8wv",
+      "toc_path": [
+        "Java基础",
+        "讲讲你对ThreadLocal的理解"
+      ],
+      "toc_level": 1,
+      "toc_index": 234,
+      "word_count": 548,
+      "updated_at": "2023-09-05T13:35:03.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "os-linux",
+        "java-core",
+        "security-auth",
+        "performance-optimization"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "senior",
+        "campus"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "并发",
+        "多线程",
+        "线程",
+        "ThreadLocal",
+        "内存",
+        "Java",
+        "安全",
+        "性能"
+      ],
+      "summary": "ThreadLocal是Java中的一个类，用于在多线程环境下实现线程局部变量存储。它提供了一种让每个线程都拥有独立变量副本的机制，从而避免了多线程之间相互干扰和竞争的问题。在多线程编程中，共享变量的访问往往需要考虑线程安全性和数据隔离问题。ThreadLocal通过为每个线程创建独立的变量副...",
+      "excerpt": "ThreadLocal是Java中的一个类，用于在多线程环境下实现线程局部变量存储。它提供了一种让每个线程都拥有独立变量副本的机制，从而避免了多线程之间相互干扰和竞争的问题。 在多线程编程中，共享变量的访问往往需要考虑线程安全性和数据隔离问题。ThreadLocal通过为每个线程创建独立的变量副本来解决这些问题。每个线程可以独立地对自己的变量副本进行操作，而不会影响其他线程的副本。 ThreadLocal的核心思想是以&quot;线程&quot;为作用域，在每个线程内部维护一个变量副本。它使用Thread对象作为Key，在内部的数据结构中查找对应的变量副本。当通过ThreadLocal的get()方法获取变量时，实际上是根据当前线程获取其对应的变量副本；当通过set()方法设置变量时，实际上是将该值与当前线程关联，并存储在内部的数据结构中。 使用ThreadLocal时需要注意以下几点： 内存泄漏： 在使用完ThreadLocal后，应及时调用remove()方法清理与当前线程相关的变量副本，避免长时间持有引用导致内存泄漏。 线程安全性： ThreadLocal本身并不解决多线程并发访问共享变量的问题，需要额外的同步机制来保证线程安全性。 数据隔离： ThreadLocal适用于多线程环境下需要保持变量独立性的场景，可以避免使用传统的同步方式对共享变量进行操作，提高并发性能。 ThreadLocal常见的应用场景包括线程池、Web开发中的请求上下文信息管理、数据库连接管理和日志记录等。通过合理使用ThreadLocal，可以简化多线程编程，并提高程序的性能和可维护性。"
+    },
+    {
+      "slug": "gw6vvmgw01f4mmmw",
+      "title": "ThreadLocal有哪些应用场景",
+      "url": "/tulingzhouyu/db22bv/gw6vvmgw01f4mmmw",
+      "toc_path": [
+        "Java基础",
+        "ThreadLocal有哪些应用场景"
+      ],
+      "toc_level": 1,
+      "toc_index": 235,
+      "word_count": 330,
+      "updated_at": "2023-09-05T13:39:33.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "os-linux",
+        "java-core",
+        "java-thread-pool",
+        "observability-troubleshooting"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "senior",
+        "campus"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "并发",
+        "多线程",
+        "线程",
+        "ThreadLocal",
+        "内存",
+        "Java",
+        "线程池",
+        "排查",
+        "日志"
+      ],
+      "summary": "ThreadLocal是Java中的一个类，它提供了一种在多线程环境下实现线程局部变量存储的机制。它的应用场景包括线程池、Web开发中的请求上下文信息管理、数据库连接管理和日志记录等等。在线程池中，可以使用ThreadLocal为每个线程维护独立的上下文信息，避免线程间互相干扰。在Web开发中...",
+      "excerpt": "ThreadLocal是Java中的一个类，它提供了一种在多线程环境下实现线程局部变量存储的机制。 它的应用场景包括 线程池 、 Web开发中的请求上下文信息管理 、 数据库连接管理和日志记录 等等。 在线程池中， 可以使用ThreadLocal为每个线程维护独立的上下文信息，避免线程间互相干扰。 在Web开发中， 可以使用ThreadLocal存储当前请求的上下文信息，避免参数传递的复杂性。 在数据库连接管理中， ThreadLocal可以为每个线程保持独立的数据库连接，提高并发性能。 在日志记录中， ThreadLocal可以将日志记录与当前线程关联起来，方便追踪和排查问题。 此外， ThreadLocal还可以用于在线程之间传递全局的上下文信息。 在使用ThreadLocal时需要注意内存泄漏问题和线程安全性，及时清理不再需要的变量副本，并采取适当的同步措施保证线程安全。通过合理使用ThreadLocal，可以简化多线程编程，提高程序的性能和可维护性。"
+    },
+    {
+      "slug": "rahv0rmraxvh9bn5",
+      "title": "讲讲你对CyclicBarrier的理解",
+      "url": "/tulingzhouyu/db22bv/rahv0rmraxvh9bn5",
+      "toc_path": [
+        "Java基础",
+        "讲讲你对CyclicBarrier的理解"
+      ],
+      "toc_level": 1,
+      "toc_index": 238,
+      "word_count": 281,
+      "updated_at": "2023-09-20T07:00:40.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "os-linux",
+        "java-core",
+        "mysql-optimization"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "并发",
+        "多线程",
+        "线程",
+        "Java"
+      ],
+      "summary": "CyclicBarrier是Java中的一个多线程协作工具，它可以让多个线程在一个屏障点等待，并在所有线程都到达后一起继续执行。与CountDownLatch不同，CyclicBarrier可以重复使用，并且可以指定屏障点后执行的额外动作。CyclicBarrier的主要特点有三个。首先，它可...",
+      "excerpt": "CyclicBarrier是Java中的一个多线程协作工具，它可以让多个线程在一个屏障点等待，并在所有线程都到达后一起继续执行。与CountDownLatch不同，CyclicBarrier可以重复使用，并且可以指定屏障点后执行的额外动作。 CyclicBarrier的主要特点有三个。 首先， 它可以重复使用，这意味着当所有线程都到达屏障点后，屏障会自动重置，可以用来处理多次需要等待的任务。 其次， CyclicBarrier可以协调多个线程同时开始执行，这在分阶段任务和并发游戏等场景中非常有用。 最后， CyclicBarrier还提供了可选的动作，在所有线程到达屏障点时执行，可以实现额外的逻辑。 需要注意的是，在创建CyclicBarrier时需要指定参与线程的数量。一旦所有参与线程都到达屏障点后，CyclicBarrier解除阻塞，所有线程可以继续执行后续操作。"
+    },
+    {
+      "slug": "lfgoho3tmggg67ft",
+      "title": "阿里一面直接挂！我用 CompletableFuture 优化代码，面试官：你这是在生产环境埋雷！",
+      "url": "/tulingzhouyu/db22bv/lfgoho3tmggg67ft",
+      "toc_path": [
+        "并发编程",
+        "阿里一面直接挂！我用 CompletableFuture 优化代码，面试官：你这是在生产环境埋雷！"
+      ],
+      "toc_level": 1,
+      "toc_index": 242,
+      "word_count": 2163,
+      "updated_at": "2026-03-13T05:53:29.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "os-linux",
+        "java-thread-pool",
+        "resume-project",
+        "java-core"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "expert",
+        "senior"
+      ],
+      "level_names": [
+        "专家/P7+",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "并发",
+        "线程",
+        "CompletableFuture",
+        "文件",
+        "线程池",
+        "ThreadPoolExecutor",
+        "核心线程",
+        "简历",
+        "面试官",
+        "Java",
+        "异常",
+        "IO"
+      ],
+      "summary": "写在开头上周有个粉丝阿强哭丧着脸来找我，说阿里一面被“秒杀”了。起因很简单，面试官问他：“有一个核心接口响应很慢，里面串行调用了用户信息、积分查询、优惠券三个服务，你会怎么优化？”",
+      "excerpt": "写在开头 上周有个粉丝阿强哭丧着脸来找我，说阿里一面被“秒杀”了。 起因很简单，面试官问他：“ 有一个核心接口响应很慢，里面串行调用了用户信息、积分查询、优惠券三个服务，你会怎么优化？ ” 阿强自信满满：“这题熟！用 JDK8 的神器 CompletableFuture 啊！把三个串行调用改成 CompletableFuture.supplyAsync() 并行处理，最后用 allOf 等待结果。代码优雅又高效！” 面试官听完，推了推眼镜，冷冷地问了一句： “你传自定义线程池了吗？还是用的默认方法？” 阿强愣了一下：“这就三个小任务，用默认的 supplyAsync(Runnable) 就行了吧，没必要单独配个线程池吧？” 面试官当场合上简历：“ 你敢在生产环境‘裸用’ CompletableFuture，就是给系统埋雷。一旦某个第三方服务卡顿，你的整个应用可能都会被拖垮。回去等通知吧。 ” 阿强觉得面试官在危言耸听。 兄弟们，这真不是危言耸听。 “裸用” CompletableFuture 是并发编程里最大的骗局之一。 今天 Fox 带你拆解这背后的 3 个“核弹级”大坑，并附上源码铁证。 地雷一：共用线程池 = 级联雪崩 很多兄弟觉得 supplyAsync 是魔法，只要调用了，Java 就会自动给你分配一个“VIP 线程”去跑任务。 错！大错特错！ 如果你不传线程池，JDK 默认使用的是 ForkJoinPool.commonPool() 。 【源码铁证】所有任务挤在一个“黑网吧”里 请看 CompletableFuture 的源码： 这意味着什么？ ForkJoinPool.commonPool() 的默认核心线程数仅为 CPU 核数 - 1 。 假设你的服务器是 4 核的，那个这个池子只有 3 个线程。 你要问了：“ForkJoinPool 不是能自动扩容吗？” 这里有个极大的误区！ ForkJoinPool 只有在检测到任务实现了 ManagedBlocker 接口时（比如 JDK 内部的 Phaser 等并发工具），才会为了避免饥饿而扩容。 但是！ 你在业务代码里写的 Thread.sleep 、 JdbcTemplate 查库、 RestTemplate 调接口，统统 没有 实现这个接口。 生产惨案还原： 你在这个“公共池子”里扔了一个耗时 2 秒的 SQL 查询任务。 隔壁组的同事，在同一个 JVM 里写了个 List.parallelStream() 做数据计算。 注意！ **parallelStream** ** 也是共用这个 **commonPool** 的！** 结果就是： 这 3 个可怜的线程瞬间被你的慢 SQL 占满，池子也不会扩容。 结局？隔壁的并行流计算全部卡死，甚至连系统里其他完全不相关的异步导出功能也一起“陪葬”。大家抢"
+    },
+    {
+      "slug": "nme2ic6x1l8v70vc",
+      "title": "说下你对volatile的理解",
+      "url": "/tulingzhouyu/db22bv/nme2ic6x1l8v70vc",
+      "toc_path": [
+        "并发编程",
+        "说下你对volatile的理解"
+      ],
+      "toc_level": 1,
+      "toc_index": 244,
+      "word_count": 957,
+      "updated_at": "2026-01-08T08:20:35.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "os-linux",
+        "resume-project",
+        "redis-cache",
+        "java-core"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "并发",
+        "线程",
+        "锁",
+        "volatile",
+        "synchronized",
+        "内存",
+        "面试官",
+        "缓存",
+        "缓存一致性",
+        "Java"
+      ],
+      "summary": "一、 标准面试回答模版（建议背诵）面试官： 说下你对 volatile 的理解。Fox版标准回答：“volatile 是 Java 虚拟机提供的轻量级同步机制。它的核心作用有两点，同时有一个致命的不足：保证可见性 (Visibility)：当一个线程修改了 volatile",
+      "excerpt": "一、 标准面试回答模版（建议背诵） 面试官： 说下你对 volatile 的理解。 Fox版标准回答： “ volatile 是 Java 虚拟机提供的 轻量级同步机制 。它的核心作用有两点，同时有一个致命的不足： 保证可见性 (Visibility) ： 当一个线程修改了 volatile 修饰的变量，新值会被 立即刷新到主内存 。 同时，它会使其他线程的工作内存（缓存）中该变量的 副本失效 ，强制它们重新从主内存读取。 底层依赖于 CPU 的 Lock 前缀指令 和 缓存一致性协议（如 MESI） 。 保证有序性 (Ordering) / 禁止指令重排序 ： JMM 通过插入 内存屏障 (Memory Barrier) 来禁止特定类型的处理器重排序。 经典应用场景是 单例模式的双重检查锁 (DCL) ，防止对象‘初始化了一半’就被另一个线程拿去用了。 不保证原子性 (No Atomicity) ： 这是最大的坑 。 volatile 仅能保证单次读/写的原子性。 对于复合操作（如 i++ ），它 无法保证线程安全 。因为 i++ 分为‘读-改-写’三步， volatile 无法锁住这三步的间隙。” 二、 代码层面的体现 1. 场景一：保证可见性（最经典用法） 如果不加 volatile ，线程 B 可能永远感知不到 flag 变了，导致死循环。 ​ 2. 场景二：不保证原子性（避坑演示） 证明 volatile 不能替代 synchronized 。 ​ 三、 Fox的深度解析（DCL 单例） 如果面试官问： “为什么单例模式的双重检查锁（DCL）一定要加 volatile？” Fox版解析： “这是为了防止 指令重排序 导致的‘半初始化对象’泄露。 instance = new Singleton(); 这行代码在 JVM 层面其实分三步： memory = allocate(); // 分配内存 ctorInstance(memory); // 初始化对象（构造方法） instance = memory; // 把引用指向内存地址 如果不加 volatile ，CPU 或编译器可能会把 步骤 2 和 步骤 3 重排序 。 结果： 线程 A 先执行了步骤 3（引用有了地址），但还没执行步骤 2（对象还没初始化）。 此时线程 B 进来了，判断 instance != null ，直接拿走了一个 还没初始化的空壳对象 去使用，导致程序报错。 volatile 通过内存屏障，强制保证了 1 -> 2 -> 3 的顺序。” ​ 拓展视频： volatile 不保证原子性？那你把 long和double 置于何地？"
+    },
+    {
+      "slug": "xqzrfomehn1r8ug7",
+      "title": "说下线程本地变量ThreadLocal及其用法",
+      "url": "/tulingzhouyu/db22bv/xqzrfomehn1r8ug7",
+      "toc_path": [
+        "并发编程",
+        "说下线程本地变量ThreadLocal及其用法"
+      ],
+      "toc_level": 1,
+      "toc_index": 245,
+      "word_count": 775,
+      "updated_at": "2024-08-11T13:53:46.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "os-linux",
+        "java-core",
+        "jvm-memory-gc",
+        "security-auth"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "并发",
+        "多线程",
+        "线程",
+        "锁",
+        "ThreadLocal",
+        "内存",
+        "Java",
+        "GC",
+        "垃圾回收",
+        "安全",
+        "认证"
+      ],
+      "summary": "ThreadLocal是Java中的一个工具类，用于创建线程本地变量。每个线程在访问这个变量时都会有自己独立的副本，因此变量之间不会互相干扰。这在需要隔离数据相互影响的多线程环境中特别有用，如数据库连接、用户会话等。工作原理ThreadLocal通过在每个线程中存储一个独立的变量副本来避免共享...",
+      "excerpt": "ThreadLocal 是Java中的一个工具类，用于创建线程本地变量。每个线程在访问这个变量时都会有自己独立的副本，因此变量之间不会互相干扰。这在需要隔离数据相互影响的多线程环境中特别有用，如数据库连接、用户会话等。 工作原理 ThreadLocal 通过在每个线程中存储一个独立的变量副本来避免共享状态。每个线程可以独立地修改自己的副本，而不会影响其他线程中的变量。 用法场景 用户会话管理 ：在Web应用中，可以用来存储每个用户的会话信息。 数据库连接管理 ：为每个线程提供独立的数据库连接，避免多线程竞争同一个连接。 线程上下文信息 ：存储线程的环境信息，比如请求ID、用户认证信息等。 代码示例 以下是使用 ThreadLocal 来实现每个线程独立计数的简单示例： 关键点 独立存储 ： ThreadLocal 为每个线程存储单独的变量副本，避免了多线程对同一数据的不安全操作。 初始化值 ：可以通过 ThreadLocal.withInitial() 方法提供初始化值。 垃圾回收 ： ThreadLocal 中的值在线程结束后会自动被GC回收，不过使用 ThreadLocal.remove() 可以显式地释放不再需要的值，从而防止内存泄漏。 适用场景 ：适合用于需要线程隔离环境的场景，不适合用于需要在线程间共享数据的情况。 注意事项 内存泄漏风险 ：如果 ThreadLocal 没有及时释放（尤其在线程池中），它可能引起内存泄漏，因此在不需要时应调用 remove() 方法。 实现代价 ：在频繁创建和销毁线程或需要跨线程数据共享的场合不合适。 同步机制 ： ThreadLocal 用于变量隔离而非同步，对于共享数据保护仍需采用锁或其他同步机制。 使用 ThreadLocal 可以极大简化在多线程环境中各线程拥有独立状态的复杂性，同时提高程序的可维护性和可读性。在合适的场景下，它是一个极为便利的工具。"
+    },
+    {
+      "slug": "tuq9nggex4os2h9p",
+      "title": "短视频",
+      "url": "/tulingzhouyu/db22bv/tuq9nggex4os2h9p",
+      "toc_path": [
+        "并发编程",
+        "说下线程本地变量ThreadLocal及其用法",
+        "短视频"
+      ],
+      "toc_level": 2,
+      "toc_index": 246,
+      "word_count": 559,
+      "updated_at": "2024-05-15T11:36:48.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "os-linux",
+        "mysql-index-transaction",
+        "project-system-design",
+        "performance-optimization"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "并发",
+        "多线程",
+        "线程",
+        "锁",
+        "ThreadLocal",
+        "内存",
+        "事务",
+        "方案",
+        "性能"
+      ],
+      "summary": "面试中被问到ThreadLocal的使用场景？哑口无言？别担心，今天我们就来聊聊ThreadLocal的实用技巧，让你在技术面试中游刃有余！ThreadLocal是一种巧妙的多线程隔离机制。在多线程环境下，我们经常需要处理共享资源的访问问题。通常，我们会通过加锁来保证资源的一致性，但这会增加性...",
+      "excerpt": "面试中被问到ThreadLocal的使用场景？哑口无言？别担心，今天我们就来聊聊ThreadLocal的实用技巧，让你在技术面试中游刃有余！ ThreadLocal是一种巧妙的多线程隔离机制。 在多线程环境下，我们经常需要处理共享资源的访问问题。通常，我们会通过加锁来保证资源的一致性，但这会增加性能开销。 而ThreadLocal提出了一个新颖的解决方案—— “空间换时间” 。 它为每个线程创建了一个 独立的存储空间 ，也就是 ThreadLocalMap ，用来存放线程私有的 变量副本 。 这样，每个线程就可以在不干扰其他线程的情况下，自由地读写自己的副本，从而巧妙地避免了同步锁的开销问题。 ​ 接下来，让我们看看ThreadLocal的几个典型应用场景： 第一 线程上下文传递： 在复杂的应用中，经常需要在不同线程间传递上下文信息，如用户身份或请求ID。ThreadLocal可以轻松实现这一点，而无需修改现有代码。 第二 数据库连接管理 ：数据库连接是宝贵的资源。使用ThreadLocal，我们可以为每个线程分配一个独立的数据库连接，从而减少线程间的竞争，提高资源利用率。 第三 事务管理： 在复杂的事务处理场景中，ThreadLocal可以帮助我们存储和管理事务状态，确保每个线程可以独立控制自己的事务流程。 ​ 当然，使用ThreadLocal时，我们也 需要小心内存泄漏 的问题。要记得 及时清理线程局部变量 ，避免因遗忘而造成的内存泄漏。 这就是我对ThreadLocal的一点理解。 如果你对这个话题感兴趣，或者有任何疑问，欢迎在评论区留言讨论。别忘了点赞和关注，我们下期视频再见，拜拜！"
+    },
+    {
+      "slug": "wgnennwlwmgpen55",
+      "title": "说下对AQS的理解",
+      "url": "/tulingzhouyu/db22bv/wgnennwlwmgpen55",
+      "toc_path": [
+        "并发编程",
+        "说下对AQS的理解"
+      ],
+      "toc_level": 1,
+      "toc_index": 247,
+      "word_count": 1010,
+      "updated_at": "2026-01-08T07:36:11.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "mysql-index-transaction",
+        "mq-rabbitmq",
+        "resume-project",
+        "mysql-optimization"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "campus",
+        "senior"
+      ],
+      "level_names": [
+        "校招/应届生",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "并发",
+        "线程",
+        "锁",
+        "AQS",
+        "volatile",
+        "CAS",
+        "队列",
+        "面试官"
+      ],
+      "summary": "一、 标准面试回答模版（建议背诵）面试官： 说下对 AQS 的理解。Fox版标准回答：“AQS（抽象队列同步器）是 JUC 包下的核心组件，它是构建锁和其他同步组件（如 ReentrantLock、CountDownLatch）的基础框架。它的核心思想可以概括为：‘一个状态，一个队列，两个动作...",
+      "excerpt": "一、 标准面试回答模版（建议背诵） 面试官： 说下对 AQS 的理解。 Fox版标准回答： “AQS（抽象队列同步器）是 JUC 包下的核心组件，它是构建锁和其他同步组件（如 ReentrantLock、CountDownLatch）的 基础框架 。 它的核心思想可以概括为： ‘一个状态，一个队列，两个动作’ 。 核心数据结构 ： State（资源状态） ：内部维护了一个 volatile int state 变量。 比如 ReentrantLock 中，state=0 代表无锁，state>0 代表有锁及重入次数。 比如 Semaphore 中，state 代表剩余信号量的数量。 CLH 队列（等待队列） ：当线程抢不到资源（State）时，AQS 会把该线程封装成一个 Node 节点 ，扔到一个 FIFO 的双向链表 中排队挂起。 核心工作流程 ： 加锁（Acquire） ：尝试用 CAS 操作修改 state。 如果成功，拿锁走人。 如果失败，封装成 Node 入队，并调用 LockSupport.park() 让线程阻塞。 解锁（Release） ：修改 state（通常是减 1）。 如果 state 归零，表示锁彻底释放，AQS 会唤醒（unpark）队列头部的线程去抢锁。 设计模式 ： AQS 使用了 模板方法模式 (Template Method Pattern) 。它封装了排队、阻塞、唤醒等复杂的底层逻辑，子类（如 ReentrantLock）只需要实现 tryAcquire 和 tryRelease 等简单的方法来定义‘什么是获取成功，什么是释放成功’即可。” 二、 图解 AQS 架构 面试时，脑子里必须有这张图。这是 AQS 的灵魂。 State ：资源的交通灯。 ExclusiveOwnerThread ：记录当前谁拿着锁。 CLH Queue ：没抢到锁的倒霉蛋们在这里排队。 三、 代码实战：手写一个简单的锁 光说不练假把式。面试时如果你能说：“我可以用 AQS 几行代码写一个独占锁”，那杀伤力是核弹级的。 ​ 四、 深度解析 如果面试官追问： “为什么 AQS 的队列是双向链表？单向不行吗？” Fox版标准回答： “ 不行！必须是双向的。 取消节点的移除 ：当一个线程在排队时被中断（Interrupt）或超时，它需要把自己从队列中移除。双向链表通过 prev 指针可以快速找到前驱节点，方便修改指针关系，时间复杂度是 O(1)。如果是单向链表，还得从头遍历，是 O(N)。 唤醒机制的健壮性 ： 在 AQS 的 unparkSuccessor （唤醒后继）方法中，如果当前节点的后继节点是 null 或者是取消状态，AQS 会 从 tail 节点向前遍历 ，找到最靠近头部的一个有效节点来唤醒。这必须依赖指向前驱的 prev 指针。 (这里"
+    },
+    {
+      "slug": "zhqnceo9a44shhct",
+      "title": "短视频",
+      "url": "/tulingzhouyu/db22bv/zhqnceo9a44shhct",
+      "toc_path": [
+        "并发编程",
+        "说下对AQS的理解",
+        "短视频"
+      ],
+      "toc_level": 2,
+      "toc_index": 248,
+      "word_count": 425,
+      "updated_at": "2024-06-06T14:32:38.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "mysql-index-transaction",
+        "os-linux",
+        "java-core",
+        "mq-rabbitmq"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "并发",
+        "线程",
+        "锁",
+        "AQS",
+        "Java",
+        "队列"
+      ],
+      "summary": "现在这种行情，AQS 是什么都不知道，就敢去面试？我只能说你可能真的需要补补课了。  哈喽，大家好，我是JJAQS，全称 AbstractQueuedSynchronizer，是Java并发编程中的基石。作为一个抽象类，它为构建锁和其他同步器提供了一个高效、灵活的框架。AQS通过两种主要的锁机...",
+      "excerpt": "现在这种行情，AQS 是什么都不知道，就敢去面试？我只能说你可能真的需要补补课了。 哈喽，大家好，我是JJ ​ AQS，全称 AbstractQueuedSynchronizer，是Java并发编程中的基石。 ​ 作为一个抽象类，它 为构建锁和其他同步器提供了一个高效、灵活的框架 。 ​ AQS通过两种主要的锁机制—— 排他锁 和 共享锁 ——来控制线程对共享资源的访问。 ​ 排他锁 ，又称为独占锁，确保在多个线程竞争同一资源时，只有一个线程能够访问该资源。 ​ AQS内部使用 同步状态 来管理这一过程：状态为0表示锁空闲，大于0表示锁被占用，小于0 就表示有线程在等待。 ​ 而共享锁则允许多个线程同时访问资源，但控制权只能由一个线程持有。 AQS实现共享锁的方式与排他锁相似，同样依赖于 同步状态 。 ​ AQS还采用了 FIFO等待队列 来管理线程，确保它们有序地等待和获取锁资源。当锁被释放时，等待队列中的下一个线程才会获得锁然后继续执行。 ​ 要使用AQS，需要继承该类并实现关键的抽象方法，这些方法定义了锁的获取、释放、阻塞和唤醒逻辑。 ​ 总的来说，AQS是Java并发编程中不可或缺的组件，它为线程同步提供了强大的支持。"
+    },
+    {
+      "slug": "anh23f6qweekqaoe",
+      "title": "请谈谈你对 Final 的理解",
+      "url": "/tulingzhouyu/db22bv/anh23f6qweekqaoe",
+      "toc_path": [
+        "并发编程",
+        "请谈谈你对 Final 的理解"
+      ],
+      "toc_level": 1,
+      "toc_index": 249,
+      "word_count": 1175,
+      "updated_at": "2026-01-12T11:42:06.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "os-linux",
+        "java-core",
+        "security-auth",
+        "resume-project"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "senior",
+        "campus"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "并发",
+        "线程",
+        "锁",
+        "synchronized",
+        "内存",
+        "Java",
+        "String",
+        "安全",
+        "面试官"
+      ],
+      "summary": "一、 标准面试回答模版（建议背诵）面试官： 谈谈你对 final 的理解。Fox版标准回答： “final 在 Java 中不仅仅是一个语法修饰符，在并发编程中，它更是一个轻量级的内存安全屏障。我的理解分为三个层次：基础语法层 (Syntax)：修饰类：不可被继承（如",
+      "excerpt": "一、 标准面试回答模版（建议背诵） 面试官： 谈谈你对 final 的理解。 Fox版标准回答： “ final 在 Java 中不仅仅是一个语法修饰符，在并发编程中，它更是一个 轻量级的内存安全屏障 。我的理解分为三个层次： 基础语法层 (Syntax) ： 修饰类：不可被继承（如 String 类） 。 ​ 修饰方法：不可被重写（Override） 。 ​ 修饰变量：引用不可变。一旦赋值，就不能指向别的对象，但 指向的对象内容是可以变的 。 ​ 内存语义层 (JMM Semantics) —— 这是核心 ： final 拥有 禁止指令重排序 的特殊能力。 在 JMM 中，它通过插入 StoreStore 内存屏障 ，保证了 初始化安全性 (Initialization Safety) 。 具体来说，它强制保证： 在构造函数返回之前，所有 final 字段的写入，必须在把对象引用赋值给其他变量之前完成 。这确保了其他线程只要拿到对象引用，读到的 final 字段一定是初始化好的，绝对不会读到‘半成品’或默认值（0/null）。 架构设计层 (Design) ： 利用 final 可以构建 不可变对象 (Immutable Object) 。 不可变对象是 天生线程安全 的，不需要任何 synchronized 锁，读性能极高。” 二、 代码层面的体现 1. 场景一：引用不可变 vs 内容可变（避坑指南） 很多新手以为加了 final 数据就安全了，这是大错特错的。 final 只能锁住“引用指向”，锁不住“堆内存里的数据”。 ​ 解析 ：如上代码所示，虽然 list 是 final 的，但我们依然可以往里面 add 数据 。 2. 场景二：致命陷阱 —— &quot;this&quot; 引用逃逸 就算用了 final ，如果构造函数写得烂，照样线程不安全。 ​ 解析 ： final 的内存屏障生效的前提是： 在构造函数结束前， this 引用不能被其他线程看到 。如果发生了 this 逃逸， final 的保证就会失效 。 三、 Fox的深度解析（JMM 与重排序） 如果面试官追问： “你刚才提到 final 禁止重排序，能详细讲讲它是怎么防止‘对象早产’的吗？” Fox版解析： “这涉及到了对象创建的底层步骤。 当我们 new 一个普通对象时，CPU 或编译器可能会为了性能进行 指令重排序 。 正常的步骤是： 分配内存 (Allocate) 。 初始化数据 (Initialize) 。 建立关联 (Associate，即把引用指向内存地址) 。 如果没有 final ： 步骤 2 和 步骤 3 可能会被重排成 1 -> 3 -> 2 。 后果 ：线程 A 执行了 3（引用指向了地址），但还没执行 2（数据还没初始化）。此时线程 B 来了，拿到了这个引用"
+    },
+    {
+      "slug": "xawecw91rvkqgiil",
+      "title": "💎 Java并发面试题合集",
+      "url": "/tulingzhouyu/db22bv/xawecw91rvkqgiil",
+      "toc_path": [
+        "并发编程",
+        "💎 Java并发面试题合集"
+      ],
+      "toc_level": 1,
+      "toc_index": 250,
+      "word_count": 13527,
+      "updated_at": "2026-05-14T04:54:38.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "os-linux",
+        "java-thread-pool",
+        "java-core",
+        "mysql-optimization"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "并发",
+        "线程",
+        "锁",
+        "操作系统",
+        "内存",
+        "线程池",
+        "ThreadPoolExecutor",
+        "Java",
+        "异常",
+        "IO",
+        "count"
+      ],
+      "summary": "1. 判断线程池任务执行完成的方式Thread线程是否执行完成，我们可以调用join方法然后等待线程执行完成；那在使用线程池的时候，我们如何知道线程已经执行完成了？本文就带给大家五种判断的方式：isTerminated() 方式，在执行 shutdown() ，关闭线程池后，判断是否所有任务已...",
+      "excerpt": "判断线程池任务执行完成的方式 Thread线程是否执行完成，我们可以调用join方法然后等待线程执行完成；那在使用线程池的时候，我们如何知道线程已经执行完成了？本文就带给大家 五种 判断的方式： isTerminated() 方 ​ 式，在执行 shutdown() ，关闭线程池后，判断是否所有任务已经完成。 ThreadPoolExecutor 的 getCompletedTaskCount() 方法，判断完成任务数和全部任务数是否相等。 CountDownLatch计数器 ，使用闭锁计数来判断是否全部完成。 手动维护一个 公共计数 ，原理和闭锁类似，就是更加灵活。 使用 submit 向线程池 提交 任务， Future判断 任务执行状态。 方法一： isTerminated() 测试代码 上述代码处理逻辑在主线程中进行循环判断，全部任务是否已经完成。 这里有两个主要方法： shutdown() ：对线程池进行有序关闭。调用该方法后，线程池将不再接受新的任务，但会继续执行已提交的任务。如果线程池已经处于关闭状态，则对该方法的调用没有额外的作用。 isTerminated() ：判断线程池中的所有任务是否在关闭后完成。只有在调用了shutdown()或shutdownNow()方法后，所有任务执行完毕，才会返回true。需要注意的是，在调用shutdown()之前调用isTerminated()方法始终返回false。 优缺点分析 优点 ：操作简单。 缺点 ：需要关闭线程池。并且日常使用是将线程池注入到Spring容器，然后各个组件中统一用同一个线程池，不能直接关闭线程池。 方法二： getCompletedTaskCount() 测试代码 上述代码处理逻辑还是一样在主线程循环判断，主要就两个方法： getTaskCount() ：返回计划执行的任务总数。由于任务和线程的状态可能在计算过程中动态变化，返回的值只是一个近似值。这个方法返回的是线程池提交的任务总数，包括已经完成和正在执行中的任务。 getCompletedTaskCount() ：返回已经完成执行的任务的大致总数。由于任务和线程的状态可能在计算过程中动态改变，返回的值只是一个近似值，并且在连续的调用中不会减少。这个方法返回的是已经完成执行的任务数量，不包括正在执行中的任务。 优缺点分析 优点 ：不必关闭线程池，避免了创建和销毁带来的损耗。 缺点 ：使用这种判断存在很大的限制条件；必须确定在循环判断过程中没有新的任务产生。 方法三： CountDownLatch 测试代码 优缺点分析 优点 ：代码优雅，不需要对线程池进行操作。 缺点 ：需要提前知道线程数量；性能较差；还需要在线程代码块内加上异常判断，否则在 countDown之前发生异常而没有处理，就会导致主线程永远阻塞在 await。 方法四"
+    },
+    {
+      "slug": "droiapp7ghmm8c0v",
+      "title": "并发编程的三大特性及底层追问",
+      "url": "/tulingzhouyu/db22bv/droiapp7ghmm8c0v",
+      "toc_path": [
+        "并发编程",
+        "并发编程的三大特性及底层追问"
+      ],
+      "toc_level": 1,
+      "toc_index": 251,
+      "word_count": 7601,
+      "updated_at": "2025-05-12T13:17:37.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "os-linux",
+        "java-core",
+        "jvm-memory-gc",
+        "mysql-index-transaction"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle",
+        "campus"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "并发",
+        "多线程",
+        "线程",
+        "锁",
+        "AQS",
+        "volatile",
+        "synchronized",
+        "CAS",
+        "ThreadLocal",
+        "操作系统",
+        "进程",
+        "内存",
+        "Java",
+        "JVM"
+      ],
+      "summary": "一、原子性1.1 什么是并发编程的原子性原子性的定义：原子性指一个操作是不可分割的，不可中断的，一个线程在执行时，另一个线程不会影响到他。Java的并发编程如何做到跨平台的？JMM（Java Memory Model）。不同的硬件和不同的操作系统在内存上的操作有一定差异的。Java为了解决相同...",
+      "excerpt": "一、原子性 1.1 什么是并发编程的原子性 原子性的定义：原子性指一个操作是不可分割的，不可中断的，一个线程在执行时，另一个线程不会影响到他。 Java的并发编程如何做到跨平台的？ JMM（Java Memory Model）。不同的硬件和不同的操作系统在内存上的操作有一定差异的。Java为了解决相同代码在不同操作系统上出现的各种问题，用JMM屏蔽掉各种硬件和操作系统带来的差异。 让Java的并发编程可以做到跨平台。 JMM规定所有变量都会存储在主内存中，在操作的时候，需要从主内存中复制一份到线程内存（CPU内存），在线程内部做计算。 然后再写回主内存中（不一定！）。 并发编程的原子性用代码阐述： 当前程序：多线程操作共享数据时，预期的结果，与最终的结果不符。 原子性：多线程操作临界资源，预期的结果与最终结果一致。 （源于主存跟工作内存中不同） Java对变量的存储和操作的详细过程？ 通过对这个程序的分析，可以查看出，++的操作，一共分为了三部 首先是线程从主内存拿到数据保存到CPU的寄存器（线程的工作内存）中， 然后在CPU寄存器（高速缓存）中进行+1操作， 最终将结果写回到主内存（线程频繁读写变量时，会等满了或者一定时间再写回内存）当中。 1.2 保证并发编程的原子性 1.2.1 synchronized 因为++操作可以从指令中查看到 既然有多个指令期间就可能被插一脚，可以在方法上追加 synchronized 关键字或者采用 同步代码块 的形式来保证原子性 synchronized可以让避免多线程同时操作临街资源，同一时间点，只会有一个线程正在操作临界资源 同步代码块和synchronized有什么区别？ 1，范围：sync修饰方法时会锁定整个方法;synchronized(object){count++}同步代码块只锁定代码块 2，锁的对象：sync对于实例方法，锁的是当前实例对象。即每个对象都有一个与之关联的锁，当一个线程进入实例的 synchronized 方法时，它就获得了这个对象的锁；同步代码块可以指定任意的对象作为锁。这使得开发者可以根据实际需求选择锁的粒度。 3，性能：sync会导致不必要开销；同步代码块能够减少锁的粒度 4，操作性：sync简洁方便；同步代码块灵活复杂 1.2.2 CAS 到底什么是CAS？ CAS：Compare and Swap。从字面意义上来说，就是先进行比较，然后替换 他在替换内存的某个位置的值时，首先查看内存中的值与预期值是否一致，如果一致，执行替换操作。这个操作是一个原子性操作。 它是 乐观锁 思想的一种实现，尤其是在并发量大的业务场景下保证单个实例的原子性，使用较为频繁。java类库中java.util.concurrent.atomic包下一些方法，也均使用CAS处理 Java中基于Unsafe的类提供"
+    },
+    {
+      "slug": "qx9qao0sah6mveha",
+      "title": "synchronized可以锁字符串吗",
+      "url": "/tulingzhouyu/db22bv/qx9qao0sah6mveha",
+      "toc_path": [
+        "并发编程",
+        "synchronized可以锁字符串吗"
+      ],
+      "toc_level": 1,
+      "toc_index": 252,
+      "word_count": 931,
+      "updated_at": "2024-09-15T09:23:56.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "mysql-index-transaction",
+        "java-core",
+        "jvm-memory-gc",
+        "os-linux"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "并发",
+        "线程",
+        "锁",
+        "synchronized",
+        "String",
+        "GC",
+        "垃圾回收",
+        "堆",
+        "栈",
+        "内存"
+      ],
+      "summary": "在日常项目开发中为了解决用户数据并发操作的问题，需要对代码块进行加锁保护。例如：一个教务系统， 提供不同学校使用， 有一个考试场景， 需要记录不同学校的考试次数， 这里想尽可能把锁的对象放小，因此通常都是锁用户而不是锁整个类或者代码块；然而在用synchronized(school)的时候可能...",
+      "excerpt": "在日常项目开发中为了解决用户数据并发操作的问题，需要对代码块进行加锁保护。 例如：一个教务系统， 提供不同学校使用， 有一个考试场景， 需要记录不同学校的考试次数， 这里想尽可能把锁的对象放小，因此通常都是锁用户而不是锁整个类或者代码块；然而在用 synchronized(school) 的时候可能会存在一些问题。 synchronized 锁字符串的问题 使用synchronized锁一个字符串👇 测试： 模拟http接口请求， Spring底层会通过new String()方式传入字符串参数， 而不是传入“”常量值 ​ 运行结果如下： 3个同时并行： 发生线程安全问题： 可以发现还是并发执行了，因为 synchronized (new String(&quot;字符串常量&quot;)) 锁的对象不是同一个，仅仅是值相等 ，此时的字符串是在堆栈中。将代码修改为如下 ​ 得到运行结果为： 不同学校并行: 同一个学校串行： 通过上面结果可以看出此时通过 school.intern()把字符串对象放入常量池中，则&quot;清华”地址是同一个 。 ​ synchronized 锁字符串用String的intern()存在的问题 通过上面的demo可以得出，使用synchronized 锁字符串，需要将字符串添加到字符串常量池中。日常使用中通过通过new对象的方式创建对象，再取对象的字段，因此需要使用intern把字符串放入常量池中，但是 直接使用String的intern全部把字符串放入常量池会存在一些问题 。显然在数据量很大的情况下，将所有字符串都放入常量池是不合理的，常量池大小依赖服务器内存，且只有等待fullGC，极端情况下会导致 频繁fullGC 。并且在数据量很大的情况下，将字符串放入常量会 存在性能问题 。 可以用google的guava包的interner类： Interner是通过MapMaker构造ConcurrentMap来实现弱引用，ConcurrentMap用分段的方式保证安全。这里个人觉得比常量池的 优点 就在于这里是 弱引用的方式，便于map的回收，常量池只能依赖于fullGC，这里的回收在不使用或内存不够用条件下即可被回收 （Minor GC阶段）。 总结 synchronized可以锁存活于字符串常量池中的值，不能锁存活于堆栈中的字符串（字符串地址要相同） 可以使用 String对象.intern() 将该字符串放入字符串常量池中，但是常量池的回收只能依赖于fullGC，故不推荐使用 推荐使用guava包下的interner类，使用弱引用的方式，在内存不足的时候自动进行垃圾回收"
+    },
+    {
+      "slug": "htt1aseenb9icbcz",
+      "title": "父子线程之间如何共享传递数据",
+      "url": "/tulingzhouyu/db22bv/htt1aseenb9icbcz",
+      "toc_path": [
+        "并发编程",
+        "父子线程之间如何共享传递数据"
+      ],
+      "toc_level": 1,
+      "toc_index": 253,
+      "word_count": 521,
+      "updated_at": "2024-12-23T11:23:45.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "os-linux",
+        "java-collections",
+        "java-core",
+        "security-auth"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "并发",
+        "多线程",
+        "线程",
+        "ThreadLocal",
+        "集合",
+        "HashMap",
+        "ConcurrentHashMap",
+        "ArrayList",
+        "Java",
+        "安全"
+      ],
+      "summary": "在Java中，父线程和子线程之间共享或传递数据可以通过多种方式实现，具体可以根据需求选择以下几种常用的方法：1. 使用ThreadLocalThreadLocal是一种特殊的Java对象，它为每个线程提供了独立的变量副本。通过ThreadLocal可以实现线程范围内的变量隔离，但不直接用于父子...",
+      "excerpt": "在Java中，父线程和子线程之间共享或传递数据可以通过多种方式实现，具体可以根据需求选择以下几种常用的方法： 1. 使用ThreadLocal ThreadLocal 是一种特殊的Java对象，它为每个线程提供了独立的变量副本。通过 ThreadLocal 可以实现线程范围内的变量隔离，但不直接用于父子线程数据共享。不过，父线程可以在线程启动之前将数据放到InheritableThreadLocal，子线程可以读取到这些数据。 2. 使用Concurrent Collections Java提供了一些线程安全的集合类，如 ConcurrentHashMap 、 CopyOnWriteArrayList 等，可以安全并发地访问和修改，适用于需要较多线程共享数据的场景。 3. 使用消息队列 在复杂的多线程环境下，使用Java的阻塞队列（如 BlockingQueue ）可以在父子线程之间传递数据，并控制线程的执行顺序。 通过这些方式，父子线程可以有效地共享和传递数据，根据应用场景选择最适合的方案，以确保数据一致性和并发安全。"
+    },
+    {
+      "slug": "yhez1gsatz4004rs",
+      "title": "Java死锁问题如何解决",
+      "url": "/tulingzhouyu/db22bv/yhez1gsatz4004rs",
+      "toc_path": [
+        "并发编程",
+        "Java死锁问题如何解决"
+      ],
+      "toc_level": 1,
+      "toc_index": 254,
+      "word_count": 725,
+      "updated_at": "2024-08-11T12:21:31.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "mysql-index-transaction",
+        "os-linux",
+        "observability-troubleshooting",
+        "java-core"
+      ],
+      "question_type": "troubleshooting",
+      "question_type_name": "故障排查题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "并发",
+        "多线程",
+        "线程",
+        "锁",
+        "监控",
+        "死锁",
+        "Java"
+      ],
+      "summary": "在Java中，死锁是一种阻塞现象，发生在两个或多个线程相互持有对方所需的资源，从而导致线程无法继续执行。当线程陷入死锁状态时，就无法释放它们持有的资源，因为它们在等待其他线程释放其持有的资源。死锁的四个必要条件是：互斥条件：资源不能被多个线程共享。持有和等待：线程已经持有至少一个资源并等待获取...",
+      "excerpt": "在Java中，死锁是一种阻塞现象，发生在两个或多个线程相互持有对方所需的资源，从而导致线程无法继续执行。当线程陷入死锁状态时，就无法释放它们持有的资源，因为它们在等待其他线程释放其持有的资源。死锁的四个必要条件是： 互斥条件 ：资源不能被多个线程共享。 持有和等待 ：线程已经持有至少一个资源并等待获取另外的资源。 不剥夺条件 ：资源不能从持有它的线程中剥夺，必须由线程自行释放。 循环等待条件 ：存在一个线程循环等待链，链中的每个线程都等待下一个线程所持有的资源。 示例代码造成死锁 下面是一个简单的造成死锁的Java代码示例： 在这个示例中， thread1 首先锁定 resource1 然后尝试锁定 resource2 。同时， thread2 锁定 resource2 后尝试锁定 resource1 。由于两个线程都在相互等待对方释放资源，因此会形成死锁。 检测死锁 线程转储分析 ：可以通过JVM工具如 jstack 获取线程转储来识别死锁。线程转储会展示所有线程的状态以及所有锁的持有情况。 使用JVisualVM/JConsole ：这些工具可以实时监控JVM状态，并且会自动检测和报告死锁。 预防死锁 资源排序（Resource Ordering） ：避免循环等待，可以提前规定资源获取的顺序。所有线程在锁定资源时，必须按预定顺序加锁。 尝试锁定（Try-Lock） ：使用 tryLock() 方法非阻塞地获取锁。可以设置超时时间来避免死锁。 通过适当的设计和策略，死锁是可以预防和管理的，特别是在复杂应用程序多线程编程环境中。"
+    },
+    {
+      "slug": "bwxdoap45q8ozbtm",
+      "title": "Synchronized是如何实现线程同步的",
+      "url": "/tulingzhouyu/db22bv/bwxdoap45q8ozbtm",
+      "toc_path": [
+        "并发编程",
+        "Synchronized是如何实现线程同步的"
+      ],
+      "toc_level": 1,
+      "toc_index": 255,
+      "word_count": 882,
+      "updated_at": "2024-08-11T11:10:04.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "mysql-index-transaction",
+        "os-linux",
+        "java-core",
+        "mysql-optimization"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "并发",
+        "多线程",
+        "线程",
+        "锁",
+        "synchronized",
+        "操作系统",
+        "Java",
+        "count"
+      ],
+      "summary": "synchronized关键字是Java中实现线程同步的基本机制之一。它用于保护共享资源不被多个线程同时访问，从而避免数据不一致和保证线程安全。synchronized可以用于方法和代码块，有助于确保在同一时刻只有一个线程可以进入同步代码块。实现原理synchronized基于监视器锁（Mon...",
+      "excerpt": "synchronized 关键字是Java中实现线程同步的基本机制之一。它用于保护共享资源不被多个线程同时访问，从而避免数据不一致和保证线程安全。 synchronized 可以用于方法和代码块，有助于确保在同一时刻只有一个线程可以进入同步代码块。 实现原理 synchronized 基于监视器锁（Monitor Lock）实现，底层依赖于操作系统的互斥锁（Mutex）。每个对象在Java中都与一个隐式的监视器相关联，使用 synchronized 时，线程需要获得对象的监视器锁，然后才能进入同步代码块。 Java的对象有一个头（Object Header），其中包含一个 Mark Word ，用于存储锁的信息。锁有不同的状态，包括无锁状态、偏向锁、轻量级锁和重量级锁，JVM会根据竞争情况自动进行状态变换以优化性能。 使用示例 1. 同步方法 使用 synchronized 直接修饰实例方法或静态方法，以同步整个方法。下面是一个示例： 在这个示例中， increment() 和 getCount() 方法是同步的，这意味着对同一实例的这些方法调用是线程安全的。 2. 同步代码块 为了减少锁的粒度，您可以在方法中使用 synchronized 代码块，从而只锁住特定的部分。 这种方法允许更精细地控制同步范围，常用于只需保护代码的一部分而非整个方法的场景。 同步静态方法 对于静态方法， synchronized 锁定的是类对象，因为静态方法属于类，而不是实例。 在这个例子中，加锁保护的是整个类 Counter 的静态成员 count ，使用类级别的锁来保证线程安全。 注意事项 性能 ：使用 synchronized 可能导致线程阻塞，从而影响程序性能。尽量将 synchronized 锁的范围缩小，以减少锁竞争。 死锁风险 ：错误使用同步可能导致死锁。例如，多个线程在不同的锁上循环等待。要避免持有多个锁，或者确保获取锁的顺序一致。 原子性和可见性 ： synchronized 不仅保证代码块的原子性，还保证进入同步代码块之前对变量的修改，对于其他线程是可见的。 公平性 ： synchronized 不保证线程获取锁的公平性，即线程获取锁的顺序不一定按照调用顺序。如果需要严格的公平性控制，可能需要使用 ReentrantLock 等高级锁。 通过 synchronized ，我们可以确保共享资源在多线程环境下的安全访问，同时通过合适的使用方式来优化性能和避免常见的多线程问题。"
+    },
+    {
+      "slug": "tzfdm5fio6vq3nb6",
+      "title": "Java中如何安全地停止线程",
+      "url": "/tulingzhouyu/db22bv/tzfdm5fio6vq3nb6",
+      "toc_path": [
+        "并发编程",
+        "Java中如何安全地停止线程"
+      ],
+      "toc_level": 1,
+      "toc_index": 256,
+      "word_count": 612,
+      "updated_at": "2024-08-11T11:23:59.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "os-linux",
+        "java-core",
+        "security-auth",
+        "performance-optimization"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "并发",
+        "线程",
+        "volatile",
+        "Java",
+        "安全"
+      ],
+      "summary": "在Java中，安全地停止线程通常涉及通过标志位来指示线程应该停止执行，而不是使用诸如Thread.stop()之类的过时且不安全的方法。直接强制终止线程可能会导致资源泄露或数据库状态不一致等问题。使用标志位停止线程InterruptedException：对于阻塞操作，使用线程的中断机制。标志...",
+      "excerpt": "在Java中，安全地停止线程通常涉及通过标志位来指示线程应该停止执行，而不是使用诸如 Thread.stop() 之类的过时且不安全的方法。直接强制终止线程可能会导致资源泄露或数据库状态不一致等问题。 使用标志位停止线程 InterruptedException ：对于阻塞操作，使用线程的中断机制。 标志位（Volatile） ：对于正在执行的非阻塞任务，可以使用一个 volatile 类型的布尔标志。 以下是使用标志位和中断机制停止线程的示例： 示例代码 关键点 Volatile变量 ： running 标志被声明为 volatile ，确保线程间的可见性，使得主线程修改 running 标志后， WorkerThread 能够及时看到变化。 线程中断 ： 调用 interrupt() 方法可以使线程从阻塞操作（如 sleep() 、 wait() 等）中被中断跳出。 在执行长时间任务的循环中，也应该定期检查 Thread.currentThread().isInterrupted() 状态以退出循环。 清理操作 ： 在可能终止的操作中包含一个 finally 块，用于处理任何必要的清理工作（释放资源等）。 安全停止 ： 最大限度地减少资源泄露和不一致性的风险，通过设置标志位与中断线程相结合，有序地、安全地终止线程操作。 上述方法有效地结合了标志位与线程中断，显式控制线程的生命周期，实现了对线程的安全停止。"
+    },
+    {
+      "slug": "siagvwuiuod0c9w1",
+      "title": "Synchronized与ReentrantLock的区别",
+      "url": "/tulingzhouyu/db22bv/siagvwuiuod0c9w1",
+      "toc_path": [
+        "并发编程",
+        "Synchronized与ReentrantLock的区别"
+      ],
+      "toc_level": 1,
+      "toc_index": 257,
+      "word_count": 1239,
+      "updated_at": "2026-01-08T05:41:04.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "mysql-index-transaction",
+        "java-core",
+        "os-linux",
+        "resume-project"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "并发",
+        "线程",
+        "锁",
+        "AQS",
+        "volatile",
+        "synchronized",
+        "CAS",
+        "Java",
+        "异常",
+        "操作系统",
+        "项目",
+        "面试官"
+      ],
+      "summary": "一、 标准面试回答模版（建议背诵）面试官： Synchronized与ReentrantLock有什么区别？Fox版标准回答：“它们都是Java中实现线程同步的机制，都具有互斥性和可重入性。但它们的区别主要体现在层面、用法、功能和底层实现四个维度：层面不同：",
+      "excerpt": "一、 标准面试回答模版（建议背诵） 面试官： Synchronized与ReentrantLock有什么区别？ Fox版标准回答： “它们都是Java中实现线程同步的机制，都具有 互斥性 和 可重入性 。但它们的区别主要体现在 层面、用法、功能和底层实现 四个维度： 层面不同 ： synchronized 是 JVM 层面 的关键字，是内置的语言特性，由 JVM 负责实现。 ReentrantLock 是 JDK API 层面 的类（JUC包下），是基于 Java 代码实现的。 用法不同（关键点） ： synchronized 是 自动挡 ：进入同步块加锁，出了同步块（或异常）自动释放锁，开发者不需要手动操作。 ReentrantLock 是 手动挡 ：需要手动调用 lock() 加锁，且 必须 在 finally 块中调用 unlock() 释放锁，否则容易导致死锁。 功能丰富度不同（核心加分项） ： ReentrantLock 比 synchronized 多了三个高级功能： 等待可中断 ： lockInterruptibly() 可以响应中断，不想等了可以取消。 公平锁支持 ：构造函数传 true 可实现公平锁（先来后到）， synchronized 只能是非公平锁。 多条件绑定 ：通过 Condition 可以实现分组唤醒（如 notEmpty.signal() ），而 synchronized 只有一个 wait/notify 队列，要么全醒，要么随机醒一个。 底层实现不同 ： synchronized 底层基于对象头（Mark Word）和 Monitor（监视器锁） ，JDK 1.6 后引入了偏向锁、轻量级锁的锁升级机制。 ReentrantLock 底层基于 AQS（抽象队列同步器） 和 CAS 操作来实现。” 二、 代码层面对比（Talk is cheap, show me the code） 面试时，如果你能在白板上写出这两段代码的对比，尤其是 ReentrantLock 的 finally 块，非常加分。 1. Synchronized（傻瓜式） JVM 帮你搞定了一切（异常处理、锁释放）。 ​ 2. ReentrantLock（精细控制） Look at me! 这里有个巨大的坑： unlock() 必须 放在 finally 里，且 lock() 建议放在 try 之前。 ​ 三、 底层原理深挖 如果面试官追问：“它们底层到底是怎么卡住线程的？”这时候你要抛出这两个核心概念。 1. Synchronized 的底层：ObjectMonitor 依赖对象 ：每个 Java 对象头里都有个 Mark Word，指向一个 C++ 实现的 ObjectMonitor 。 核心结构 ： _owner ：指向持有锁的线程。 _EntryList"
+    },
+    {
+      "slug": "qaxss082u4y1akmm",
+      "title": "Java中读写锁的应用场景是什么",
+      "url": "/tulingzhouyu/db22bv/qaxss082u4y1akmm",
+      "toc_path": [
+        "并发编程",
+        "Java中读写锁的应用场景是什么"
+      ],
+      "toc_level": 1,
+      "toc_index": 258,
+      "word_count": 793,
+      "updated_at": "2024-08-11T13:26:18.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "mysql-index-transaction",
+        "os-linux",
+        "java-core",
+        "performance-optimization"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle",
+        "senior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "并发",
+        "线程",
+        "锁",
+        "Java",
+        "性能"
+      ],
+      "summary": "ReadWriteLock 是 Java 提供的一种用于解决并发读写问题的锁机制，其主要目的在于提高在读多写少的场景下的并发性能。ReadWriteLock 允许多个线程同时读取共享资源，但是对写操作是独占的。这意味着在一个线程写入数据时，其他线程既不能读取也不能写入。应用场景缓存系统：在缓存...",
+      "excerpt": "ReadWriteLock 是 Java 提供的一种用于解决并发读写问题的锁机制，其主要目的在于提高在 读多写少的场景 下的并发性能。 ReadWriteLock 允许多个线程同时读取共享资源，但是对写操作是独占的。这意味着在一个线程写入数据时，其他线程既不能读取也不能写入。 应用场景 缓存系统 ： 在缓存系统中，数据读取频率通常远高于数据写入，因此使用读写锁可以提高读取操作的并发性和效率。 配置管理 ： 系统配置或应用程序配置的数据通常在初始化后多为读取，只有在特殊情况下才会更新，因此适合使用读写锁。 文档编辑 ： 多人协同编辑文档时，可能会有许多人同时查看文档内容，只有少数人进行编辑，这种场合也可以使用读写锁。 游戏状态 ： 游戏服务器可能需要频繁读取玩家的状态，而状态更新相对较少，因此读写锁可以提高状态读取的性能。 代码示例 以下是一个使用 ReadWriteLock 的示例代码，这个示例演示了如何在共享数据结构中使用读写锁，以确保线程安全并提高并发读取的性能。 关键点 提升读取性能 ： ReadWriteLock 允许多个读取线程同时访问共享资源，从而提高了读取性能。 写锁独占 ：只有在没有其他线程读取或写入时，写锁才能获得，这保障了数据在写入时的一致性和安全性。 适用性 ：适用于读多写少场景，能显著提高系统在并发读取场景下的性能。 易于使用 ： ReadWriteLock 提供了清晰的语义分离（读与写），使得代码更具可读性和维护性。 在高并发应用中，通过合理使用 ReadWriteLock 可以在保持数据一致性的同时大幅提高程序的并发性能。"
+    },
+    {
+      "slug": "kbt0anw9ro4a0qt2",
+      "title": "JDK 21中的虚拟线程是怎么回事",
+      "url": "/tulingzhouyu/db22bv/kbt0anw9ro4a0qt2",
+      "toc_path": [
+        "并发编程",
+        "JDK 21中的虚拟线程是怎么回事"
+      ],
+      "toc_level": 1,
+      "toc_index": 260,
+      "word_count": 944,
+      "updated_at": "2024-08-11T11:08:03.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "os-linux",
+        "java-core",
+        "jvm-memory-gc",
+        "observability-troubleshooting"
+      ],
+      "question_type": "troubleshooting",
+      "question_type_name": "故障排查题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "并发",
+        "线程",
+        "操作系统",
+        "Java",
+        "IO",
+        "JVM",
+        "监控"
+      ],
+      "summary": "JDK 21引入了一个重要的新特性：虚拟线程（Virtual Threads）。虚拟线程是Java的项目Loom的一部分，旨在简化并发编程并提高Java应用程序的可扩展性。以下是关于虚拟线程的一些关键细节：什么是虚拟线程？轻量级线程：虚拟线程是轻量级的用户模式线程，它们与传统的Java平台线程...",
+      "excerpt": "JDK 21引入了一个重要的新特性：虚拟线程（Virtual Threads）。虚拟线程是Java的项目Loom的一部分，旨在简化并发编程并提高Java应用程序的可扩展性。以下是关于虚拟线程的一些关键细节： 什么是虚拟线程？ 轻量级线程 ：虚拟线程是轻量级的用户模式线程，它们与传统的Java平台线程（也称为内核线程）不同。虚拟线程在JVM中运行，而不是直接映射到操作系统的内核线程。 调度和管理 ：虚拟线程由JVM调度和管理，而不是依赖于操作系统提供的调度机制。这使得虚拟线程的创建和切换成本非常低。 并发模型简化 ：因为虚拟线程极其轻量，因此可以创建大量线程，而不需要担心原有平台线程的高开销。这使得以“每个请求一个线程”来处理并发任务变得可行，简化了编程模型。 优势 高可扩展性 ：可以创建大量的虚拟线程，数百万级别的线程创建和销毁是可行的，从而更好地利用多核处理器的能力。 简化代码 ：程序员无需使用复杂的非阻塞编程手法（如回调和Future）来实现并发和并行代码，因为虚拟线程使得以同步风格编写并发程序成为可能。 减少阻塞问题 ：在传统线程中，一个线程阻塞会浪费系统资源，而虚拟线程在阻塞时会自动切换到其他正在运行的线程，利用时间片效率。 使用示例 使用虚拟线程，您可以像使用普通线程一样，简单地启动和操作它们。以下是一个简单的代码示例： 创建虚拟线程 虚拟线程可以通过 Thread.ofVirtual().start() 方法启动，API的设计使得使用虚拟线程与现有线程API保持一致，降低了学习成本。 适用场景 虚拟线程特别适合IO密集型任务或需要大量并发执行的任务，例如服务器编程场景中处理大量请求，或使用阻塞IO操作的应用程序。 对现有代码的影响 虚拟线程的引入不会影响现有的应用程序，因为它们增加了一种并发操作的选择，而不会移除或替换现有的功能。同时，由于它们是轻量级的，迁移到使用虚拟线程通常只需要很少的代码修改。 注意事项 性能监控 ：虽然虚拟线程相对于传统线程更轻量，但在监控和调试时仍需要注意它们的生命周期，因为它们可能会大规模地被创建和销毁。 库支持 ：大部分现有的Java库在使用虚拟线程时无需修改，不过某些需要深度与操作系统线程交互的库可能需要检查兼容性。 虚拟线程为Java引入了一种新的并发编程模型，使编写高并发Java应用程序变得更直观和简单，它极大地提升了Java程序的可扩展性和可维护性。"
+    },
+    {
+      "slug": "rf6z3cwdvsus3wk3",
+      "title": "说下CAS的实现与原理",
+      "url": "/tulingzhouyu/db22bv/rf6z3cwdvsus3wk3",
+      "toc_path": [
+        "并发编程",
+        "说下CAS的实现与原理"
+      ],
+      "toc_level": 1,
+      "toc_index": 261,
+      "word_count": 759,
+      "updated_at": "2024-08-11T14:00:22.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "mysql-index-transaction",
+        "os-linux",
+        "java-core",
+        "microservices-governance"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "campus"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "并发",
+        "多线程",
+        "线程",
+        "锁",
+        "CAS",
+        "内存",
+        "Java",
+        "重试"
+      ],
+      "summary": "CAS（Compare-And-Swap）是一种用于多线程编程中的原子操作，它通过硬件支持的指令来实现无锁同步。在多线程环境下，CAS操作通过比较和交换来更新变量的值，是一种乐观锁的实现方式，可以避免锁机制带来的开销。CAS工作原理CAS操作涉及三个操作数：内存位置V：需要修改的变量的内存地址...",
+      "excerpt": "CAS（Compare-And-Swap）是一种用于多线程编程中的原子操作，它通过硬件支持的指令来实现无锁同步。在多线程环境下，CAS操作通过比较和交换来更新变量的值，是一种乐观锁的实现方式，可以避免锁机制带来的开销。 CAS工作原理 CAS操作涉及三个操作数： 内存位置V ：需要修改的变量的内存地址。 预期值A ：期望变量当前持有的值。 新值B ：需要更新到变量的新值。 CAS工作过程如下： 比较内存位置V的当前值是否等于预期值A。 如果是，则用新值B更新内存位置中的值。 如果不是，则不更新值，并返回当前实际值。 这个操作是原子的，硬件保证比较并更新的操作不会被中断。 CAS在Java中的实现 在Java中，CAS操作主要通过 java.util.concurrent.atomic 包中的类来实现。例如， AtomicInteger 、 AtomicBoolean 、 AtomicReference 等。通过这些类的操作，Java应用可以在多线程环境下安全地对基本数据类型进行操作，而无需显式锁定。 示例：使用 AtomicInteger AtomicInteger 类提供了以原子方式更新 int 型变量的方法，其中 compareAndSet 是CAS操作实现的核心方法。 在这个示例中， increment 方法尝试获取当前值、计算新值并使用 compareAndSet 方法进行更新。 compareAndSet 返回 true 表示更新成功，返回 false 表示需要重试。 优势与考虑 无锁机制 ：CAS允许许多线程尝试更新同一个变量，而无需锁定，大大减小了锁竞争。 性能提升 ：在无锁的情况下，通常会有更好的性能表现，适合高并发场景。 ABA问题 ：CAS无法直接解决ABA问题（一个值从A变到B，又变回A），可以使用带版本号的变量如 AtomicStampedReference 来解决这个问题。 活锁 ：在高争用环境下，如果许多线程不断重试更新操作，可能会导致活锁，程序一直循环重试而得不到进展。 CAS是实现乐观并发控制的基础技术，它在Java的并发编程中起着非常重要的作用，尤其是在实现无锁算法时。通过适当使用CAS，可以在保证线程安全的同时，减少锁竞争，提高程序性能。"
+    },
+    {
+      "slug": "vl6pon0s08fg9iol",
+      "title": "Future和CompletableFuture的区别",
+      "url": "/tulingzhouyu/db22bv/vl6pon0s08fg9iol",
+      "toc_path": [
+        "并发编程",
+        "Future和CompletableFuture的区别"
+      ],
+      "toc_level": 1,
+      "toc_index": 263,
+      "word_count": 666,
+      "updated_at": "2024-08-11T11:39:18.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "java-core"
+      ],
+      "question_type": "troubleshooting",
+      "question_type_name": "故障排查题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "并发",
+        "CompletableFuture",
+        "Java",
+        "异常"
+      ],
+      "summary": "Future 和 CompletableFuture 是 Java 中用于异步编程的两个重要接口，它们都在 java.util.concurrent 包中被定义，但它们的设计和用途有显著的不同。FutureFuture 接口代表了一个异步计算的结果。它提供了一种检查计算是否完成的方法，以及在计...",
+      "excerpt": "Future 和 CompletableFuture 是 Java 中用于异步编程的两个重要接口，它们都在 java.util.concurrent 包中被定义，但它们的设计和用途有显著的不同。 Future Future 接口代表了一个异步计算的结果。它提供了一种检查计算是否完成的方法，以及在计算完成后获取结果或处理可能的异常。 特点 获取结果 ：可以通过 get() 方法阻塞等待计算完成并获取结果。 取消任务 ：可以通过 cancel() 方法尝试取消任务。 异步但不易组合 ： Future 本身没有提供处理异步结果的方法，也没有组合多个 Future 的机制。 示例代码 CompletableFuture CompletableFuture 是 Java 8 引入的新特性，支持更多的异步编程功能和更丰富的组合手段。 特点 非阻塞 ：提供了很多方法如 thenApply() , thenAccept() 等进行异步计算，避免阻塞。 组合任务 ：支持组合多个异步操作，如使用 thenCombine() , allOf() , anyOf() 等。 手动完成 ：可以通过 complete() 方法手动设置结果。 与流式操作结合 ：支持更多的函数式操作，像流式 API 一样链式调用。 示例代码 主要区别 功能范围 ： CompletableFuture 为更复杂的异步操作提供了更广泛的功能，而 Future 仅提供基本的任务完成和结果获取。 组合能力 ： CompletableFuture 支持异步任务的流式组合，而 Future 需要显式的阻塞和同步。 非阻塞 ： CompletableFuture 可以方便地进行非阻塞操作链，而 Future 本质上是阻塞的。 CompletableFuture 提供了更现代的接口来处理复杂的异步编程需求，它支持 completablepatables 和更丰富的组合能力，尤其适合复杂的异步数据流处理场景。"
+    },
+    {
+      "slug": "dhtcg0ffl7ssyp1t",
+      "title": "说下Fork/Join框架，与传统线程池有何不同",
+      "url": "/tulingzhouyu/db22bv/dhtcg0ffl7ssyp1t",
+      "toc_path": [
+        "并发编程",
+        "说下Fork/Join框架，与传统线程池有何不同"
+      ],
+      "toc_level": 1,
+      "toc_index": 264,
+      "word_count": 1157,
+      "updated_at": "2026-01-08T05:45:11.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "java-thread-pool",
+        "os-linux",
+        "observability-troubleshooting",
+        "mq-rabbitmq"
+      ],
+      "question_type": "troubleshooting",
+      "question_type_name": "故障排查题",
+      "levels": [
+        "senior",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "并发",
+        "线程",
+        "锁",
+        "线程池",
+        "ThreadPoolExecutor",
+        "阻塞队列",
+        "CPU",
+        "队列"
+      ],
+      "summary": "一、 标准面试回答模版（建议背诵）面试官： 说下 Fork/Join 框架，它和传统线程池有什么区别？Fox版标准回答：“Fork/Join 框架是 Java 7 引入的，专门用于处理CPU密集型任务的并行计算框架。它的核心思想是 ‘分而治之’ (Divide and Conquer)：把一个...",
+      "excerpt": "一、 标准面试回答模版（建议背诵） 面试官： 说下 Fork/Join 框架，它和传统线程池有什么区别？ Fox版标准回答： “Fork/Join 框架是 Java 7 引入的，专门用于处理 CPU密集型 任务的并行计算框架。它的核心思想是 ‘分而治之’ (Divide and Conquer) ：把一个大任务拆（Fork）成多个小任务并行执行，最后再把结果合并（Join）。 它与传统线程池（ ThreadPoolExecutor ）最大的区别在于两点： 任务队列的设计不同 ： 传统线程池共享一个阻塞队列（WorkQueue），所有线程去抢这一个队列里的任务，存在竞争。 Fork/Join 框架中， 每个工作线程都有自己独立的双端队列（Deque） 。 工作窃取算法（Work-Stealing）—— 这是核心！ 在 Fork/Join 中，当一个线程把自己队列里的任务干完了，它不会闲着，而是会去 窃取（Steal）其他繁忙线程队列队尾 的任务来执行。 这极大利用了 CPU 资源，减少了线程空闲时间，并且由于窃取的是队尾，正常线程操作队头，大大减少了锁竞争。” 二、 代码层面对比（Talk is cheap） 面试时，手写一个简单的 Fork/Join 累加求和 例子，最能说明“分而治之”的逻辑。 ​ 三、 深度解析（工作窃取图解） 如果面试官问：“为什么 Fork/Join 比传统线程池快？” 你要甩出这两个概念图。 1. 传统线程池的痛点 所有的 Worker 线程都在抢同一个 Queue 的头。 瓶颈 ：高并发下，队列的锁竞争（Lock Contention）严重。 不均 ：有的线程任务极其耗时，有的线程空闲，但空闲线程帮不上忙。 2. Fork/Join 的“工作窃取” (Work Stealing) 双端队列 (Deque) ：每个线程把拆分出来的子任务 push 到自己队列的 头部 。 自己干 ：自己从 头部 pop 任务出来干（LIFO，后进先出），利用 CPU 缓存亲和性。 偷任务 ：如果线程 A 没事干了，它去线程 B 的队列 尾部 take 一个任务（FIFO）。 优势 ： 无锁/少锁 ：自己取头，别人偷尾，互不干扰，锁竞争极小。 负载均衡 ：自动平衡各个线程的负载，绝不让 CPU 闲置。 四、 避坑指南（面试加分项） 最后，一定要补上“ 什么时候不能用 ”，体现你的实战经验： “虽然 Fork/Join 听起来很牛，但在实际业务中，我 严禁 用它来处理 IO 密集型任务 （比如读数据库、调 RPC）。 为什么？ 因为 Fork/Join 的所有线程都是守护线程，且默认线程数等于 CPU 核心数。一旦任务里有阻塞 IO，线程卡住，又没有多余的线程来补位，整个 CPU 算力就浪费了，甚至导致系统吞吐量暴跌。 IO 密集型任务，请老老实实使用 "
+    },
+    {
+      "slug": "vw2lk8acg1o4y1q9",
+      "title": "说说并发和并行的区别",
+      "url": "/tulingzhouyu/db22bv/vw2lk8acg1o4y1q9",
+      "toc_path": [
+        "并发编程",
+        "说说并发和并行的区别"
+      ],
+      "toc_level": 1,
+      "toc_index": 267,
+      "word_count": 976,
+      "updated_at": "2026-01-08T06:03:46.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "java-core",
+        "observability-troubleshooting",
+        "resume-project",
+        "os-linux"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "并发",
+        "多线程",
+        "线程",
+        "Java",
+        "IO",
+        "CPU",
+        "面试官",
+        "操作系统"
+      ],
+      "summary": "面试官： 说说并发（Concurrency）和并行（Parallelism）的区别。Fox版标准回答：“并发和并行虽然经常一起出现，但它们描述的维度完全不同。核心定义的区别：并发（Concurrency）是逻辑上的同时处理。它指的是系统具有处理多个任务的能力。在单核 CPU 上，通过时间片轮转...",
+      "excerpt": "面试官： 说说并发（Concurrency）和并行（Parallelism）的区别。 Fox版标准回答： “并发和并行虽然经常一起出现，但它们描述的维度完全不同。 核心定义的区别 ： 并发（Concurrency）是逻辑上的同时处理 。它指的是系统具有 处理 多个任务的能力。在单核 CPU 上，通过时间片轮转（Context Switch），让多个任务交替执行，给人一种‘同时在做’的错觉。 并行（Parallelism）是物理上的同时执行 。它指的是系统具有 同时执行 多个任务的能力。这必须依赖 多核 CPU ，多个任务在不同的核心上，在同一时刻真正地一起跑。 关键差异（一句话总结） ： 并发 是关于 结构 的，它解决的是‘怎么利用等待时间’的问题（比如 IO 阻塞时切换去做别的事）。 并行 是关于 执行 的，它解决的是‘怎么利用多核算力’的问题（提高吞吐量）。 存在关系 ： 你可以有并发但没有并行（例如：单核 CPU 跑多线程）。 并行往往建立在并发的设计基础之上（你需要先把任务拆分并发，才能丢给多核去并行）。” 二、 图解与类比（Fox 独家记忆法） 如果面试官皱眉，立刻甩出这个类比，让他秒懂： 并发（Concurrency） ： 你是一个人（单核），你要 一边吃面，一边回微信 。 你不能同时把面塞嘴里又打字。你是吃一口面，放下筷子，回一条信息，再拿起筷子吃面。 宏观上看，你在做两件事；微观上看，你在快速切换。 并行（Parallelism） ： 你和你朋友两个人（双核），坐在饭桌上。 你在吃面，你朋友在回微信 。 同一时刻，两件事都在发生，互不干扰。 三、 代码层面的体现（Java视角的真相） 在 Java 代码中，我们写的 Thread 只是定义了 并发的结构 。至于它到底是不是 并行 ，Java 说了不算， 操作系统和硬件说了算 。 ​ 四、 Fox的降维打击（引用大神语录） 如果想让回答更有逼格，最后加上这一句 Go 语言之父 Rob Pike 的名言： “Concurrency is about dealing with lots of things at once. Parallelism is about doing lots of things at once.” （并发是关于 应对 很多事情，并行是关于 做 很多事情。） ​ 视频： 串行、并发、并行的区别与联系你知道多少？"
+    },
+    {
+      "slug": "rmghkxavpbo58igi",
+      "title": "Java线程之间是如何通信的",
+      "url": "/tulingzhouyu/db22bv/rmghkxavpbo58igi",
+      "toc_path": [
+        "并发编程",
+        "Java线程之间是如何通信的"
+      ],
+      "toc_level": 1,
+      "toc_index": 271,
+      "word_count": 986,
+      "updated_at": "2026-01-08T06:08:03.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "os-linux",
+        "java-core",
+        "resume-project",
+        "ai-llm"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "expert",
+        "campus",
+        "senior"
+      ],
+      "level_names": [
+        "专家/P7+",
+        "校招/应届生",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "并发",
+        "多线程",
+        "线程",
+        "volatile",
+        "synchronized",
+        "CompletableFuture",
+        "内存",
+        "Java",
+        "面试官"
+      ],
+      "summary": "一、 标准面试回答模版（建议背诵）面试官： Java 线程之间是如何进行通信的？Fox版标准回答：“Java 线程通信本质上是基于 共享内存（Shared Memory） 模型实现的。我们可以把它分为三个层次：最基础的通信（基于 volatile/synchronized）：通过读写同一个共享...",
+      "excerpt": "一、 标准面试回答模版（建议背诵） 面试官： Java 线程之间是如何进行通信的？ Fox版标准回答： “Java 线程通信本质上是基于 共享内存（Shared Memory） 模型实现的。我们可以把它分为三个层次： 最基础的通信（基于 volatile/synchronized）： 通过读写同一个 共享变量 来交换信息。 必须配合 volatile 关键字保证 可见性 ，或使用 synchronized 保证 原子性 和 可见性 ，确保一个线程修改了数据，另一个线程能立马看到。 等待/通知机制（基于 Object 或 Condition）： 经典版 ：使用 Object 类的 wait() 和 notify()/notifyAll() 。这是基于 Monitor 实现的，必须在 synchronized 块内使用。 进阶版 ：使用 ReentrantLock 结合 Condition 的 await() 和 signal() 。它能实现更精准的线程唤醒（比如指定唤醒某个等待队列）。 高级并发工具（基于 JUC）： 管道通信 ： BlockingQueue （生产者-消费者模型），利用队列作为缓冲区，实现线程间的数据传输和解耦。 协作工具 ： CountDownLatch （倒计时）、 CyclicBarrier （循环栅栏）、 Semaphore （信号量），用于控制线程的执行顺序和并发数量。 结果回传 ： Future 和 CompletableFuture ，用于主线程获取子线程的执行结果。” 二、 代码层面对比 面试时，手写一个“ 两个线程交替打印 A 和 B ”的例子，是最能体现“通信”逻辑的。 1. 经典方案：Object wait/notify 这是 JDK 1.0 就有的老祖宗方法，必须掌握。 ​ 2. 进阶方案：BlockingQueue (最推荐) 在实际生产中，我们很少直接写 wait/notify，而是用队列。这才是 P7架构师 的思维。 ​ 三、 Fox的避坑指南（面试杀手锏） 如果面试官让你写 wait/notify，一定要注意那个“死坑”—— 虚假唤醒 (Spurious Wakeup) 。 面试官： 为什么你的代码里用 while (flag) 而不是 if (flag) ？ Fox版回答： “ Look at me! 这是多线程编程的 第一铁律 ！ 在 Java 的 Object.wait() javadoc 中明确写了，线程有可能在没有被 notify 的情况下莫名其妙地醒来，这叫 虚假唤醒 。 如果用 if ，线程醒来后不会再次检查条件，直接往下执行，就会导致逻辑错误（比如队列空了还去取数据，报错）。 使用 while ，线程醒来后会 再次检查 条件是否满足，如果不满足继续睡。这才是健壮的代码！” ​ ​"
+    },
+    {
+      "slug": "ktn70w9u9ygf61w2",
+      "title": "短视频",
+      "url": "/tulingzhouyu/db22bv/ktn70w9u9ygf61w2",
+      "toc_path": [
+        "并发编程",
+        "Java线程之间是如何通信的",
+        "短视频"
+      ],
+      "toc_level": 2,
+      "toc_index": 272,
+      "word_count": 411,
+      "updated_at": "2024-06-03T07:42:04.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "os-linux",
+        "java-core",
+        "java-thread-pool",
+        "docker-k8s"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "并发",
+        "多线程",
+        "线程",
+        "锁",
+        "volatile",
+        "synchronized",
+        "Java",
+        "线程池",
+        "阻塞队列",
+        "Service"
+      ],
+      "summary": "大家好，我是JJ。今天我们来聊一聊Java中线程是如何通信的。在Java的多线程世界里，线程间的沟通至关重要。它们通过共享变量和内置的同步机制来交流信息。首先，共享变量是线程间通信的基础。一个线程对变量的修改可以被其他线程观察到，从而实现信息传递。接着是同步机制，Java的synchroniz...",
+      "excerpt": "大家好，我是JJ。今天我们来聊一聊Java中线程是如何通信的。 ​ 在Java的多线程世界里，线程间的沟通至关重要。它们通过 共享变量和内置的同步机制 来交流信息。 ​ 首先， 共享变量 是线程间通信的 基础 。一个线程对变量的修改可以被其他线程观察到，从而实现信息传递。 ​ 接着是 同步机制 ，Java的synchronized关键字可以确保方法或代码块一次只被一个线程执行，这样不仅 保护了共享资源 ，也为 线程间通信提供了保障 。 ​ Java还提供了 等待/通知机制 ，通过wait()、notify()和notifyAll()方法，线程可以等待条件满足或被其他线程唤醒。 ​ 此外， 线程池和阻塞队列 也是线程通信的重要方式。 ​ 线程池 如 ExecutorService 可以调度任务执行，而 阻塞队列 如 BlockingQueue 则允许线程以线程安全的方式交换数据。 ​ 还有 原子变量 ，如 AtomicInteger ，它们通过原子操作确保变量的线程安全，支持无锁的线程间通信。 ​ 除了刚刚讲的这些以外，还有一个常用的关键字 volatile , 它可以确保变量的更改对所有线程立即可见，这是实现线程间通信的一种简单而有效的方式。 ​ 总的来说，Java提供了一整套丰富的工具来支持线程间的通信。"
+    },
+    {
+      "slug": "ueudfqngzd2ts0a8",
+      "title": "死锁与活锁，死锁与饥饿的区别",
+      "url": "/tulingzhouyu/db22bv/ueudfqngzd2ts0a8",
+      "toc_path": [
+        "并发编程",
+        "死锁与活锁，死锁与饥饿的区别"
+      ],
+      "toc_level": 1,
+      "toc_index": 274,
+      "word_count": 1089,
+      "updated_at": "2026-01-08T06:14:08.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "mysql-index-transaction",
+        "observability-troubleshooting",
+        "os-linux",
+        "resume-project"
+      ],
+      "question_type": "troubleshooting",
+      "question_type_name": "故障排查题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "并发",
+        "多线程",
+        "线程",
+        "锁",
+        "排查",
+        "监控",
+        "日志",
+        "CPU",
+        "死锁",
+        "面试官"
+      ],
+      "summary": "一、 标准面试回答模版（建议背诵）面试官： 请说一下死锁、活锁、饥饿的区别。Fox版标准回答：“这三种都是多线程活跃性问题，但表现形式完全不同。1. 死锁 (Deadlock) vs 活锁 (Livelock)状态不同：死锁是‘大家都动不了’。线程处于 BLOCKED / WAITING 状态...",
+      "excerpt": "一、 标准面试回答模版（建议背诵） 面试官： 请说一下死锁、活锁、饥饿的区别。 Fox版标准回答： “这三种都是多线程活跃性问题，但表现形式完全不同。 1. 死锁 (Deadlock) vs 活锁 (Livelock) 状态不同 ： 死锁 是‘大家都动不了’。线程处于 BLOCKED / WAITING 状态，无法继续执行。 活锁 是‘大家都在动，但谁也推不动’。线程一直处于 RUNNABLE 状态，一直在做任务（比如重试），但进度一直为 0。 CPU 表现（关键区别） ： 死锁 通常会导致 CPU 利用率 归零 （因为线程都挂起了）。 活锁 通常会导致 CPU 利用率 飙升 （因为线程在疯狂空转重试）。 形象比喻 ： 死锁 ：两辆车在单行道相遇，互不相让，都熄火停车，谁也过不去。 活锁 ：两个人在走廊相遇，A 往左躲，B 也往左躲；A 往右，B 也往右。两人都在动，都在‘礼让’，但谁也过不去。 2. 死锁 (Deadlock) vs 饥饿 (Starvation) 产生原因不同 ： 死锁 是基于 资源互斥 和 循环等待 ，是‘互相卡死’。 饥饿 是基于 调度策略不公 。比如线程优先级过低，或者非公平锁导致某个线程一直抢不到锁。 结果不同 ： 死锁 是必然没救了，必须人工干预（重启或 kill）。 饥饿 是有几率恢复的，只要高优先级的任务执行完了，饿着的线程终究有机会吃上一口（虽然机会渺茫）。 形象比喻 ： 饥饿 ：你在自助餐厅排队，但是总有 VIP 插队。你一直站在那等，虽然没死，但一直吃不上饭。” 二、 代码层面对比 1. 死锁（Deadlock） 最经典的“互相持有对方需要的锁”。 ​ 2. 活锁（Livelock） 两个线程互相“谦让”，导致谁也干不成活。 场景： 两个人吃饭，只有一双筷子。A 拿到左边，B 拿到右边。A 发现 B 也要吃，就把左边放下；B 发现 A 也要吃，也把右边放下。然后两人又同时拿起……无限循环。 ​ 三、 Fox的实战必杀技（生产环境怎么排查） 面试官如果问： “生产环境怎么判断是死锁还是活锁？” Fox版回答： “Look at me! 别只看代码，要看监控！ 排查死锁 ： 直接用命令 jstack <pid> 。 JVM 会非常贴心地在最后直接打印 Found one Java-level deadlock ，并把哪些线程互相卡住了列得明明白白。 排查活锁 ： jstack 是看不出来的，因为它没有 BLOCKED。 你要结合 CPU 监控 ( top -H -p <pid> )。 如果你发现几个线程的 CPU 占用率常年 100% ，但日志又不更新，业务进度不走，大概率就是活锁（在做无意义的死循环重试）。”"
+    },
+    {
+      "slug": "nfaeqg2m5a0klggo",
+      "title": "什么情况线程会进入 WAITING 状态",
+      "url": "/tulingzhouyu/db22bv/nfaeqg2m5a0klggo",
+      "toc_path": [
+        "并发编程",
+        "什么情况线程会进入 WAITING 状态"
+      ],
+      "toc_level": 1,
+      "toc_index": 275,
+      "word_count": 760,
+      "updated_at": "2026-01-08T06:16:51.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "os-linux",
+        "ai-llm",
+        "mysql-index-transaction",
+        "resume-project"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "并发",
+        "线程",
+        "锁",
+        "AQS",
+        "synchronized",
+        "AI",
+        "面试官"
+      ],
+      "summary": "一、 标准面试回答模版（建议背诵）面试官： 什么情况下线程会进入 WAITING 状态？Fox版标准回答：“在 Java 中，线程进入 WAITING（无限期等待） 状态，通常是因为调用了以下三个方法之一。处于该状态的线程不会自动苏醒，必须等待其他线程显式地唤醒或者中断。Object.wait...",
+      "excerpt": "一、 标准面试回答模版（建议背诵） 面试官： 什么情况下线程会进入 WAITING 状态？ Fox版标准回答： “在 Java 中，线程进入 WAITING（无限期等待） 状态，通常是因为调用了以下三个方法之一。处于该状态的线程 不会自动苏醒 ，必须等待其他线程显式地唤醒或者中断。 Object.wait() （不带超时参数）： 调用此方法会释放持有的对象锁，并进入等待队列。 唤醒条件 ：必须由其他线程在同一个锁对象上调用 notify() 或 notifyAll() 。 Thread.join() （不带超时参数）： 当前线程等待另一个线程执行完毕。 唤醒条件 ：被 Join 的那个线程运行结束（Terminated）。 LockSupport.park() ： 这是 JUC（并发包）锁实现的底层机制。它会挂起当前线程，不涉及 Monitor 锁的释放（因为它不依赖 Monitor）。 唤醒条件 ：其他线程调用 LockSupport.unpark(thread) 。 关键区别 ：WAITING 是 主动 等待（为了业务逻辑），而 BLOCKED 是 被动 阻塞（为了抢 synchronized 锁）。” 二、 代码层面对比 这段代码演示了最常见的进入 WAITING 状态的场景，并验证了状态。 三、 Fox的避坑指南（面试杀手锏） 面试官经常会搞混淆概念来忽悠你，你要学会反杀： 1. 问： sleep() 会让线程进入 WAITING 吗？ Fox： 不会！ sleep() 必须传入时间参数，所以它进入的是 TIMED_WAITING （超时等待）状态，而不是 WAITING。 2. 问：线程在等待 synchronized 锁的时候，是 WAITING 吗？ Fox： 不是！ 这种是被动争抢锁失败，进入的是 BLOCKED 状态。 BLOCKED ：在等锁（门口排队，没进去）。 WAITING ：已经进去了，但是因为条件不满足（比如 wait ），又主动释放锁出来等信号。 3. 问：JUC 的 ReentrantLock.lock() 拿不到锁时，线程是什么状态？ Fox： 这是高阶坑！ 虽然 synchronized 拿不到锁是 BLOCKED，但 JUC 的锁 底层用的是 LockSupport.park() 。 所以， ReentrantLock 等待锁时，线程状态实际上是 WAITING （或者 TIMED_WAITING），而不是 BLOCKED！这一点能直接证明你看过 AQS 源码。"
+    },
+    {
+      "slug": "mw8d3os8ky6qlml8",
+      "title": "为什么 wait 和 notify 方法要在同步块中调用",
+      "url": "/tulingzhouyu/db22bv/mw8d3os8ky6qlml8",
+      "toc_path": [
+        "并发编程",
+        "为什么 wait 和 notify 方法要在同步块中调用"
+      ],
+      "toc_level": 1,
+      "toc_index": 276,
+      "word_count": 1015,
+      "updated_at": "2026-01-08T06:22:29.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "ai-llm",
+        "java-core",
+        "mysql-index-transaction",
+        "os-linux"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "并发",
+        "线程",
+        "锁",
+        "synchronized",
+        "Java",
+        "异常",
+        "上下文切换"
+      ],
+      "summary": "一、 标准面试回答模版（建议背诵）面试官： 为什么 wait 和 notify 方法要在同步块（synchronized）中调用？Fox版标准回答：“这主要有两个原因：一个是强制语法约束，一个是底层逻辑保护。语法层面（直接后果）：",
+      "excerpt": "一、 标准面试回答模版（建议背诵） 面试官： 为什么 wait 和 notify 方法要在同步块（synchronized）中调用？ Fox版标准回答： “这主要有两个原因：一个是 强制语法约束 ，一个是 底层逻辑保护 。 语法层面（直接后果） ： Java 强制规定，调用 wait() 或 notify() 的线程必须先持有该对象的 Monitor（监视器锁） 。 如果在没有加锁的情况下调用，JVM 会直接抛出 IllegalMonitorStateException 异常。 逻辑层面（核心原因 - 满分关键） ： 是为了防止**‘丢失唤醒问题’（Lost Wake-up Problem）**。 wait() 往往是伴随着 条件检查 （如 while(!condition) ）使用的。如果没有同步块，线程在‘检查条件’和‘执行 wait’之间可能会发生 上下文切换 。 如果在切换期间，另一个线程修改了条件并调用了 notify() ，而挂起的线程还没来得及 wait ，它就会 错过这次唤醒信号 ，导致后续无故死等。 同步块保证了‘检查条件 + 进入等待’这两个动作是 原子 的，不可被打断。” 二、 代码层面对比 1. 错误示范（如果 Java 不强制报错，逻辑会死在哪里？） 假设 Java 允许不加锁调用（仅做逻辑演示），会发生什么？ ​ 2. 正确示范（加锁保证原子性） ​ 三、 Fox的深度解析（降维打击） 如果面试官问：“能具体讲讲什么是 丢失唤醒（Lost Wake-up） 吗？” 你需要用这个生活案例让他秒懂： Fox版解析： “想象一下‘查房’的场景。 没有锁的情况（竞态条件）： 我（消费者）看了一眼房间，没人（条件满足）。 就在我准备关灯睡觉等待（执行 wait）的前一秒 ，你（生产者）突然冲进来带了个人进来，并且大喊一声‘人来了！’（执行 notify）。 但我那时候还没睡着，没听到你的喊声。 等我真正睡着（wait）的时候，信号已经丢了。我就再也醒不来了。 有锁的情况（原子性）： 我进房间把门反锁（synchronized）。 我看一眼没人才去睡觉。 在我睡觉之前，你根本进不来，也就没法修改状态或发信号。 只有我完全进入睡眠状态并释放锁，你才能进来叫醒我。 这就保证了：只要我睡了，我就一定能收到你的唤醒。 ” ​ 视频： wait()为什么要写在while循环里？写在if里不行吗?"
+    },
+    {
+      "slug": "souuu0lez7inc14r",
+      "title": "如何确保线程安全",
+      "url": "/tulingzhouyu/db22bv/souuu0lez7inc14r",
+      "toc_path": [
+        "并发编程",
+        "如何确保线程安全"
+      ],
+      "toc_level": 1,
+      "toc_index": 277,
+      "word_count": 801,
+      "updated_at": "2026-01-08T06:46:43.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "java-collections",
+        "os-linux",
+        "security-auth",
+        "java-core"
+      ],
+      "question_type": "troubleshooting",
+      "question_type_name": "故障排查题",
+      "levels": [
+        "expert"
+      ],
+      "level_names": [
+        "专家/P7+"
+      ],
+      "keywords": [
+        "并发",
+        "线程",
+        "锁",
+        "synchronized",
+        "CAS",
+        "ThreadLocal",
+        "集合",
+        "HashMap",
+        "ConcurrentHashMap",
+        "安全",
+        "Java",
+        "String"
+      ],
+      "summary": "一、 标准面试回答模版（建议背诵）面试官： 在 Java 中如何确保线程安全？Fox版标准回答：“确保线程安全的核心思路只有三条：不共享、共享不可变、共享可变（同步控制）。具体落地为以下 4 种方案：互斥同步（阻塞锁 - 悲观策略）：使用 synchronized 关键字（JVM 层面）或 R...",
+      "excerpt": "一、 标准面试回答模版（建议背诵） 面试官： 在 Java 中如何确保线程安全？ Fox版标准回答： “确保线程安全的核心思路只有三条： 不共享、共享不可变、共享可变（同步控制） 。具体落地为以下 4 种方案： 互斥同步（阻塞锁 - 悲观策略）： 使用 synchronized 关键字（JVM 层面）或 ReentrantLock （API 层面）。 通过加锁，保证同一时刻只有一个线程能修改共享变量，确保 原子性 和 可见性 。 非阻塞同步（CAS - 乐观策略）： 利用 CPU 指令集的 CAS (Compare-And-Swap) 原子指令。 典型实现是 JUC 包下的原子类（如 AtomicInteger ）。适用于竞争不激烈的场景，避免了线程切换的开销。 线程隔离（无同步）： 栈封闭 ：变量定义在方法内（局部变量），线程私有，天生安全。 ThreadLocal ：为每个线程提供一份独立的变量副本，互不干扰，以空间换时间。 不可变对象（Immutable）： 一旦创建，状态就不能被修改的对象。如 String 、 Integer 以及用 final 关键字修饰的属性。 这种对象天生线程安全，不需要任何同步手段。” 二、 代码层面对比 这里展示三种最主流的处理方式： Synchronized vs Lock vs Atomic 。 ​ 三、 Fox的深度解析（降维打击） 如果面试官问： “使用了 ConcurrentHashMap 或者 Vector 这种线程安全的集合，代码就一定线程安全了吗？” Look at me! 这是 P7 面试的必杀技。 Fox版回答： “ 不一定！ 虽然这些集合的 单个方法 （如 put 、 get 、 add ）是原子的、线程安全的。 但是， 复合操作（Compound Operations） 依然是不安全的！ 举个例子： if (!map.containsKey(key)) { map.put(key, value); } 这是一个典型的 Check-Then-Act（先检查后执行） 模式。 就算 containsKey 和 put 都是线程安全的，但这两个操作之间 没有加锁 。 线程 A 刚检查完不存在，还没来得及 put，线程 B 抢先 put 进去了。线程 A 恢复执行后再 put，就会 覆盖 B 的数据。 解决方案： 必须使用 ConcurrentHashMap 提供的原子复合方法，比如 putIfAbsent() ，或者在业务层面加锁。”"
+    },
+    {
+      "slug": "gfgf63i7ox8ocvov",
+      "title": "什么是可重入锁",
+      "url": "/tulingzhouyu/db22bv/gfgf63i7ox8ocvov",
+      "toc_path": [
+        "并发编程",
+        "什么是可重入锁"
+      ],
+      "toc_level": 1,
+      "toc_index": 278,
+      "word_count": 721,
+      "updated_at": "2026-01-08T06:51:14.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "mysql-index-transaction",
+        "os-linux",
+        "resume-project",
+        "java-core"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "并发",
+        "线程",
+        "锁",
+        "AQS",
+        "volatile",
+        "synchronized",
+        "面试官",
+        "Java"
+      ],
+      "summary": "一、 标准面试回答模版（建议背诵）面试官： 什么是可重入锁？Fox版标准回答：“可重入锁（Reentrant Lock），也叫做递归锁。它的核心定义只有一句话： 同一个线程，在已经持有某把锁的前提下，可以再次获取这把锁，而不会被阻塞。它的工作原理基于两个核心要素：线程持有者标识 和 计数器。识...",
+      "excerpt": "一、 标准面试回答模版（建议背诵） 面试官： 什么是可重入锁？ Fox版标准回答： “可重入锁（Reentrant Lock），也叫做 递归锁 。它的核心定义只有一句话： 同一个线程，在已经持有某把锁的前提下，可以再次获取这把锁，而不会被阻塞。 它的工作原理基于两个核心要素： 线程持有者标识 和 计数器 。 识别身份 ：锁会记录当前是谁拿着锁。如果新来的线程就是当前持有者，直接放行。 计数器机制 ：每重入一次，计数器 state + 1 ；每释放一次，计数器 state - 1 。只有当计数器归零时，锁才会被真正释放，别的线程才有机会抢。 Java 中的典型实现 ： synchronized （隐式可重入）。 ReentrantLock （显式可重入）。 核心作用 ：避免 死锁 。如果没有可重入性，一个同步方法调用另一个使用同一把锁的同步方法时，线程就会自己把自己锁死（Self Deadlock）。” 二、 代码层面对比 面试时，手写这个简单的 递归调用 例子，胜过千言万语。 ​ 运行结果： （顺利执行，证明没有死锁。） 三、 深度解析 如果面试官追问： “它是怎么记录重入次数的？” Fox版解析： “以 ReentrantLock 为例，它底层基于 AQS (AbstractQueuedSynchronizer) 。 AQS 里有一个核心变量 volatile int state 。 初始状态 ： state = 0 ，表示无锁。 第一次加锁 ：线程 A 抢到锁，把 state 改为 1，并记录 exclusiveOwnerThread = ThreadA 。 重入加锁 ：线程 A 再次 lock，发现 owner 是自己，于是只做一件事： state++ （比如变成 2）。 释放锁 ：线程 A unlock， state-- 。 完全释放 ：只有当 state 减回到 0 时，AQS 才会把 exclusiveOwnerThread 置空，并唤醒后面排队的线程。 所以， lock() 了几次，就必须 unlock() 几次，少一次都会导致锁无法释放，这就叫‘配对原则’。”"
+    },
+    {
+      "slug": "iveaby4zps7bmz8e",
+      "title": "短视频",
+      "url": "/tulingzhouyu/db22bv/iveaby4zps7bmz8e",
+      "toc_path": [
+        "并发编程",
+        "什么是可重入锁",
+        "短视频"
+      ],
+      "toc_level": 2,
+      "toc_index": 279,
+      "word_count": 332,
+      "updated_at": "2024-06-27T13:42:38.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "mysql-index-transaction",
+        "os-linux",
+        "observability-troubleshooting",
+        "java-core"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "并发",
+        "线程",
+        "锁",
+        "synchronized",
+        "死锁",
+        "Java"
+      ],
+      "summary": "经常听到可重入锁和不可重入锁，那究竟什么是可重入锁呢如果面试过程中遇到这道面试题你能答上来吗？大家好，我是 JJ。可重入锁是一种特殊的互斥锁，允许同一个线程在持有锁的情况下再次获取该锁。也就是说线程可以递归地调用同步代码块或方法，而无需担心因为自身已经持有锁而导致阻塞或死锁。在 Java 中，...",
+      "excerpt": "经常听到可重入锁和不可重入锁，那究竟什么是可重入锁呢 ​ 如果面试过程中遇到这道面试题你能答上来吗？大家好，我是 JJ。 ​ 可重入锁是一种 特殊的互斥锁 ， 允许同一个线程在持有锁的情况下再次获取该锁 。 ​ 也就是说 线程可以递归地调用 同步代码块或方法，而 无需担心 因为自身已经持有锁而导致阻塞或死锁。 ​ 在 Java 中，synchronized 关键字就是一种可重入锁的实现。 ​ 当线程获取了对象的锁之后，可以继续获取同一个对象的锁，这种设计有效地防止了死锁的发生。 ​ 通过这种方式，同一个线程可以安全地访问共享资源，而无需等待自身先前持有的锁被释放。 ​ 可重入锁的优点不仅在于其避免了死锁，还可以使得编程模型更为简单和灵活。 ​ 需要注意的是，可重入锁并不是绝对安全的。 ​ 如果一个线程在持有锁的情况下进行了一些不当的操作，仍然可能导致死锁的发生。"
+    },
+    {
+      "slug": "zo7ggsr0o0xg9ghk",
+      "title": "锁的优化机制了解吗",
+      "url": "/tulingzhouyu/db22bv/zo7ggsr0o0xg9ghk",
+      "toc_path": [
+        "并发编程",
+        "锁的优化机制了解吗"
+      ],
+      "toc_level": 1,
+      "toc_index": 280,
+      "word_count": 1341,
+      "updated_at": "2026-01-08T07:21:45.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "mysql-index-transaction",
+        "performance-optimization",
+        "computer-network",
+        "os-linux"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "并发",
+        "线程",
+        "锁",
+        "synchronized",
+        "CAS",
+        "性能",
+        "优化",
+        "操作系统"
+      ],
+      "summary": "一、 标准面试回答模版（建议背诵）面试官： 了解锁的优化机制吗？（或者问：JDK 1.6 对 synchronized 做了哪些优化？）Fox版标准回答：“JDK 1.6 之后，为了彻底解决 synchronized 重量级锁性能低下的问题，引入了大量的优化技术。它的核心机制可以归纳为‘运行时...",
+      "excerpt": "一、 标准面试回答模版（建议背诵） 面试官： 了解锁的优化机制吗？（或者问：JDK 1.6 对 synchronized 做了哪些优化？） Fox版标准回答： “JDK 1.6 之后，为了彻底解决 synchronized 重量级锁性能低下的问题，引入了大量的优化技术。 它的核心机制可以归纳为‘ 运行时锁升级’和‘编译时锁优化 ’两个层面： 运行时锁升级（核心）： 锁的状态不再是一成不变的，而是根据竞争情况，遵循由轻到重、不可降级的流转过程： 无锁 ——> 偏向锁 ——> 轻量级锁 ——> 自适应自旋（膨胀过渡） ——> 重量级锁 。 编译时优化（JIT）： 编译器在编译过程中，通过静态分析，会智能地进行锁消除（Lock Elimination）和锁粗化（Lock Coarsening），进一步减少不必要的加锁开销。” 第二部分：底层流转逻辑 “接下来我详细拆解一下锁的升级流程，这里有一个关键的 自旋时机 经常被人搞错： 偏向锁 (Biased Lock) ： 场景 ：只有一个线程访问。 原理 ：修改 Mark Word，记录当前线程 ID。下次该线程再来，对比 ID 成功直接放行。 全程无锁，无 CAS，性能最高。 轻量级锁 (Lightweight Lock) ： 场景 ：线程交替执行，无强竞争。 原理 ：偏向锁失效后升级。线程在栈帧中创建 Lock Record ，通过 CAS 将 Mark Word 指向该记录。 关键点 ：轻量级锁本身 只依靠 CAS ， 不涉及自旋 。 自适应自旋 (Adaptive Spinning) —— 锁膨胀的缓冲防线 ： 场景 ：轻量级锁 CAS 失败（意味着有竞争），但在彻底挂起线程之前。 原理 ：JVM 赌持有锁的线程很快会释放，于是让当前线程‘空转’（自旋）一会儿。 如果自旋期间拿到了锁，避免了内核态切换，大赚。 如果自旋超时，赌输了，才会进入下一步。 自适应 ：自旋次数不固定，由前一次在同一个锁上的自旋结果动态决定。 重量级锁 (Heavyweight Lock) ： 场景 ：自旋也失败了，彻底放弃治疗。 原理 ：Mark Word 指向堆中的 Monitor 对象。线程进入 BLOCKED 状态，调用操作系统 Mutex Lock 挂起等待。” 第三部分：代码证据 “除了理论，我在研究底层时，还关注到了 JIT 编译器的优化以及如何验证锁状态，以下是我的代码实践。” 1. JIT 编译器优化（锁消除与锁粗化） 2. 验证锁升级（使用 JOL 工具） “为了亲眼看到锁升级，我们可以使用 openjdk.jol 工具打印对象头：” 第四部分：Fox的面试压箱底（降维打击） “最后，我想补充两个 反直觉 的生产环境细节： 偏向锁的‘死刑’： 虽然教科书上都讲偏向锁，但在高并发实战中，它往往弊大于利（撤销成本高）。所以"
+    },
+    {
+      "slug": "mif500gkwpd4hngq",
+      "title": "说说你对JMM内存模型的理解",
+      "url": "/tulingzhouyu/db22bv/mif500gkwpd4hngq",
+      "toc_path": [
+        "并发编程",
+        "说说你对JMM内存模型的理解"
+      ],
+      "toc_level": 1,
+      "toc_index": 282,
+      "word_count": 1155,
+      "updated_at": "2026-01-08T07:25:41.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "os-linux",
+        "jvm-memory-gc",
+        "java-core",
+        "resume-project"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "并发",
+        "多线程",
+        "线程",
+        "锁",
+        "volatile",
+        "synchronized",
+        "操作系统",
+        "内存",
+        "JVM",
+        "内存模型",
+        "堆",
+        "栈",
+        "Java"
+      ],
+      "summary": "一、 标准面试回答模版（建议背诵）面试官： 说说你对 JMM（Java 内存模型）的理解。Fox版标准回答：“JMM (Java Memory Model) 是 Java 虚拟机规范中定义的一种抽象概念（注意：它不是物理存在的），用于屏蔽各种硬件和操作系统的内存访问差异，保证 Java 程序在...",
+      "excerpt": "一、 标准面试回答模版（建议背诵） 面试官： 说说你对 JMM（Java 内存模型）的理解。 Fox版标准回答： “JMM (Java Memory Model) 是 Java 虚拟机规范中定义的一种 抽象概念 （注意：它不是物理存在的），用于屏蔽各种硬件和操作系统的内存访问差异，保证 Java 程序在各种平台下对内存的访问都能达到一致的效果。 它的核心理解包含三个维度： 内存划分（物理架构的映射）： 主内存（Main Memory）： 所有变量都存在这里，所有线程共享（对应物理硬件的 RAM）。 工作内存（Working Memory）： 每个线程私有的。线程不能直接读写主内存的变量，必须先把变量 Copy 到自己的工作内存中，操作完后再写回主内存（对应 CPU 的 Cache 和寄存器）。 三大特性（并发编程的灵魂）： 原子性 (Atomicity)： 一个操作要么全部执行，要么全不执行。JMM 只能保证基本读取和赋值的原子性，复合操作需要 synchronized 或 Atomic 类。 可见性 (Visibility)： 当一个线程修改了共享变量，其他线程能立刻看到。核心实现是 volatile 、 synchronized 和 final 。 有序性 (Ordering)： 防止编译器和处理器为了优化性能而进行的 指令重排序 。核心实现是 volatile （内存屏障）和 synchronized 。 Happens-Before 原则（先行发生原则）： 这是 JMM 的 核心保底规则 。如果两个操作满足 Happens-Before 关系（比如 volatile 写先于读、锁释放先于锁获取），则 JVM 保证前一个操作的结果对后一个操作可见，且不进行重排序。这是判断线程安全与否的最主要依据。” 二、 图解 JMM 架构 面试时，脑海里一定要有这张图。 这也是 JMM 存在问题的根源： 工作内存的数据可能和主内存不一致 。 三、 代码实战：可见性问题的“照妖镜” 这段代码直接证明了： 如果没有 JMM 的可见性保证，线程会死循环。 四、 Fox的深度解析 如果面试官追问： “JMM 和 JVM 运行时内存区域（堆、栈）是一回事吗？” Fox版回答： “ 完全不是一回事！ 这是初学者最容易混淆的点。 JVM 运行时数据区（Runtime Data Area）： 讲的是 Java 程序在内存中是怎么存放的 。比如对象在堆里，局部变量在栈里。这是 物理存储 维度的描述。 JMM（Java Memory Model）： 讲的是 多线程间怎么通过内存进行通信的 。它是一组 规则 和 协议 。 对应关系 ： JMM 中的 主内存 ，大致对应 JVM 的 堆（Heap）中存放对象实例数据部分。 JMM 中的工作内存 ，大致对应 JVM 的虚拟机栈（Stack） "
+    },
+    {
+      "slug": "fcis5n11xyl33696",
+      "title": "ReentrantLock中的公平锁和非公平锁的底层实现",
+      "url": "/tulingzhouyu/db22bv/fcis5n11xyl33696",
+      "toc_path": [
+        "并发编程",
+        "ReentrantLock中的公平锁和非公平锁的底层实现"
+      ],
+      "toc_level": 1,
+      "toc_index": 283,
+      "word_count": 1046,
+      "updated_at": "2026-01-08T07:46:51.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "mysql-index-transaction",
+        "os-linux",
+        "ai-llm",
+        "mq-rabbitmq"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "并发",
+        "线程",
+        "锁",
+        "AQS",
+        "CAS",
+        "上下文切换",
+        "队列"
+      ],
+      "summary": "一、 标准面试回答模版（建议背诵）面试官： ReentrantLock 中的公平锁和非公平锁有什么区别？底层是怎么实现的？Fox版标准回答：“它们的核心区别在于抢锁的逻辑（TryAcquire）不同，也就是‘是否允许插队’。非公平锁（Non-Fair Lock，默认）：逻辑：不管队列里有没有人...",
+      "excerpt": "一、 标准面试回答模版（建议背诵） 面试官： ReentrantLock 中的公平锁和非公平锁有什么区别？底层是怎么实现的？ Fox版标准回答： “它们的核心区别在于 抢锁的逻辑（TryAcquire）不同，也就是‘是否允许插队’ 。 非公平锁（Non-Fair Lock，默认）： 逻辑 ：不管队列里有没有人排队，新来的线程都会先 尝试直接抢锁（CAS） 。 结果 ：如果抢到了，就直接插队执行，不用排队；如果没抢到，再老老实实去 AQS 队列尾部排队。 优势 ：性能更高。因为它利用了‘线程唤醒的延迟时间’，减少了线程挂起和恢复的上下文切换开销。 公平锁（Fair Lock）： 逻辑 ：新来的线程在抢锁前， 必须先判断 AQS 队列里有没有人排队 （调用 hasQueuedPredecessors ）。 结果 ：只要队列里有人，它就不能抢，必须去队尾排队。严格遵守‘先来后到’。 优势 ：避免‘线程饥饿’问题，但吞吐量比非公平锁低很多。” 二、 源码级对比 面试时，直接指出源码中 相差的那一行代码 ，是最有说服力的。 ReentrantLock 内部有两个静态内部类： NonfairSync 和 FairSync 。 1. 非公平锁 (NonfairSync) Look at me! 它的特点是： 上来就抢，抢不到再进正常的流程。 ​ 2. 公平锁 (FairSync) Look at me! 注意看它多出的那一行判断： !hasQueuedPredecessors() 。 ​ 三、 Fox的深度解析 如果面试官问： “为什么非公平锁性能比公平锁高那么多？” 你要画出这个“时间差”逻辑： Fox版解析： “这利用了 线程调度的延迟 。 假设线程 A 释放锁，它需要去唤醒队列头部的线程 B。 关键点： 唤醒线程 B 是需要时间的（从内核态切换回用户态，调度器分配时间片）。 在这段**‘B 还没完全醒过来’**的空档期，如果正好来了一个线程 C。 非公平模式下 ：C 发现锁是空的（State=0），直接 CAS 抢走了，执行代码，然后迅速释放。 等 B 真正醒过来时，发现锁又空了，或者 C 刚释放完，B 也能拿到锁。 结论： 非公平锁利用了这个空档期，让 C 线程‘白嫖’了一次执行机会，大大提升了系统的整体吞吐量。而在公平模式下，C 只能干瞪眼等着，浪费了这段 CPU 时间。” ​ ​ 拓展视频： 限流场景下，改选公平锁还是非公平锁？怎么解决长时间饥饿问题？"
+    },
+    {
+      "slug": "hnymbgtugwrga3rh",
+      "title": "短视频",
+      "url": "/tulingzhouyu/db22bv/hnymbgtugwrga3rh",
+      "toc_path": [
+        "并发编程",
+        "ReentrantLock中的公平锁和非公平锁的底层实现",
+        "短视频"
+      ],
+      "toc_level": 2,
+      "toc_index": 284,
+      "word_count": 386,
+      "updated_at": "2024-05-23T12:44:50.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "mysql-index-transaction",
+        "os-linux",
+        "performance-optimization",
+        "mq-rabbitmq"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "并发",
+        "线程",
+        "锁",
+        "AQS",
+        "性能",
+        "队列"
+      ],
+      "summary": "我心态崩了啊，工作三年了，这个都不知道，大家好，我是百里，今天我们来聊聊 ReentrantLock 的公平与非公平锁机制首先，公平锁就是讲究先来后到，线程按请求顺序排队获取锁。这种模式下，每个线程都有机会，但在高竞争环境下，效率可能不是最优。而非公平锁，有点儿“先抢先得”的意思，线程有机会插...",
+      "excerpt": "我心态崩了啊，工作三年了，这个都不知道，大家好，我是百里， 今天我们来聊聊 ReentrantLock 的公平与非公平锁机制 首先， 公平锁 就是讲究 先来后到 ，线程按请求顺序 排队获取锁 。 这种模式下，每个线程都有机会，但在高竞争环境下，效率可能不是最优。 而 非公平锁 ，有点儿“ 先抢先得” 的意思，线程有机会 插队获取锁 。 这种方式在 某些情况下能提升性能 ，但也 可能会 让一些 线程等待更久 。 ReentrantLock 默认采用非公平锁策略 ，也就是直接尝试获取锁，不考虑其他线程是否在等待。 如果锁 不可用 ，线程才会 加入到 AQS 队列 中，等待下一次机会。 在 公平锁模式 下，ReentrantLock 会 先检查 AQS 队列 ，确保按照请求顺序分配锁。 这样确保了公平性，但可能会因为线程状态切换而牺牲一些性能。 至于选择哪种模式，这取决于实际应用的场景。 如果需要严格 顺序控制 ，选 公平锁 。 如果追求 极致性能 ， 非公平锁 可能更适合。 以上就是 ReentrantLock 的公平锁与非公平锁。 希望这能帮助你更好地理解它们之间的区别和适用场景。"
+    },
+    {
+      "slug": "tanyoblbtrbxy9gx",
+      "title": "JAVA 中怎样唤醒一个阻塞的线程",
+      "url": "/tulingzhouyu/db22bv/tanyoblbtrbxy9gx",
+      "toc_path": [
+        "并发编程",
+        "JAVA 中怎样唤醒一个阻塞的线程"
+      ],
+      "toc_level": 1,
+      "toc_index": 285,
+      "word_count": 912,
+      "updated_at": "2026-01-08T07:49:12.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "os-linux",
+        "java-core",
+        "ai-llm",
+        "mysql-index-transaction"
+      ],
+      "question_type": "troubleshooting",
+      "question_type_name": "故障排查题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "并发",
+        "线程",
+        "锁",
+        "AQS",
+        "synchronized",
+        "Java",
+        "异常",
+        "AI"
+      ],
+      "summary": "一、 标准面试回答模版（建议背诵）面试官： Java 中怎样唤醒一个阻塞的线程？Fox版标准回答：“唤醒一个阻塞的线程，必须先看它是怎么被阻塞的。主要有三种场景，对应三种不同的唤醒方式：因 Object.wait() 而阻塞（WAITING）：手段：必须由另一个线程在",
+      "excerpt": "一、 标准面试回答模版（建议背诵） 面试官： Java 中怎样唤醒一个阻塞的线程？ Fox版标准回答： “唤醒一个阻塞的线程，必须先看它是 怎么被阻塞的 。主要有三种场景，对应三种不同的唤醒方式： 因 Object.wait() 而阻塞（WAITING）： 手段 ：必须由另一个线程在 同一个对象锁 上调用 notify() 或 notifyAll() 方法。 结果 ：线程会从等待队列（Wait Set）移动到同步队列（Entry List），也就是从 WAITING 变为 BLOCKED 状态，准备抢锁。 因 LockSupport.park() 而阻塞（WAITING/TIMED_WAITING）： 手段 ：这是 JUC 锁（如 ReentrantLock）底层的机制。需要调用 LockSupport.unpark(thread) 。 结果 ：线程会直接从挂起状态恢复运行， 不需要 持有 Monitor 锁。 因 sleep() , join() 或 wait() 而阻塞（中断唤醒）： 手段 ：调用该线程对象的 interrupt() 方法。 结果 ：目标线程会抛出 InterruptedException 异常，从而‘被迫’醒来（结束阻塞状态）。 避坑补充 ：如果是因争抢 synchronized 锁失败而进入 BLOCKED 状态的线程，是 无法 被显式唤醒的（连 interrupt 都没用）。它只能被动等待持有锁的线程释放锁。” 二、 代码层面对比（Talk is cheap） 面试时，展示这三种最典型的唤醒方式。 1. 经典方式：wait / notify 这是基于 JVM 内置 Monitor 机制的。 ​ 2. JUC 方式：LockSupport (park / unpark) 这是 Java 并发包（AQS）的基石，更灵活， 不需要在同步块中调用 。 ​ 3. 暴力方式：Interrupt (中断异常) 适用于想要 终止 或 打断 长时间等待的场景。 ​ 三、 Fox的深度解析 如果面试官追问： “为什么不推荐使用 Thread.stop() 来强行唤醒/停止线程？” Fox版回答： “ stop() 是被 废弃（Deprecated）的方法，它太暴力了。 就像电脑直接拔电源一样，它会立即释放 线程持有的所有锁，导致数据可能只写了一半，破坏了 数据的一致性 。 现在的标准做法是利用 中断机制（Interrupt） 。 interrupt() 只是给线程打个招呼（设置标志位），至于线程是想立马停下，还是处理完手头工作再停下，控制权在 线程自己 手里（通过 catch 异常或检查 isInterrupted ）。这叫‘ 优雅停机 ’。”"
+    },
+    {
+      "slug": "mxa0qbe0utm8m6kf",
+      "title": "volatile有哪些应用场景？",
+      "url": "/tulingzhouyu/db22bv/mxa0qbe0utm8m6kf",
+      "toc_path": [
+        "并发编程",
+        "volatile有哪些应用场景？"
+      ],
+      "toc_level": 1,
+      "toc_index": 287,
+      "word_count": 1131,
+      "updated_at": "2026-01-08T08:22:58.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "os-linux",
+        "algorithm",
+        "resume-project",
+        "jvm-classloading"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "并发",
+        "多线程",
+        "线程",
+        "锁",
+        "volatile",
+        "内存",
+        "排序",
+        "面试官",
+        "字节码"
+      ],
+      "summary": "一、 标准面试回答模版（建议背诵）面试官：volatile 关键字主要用在哪些场景？Fox版标准回答：“volatile 的核心作用是保证**‘可见性’和‘禁止指令重排序’，但它不保证原子性**。基于这两个特性，它最经典的应用场景主要有两个：作为状态标志（Status Flag）： 用于多线程...",
+      "excerpt": "一、 标准面试回答模版（建议背诵） 面试官： volatile 关键字主要用在哪些场景？ Fox版标准回答： “ volatile 的核心作用是保证**‘可见性’ 和 ‘禁止指令重排序’ ，但它 不保证原子性**。基于这两个特性，它最经典的应用场景主要有两个： 作为状态标志（Status Flag）： 用于多线程之间的信号通知。比如控制线程的停止（shutdown）、或者某个服务的初始化完成状态。 逻辑： 一个线程修改了标志位，其他线程能立刻‘看’到，从而停止循环或执行后续逻辑。 关键点： 这里利用了 volatile 的 可见性 ，且对该变量的写操作不依赖于当前值（即没有原子性问题）。 双重检查锁定（DCL）的单例模式： 这是 volatile 最“教科书”级的应用。 逻辑： 在 Double-Checked Locking 实现单例时， instance 引用必须修饰为 volatile 。 关键点： 这里主要利用了 volatile 的 禁止指令重排序 特性，防止对象‘半初始化’导致其他线程拿到一个还没构造完成的空壳对象。” 二、 经典场景代码解析（Talk is cheap） 面试时，不要只说概念，直接把这两个场景的代码逻辑写出来（或口述出来），效果最好。 场景 1：状态标记量 (Status Flag) Look at me! 这是最简单也最常用的场景。通常用来让一个线程通知另一个线程“该停了”。 ​ 场景 2：双重检查锁单例 (DCL - Double Checked Locking) Look at me! 这段代码是面试重灾区。很多人知道要写 volatile ，但不知道为什么。 ​ 三、 Fox的深度解析 如果面试官追问：“ 为什么 DCL 单例中一定要加 volatile ？不加会怎么样？ ” 这时候你要展示你对底层（字节码/汇编）的理解。 Fox版解析： “这主要是为了防止**‘对象半初始化’**问题。 instance = new Singleton(); 这一行 Java 代码，在字节码层面其实分成了 三步 ： memory = allocate(); // 1. 分配内存空间 ctorInstance(memory); // 2. 初始化对象（执行构造方法） instance = memory; // 3. 将 instance 引用指向刚分配的内存地址 问题在于： 如果不加 volatile ，编译器或 CPU 可能会进行 指令重排序 。 步骤可能会变成 1 -> 3 -> 2 。 后果： 线程 A 执行了步骤 1 和 3（引用指过去了），但步骤 2 （初始化）还没执行。 此时 instance 已经不为 null 了（指向了一块还没初始化的内存）。 线程 B 进来了，在第一次检查 if (instance == null) 时"
+    },
+    {
+      "slug": "gih1lf8culnz39mw",
+      "title": "短视频",
+      "url": "/tulingzhouyu/db22bv/gih1lf8culnz39mw",
+      "toc_path": [
+        "并发编程",
+        "如何优化线程池的性能",
+        "短视频"
+      ],
+      "toc_level": 2,
+      "toc_index": 295,
+      "word_count": 698,
+      "updated_at": "2024-05-26T11:07:47.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "java-thread-pool",
+        "os-linux",
+        "observability-troubleshooting",
+        "resume-project"
+      ],
+      "question_type": "troubleshooting",
+      "question_type_name": "故障排查题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "并发",
+        "线程",
+        "线程池",
+        "核心线程",
+        "内存",
+        "文件",
+        "线上",
+        "监控",
+        "CPU",
+        "面试官",
+        "面经"
+      ],
+      "summary": "面试的时候被问到：线程池的参数如何设置， 你知道面试官最想听到的是什么吗？那我今天来给大家回答一下这道面试题，另外想要文字版的小伙伴可以在评论区扣666领取，我已经把它整理进了80万字面试宝典。 首先线程池中有7个参数，其中最重要的 是核心线程数和最大线程池数，当然这些参数没有固定的一个数值，...",
+      "excerpt": "面试的时候被问到：线程池的参数如何设置， 你知道面试官最想听到的是什么吗？那我今天来给大家回答一下这道面试题，另外想要文字版的小伙伴可以在评论区扣666领取，我已经把它整理进了80万字面试宝典。 首先线程池中有7个参数，其中最重要的 是核心线程数和最大线程池数，当然这些参数没有固定的一个数值， 不同业务场景线程任务肯定参数不一样，可以根据你的业务类型来针对性回答： 如果任务主要是 IO密集型 的， 比如存在大量读写操作 像（大量文件读写、 大量网络请求， 频繁的数据库访问等操作） 那 核心线程数就 可以设置为CPU核心数的两倍左右 ， 因为涉及的 I/O 操作通常会导致 线程大部分的时间会处于阻塞状态 ， 所以线程数就应当设置稍大一些。 那 最大线程数 可以设置为CPU核心数的四倍左右 以便在出现大量并发 I/O 操作时能够有足够的线程来处理。 如果任务是 CPU密集型 的， 像 一些计算操作， 通常就需要大量的计算资源，因为 计算操作 会长时间占用 CPU 资源，线程过多会导致cpu占用高 ， 所以参数不宜设置过大 可以将： ​ 核心线程数 设置为 CPU 核心数+1 ，以充分利用 CPU 资源 。 最大线程数 可以设置为CPU核心数的2倍左右 ，因为 CPU 密集型任务不会涉及 I/O 等待。 ​ 那其他参数我就不在这里重点说可以参考普遍的设置方式。 当然，以上是一些经验数值，实际情况我们需要根据服务器的资源占用情况，结合运行时的 cpu、内存等指标进行调整， 还要结合压测工具得到一个比较合理的范围。 当面试官问到你具体的业务场景那你可以根据你的业务类型， 再结合上面经验数值说明就行了。 当然在高并发应用中我们还会搭建像 线程池的可视化监控+动态调整线程池参数 的平台，以应对线上的不同时刻的流量变化对线程池带来的挑战。 如果对这块有兴趣可以加我主页联系方式进行学习。 ​ ​"
+    },
+    {
+      "slug": "nwh0glvbbitvk64k",
+      "title": "CompletableFuture异步编排",
+      "url": "/tulingzhouyu/db22bv/nwh0glvbbitvk64k",
+      "toc_path": [
+        "并发编程",
+        "CompletableFuture异步编排"
+      ],
+      "toc_level": 1,
+      "toc_index": 296,
+      "word_count": 32,
+      "updated_at": "2024-05-06T14:36:24.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "computer-network",
+        "netty-network"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "并发",
+        "CompletableFuture"
+      ],
+      "summary": "视频：https://player.bilibili.com/player.html?bvid=BV13u4m1F7VK&amp;autoplay=0脑图：CompletableFuture的使用| ProcessOn免费在线作图,在线流程图,在线思维导图",
+      "excerpt": "视频： 脑图："
+    },
+    {
+      "slug": "du7sofebm1r2wng0",
+      "title": "线程池中线程异常后：销毁还是复用？",
+      "url": "/tulingzhouyu/db22bv/du7sofebm1r2wng0",
+      "toc_path": [
+        "并发编程",
+        "线程池中线程异常后：销毁还是复用？"
+      ],
+      "toc_level": 1,
+      "toc_index": 300,
+      "word_count": 270,
+      "updated_at": "2024-06-27T13:39:43.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "os-linux",
+        "java-thread-pool",
+        "java-core",
+        "resume-project"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "并发",
+        "线程",
+        "线程池",
+        "异常",
+        "项目",
+        "面试官"
+      ],
+      "summary": "面试官又出难题了：线程池中线程异常后：销毁还是复用？哈喽大家好我是徐庶，需要开放场具题、项目解决方案、线上问题解决等高频面试题的可以在评论区扣666.当一个线程池里面的线程异常后:◦当执行方式是execute时,当执行任务出现异常，内部会抛出异常，进而就会导致线程中断而被移除掉，并且会创建一个...",
+      "excerpt": "面试官又出难题了： 线程池中线程异常后：销毁还是复用？ ​ 哈 喽大家好我是徐庶，需要开放场具题、项目解决方案、线上问题解决等高频面试题的可以在评论区扣666. ​ 当一个线程池里面的线程异常后: ◦当执行方式是execute时,当执行任务出现异常，内部会抛出异常，进而就会导致线程中断而被移除掉，并且会创建一个新的线程填充到线程池中。 ​ ◦当执行方式是submit时, 内部会把异常捕获住且不会抛出，所以就不会把这个线程移除掉，也不会创建新的线程放入到线程池中。 ​ 这俩种执行方式，都不会影响线程池里面其他线程的正常执行。 那关于线程池的源码有兴趣可以私信我详细学习， 如果视频有帮助可以三连支持！"
+    },
+    {
+      "slug": "ftxtsp1a7z09q3tb",
+      "title": "高并发场景下，如何安全修改同一行数据",
+      "url": "/tulingzhouyu/db22bv/ftxtsp1a7z09q3tb",
+      "toc_path": [
+        "Mysql",
+        "高并发场景下，如何安全修改同一行数据"
+      ],
+      "toc_level": 1,
+      "toc_index": 421,
+      "word_count": 565,
+      "updated_at": "2023-08-29T08:33:23.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "mysql-index-transaction",
+        "project-system-design",
+        "redis-lock",
+        "distributed-lock-id"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "并发",
+        "锁",
+        "事务",
+        "高并发",
+        "分布式锁"
+      ],
+      "summary": "在高并发情况下，多事务安全修改同一行数据可以采用以下方法：乐观锁：在数据表中添加一个版本号（或者时间戳）字段，每次更新数据时都会检查该字段的值。当多个并发的请求同时修改同一行数据时，只有一个请求能够成功执行更新操作，其他请求需要重新检查数据是否被修改过。如果数据没有被修改，那么它们可以重新尝试...",
+      "excerpt": "在高并发情况下，多事务安全修改同一行数据可以采用以下方法： 乐观锁：在数据表中添加一个版本号（或者时间戳）字段，每次更新数据时都会检查该字段的值。 当多个并发的请求同时修改同一行数据时，只有一个请求能够成功执行更新操作，其他请求需要重新检查数据是否被修改过。如果数据没有被修改，那么它们可以重新尝试更新；如果数据已经被修改，则这些请求需要触发重试等相应的冲突处理逻辑。 悲观锁： 在读取数据之前，使用数据库提供的锁机制，如SELECT ... FOR UPDATE语句，将要修改的行数据进行加锁。这样，其他并发的请求在读取相同行数据时会被阻塞，直到锁释放。这种方法能够确保同一时间只有一个请求在修改数据，但是会影响系统的并发性能。 分布式锁： 通过使用分布式锁服务，如Redis的SETNX命令或ZooKeeper的临时节点，来实现对行级数据的互斥访问。在修改数据前先尝试获取锁，获取成功后执行数据修改操作，修改完成后释放锁。其他请求在获取锁失败时可以等待或执行相应的冲突处理逻辑。 事务： 将对同一行数据的修改操作封装在数据库事务中。在事务中，数据库会自动处理并发修改的冲突，通过锁定相应的数据行来确保数据的一致性和完整性。并发的请求会被串行化执行，保证每个请求都能正确读取并修改数据。 需要注意的是，在进行高并发的数据操作时，要考虑到锁的粒度、性能开销以及可能出现的死锁问题，做好并发控制和冲突处理的容错设计。"
+    },
+    {
+      "slug": "qw8x7dd695ocvyyr",
+      "title": "面试官：说一下红锁 RedLock 的实现原理",
+      "url": "/tulingzhouyu/db22bv/qw8x7dd695ocvyyr",
+      "toc_path": [
+        "Redis",
+        "面试官：说一下红锁 RedLock 的实现原理"
+      ],
+      "toc_level": 1,
+      "toc_index": 528,
+      "word_count": 1614,
+      "updated_at": "2025-05-23T12:20:04.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "mysql-index-transaction",
+        "redis-cache",
+        "distributed-lock-id",
+        "redis-lock"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "并发",
+        "锁",
+        "Redis",
+        "分布式ID",
+        "UUID",
+        "分布式锁"
+      ],
+      "summary": "概述Redlock 是 Redis 创始人提出的一种分布式锁算法，主要用于解决分布式环境下多个客户端对同一共享资源并发访问时的一致性与可靠性问题。相比传统的单节点 Redis 锁机制，Redlock 通过多个独立 Redis 节点协作，有效提升了锁的容错能力和安全性，被广泛讨论并应用于对高可用...",
+      "excerpt": "概述 Redlock 是 Redis 创始人提出的一种分布式锁算法， 主要用于 解决分布式环境下多个客户端对同一共享资源并发访问时的一致性与可靠性问题。 相比传统的单节点 Redis 锁机制，Redlock 通过 多个独立 Redis 节点协作 ，有效提升了锁的容错能力和安全性，被广泛讨论并应用于对高可用分布式锁有需求的系统中。 实现原理 部署要求 至少部署 N 个相互独立、分布在不同物理服务器上的 Redis 主实例（官方建议 N=5）。 每个节点必须彼此独立，不能用主从节点或单机多实例混用，以降低单点故障的影响。 各节点时钟尽量同步以减少偏移带来的不确定性。 加锁流程 为了 获取锁，客户端执行以下操作 ： 记录时间： 客户端先记录下当前的毫秒时间（比如 start_time ），用来计算整个加锁过程的耗时。 尝试加锁： 客户端依次（其实可以并行，为简化描述暂且理解为依次）向所有 N 个独立 Redis 实例，使用相同的“key”和唯一的随机“value”（一般为 UUID）尝试加锁，且每个锁的有效期都一致，比如 10 秒。 每个实例设置锁时要有很短的超时时间： 为了防止某个 Redis 节点不可用时长时间卡住，客户端对每次请求 Redis 的“SET NX”操作都设置一个较短的超时时间（例如 10-50 毫秒），远小于锁的有效期。（网络不好，或某个 Redis 实例宕机、卡顿，客户端 不会无限等待 Redis 的响应。如果超过这个超时时间还没响应，就直接放弃这个节点，继续尝试下一个节点，以保证获取锁的整体流程足够迅速。） 判断加锁是否成功： 统计在 N 个实例里，有多少个成功加锁。如果 在大多数实例（N/2+1）里都加锁成功 ，并且 从第一步记录的时间到现在的总耗时，仍然小于锁的有效期 ，那么认为加锁成功。( 总耗时: 从客户端开始第一个加锁请求（即记录下时间点），到最后一个节点返回响应（无论是否成功）、整个加锁流程结束，这段时间的总和) 锁的有效期说明： 加锁成功后，这把锁在每个节点的有效期都是一开始设置的有效时间（比如 10 秒）， 不是“有效期-加锁耗时” 。但客户端要注意，自己实际可用的锁时间会减少加锁已耗费的这部分时间，所以需要预留足够的业务处理时间。 加锁失败的处理： 如果没有在大多数实例抢到锁，或者加锁太慢导致剩余可用锁时间明显不足，客户端应该立即向所有实例发送解锁（释放锁）操作，无论这些实例是否加锁成功，这样可以减少“脏锁”残留 。 重试： 同时向所有的Redis服务器，发送 SET key value EX senconds NX 命令，当所有服务器都返回结果后，判断是否以达成“锁获取成功的两个条件”，如果达成了，则锁获取成功。如果没有，则立即将已获取的锁释放掉，并 等待一小段时间，重复以上步骤（一般会尝试3次）。如果这期间仍未达成“锁"
+    },
+    {
+      "slug": "zetz1tb4th6xu4qn",
+      "title": "同步I/O和异步I/O的区别和优缺？",
+      "url": "/tulingzhouyu/db22bv/zetz1tb4th6xu4qn",
+      "toc_path": [
+        "网络专题",
+        "同步I/O和异步I/O的区别和优缺？"
+      ],
+      "toc_level": 1,
+      "toc_index": 619,
+      "word_count": 690,
+      "updated_at": "2023-08-27T09:06:01.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "project-system-design",
+        "computer-network"
+      ],
+      "question_type": "troubleshooting",
+      "question_type_name": "故障排查题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "并发",
+        "高并发",
+        "网络"
+      ],
+      "summary": "当涉及输入/输出（I/O）操作时，同步和异步是两种不同的处理方式。同步I/O（Synchronous I/O）：同步I/O是一种阻塞式的操作方式。在进行I/O操作时，程序会等待操作完成，然后继续执行后续的代码。当执行同步I/O时，程序会暂停运行，直到I/O操作完成并返回结果为止。这意味着程序可...",
+      "excerpt": "当涉及输入/输出（I/O）操作时，同步和异步是两种不同的处理方式。 同步I/O（Synchronous I/O）： 同步I/O是一种阻塞式的操作方式。在进行I/O操作时，程序会等待操作完成，然后继续执行后续的代码。 当执行同步I/O时，程序会暂停运行，直到I/O操作完成并返回结果为止。这意味着程序可能会因为等待I/O而变得不响应。 同步I/O适用于简单的任务，代码较为直观，但可能会导致效率低下，因为程序在等待I/O操作完成期间无法执行其他任务。 异步I/O（Asynchronous I/O）： 异步I/O是一种非阻塞式的操作方式。在进行I/O操作时，程序会继续执行后续的代码，而不必等待操作完成。 当执行异步I/O时，程序会提交I/O请求，并继续执行其他任务。当I/O操作完成后，程序会得到通知，并处理返回的结果。 异步I/O适用于需要同时处理多个任务的情况，可以提高程序的并发性和效率，但编码可能会相对复杂。 区别： 主要区别在于程序执行是否会被I/O操作阻塞。同步I/O会阻塞程序，而异步I/O不会。 同步I/O需要等待操作完成，而异步I/O可以在操作进行的同时执行其他任务。 优缺点 同步I/O的优缺点： 优点： 简单直观，易于编写和理解。 适用于简单的、线性的任务。 缺点： 可能导致程序变得不响应，特别是在执行耗时的I/O操作时。 效率低下，因为程序在等待I/O操作完成期间无法做其他事情。 异步I/O的优缺点： 优点： 提高了程序的并发性，能够同时处理多个任务。 效率高，因为程序可以在等待I/O操作时继续执行其他任务。 缺点： 编码复杂度较高，需要处理异步回调、状态管理等问题。 可能不太直观，需要更多的处理逻辑。 综上所述，同步I/O适用于简单任务和代码逻辑，而异步I/O适用于需要高并发和效率的情况，但可能需要更复杂的编码和处理方式。选择哪种方式取决于你的具体应用场景和需求。"
+    },
+    {
+      "slug": "tq8mmbb0r01ic2zy",
+      "title": "Netty的线程模型怎么设计的",
+      "url": "/tulingzhouyu/db22bv/tq8mmbb0r01ic2zy",
+      "toc_path": [
+        "Netty",
+        "Netty的线程模型怎么设计的"
+      ],
+      "toc_level": 1,
+      "toc_index": 633,
+      "word_count": 1128,
+      "updated_at": "2024-08-05T12:36:29.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "netty-network",
+        "os-linux",
+        "performance-optimization",
+        "java-thread-pool"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "senior",
+        "campus"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "并发",
+        "多线程",
+        "线程",
+        "锁",
+        "Netty",
+        "NIO",
+        "网络编程",
+        "上下文切换",
+        "性能",
+        "优化",
+        "瓶颈",
+        "线程池"
+      ],
+      "summary": "Netty 的线程模型旨在高效地处理并发连接和请求，以优化网络应用程序的性能。其线程模型包括了多种优化技术，例如 Reactor 模式、线程池和事件循环等，用于在高负载下保持高效稳定的性能。下面详细介绍 Netty 的线程模型及其提升性能的方法。Netty 线程模型概述Netty 的线程模型N...",
+      "excerpt": "Netty 的线程模型旨在高效地处理并发连接和请求，以优化网络应用程序的性能。其线程模型包括了多种优化技术，例如 Reactor 模式、线程池和事件循环 等，用于在高负载下保持高效稳定的性能。下面详细介绍 Netty 的线程模型及其提升性能的方法。 Netty 线程模型概述 Netty 的线程模型 Netty 的线程模型由三类主要的线程组成： Boss 线程池（或 BossGroup） Worker 线程池（或 WorkerGroup） 用户自定义线程 1. Boss 线程 池 职责 ：主要负责监听请求（如接收新连接）并将这些连接分发给 Worker 线程进行处理。 数量 ：通常 Boss 线程组（ NioEventLoopGroup ）的线程数量为一个，处理所有的监听端口。 2. Worker 线程 池 职责 ：负责处理 I/O 操作（如读写操作）的多线程池。Worker 线程从 Boss 线程那里接收到新的连接后，处理实际的数据读写、解码、编码等操作。 数量 ：通常为 CPU 核心数的 2 倍，可以通过配置来调整。 3. 用户自定义线程 职责 ：用户可以根据需要定义自己的线程来处理业务逻辑，这些线程通常在 Handler 中异步执行耗时操作，以避免阻塞 Worker 线程。 示例代码：简单的 Netty 服务器线程模型 以下是一个简单的 Netty 服务器示例，展示了如何配置线程模型： 在这个示例中： bossGroup 负责接受新连接。 workerGroup 负责处理读写操作。 ServerBootstrap 配置了通道类型、事件循环组和通道处理器。 提高性能的方法 Netty 通过以下方法来提高性能和扩展性： 非阻塞 I/O 和事件驱动： Netty 基于 NIO（基于 NIO 的 Selector ）实现非阻塞 I/O，通过事件驱动的方式来高效处理 I/O 事件。 线程不会因为等待 I/O 操作完成而被阻塞，而是由事件循环（event loop）轮询 I/O 事件。 事件循环（Event Loop）： Netty 的事件循环由一个或多个线程组成，当事件循环线程处理某一个连接时，不会被 I/O 操作阻塞。 每个事件循环线程通过不断循环检查事件队列并执行相应的 I/O 操作，最大化 CPU 使用率。 线程与通道的绑定： Netty 将每个 Channel 绑定到一个特定的事件循环线程上，这样避免了多线程竞争问题，简化了并发控制，降低了锁的使用，从而提高了性能。 线程池复用： 通过线程池复用线程，避免了频繁创建销毁线程的开销，尤其是在高并发场景下，降低了系统资源的消耗，提高了响应速度。 工作线程分离： 通过将连接管理和 I/O 操作分离到不同的线程中，使得各个部分能够独立伸缩和优化，避免单一线程成为系统瓶颈。 总结 Netty 的线程模型通过以下方式提"
+    },
+    {
+      "slug": "annknow3d9saprw9",
+      "title": "Netty中无锁串行化是怎么设计的",
+      "url": "/tulingzhouyu/db22bv/annknow3d9saprw9",
+      "toc_path": [
+        "Netty",
+        "Netty中无锁串行化是怎么设计的"
+      ],
+      "toc_level": 1,
+      "toc_index": 639,
+      "word_count": 796,
+      "updated_at": "2024-08-05T12:39:08.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "netty-network",
+        "mysql-index-transaction",
+        "os-linux",
+        "performance-optimization"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "并发",
+        "多线程",
+        "线程",
+        "锁",
+        "Netty",
+        "NIO",
+        "性能",
+        "吞吐"
+      ],
+      "summary": "Netty 的无锁串行化设计是其高性能和高并发处理能力的核心之一。无锁串行化设计的主要思想是每条连接对应一个独立的 ChannelPipeline，每个 ChannelPipeline 在特定的 EventLoop 中运行，该 EventLoop 在单一线程中处理所有事件。这种设计避免了多线程...",
+      "excerpt": "Netty 的无锁串行化设计是其高性能和高并发处理能力的核心之一。无锁串行化设计的主要思想是每条连接对应一个独立的 ChannelPipeline，每个 ChannelPipeline 在特定的 EventLoop 中运行，该 EventLoop 在单一线程中处理所有事件。这种设计避免了多线程竞争和锁的开销，从而提高了系统的吞吐量和响应性能。 无锁串行化设计的核心 每个 Channel 绑定到一个特定的 EventLoop : 事件循环负责处理该 Channel 的所有事件（如读、写、连接等），确保同一个 Channel 的操作总是在同一个线程中执行。 事件队列 : EventLoop 拥有一个事件队列，将所有事件提交到该队列中进行处理。 任务调度 : EventLoop 的单线程模型会依次处理事件队列中的任务，从而避免了多线程竞争。 这种模型下，由于每个 Channel 的操作在其事件循环（单线程）中串行化执行，消除了多线程操作同一资源所需的锁和同步机制，降低了并发处理的复杂性。 代码示例 下面的代码展示了 Netty 的无锁串行化设计的基本思路： 关键点解释 事件循环组 (EventLoopGroup) : 包含多个 EventLoop，每个 EventLoop 负责处理多个 Channel 的 I/O 操作，但一个 Channel 只会被一个 EventLoop 处理。 NioEventLoopGroup 是其实现，用于处理基于 NIO 的 Channel。 ChannelPipeline 和 ChannelHandler : initChannel 方法为每个新接入的连接（Channel）创建一个 ChannelPipeline ，并将 MyChannelHandler 加入其中。 MyChannelHandler 中的操作将在同一个线程（同一个 EventLoop）中执行，确保了无锁串行化。 无锁串行化的实现 : 由于 Netty 确保了每个 Channel 的所有 I/O 操作都由同一个 EventLoop 处理，并且是串行执行的，因此不需要使用锁机制来保证线程安全。 这种设计极大地简化了并发编程的复杂性，在高并发环境下提升了系统的性能和可扩展性。"
+    },
+    {
+      "slug": "ltsmb6zpt8ya32p6",
+      "title": "Zookeeper 分布式锁如何实现",
+      "url": "/tulingzhouyu/db22bv/ltsmb6zpt8ya32p6",
+      "toc_path": [
+        "Zookeeper",
+        "Zookeeper 分布式锁如何实现"
+      ],
+      "toc_level": 1,
+      "toc_index": 650,
+      "word_count": 308,
+      "updated_at": "2023-09-04T07:59:38.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "mysql-index-transaction",
+        "redis-lock",
+        "distributed-lock-id",
+        "os-linux"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "线程",
+        "锁",
+        "分布式锁"
+      ],
+      "summary": "ZooKeeper可以用于实现分布式锁，主要的思路是利用ZooKeeper的临时顺序节点唯一性和顺序性的特点来实现。具体实现步骤： 1. 创建一个ZooKeeper节点作为锁的根节点，例如 /locks。 2. 当一个线程需要获取锁时，它在锁的根节点下创建一个临时顺序节点，例如 /locks/...",
+      "excerpt": "ZooKeeper可以用于实现分布式锁，主要的思路是利用ZooKeeper的临时顺序节点唯一性和顺序性的特点来实现。具体实现步骤： 1. 创建一个ZooKeeper节点作为锁的根节点，例如 /locks。 2. 当一个线程需要获取锁时，它在锁的根节点下创建一个临时顺序节点，例如 /locks/lock-0001，并尝试获取锁。 3. 线程获取锁的过程是通过检查它创建的节点是否是锁节点下最小的节点，如果是，则表示该线程获得了锁；否则，线程监听它创建节点的前一个节点，等待前一个节点的释放。 4. 当线程释放锁时，它删除自己创建的节点。 这种方式实现的分布式锁具有一定的可靠性和性能，但需要确保ZooKeeper集群的可用性和性能足够好。同时，需要处理连接断开、会话过期等异常情况，以保证分布式锁的正确性。此外，还可以使用ZooKeeper的超时机制来处理死锁等问题"
+    },
+    {
+      "slug": "gle0lafdls6w12ra",
+      "title": "NGINX的事件驱动模型是什么？为什么这种模型对性能有益？",
+      "url": "/tulingzhouyu/db22bv/gle0lafdls6w12ra",
+      "toc_path": [
+        "Nginx",
+        "NGINX的事件驱动模型是什么？为什么这种模型对性能有益？"
+      ],
+      "toc_level": 1,
+      "toc_index": 720,
+      "word_count": 654,
+      "updated_at": "2023-09-04T11:29:32.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "os-linux",
+        "project-system-design",
+        "performance-optimization",
+        "java-core"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "并发",
+        "线程",
+        "进程",
+        "上下文切换",
+        "高并发",
+        "性能",
+        "IO"
+      ],
+      "summary": "NGINX使用一种称为\"事件驱动\"或\"事件驱动非阻塞\"模型的架构来处理客户端请求和服务器操作。这个模型在高并发环境下对性能非常有益，因为它可以在单个线程中有效地处理大量的并发连接，而无需为每个连接创建一个新的线程或进程。NGINX的事件驱动模型具体如下： 事件循环：NGINX的核心组件是一个事...",
+      "excerpt": "NGINX使用一种称为&quot;事件驱动&quot;或&quot;事件驱动非阻塞&quot;模型的架构来处理客户端请求和服务器操作。这个模型在高并发环境下对性能非常有益，因为它可以在单个线程中有效地处理大量的并发连接，而无需为每个连接创建一个新的线程或进程。 NGINX的事件驱动模型具体如下： 事件循环 ：NGINX的核心组件是一个事件循环，它不断地监听事件（例如新连接的到来、请求数据的可读性等），并相应地执行处理程序。 非阻塞IO ：NGINX使用非阻塞IO来处理输入和输出，这意味着当一个连接等待数据时，它不会阻塞整个线程，而是可以继续处理其他连接。这样，一个线程可以同时管理多个连接。 事件处理器 ：NGINX使用事件处理器来处理不同类型的事件。它可以同时处理很多连接，而不需要为每个连接创建一个新的线程。 事件触发 ：当一个事件准备好被处理时，NGINX的事件处理器会被触发，相应地执行相应的操作，例如读取数据、写入数据或关闭连接。 这种事件驱动模型对性能有益的原因有以下几点： 资源节省 ：相对于每个连接都创建一个新的线程或进程，事件驱动模型可以通过在一个线程内有效地管理多个连接来节省系统资源。 减少上下文切换 ：线程切换需要消耗大量的CPU时间，而在事件驱动模型中，由于线程数较少，减少了线程切换的开销。 高并发处理 ：事件驱动模型允许单个线程处理大量并发连接，使得NGINX能够高效地处理高并发请求，而不会因为线程资源耗尽而出现性能问题。 响应时间短 ：事件驱动模型的非阻塞IO特性使得NGINX能够快速地响应客户端请求，从而减少了请求的等待时间。 总之，NGINX的事件驱动模型在高并发环境中的性能优势使其成为处理大量网络连接和请求的理想工具。"
+    },
+    {
+      "slug": "rsk7rls78vs5ebmn",
+      "title": "Dubbo中的异步调用是如何实现的？它有什么优势和注意事项？",
+      "url": "/tulingzhouyu/db22bv/rsk7rls78vs5ebmn",
+      "toc_path": [
+        "Dubbo",
+        "高级",
+        "Dubbo中的异步调用是如何实现的？它有什么优势和注意事项？"
+      ],
+      "toc_level": 2,
+      "toc_index": 735,
+      "word_count": 633,
+      "updated_at": "2023-09-01T07:38:28.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "java-thread-pool",
+        "performance-optimization",
+        "os-linux",
+        "project-system-design"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "并发",
+        "线程",
+        "线程池",
+        "性能",
+        "优化",
+        "高并发"
+      ],
+      "summary": "在Dubbo中，异步调用是一种通过非阻塞的方式调用远程服务，允许消费者在发送请求后继续执行其他任务，而不必等待服务提供者的响应。异步调用可以提高系统的并发能力和性能，特别适用于处理耗时的远程调用。异步调用的实现方式是通过将同步调用转化为异步调用，Dubbo会在消费者端启动一个独立的线程池来处理...",
+      "excerpt": "在Dubbo中，异步调用是一种通过非阻塞的方式调用远程服务，允许消费者在发送请求后继续执行其他任务，而不必等待服务提供者的响应。异步调用可以提高系统的并发能力和性能，特别适用于处理耗时的远程调用。 异步调用的实现方式是通过将同步调用转化为异步调用，Dubbo会在消费者端启动一个独立的线程池来处理异步调用的响应，当提供者的响应返回后，会触发回调函数执行。 优势： 提高并发性能： 异步调用允许消费者在等待服务提供者响应时，继续处理其他任务，从而充分利用系统资源，提高并发性能。 响应时间优化： 异步调用可以在后台处理服务调用，消费者无需等待提供者的响应，可以更快地得到结果。 资源优化： 异步调用可以避免由于长时间阻塞导致的资源浪费，充分利用线程池资源。 注意事项： 回调函数处理： 在异步调用中，消费者需要提供回调函数来处理服务提供者的响应。确保回调函数逻辑正确并处理响应数据。 线程池配置： 异步调用会使用独立的线程池来处理响应，需要根据系统的并发情况合理配置线程池参数，避免资源耗尽。 错误处理： 异步调用可能会面临网络异常、超时等问题，需要进行错误处理和重试，确保调用的可靠性。 示例代码： 通过以上示例，你可以在Dubbo中实现异步调用，提高系统的并发性能和响应时间。但需要注意合理配置线程池和错误处理，以确保异步调用的可靠性。"
+    },
+    {
+      "slug": "xz5pc33tgueobvau",
+      "title": "解释一下Dubbo的线程模型是什么？为什么要采用这种线程模型？",
+      "url": "/tulingzhouyu/db22bv/xz5pc33tgueobvau",
+      "toc_path": [
+        "Dubbo",
+        "高级",
+        "解释一下Dubbo的线程模型是什么？为什么要采用这种线程模型？"
+      ],
+      "toc_level": 2,
+      "toc_index": 736,
+      "word_count": 636,
+      "updated_at": "2023-09-01T07:39:50.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "os-linux",
+        "java-thread-pool",
+        "performance-optimization",
+        "computer-network"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "并发",
+        "多线程",
+        "线程",
+        "线程池",
+        "性能",
+        "优化",
+        "TCP",
+        "网络"
+      ],
+      "summary": "Dubbo的线程模型是一种用于处理请求和响应的并发机制，用于管理并调度消费者与提供者之间的通信和处理。Dubbo采用了一种基于线程池和异步调用的线程模型，以提高系统的并发性能和资源利用率。Dubbo的线程模型主要包括以下几个关键组件： Acceptor线程池： 用于处理消费者的请求连接，建立T...",
+      "excerpt": "Dubbo的线程模型是一种用于处理请求和响应的并发机制，用于管理并调度消费者与提供者之间的通信和处理。Dubbo采用了一种基于线程池和异步调用的线程模型，以提高系统的并发性能和资源利用率。 Dubbo的线程模型主要包括以下几个关键组件： Acceptor线程池： 用于处理消费者的请求连接，建立TCP连接。 I/O线程池： 用于处理请求和响应的读写操作，包括解码、编码等。 业务线程池： 用于处理消费者的业务请求，包括调用远程服务、执行回调函数等。 Callback线程池： 用于处理异步调用的响应回调函数。 Dubbo采用的线程模型具体工作流程如下： 消费者通过Acceptor线程池与提供者建立TCP连接。 请求数据经过I/O线程池进行解码，得到请求消息。 请求消息交给业务线程池进行业务处理，如果是异步调用，会将回调函数提交给Callback线程池。 提供者的响应消息经过I/O线程池进行编码。 响应消息经过网络传输到消费者端。 消费者端的I/O线程池进行解码，得到响应数据。 如果是异步调用，响应数据会触发回调函数的执行。 采用这种线程模型的优势包括： 并发性能： 使用线程池和异步调用的方式可以充分利用系统资源，提高系统的并发性能，同时避免过多线程的创建和销毁开销。 资源利用： 合理的线程池管理可以避免资源浪费，保证系统的稳定性和可靠性。 异步处理： 异步调用可以在不阻塞主线程的情况下处理耗时的远程调用，优化系统的响应时间。 扩展性： Dubbo的线程模型支持扩展，可以根据实际需求调整线程池大小和配置。 总之，Dubbo的线程模型通过合理的线程池管理和异步调用机制，提供了高并发、高性能的分布式服务调用能力，满足了大规模分布式系统的需求。"
+    },
+    {
+      "slug": "hlbwcoo3qblhpcq3",
+      "title": "有哪些分布式锁的实现方案",
+      "url": "/tulingzhouyu/db22bv/hlbwcoo3qblhpcq3",
+      "toc_path": [
+        "分布式",
+        "有哪些分布式锁的实现方案"
+      ],
+      "toc_level": 1,
+      "toc_index": 756,
+      "word_count": 3347,
+      "updated_at": "2023-10-15T13:51:02.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "mysql-index-transaction",
+        "redis-lock",
+        "distributed-lock-id",
+        "redis-cache"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "并发",
+        "线程",
+        "锁",
+        "AQS",
+        "分布式锁",
+        "Redisson",
+        "看门狗",
+        "Lua",
+        "Redis"
+      ],
+      "summary": "资：12-25K岗位：中高级开发工程师一、分布式锁场景一般需要使用分布式锁的场景如下：效率：使用分布式锁可以避免不同节点重复相同的工作，比如避免重复执行定时任务等；正确性：使用分布式锁同样可以避免破坏数据正确性，如果两个节点在同一条数据上面操作，可能会出现并发问题。二、分布式锁特点一个完善的分...",
+      "excerpt": "资：12-25K 岗位：中高级开发工程师 ​ 一、 分布式锁 场景 一般需要使用分布式锁的场景如下： 效率：使用分布式锁可以避免不同节点重复相同的工作，比如避免重复执行定时任务等； 正确性：使用分布式锁同样可以避免破坏数据正确性，如果两个节点在同一条数据上面操作，可能会出现并发问题。 二、分布式锁特点 一个完善的分布式锁需要满足以下特点： 互斥性：互斥是所得基本特性，分布式锁需要按需求保证线程或节点级别的互斥。； 可重入性：同一个节点或同一个线程获取锁，可以再次重入获取这个锁； 锁超时：支持锁超时释放，防止某个节点不可用后，持有的锁无法释放； 高效性：加锁和解锁的效率高，可以支持高并发； 高可用：需要有高可用机制预防锁服务不可用的情况，如增加降级； 阻塞性：支持阻塞获取锁和非阻塞获取锁两种方式； 公平性：支持公平锁和非公平锁两种类型的锁，公平锁可以保证安装请求锁的顺序获取锁，而非公平锁不可以。 三、分布式锁的实现 分布式锁常见的实现有三种实现，下文我们会一一介绍这三种锁的实现方式： 基于数据库的分布式锁； 基于Redis的分布式锁； 基于Zookeeper的分布式锁。 1、基于数据库的分布式锁 用数据库实现分布式锁比较简单，就是创建一张锁表，数据库对字段作唯一性约束。 加锁的时候，在锁表中增加一条记录即可；释放锁的时候删除记录就行。 如果有并发请求同时提交到数据库，数据库会保证只有一个请求能够得到锁。 这种属于数据库 IO 操作，效率不高，而且频繁操作会增大数据库的开销，因此这种方式在高并发、高性能的场景中用的不多。 方案概览 我们上面列举出了分布式锁需要满足的特点，使用数据库实现分布式锁也需要满足这些特点，下面我们来一一介绍实现方法： 互斥性：通过数据库update的原子性达到两次获取锁之间的互斥性； 可重入性：在数据库中保留一个字段存储当前锁的持有者； 锁超时：在数据库中存储锁的获取时间点和超时时长； 高效性：数据库本身可以支持比较高的并发； 高可用：可以增加主从数据库逻辑，提升数据库的可用性； 阻塞性：可以通过看门狗轮询的方式实现线程的阻塞； 公平性：可以添加锁队列，不过不建议，实现起来比较复杂。 表结构设计 数据库的表名为lock，各个字段的定义如下所示： 字段名名称 字段类型 说明 lock_key varchar 锁的唯一标识符号 lock_time timestample 加锁的时间 lock_duration integer 锁的超时时长，单位可以业务自定义，通常为秒 lock_owner varchar 锁的持有者，可以是节点或线程的唯一标识，不同可重入粒度的锁有不同的含义 locked boolean 当前锁是否被占有 获取锁的SQL语句 获取锁的SQL语句分不同的情况，如果锁不存在，那么首先需要创建锁，并且创建锁的线程可以获取锁： 如果"
+    },
+    {
+      "slug": "hmdc25fizw0n6hlr",
+      "title": "Java死锁问题如何排查",
+      "url": "/tulingzhouyu/db22bv/hmdc25fizw0n6hlr",
+      "toc_path": [
+        "线上问题排查",
+        "Java死锁问题如何排查"
+      ],
+      "toc_level": 1,
+      "toc_index": 805,
+      "word_count": 929,
+      "updated_at": "2024-08-23T14:11:07.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "observability-troubleshooting",
+        "mysql-index-transaction",
+        "os-linux",
+        "java-core"
+      ],
+      "question_type": "troubleshooting",
+      "question_type_name": "故障排查题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "并发",
+        "多线程",
+        "线程",
+        "锁",
+        "线上",
+        "排查",
+        "监控",
+        "CPU",
+        "死锁",
+        "Linux",
+        "Java"
+      ],
+      "summary": "在Java应用程序中，死锁是一个经典的并发问题，它会导致线程永久阻塞，无法继续进行任何操作。排查Java死锁问题需要熟悉多线程调试技巧和工具。以下是一个详细的排查过程以及一个具体的示例。排查步骤识别死锁现象收集线程转储分析线程转储代码审查重现问题使用调试工具优化和验证详细排查过程1. 识别死锁...",
+      "excerpt": "在Java应用程序中，死锁是一个经典的并发问题，它会导致线程永久阻塞，无法继续进行任何操作。排查Java死锁问题需要熟悉多线程调试技巧和工具。以下是一个详细的排查过程以及一个具体的示例。 排查步骤 识别死锁现象 收集线程转储 分析线程转储 代码审查 重现问题 使用调试工具 优化和验证 详细排查过程 1. 识别死锁现象 通常，死锁会表现为应用程序挂起、不响应用户请求或CPU使用率下降。 2. 收集线程转储 当应用出现不响应时，使用以下方法收集Java线程转储（Thread Dump）： JVM命令 ：在Linux或Mac上使用 jstack ，在Windows上使用 Ctrl+Break 。 IDE支持 ：使用Eclipse或IntelliJ的调试功能来生成线程转储。 3. 分析线程转储 从生成的线程转储中寻找&quot;deadlock&quot;相关信息。Java会在发现死锁时显示类似如下的信息： 4. 代码审查 根据线程转储信息，对出现死锁的代码段进行详细审查。 示例代码 ： 问题： methodA 和 methodB 之间存在循环锁定。 5. 重现问题 在测试环境中尝试重现死锁问题： 6. 使用调试工具 利用调试工具如Eclipse、IntelliJ的线程调试功能，进一步定位死锁位置。 7. 优化和验证 解决方案 ： 锁排序 ：确保所有线程以相同顺序申请锁。 使用 Lock 接口 ：用显式锁代替内置同步。 超时尝试 ：利用 tryLock 的时间限制功能。 验证 ： 实施改动后，重新执行测试，确保死锁不再出现。 强化单元测试以覆盖多线程场景。 总结 排查Java死锁问题涉及识别现象、获取详细线程转储信息、分析代码、优化同步逻辑等步骤。在实践中，通过良好的设计可以避免大多数常见的死锁问题。使用高层次的并发工具（如 java.util.concurrent 包）也能显著简化并发编程，从而减少死锁的可能性。持续的监控和测试是确保应用稳定性的关键。"
+    },
+    {
+      "slug": "om2n0vvxqsk4gakb",
+      "title": "高并发线程安全问题如何排查",
+      "url": "/tulingzhouyu/db22bv/om2n0vvxqsk4gakb",
+      "toc_path": [
+        "线上问题排查",
+        "高并发线程安全问题如何排查"
+      ],
+      "toc_level": 1,
+      "toc_index": 816,
+      "word_count": 1037,
+      "updated_at": "2024-08-25T06:30:29.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "observability-troubleshooting",
+        "os-linux",
+        "project-system-design",
+        "java-core"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "并发",
+        "多线程",
+        "线程",
+        "锁",
+        "volatile",
+        "synchronized",
+        "线上",
+        "排查",
+        "日志",
+        "CPU",
+        "死锁",
+        "内存",
+        "Java"
+      ],
+      "summary": "高并发环境下的线程安全问题排查是一个复杂的过程，需要结合多种工具和方法。以下是一个系统化的排查思路和步骤：排查思路和步骤问题识别代码审查日志分析性能分析线程转储分析模拟和重现使用专业工具修复和验证详细步骤1. 问题识别症状识别：确定问题的具体表现，如数据不一致、死锁、性能下降等。影响范围：评估...",
+      "excerpt": "高并发环境下的线程安全问题排查是一个复杂的过程，需要结合多种工具和方法。以下是一个系统化的排查思路和步骤： 排查思路和步骤 问题识别 代码审查 日志分析 性能分析 线程转储分析 模拟和重现 使用专业工具 修复和验证 详细步骤 1. 问题识别 症状识别 ：确定问题的具体表现，如数据不一致、死锁、性能下降等。 影响范围 ：评估问题影响的范围和严重程度。 2. 代码审查 并发控制检查 ：检查是否正确使用了同步机制（如synchronized、volatile、Lock等）。 共享资源访问 ：审查共享资源的访问模式，确保线程安全。 线程安全集合 ：检查是否使用了合适的线程安全集合类。 3. 日志分析 错误日志 ：查看系统日志中的错误和异常信息。 自定义日志 ：分析自定义的并发操作日志，追踪问题发生的上下文。 4. 性能分析 CPU分析 ：使用工具如VisualVM或JProfiler分析CPU使用情况，找出热点方法。 内存分析 ：检查内存使用情况，是否存在内存泄漏或过度GC。 5. 线程转储分析 获取线程转储 ：使用jstack命令或工具获取线程转储信息。 分析线程状态 ：检查线程状态，是否存在死锁、长时间等待等问题。 6. 模拟和重现 压力测试 ：使用JMeter等工具模拟高并发场景。 单元测试 ：编写多线程单元测试，重现问题场景。 7. 使用专业工具 Java Flight Recorder (JFR) ：分析Java应用的运行时行为。 Java Mission Control (JMC) ：分析JFR数据，发现性能问题和并发问题。 FindBugs/SpotBugs ：静态代码分析工具，发现潜在的并发问题。 8. 修复和验证 实施修复 ：根据分析结果，实施必要的代码修改。 验证测试 ：在模拟环境中进行充分的并发测试，验证修复效果。 实际案例 假设在一个高并发的订单处理系统中发现数据不一致问题： 问题识别 ： 症状：订单状态不一致，有时显示已支付，有时显示未支付。 影响：影响用户体验和系统可信度。 代码审查 ： 发现订单状态更新方法没有proper同步机制。 日志分析 ： 日志显示多个线程同时更新同一订单状态。 性能分析 ： 使用VisualVM发现订单处理方法是CPU热点。 线程转储分析 ： jstack显示多个线程同时在订单处理方法中。 模拟和重现 ： 使用JMeter模拟高并发订单处理场景，成功重现问题。 使用专业工具 ： 使用Java Flight Recorder捕获详细的线程行为。 修复和验证 ： 修复：为订单状态更新添加适当的同步机制（如使用ReentrantLock）。 验证：重新进行并发测试，确认数据一致性问题已解决。 总结 排查高并发线程安全问题需要综合运用多种技术和工具。关键在于: 正确识别问题症状 全面分析系统行为 精准定位问题根源 实施"
+    },
+    {
+      "slug": "lnd8ulmpkxlm7b2t",
+      "title": "如何设计一个敏感词过滤系统？",
+      "url": "/tulingzhouyu/db22bv/lnd8ulmpkxlm7b2t",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "如何设计一个敏感词过滤系统？"
+      ],
+      "toc_level": 2,
+      "toc_index": 954,
+      "word_count": 2180,
+      "updated_at": "2025-12-22T09:09:20.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "redis-cache",
+        "java-core",
+        "jvm-memory-gc",
+        "ai-llm"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle",
+        "junior"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年",
+        "初级/1-3年"
+      ],
+      "keywords": [
+        "并发",
+        "多线程",
+        "线程",
+        "锁",
+        "volatile",
+        "Redis",
+        "缓存",
+        "Java",
+        "String",
+        "GC",
+        "垃圾回收",
+        "堆",
+        "AI"
+      ],
+      "summary": "在当今的互联网环境下，内容安全（Content Security）已经成为各大平台不可忽视的生命线。无论是社交媒体、直播弹幕，还是电商评论，海量的用户生成内容（UGC）中往往夹杂着违规信息。设计一个生产级的敏感词过滤系统，我们面临着三个核心挑战：高效匹配：在亿级流量冲击下，如何保证毫秒级的低延...",
+      "excerpt": "在当今的互联网环境下，内容安全（Content Security）已经成为各大平台不可忽视的生命线。无论是社交媒体、直播弹幕，还是电商评论，海量的用户生成内容（UGC）中往往夹杂着违规信息。 设计一个生产级的敏感词过滤系统，我们面临着三个核心挑战： 高效匹配 ：在亿级流量冲击下，如何保证毫秒级的低延迟响应？ 动态更新 ：如何在不重启服务、不中断业务的情况下，实时生效最新的违规词库？ 对抗变种 ：面对“火星文”、拼音拆解等恶意规避手段，系统如何保持健壮性？ 本文将围绕这三个目标，从最基础的算法选型开始，一步步演进到支撑亿级流量的分布式智能架构。 一、 算法选型：从 O(N*M) 到 O(K) 的性能跃迁 在系统初期，很多开发者会习惯性地使用数据库模糊查询（ LIKE %keyword% ）或者正则表达式（Regex）来解决问题。在数据量极少时，这确实有效。但在生产环境中，这种方案是致命的。 假设我们有一个包含 10,000 个敏感词的词库，需要检测一段 5,000 字的文章。 如果使用简单的字符串包含匹配（ String.contains ），系统需要进行 10,000 × 5,000 次扫描。随着词库的膨胀，计算量呈线性甚至指数级增长，CPU 会瞬间被耗尽。 我们需要的是一种 时间复杂度与词库大小无关 的算法。 如上图所示，引入 Trie 树（字典树） 或 AC 自动机（Aho-Corasick Automaton） 后，性能发生了质的飞跃。无论词库里有 1 万个词还是 100 万个词，检测耗时只与 被检测文本的长度 （K）有关。这种“空间换时间”的策略，将响应时间从秒级压缩到了毫秒级。 二、 核心数据结构：基于 Trie 树的状态机实现 Trie 树的核心思想是利用字符串的 公共前缀 来减少查询时间。我们将所有的敏感词构建成一棵树状结构，根节点为空，每个节点代表一个字符。 当文本流进入系统时，我们像查字典一样逐字匹配： 指针游走 ：读取文本中的字符，在树上寻找对应的子节点。 状态判定 ：如果路径断开，说明不匹配；如果路径走到了标记为“结束”的节点，说明命中了敏感词。 白名单溯源 ：为了防止误杀（例如“杀毒软件”包含“杀毒”），我们可以在树的特定路径上标记“白名单”属性，实现更细粒度的控制。 三、 动态配置：基于双缓冲（Double Buffering）的热加载机制 算法解决了匹配效率问题，但工程落地时会遇到一个棘手的痛点： 词库更新 。 运营人员在后台新增了一个突发敏感词，技术部门不可能为此重启所有服务。我们需要实现 热加载（Hot Reload） 。 在多线程高并发环境下，直接修改正在使用的 Trie 树是非常危险的，极易导致并发冲突或服务崩溃。这里我们引入了并发编程中常用的 Copy-On-Write 思想与 双 Buffer 机制 。 设计方案如下："
+    },
+    {
+      "slug": "laixkqv39oprn68i",
+      "title": "分布式锁在高并发场景下应该如何优化？",
+      "url": "/tulingzhouyu/db22bv/laixkqv39oprn68i",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "分布式锁在高并发场景下应该如何优化？"
+      ],
+      "toc_level": 2,
+      "toc_index": 992,
+      "word_count": 2289,
+      "updated_at": "2025-11-20T06:32:19.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "mysql-index-transaction",
+        "performance-optimization",
+        "redis-cache",
+        "project-system-design"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle",
+        "expert"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年",
+        "专家/P7+"
+      ],
+      "keywords": [
+        "并发",
+        "线程",
+        "锁",
+        "synchronized",
+        "性能",
+        "优化",
+        "调优",
+        "RT",
+        "吞吐",
+        "瓶颈",
+        "Redis",
+        "雪崩"
+      ],
+      "summary": "在高并发的分布式系统中，锁（Lock）既是保证数据一致性的守护神，也常常是导致性能瓶颈的罪魁祸首。当成千上万的请求涌向一个被锁保护的资源时，系统吞吐量会急剧下降，用户体验变得糟糕。本文将结合一系列视觉化看板，从五个核心层面深入探讨如何系统性地优化分布式锁，实现从“竞争瓶颈”到“并发自由”的架构...",
+      "excerpt": "在高并发的分布式系统中，锁（Lock）既是保证数据一致性的守护神，也常常是导致性能瓶颈的罪魁祸首。当成千上万的请求涌向一个被锁保护的资源时，系统吞吐量会急剧下降，用户体验变得糟糕。本文将结合一系列视觉化看板，从五个核心层面深入探讨如何系统性地优化分布式锁，实现从“竞争瓶颈”到“并发自由”的架构演进。 1. 问题的表象：高并发下的三大挑战 在深入技术细节之前，我们首先要明确在高并发场景下，一个设计不佳的分布式锁会带来哪三个核心问题： 锁竞争 (Contention) ：海量请求争抢同一把锁，导致大量线程阻塞和上下文切换，CPU资源被白白消耗。 热点压力 (Hotspot) ：如果锁本身（例如Redis实例）成为瓶颈，其性能上限将决定整个系统的吞吐量天花板。 可用性风险 (Availability) ：锁服务一旦宕机，所有依赖该锁的业务流程将全部停滞，引发雪崩效应。 我们的优化之旅，正是为了逐一攻克这三大挑战。 2. 问题的本质：从内存到网络的代价鸿沟 问题的根源在于分布式系统打破了单机环境的假设。在单个JVM内，我们谈论的锁（如 synchronized ）是基于内存的，其开销在纳秒或微秒级别，性能极高。然而，一旦进入分布式环境，我们需要一个所有服务节点都能访问的“中央锁服务”（通常由Redis或ZooKeeper扮演）。这意味着，每一次加锁和解锁都从内存操作退化为至少一次网络往返（RTT）。在繁忙的网络中，这可能是几十毫秒的延迟，性能下降了数万倍。 3. 核心矛盾：吞吐量杀手“漏斗效应” 网络开销与竞争加剧两者叠加，形成了一个恐怖的“漏斗效应”。如图所示，无论你将系统横向扩展到多少台机器，所有请求最终都会被阻塞在同一个分布式锁上。10,000个并发请求，只有一个能通过，其余9,999个要么在原地空耗资源等待，要么在超时后失败。这不仅造成了巨大的资源浪费，更让整个系统的并发能力被这把锁的性能上限死死钳制。打破这个漏斗，是我们优化的首要目标。 4. 优化策略一：降低锁的粒度 (Granularity) 这是最直接、最有效的优化手段。其核心思想是： 锁应该保护的是正在被修改的资源，而不是整个业务操作。 以电商扣减库存为例，一个全局的 lock:stock 锁显然粒度过大。正确的做法是为每一个商品（SKU）设置独立的锁。这样，对商品A的锁定将完全不影响对商品B的操作，系统的并发能力理论上可以提升N倍（N为SKU的数量）。 实现要点： 在设计锁的Key时，将资源的唯一标识符包含进去。 5. 优化策略二：锁分段 (Segmented Lock) 降低锁粒度虽然有效，但如果遇到“热点商品”（如秒杀），所有请求依然会集中在同一个Key上。锁分段的思想借鉴自Java的 ConcurrentHashMap ，它将一个热点锁虚拟地拆分成多个“段”（Segments）。当请求到来时"
+    },
+    {
+      "slug": "tuap1y7s5givcsh6",
+      "title": "设计一个 Redis分布式锁需要考虑哪些关键问题？",
+      "url": "/tulingzhouyu/db22bv/tuap1y7s5givcsh6",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "设计一个 Redis分布式锁需要考虑哪些关键问题？"
+      ],
+      "toc_level": 2,
+      "toc_index": 1000,
+      "word_count": 2830,
+      "updated_at": "2025-11-13T11:34:43.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "mysql-index-transaction",
+        "redis-cache",
+        "redis-lock",
+        "distributed-lock-id"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "campus"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "并发",
+        "线程",
+        "锁",
+        "Redis",
+        "分布式锁",
+        "Redisson",
+        "看门狗",
+        "Lua",
+        "UUID",
+        "唯一ID"
+      ],
+      "summary": "摘要： 在分布式系统中，保证共享资源在并发访问下的数据一致性至关重要，而分布式锁是实现这一目标的核心工具。Redis因其高性能和丰富的原子操作，成为实现分布式锁的首选方案。然而，一个看似简单的SETNX背后，却隐藏着死锁、锁误删、单点故障等一系列“陷阱”。本文将系统性地剖析设计一个生产级Red...",
+      "excerpt": "摘要： 在分布式系统中，保证共享资源在并发访问下的数据一致性至关重要，而分布式锁是实现这一目标的核心工具。Redis因其高性能和丰富的原子操作，成为实现分布式锁的首选方案。然而，一个看似简单的 SETNX 背后，却隐藏着死锁、锁误删、单点故障等一系列“陷阱”。本文将系统性地剖析设计一个生产级Redis分布式锁必须面对的五大关键问题，并提供经过实战检验的最佳解决方案。 引言：设计分布式锁，你需要回答这五个问题 在着手实现一个分布式锁之前，我们必须首先直面其固有的复杂性。一个健壮的锁，必须能够优雅地处理各种异常情况。这不仅仅是关于“加锁”和“解锁”，更是关于在整个分布式环境下，锁的生命周期管理、高可用性保障以及操作的原子性。 上图直观地展示了我们在设计Redis分布式锁时需要解决的五个核心问题： 死锁问题 ：如果持有锁的客户端崩溃了怎么办？ 锁误删问题 ：如何确保一个线程不会释放另一个线程的锁？ 单点故障问题 ：如果Redis实例本身宕机了怎么办？ 不可重入问题 ：同一线程在持有锁的情况下，能否再次获取该锁？ 原子性问题 ：如何保证加锁和解锁过程中的多个操作不被中断？ 接下来，我们将逐一深入探讨这些问题，并给出相应的解决方案。 一、死锁问题：永不释放的枷锁 最基础的死锁场景源于客户端的异常退出。当一个线程成功获取锁之后，但在执行 finally 块中的解锁逻辑前发生崩溃，这个锁将永远无法被释放，导致其他所有等待该锁的线程陷入无限期的等待。 如图所示，在异常流程中，解锁步骤永远不会被执行。为了解决这个问题，我们必须为锁引入一个“生命周期”的概念，即 设置过期时间 。通过在加锁时为key设置一个超时时间（TTL），我们可以保证即使客户端崩溃，锁也能在预设的时间后被Redis自动删除，从而避免永久死锁。 解决方案： 原子化加锁与设置过期时间 ：绝对不能使用 SETNX 和 EXPIRE 两个独立的命令，因为在这两个命令之间可能发生宕机，导致 EXPIRE 未被执行。正确的做法是使用一条原子命令： 这条命令保证了“加锁”和“设置30秒过期”这两个操作的原子性。 “看门狗”（Watchdog）机制 ：如果业务执行时间超过了锁的过期时间怎么办？这时锁会自动释放，其他线程会进入，导致并发问题。成熟的框架如Redisson引入了“看门狗”机制。它会在客户端获取锁后，启动一个后台线程，在锁的过期时间到达前，自动为锁“续期”，直到业务执行完毕、客户端主动释放锁为止。这极大地提升了锁在处理耗时任务时的可靠性。 二、锁误删问题：谁动了我的锁？ 引入过期时间解决了死锁，但又带来了新的问题：锁的误删。设想一个场景：线程A获取锁（30秒过期），但业务执行了35秒。在第30秒时，锁被自动释放，此时线程B获取了该锁。当线程A在第35秒执行完毕去解锁时，它删除的将是线程B持有的锁，从而引发混乱。 "
+    },
+    {
+      "slug": "nknsp7gyo5fwtpy4",
+      "title": "线程的sleep和wait有什么区别？sleep和wait的操作过程中可以打断吗？",
+      "url": "/tulingzhouyu/db22bv/nknsp7gyo5fwtpy4",
+      "toc_path": [
+        "高频面试问题",
+        "fox老师",
+        "线程的sleep和wait有什么区别？sleep和wait的操作过程中可以打断吗？"
+      ],
+      "toc_level": 2,
+      "toc_index": 1083,
+      "word_count": 980,
+      "updated_at": "2025-10-12T07:23:17.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "ai-llm",
+        "os-linux",
+        "java-core",
+        "mysql-index-transaction"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "线程",
+        "锁",
+        "synchronized",
+        "异常"
+      ],
+      "summary": "1. 面试官为什么爱问这个？这题看似基础，其实暗藏杀机。很多人只会背 API 区别表，但面试官更想听到：你对 线程调度 和 锁机制 的理解你在 真实业务场景 下的选型思路你对 异常与中断 的处理经验2. 从语义上看本质区别Thread.sleep()：让当前线程 “暂停执行” 一段时间，不释放...",
+      "excerpt": "1. 面试官为什么爱问这个？ 这题看似基础，其实暗藏杀机。很多人只会背 API 区别表，但面试官更想听到： 你对 线程调度 和 锁机制 的理解 你在 真实业务场景 下的选型思路 你对 异常与中断 的处理经验 2. 从语义上看本质区别 Thread.sleep() ：让当前线程 “暂停执行” 一段时间， 不释放锁 。相当于你在会议室占着座位玩手机，不去开会，但座位还是你的。 Object.wait() ：让当前线程释放对象锁并进入等待状态，直到被唤醒或超时。相当于你把会议室钥匙交给前台，自己去休息室等，别人可以用会议室。 3. 标准对比表（背下来是基本功） 对比维度 sleep(long) wait() / wait(long) 所属类 java.lang.Thread （静态方法） java.lang.Object （实例方法） 调用位置 任意位置 必须在 synchronized 代码块 / 方法中 是否释放锁 ❌ 不释放 ✅ 释放对象监视器锁 唤醒方式 时间到自动唤醒 / 被打断 notify() / notifyAll() / 被打断 / 超时 用途 延时执行、降低 CPU 占用 线程间通信、条件等待 是否可中断 ✅ 可被 interrupt() 打断 ✅ 可被 interrupt() 打断 4. 中断机制的细节 很多人只知道 “可以打断”，但细节才是面试官的陷阱： 4.1 sleep() 被打断 在睡眠中调用 interrupt() 会抛出 InterruptedException 抛出异常后，中断状态会被清除 （ Thread.interrupted() 返回 false） 4.2 wait() 被打断 同样会抛出 InterruptedException 同样会清除中断状态 但 wait() 还可能遭遇 虚假唤醒 （spurious wakeup），必须在循环中检查条件 5. 底层实现差异（进阶） sleep() ：是 Thread 的静态 native 方法，由 JVM 调度器直接挂起线程，不涉及锁释放。 wait() ：是 Object 的方法，必须持有对象监视器（monitor），调用后释放 monitor 并进入条件队列，被唤醒后重新竞争锁。 6. 真实业务场景 6.1 使用 sleep() 的场景 模拟重试机制 ：比如调用第三方 API 失败后，等待 1 秒再重试 限流 ：在循环中 sleep 控制 QPS 测试延迟 ：单元测试中模拟网络延迟 示例 ： 6.2 使用 wait() 的场景 生产者 - 消费者模型 ：队列空时消费者等待，有数据时被唤醒 条件等待 ：订单支付成功后，唤醒等待发货的线程 连接池 ：获取连接时，如果池为空则等待 示例 ： 7. 面试官可能追问的点 为什么 wait() 必须在同步块中调用？ 因为需要先获取对象锁，"
+    },
+    {
+      "slug": "zhi2guh9kgr52gbw",
+      "title": "1000个多并发线程，10台机器，每台机器4核的，如何设计线程池大小。",
+      "url": "/tulingzhouyu/db22bv/zhi2guh9kgr52gbw",
+      "toc_path": [
+        "高频面试问题",
+        "fox老师",
+        "1000个多并发线程，10台机器，每台机器4核的，如何设计线程池大小。"
+      ],
+      "toc_level": 2,
+      "toc_index": 1098,
+      "word_count": 2343,
+      "updated_at": "2025-09-29T04:56:07.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "os-linux",
+        "observability-troubleshooting",
+        "java-thread-pool",
+        "java-core"
+      ],
+      "question_type": "troubleshooting",
+      "question_type_name": "故障排查题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "并发",
+        "多线程",
+        "线程",
+        "进程",
+        "内存",
+        "文件",
+        "上下文切换",
+        "监控",
+        "告警",
+        "CPU",
+        "OOM",
+        "堆积",
+        "线程池"
+      ],
+      "summary": "要设计 10 台 4 核机器的线程池大小，核心是先明确 “任务类型”（CPU/IO 密集），再结合 “总并发需求”“硬件资源约束” 和 “线程复用逻辑”，将总线程合理分摊到每台机器，避免单台过载或资源浪费。以下是从 “需求拆解→理论计算→落地配置” 的完整设计思路：一、先澄清关键前提：“100...",
+      "excerpt": "要设计 10 台 4 核机器的线程池大小，核心是 先明确 “任务类型”（CPU/IO 密集），再结合 “总并发需求”“硬件资源约束” 和 “线程复用逻辑”，将总线程合理分摊到每台机器 ，避免单台过载或资源浪费。以下是从 “需求拆解→理论计算→落地配置” 的完整设计思路： 一、先澄清关键前提：“1000 个多并发线程” 的真实含义 首先要明确业务中的 “1000 个并发线程” 是指“ 每秒 1000 个并发请求 ”（而非 “必须同时运行 1000 个线程”）—— 因为线程是 “处理请求的载体”，IO 密集场景下 1 个线程可复用处理多个请求（因线程会阻塞等待 IO），无需 1:1 匹配请求数。核心设计逻辑： 总线程数 ≈ 总 CPU 资源 / 线程实际占用 CPU 的比例（即 1-IO 等待占比） ，再将总线程分摊到 10 台机器。 二、核心步骤：按 “任务类型” 分场景设计 10 台机器总 CPU 核心数 = 10 台 ×4 核 = 40 核 ，这是硬件资源上限，线程池设计需围绕 “不浪费 CPU，且避免单台过载” 展开，分两种核心场景： 场景 1：任务是 CPU 密集型（如计算、排序、加密） 核心特征 ：线程几乎不阻塞（IO 占比 < 10%），一直占用 CPU，线程数过多会导致上下文切换频繁，浪费 CPU 资源。 1. 计算总线程数（集群维度） CPU 密集型的总线程数≈总 CPU 核数（预留少量缓冲避免 GC 等临时阻塞），即： 总线程数≈40 核 ×1.2=48 个 （“×1.2” 是预留 20% 缓冲，避免单线程阻塞导致 CPU 空闲）。 2. 分摊到每台机器（单机线程池配置） 10 台机器平均分摊总线程，每台机器线程池配置： 核心线程数（corePoolSize） ：4 个（40 核 / 10 台 = 4 核 / 台，核心线程数≈单机核数，避免上下文切换）； 最大线程数（maximumPoolSize） ：5 个（比核心线程多 1 个，应对单机临时峰值，如某台机器 CPU 短暂空闲）； 阻塞队列 ：用有界队列（如 ArrayBlockingQueue(100) ），缓冲单机突发请求（CPU 密集型请求处理快，队列无需过大）； 拒绝策略 ： AbortPolicy （核心任务抛异常告警，及时发现过载）。 3. 验证是否满足 “1000 并发请求” CPU 密集型任务单个线程每秒可处理约 100 个请求（假设单个计算任务耗时 10ms），则： 单机 5 个线程每秒处理：5×100=500 个请求； 10 台机器总处理能力：10×500=5000 个请求 / 秒，远超 “1000 并发请求”，完全满足需求。 场景 2：任务是 IO 密集型（如 DB 查询、接口调用、文件读写） 核心特征 ：线程大部分时间阻塞等待 IO（IO 占比 > 80%），仅少量时"
+    },
+    {
+      "slug": "nplhvmkmv8bt83l4",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/nplhvmkmv8bt83l4",
+      "toc_path": [
+        "高频面试问题",
+        "fox老师",
+        "1000个多并发线程，10台机器，每台机器4核的，如何设计线程池大小。",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1099,
+      "word_count": 7,
+      "updated_at": "2025-09-29T05:14:38.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "java-thread-pool",
+        "os-linux"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "并发",
+        "线程",
+        "线程池"
+      ],
+      "summary": "📎线程池设计.html",
+      "excerpt": ""
+    },
+    {
+      "slug": "igz9b000ogwp4sqn",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/igz9b000ogwp4sqn",
+      "toc_path": [
+        "高频面试问题",
+        "fox老师",
+        "并发数多少才算高并发",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1103,
+      "word_count": 640,
+      "updated_at": "2025-09-26T05:47:31.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "project-system-design",
+        "performance-optimization"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "并发",
+        "高并发",
+        "QPS",
+        "吞吐"
+      ],
+      "summary": "口播文案：兄弟们！面试是不是总被问：“并发数到多少才算高并发啊？”1000 QPS？一万个连接？害，格局小了！今天咱不搞复杂的，就三句话，让你听完直接搞懂 —— 啥才是真的 “高并发”！（转场，身子往前凑点，语气放缓）首先啊，记住第一句：高并发它根本不是个固定数字，是个 “相对概念”！你想啊，...",
+      "excerpt": "口播文案： 兄弟们！面试是不是总被问：“并发数到多少才算高并发啊？” 1000 QPS？一万个连接？害，格局小了！ 今天咱不搞复杂的，就三句话，让你听完直接搞懂 —— 啥才是真的 “高并发”！ （转场，身子往前凑点，语气放缓） 首先啊，记住第一句：高并发它根本不是个固定数字，是个 “相对概念”！ 你想啊，一个图片压缩的破网站，跟银行转账系统，能一样吗？前者上万并发可能都没事，后者几百个并发，后台就快扛不住了！ 所以别再傻乎乎盯着 “并发数” 看了，没用！ （手势比划，配合字幕弹出 “黄金三角”） 这就到第二句，也是最核心的一句：衡量高并发，得看个 “黄金三角”！啥三角啊？就是并发数、吞吐量、响应时间，这仨！ 我给你打个比方，一准儿秒懂： 把你那系统当成楼下小饭店呗！ 并发数，就是饭店里这会儿同时坐了多少桌客人； 吞吐量（就是 QPS/TPS），才是人家饭店一小时到底能伺候多少桌，这才是真本事！ 响应时间更简单，就是客人点完菜，等多久能上菜 —— 这直接关系到人家下次还来不来！ （节奏加快，语气带点调侃） 你品，你细品！要是你饭店里挤了 1000 个人（看着挺热闹），结果一小时就炒出一盘菜（吞吐量低到离谱），每个人都得等半小时才上菜（响应时间崩了）…… 这叫生意火爆吗？这不叫快倒闭了吗！ （结尾往镜头前靠，语气肯定） 所以最后一句记死了：真正的高并发，是啥？是海量用户涌进来的时候，你系统还能保证 “上菜又快又多”！ 说白了就是：人多归多，但咱既能接得住（高并发），又能上得快（低响应时间），还能接得多（高吞吐量）！ （抬手互动） 大家还有什么问题，欢迎评论区交流！ ​"
+    },
+    {
+      "slug": "qvprpae28slegs04",
+      "title": "Redis分布式锁：从踩坑到落地，构建10万QPS工业级方案",
+      "url": "/tulingzhouyu/db22bv/qvprpae28slegs04",
+      "toc_path": [
+        "高频面试问题",
+        "fox老师",
+        "Redis分布式锁：从踩坑到落地，构建10万QPS工业级方案"
+      ],
+      "toc_level": 2,
+      "toc_index": 1108,
+      "word_count": 5923,
+      "updated_at": "2025-09-23T05:24:40.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "mysql-index-transaction",
+        "redis-cache",
+        "redis-lock",
+        "project-system-design"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "campus",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "校招/应届生",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "并发",
+        "线程",
+        "锁",
+        "synchronized",
+        "索引",
+        "事务",
+        "Redis",
+        "缓存",
+        "分布式锁",
+        "Redisson",
+        "锁续期",
+        "看门狗"
+      ],
+      "summary": "在分布式系统的生产故障统计中，近三成问题源于共享资源竞争——秒杀活动中用户下单后发现多扣了库存、财务对账时出现数百笔重复订单、库存数值突然变成负数触发紧急告警……这些问题的根源，往往不是开发者不懂Redis分布式锁，而是只掌握了“基础实现”，忽略了工业级场景下对“高可用”“防丢失”“抗并发”的...",
+      "excerpt": "在分布式系统的生产故障统计中，近三成问题源于 共享资源竞争 ——秒杀活动中用户下单后发现多扣了库存、财务对账时出现数百笔重复订单、库存数值突然变成负数触发紧急告警……这些问题的根源，往往不是开发者不懂Redis分布式锁，而是只掌握了“基础实现”，忽略了工业级场景下对“高可用”“防丢失”“抗并发”的硬性要求。 本文不堆砌理论，而是从实际开发痛点出发，拆解Redis分布式锁的核心原理、高频坑点解决方案、多场景选型逻辑，最终落地一套可直接复用的10万QPS级方案，无论是新手入门还是资深工程师排查线上问题，都能找到实用参考。 一、先搞懂：为什么单机锁不行，Redis锁又为何能行？ 在写一行锁代码前，必须先明确“分布式锁的本质”——否则从源头就容易踩坑。 1. 单机锁的“失效场景”：跨服务器的竞争无法控制 单机应用中， synchronized 或 ReentrantLock 能轻松控制同一JVM内的线程竞争。但分布式系统中（比如3台Tomcat组成的集群），线程分散在不同服务器，单机锁会完全失效： 举个真实案例 ：某电商用3台Tomcat处理“商品库存扣减”，每台Tomcat的线程都用 synchronized 加锁。当100个请求同时到来时，3台服务器的线程各自拿到单机锁，分别扣减库存1次，最终库存从100变成97（本该扣3次，实际扣了6次），直接导致超卖。 问题核心： 单机锁只能管“自己服务器的线程”，管不了其他服务器的线程 。 2. 分布式锁的本质：跨服务器的“互斥协议” 分布式锁的核心是让多台服务器的线程遵守同一套“互斥规则”——就像厕所隔间的锁，无论哪个房间的人，都得等前一个人开门后才能进入。换句话说，就是让所有线程共享一把“跨服务器的钥匙”。 而Redis能成为分布式锁的主流选择，是因为它完美满足分布式锁的3个核心要求： 互斥性 ：同一时间只有一个线程能拿到锁，避免资源竞争； 高可用性 ：Redis集群能规避单点故障，锁服务不会中断； 高性能 ：单节点Redis每秒能处理数万次锁请求，不会拖慢业务。 3. Redis锁的核心技术：原子命令+唯一标识 实现Redis分布式锁，有两个“缺一不可”的技术点，少一个都会导致锁失效。 （1）加锁：用 SET NX PX 替代 SETNX 很多新手入门时会用 SETNX （SET if Not Exists）加锁，但这个命令有个致命缺陷： 加锁后如果线程崩溃，锁会永久残留，导致死锁 。 正确的做法是用 SET 命令的扩展参数，一条命令同时完成“加锁+设过期时间”，避免多命令执行的非原子性问题。实际项目中，我们常用Spring Data Redis的 RedisTemplate 实现： （2）线程唯一标识：避免“误删他人锁” 如果锁的Value不用唯一标识，会出现这样的问题： 线程A加锁成功，过期时间30秒，但业务执行"
+    },
+    {
+      "slug": "szvkxf750zdww91z",
+      "title": "一网打尽MySQL各种锁",
+      "url": "/tulingzhouyu/db22bv/szvkxf750zdww91z",
+      "toc_path": [
+        "高频面试问题",
+        "楼兰老师",
+        "一网打尽MySQL各种锁"
+      ],
+      "toc_level": 2,
+      "toc_index": 1146,
+      "word_count": 2986,
+      "updated_at": "2025-10-17T12:05:41.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "mysql-index-transaction",
+        "java-core",
+        "os-linux",
+        "performance-optimization"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "junior"
+      ],
+      "level_names": [
+        "初级/1-3年"
+      ],
+      "keywords": [
+        "并发",
+        "多线程",
+        "线程",
+        "锁",
+        "synchronized",
+        "CAS",
+        "MySQL",
+        "Java",
+        "操作系统",
+        "上下文切换",
+        "性能",
+        "优化"
+      ],
+      "summary": "简历上写的‘精通Java并发’是吧？行，那咱们聊聊。synchronized和ReentrantLock哪个性能好？为什么？synchronized是公平锁还是非公平锁？Java里怎么实现乐观锁和悲观锁？CAS原理是啥？ABA问题又是什么？怎么解决？CountDownLatch和CyclicB...",
+      "excerpt": "简历上写的‘精通Java并发’是吧？行，那咱们聊聊。 synchronized 和 ReentrantLock 哪个性能好？为什么？ synchronized 是公平锁还是非公平锁？Java里怎么实现乐观锁和悲观锁？CAS原理是啥？ABA问题又是什么？怎么解决？ CountDownLatch 和 CyclicBarrier 有啥区别？最后， synchronized 底层那个锁升级过程，偏向锁、轻量级锁、重量级锁，它们仨是为了解决啥问题？又是怎么一步步转换的？来，说说你的理解。 怎么样？是不是感觉灵魂都快被问出窍了，当场就想打开招聘软件更新一下简历？哈哈，别紧张！ 这些玩意儿，说白了就是Java世界里的一帮‘保安’，专门负责维持多线程抢东西时候的秩序。今天，咱不搞那些虚头巴脑的定义，就用大白话，把这帮‘保安’的脾气、性格、还有他们内部的“晋升机制”，给你扒个底朝天！ 记得点赞收藏，不然想用的时候就找不到了。跟上我的节奏，咱们一个一个盘！ 首先，咱们得搞明白两种最基本的‘世界观’： 悲观锁和乐观锁 。 这一组锁是根据对并发冲突的假设不同进行区分的。要搞清楚这两个锁，你就记住一个场景， 上厕所 就够了。 悲观锁 这哥们儿，纯纯一个‘被迫害妄想症’患者。它的座右铭是：‘总有刁民想害朕！’。所以它在干任何事之前，都必须先把门锁死。比如去上厕所，它不仅要锁门，还得在门外挂个‘正在使用，请勿打扰’的牌子。Java里咱们最熟悉的 synchronized 和 ReentrantLock 就是这种性格，只要一个线程抢到了，别的线程就只能在外面憋着。这种锁，用在像秒杀减库存这种‘兵家必争之地’就特别合适，虽然有点笨重，但胜在绝对安全。 那 乐观锁 呢？正好相反，是个‘傻白甜’，心特别大。它觉得世界如此美好，大家都会谦让。它去上厕所，门都不锁，直接就进去了。等办完事出来的时候，它会检查一下：‘哎，我进来时放这儿的纸巾，还是原来那个牌子吗？’。如果还是，说明没人来过，万事大吉。如果被人换了，说明中间有人来过，那它这次就算白上了，得重新再来一次。这个‘检查并替换’的动作，在Java里就叫 CAS（Compare-And-Swap） 。咱们常用的 AtomicInteger 这些原子类，就是靠这手绝活。它特别适合更新帖子阅读数这种竞争不激烈的场景，性能起飞。不过它有个坑，就是经典的 ABA问题 。啥意思呢？就是你女朋友跟你分手了，她又找了个新男友，然后又分手了，最后又回来找你复合。你一看，哎，还是那个她，但中间发生过啥，你还真不知道。想解决也简单，加个版本号就行， AtomicStampedReference 就是干这个的。 好，搞懂了这两种哲学，咱们再来聊聊下一组： 公平锁和非公平锁 这一组锁就是根据线程排队的规矩来区分的。公平锁就像银行叫排号，讲究一个先来后到。非公平锁就像路边招"
+    },
+    {
+      "slug": "gsiy09kgmv8y0gud",
+      "title": "分布式锁深度解析：原理、实现与选型指南（附完整代码示例）",
+      "url": "/tulingzhouyu/db22bv/gsiy09kgmv8y0gud",
+      "toc_path": [
+        "高频面试问题",
+        "鹏宇老师",
+        "分布式锁深度解析：原理、实现与选型指南（附完整代码示例）"
+      ],
+      "toc_level": 2,
+      "toc_index": 1211,
+      "word_count": 5108,
+      "updated_at": "2025-11-14T13:04:28.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "mysql-index-transaction",
+        "redis-lock",
+        "redis-cache",
+        "project-system-design"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "campus",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "校招/应届生",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "并发",
+        "多线程",
+        "线程",
+        "锁",
+        "synchronized",
+        "MySQL",
+        "索引",
+        "分布式锁",
+        "Redisson",
+        "看门狗",
+        "Lua",
+        "Redis"
+      ],
+      "summary": "在分布式系统中，多服务、多线程并发操作共享资源时，“数据一致性” 始终是核心挑战。单机环境下的synchronized或Lock无法跨进程生效，而分布式锁正是解决这一问题的关键技术。本文将从分布式锁的核心定义出发，详细拆解三大主流实现方案（数据库、Redis、ZooKeeper），提供可落地的...",
+      "excerpt": "在分布式系统中，多服务、多线程并发操作共享资源时，“数据一致性” 始终是核心挑战。单机环境下的 synchronized 或 Lock 无法跨进程生效，而 分布式锁 正是解决这一问题的关键技术。本文将从分布式锁的核心定义出发，详细拆解三大主流实现方案（数据库、Redis、ZooKeeper），提供可落地的代码示例，并分析各方案的优缺点与选型逻辑。 一、分布式锁基础：定义与核心目标 在深入实现前，我们需先明确分布式锁的本质与关键指标 —— 这是后续方案设计与选型的核心依据。 1.1 什么是分布式锁？ 分布式锁是 跨进程、跨服务 的并发控制机制，其核心作用是： 保证分布式集群中，同一时刻仅有一个服务的一个线程能执行目标业务逻辑 ，从而避免库存超卖、订单重复创建、缓存一致性等问题。 举个典型场景：电商秒杀系统中，100 台服务器同时处理 “扣减某商品库存” 请求，若没有分布式锁，会出现 “库存为负” 的超卖问题；而通过分布式锁，仅允许一台服务器的一个线程执行 “查库存→扣库存” 的原子逻辑。 1.2 分布式锁的三大核心目标 无论选择哪种实现方案，都需满足以下三个核心目标，否则会引入新的问题： 目标 核心要求 互斥性 同一资源在同一时间，仅允许一个线程持有锁（最基础、最核心的要求）。 安全性 1. 避免死锁（如服务宕机后锁无法释放）；2. 避免误释放他人的锁；3. 支持锁超时自动释放。 可用性 集群环境下，单个节点宕机不能导致锁失效（需支持集群部署）；加锁 / 释放锁操作响应迅速。 二、实现方案一：基于关系型数据库 基于数据库的分布式锁是最易上手的方案，无需引入额外中间件，核心依赖 唯一索引的互斥性 （同一字段无法插入重复值）。 2.1 原理拆解 数据库的唯一索引（如 UNIQUE KEY ）具有 “插入重复记录时会报错” 的特性，利用这一点： 加锁 ：向锁表插入一条包含 “资源标识” 的记录，插入成功即视为获得锁；插入失败（唯一索引冲突）则视为加锁失败。 释放锁 ：删除刚才插入的记录，释放锁资源。 避免死锁 ：通过定时任务清理超时未释放的锁记录。 2.2 详细实现步骤 步骤 1：创建锁表（MySQL 示例） 首先创建一张用于存储锁信息的表，核心字段 resource_key （资源标识，如 “商品 ID_1001”）需加唯一索引： holder_id ：用于标识锁的持有者，避免 “误释放他人锁”（如线程 A 不能释放线程 B 的锁）。 expire_time ：用于判断锁是否超时，避免死锁。 步骤 2：加锁逻辑（Java 代码示例） 加锁时需指定 “资源标识”“持有者标识” 和 “超时时间”，通过 INSERT 语句的返回结果判断是否加锁成功： 步骤 3：释放锁逻辑（Java 代码示例） 释放锁时需同时校验 “资源标识” 和 “持有者标识”，避免误释放他人的锁： "
+    },
+    {
+      "slug": "efgac0m1lk6xq84q",
+      "title": "深度解析：RocketMQ 如何保证顺序消费？从原理到落地的完整指南",
+      "url": "/tulingzhouyu/db22bv/efgac0m1lk6xq84q",
+      "toc_path": [
+        "高频面试问题",
+        "鹏宇老师",
+        "深度解析：RocketMQ 如何保证顺序消费？从原理到落地的完整指南"
+      ],
+      "toc_level": 2,
+      "toc_index": 1215,
+      "word_count": 4377,
+      "updated_at": "2025-11-25T05:48:04.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "mq-rabbitmq",
+        "mq-rocketmq",
+        "project-system-design",
+        "mysql-index-transaction"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle",
+        "senior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "并发",
+        "多线程",
+        "线程",
+        "锁",
+        "synchronized",
+        "队列",
+        "死信",
+        "RocketMQ",
+        "方案",
+        "高并发",
+        "秒杀",
+        "订单"
+      ],
+      "summary": "在分布式系统中，消息队列的 “顺序性” 是面试官高频追问的核心考点，也是电商、金融等业务场景的 “生命线”—— 一旦订单、支付、库存等消息乱序，可能直接导致业务逻辑崩坏（如未下单先扣钱、库存超卖）。本文将从 “业务必要性” 切入，逐步拆解 RocketMQ 顺序消费的原理、架构、核心锁机制，最...",
+      "excerpt": "在分布式系统中，消息队列的 “顺序性” 是面试官高频追问的核心考点，也是电商、金融等业务场景的 “生命线”—— 一旦订单、支付、库存等消息乱序，可能直接导致业务逻辑崩坏（如未下单先扣钱、库存超卖）。本文将从 “业务必要性” 切入，逐步拆解 RocketMQ 顺序消费的原理、架构、核心锁机制，最后给出落地代码与避坑指南，文中标注「截图位置」处可插入对应 PPT 截图，方便读者对照理解。 一、为什么必须保证消息顺序？业务场景给出答案 消息顺序性并非所有场景都需关注（如日志收集、通知推送），但涉及「状态流转」「数据变更」的核心业务，顺序乱序直接决定系统可用性。以下两个高频场景最具代表性： 场景 1：电商订单流程（下单→支付→发货） 正确顺序 ：用户下单生成订单→支付扣减金额→商家发货更新物流，整个流程符合业务逻辑，用户体验正常。 乱序后果 ：若消息顺序变为 “支付→下单→发货”，会出现 “用户未创建订单却被扣钱”“未支付却发货” 的严重问题，引发客诉与资金损失。 场景 2：商品库存管理（查询→扣减→下单） 正确顺序 ：用户下单前先查询库存（如剩余 10 件）→扣减库存（10→9）→确认下单成功，确保库存准确无超卖。 乱序后果 ：若先扣减库存再查询，会出现 “库存已扣减但查询时仍显示原数量”，导致后续用户继续下单，最终库存变为负数（超卖），平台需承担赔偿责任。 二、RocketMQ 顺序消费的核心原理：分区有序是唯一选择 RocketMQ 的顺序机制本质是 “基于队列的有序性”—— 单个队列内的消息天然按 FIFO 存储与消费，跨队列无法保证顺序 。基于此，它提供两种顺序模式，但实际业务中仅 “分区有序” 具备实用价值。 顺序模式 实现条件 有序范围 性能特性 适用场景 分区有序（推荐） 1. 同一业务 ID 路由到同一队列 2. 单线程消费队列 局部有序（同一业务） 高并发（多队列并行） 99% 业务场景（订单、支付） 全局有序（理论） 1. Topic 仅 1 个队列 2. 单生产者 3. 单消费者 全局有序（所有消息） 极低（退化为单线程） 无实际业务（仅面试考点） 关键结论： 队列是顺序的最小单位 ：RocketMQ 的 CommitLog（物理存储）按消息到达顺序追加写入，ConsumeQueue（逻辑队列）作为 CommitLog 的索引，也保持顺序，因此单个队列内消息必然有序。 分区有序的本质是 “业务隔离” ：通过业务 ID（如订单 ID、用户 ID）路由到固定队列，既保证同一业务的顺序性，又通过多队列实现并发，平衡 “顺序” 与 “性能”。 三、完整架构链路：从生产到消费的顺序保障流程 要理解顺序消费，需跟踪消息从 “生产者发送” 到 “消费者处理” 的全链路，每个环节的设计都为 “顺序性” 服务。 1. 生产者端：消息路由控制（核心是 “同业务 "
+    },
+    {
+      "slug": "ve3rcc2ucqpwnh8b",
+      "title": "synchronized锁升级是怎么回事？",
+      "url": "/tulingzhouyu/db22bv/ve3rcc2ucqpwnh8b",
+      "toc_path": [
+        "高频面试问题",
+        "徐庶老师",
+        "synchronized锁升级是怎么回事？"
+      ],
+      "toc_level": 2,
+      "toc_index": 1265,
+      "word_count": 2035,
+      "updated_at": "2025-11-25T14:34:47.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "mysql-index-transaction",
+        "java-collections",
+        "os-linux",
+        "java-core"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "senior",
+        "campus"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "并发",
+        "多线程",
+        "线程",
+        "锁",
+        "synchronized",
+        "CAS",
+        "HashMap",
+        "ConcurrentHashMap",
+        "操作系统",
+        "Java"
+      ],
+      "summary": "JVM 锁机制揭秘：对象头 MarkWord 与锁升级核心流程导读：在 Java 并发编程中，synchronized 锁的性能一直备受关注。从 JDK 1.6 开始，HotSpot 虚拟机引入了偏向锁、轻量级锁和重量级锁的概念，它们通过对象头中的 MarkWord 来记录锁的状态，构成了一个...",
+      "excerpt": "JVM 锁机制揭秘：对象头 MarkWord 与锁升级核心流程 导读 ：在 Java 并发编程中，synchronized 锁的性能一直备受关注。从 JDK 1.6 开始，HotSpot 虚拟机引入了 偏向锁、轻量级锁和重量级锁 的概念，它们通过对象头中的 MarkWord 来记录锁的状态，构成了一个精巧的 锁升级路径 。本文将深入揭秘这一机制，帮你理解为什么你的 synchronized 代码有时候很快，有时候又很慢。 一、对象头中的秘密：MarkWord 结构 什么是 MarkWord？ 每个 Java 对象都包含一个 对象头 ，其中最核心的部分就是 MarkWord 。在 64 位 JVM 中，MarkWord 占据 8 字节（64 位），记录了对象的所有元数据： LockState 解读 这 2 bit 就是锁状态的关键： 01 → 无锁状态（Normal） 01 + BiasFlag=1 → 偏向锁状态（Biased） 00 → 轻量级锁状态（LightWeight） 10 → 重量级锁状态（HeavyWeight） 关键洞察 ：Java 对象天生就携带了锁的信息，不需要额外的数据结构来存储锁状态。这正是 synchronized 无锁优化的基础。 二、偏向锁：为懒人设计的锁 现象：大多数锁是偏心的 在实际应用中， 大多数对象的锁只会被同一个线程持久化地访问 。以 HashMap 为例： 每次进入同步块，如果都要执行 CAS 操作，那就太浪费了。JVM 的设计者想到了这一点。 偏向锁的原理 偏向锁的核心思想很简单： 记住这个线程，下次它再来就不用加锁了 。 第一次进入 ：线程 A 执行 CAS 操作，将自己的 ThreadID 写入 MarkWord 第二次进入 ：直接比对 MarkWord 中的 ThreadID，如果一致就放行 ✓（ 零开销 ） 其他线程来了 ：偏向被撤销，锁升级到轻量级锁 偏向锁的陷阱 ⚠️ 一旦对象调用了 hashCode()，偏向锁就永久失效了！ 为什么？因为 MarkWord 中的空间是有限的，不能同时存储 ThreadID 和 HashCode。一旦存储了 HashCode，就没有地方放 ThreadID 了。 三、轻量级锁：有竞争的时候 触发场景 偏向被撤销后，如果还有线程竞争，就进入轻量级锁： 工作机制 轻量级锁使用 CAS（Compare And Swap）+ 自旋 ： 线程 B 在自己的 栈帧 中创建 Lock Record 使用 CAS 尝试将 MarkWord 指向这个 Lock Record 如果 CAS 成功 → 锁获取成功，继续执行 如果 CAS 失败 → 进入 适应性自旋 （自动判断要自旋多少次） 自旋的艺术 不是无限自旋！JVM 会根据历史信息自动调整： 前几次都成功 → 自旋次数多一点 前几次都"
+    },
+    {
+      "slug": "ysdih4go8zg8w66l",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/ysdih4go8zg8w66l",
+      "toc_path": [
+        "高频面试问题",
+        "徐庶老师",
+        "synchronized锁升级是怎么回事？",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1266,
+      "word_count": 15,
+      "updated_at": "2025-11-25T14:34:59.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "mysql-index-transaction",
+        "jvm-memory-gc"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "锁",
+        "synchronized",
+        "JVM"
+      ],
+      "summary": "📎JVM 锁机制演示 V2 - 含代码演示.html",
+      "excerpt": ""
+    },
+    {
+      "slug": "it8fsvelvhyslqhy",
+      "title": "4、线程池共享还是独享，如何选择？",
+      "url": "/tulingzhouyu/db22bv/it8fsvelvhyslqhy",
+      "toc_path": [
+        "高频面试问题",
+        "赋文老师",
+        "4、线程池共享还是独享，如何选择？"
+      ],
+      "toc_level": 2,
+      "toc_index": 1310,
+      "word_count": 2310,
+      "updated_at": "2025-09-28T06:23:54.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "os-linux",
+        "java-thread-pool",
+        "observability-troubleshooting",
+        "project-system-design"
+      ],
+      "question_type": "troubleshooting",
+      "question_type_name": "故障排查题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "并发",
+        "多线程",
+        "线程",
+        "锁",
+        "CompletableFuture",
+        "内存",
+        "上下文切换",
+        "线程池",
+        "拒绝策略",
+        "日志",
+        "CPU",
+        "死锁"
+      ],
+      "summary": "面试官视角：当我问出“线程池应该共享还是独享”时，我并不是在寻找一个“标准答案”。说实话，这个问题没有唯一的正确答案。我真正想考察的是：你是否理解两种模式的核心 Trade-Off（权衡）？你是否能根据 业务场景 和 任务特性 做出合理的设计决策？你是否能预见到不同选择可能带来的 风险，如资源...",
+      "excerpt": "面试官视角 ：当我问出“线程池应该共享还是独享”时，我并不是在寻找一个“标准答案”。说实话，这个问题没有唯一的正确答案。我真正想考察的是： 你是否理解两种模式的核心 Trade-Off （权衡）？ 你是否能根据 业务场景 和 任务特性 做出合理的设计决策？ 你是否能预见到不同选择可能带来的 风险 ，如资源争抢、任务饥饿甚至死锁？ 如果你只是简单地回答“看情况”，然后列举几个模糊的优缺点，那么你最多只能拿到 60 分。一个优秀的候选人，会向我展示一个清晰的决策框架和深刻的系统思考。 一、核心概念：隔离与复用 要做出选择，首先必须理解两种模式的本质区别。 独享（Dedicated） ：为每一类或每一个关键业务场景单独创建一个线程池。 核心思想 ： 资源隔离 。就像为重要部门设立专用通道，确保其运行不受外界干扰。 共享（Shared） ：系统内所有或多类任务共用一个大的线程池。 核心思想 ： 资源复用 。就像一个大的公共停车场，所有车辆共享车位，以提高整体利用率。 理解了这一点，我们就可以深入分析它们的利弊。 二、两种模式的深度对比 特性 独享线程池 (Dedicated) 共享线程池 (Shared) 优点 强隔离性 ：一个任务的异常（如长时间阻塞）不会影响其他池。 易于调优 ：可根据任务特性（CPU密集/IO密集）精细化设置参数。 避免死锁 ：不同任务间的依赖调用不会因共用池而导致死锁。 高资源利用率 ：减少了线程创建和销毁的开销，整体吞吐量可能更高。 管理简单 ：只需维护一个或少量线程池，配置简单。 缺点 资源开销大 ：创建过多线程池会消耗大量内存。 资源利用率低 ：如果任务量不均，可能导致某些池空闲而另一些池繁忙。 隔离性差 ：大量低优先级或耗时任务可能占满线程，导致核心任务“饥饿”。 难以调优 ：一个“万金油”式的配置很难同时满足不同特性的任务。 死锁风险 ：如果任务A提交了任务B到同一个池中，并等待B的结果，可能导致线程全部被任务A占满，任务B永远无法执行，造成死锁。 三、决策框架：如何做出专业的选择？ 当面试官抛出问题时，你应该通过主动分析以下四个维度，来展示你的决策过程。 1. 任务性质（Task Nature） 这是最首要的考量点。 CPU密集型 vs. IO密集型 ： CPU密集型 （如加密、计算）：需要少量线程，过多线程会导致频繁的上下文切换。建议 独享 ，并将线程数设置为 CPU核心数 + 1 左右。 IO密集型 （如数据库读写、网络请求）：线程大部分时间在等待，需要大量线程来提高吞吐。可以考虑 共享 ，或为IO密集型任务创建一个 独享 的大线程池。 切忌 ：将这两种差异巨大的任务放在一个 共享 池中。CPU密集型任务会迅速占满CPU时间片，导致IO密集型任务响应缓慢。 任务时长 ： 耗时长的任务 （如复杂计算、大数据处理）：强烈建议 独享"
+    },
+    {
+      "slug": "gkfh5nwyr9dcvkzo",
+      "title": "从 0 到 1 构建工业级 Redis 分布式锁",
+      "url": "/tulingzhouyu/db22bv/gkfh5nwyr9dcvkzo",
+      "toc_path": [
+        "高频面试问题",
+        "诸葛老师",
+        "从 0 到 1 构建工业级 Redis 分布式锁"
+      ],
+      "toc_level": 2,
+      "toc_index": 1355,
+      "word_count": 4702,
+      "updated_at": "2025-09-18T08:12:51.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "mysql-index-transaction",
+        "os-linux",
+        "redis-lock",
+        "redis-cache"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "campus"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "并发",
+        "线程",
+        "锁",
+        "synchronized",
+        "进程",
+        "分布式锁",
+        "Redisson",
+        "锁续期",
+        "看门狗",
+        "Lua",
+        "Redis"
+      ],
+      "summary": "如果你在简历上写了\"熟悉高并发\"，却被面试官问\"怎么实现分布式锁\"时一脸懵；如果你只听过SETNX、Lua脚本这些词，却讲不清背后的原理——这篇文章会带你从最基础的概念开始，一步步搞懂分布式锁的设计逻辑。 一、先搞懂：什么是分布式锁？在讲\"分布式锁\"之前，我们先想一个生活中的例子：厕所隔间里的...",
+      "excerpt": "如果你在简历上写了&quot;熟悉高并发&quot;，却被面试官问&quot;怎么实现分布式锁&quot;时一脸懵；如果你只听过 SETNX 、 Lua脚本 这些词，却讲不清背后的原理——这篇文章会带你从最基础的概念开始，一步步搞懂分布式锁的设计逻辑。 一、先搞懂：什么是分布式锁？ 在讲&quot;分布式锁&quot;之前，我们先想一个生活中的例子： 厕所隔间里的锁，一旦有人进去锁上门，其他人就必须等里面的人出来才能进去。这个&quot;锁&quot;的核心作用是 保证同一时间只有一个人使用资源 ——这就是&quot;互斥性&quot;。 在程序中，&quot;锁&quot;的作用也是如此：让多个线程（或进程）竞争同一个资源时，同一时间只有一个能拿到权限。 那什么是&quot;分布式锁&quot;？ 普通的锁（比如 synchronized ）只能管到单个程序里的线程。但在分布式系统中，我们可能有多个服务器（比如3台Tomcat）同时跑同一个程序，这些服务器之间的线程没法用普通锁互斥——这时候就需要一个&quot;跨服务器&quot;的锁，让所有服务器的线程都遵守同一套规则。这个跨服务器的锁，就是 分布式锁 。 分布式锁最常用的实现工具是Redis——因为Redis性能高，而且支持一些特殊命令能帮我们实现互斥性。 二、最基础的分布式锁：用Redis的SETNX命令 要实现&quot;同一时间只有一个线程拿到锁&quot;，Redis的 SETNX 命令是基础。 1. SETNX命令的作用 SETNX 是 SET if Not Exists 的缩写，意思是： 如果指定的key不存在，就设置它的值；如果已经存在，就不做任何操作 。 比如我们要给&quot;订单1001&quot;加锁，执行命令： 如果这个key不存在，Redis会创建它，返回 1 （表示加锁成功）； 如果这个key已经存在（说明有其他线程加了锁），返回 0 （表示加锁失败）。 这样一来，多个线程同时竞争时，只有一个能拿到 1 ，实现了&quot;互斥性&quot;——这就是分布式锁的雏形。 三、加锁后必须考虑的问题：如何解锁？ 拿到锁的线程执行完业务后，必须释放锁（删除这个key），否则其他线程永远拿不到锁了。但&quot;解锁&quot;没那么简单，这里藏着一个坑。 1. 解锁的坑：别释放了别人的锁 假设线程A加锁成功后，因为网络卡了没及时释放锁；这时候锁过期（后面会讲为什么要加过期时间），线程B拿到了锁。如果此时线程A恢复了，直接执行 DEL lock:order:1001 ，就会把线程B的锁删掉——这就乱套了！ 所以 解锁前必须先判断：这个锁是不是自己加的 。 正确的步骤应该是： 检查当前锁的value是不是自己线程的标识（比如线程ID）； 如果是，就删除这个key（释放锁）。 2. 用L"
+    },
+    {
+      "slug": "fodz8ww6nwud2geu",
+      "title": "如何设计高性能系统",
+      "url": "/tulingzhouyu/db22bv/fodz8ww6nwud2geu",
+      "toc_path": [
+        "三高架构",
+        "如何设计高性能系统"
+      ],
+      "toc_level": 1,
+      "toc_index": 1383,
+      "word_count": 1453,
+      "updated_at": "2026-01-06T03:27:15.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "performance-optimization",
+        "redis-cache",
+        "observability-troubleshooting",
+        "os-linux"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle",
+        "expert"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年",
+        "专家/P7+"
+      ],
+      "keywords": [
+        "并发",
+        "多线程",
+        "线程",
+        "锁",
+        "CAS",
+        "CompletableFuture",
+        "性能",
+        "优化",
+        "QPS",
+        "RT",
+        "吞吐",
+        "Redis",
+        "操作系统"
+      ],
+      "summary": "在后端面试中，“如何设计一个高性能系统”是一道分水岭级别的题目。90% 的求职者给出的答案都停留在表面：“加缓存”、“分库分表”、“加机器” 。这种回答只能暴露你对架构认知的匮乏——只会堆机器，那叫“人民币玩家”，不叫架构师 。真正的性能优化，是对计算机资源（CPU、内存、I/O、网络）的极致...",
+      "excerpt": "在后端面试中，“如何设计一个高性能系统”是一道分水岭级别的题目。 90% 的求职者给出的答案都停留在表面：“加缓存”、“分库分表”、“加机器” 。这种回答只能暴露你对架构认知的匮乏——只会堆机器，那叫“人民币玩家”，不叫架构师 。 ​ 真正的性能优化，是对计算机资源（CPU、内存、I/O、网络）的极致压榨 。它不是一个单点技术，而是一套从用户端到内核态的**“组合拳”** 。 ​ 本文将带你剥开这层洋葱，层层递进，解析一套可以让面试官眼前一亮的满分答案。 核心心法：性能的本质 首先，你要明确性能的定义： 响应时间（RT）要低，吞吐量（QPS）要高 。 达成这个目标的核心心法只有六个字： 读写分离、分治 。 ​ 我们将系统优化分为五个层级，由外而内，由浅入深。 第一层：边缘网络与网关——兵临城下，拒敌于国门之外 请求还没进到你的 Java 服务之前，优化就已经开始了。 CDN（内容分发网络） ： 静态资源（图片、CSS、JS）不要让后端服务器扛。把它们缓存在 CDN 节点上，离用户最近。 网关（Nginx） ： 作为流量的入口，Nginx 负责负载均衡，将请求均匀分发到应用服务器集群，避免单点过热 。 ​ 面试话术： “优化的第一步是在离用户最近的地方拦截炮火，能不进后端的请求绝不进后端。” 第二层：代码与并发——压榨 CPU，让串行变并行 请求进来了，代码怎么写？ 很多人的代码是串行的：查 A 库 -> 查 B 库 -> 调 C 接口。总耗时是三者之和 。 但在多核 CPU 时代，这是对资源的浪费！ ​ 并行化（Parallelization） ： 使用 CompletableFuture 将无依赖的任务并行执行。查 A、查 B、调 C 同时进行，总耗时取决于最慢的那个任务 。 ​ 核心思想 ：用空间换时间 。 面试话术： “我们要压榨 CPU 的多核能力，拒绝串行等待，让代码‘多线开花’。” 第三层：多级缓存——从磁盘到内存的飞跃 “加 Redis” 没错，但太笼统。高手会设计 多级缓存 。 第一级：本地缓存（JVM Cache） ： 使用 Caffeine 或 Guava。就在应用进程内，速度最快，能拦截 50% 的请求 。 ​ 第二级：远程缓存（Redis） ： 作为集中式缓存，拦截 45% 的请求 。 兜底：数据库（DB） ： 只有最后 5% 的请求才会真正打到数据库，保护脆弱的磁盘 I/O 。 面试话术： “不要只依赖 Redis，要把数据拦截在离 CPU 最近的地方。” 第四层：架构与异步——削峰填谷，解耦写压力 解决了“读”，怎么解决高并发“写”？ 同步写入数据库会导致瞬间压力过大，系统甚至会崩溃 。 异步削峰（Async & MQ） ： 引入消息队列（Kafka/RocketMQ） 。 请求来了，先丢进 MQ 马上返回成功。后端消费者以平滑的"
+    },
+    {
+      "slug": "ekdzhf1uxhipuush",
+      "title": "进阶并发编程",
+      "url": "/tulingzhouyu/db22bv/ekdzhf1uxhipuush",
+      "toc_path": [
+        "GoLang",
+        "进阶并发编程"
+      ],
+      "toc_level": 1,
+      "toc_index": 1522,
+      "word_count": 3139,
+      "updated_at": "2025-06-18T08:40:01.000Z",
+      "primary_category": "java-concurrency",
+      "primary_category_name": "Java并发",
+      "related_categories": [
+        "java-concurrency",
+        "os-linux",
+        "observability-troubleshooting",
+        "performance-optimization",
+        "project-system-design"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "campus"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "并发",
+        "多线程",
+        "线程",
+        "锁",
+        "进程",
+        "内存",
+        "CPU",
+        "死锁",
+        "性能",
+        "优化",
+        "方案",
+        "高并发"
+      ],
+      "summary": "课程介绍：\tgolang基本语言 编程基础 有并发经验更好\tGoLang 核心优势 高性能的支撑 高并发\t概览 进程Process 与线程 Thread进程定义:进程 是并发执行的程序中分配和管理资源的基本单位。线程定义：线程是进程的执行单元，是进行调度的实体，是比进程更小的独立运行单位。并行...",
+      "excerpt": "课程介绍 ： golang基本语言 编程基础 有并发经验更好 GoLang 核心优势 高性能的支撑 高并发 概览 进程Process 与线程 Thread 进程定义:进程 是并发执行的程序中分配和管理资源的基本单位。 线程定义：线程是进程的执行单元，是进行调度的实体，是比进程更小的独立运行单位。 并行Concurrent与并发Paralled 并发定义： 多线程交替操作同一资源类 并行定义：多个线程同时操作多个资源类 图解： Erlang 之父 Joe Armstrong 用一张5岁小孩都能看懂的图解释了并发与并行的区别 ​ 协程 goroutine 的引入 需求 : 统计 1~2000000的数字中 哪些是素数 传统方式 ：使用循环 判断， 优化：使用并发和并行的方式 Golang：将统计分配给多个 goroutine去完成 协程的基本概念： 协程： 协程是单线程下的并发，又称微线程，纤程。它是实现多任务的另一种方式，只不过是比线程更小的执行单元。因为它自带CPU的上下文，这样只要在合适的时机，我们可以把一个协程切换到另一个协程。英文名Coroutine。 一句话说明什么是协程：轻量级的线程 独立的栈空间 ，共享程序堆空间 调度由用户控制 是逻辑态，对资源消耗小 线程和协程的区别： 线程的切换是一个cpu在不同线程中来回切换，是从系统层面来，不止保存和恢复CPU上下文这么简单，会非常耗费性能。但是协程只是在同一个线程内来回切换不同的函数，只是简单的操作CPU的上下文，所以耗费的性能会大大减少。 golang的协程机制，可轻松开启上万个协程。其他语言并发机制一般基于线程，开启过多资源耗费大。 案例： 主线程开启一个 goroutine 每隔1s输出 &quot;马士兵教育申专你好！&quot; 在主线程中每隔 2s 输出 go routine 十次后退出程序 要求主线程和 goroutine同时执行 流程图： 百万级并发 并发的安全问题 直接运行：报错：fatal error: concurrent map writes go build -race main.go 检测数据竞争状态 再执行 ./main.exe 会提示 WARNING: DATA RACE Previous write at 0x00c000144450 by goroutine 7: fatal error: concurrent map writes 问题的原因： 多协程 并发 资源竞争的问题 问题的解决方案： 1.互斥锁 全局变量 通过加锁lock unlock 的方法 达到线程安全 lock sycn.Mutex lock.Lock() 等使用完 lock.Unlock() 弊端：协程执行的时间不可控 2.channel通道 chan 本质就是一个数据结构-队列 先进先出 FIFO"
+    }
+  ]
+}

@@ -1,0 +1,2328 @@
+{
+  "id": "spring-core",
+  "name": "Spring核心",
+  "aliases": [
+    "Spring",
+    "IOC",
+    "AOP",
+    "Bean",
+    "循环依赖",
+    "事务传播",
+    "Bean生命周期"
+  ],
+  "count": 53,
+  "total_word_count": 95779,
+  "articles": [
+    {
+      "slug": "vx7ltk4d4imugfzh",
+      "title": "Spring篇",
+      "url": "/tulingzhouyu/db22bv/vx7ltk4d4imugfzh",
+      "toc_path": [
+        "面试必看",
+        "大厂真题",
+        "阿里面试真题",
+        "Spring篇"
+      ],
+      "toc_level": 3,
+      "toc_index": 39,
+      "word_count": 4127,
+      "updated_at": "2025-04-22T05:44:06.000Z",
+      "primary_category": "spring-core",
+      "primary_category_name": "Spring核心",
+      "related_categories": [
+        "spring-core",
+        "java-core",
+        "java-concurrency",
+        "spring-boot",
+        "docker-k8s"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "Spring",
+        "IOC",
+        "AOP",
+        "Bean",
+        "循环依赖",
+        "Bean生命周期",
+        "Java",
+        "String",
+        "反射",
+        "注解",
+        "IO",
+        "线程"
+      ],
+      "summary": "设计思想&amp;Beans1、IOC 控制反转IoC（Inverse of Control:控制反转）是⼀种设计思想，就是将原本在程序中⼿动创建对象的控制权，交由Spring框架来管理。IoC 在其他语⾔中也有应⽤，并⾮ Spring 特有。 IoC 容器是 Spring⽤来实现 IoC 的载体， ...",
+      "excerpt": "设计思想&Beans 1、IOC 控制反转 IoC（Inverse of Control:控制反转）是⼀种设计思想，就是将原本在程序中⼿动创建对象的控制权，交由Spring框架来管理。IoC 在其他语⾔中也有应⽤，并⾮ Spring 特有。 IoC 容器是 Spring⽤来实现 IoC 的载体， IoC 容器实际上就是个Map（key，value）,Map 中存放的是各种对象。将对象之间的相互依赖关系交给 IoC 容器来管理，并由 IoC 容器完成对象的注⼊。这样可以很⼤程度上简化应⽤的开发，把应⽤从复杂的依赖关系中解放出来。IoC 容器就像是⼀个⼯⼚⼀样，当我们需要创建⼀个对象的时候，只需要配置好配置⽂件/注解即可，完全不⽤考虑对象是如何被创建出来的。 DI 依赖注入 DI:（Dependancy Injection：依赖注入)站在容器的角度，将对象创建依赖的其他对象注入到对象中。 2、AOP 动态代理 AOP(Aspect-Oriented Programming:⾯向切⾯编程)能够将那些与业务⽆关，却为业务模块所共同调⽤的逻辑或责任（例如事务处理、⽇志管理、权限控制等）封装起来，便于减少系统的重复代码，降低模块间的耦合度，并有利于未来的可拓展性和可维护性。 Spring AOP就是基于动态代理的，如果要代理的对象，实现了某个接⼝，那么Spring AOP会使⽤JDKProxy，去创建代理对象，⽽对于没有实现接⼝的对象，就⽆法使⽤ JDK Proxy 去进⾏代理了，这时候Spring AOP会使⽤基于asm框架字节流的Cglib动态代理 ，这时候Spring AOP会使⽤ Cglib ⽣成⼀个被代理对象的⼦类来作为代理。 3、Bean生命周期 单例对象： singleton 总结：单例对象的生命周期和容器相同 多例对象： prototype 出生：使用对象时spring框架为我们创建 活着：对象只要是在使用过程中就一直活着 死亡：当对象长时间不用且没有其它对象引用时，由java的垃圾回收机制回收 IOC容器初始化加载Bean流程： 四个阶段 实例化 Instantiation 属性赋值 Populate 初始化 Initialization 销毁 Destruction 多个扩展点 影响多个Bean BeanPostProcessor InstantiationAwareBeanPostProcessor 影响单个Bean Aware 完整流程 实例化一个Bean－－也就是我们常说的 new ； 按照Spring上下文对实例化的Bean进行配置－－ 也就是IOC注入 ； 如果这个Bean已经实现了BeanNameAware接口，会调用它实现的setBeanName(String)方法，也就是根据就是Spring配置文件中 Bean的id和name进行传递"
+    },
+    {
+      "slug": "al1s35tm0qed1dd4",
+      "title": "SpringCloud篇",
+      "url": "/tulingzhouyu/db22bv/al1s35tm0qed1dd4",
+      "toc_path": [
+        "面试必看",
+        "大厂真题",
+        "阿里面试真题",
+        "SpringCloud篇"
+      ],
+      "toc_level": 3,
+      "toc_index": 43,
+      "word_count": 7277,
+      "updated_at": "2024-04-29T12:15:47.000Z",
+      "primary_category": "spring-core",
+      "primary_category_name": "Spring核心",
+      "related_categories": [
+        "spring-core",
+        "spring-boot",
+        "spring-cloud",
+        "netty-network",
+        "computer-network"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "middle",
+        "campus",
+        "senior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "校招/应届生",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "Spring",
+        "Bean",
+        "Spring Boot",
+        "SpringBoot",
+        "自动配置",
+        "Starter",
+        "Spring Cloud",
+        "SpringCloud",
+        "Feign",
+        "配置中心",
+        "TCP",
+        "HTTP"
+      ],
+      "summary": "Why SpringCloudSpring cloud 是一系列框架的有序集合。它利用 spring boot 的开发便利性巧妙地简化了分布式系统基础设施的开发，如服务发现注册、配置中心、消息总线、负载均衡、断路器、数据监控等，都可以用 spring boot 的开发风格做到一键启动和部署。S...",
+      "excerpt": "Why SpringCloud Spring cloud 是一系列框架的有序集合。它利用 spring boot 的开发便利性巧妙地简化了分布式系统基础设施的开发，如 服务发现注册、配置中心、消息总线、负载均衡、断路器、数据监控 等，都可以用 spring boot 的开发风格做到一键启动和部署。 SpringBoot是Spring推出用于解决传统框架配置文件冗余，装配组件繁杂的基于Maven的解决方案， 旨在快速搭建单个微服务 ，SpringCloud是依赖于SpringBoot的，而SpringBoot并不是依赖与SpringCloud，甚至还可以和Dubbo进行优秀的整合开发。 MartinFlower 提出的微服务之间是通过RestFulApi进行通信，具体实现： RestTemplate：基于HTTP协议； Feign：封装了ribbon和 Hystrix 、RestTemplate 简化了客户端开发工作量； RPC：基于TCP协议，序列化和传输效率提升明显； MQ：异步解耦微服务之间的调用； Spring Boot Spring Boot 通过 简单的步骤 就可以创建一个 Spring 应用。 Spring Boot 为 Spring 整合第三方框架提供了 开箱即用功能 。 Spring Boot 的核心思想是 约定大于配置 。 Spring Boot 解决的问题 搭建后端框架时需要手动添加 Maven 配置，涉及很多 XML 配置文件，增加了搭建难度和时间成本。 将项目编译成 war 包，部署到 Tomcat 中，项目部署依赖 Tomcat，这样非常不方便。 应用监控做的比较简单，通常都是通过一个没有任何逻辑的接口来判断应用的存活状态。 Spring Boot 优点 自动装配： Spring Boot 会根据某些规则对所有配置的 Bean 进行初始化。可以减少了很多重复性的工作。 比如使用 MongoDB 时，只需加入 MongoDB 的 Starter 包，然后配置 的连接信息，就可以直接使用 MongoTemplate 自动装配来操作数据库了。简化了 Maven Jar 包的依赖，降低了烦琐配置的出错几率。 内嵌容器： Spring Boot 应用程序可以不用部署到外部容器中，比如 Tomcat。 应用程序可以直接通过 Maven 命令编译成可执行的 jar 包，通过 java-jar 命令启动即可，非常方便。 应用监控： Spring Boot 中自带监控功能 Actuator，可以实现对程序内部运行情况进行监控。 比如 Bean 加载情况、环境变量、日志信息、线程信息等。当然也可以自定义跟业务相关的监控，通过Actuator 的端点信息进行暴露。 创建 Starter 项目，定义 Starter 需要的配置（Properties）类，比"
+    },
+    {
+      "slug": "ktxx6egnrskqmooq",
+      "title": "说下Spring AOP底层原理",
+      "url": "/tulingzhouyu/db22bv/ktxx6egnrskqmooq",
+      "toc_path": [
+        "面试必看",
+        "大厂真题",
+        "美团面试真题",
+        "说下Spring AOP底层原理"
+      ],
+      "toc_level": 3,
+      "toc_index": 53,
+      "word_count": 330,
+      "updated_at": "2023-08-28T08:53:15.000Z",
+      "primary_category": "spring-core",
+      "primary_category_name": "Spring核心",
+      "related_categories": [
+        "spring-core",
+        "jvm-classloading",
+        "mysql-index-transaction",
+        "observability-troubleshooting"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "Spring",
+        "AOP",
+        "字节码",
+        "事务",
+        "日志"
+      ],
+      "summary": "Spring AOP全称是面向切面编程，是Spring框架的一个重要特性，它通过在运行时动态地将额外的行为（如日志记录、事务管理等）织入到应用程序的特定方法或代码块中。底层原理主要基于动态代理和字节码操作来实现。对于动态代理Spring AOP使用了JDK动态代理和CGLIB动态代理两种方式来...",
+      "excerpt": "Spring AOP全称是 面向切面编程 ，是Spring框架的一个重要特性，它通过在运行时动态地将额外的行为（如日志记录、事务管理等）织入到应用程序的特定方法或代码块中。 底层原理主要基于 动态代理 和 字节码操作 来实现。 对于动态代理Spring AOP使用了 JDK动态代理 和 CGLIB动态代理 两种方式来实现代理对象的创建。如果被代理的目标对象 实现了接口 ，Spring AOP将使用JDK动态代理来创建代理对象；如果目标对象 没有实现接口 ，Spring AOP将使用CGLIB动态代理来创建代理对象。代理对象在运行时会拦截目标对象的方法调用，并在方法执行前后执行额外的逻辑。 对于字节码操作，Spring AOP是通过在编译时或运行时 修改字节码 来实现对目标对象的增强。它使用AspectJ提供的编译器或者在运行时使用AspectJ的字节码增强器来修改字节码。通过修改字节码，Spring AOP可以在方法调用前后 插入额外的代码 。"
+    },
+    {
+      "slug": "ohzsk6cmoapblpg3",
+      "title": "Spring Bean 容器的生命周期是什么样的",
+      "url": "/tulingzhouyu/db22bv/ohzsk6cmoapblpg3",
+      "toc_path": [
+        "面试必看",
+        "大厂真题",
+        "美团面试真题",
+        "Spring Bean 容器的生命周期是什么样的"
+      ],
+      "toc_level": 3,
+      "toc_index": 76,
+      "word_count": 451,
+      "updated_at": "2023-08-24T13:05:28.000Z",
+      "primary_category": "spring-core",
+      "primary_category_name": "Spring核心",
+      "related_categories": [
+        "spring-core",
+        "docker-k8s",
+        "os-linux",
+        "java-core"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "Spring",
+        "Bean",
+        "容器",
+        "文件",
+        "Java",
+        "反射"
+      ],
+      "summary": "在Spring中，Bean容器的生命周期经历以下阶段：实例化：当Bean容器加载配置文件时，将会创建Bean的实例。Spring容器会根据配置文件中的定义，通过反射机制创建Java对象，并存储在容器中。属性设置：在Bean实例化后，Spring容器会通过setter或直接字段注入的方式，将配置...",
+      "excerpt": "在Spring中，Bean容器的生命周期经历以下阶段： 实例化：当Bean容器加载配置文件时，将会创建Bean的实例。Spring容器会根据配置文件中的定义，通过反射机制创建Java对象，并存储在容器中。 属性设置：在Bean实例化后，Spring容器会通过setter或直接字段注入的方式，将配置文件中的属性值注入到Bean实例中。 初始化：在属性设置完成后，Spring容器会调用Bean的初始化方法，可以通过实现InitializingBean接口或在配置文件中指定init-method来定义初始化方法。在这个阶段，可以进行一些额外的初始化操作。 使用：初始化完成后，Bean实例可以被容器使用。可以通过容器获取Bean的引用，并在应用中使用。 销毁：当应用关闭或者手动从容器中移除Bean时，Spring容器会调用Bean的销毁方法进行一些资源释放等清理工作。可以通过实现DisposableBean接口或在配置文件中指定destroy-method来定义销毁方法。 需要注意的是，Spring容器对于单例的Bean是默认进行管理的，而对于原型（Prototype）作用域的Bean，容器只负责创建和属性设置，不负责销毁。 总结：Spring Bean容器的生命周期包括实例化、属性设置、初始化、使用和销毁等阶段。通过实现相应的接口或在配置文件中指定方法，可以对Bean的生命周期进行管理和定制。"
+    },
+    {
+      "slug": "dryz4dyyke3gdf4l",
+      "title": "平安面试",
+      "url": "/tulingzhouyu/db22bv/dryz4dyyke3gdf4l",
+      "toc_path": [
+        "面试必看",
+        "最全面经",
+        "平安面试"
+      ],
+      "toc_level": 2,
+      "toc_index": 91,
+      "word_count": 355,
+      "updated_at": "2023-09-05T09:23:53.000Z",
+      "primary_category": "spring-core",
+      "primary_category_name": "Spring核心",
+      "related_categories": [
+        "spring-core",
+        "redis-cache",
+        "mq-rocketmq",
+        "resume-project",
+        "java-concurrency"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "senior",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "Spring",
+        "Redis",
+        "缓存",
+        "穿透",
+        "击穿",
+        "项目",
+        "面经",
+        "线程",
+        "锁",
+        "volatile"
+      ],
+      "summary": "TIPS：面最好广一点，他们喜欢什么都懂一点的，比如测试，大数据等。一面自我介绍谈一下你们的产品，不是架构，以产品角度去谈Spring的ioc说一下安全层面怎么考虑的设计模式有哪几种，有用到过哪几种有写过些批处理程序么？开发的和测试的你的项目中有自己写的限流组件，怎么做的日志怎么看，怎么排查问...",
+      "excerpt": "TIPS：面最好广一点，他们喜欢什么都懂一点的，比如测试，大数据等。 一面 自我介绍 谈一下你们的产品，不是架构，以产品角度去谈 Spring的ioc说一下 安全层面怎么考虑的 设计模式有哪几种，有用到过哪几种 有写过些批处理程序么？开发的和测试的 你的项目中有自己写的限流组件，怎么做的 日志怎么看，怎么排查问题 类加载机制说一下 Redis哪几种类型，说一下应用场景 还有什么问我的 ​ 二面 自我介绍 为什么离职 Dockerfile命令说一些，add和copy 项目架构说一下 项目管理流程谈一下，排期如何排 Springboot的自动装配原理 缓存击穿，穿透怎么解决 Redis分布式锁谈一下 线程安全如何理解 synchronize和lock的区别 Countdownlatch谈一下 volatile谈一下，为什么能保证可见性，除了可见性还有什么功能 rocketmq怎么保证消息不丢失 Rocketmq和kafka有什么区别 项目中用到过什么设计模式 你们的商城是自建类型的还是给供应商类型还是像淘宝这种 是云部署还是怎么部署的 还有什么问我的"
+    },
+    {
+      "slug": "xuggztenwamomqyg",
+      "title": "👍 Spring6.0从入门到精通系列教程",
+      "url": "/tulingzhouyu/db22bv/xuggztenwamomqyg",
+      "toc_path": [
+        "系列篇",
+        "👍 Spring6.0从入门到精通系列教程"
+      ],
+      "toc_level": 1,
+      "toc_index": 111,
+      "word_count": 9954,
+      "updated_at": "2024-12-04T11:40:05.000Z",
+      "primary_category": "spring-core",
+      "primary_category_name": "Spring核心",
+      "related_categories": [
+        "spring-core",
+        "docker-k8s",
+        "java-core",
+        "algorithm",
+        "performance-optimization"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "middle",
+        "campus"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "Spring",
+        "AOP",
+        "Bean",
+        "容器",
+        "Service",
+        "反射",
+        "注解",
+        "异常",
+        "查找"
+      ],
+      "summary": "What？Why？Spring框架是一个基于IoC的框架，它提供了一种实现IoC的方式，即通过依赖注入（Dependency Injection）来实现对象之间的松耦合。在Spring中，对象之间的依赖关系由Spring容器管理和注入，从而使得应用程序的代码与对象之间的依赖关系解耦，提高了代码...",
+      "excerpt": "What？Why？ Spring框架是一个基于IoC的框架，它提供了一种实现IoC的方式，即通过依赖注入（Dependency Injection）来实现对象之间的松耦合。在Spring中，对象之间的依赖关系由Spring容器管理和注入，从而使得应用程序的代码与对象之间的依赖关系解耦，提高了代码的可维护性、可测试性和可扩展性。 ​ Spring框架带给我们以下好处： 降低代码耦合度：通过IoC容器管理对象之间的依赖关系，降低了代码的耦合度，使得代码更易于维护和修改。 提高代码可测试性：通过依赖注入，使得测试代码更容易编写，因为测试代码可以更方便地模拟对象之间的依赖关系。 简化配置：Spring框架提供了一种方便的配置方式，使得应用程序的配置更易于管理和维护。 提供了事务管理、安全性、远程调用等方便的功能：Spring框架提供了许多常用的功能，如事务管理、安全性、远程调用等，使得应用程序的开发更加高效和便捷。 ​ 总之，Spring框架是一个非常强大的框架，它提供了一种方便的方式来实现IoC和依赖注入，从而提高了应用程序的可维护性、可测试性和可扩展性。 HelloWorld之引入依赖 Spring Context 模块是 Spring Framework 的核心模块之一，它提供了一种在应用程序中使用 IoC（Inversion of Control）和 DI（Dependency Injection）的方式，以及许多其他功能，例如事件传递、国际化、资源加载、Bean 生命周期管理等。Spring Context 模块实现了 BeanFactory 接口，是一个 Bean 容器，可以管理应用程序中的所有 Bean 实例。 ​ Spring Context 模块的主要作用包括： 提供了一种方便的方式来管理和装配应用程序中的对象。 管理对象的生命周期，包括对象的创建、初始化和销毁等。 实现了 IoC 和 DI 的机制，将对象之间的依赖关系交由 Spring 容器管理，降低了对象之间的耦合性。 提供了许多其他功能，例如事件传递、国际化、资源加载等，可以帮助开发者更方便地开发企业级应用程序。 HelloWorld之基本使用 以上代码完成了向Spring容器中注册一个Bean对象，并把它拿出来使用。 假设现在UserService用到了OrderService，我们可以这么写： ​ 并且把OrderService也注册为Bean： 这样UserService中的orderService属性就自动有值了，这个功能就是Spring给我们提供的，叫做 依赖注入 。 ​ 假如现在UserService中有一个Map，需要缓存一部分用户信息，我们可以通过一下方式来进行初始化： Spring容器在创建UserService这个Bean对象时会自动调用afterPropertiesSe"
+    },
+    {
+      "slug": "as67zos69fxr6zc0",
+      "title": "🔥那些面试官最喜欢问的Spring全家桶经典面试题",
+      "url": "/tulingzhouyu/db22bv/as67zos69fxr6zc0",
+      "toc_path": [
+        "系列篇",
+        "🔥那些面试官最喜欢问的Spring全家桶经典面试题"
+      ],
+      "toc_level": 1,
+      "toc_index": 117,
+      "word_count": 4871,
+      "updated_at": "2024-12-04T11:39:51.000Z",
+      "primary_category": "spring-core",
+      "primary_category_name": "Spring核心",
+      "related_categories": [
+        "spring-core",
+        "mysql-index-transaction",
+        "java-core",
+        "java-concurrency",
+        "spring-boot"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "middle",
+        "senior",
+        "campus"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "Spring",
+        "AOP",
+        "Bean",
+        "事务传播",
+        "事务",
+        "锁",
+        "隔离级别",
+        "Java",
+        "反射",
+        "注解",
+        "异常",
+        "线程"
+      ],
+      "summary": "单例Bean是单例模式吗？通常来说，单例模式是指在一个JVM中，一个类只能构造出来一个对象，有很多方法来实现单例模式，比如懒汉模式，但是我们通常讲的单例模式有一个前提条件就是规定在一个JVM中，那如果要在两个JVM中保证单例呢？那可能就要用分布式锁这些技术，这里的重点是，我们在讨论单例模式时，...",
+      "excerpt": "单例Bean是单例模式吗？ 通常来说，单例模式是指在一个JVM中，一个类只能构造出来一个对象，有很多方法来实现单例模式，比如懒汉模式，但是我们通常讲的单例模式有一个前提条件就是规定在一个JVM中，那如果要在两个JVM中保证单例呢？那可能就要用分布式锁这些技术，这里的重点是，我们在讨论单例模式时，是要考虑范围的。 ​ 而Spring中的单例Bean也是一种单例模式，只不过范围比较小，范围是beanName，一个beanName对应同一个Bean对象，不同beanName可以对应不同的Bean对象（就算是同一个类也是可以的）。 ​ 比如： 以上我们定义了一个单例Bean，beanName为 bailiService，类型为 BailiService，我们可以继续用@Bean来进一步定义： 以上，Spring容器中将有三个BailiService类型的bean对象，他们的名字不一样。 Bean的实例化和Bean的初始化有什么区别？ ​ Spring在创建一个Bean对象时，会先创建出来一个Java对象，会通过反射来执行类的构造方法从而得到一个Java对象，而这个过程就是Bean的实例化。 得到Java对象后，会进行依赖注入，依赖注入之后就会进行初始化了，而Bean的初始化就是调用前面创建出来的Java对象中特定的方法，比如Java对象实现了InitializingBean接口，那么初始化的时候就会执行Java对象的afterPropertiesSet()，Spring只会执行这个方法，并不关心方法做了什么，我们可以在这个方法中去对某个属性进行验证，或者直接给某个属性赋值都是可以的，反正Bean的初始化就是执行afterPropertiesSet()方法，或者执行init-method指定的方法，比如： Spring AOP是如何实现的？它和AspectJ有什么区别？ Spring AOP是利用的动态代理机制，如果一个Bean实现了接口，那么就会采用JDK动态代理来生成该接口的代理对象，如果一个Bean没有实现接口，那么就会采用CGLIB来生成当前类的一个代理对象。代理对象的作用就是代理原本的Bean对象，代理对象在执行某个方法时，会在该方法的基础上增加一些切面逻辑，使得我们可以利用AOP来实现一些诸如登录校验、权限控制、日志记录等统一功能。 Spring AOP和AspectJ之间并没有特别强的关系，AOP表示面向切面编程，这是一种思想，各个组织和个人都可以通过技术来实现这种思想，AspectJ就是其中之一，它会在编译期来对类进行增强，所以要用AspectJ，得用AspectJ开发的编译器来编译你的项目。而Spring AOP则是采用动态代理的方式来实现AOP，只不过觉得AspectJ中设计的那几个注解比较好，比如@Before、@After、@Around等，同"
+    },
+    {
+      "slug": "edess91kt504q4ou",
+      "title": "Spring Cloud Alibaba AI 初体验",
+      "url": "/tulingzhouyu/db22bv/edess91kt504q4ou",
+      "toc_path": [
+        "综合篇",
+        "Spring Cloud Alibaba AI 初体验"
+      ],
+      "toc_level": 1,
+      "toc_index": 138,
+      "word_count": 1331,
+      "updated_at": "2024-06-16T13:38:55.000Z",
+      "primary_category": "spring-core",
+      "primary_category_name": "Spring核心",
+      "related_categories": [
+        "spring-core",
+        "ai-llm",
+        "spring-cloud",
+        "computer-network",
+        "netty-network"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "Spring",
+        "AI",
+        "大模型",
+        "Spring Cloud"
+      ],
+      "summary": "示例代码：https://gitee.com/xscodeit/spring-cloud-alibaba-ai-example.gitSpring AI 旨在简化包含人工智能相关功能的应用程序的开发，避免不必要的复杂性。Spring AI 的核心是提供抽象，作为开发 AI 应用程序的基础。这些...",
+      "excerpt": "​ 示例代码： https://gitee.com/xscodeit/spring-cloud-alibaba-ai-example.git ​ ​ Spring AI 旨在简化包含人工智能相关功能的应用程序的开发，避免不必要的复杂性。 Spring AI 的核心是提供抽象，作为开发 AI 应用程序的基础。这些抽象有多种实现方式，只需极少的代码改动即可轻松实现各个大模型之间的切换。 Spring AI 提供以下功能： 支持所有主要模型提供商，例如 OpenAI、Microsoft、Amazon、Google 和 Huggingface。 支持的模型类型包括“聊天”和“文本到图像”，还有更多模型类型正在开发中。 跨 AI 提供商的可移植 API，用于聊天和嵌入模型。支持同步和流 API 选项。还支持下拉访问模型特定功能。 AI 模型输出到 POJO 的映射。 支持所有主要矢量数据库提供商，例如 Azure 矢量搜索、Chroma、Milvus、Neo4j、PostgreSQL/PGVector、PineCone、Qdrant、Redis 和 Weaviate 跨 Vector Store 提供商的可移植 API，包括同样可移植的新颖的类似 SQL 的元数据过滤器 API。 函数调用 AI 模型和向量存储的 Spring Boot 自动配置和启动器。 数据工程的 ETL 框架 Spring Cloud Alibaba AI Spring Cloud Alibaba AI （以下简称 SCA AI） 基于 Spring AI 0.8.1 版本完成通义系列大模型的接入。 DashScope灵积模型服务建立在 模型即服务 （Model-as-a-Service，MaaS）的理念基础之上，围绕AI各领域模型，通过标准化的API提供包括模型推理、模型微调训练在内的多种模型服务。。 SCA AI 目前支持的模型主要有：对话、文生图、文生语音，更多功能特性正在适配中。 快速体验 创建 SCA AI 应用 在 pom.xml 中引入如下依赖配置： api-key 配置 在正式开始体验之前，需要申请到模型的 api-key。申请地址： https://help.aliyun.com/zh/dashscope/developer-reference/activate-dashscope-and-create-an-api-key 您可以通过 DashScope 提供的方式配置 api-key，SCA AI 完全兼容 DashScope 环境变量配置 key 的方式： https://help.aliyun.com/zh/dashscope/developer-reference/api-key-settings 当然也可以通过 SCA AI 中提供的如下配置项配置： 聊天对话体验 "
+    },
+    {
+      "slug": "pulzrwazeuldai89",
+      "title": "阿里一面：说一说Java、Spring、Dubbo三者SPI机制的原理和区别",
+      "url": "/tulingzhouyu/db22bv/pulzrwazeuldai89",
+      "toc_path": [
+        "Java基础",
+        "阿里一面：说一说Java、Spring、Dubbo三者SPI机制的原理和区别"
+      ],
+      "toc_level": 1,
+      "toc_index": 236,
+      "word_count": 3981,
+      "updated_at": "2024-11-17T13:20:09.000Z",
+      "primary_category": "spring-core",
+      "primary_category_name": "Spring核心",
+      "related_categories": [
+        "spring-core",
+        "java-core",
+        "docker-k8s",
+        "os-linux",
+        "spring-boot"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "Spring",
+        "IOC",
+        "AOP",
+        "Bean",
+        "Java",
+        "反射",
+        "注解",
+        "IO",
+        "容器",
+        "Service",
+        "文件",
+        "SpringBoot"
+      ],
+      "summary": "什么是SPISPI全称为Service Provider Interface，是一种动态替换发现的机制，一种解耦非常优秀的思想，SPI可以很灵活的让接口和实现分离，让api提供者只提供接口，第三方来实现，然后可以使用配置文件的方式来实现替换或者扩展，在框架中比较常见，提高框架的可扩展性。简单来...",
+      "excerpt": "什么是SPI SPI全称为Service Provider Interface，是一种动态替换发现的机制，一种解耦非常优秀的思想，SPI可以很灵活的让接口和实现分离，让api提供者只提供接口，第三方来实现，然后可以使用配置文件的方式来实现替换或者扩展，在框架中比较常见，提高框架的可扩展性。 简单来说SPI是一种非常优秀的设计思想，它的核心就是解耦、方便扩展。 Java SPI机制--ServiceLoader ServiceLoader是Java提供的一种简单的SPI机制的实现，Java的SPI实现约定了以下两件事： 文件必须放在 META-INF/services/ 目录底下 文件名必须为接口的全限定名，内容为接口实现的全限定名 这样就能够通过ServiceLoader加载到文件中接口的实现。 来个demo 第一步，需要一个接口以及他的实现类 第二步，在 META-INF/services/ 目录创建一个文件名LoadBalance全限定名的文件，文件内容为RandomLoadBalance的全限定名 测试类： 测试结果： 此时就成功获取到了实现。 在实际的框架设计中，上面这段测试代码其实是框架作者写到框架内部的，而对于框架的使用者来说，要想自定义LoadBalance实现，嵌入到框架，仅仅只需要写接口的实现和spi文件即可。 实现原理 如下是ServiceLoader中一段核心代码 首先获取一个fullName，其实就是 META-INF/services/接口的全限定名 然后通过ClassLoader获取到资源，其实就是接口的全限定名文件对应的资源，然后交给 parse 方法解析资源 parse 方法其实就是通过IO流读取文件的内容，这样就可以获取到接口的实现的全限定名 再后面其实就是通过反射实例化对象，这里就不展示了。 所以其实不难发现ServiceLoader实现原理比较简单，总结起来就是通过IO流读取 META-INF/services/接口的全限定名 文件的内容，然后反射实例化对象。 优缺点 由于Java的SPI机制实现的比较简单，所以他也有一些缺点。 第一点就是浪费资源，虽然例子中只有一个实现类，但是实际情况下可能会有很多实现类，而Java的SPI会一股脑全进行实例化，但是这些实现了不一定都用得着，所以就会白白浪费资源。 第二点就是无法对区分具体的实现，也就是这么多实现类，到底该用哪个实现呢？如果要判断具体使用哪个，只能依靠接口本身的设计，比如接口可以设计为一个策略接口，又或者接口可以设计带有优先级的，但是不论怎样设计，框架作者都得写代码进行判断。 所以总得来说就是ServiceLoader无法做到按需加载或者按需获取某个具体的实现。 使用场景 虽然说ServiceLoader可能有些缺点，但是还是有使用场景的，比如说： 不需要选择具体的实现"
+    },
+    {
+      "slug": "hnf1tsxt4echn1eb",
+      "title": "💎Spring 面试题集合",
+      "url": "/tulingzhouyu/db22bv/hnf1tsxt4echn1eb",
+      "toc_path": [
+        "Spring",
+        "💎Spring 面试题集合"
+      ],
+      "toc_level": 1,
+      "toc_index": 442,
+      "word_count": 9584,
+      "updated_at": "2026-01-08T06:55:08.000Z",
+      "primary_category": "spring-core",
+      "primary_category_name": "Spring核心",
+      "related_categories": [
+        "spring-core",
+        "java-core",
+        "docker-k8s",
+        "mysql-index-transaction",
+        "algorithm"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle",
+        "senior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "Spring",
+        "Bean",
+        "Java",
+        "反射",
+        "注解",
+        "IO",
+        "容器",
+        "Service",
+        "事务",
+        "MVCC",
+        "锁",
+        "隔离级别"
+      ],
+      "summary": "当使用@Component Bean的Name默认是什么？很多同学觉得Bean的名字不就是类名首字母小写吗？其实并不是全都这样。在解析@Component注册为BeanDefinition时会调用AnnotationBeanNameGenerator.buildDefaultBeanName单...",
+      "excerpt": "当使用@Component Bean的Name默认是什么？ 很多同学觉得Bean的名字不就是类名首字母小写吗？其实并不是全都这样。 在解析@Component注册为BeanDefinition时会调用 AnnotationBeanNameGenerator.buildDefaultBeanName 单例设计模式与Bean单例 Singleton模式主要作用是保证在Java应用程序中，一个Class有且仅有一个实例。它的好处非常显然的，可以避免不必要的重复操作，以及防止踩踏事件。在很多操作中，比如建立目录 数据库连接都需要这样的单线程操作。一些资源管理器常常设计成单例模式。 诸如数据库的连接，外部资源中如一台电脑可对应多个端口，但系统会集中管理这些端口，内部资源如采用一个对象管理存放系统配置的一个或多个属性文件。 但是 ，单例设计模式与Bean单例具有一定的区别，主要在于它们运行环境，java单例设计模式的环境是JVM，而Bean单例的环境在于Bean容器。一个Spring程序可以有很多个Bean，但一个Java程序通常有且仅有一个自己的JVM。所以，虽然Spring的Bean单例在一个容器中有且仅有一个，但如果程序具有多个Bean容器，而且都有某个Bean，那么这个Bean在这个程序中并非只有一个。但在实际应用中，如果将对象的生命周期完全交给Spring管理(不在其他地方通过new、反射等方式创建)，其实也能达到单例模式的效果。 ByType-->byName @Transactional(readOnly=true) 真的是提高性能的灵丹妙药吗？ 很多同学都说 @Transactional(readOnly = true) 提高了性能。那我们不得不思考： @Transactional(readOnly = true) Spring对它做了什么？真的提高了性能吗？ @Transactional(readOnly = true)是如何工作的 ？Spring对它做了什么 所以， 实际上就是利用数据库的SET TRANSACTION READ ONLY， 开启只读事务，那只读事务对数据库意味着什么呢？ 通过执行 SET TRANSACTION READ ONLY ，将当前事务设置为只读事务。这意味着在此事务内部，任何修改数据的操作（如 INSERT 、 UPDATE 、 DELETE ）都将被禁止，只能执行读取操作（如 SELECT ）。 只读事务依然会运用上隔离级别（MVCC），需要事务隔离级别需要一定性能开销。 所以很多人一直纠结查询到底要不要设置只读，不设置是不是一样的？ 一般情况下，执行查询时不开启事务的性能可能会稍微优于开启只读事务。 这是因为不开启事务的查询操作不会涉及事务管理和隔离级别的开销 ，因此可能更为轻量级和高效。 当执行查询操作时，如果不需要"
+    },
+    {
+      "slug": "pbf0dhm0spucdw85",
+      "title": "Spring AOP and AspectJ AOP 有什么区别？",
+      "url": "/tulingzhouyu/db22bv/pbf0dhm0spucdw85",
+      "toc_path": [
+        "Spring",
+        "基础篇",
+        "Spring AOP and AspectJ AOP 有什么区别？"
+      ],
+      "toc_level": 2,
+      "toc_index": 446,
+      "word_count": 364,
+      "updated_at": "2023-09-06T08:44:29.000Z",
+      "primary_category": "spring-core",
+      "primary_category_name": "Spring核心",
+      "related_categories": [
+        "spring-core",
+        "java-core",
+        "project-system-design",
+        "jvm-classloading",
+        "jvm-memory-gc"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "Spring",
+        "AOP",
+        "Java",
+        "注解",
+        "方案",
+        "字节码",
+        "栈"
+      ],
+      "summary": "首先说下他们之间的关系：当在Spring中要使用@Aspect、@Before.等这些注解的时候， 就需要添加AspectJ相关依赖   org.aspectj   aspectjweaver",
+      "excerpt": "首先说下他们之间的关系： 当在Spring中要使用@Aspect、@Before.等这些注解的时候， 就需要添加AspectJ相关依赖 Spring Aop主要用到了AspectJ的@PointCut 切点解析能力和切点匹配能力。 @Aspect、@Before.等这些注解都是由AspectJ 发明的， AspectJ 能干很多 Spring AOP 干不了的事情，它是 AOP 编程的完全解决方案 。Spring AOP 致力于解决的是企业级开发中最普遍的 AOP 需求（方法增强），而不是力求成为一个像 AspectJ 一样的 AOP 编程完全解决方案。 ​ 区别： （1） AspectJ 主要通过在编译阶段生成代理类，也称为编译时增强，他会在编译阶段将AspectJ(切面)织入到Java字节码中，运行的时候就是增强之后的对象，通过这种方式实现AOP。 SpringAOP并没有使用 AspectJ的 织入 Java字节 功能来增强对象。 而是 使用的 动态代理 来增强对象 。默认地， 如果使用接口的，用 JDK 提供的动态代理实现 ，如果 没有接口，使用 CGLIB 实现 。 Spring AOP 在容器启动的时候需要生成代理实例，在方法调用上也会增加栈的深度，使得 Spring AOP 的性能不如 AspectJ 那么好。"
+    },
+    {
+      "slug": "hthr1488kgh8xhgz",
+      "title": "Spring AOP 与 AspectJ 的区别",
+      "url": "/tulingzhouyu/db22bv/hthr1488kgh8xhgz",
+      "toc_path": [
+        "Spring",
+        "基础篇",
+        "Spring AOP and AspectJ AOP 有什么区别？",
+        "Spring AOP 与 AspectJ 的区别"
+      ],
+      "toc_level": 3,
+      "toc_index": 447,
+      "word_count": 923,
+      "updated_at": "2025-04-14T12:30:26.000Z",
+      "primary_category": "spring-core",
+      "primary_category_name": "Spring核心",
+      "related_categories": [
+        "spring-core",
+        "java-core",
+        "jvm-classloading",
+        "performance-optimization",
+        "jvm-memory-gc"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "Spring",
+        "AOP",
+        "注解",
+        "异常",
+        "字节码",
+        "性能",
+        "JVM"
+      ],
+      "summary": "Spring AOP的实现原理Spring AOP 基于代理模式实现，主要采用两种代理方式（Spring 框架采用了 AspectJ 的注解风格，但底层实现仍保持了 Spring AOP 自身的代理机制）： 1. 代理机制JDK动态代理：当目标类实现了接口时使用，基于java.lang.ref...",
+      "excerpt": "Spring AOP的实现原理 Spring AOP 基于 代理模式 实现，主要采用两种代理方式（Spring 框架采用了 AspectJ 的注解风格，但底层实现仍保持了 Spring AOP 自身的代理机制）： 1. 代理机制 JDK动态代理 ：当目标类实现了接口时使用，基于 java.lang.reflect.Proxy CGLIB代理 ：当目标类没有实现接口时使用，通过继承目标类生成子类 2. 运行时织入流程 3. 核心类 ProxyFactory ：代理工厂，负责创建AOP代理 AopProxy ：代理接口，有JDK和CGLIB两种实现 DefaultAopProxyFactory ：根据条件选择代理实现 ReflectiveMethodInvocation ：方法调用链的实现 4. 代理调用过程 客户端调用代理对象的方法 代理对象将调用委托给拦截器链 拦截器链按顺序执行所有通知 最终调用目标对象的方法 AspectJ的实现原理 AspectJ是完整的AOP解决方案，基于 字节码修改 技术实现： 1. 织入方式 编译时织入 ：使用ajc编译器在编译源码时织入 后编译织入 ：对已编译的.class文件进行转换 加载时织入(LTW) ：在JVM加载类时动态修改字节码 2. 实现技术 使用专门的AspectJ编译器(ajc) 直接修改字节码，将切面逻辑编织到目标类中 不依赖运行时的代理机制 3. 织入示例 Spring AOP与AspectJ对比 特性 Spring AOP AspectJ 实现方式 动态代理（运行时） 字节码修改（编译时/加载时） 织入时机 运行时 编译时、后编译时、加载时 性能 相对较低（有代理开销） 较高（无代理，直接修改字节码） 功能范围 仅支持方法级别切点 全面支持（方法、字段、构造函数等） 连接点类型 仅方法执行 方法调用、字段访问、异常处理等多种 代理限制 需创建代理对象，有self-invocation问题 无代理限制，无self-invocation问题 与Spring集成 原生集成，配置简单 需额外配置，但Spring提供了集成支持 使用复杂度 简单易用 功能强大但学习曲线陡峭 Spring中使用AspectJ语法 Spring提供了对AspectJ注解风格的支持，但底层仍使用Spring AOP机制： 选择建议 选择Spring AOP ： 当仅需要简单的方法拦截 需要与Spring无缝集成 对性能要求不是极端苛刻 选择AspectJ ： 需要字段级别或构造函数级别的切点 需要拦截不由Spring管理的对象 有self-invocation（目标对象内部方法调用）需求 对性能有极高要求 Spring AOP满足了大多数企业应用的AOP需求，而AspectJ则提供了更强大但复杂度更高的AOP能力。两者各有优势，可根据实际"
+    },
+    {
+      "slug": "xfezqv82xny1nep5",
+      "title": "Spring-AOP通知和执行顺序？",
+      "url": "/tulingzhouyu/db22bv/xfezqv82xny1nep5",
+      "toc_path": [
+        "Spring",
+        "基础篇",
+        "Spring-AOP通知和执行顺序？"
+      ],
+      "toc_level": 2,
+      "toc_index": 448,
+      "word_count": 232,
+      "updated_at": "2023-09-17T07:12:19.000Z",
+      "primary_category": "spring-core",
+      "primary_category_name": "Spring核心",
+      "related_categories": [
+        "spring-core",
+        "java-core"
+      ],
+      "question_type": "other",
+      "question_type_name": "其他问题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "Spring",
+        "AOP",
+        "异常"
+      ],
+      "summary": "Spring切面可以应用5种类型的通知：前置通知：在目标方法被调用之前调用通知功能；后置通知：在目标方法完成之后调用通知，此时不会关心方法的输出是什么；返回通知：在目标方法成功执行之后调用通知；异常通知：在目标方法抛出异常后调用通知；环绕通知：通知包裹了被通知的方法，在被通知的方法调用之前和调...",
+      "excerpt": "Spring切面可以应用5种类型的通知： 前置通知：在目标方法被调用之前调用通知功能； 后置通知：在目标方法完成之后调用通知，此时不会关心方法的输出是什么； 返回通知：在目标方法成功执行之后调用通知； 异常通知：在目标方法抛出异常后调用通知； 环绕通知：通知包裹了被通知的方法，在被通知的方法调用之前和调用之后执行自定义的行为。 执行顺序： Spring在5.2.7之前的执行顺序是： Spring在5.2.7之后就改变的通知的执行顺序改为： 1、正常执行：前置--->方法---->返回--->后置 2、异常执行：前置--->方法---->异常--->后置 ​ ​"
+    },
+    {
+      "slug": "gk3euld7vtuy172e",
+      "title": "Spring框架中的单例bean是线程安全的吗",
+      "url": "/tulingzhouyu/db22bv/gk3euld7vtuy172e",
+      "toc_path": [
+        "Spring",
+        "基础篇",
+        "Spring框架中的单例bean是线程安全的吗"
+      ],
+      "toc_level": 2,
+      "toc_index": 449,
+      "word_count": 357,
+      "updated_at": "2023-09-06T08:05:13.000Z",
+      "primary_category": "spring-core",
+      "primary_category_name": "Spring核心",
+      "related_categories": [
+        "spring-core",
+        "java-concurrency",
+        "os-linux",
+        "security-auth",
+        "performance-optimization"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "Spring",
+        "Bean",
+        "多线程",
+        "线程",
+        "synchronized",
+        "ThreadLocal",
+        "文件",
+        "安全"
+      ],
+      "summary": "在Spring框架中, 由于单例Bean在整个Spring上下文只有一个实例，因此在多线程环境下访问该实例时，需要确保Bean的状态是线程安全的。如果单例Bean的状态是可变的，并且多个线程同时修改该状态，可能会导致线程安全问题。为了确保单例Bean的线程安全性，可以采取以下几种方式：避免在单...",
+      "excerpt": "在Spring框架中, 由于单例Bean在整个Spring上下文只有一个实例，因此在多线程环境下访问该实例时，需要确保Bean的状态是线程安全的。如果单例Bean的状态是可变的，并且多个线程同时修改该状态， 可能会导致线程安全问题 。 为了确保单例Bean的线程安全性，可以采取以下几种方式： 避免在单例Bean中使用可变的实例变量，或者确保对这些变量的访问是线程安全的，例如使用同步机制（如synchronized关键字）或使用线程安全的数据结构。 尽量避免在单例Bean中使用共享的外部资源，如数据库连接、文件等。如果必须使用共享资源，需要确保对这些资源的访问是线程安全的（如使用ThreadLocal等）来保证线程安全。 使用无状态的单例Bean。无状态的单例Bean不包含任何实例变量，只包含方法和局部变量，因此不会有线程安全问题。 采用多例Bean。将bean的作用域改为&quot;property&quot;即每次使用创建一个新的实例，这样可以有效避免单例共享造成线程不安全。"
+    },
+    {
+      "slug": "raaan4q8yg1zulg3",
+      "title": "谈谈你对Spring的理解",
+      "url": "/tulingzhouyu/db22bv/raaan4q8yg1zulg3",
+      "toc_path": [
+        "Spring",
+        "基础篇",
+        "谈谈你对Spring的理解"
+      ],
+      "toc_level": 2,
+      "toc_index": 450,
+      "word_count": 388,
+      "updated_at": "2023-09-06T06:36:04.000Z",
+      "primary_category": "spring-core",
+      "primary_category_name": "Spring核心",
+      "related_categories": [
+        "spring-core",
+        "java-core",
+        "mysql-index-transaction",
+        "docker-k8s",
+        "observability-troubleshooting"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "campus",
+        "middle"
+      ],
+      "level_names": [
+        "校招/应届生",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "Spring",
+        "IOC",
+        "AOP",
+        "Bean",
+        "IO",
+        "事务",
+        "容器",
+        "监控",
+        "日志"
+      ],
+      "summary": "可以从2个层面理解Spring:首先Spring是一个生态：可以构建企业级应用程序所需的一切基础设施 但是，通常Spring指的就是Spring Framework，它有两大核心：IOC 和 DI 的支持Spring 的核心就是一个大的工厂容器，可以维护所有对象的创建和依赖关系，Spring ...",
+      "excerpt": "可以从2个层面理解Spring: 首先Spring是一个生态 ：可以构建 企业级应用程序 所需的一切基础设施 但是，通常Spring指的就是Spring Framework，它有两大核心： IOC 和 DI 的支持 Spring 的核心就是一个大的工厂容器，可以维护所有对象的创建和依赖关系，Spring 工厂用于生成 Bean，并且管理 Bean 的生命周期，实现 高内聚低耦合 的设计理念。 AOP 编程的支持 Spring 提供了 面向切面编程 ， 面向切面编程允许我们将横切关注点从核心业务逻辑中分离出来，实现代码的模块化和重用。 可以方便的实现对程序进行权限拦截、运行监控、日志记录等切面功能。 ​ 除了这两大核心还提供了丰富的功能和模块， 数据访问、事务管理、Web开发等。数据访问模块提供了对数据库的访问支持，可以方便地进行数据库操作。事务管理模块提供了对事务的管理支持，确保数据的一致性和完整性。Web开发模块则提供了构建Web应用程序的工具和框架，简化了Web开发的过程。 ​ 总结一句话： 它是一个轻量级、非入侵式的控制反转 (IoC) 和面向切面 (AOP) 的容器框架。"
+    },
+    {
+      "slug": "ic8cnkvyxm4wpza0",
+      "title": "Spring有哪些缺点",
+      "url": "/tulingzhouyu/db22bv/ic8cnkvyxm4wpza0",
+      "toc_path": [
+        "Spring",
+        "基础篇",
+        "Spring有哪些缺点"
+      ],
+      "toc_level": 2,
+      "toc_index": 451,
+      "word_count": 500,
+      "updated_at": "2023-09-06T06:53:43.000Z",
+      "primary_category": "spring-core",
+      "primary_category_name": "Spring核心",
+      "related_categories": [
+        "spring-core",
+        "java-core",
+        "spring-boot",
+        "performance-optimization",
+        "resume-project"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "Spring",
+        "Java",
+        "注解",
+        "SpringBoot",
+        "性能",
+        "项目"
+      ],
+      "summary": "当然，Spring作为一个广泛使用的Java开发框架，也有一些缺点。以下是一些常见的Spring框架的缺点：学习曲线较陡峭：Spring框架是一个功能强大且灵活的框架，但也因此学习曲线较陡峭。对于初学者来说，可能需要花费一些时间来理解和掌握Spring的核心概念和特性。配置复杂：Spring框...",
+      "excerpt": "当然，Spring作为一个广泛使用的Java开发框架，也有一些缺点。以下是一些常见的Spring框架的缺点： 学习曲线较陡峭：Spring框架是一个功能强大且灵活的框架，但也因此学习曲线较陡峭。对于初学者来说，可能需要花费一些时间来理解和掌握Spring的核心概念和特性。 配置复杂：Spring框架的配置通常使用XML或注解进行，这种配置方式可能会导致配置文件变得复杂和冗长。特别是在大型项目中，配置文件的维护和管理可能会变得困难,当然这个问题在SpringBoot中得到解决。 运行时性能：由于Spring框架提供了很多功能和特性，它的运行时性能可能相对较低。尤其是在需要频繁创建和管理对象的场景下，可能会对系统的性能产生一定的影响。 过度依赖：在使用Spring框架时，可能会出现过度依赖的情况。由于Spring提供了很多功能和模块，开发人员可能会过度依赖Spring框架，导致项目的可移植性和可维护性下降。 文档和社区支持：尽管Spring框架有很多优秀的文档和活跃的社区支持，但有时候可能会遇到文档不完善或社区资源有限的情况。这可能会给开发人员带来一些困扰。 需要注意的是， 这些缺点并不意味着Spring框架不好 ，而是在使用过程中需要注意和克服的问题。同时， Spring框架的优点和功能远远超过了它的缺点 ，因此它仍然是一个非常受欢迎和广泛使用的框架。"
+    },
+    {
+      "slug": "gl8aguqidlwwv9nr",
+      "title": "AutoWired 与 Resource 区别",
+      "url": "/tulingzhouyu/db22bv/gl8aguqidlwwv9nr",
+      "toc_path": [
+        "Spring",
+        "基础篇",
+        "AutoWired 与 Resource 区别"
+      ],
+      "toc_level": 2,
+      "toc_index": 452,
+      "word_count": 448,
+      "updated_at": "2024-06-21T12:05:11.000Z",
+      "primary_category": "spring-core",
+      "primary_category_name": "Spring核心",
+      "related_categories": [
+        "spring-core",
+        "java-core",
+        "algorithm",
+        "docker-k8s"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "Spring",
+        "IOC",
+        "Bean",
+        "注解",
+        "异常",
+        "IO",
+        "查找",
+        "容器"
+      ],
+      "summary": "今天给大家分享一道非常经典的面试题，同时也是一道高频面试题：Resource和AutoWired注解有什么不同？首先，先了解一下AutoWired注解。AutoWired是Spring框架提供的一个注解，它默认根据类型来实现Bean的依赖注入。在这个注解中，有一个required属性，默认值为...",
+      "excerpt": "今天给大家分享一道非常经典的面试题，同时也是一道高频面试题：Resource和AutoWired注解有什么不同？ 首先，先了解一下 AutoWired注解 。 AutoWired是 Spring框架 提供的一个注解，它 默认 根据类型来实现Bean的依赖注入 。 在这个注解中，有一个required属性，默认值为true，表示 必须实例化一个注入的Bean 。 如果找不到 对应类型的Bean， 会在应用启动时报错 。 不过，如果我们不希望实现自动注入，可以将这个属性设置为false。 此外，如果在Spring IOC 容器中存在多个相同类型的Bean实例 ， AutoWired 会 先按照byType查找 ，然后 再按照byName查找 ，如果都找不到就会提示异常。 针对这种情况，我们可以使用primary或者Qualifier这两个注解来解决。 primary 表示优先级，当存在多个相同类型的Bean时，优先使用声明了primary注解的Bean。 而Qualifier注解则类似于条件筛选，根据指定的Bean名称找目标Bean。 接下来，再来看看 Resource注解 。 Resource是JDK提供的注解，Spring在实现上提供了对这种注解功能的支持，它的使用方式与AutoWired完全相同。 最大的区别在于，Resource 默认 先按照byName查找Bean ，然后 再按照byType查找Bean ，同时也支持指定由哪种方式查找Bean。 当指定为byName时，Spring会根据Bean的名称进行依赖注入； 指定为byType时，Spring会根据类型来实现依赖注入。"
+    },
+    {
+      "slug": "ys4ul3b33vkyl82e",
+      "title": "Spring是如何解决Bean的循环依赖？",
+      "url": "/tulingzhouyu/db22bv/ys4ul3b33vkyl82e",
+      "toc_path": [
+        "Spring",
+        "高级篇",
+        "Spring是如何解决Bean的循环依赖？"
+      ],
+      "toc_level": 2,
+      "toc_index": 455,
+      "word_count": 5210,
+      "updated_at": "2025-04-28T06:46:36.000Z",
+      "primary_category": "spring-core",
+      "primary_category_name": "Spring核心",
+      "related_categories": [
+        "spring-core",
+        "docker-k8s",
+        "redis-cache",
+        "mybatis",
+        "spring-boot"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "middle",
+        "campus",
+        "senior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "校招/应届生",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "Spring",
+        "AOP",
+        "Bean",
+        "循环依赖",
+        "事务传播",
+        "Bean生命周期",
+        "Service",
+        "缓存",
+        "一级缓存",
+        "二级缓存",
+        "Spring Boot",
+        "SpringBoot"
+      ],
+      "summary": "引入：循环依赖的场景假设有两个Bean A 和 B，彼此依赖：A 依赖 B（通过@Autowired注入）B 依赖 A（通过@Autowired注入）此时，Spring在创建Bean时会陷入“鸡生蛋、蛋生鸡”的问题。传统单线程构造方法无法解决此问题，但Spring通过 三级缓存 机制打破僵局。...",
+      "excerpt": "引入： 循环依赖的场景 假设有两个Bean A 和 B ，彼此依赖： A 依赖 B （通过 @Autowired 注入） B 依赖 A （通过 @Autowired 注入） 此时，Spring在创建Bean时会陷入“鸡生蛋、蛋生鸡”的问题。传统单线程构造方法无法解决此问题，但Spring通过 三级缓存 机制打破僵局。当然处理此相互依赖你还能想到另外两种循环依赖的情况吗？（自，三） 简答 Spring是如何解决的循环依赖： 采用三级缓存解决的 就是三个Map ； 关键： 一定要有一个缓存保存它的早期对象作为死循环的出口 1、一级缓存 singletonObjects 存 完整 单例bean。 2、二级缓存 earlySingletonObjects 存放的是早期的bean，即 半成品 ，此时还无法使用（只用于循环依赖提供的临时bean对象）。 3、三级缓存 singletonFactories (循环依赖的出口，解决了循环依赖)。它存的 是一个 对象工厂 ，用于创建对象并放入二级缓存中。同时，如果对象有Aop代理，则对象工厂返回代理对象。 配合Bean生命周期图答： 面试官还可能问： 二级缓存能不能解决循环依赖？为何需要三级缓存？ 如果只是循环依赖导致的死循环的问题： 一级缓存就可以解决 ，但是无法解决在并发下获取不完整的Bean。 二级可以完全解决简单的属性注入（如通过 setter 方法注入）循环依赖： 只是需要在实例化后就创建动态代理， 导致逻辑复杂且性能下降， 不符合spring生命周期规范。 但是，如果 A 在依赖注入后需要调用 B 的某个方法，而这个方法依赖于 B 的初始化操作（例如在 afterPropertiesSet 方法中初始化的属性），此时使用二级缓存中的 B 实例就会因为 B 尚未完全初始化而导致错误。 故而需要三级缓存+工厂：通过 延迟代理对象的生成，提前暴露引用只有在真正发生循环依赖时才创建代理，避免不必要的代理生成 当存在多个循环依赖关系交叉的情况时，二级缓存可能无法准确地提供正确的 Bean 实例。如A依赖B，B依赖C，C依赖A 示例1：需要依赖初始化后方法调用时 在这个例子中， ServiceA 依赖于 ServiceB ，并通过 afterPropertiesSet 方法调用 ServiceB 的 doSomething 方法。而 ServiceB 也依赖于 ServiceA 。如果没有三级缓存，在创建 ServiceA 时，依赖注入的 ServiceB 可能还未完全初始化，从而导致错误。三级缓存确保了 ServiceB 在初始化完成后， ServiceA 可以获取到一个已经初始化完成的 ServiceB 实例。 示例2：多个循环依赖关系交叉 依赖关系 ：在这个例子中， ServiceA 依赖于 ServiceB ， Ser"
+    },
+    {
+      "slug": "zimkfnsvx3m5ogo1",
+      "title": "谈谈对Spring事务和AOP底层实现原理的区别",
+      "url": "/tulingzhouyu/db22bv/zimkfnsvx3m5ogo1",
+      "toc_path": [
+        "Spring",
+        "高级篇",
+        "谈谈对Spring事务和AOP底层实现原理的区别"
+      ],
+      "toc_level": 2,
+      "toc_index": 457,
+      "word_count": 305,
+      "updated_at": "2024-06-27T14:52:56.000Z",
+      "primary_category": "spring-core",
+      "primary_category_name": "Spring核心",
+      "related_categories": [
+        "spring-core",
+        "mysql-index-transaction",
+        "java-core",
+        "devops-release"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "middle",
+        "senior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "Spring",
+        "AOP",
+        "事务",
+        "注解",
+        "异常",
+        "回滚"
+      ],
+      "summary": "Spring的声明式事务其实也是通过AOP的这一套底层实现原理实现的，都是通过同一个bean的后置处理器来完成的动态代理创建只是： 创建动态代理的匹配方式不一样: 区别就是AOP的增强通常是通过切面+切点+通知来完成的， 在创建bean的时候发现bean和切点表达式匹配就会创建动态代理。   ...",
+      "excerpt": "Spring的声明式事务其实也是通过AOP的这一套底层实现原理实现的，都是通过同一个bean的后置处理器来完成的动态代理创建只是： 创建动态代理的匹配方式不一样: 区别就是AOP的增强通常是通过切面+切点+通知来完成的， 在创建bean的时候发现bean和切点表达式匹配就会创建动态代理。 而事务内置一个增强类， 在创建bean的时候， 一旦发现你的类加了@Transactional注解 就会创建动态代理。 ​ 执行动态代理的增强不一样： 在执行AOP的bean时会先执行动态代理的增强类， 通过责任链分别按顺序执行通知。 ​ 在执行事务的bean的时候会先执行动态代理的增强类， 在执行目标方法前进行异常捕捉，出现异常回滚事务， 无异常提交事务。 行我就给大家总结这些， 当然还是不建议死记硬背，最好能学下spring源码，有兴趣私信我。"
+    },
+    {
+      "slug": "ls1c6qxmrgedfwvf",
+      "title": "SpringMVC的拦截器和过滤器有什么区别？执行顺序？",
+      "url": "/tulingzhouyu/db22bv/ls1c6qxmrgedfwvf",
+      "toc_path": [
+        "Spring",
+        "高级篇",
+        "SpringMVC的拦截器和过滤器有什么区别？执行顺序？"
+      ],
+      "toc_level": 2,
+      "toc_index": 458,
+      "word_count": 475,
+      "updated_at": "2024-03-08T02:40:53.000Z",
+      "primary_category": "spring-core",
+      "primary_category_name": "Spring核心",
+      "related_categories": [
+        "spring-core",
+        "computer-network",
+        "netty-network",
+        "os-linux",
+        "security-auth"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "Spring",
+        "文件",
+        "安全",
+        "权限"
+      ],
+      "summary": "拦截器和过滤器在Web应用中都扮演着请求和响应处理的角色，但它们之间存在一些关键区别。首先，归属不同。拦截器是SpringMVC框架的一部分，而过滤器是Servlet规范的一部分。拦截器主要用于对控制器层的请求进行处理，它们提供了更细粒度的控制，可以在请求进入控制器之前和之后执行特定的逻辑，例...",
+      "excerpt": "拦截器和过滤器在Web应用中都扮演着请求和响应处理的角色，但它们之间存在一些关键区别。 首先 ， 归属不同 。 拦截器是SpringMVC框架的一部分 ， 而过滤器是Servlet规范的一部分 。拦截器主要用于对控制器层的请求进行处理，它们提供了更细粒度的控制，可以在请求进入控制器之前和之后执行特定的逻辑，例如身份验证、日志记录和权限检查。过滤器独立于SpringMVC，用于处理通用的请求和响应内容，例如字符编码、压缩和安全性。 其次 ， 执行顺序也不同 。拦截器的执行顺序由配置文件中的顺序决定，可以有多个拦截器，它们按照配置的顺序依次执行。而过滤器的执行顺序由 web.xml 文件中的配置顺序决定，同样可以有多个过滤器，按照配置的顺序执行。一般来说，首先执行过滤器，然后再执行拦截器。 最后 ， 用途不同 。拦截器用于对SpringMVC的请求和响应进行特定的业务处理，通常与控制器层的请求处理有关。过滤器用于对所有Servlet请求和响应进行通用性的处理，通常关注请求和响应内容，而不涉及具体的业务逻辑。 总的来说，了解拦截器和过滤器之间的这些区别非常重要。在面试中，这种理解将有助于说明您在Web应用程序中如何处理请求和响应以及如何利用SpringMVC和Servlet规范的不同功能。 ​ ​ 视频： https://www.bilibili.com/video/BV1mf4y1c7cV?p=72&vd_source=fa810d8b8d6765676cb343ada918d6eb"
+    },
+    {
+      "slug": "wypw6aid1tf8l9x1",
+      "title": "短视频",
+      "url": "/tulingzhouyu/db22bv/wypw6aid1tf8l9x1",
+      "toc_path": [
+        "Spring",
+        "高级篇",
+        "SpringMVC的拦截器和过滤器有什么区别？执行顺序？",
+        "短视频"
+      ],
+      "toc_level": 3,
+      "toc_index": 459,
+      "word_count": 678,
+      "updated_at": "2024-05-10T07:10:37.000Z",
+      "primary_category": "spring-core",
+      "primary_category_name": "Spring核心",
+      "related_categories": [
+        "spring-core",
+        "observability-troubleshooting",
+        "java-core",
+        "performance-optimization",
+        "security-auth"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "campus",
+        "senior"
+      ],
+      "level_names": [
+        "校招/应届生",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "Spring",
+        "监控",
+        "日志",
+        "链路",
+        "注解",
+        "性能",
+        "认证"
+      ],
+      "summary": "过滤器和拦截器的区别是什么,一个工作了三年的程序员 居然不知道，还跟我说为什么找工作这么难..结果一问都是些很简单的问题. 那我有整理一份80万字的八股文资料，里面基本都涵盖他遇到的这些面试题，需要的小伙伴可以再评论区扣666。我来给大家说下过滤器和拦截器的区别 首先过滤器和拦截器都可以在请求...",
+      "excerpt": "过滤器和拦截器的区别是什么,一个工作了三年的程序员 居然不知道，还跟我说为什么找工作这么难..结果一问都是些很简单的问题. 那我有整理一份80万字的八股文资料，里面基本都涵盖他遇到的这些面试题，需要的小伙伴可以再评论区扣666。 ​ 我来给大家说下 过滤器和拦截器的区别 首先过滤器和拦截器都可以在请求过程中插入一手，也可以拦腰截断。 ​ 他们的执行过程是这样的： 当一个请求进来！会先交给Web服务器提供的 过滤器， 再来到 Servlet ，那 这个时候呢.. 有一个叫 DispatcherServlet 的 Servlet 就会执行！在 DispatcherServlet 中就会调用我们的 拦截器 ，再由 DispatcherServlet 分发给对应的 Controller 处理我们的请求。 请求处理完之后呢..从调用的链路原路返回，再回到 拦截器， 然后再回到 过滤器 ，最终响应给客户端！ ​ 所以他们的区别就是： 过滤器，它先执行 ， 它是Servlet规范的一部分， 更接近于底层，它会在Servlet 请求之前和响应之后 进行处理。 ​ 拦截器，它后执行， 它是SpringMVC的一部分， 更接近业务层 , 会在Controller 请求之前和处理完毕之后进行处理。 其次呢 ，他们的 使用方式也不同 过滤器，需要依赖 Servlet 容器提供的 Filter接口 ，多个过滤器根据配置顺序决定他们的执行顺序。 而 拦截器，需要依赖SpringMVC提供的 HandlerInterceptor 接口，多个拦截器的执行顺序由bean的配置顺序决定，可以通过Order注解来改变执行顺序。 ​ 最后 ，他们的 用途不同 。 拦截器通常用来实现一跟业务相关不是必须的工作 像 身份认证与授权，接口的性能监控，跨域处理，日志记录 等 。 而过滤器通常实现那些必要的基础设施工作 ， 像 编码处理、视图响应、请求参数处理和URL重定向 等。 ​ 所以！我们平常面向业务开发基本用不到过滤器， 用拦截器基本就已经满足我们的基本需求，而且拦截器天然集成spring，可以直接把bean自动装配进行，可以非常方便的执行业务处理。 ​ ​"
+    },
+    {
+      "slug": "vmo9gda5x6y3o7sg",
+      "title": "Spring和SpringMVC为什么需要父子容器？",
+      "url": "/tulingzhouyu/db22bv/vmo9gda5x6y3o7sg",
+      "toc_path": [
+        "Spring",
+        "高级篇",
+        "Spring和SpringMVC为什么需要父子容器？"
+      ],
+      "toc_level": 2,
+      "toc_index": 460,
+      "word_count": 554,
+      "updated_at": "2023-09-07T09:08:58.000Z",
+      "primary_category": "spring-core",
+      "primary_category_name": "Spring核心",
+      "related_categories": [
+        "spring-core",
+        "docker-k8s",
+        "spring-boot",
+        "jvm-memory-gc",
+        "performance-optimization"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "expert"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "专家/P7+"
+      ],
+      "keywords": [
+        "Spring",
+        "Bean",
+        "容器",
+        "Service",
+        "Spring Boot",
+        "栈",
+        "性能"
+      ],
+      "summary": "首先，它们帮助划分功能边界，使得大型应用程序更易于管理。通过将不同模块或层次的组件分别放置在父子容器中，我们能够清晰地定义每个容器的职责，从而提高了代码的可维护性和可扩展性。其次，父子容器在规范整体架构方面起到了关键作用。例如，我们可以将业务逻辑层（Service）和数据访问层（DAO）交给S...",
+      "excerpt": "首先，它们帮助划分功能边界，使得大型应用程序更易于管理。通过将不同模块或层次的组件分别放置在父子容器中，我们能够清晰地定义每个容器的职责，从而提高了代码的可维护性和可扩展性。 其次，父子容器在规范整体架构方面起到了关键作用。例如，我们可以将业务逻辑层（Service）和数据访问层（DAO）交给Spring管理，而将控制器层（Controller）交给SpringMVC管理。这种规范化有助于提高代码的可读性，并使团队协作更加顺畅。 此外，父子容器还能限制组件之间的依赖关系，确保模块之间的隔离。子容器可以访问父容器中的组件，但反之则不成立。这有助于减少意外的依赖和提高代码的稳定性。 另一个优势是方便切换子容器。如果我们需要更改子容器，例如从Spring MVC切换到Struts，只需更改子容器的配置而无需更改父容器。这提供了更好的可维护性和扩展性，使得应用程序更容易适应不同的技术栈或框架。 最后，父子容器的使用还有助于节省资源。父容器中的Bean可以在整个应用程序范围内共享，而不必每次创建。这对于大型应用程序来说尤为重要，可以降低内存和性能开销。 综上所述，父子容器在Spring框架中的应用不仅有助于功能性划分，还有助于架构的规范化、模块化、松耦合和可维护性。虽然一些现代框架如Spring Boot可能减少了对父子容器的需求，但在大型和复杂的应用程序中，父子容器仍然是一种有用的设计模式，有助于管理和组织应用程序的各个部分。"
+    },
+    {
+      "slug": "yc279v327deg3wvi",
+      "title": "Spring 框架中都用到了哪些设计模式？",
+      "url": "/tulingzhouyu/db22bv/yc279v327deg3wvi",
+      "toc_path": [
+        "Spring",
+        "高级篇",
+        "Spring 框架中都用到了哪些设计模式？"
+      ],
+      "toc_level": 2,
+      "toc_index": 461,
+      "word_count": 618,
+      "updated_at": "2023-09-07T09:06:24.000Z",
+      "primary_category": "spring-core",
+      "primary_category_name": "Spring核心",
+      "related_categories": [
+        "spring-core",
+        "java-core",
+        "performance-optimization",
+        "docker-k8s"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "Spring",
+        "AOP",
+        "Bean",
+        "注解",
+        "性能",
+        "容器"
+      ],
+      "summary": "简单工厂：BeanFactory：Spring的BeanFactory充当工厂，负责根据配置信息创建Bean实例。它是一种工厂模式的应用，根据指定的类名或ID创建Bean对象。工厂方法：FactoryBean：FactoryBean接口允许用户自定义Bean的创建逻辑，实现了工厂方法模式。开发...",
+      "excerpt": "简单工厂： BeanFactory ：Spring的 BeanFactory 充当工厂，负责根据配置信息创建Bean实例。它是一种工厂模式的应用，根据指定的类名或ID创建Bean对象。 工厂方法： FactoryBean ： FactoryBean 接口允许用户自定义Bean的创建逻辑，实现了工厂方法模式。开发人员可以使用 FactoryBean 来创建复杂的Bean实例。 单例模式： Bean实例 ：Spring默认将Bean配置为单例，确保在容器中只有一个共享的实例，这有助于节省资源和提高性能。 适配器模式： SpringMVC中的HandlerAdapter ：SpringMVC的 HandlerAdapter 允许不同类型的处理器适配到处理器接口，以实现统一的处理器调用。这是适配器模式的应用。 装饰器模式： BeanWrapper ：Spring的 BeanWrapper 允许在不修改原始Bean类的情况下添加额外的功能，这是装饰器模式的实际应用。 代理模式： AOP底层 ：Spring的AOP（面向切面编程）底层通过代理模式来实现切面功能，包括JDK动态代理和CGLIB代理。 观察者模式： Spring的事件监听 ：Spring的事件监听机制是观察者模式的应用，它允许组件监听和响应特定类型的事件，实现了松耦合的组件通信。 策略模式： excludeFilters、includeFilters ：Spring允许使用策略模式来定义包扫描时的过滤策略，如在 @ComponentScan 注解中使用的 excludeFilters 和 includeFilters 。 模板方法模式： Spring几乎所有的外接扩展 ：Spring框架的许多模块和外部扩展都采用模板方法模式，例如JdbcTemplate、HibernateTemplate等。 责任链模式： AOP的方法调用 ：Spring AOP通过责任链模式实现通知（Advice）的调用，确保通知按顺序执行。 Spring框架的设计哲学是通过这些设计模式来提供强大的功能和可定制性。它的模块化、松耦合的设计使得开发人员能够更轻松地构建可维护、可扩展和灵活的应用程序。这些设计模式的应用有助于实现代码重用、降低开发成本，是Spring框架广受欢迎的原因之一。"
+    },
+    {
+      "slug": "nndyrigcp2ogrgf6",
+      "title": "Spring事件监听的核心机制是什么？",
+      "url": "/tulingzhouyu/db22bv/nndyrigcp2ogrgf6",
+      "toc_path": [
+        "Spring",
+        "高级篇",
+        "Spring事件监听的核心机制是什么？"
+      ],
+      "toc_level": 2,
+      "toc_index": 462,
+      "word_count": 334,
+      "updated_at": "2023-09-26T12:36:23.000Z",
+      "primary_category": "spring-core",
+      "primary_category_name": "Spring核心",
+      "related_categories": [
+        "spring-core",
+        "java-core",
+        "devops-release",
+        "java-concurrency"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "Spring",
+        "Java",
+        "注解",
+        "发布",
+        "并发"
+      ],
+      "summary": "Spring事件监听的核心机制围绕观察者模式展开：观察者模式： 它允许一个对象（称为主题或被观察者）维护一组依赖于它的对象（称为观察者），并在主题状态发生变化时通知观察者。它包含三个核心：事件： 事件是观察者模式中的主题状态变化的具体表示，它封装了事件发生时的信息。在Spring中，事件通常是...",
+      "excerpt": "Spring事件监听的核心机制围绕观察者模式展开： 观察者模式： 它允许一个对象（称为主题或被观察者）维护一组依赖于它的对象（称为观察者），并在主题状态发生变化时通知观察者。 它 包含三个核心： 事件： 事件是观察者模式中的主题状态变化的具体表示，它封装了事件发生时的信息。在Spring中，事件通常是普通的Java对象，用于传递数据或上下文信息。 事件发布者： 在Spring中，事件发布者充当主题的角色，负责触发并发布事件。它通常实现了 ApplicationEventPublisher 接口或使用注解 @Autowired 来获得事件发布功能。 事件监听器： 事件监听器充当观察者的角色，负责监听并响应事件的发生。它实现了 ApplicationListener 接口，通过 onApplicationEvent() 方法来处理事件。 总之，Spring事件监听机制的核心机制是观察者模式，通过事件、事件发布者和事件监听器的协作，实现了松耦合的组件通信，使得应用程序更加灵活和可维护。"
+    },
+    {
+      "slug": "oq3yl04fehofd252",
+      "title": "Spring事务的失效原因？",
+      "url": "/tulingzhouyu/db22bv/oq3yl04fehofd252",
+      "toc_path": [
+        "Spring",
+        "高级篇",
+        "Spring事务的失效原因？"
+      ],
+      "toc_level": 2,
+      "toc_index": 463,
+      "word_count": 241,
+      "updated_at": "2024-11-28T06:19:03.000Z",
+      "primary_category": "spring-core",
+      "primary_category_name": "Spring核心",
+      "related_categories": [
+        "spring-core",
+        "java-core",
+        "mysql-index-transaction",
+        "distributed-transaction",
+        "java-concurrency"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "middle",
+        "senior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "Spring",
+        "Bean",
+        "事务传播",
+        "异常",
+        "事务",
+        "分布式事务",
+        "多线程",
+        "线程"
+      ],
+      "summary": "1. 配置不对：方法是private 也会失效，解决：改成public目标类没有配置为Bean也会失效 解决：配置为Bean自己捕获了异常 解决：不要捕获处理使用cglib动态代理，但是@Transactional声明在接口上面抛出了非RuntimeException异常 解决 ：通过roll...",
+      "excerpt": "配置不对： 方法是private 也会失效，解决：改成public 目标类没有配置为Bean也会失效 解决：配置为Bean 自己捕获了异常 解决：不要捕获处理 使用cglib动态代理，但是@Transactional声明在接口上面 抛出了非RuntimeException异常 解决 ：通过rollbackfor指定回滚的异常 不支持： 1. 内部方法调用导致事务传播失效. 解决方式：必须走 代理， 重新拿到代理对象再次执行方法才能进行增强 在本类中注入当前的bean 设置暴露当前代理对象到本地线程， 可以通过 AopContext.currentProxy() 拿到当前正在调用的动态代理对象 @EnableAspectJAutoProxy(exposeProxy = true) 2. 多线程事务. 解决方式： 通过编程式事务， 手动控制事务提交、回滚； 通过分布式事务思想：2PC\\3PC\\SAGA等等"
+    },
+    {
+      "slug": "ye11sbtyf4e0o3gx",
+      "title": "什么情况下AOP会失效,怎么解决？",
+      "url": "/tulingzhouyu/db22bv/ye11sbtyf4e0o3gx",
+      "toc_path": [
+        "Spring",
+        "高级篇",
+        "什么情况下AOP会失效,怎么解决？"
+      ],
+      "toc_level": 2,
+      "toc_index": 465,
+      "word_count": 344,
+      "updated_at": "2023-09-07T08:45:15.000Z",
+      "primary_category": "spring-core",
+      "primary_category_name": "Spring核心",
+      "related_categories": [
+        "spring-core",
+        "java-concurrency",
+        "os-linux"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "Spring",
+        "AOP",
+        "线程"
+      ],
+      "summary": "大部分失效是由于：内部方法调用： 如果在同一个类中的一个方法调用另一个方法，AOP通知可能不会触发，因为AOP通常是通过代理对象拦截外部方法调用的。解决方式是注入本类对象进行调用， 或者设置暴露当前代理对象到本地线程， 可以通过AopContext.currentProxy() 拿到当前正在调...",
+      "excerpt": "大部分失效是由于： 内部方法调用： 如果在同一个类中的一个方法调用另一个方法，AOP通知可能不会触发，因为AOP通常是通过代理对象拦截外部方法调用的。解决方式是注入本类对象进行调用， 或者 设置暴露当前代理对象到本地线程， 可以通过 AopContext.currentProxy() 拿到当前正在调用的动态代理对象。 静态方法： AOP通常无法拦截静态方法的调用，因为静态方法不是通过对象调用的。解决方法是将静态方法调用替换为实例方法调用，或者考虑其他技术来实现横切关注点。 AOP配置问题： 错误的AOP配置可能导致通知不正确地应用于目标方法，或者在不希望的情况下应用。解决方法是仔细检查AOP配置，确保切点表达式和通知类型正确配置。 代理问题： 如果代理对象不正确地创建或配置，AOP通知可能无法生效。解决方法是调试底层源码确保代理对象正确创建，并且AOP通知能够拦截代理对象的方法调用。"
+    },
+    {
+      "slug": "hqis2gtc02278paf",
+      "title": "介绍下SpringAop的底层实现",
+      "url": "/tulingzhouyu/db22bv/hqis2gtc02278paf",
+      "toc_path": [
+        "Spring",
+        "高级篇",
+        "介绍下SpringAop的底层实现"
+      ],
+      "toc_level": 2,
+      "toc_index": 467,
+      "word_count": 508,
+      "updated_at": "2023-09-07T08:15:57.000Z",
+      "primary_category": "spring-core",
+      "primary_category_name": "Spring核心",
+      "related_categories": [
+        "spring-core",
+        "java-core",
+        "resume-project"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "Spring",
+        "AOP",
+        "Bean",
+        "异常",
+        "包装"
+      ],
+      "summary": "Spring AOP是Spring框架的一个重要组成部分，用于实现面向切面编程。它通过在方法调用前、调用后或异常抛出时插入通知，允许开发者在核心业务逻辑之外执行横切关注点的代码。底层实现主要分两部分：创建AOP动态代理和调用代理在启动Spring会创建AOP动态代理：首先通过AspectJ解析...",
+      "excerpt": "Spring AOP是Spring框架的一个重要组成部分，用于实现面向切面编程。它通过在方法调用前、调用后或异常抛出时插入通知，允许开发者在核心业务逻辑之外执行横切关注点的代码。 底层实现主要分两部分： 创建AOP动态代理 和 调用代理 在启动Spring会 创建AOP动态代理 ： 首先通过AspectJ解析切点表达式： 在创建代理对象时，Spring AOP使用AspectJ来解析切点表达式。它会根据定义的条件匹配目标Bean的方法。如果Bean不符合切点的条件，将跳过，否则将会 通动态代理包装Bean对象： 具体会 根据目标对象是否实现接口来选择使用JDK动态代理或CGLIB代理。这使得AOP可以适用于各种类型的目标对象。 在调用阶段： Spring AOP使用责任链模式来管理通知的执行顺序。通知拦截链包括前置通知、后置通知、异常通知、最终通知和环绕通知，它们按照配置的顺序形成链式结构。 通知的有序执行： 责任链确保通知按照预期顺序执行。前置通知在目标方法执行前执行，后置通知在目标方法成功执行后执行，异常通知在方法抛出异常时执行，最终通知无论如何都会执行，而环绕通知包裹目标方法，允许在方法执行前后添加额外的行为。 综上所述，Spring AOP在创建启动阶段使用AspectJ解析切点表达式如果匹配使用动态代理，而在调用阶段使用责任链模式确保通知的有序执行。这些机制共同构成了Spring AOP的底层实现。"
+    },
+    {
+      "slug": "eg79g2gz7nl9ydbm",
+      "title": "Spring Bean分类",
+      "url": "/tulingzhouyu/db22bv/eg79g2gz7nl9ydbm",
+      "toc_path": [
+        "Spring",
+        "高级篇",
+        "Spring Bean分类"
+      ],
+      "toc_level": 2,
+      "toc_index": 468,
+      "word_count": 1666,
+      "updated_at": "2025-02-24T11:21:05.000Z",
+      "primary_category": "spring-core",
+      "primary_category_name": "Spring核心",
+      "related_categories": [
+        "spring-core",
+        "java-core",
+        "docker-k8s",
+        "netty-network",
+        "computer-network"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "middle",
+        "senior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "Spring",
+        "Bean",
+        "循环依赖",
+        "Java",
+        "注解",
+        "容器",
+        "Service",
+        "HTTP"
+      ],
+      "summary": "在Spring框架中，Bean是Spring容器管理的对象，它可以通过多种方式定义和配置。此问题可能换其他问法：比如你用过那些类型的Bean，你平时如何通过Spring创建Bean对象，单列Bean和原型Bean的区别等。首先这个问题，可以根据不同的分类方式来回答。根据Bean的作用域、定义方...",
+      "excerpt": "在Spring框架中，Bean是Spring容器管理的对象，它可以通过多种方式定义和配置。此问题可能换其他问法：比如你用过那些类型的Bean，你平时如何通过Spring创建Bean对象，单列Bean和原型Bean的区别等。 首先这个问题，可以根据不同的分类方式来回答。根据Bean的 作用域 、 定义方式 、 生命周期，功能，注入方式 特性，Spring中的Bean可以分为以下几种类型： 1. 按作用域分类 Spring中的Bean可以根据作用域（Scope）分为以下几种： （1）单例Bean（Singleton） 定义 ：这是Spring的默认作用域。在整个Spring容器中，单例Bean只有一个实例。 特点 ： 适合无状态的Bean（如工具类、服务类）。 性能较高，因为实例只创建一次。 Spring容器会管理其生命周期（创建、初始化、销毁）。 适用场景 ：大多数的业务逻辑类、工具类、服务类等。 配置方式 ： java 复制 或者通过XML配置： xml 复制 （2）原型Bean（Prototype） 定义 ：每次请求都会创建一个新的Bean实例。 特点 ： 每次调用都会返回一个全新的实例。 适合有状态的Bean（如用户会话相关的Bean）。 Spring容器只负责创建实例，不会管理其生命周期。 适用场景 ：需要独立状态的Bean，如用户会话管理、临时对象等。 配置方式 ： java 复制 或者通过XML配置： xml 复制 （3）会话Bean（Session） 定义 ：作用域与HTTP会话绑定。每个HTTP会话都有一个独立的Bean实例。 特点 ： 适用于Web应用中的用户会话相关数据。 实例的生命周期与会话绑定，会话结束时Bean销毁。 适用场景 ：用户会话管理、购物车等。 配置方式 ： java 复制 （4）请求Bean（Request） 定义 ：作用域与HTTP请求绑定。每个HTTP请求都有一个独立的Bean实例。 特点 ： 适用于每个请求都需要独立状态的场景。 请求结束时，Bean实例销毁。 适用场景 ：用户请求相关的数据处理。 配置方式 ： java 复制 （5）全局会话Bean（Global Session） 定义 ：作用域与Portlet应用的全局会话绑定。 特点 ： 主要用于Portlet应用。 与会话Bean类似，但作用范围更广。 适用场景 ：Portlet应用中的全局会话管理。 配置方式 ： java 复制 2. 按定义方式分类 Spring中的Bean可以通过以下几种方式定义： （1）基于注解的Bean @Component ：通用组件注解，自动检测并注册为Bean。 @Service ：用于服务层组件。 @Repository ：用于数据访问层组件。 @Controller ：用于Web控制器组件。 @Bean ：在配置类中显式定义"
+    },
+    {
+      "slug": "xp7igarg3iivvs54",
+      "title": "解释Spring中bean的生命周期",
+      "url": "/tulingzhouyu/db22bv/xp7igarg3iivvs54",
+      "toc_path": [
+        "Spring",
+        "高级篇",
+        "解释Spring中bean的生命周期"
+      ],
+      "toc_level": 2,
+      "toc_index": 469,
+      "word_count": 165,
+      "updated_at": "2023-09-06T13:39:04.000Z",
+      "primary_category": "spring-core",
+      "primary_category_name": "Spring核心",
+      "related_categories": [
+        "spring-core",
+        "java-core",
+        "docker-k8s"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "Spring",
+        "Bean",
+        "Bean生命周期",
+        "反射",
+        "容器"
+      ],
+      "summary": "Bean生命周期：指定的就是Bean从创建到销毁的整个过程: 分4大步：实例化通过反射去推断构造函数进行实例化实例工厂、 静态工厂依赖注入（DI）解析自动装配（byname bytype constractor none @Autowired）初始化调用很多Aware回调方法调用BeanPos...",
+      "excerpt": "Bean生命周期：指定的就是Bean从创建到销毁的整个过程: 分4大步： 实例化 通过反射去推断构造函数进行实例化 实例工厂、 静态工厂 依赖注入（DI） 解析自动装配（byname bytype constractor none @Autowired） 初始化 调用很多Aware回调方法 调用BeanPostProcessor.postProcessBeforeInitialization 调用生命周期回调初始化方法 调用BeanPostProcessor.postProcessAfterInitialization, 如果bean实现aop则会在这里创建动态代理 销毁 在spring容器关闭的时候进行调用 调用生命周期回调销毁方法 ​ ​ 这4大步组成了Bean的生命周期 ​"
+    },
+    {
+      "slug": "sn4vhdnnip3vno0a",
+      "title": "Spring IoC 的实现机制是什么？",
+      "url": "/tulingzhouyu/db22bv/sn4vhdnnip3vno0a",
+      "toc_path": [
+        "Spring",
+        "高级篇",
+        "Spring IoC 的实现机制是什么？"
+      ],
+      "toc_level": 2,
+      "toc_index": 470,
+      "word_count": 508,
+      "updated_at": "2023-09-06T13:25:39.000Z",
+      "primary_category": "spring-core",
+      "primary_category_name": "Spring核心",
+      "related_categories": [
+        "spring-core",
+        "java-core",
+        "os-linux",
+        "docker-k8s"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "Spring",
+        "Bean",
+        "Java",
+        "反射",
+        "注解",
+        "文件",
+        "容器"
+      ],
+      "summary": "Spring的IoC底层实现机制主要依赖于以下几个关键组件和技术：反射：Spring使用Java的反射机制来实现动态创建和管理Bean对象。通过反射，Spring可以在运行时动态地实例化Bean对象、调用Bean的方法和设置属性值。配置元数据：Spring使用配置元数据来描述Bean的定义和依...",
+      "excerpt": "Spring的IoC底层实现机制主要依赖于以下几个关键组件和技术： 反射：Spring使用Java的反射机制来实现动态创建和管理Bean对象。通过反射，Spring可以在运行时动态地实例化Bean对象、调用Bean的方法和设置属性值。 配置元数据：Spring使用配置元数据来描述Bean的定义和依赖关系。配置元数据可以通过XML配置文件、注解和Java代码等方式进行定义。Spring在启动时会解析配置元数据，根据配置信息创建和管理Bean对象。 Bean定义：Spring使用Bean定义来描述Bean的属性、依赖关系和生命周期等信息。Bean定义可以通过XML配置文件中的<bean>元素、注解和Java代码中的@Bean注解等方式进行定义。Bean定义包含了Bean的类名、作用域、构造函数参数、属性值等信息。 Bean工厂：Spring的Bean工厂负责创建和管理Bean对象。Bean工厂可以是BeanFactory接口的实现，如DefaultListableBeanFactory。Bean工厂负责解析配置元数据，根据Bean定义创建Bean对象，并将其放入容器中进行管理。 依赖注入：Spring使用依赖注入来解决Bean之间的依赖关系。通过依赖注入，Spring容器负责将Bean所依赖的其他Bean实例注入到它们之中。Spring使用反射和配置元数据来确定依赖关系，并在运行时进行注入。 总结起来，Spring的IoC底层实现机制主要依赖于反射、配置元数据、Bean定义、Bean工厂和依赖注入等技术和组件。通过这些机制，Spring实现了Bean的创建、配置和管理，以及Bean之间的解耦和依赖注入"
+    },
+    {
+      "slug": "kguwdz5lfcw6kxsg",
+      "title": "Bean有哪几种配置方式？",
+      "url": "/tulingzhouyu/db22bv/kguwdz5lfcw6kxsg",
+      "toc_path": [
+        "Spring",
+        "高级篇",
+        "Bean有哪几种配置方式？"
+      ],
+      "toc_level": 2,
+      "toc_index": 471,
+      "word_count": 404,
+      "updated_at": "2023-09-06T13:21:05.000Z",
+      "primary_category": "spring-core",
+      "primary_category_name": "Spring核心",
+      "related_categories": [
+        "spring-core",
+        "java-core",
+        "docker-k8s",
+        "os-linux",
+        "performance-optimization"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "Spring",
+        "Bean",
+        "Java",
+        "注解",
+        "Service",
+        "文件"
+      ],
+      "summary": "在Spring框架中，有以下几种常见的Bean配置方式：XML配置：使用XML文件来配置Bean，通过元素定义Bean的属性和依赖关系。可以使用Spring的XML命名空间和标签来简化配置。注解配置：使用注解来配置Bean，通过在Bean类上添加注解，如@Component、@Se...",
+      "excerpt": "在Spring框架中，有以下几种常见的Bean配置方式： XML配置：使用XML文件来配置Bean，通过<bean>元素定义Bean的属性和依赖关系。可以使用Spring的XML命名空间和标签来简化配置。 注解配置：使用注解来配置Bean，通过在Bean类上添加注解，如@Component、@Service、@Repository等，来标识Bean的角色和作用。 JavaConfig方式：使用Java类来配置Bean，通过编写一个配置类，使用@Configuration注解标识，然后在方法上使用@Bean注解来定义Bean。 @Import： @Import注解可以用于导入其他配置类，也可以用于导入其他普通类。当导入的是配置类时，被导入的配置类中定义的Bean会被纳入到当前配置类的上下文中；当导入的是普通类时，被导入的类本身会被当作一个Bean进行注册。 这4种是最常用的，另外还有两种一些冷门的： Groovy配置：使用Groovy脚本来配置Bean，通过编写一个Groovy脚本文件，使用Spring的DSL（Domain Specific Language）来定义Bean。 JSR-330： Spring提供了对JSR-330标准注释( 依赖注入 )的支持， 可以使用 @Named 或 @ManagedBean替代 @Component，但是需要 javax.inject 依赖。 这些配置方式可以单独使用，也可以结合使用，根据项目需求和个人偏好选择适合的配置方式。"
+    },
+    {
+      "slug": "cce5mfzh2uip4r4v",
+      "title": "BeanFactory 和 ApplicationContext有什么区别？",
+      "url": "/tulingzhouyu/db22bv/cce5mfzh2uip4r4v",
+      "toc_path": [
+        "Spring",
+        "高级篇",
+        "BeanFactory 和 ApplicationContext有什么区别？"
+      ],
+      "toc_level": 2,
+      "toc_index": 472,
+      "word_count": 335,
+      "updated_at": "2023-09-06T13:07:32.000Z",
+      "primary_category": "spring-core",
+      "primary_category_name": "Spring核心",
+      "related_categories": [
+        "spring-core",
+        "docker-k8s",
+        "java-core",
+        "os-linux"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "Spring",
+        "Bean",
+        "容器",
+        "内存"
+      ],
+      "summary": "BeanFactory和ApplicationContext是Spring的两大核心接口，都可以当做Spring的容器。其中ApplicationContext是BeanFactory的子接口。 BeanFactory：是Spring框架的核心接口之一， 我们可以称之为 “低级容器”。为什么叫...",
+      "excerpt": "BeanFactory和ApplicationContext是Spring的两大核心接口， 都可以当做Spring的容器 。其中ApplicationContext是BeanFactory的子接口。 ​ BeanFactory： 是Spring框架的核心接口之一， 我们可以称之为 “低级容器” 。 为什么叫低级容器呢？因为Bean的生产过程分为【配置的解析】和【Bean的创建】，而 BeanFactory只有 Bean的创建功能，但也说明它内存占用更小，在早期会在一些内存受限的可穿戴设备中作为spring容器使用。 ​ ApplicationContext 可以称之为 “高级容器” 。因为他比 BeanFactory 多了更多的功能。他继承了多个接口，因此具备了更多的功能。例如配置的读取、解析、扫描等，还加入了 如 事件事件监听机制，及后置处理器让Spring提升了扩展性。所以你看他的名字，已经不是 BeanFactory 之类的工厂了，而是 “应用上下文”， 代表着整个大容器的所有功能。该接口定义了一个 refresh 方法，此方法是所有阅读 Spring 源码的人的最熟悉的方法，用于刷新整个容器，即重新加载/刷新所有的 bean。 ​"
+    },
+    {
+      "slug": "hhw8tg1drwp3yczn",
+      "title": "BeanFactory 和FactoryBean有什么区别？",
+      "url": "/tulingzhouyu/db22bv/hhw8tg1drwp3yczn",
+      "toc_path": [
+        "Spring",
+        "高级篇",
+        "BeanFactory 和FactoryBean有什么区别？"
+      ],
+      "toc_level": 2,
+      "toc_index": 473,
+      "word_count": 296,
+      "updated_at": "2023-09-06T12:49:40.000Z",
+      "primary_category": "spring-core",
+      "primary_category_name": "Spring核心",
+      "related_categories": [
+        "spring-core",
+        "mybatis",
+        "java-core",
+        "docker-k8s"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "Spring",
+        "Bean",
+        "MyBatis",
+        "容器"
+      ],
+      "summary": "BeanFactory是Spring框架的核心接口之一，用于管理和获取Bean对象亦陈为bean的容器。使用了简单工厂模式，提供getBean方法用来获取bean。 FactoryBean是一个bean，但是它是一个特殊的bean。它是一个接口，他必须被一个bean去实现。FactoryBea...",
+      "excerpt": "BeanFactory 是Spring框架的核心接口之一，用于管理和获取Bean对象亦陈为bean的容器。 使用了简单工厂模式，提供getBean方法用来获取bean。 FactoryBean 是一个bean，但是它是一个特殊的bean。 它是一个接口， 他必须被一个bean 去实现。 FactoryBean接口定义了两个方法： getObject() 和 getObjectType() 。 getObjectType()方法用于返回创建的Bean对象的类型 。 getObject()方法用于返回创建的Bean对象，最终该Bean对象会进行注入，MyBatis集成Spring时的那个SqlSessionFactoryBean就实现了FactoryBean， 最终通过 getObject() 将SqlSessionFactory注入到Ioc容器中。 所以FactoryBean不是一个普通的Bean，它会表现出工厂模式的样子, 可以自定义创建Bean对象的逻辑，可以在创建Bean对象之前进行一些额外的处理。 如果要获得FactoryBean类本身而非getObject()返回的Bean可以通过在BeanName前加“&”进行获取。 ​ 所以他们直接没有什么关系， 实在要扯上点关系那就是BeanFactory管理了 FactoryBean ，"
+    },
+    {
+      "slug": "dds43egxxx36x9dw",
+      "title": "BeanFactory与FactoryBean区别：面试必备解析",
+      "url": "/tulingzhouyu/db22bv/dds43egxxx36x9dw",
+      "toc_path": [
+        "Spring",
+        "高级篇",
+        "BeanFactory 和FactoryBean有什么区别？",
+        "BeanFactory与FactoryBean区别：面试必备解析"
+      ],
+      "toc_level": 3,
+      "toc_index": 474,
+      "word_count": 1081,
+      "updated_at": "2025-04-07T14:11:42.000Z",
+      "primary_category": "spring-core",
+      "primary_category_name": "Spring核心",
+      "related_categories": [
+        "spring-core",
+        "mybatis",
+        "docker-k8s",
+        "java-core",
+        "os-linux"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "campus"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "Spring",
+        "Bean",
+        "MyBatis",
+        "Mapper",
+        "容器",
+        "Java",
+        "文件"
+      ],
+      "summary": "今天跟大家分享一道Spring面试高频题：BeanFactory与FactoryBean的区别。这个问题在中高级Java面试中出现频率非常高，很多小伙伴常因为名字相似而搞混，导致面试时回答不清晰。下面，我将以最清晰直观的方式为大家讲解如何完美回答这个问题。一、核心区别一句话总结最简单记忆：Be...",
+      "excerpt": "今天跟大家分享一道Spring面试高频题： BeanFactory与FactoryBean的区别 。 这个问题在中高级Java面试中出现频率非常高，很多小伙伴常因为名字相似而搞混，导致面试时回答不清晰。 下面，我将以最清晰直观的方式为大家讲解如何完美回答这个问题。 一、核心区别一句话总结 最简单记忆 ： BeanFactory 是工厂， 管理Bean 的容器 FactoryBean 是特殊Bean， 生产Bean 的工厂 这个区别虽然简单，但面试时一定要表达清楚，接下来我们深入分析。 二、BeanFactory详解 1. 本质与定位 BeanFactory是Spring框架的 核心接口 ，是IoC容器的顶层设计。它定义了容器的基本功能，负责 管理、装配和提供Bean 。可以类比为一个大型工厂，负责生产和管理各种产品(Bean)。 2. 主要功能 提供Bean的 生命周期管理 实现 依赖注入 支持 Bean的装配 和 延迟初始化 3. 常见实现 DefaultListableBeanFactory ：最常用的实现类 XmlBeanFactory ：读取XML配置文件的实现(已过时) ApplicationContext ：更高级的容器，扩展了BeanFactory 三、FactoryBean详解 1. 本质与定位 FactoryBean是一个 特殊的Bean ，它是一个接口，用于 定制化Bean的创建逻辑 。当某些Bean的实例化过程复杂时，实现这个接口可以将复杂创建过程封装起来。 2. 核心方法 getObject() ：返回该工厂创建的对象实例 getObjectType() ：返回该工厂创建的对象类型 isSingleton() ：返回由该工厂创建的对象是否是单例 3. 使用场景 复杂对象的初始化 ：如JDBC连接、第三方框架对象 动态代理对象创建 ：MyBatis中的Mapper接口代理对象就是通过FactoryBean创建的 条件化Bean创建 ：根据条件创建不同实现的Bean 四、关键区别详解 1. 角色不同 BeanFactory ： 容器角色 ，管理所有Bean FactoryBean ： 工厂Bean角色 ，是容器中的一个Bean 2. 使用方式不同 BeanFactory ：通常由Spring框架实现，开发者很少直接实现 FactoryBean ：开发者实现该接口，自定义Bean的创建过程 3. 获取方式有特别之处 通过 context.getBean(&quot;beanName&quot;) 获取FactoryBean创建的对象 通过 context.getBean(&quot;&beanName&quot;) 获取FactoryBean本身 4. 应用场景不同 BeanFactory ：作为容器的基础设施使用 FactoryBean "
+    },
+    {
+      "slug": "dgk3nhq8ntgcy0gm",
+      "title": "短视频",
+      "url": "/tulingzhouyu/db22bv/dgk3nhq8ntgcy0gm",
+      "toc_path": [
+        "Spring",
+        "高级篇",
+        "BeanFactory 和FactoryBean有什么区别？",
+        "短视频"
+      ],
+      "toc_level": 3,
+      "toc_index": 475,
+      "word_count": 264,
+      "updated_at": "2024-06-20T07:39:56.000Z",
+      "primary_category": "spring-core",
+      "primary_category_name": "Spring核心",
+      "related_categories": [
+        "spring-core",
+        "java-core",
+        "mybatis",
+        "docker-k8s",
+        "os-linux"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "Spring",
+        "Bean",
+        "注解",
+        "MyBatis",
+        "容器",
+        "文件"
+      ],
+      "summary": "在 Spring 框架中，BeanFactory 和 FactoryBean 扮演着不同的角色和功能。BeanFactory 是 Spring IoC 容器的核心接口，负责管理和获取应用中的 Bean 实例。它使用简单工厂模式来实例化、配置和管理对象，通过配置文件或者注解，可以轻松地获取特定 ...",
+      "excerpt": "在 Spring 框架中，BeanFactory 和 FactoryBean 扮演着不同的角色和功能。 ​ BeanFactory 是 Spring IoC 容器的 核心接口 ，负责管理和获取应用中的 Bean 实例。 ​ 它 使 用 简单工厂模式来实例化、配置和管理对象 ，通过配置文件或者注解，可以轻松地获取特定 Bean 的实例。 ​ 而 FactoryBean 是一个 特殊的 Bean ，它是一个接口，我们可以 实现接口自定义 Bean 的创建过程 。 ​ 它定义了两个关键方法：getObject() 与 getObjectType() ​ 其中getObject() 用来返回 FactoryBean 创建的 Bean 实例 ， 而 getObjectType() 用来返回 Bean 实例的类型 。 ​ 除此之外 FactoryBean 还可以用于 创建复杂的 Bean 对象 ，例如 MyBatis 集成 Spring 时的 SqlSessionFactoryBean 。 ​ 总结来说，BeanFactory 是 Spring IoC 容器的核心，负责管理和获取 Bean 实例； ​ 而 FactoryBean 则是一个接口，实现它可以定制化 Bean 的创建过程，增强 Spring 的灵活性和可扩展性。"
+    },
+    {
+      "slug": "mngu0f2geg1u2e53",
+      "title": "Spring-Ioc容器的加载过程",
+      "url": "/tulingzhouyu/db22bv/mngu0f2geg1u2e53",
+      "toc_path": [
+        "Spring",
+        "高级篇",
+        "Spring-Ioc容器的加载过程"
+      ],
+      "toc_level": 2,
+      "toc_index": 476,
+      "word_count": 467,
+      "updated_at": "2023-09-06T12:10:22.000Z",
+      "primary_category": "spring-core",
+      "primary_category_name": "Spring核心",
+      "related_categories": [
+        "spring-core",
+        "java-core",
+        "docker-k8s",
+        "os-linux",
+        "performance-optimization"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "Spring",
+        "IOC",
+        "Bean",
+        "注解",
+        "IO",
+        "容器",
+        "文件"
+      ],
+      "summary": "Spring 的 IOC 容器工作的过程，其实可以划分为两个阶段：配置解析阶段和Bean 的创建段。其中配置解析阶段主要做的工作是加载和解析配置文件，将配置的bean解析成 BeanDefinition。整个过程是： 读取配置：通过BeanDefinitionReader读取配置文件或配置类解...",
+      "excerpt": "Spring 的 IOC 容器工作的过程，其实可以划分为两个阶段： 配置解析阶段 和 Bean 的创建段 。 其中 配置解析阶段 主要做的工作是加载和解析配置文件，将配置的bean解析成 BeanDefinition。 整个过程是： 读取配置：通过BeanDefinitionReader读取配置文件或配置类 解析配置信息：如ComonentScan、Bean配置等 扫描类注解：根据ComonentScan扫描@Component、@Bean、@Configuration、@Import等注解... 将符合的bean注册为BeanDefinition Bean的创建过程主要做的工作是根据 BeanDefinition创建Bean。 大概过程： 实例化Bean：容器根据配置文件中的Bean定义，实例化Bean对象。可以通过构造函数实例化、工厂方法实例化、静态工厂方法实例化等方式来创建Bean对象。 注入Bean属性：容器会为实例化的Bean对象设置属性值，可以通过setter方法注入属性值，也可以通过构造函数注入属性值。 处理依赖关系：容器会处理Bean之间的依赖关系，将依赖的Bean注入到需要的地方 。 执行初始化方法：容器会调用Bean的初始化方法，可以通过实现InitializingBean接口或在配置文件中指定初始化方法来定义Bean的初始化逻辑。 注册Bean：容器会将实例化、属性设置和初始化完成的Bean对象注册到容器中，以便后续的使用和管理。 完成加载：容器完成所有Bean的加载和初始化后，即完成了IoC容器的加载过程。此时，可以通过容器调用getBean获取Bean对象。"
+    },
+    {
+      "slug": "fab361bxoeyy7vvg",
+      "title": "SpringBoot为什么要禁止循环依赖",
+      "url": "/tulingzhouyu/db22bv/fab361bxoeyy7vvg",
+      "toc_path": [
+        "SpringBoot",
+        "SpringBoot为什么要禁止循环依赖"
+      ],
+      "toc_level": 1,
+      "toc_index": 481,
+      "word_count": 213,
+      "updated_at": "2026-01-11T08:25:18.000Z",
+      "primary_category": "spring-core",
+      "primary_category_name": "Spring核心",
+      "related_categories": [
+        "spring-core",
+        "spring-boot",
+        "redis-cache",
+        "os-linux",
+        "devops-release"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "Spring",
+        "循环依赖",
+        "SpringBoot",
+        "缓存",
+        "文件"
+      ],
+      "summary": "循环依赖大家都知道，也被折磨过，在 SpringBoot2.6.0的版本默认禁止了循环依赖，如果程序中出现循环依赖就会报错。当然并没有一锤子打死，也提供了开启允许循环依赖的配置，只需要在配置文件中开启即可：spring: main: allow-circular-references: tru...",
+      "excerpt": "循环依赖大家都知道，也被折磨过，在 SpringBoot 2.6.0 的版本默认禁止了循环依赖，如果程序中出现循环依赖就会报错。 当然并没有一锤子打死，也提供了开启允许循环依赖的配置，只需要在配置文件中开启即可： 那SpringBoot为什么要要禁止呢？我们都知道Spring解决循环依赖的方式是通过三级缓存，光学这个三级缓存我们就煞费苦心，其实说白了他是一种给程序员擦屁股的行为. 其实对象之间的关系如果是互相依赖是一种 不合理的设计 ，避免你做出这种不合理的依赖，SpringBoot进而禁止循环依赖。"
+    },
+    {
+      "slug": "wdt0zc7d1eqbtd5s",
+      "title": "短视频",
+      "url": "/tulingzhouyu/db22bv/wdt0zc7d1eqbtd5s",
+      "toc_path": [
+        "SpringBoot",
+        "SpringBoot为什么要禁止循环依赖",
+        "短视频"
+      ],
+      "toc_level": 2,
+      "toc_index": 482,
+      "word_count": 694,
+      "updated_at": "2024-05-21T13:22:24.000Z",
+      "primary_category": "spring-core",
+      "primary_category_name": "Spring核心",
+      "related_categories": [
+        "spring-core",
+        "spring-boot",
+        "resume-project",
+        "java-core",
+        "project-system-design"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "Spring",
+        "Bean",
+        "循环依赖",
+        "SpringBoot",
+        "项目",
+        "注解",
+        "方案"
+      ],
+      "summary": "SpringBoot出现循环依赖报错怎么办？  我建议你不要直接开启，  SpringBoot2.6.0以上版本既然已经禁止了循环依赖肯定有他的理由？我来大家讲讲Spring的循环依赖是一个老生常谈的问题，说白了就是2个Bean相互依赖注入，形成了依赖的闭环造成死循环依赖。Spring虽然通过...",
+      "excerpt": "SpringBoot出现循环依赖报错怎么办？ 我建议你不要直接开启， SpringBoot2.6.0以上版本既然已经禁止了循环依赖肯定有他的理由？ ​ 我来大家讲讲 ​ Spring的循环依赖是一个老生常谈的问题，说白了就是2个Bean相互依赖注入，形成了依赖的闭环造成死循环依赖。 Spring虽然通过三级缓存帮我们解决了，但是循环依赖其实 增加了对象依赖的混乱性，会让对象的依赖关系变得错综复杂，是一种不好的代码设计。 并且Spring为了做好人 ，解决循环依赖，导致很多开发者提出一些跟循环依赖相关的其他的issue，让spring作者很无奈。 ​ 所以Spring作者表示会在后续版本禁止循环依赖，并且已经SpringBoot 2.6.0 的版本默认禁止了循环依赖，所以 ..如果程序中出现循环依赖启动时就会报错。 那如何解决呢？我给大家提供 三种 解决方案： 哈喽大家好我是徐庶，另外想要文字版的小伙伴可以再评论区扣666，我已经把视频资料整理进了一份80万字的高频面试题资料中。 使用@Lazy注解 ，可以再循环依赖注入的属性加上 @Lazy 注解 ，这样可以使属性延迟注入从而呢就中断了循环的依赖。 打破循环依赖 ， 把相互依赖的代码放在一个新的bean中， 这样就可以打破循环依赖的闭环 在方法中通过动态调用Spring容器的getBean方法达到延迟获取bean。而不在类中依赖注入循环依赖的Bean， 从而中断了循环的依赖。 开启循环依赖 ， 这种方式其实我其实 不建议 ， 因为Springboot既然已经禁止了，为什么要执迷不悟重蹈覆辙呢？ 当然如果你的项目是从Spring移植到Spring，之前就已经写了大量的循环依赖，那确实破罐子破摔比你重构要更节省成本， 你可以通过在SpringBoot配置文件中设置开启循环依赖： 所以， 我在这里建议大家以后项目中就直接杜绝bean的循环依赖的代码设计。 如果视频有帮助可以三连支持，你的支持是我持续更新的动力。"
+    },
+    {
+      "slug": "xspr2fqxkyo63s1l",
+      "title": "SpringBoot的启动原理？",
+      "url": "/tulingzhouyu/db22bv/xspr2fqxkyo63s1l",
+      "toc_path": [
+        "SpringBoot",
+        "SpringBoot的启动原理？"
+      ],
+      "toc_level": 1,
+      "toc_index": 484,
+      "word_count": 583,
+      "updated_at": "2023-09-08T03:42:14.000Z",
+      "primary_category": "spring-core",
+      "primary_category_name": "Spring核心",
+      "related_categories": [
+        "spring-core",
+        "spring-boot",
+        "java-core",
+        "ai-llm",
+        "docker-k8s"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "Spring",
+        "Bean",
+        "Spring Boot",
+        "SpringBoot",
+        "自动配置",
+        "注解",
+        "容器"
+      ],
+      "summary": "运行Main方法： 应用程序启动始于Main方法的执行。在Main方法中，创建了一个SpringApplication实例，用于引导应用程序的启动。同时，SpringApplication会根据spring.factories文件加载并注册监听器、ApplicationContextIniti...",
+      "excerpt": "运行Main方法： 应用程序启动始于Main方法的执行。在Main方法中，创建了一个SpringApplication实例，用于引导应用程序的启动。同时，SpringApplication会根据 spring.factories 文件加载并注册监听器、ApplicationContextInitializer等扩展接口实现。 运行run方法： 运行SpringApplication的 run 方法是应用程序启动的入口。在这一步，Spring Boot会 启动Spring进而创建内置tomcat，进去run方法后还做了很多其他事： ​ Spring Boot会读取和解析环境变量、配置文件（如 application.properties 或 application.yml ）等，以获取应用程序的配置信息。 之后再创建ApplicationContext也就是我们熟知的Spring上下文： 在这一步，Spring Boot会根据应用程序的类型（例如，Web应用程序）创建相应的ApplicationContext。对于Web应用程序，通常创建的是 ServletWebServerApplicationContext 。 预初始化上下文： Spring Boot会将启动类作为配置类，读取并注册为BeanDefinition，这使得Spring容器可以识别应用程序的配置。 调用refresh： 此时，Spring Boot调用了 refresh 方法来加载和初始化Spring容器。在这一过程中，会执行一系列操作，包括解析 @Import 注解以加载自动配置类，创建和注册BeanDefinition等。 创建内置servlet容器： 如果应用程序是一个Web应用程序，Spring Boot会在这一步创建内置的servlet容器（例如Tomcat），以便应用程序可以接受HTTP请求。这个容器将被Spring Boot自动配置，并且可以通过配置进行自定义。 监听器和扩展点： 在整个启动过程中，Spring Boot会调用各种监听器和扩展点，这些组件可以用来对应用程序进行扩展和定制。例如，您可以使用监听器来处理应用程序启动和关闭事件，或者使用ApplicationContextInitializer来自定义ApplicationContext的初始化。 总的来说，Spring Boot的启动过程是一个复杂的流程，它从Main方法开始，经过一系列步骤来初始化Spring容器和启动内置tomcat。"
+    },
+    {
+      "slug": "gw6q0qvx4ofur4tz",
+      "title": "Spring和SpringBoot的关系和区别？",
+      "url": "/tulingzhouyu/db22bv/gw6q0qvx4ofur4tz",
+      "toc_path": [
+        "SpringBoot",
+        "Spring和SpringBoot的关系和区别？"
+      ],
+      "toc_level": 1,
+      "toc_index": 487,
+      "word_count": 641,
+      "updated_at": "2023-09-07T14:28:45.000Z",
+      "primary_category": "spring-core",
+      "primary_category_name": "Spring核心",
+      "related_categories": [
+        "spring-core",
+        "spring-boot",
+        "java-core",
+        "resume-project",
+        "docker-k8s"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "Spring",
+        "Spring Boot",
+        "SpringBoot",
+        "自动配置",
+        "Starter",
+        "Java",
+        "注解",
+        "项目",
+        "容器"
+      ],
+      "summary": "他们的关系是：Spring是框架，Spring Boot是个脚手架： Spring是一个全功能的Java应用程序框架，旨在帮助开发人员构建各种类型的应用程序，包括Web应用、企业级应用、批处理应用等。Spring提供了大量的组件和功能，但需要开发人员进行详细的配置和集成。Spring Boot...",
+      "excerpt": "他们的关系是： Spring是框架，Spring Boot是个脚手架： Spring是一个全功能的Java应用程序框架，旨在帮助开发人员构建各种类型的应用程序，包括Web应用、企业级应用、批处理应用等。Spring提供了大量的组件和功能，但需要开发人员进行详细的配置和集成。Spring Boot则是一个 脚手架 工具，它基于Spring框架，旨在简化Spring应用程序的初始配置和开发过程，提供了自动化配置和约定优于配置的特性。 Spring Boot构建在Spring之上： Spring Boot不是一个独立的框架，而是建立在Spring框架之上的工具。它使用了Spring的核心功能，如依赖注入、面向切面编程、事务管理等。因此，Spring Boot项目可以充分利用Spring框架的功能，但更容易启动和运行。 他们的区别是： 配置方式： Spring通常需要大量的XML配置或Java注解来定义应用程序的配置。相比之下，Spring Boot采用了&quot;约定优于配置&quot;的原则，大部分配置都可以通过默认值和自动配置来完成，从而减少了配置的复杂性。 开发速度： Spring Boot旨在提高开发速度，因此它降低了开发人员的学习曲线，并提供了内置的Starter和自动配置，使开发更加快速和高效。Spring需要更多的手动配置和集成工作。 内置Web容器： Spring Boot内置了多个内嵌式Web容器，如Tomcat、Jetty、Undertow等，可以轻松创建独立的可执行JAR文件或WAR文件，而不需要外部Web服务器。Spring通常需要外部Web服务器的部署。 总的来说，Spring是一个全功能的Java应用程序框架，而Spring Boot是一个用于简化Spring应用程序开发的工具。Spring Boot通过自动化配置、约定优于配置的原则、内置Web容器等功能，使得开发和部署Spring应用程序变得更加快速和便捷，特别适用于微服务和快速原型开发。开发人员可以根据项目的需求选择使用Spring框架、Spring Boot，或两者结合使用。"
+    },
+    {
+      "slug": "ev4c8ea9iu54pxyo",
+      "title": "代理模式在开源框架设计中的应用",
+      "url": "/tulingzhouyu/db22bv/ev4c8ea9iu54pxyo",
+      "toc_path": [
+        "设计模式",
+        "代理模式在开源框架设计中的应用"
+      ],
+      "toc_level": 1,
+      "toc_index": 780,
+      "word_count": 704,
+      "updated_at": "2025-01-25T13:00:00.000Z",
+      "primary_category": "spring-core",
+      "primary_category_name": "Spring核心",
+      "related_categories": [
+        "spring-core",
+        "performance-optimization",
+        "observability-troubleshooting",
+        "mybatis",
+        "java-core"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle",
+        "senior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "Spring",
+        "AOP",
+        "性能",
+        "优化",
+        "监控",
+        "日志",
+        "MyBatis",
+        "Java"
+      ],
+      "summary": "1. Spring Framework中的代理模式动态代理实现// Spring AOP代理核心实现   public class JdkDynamicAopProxy implements AopProxy, InvocationHandler {       private final O...",
+      "excerpt": "1. Spring Framework中的代理模式 动态代理实现 2. Dubbo中的代理模式 3. MyBatis中的代理模式 代理模式的高级应用特性 功能增强 性能监控 安全控制 日志记录 事务管理 调用控制 远程方法调用 延迟加载 缓存 熔断降级 设计优势 解耦系统组件 不修改原有代码 动态扩展功能 提高代码可维护性 实现技术 静态代理 编译期生成代理类 需要手动编写代理类 扩展性较差 动态代理 JDK Proxy Cglib Javassist 运行时动态生成 字节码增强 AspectJ Byte Buddy 直接修改字节码 性能与最佳实践 选择合适的代理技术 避免过度使用代理 关注性能开销 合理设计代理层次 使用缓存优化代理创建 适用场景 远程调用 权限控制 日志记录 性能监控 事务管理 缓存 懒加载 潜在挑战 性能开销 调试复杂性 代理链管理 接口兼容性 代理模式是开源框架中最重要的设计模式之一，它通过在目标对象和调用者之间增加一层代理，实现了横切关注点的解耦和功能增强。这种模式不仅提供了灵活的扩展机制，还为系统架构提供了强大的动态能力。"
+    },
+    {
+      "slug": "kpkd4h9932sphpz0",
+      "title": "模板方法模式在开源框架设计中的应用",
+      "url": "/tulingzhouyu/db22bv/kpkd4h9932sphpz0",
+      "toc_path": [
+        "设计模式",
+        "模板方法模式在开源框架设计中的应用"
+      ],
+      "toc_level": 1,
+      "toc_index": 781,
+      "word_count": 878,
+      "updated_at": "2025-01-25T13:02:10.000Z",
+      "primary_category": "spring-core",
+      "primary_category_name": "Spring核心",
+      "related_categories": [
+        "spring-core",
+        "mybatis",
+        "java-core",
+        "mysql-index-transaction",
+        "performance-optimization"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle",
+        "senior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "Spring",
+        "MyBatis",
+        "事务",
+        "性能"
+      ],
+      "summary": "模板方法模式在开源框架中的应用分析1. Spring Framework中的模板方法模式// Spring中的模板方法模式典型实现   public abstract class AbstractApplicationContext implements ConfigurableApplica...",
+      "excerpt": "模板方法模式在开源框架中的应用分析 1. Spring Framework中的模板方法模式 2. MyBatis中的模板方法模式 3. JUnit测试框架中的模板方法模式 模板方法模式在开源框架中的应用特点 统一执行流程 定义标准算法骨架 控制整体执行步骤 提供可插拔的扩展点 灵活性设计 使用抽象类和接口 提供钩子方法 支持部分方法重写 扩展机制 抽象方法强制实现 钩子方法可选重写 提供默认实现 设计原则与最佳实践 开闭原则 对扩展开放 对修改关闭 通过继承和接口实现 依赖倒置 依赖抽象而非具体 解耦框架核心逻辑 单一职责 每个方法职责单一 高内聚低耦合 使用建议 谨慎设计抽象类层次 合理使用final方法 提供清晰的文档 避免过度继承 关注性能开销 应用场景 框架生命周期管理 标准化处理流程 事务管理 测试框架 ORM框架 依赖注入容器 模板方法模式在开源框架中扮演着核心的架构角色，它通过定义统一的执行流程和可扩展的设计机制，为框架提供了灵活且标准化的实现方式。这种模式不仅降低了框架的使用复杂度，还为开发者提供了强大的定制能力。"
+    },
+    {
+      "slug": "zn188odyrkllkmgz",
+      "title": "观察者模式在开源框架设计中的应用",
+      "url": "/tulingzhouyu/db22bv/zn188odyrkllkmgz",
+      "toc_path": [
+        "设计模式",
+        "观察者模式在开源框架设计中的应用"
+      ],
+      "toc_level": 1,
+      "toc_index": 782,
+      "word_count": 1188,
+      "updated_at": "2025-01-25T06:34:11.000Z",
+      "primary_category": "spring-core",
+      "primary_category_name": "Spring核心",
+      "related_categories": [
+        "spring-core",
+        "java-core",
+        "performance-optimization",
+        "os-linux",
+        "java-concurrency"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "Spring",
+        "Java",
+        "异常",
+        "性能",
+        "优化",
+        "线程",
+        "内存"
+      ],
+      "summary": "1. Spring事件机制 - 应用上下文事件广播// 自定义应用事件   public class UserRegisteredEvent extends ApplicationEvent {       private User user;        public UserRegist...",
+      "excerpt": "1. Spring事件机制 - 应用上下文事件广播 2. Guava EventBus - 解耦的事件总线 3. RxJava响应式编程 - 异步事件流 观察者模式的设计要点 解耦机制 降低对象间耦合 支持动态注册和移除 提高系统灵活性 事件驱动 支持异步通知 多观察者并行处理 松散的事件传播机制 性能优化 避免同步阻塞 支持异步事件处理 惰性计算 实现建议 使用弱引用避免内存泄露 提供线程安全的实现 控制事件传播范围 合理设计事件层次 使用队列进行事件缓冲 适用场景 消息通知系统 实时数据同步 GUI事件处理 分布式系统解耦 状态变更通知 潜在挑战 复杂的事件依赖 性能开销 事件顺序控制 异常处理 高级扩展 支持事件过滤 实现事件编排 提供优先级机制 支持事务性事件 观察者模式是现代框架中非常重要的设计模式，它提供了一种灵活的事件通知和处理机制。通过解耦观察者和被观察者，实现了系统组件间的松散协作，极大地提高了系统的可扩展性和灵活性。 在实际应用中，开发者可以根据具体场景选择合适的观察者模式实现，如Spring的事件机制、Guava的EventBus或RxJava的响应式编程模型，以满足不同的架构和性能需求。"
+    },
+    {
+      "slug": "glsxdk2w9ysvdpxu",
+      "title": "阿里内部设计模式最佳实践",
+      "url": "/tulingzhouyu/db22bv/glsxdk2w9ysvdpxu",
+      "toc_path": [
+        "项目设计场景题",
+        "阿里内部设计模式最佳实践"
+      ],
+      "toc_level": 1,
+      "toc_index": 861,
+      "word_count": 4577,
+      "updated_at": "2024-07-15T14:21:20.000Z",
+      "primary_category": "spring-core",
+      "primary_category_name": "Spring核心",
+      "related_categories": [
+        "spring-core",
+        "docker-k8s",
+        "computer-network",
+        "java-core",
+        "mq-kafka"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "容器",
+        "Service",
+        "网络",
+        "Java",
+        "泛型",
+        "异常",
+        "Consumer"
+      ],
+      "summary": "示例代码📎pattern-demo.ppt注：将ppt后缀名改为zip后解压jdk版本：1.8.0_181 本次分享内容业务场景描述设计模式(模板方法模式、策略模式、工厂模式、代理模式)总结本节课重点在于说明工作中所使用的设计模式，为了能够更好的理解设计模式，首先简单介绍一下业务场景。使用设...",
+      "excerpt": "示例代码 注：将ppt后缀名改为zip后解压 jdk版本：1.8.0_181 ​ 本次分享内容 业务场景描述 设计模式(模板方法模式、策略模式、工厂模式、代理模式) 总结 本节课重点在于说明工作中所使用的设计模式，为了能够更好的理解设计模式，首先简单介绍一下业务场景。使用设计模式，可以简化代码、提高扩展性、可维护性和复用性。有哪些设计模式，这里就不再介绍了，网上很多， 本次只介绍所用到设计模式。 一 业务场景描述 1 意义 本次业务场景为线路检查工具，为什么需要线路检查工具呢，有以下几个方面的原因： 每逢大促都需要进行各网络和各行业的线路调整，调整完成之后，是否得到期望状态，需要检查确认。 上下游应用之间数据的一致性检查，如果存在不一致，可能会在订单履行时造成卡单。 有些问题发生后，业务同学需要全面检查一遍线路数据，判断是否符合预期。 各领域之间的数据变更缺乏联动性，导致资源和线路出现不一致。 为什么要把线路检查工具产品化呢，考虑如下： 以前每次大促，都是技术同学现场编写代码捞数据给到业务同学，而且因为人员流动性较大，代码可复用性较低，导致重复劳动。产品化后，可以方便地传承下去，避免不必要的重复劳动。 每次因为时间紧急，现场写的代码都比较简单，经常是直接将数据打印到标准输出，然后复制出来，人工拆分转成 Excel 格式；这样的过程要进行多次，占用太多技术同学的时间。产品化后，解放了技术同学，业务同学可以自己在页面操作。 很多数据检查，是每次大促都会进行的，业务同学与技术同学之间来回沟通的成本较高。产品化后，可以避免这些耗时耗力的沟通，大家可以把更多的时间放在其他的大促保障工作上。 2 检查项 根据 2020 年 D11 进行的数据检查，本次共实现 8 项，下面列举了 4 项，如下： 时效对齐检查：确保履行分单正常。 弱控线路与表达网络一致性：确保履行和路由不会因为线路缺失而卡单。 资源映射和编码映射一致：前者是表达线路时所用，后者是订单履约时所用，确保表达和履约能够一致。 检查线路数量：统计现存线路的情况。 好了，了解了背景知识，下面开始介绍所用到的设计模式，以及为什么要用、怎么用。 二 设计模式 1 模板方法模式 + 泛型 上述 8 项数据检查工具，大致的处理流程是类似的，如下： 针对不同的检查工具，只有 “线路数据检查” 这一步是不一样的逻辑，其他步骤都是相同的，如果每个检查工具都实现这么一套逻辑，必定造成大量的重复代码，维护性较差。 模板方法模式能够很好地解决这个问题。模板方法设计模式包含模板方法和基本方法，模板方法包含了主要流程；基本方法是流程中共用的逻辑，如创建检查任务，结果输出等等。 下图是所实现的模板方法模式的类继承关系： 分析如下： 1）DataCheckProductService 接口为对外提供的服务，dataCheck 方法为统一的数据"
+    },
+    {
+      "slug": "wqiqfz90p1tobmza",
+      "title": "什么？工作三年了，还不知道什么是 Spring 责任链？",
+      "url": "/tulingzhouyu/db22bv/wqiqfz90p1tobmza",
+      "toc_path": [
+        "高频面试问题",
+        "百里老师",
+        "什么？工作三年了，还不知道什么是 Spring 责任链？"
+      ],
+      "toc_level": 2,
+      "toc_index": 966,
+      "word_count": 1741,
+      "updated_at": "2025-12-11T05:16:23.000Z",
+      "primary_category": "spring-core",
+      "primary_category_name": "Spring核心",
+      "related_categories": [
+        "spring-core",
+        "project-system-design",
+        "docker-k8s",
+        "java-core",
+        "algorithm"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "expert"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "专家/P7+"
+      ],
+      "keywords": [
+        "Spring",
+        "IOC",
+        "Bean",
+        "秒杀",
+        "库存",
+        "容器",
+        "Service",
+        "注解",
+        "异常",
+        "IO",
+        "链表",
+        "排序"
+      ],
+      "summary": "你是否在维护老项目时，见过这种让人窒息的代码？一个 OrderService 的 createOrder 方法里塞满了 800 行代码。从参数校验、库存锁定、优惠券计算到积分扣减，所有的逻辑都堆砌在一个巨大的",
+      "excerpt": "你是否在维护老项目时，见过这种让人窒息的代码？一个 OrderService 的 createOrder 方法里塞满了 800 行代码。从参数校验、库存锁定、优惠券计算到积分扣减，所有的逻辑都堆砌在一个巨大的 if-else 迷宫里。 每当产品经理跑来说：“给 VIP 用户加一个专属的校验逻辑”，你都得在第 300 行和第 500 行之间小心翼翼地插入代码，生怕一个不小心，把后面的库存逻辑搞崩了。 这就是典型的“面条代码”（Spaghetti Code）。它高耦合、低内聚，违反了“单一职责原则”和“开闭原则”。随着业务迭代，这个方法会变成系统的“禁区”，谁都不敢动。 而 责任链模式（Chain of Responsibility） ，正是解决这一痛点的最佳解药。 2. 本质：什么是责任链？ 责任链模式的定义很简单： 为请求创建了一个接收者对象的链 。这种模式给予请求的类型，对请求的发送者和接收者进行解耦。 通俗点说，它就像是 “击鼓传花”或者“工厂流水线 ”。 一个请求（Context）进入系统，需要经历一系列的处理步骤。在责任链模式下，我们将每个步骤封装成一个独立的 处理器（Handler） 。 解耦 ：请求的发起者不需要知道具体是谁在处理，也不需要知道链条的结构。 动态性 ：我们可以随时调整链条中处理器的顺序，或者动态增加/删除某个处理器，而无需修改核心流程代码。 在业务开发中，责任链通常有两种形态： 中断式（过滤器模式） ：只要有一个处理器拦截（如校验失败），后续流程直接终止。 流水线式 ：所有处理器依次执行，共同完成一个复杂的业务对象构建。 3. Spring 中的“魔法”实现 设计意图 ：揭示 Spring 如何利用依赖注入（DI）自动收集和排序 Bean，省去了传统模式中手动 setNext() 的繁琐。 在传统的 GoF 设计模式实现中，我们需要手动维护 next 指针，构建链表非常繁琐： 但在 Spring 生态中，利用 IOC（控制反转） 和 自动装配 ，实现责任链变得异常优雅。我们甚至不需要显式地定义“链”的结构，Spring 容器会帮我们完成一切。 核心实现三步曲： 第一步：定义统一接口 第二步：实现具体的业务逻辑 利用 @Order 注解来控制执行顺序，数字越小优先级越高。 第三步：利用 List 自动注入（Magic Happens Here!） 这是 Spring 的杀手锏。你只需要在管理类中注入 List<OrderHandler> ，Spring 会自动查找所有实现类，并 按照 @Order 的顺序 装配到 List 中。 没有复杂的 setNext ，没有冗余的配置，一切都是自动化的。 4. 源码级应用：Spring Security Spring 框架本身就是责任链模式的集大成者。如果你读过 Spring Security"
+    },
+    {
+      "slug": "lizaa8pqd0alg0m9",
+      "title": "AOP 面试别再只说 “面向切面”！实战案例 + 动态代理原理避坑指南",
+      "url": "/tulingzhouyu/db22bv/lizaa8pqd0alg0m9",
+      "toc_path": [
+        "高频面试问题",
+        "fox老师",
+        "AOP 面试别再只说 “面向切面”！实战案例 + 动态代理原理避坑指南"
+      ],
+      "toc_level": 2,
+      "toc_index": 1079,
+      "word_count": 3705,
+      "updated_at": "2025-10-16T03:36:17.000Z",
+      "primary_category": "spring-core",
+      "primary_category_name": "Spring核心",
+      "related_categories": [
+        "spring-core",
+        "java-core",
+        "observability-troubleshooting",
+        "resume-project",
+        "spring-boot"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "middle"
+      ],
+      "level_names": [
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "Spring",
+        "AOP",
+        "Bean",
+        "注解",
+        "异常",
+        "排查",
+        "日志",
+        "项目",
+        "面试官",
+        "Spring Boot"
+      ],
+      "summary": "一、面试挂了的那一刻：只背概念，不懂落地面试官：“你项目里用过 AOP 吗？说说 AOP 是什么，怎么用的？”我（自信背定义）：“AOP 是面向切面编程，能在不修改业务代码的情况下增强功能，比如日志、事务！”面试官：“那你在项目里具体用 AOP 做了什么？比如日志记录，你是怎么切所有接口的？”...",
+      "excerpt": "一、面试挂了的那一刻：只背概念，不懂落地 面试官：“ 你项目里用过 AOP 吗？说说 AOP 是什么，怎么用的？ ” 我（自信背定义）：“AOP 是面向切面编程，能在不修改业务代码的情况下增强功能，比如日志、事务！” 面试官：“那你在项目里具体用 AOP 做了什么？比如日志记录，你是怎么切所有接口的？” 我（慌了）：“就是… 加了个 @Aspect 注解，写了个切面类… 具体切入点怎么写的记不清了。” 面试官：“那如果我想让‘接口日志’和‘权限校验’两个切面按顺序执行，怎么控制？” 我（卡壳）：“好像有个 order 属性？但不知道怎么用，也不知道原理。” 面试官：“你知道 Spring AOP 是用动态代理实现的吧？JDK 代理和 CGLIB 有什么区别？” 我（冷汗）：“JDK 代理是基于接口，CGLIB 是基于继承… 其他的就不知道了。” 结果：回家等通知 —— 核心问题是 “只记住了 AOP 的表面概念，没结合业务实战，也不懂底层原理，回答没有说服力”。 二、先拆透 AOP 的本质：不是 “高大上的概念”，而是 “解耦的工具” 很多人学 AOP 时被 “切面、通知、连接点” 等术语吓住，其实 AOP 的核心目的特别简单： 把 “业务逻辑” 和 “通用功能（如日志、权限、异常处理）” 分开写，避免代码冗余 。 比如电商的 “下单接口”，核心业务是 “扣库存、生成订单”，但还需要做 3 件事： 记录请求参数和响应结果（日志）； 校验用户是否登录（权限）； 出现异常时统一返回格式（异常处理）。 如果不用 AOP，代码会变成这样（冗余且难维护）： 用 AOP 后，通用功能被抽成 “切面”，业务代码只留核心逻辑： 这就是 AOP 的价值： 让业务代码更纯粹，通用功能可复用、可配置 。 三、AOP 核心概念：用 “下单日志” 场景翻译，秒懂 别死记硬背术语，结合 “下单接口日志” 场景，每个概念都能对应到具体代码： 术语 业务场景翻译（下单日志） 代码层面实现 切面（Aspect） “日志功能” 这个整体，包含 “什么时候切” 和 “切了做什么” 加了 @Aspect 的类（如 LogAspect） 通知（Advice） 日志的具体操作：“切前记录请求”“切后记录响应” @Before（切前）、@AfterReturning（切后） 连接点（JoinPoint） 可能被切的 “时机”：比如接口方法执行前、执行后 下单接口的 createOrder 方法执行前 切入点（Pointcut） 明确 “切哪些接口”：比如所有 /controllers 下的接口 用表达式定义：execution (* com.xxx.controller. . (..)) 目标对象（Target） 被增强的业务对象：OrderController 实例 Spring 管理的 OrderC"
+    },
+    {
+      "slug": "llu69xqtho814dui",
+      "title": "性能优化必修课-如何统计接口耗时",
+      "url": "/tulingzhouyu/db22bv/llu69xqtho814dui",
+      "toc_path": [
+        "高频面试问题",
+        "楼兰老师",
+        "性能优化必修课-如何统计接口耗时"
+      ],
+      "toc_level": 2,
+      "toc_index": 1136,
+      "word_count": 2034,
+      "updated_at": "2025-10-30T07:29:05.000Z",
+      "primary_category": "spring-core",
+      "primary_category_name": "Spring核心",
+      "related_categories": [
+        "spring-core",
+        "performance-optimization",
+        "observability-troubleshooting",
+        "docker-k8s",
+        "project-system-design"
+      ],
+      "question_type": "optimization",
+      "question_type_name": "性能优化题",
+      "levels": [
+        "senior",
+        "campus"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "Spring",
+        "AOP",
+        "Bean",
+        "性能",
+        "优化",
+        "瓶颈",
+        "排查",
+        "监控",
+        "告警",
+        "日志",
+        "链路",
+        "CPU"
+      ],
+      "summary": "面试官问你：你们系统接口慢，你怎么排查？很多人直接懵了。其实这考的就是接口耗时统计能力。今天教你6种方法，从入门到生产级，让你面试和实战都能拿捏！这期内容我会从基础到高级，用图文并茂的方式，分享我在生产环境踩过的坑和实战经验。每种方案都是性能优化的利器，学完你就知道该在什么场景用什么方法。想要...",
+      "excerpt": "面试官问你：你们系统接口慢，你怎么排查？很多人直接懵了。其实这考的就是接口耗时统计能力。今天教你6种方法，从入门到生产级，让你面试和实战都能拿捏！ 这期内容我会从基础到高级，用图文并茂的方式，分享我在生产环境踩过的坑和实战经验。每种方案都是性能优化的利器，学完你就知道该在什么场景用什么方法。 想要完整代码的，记得给视频点赞收藏，评论区扣1，我会把核心代码整理好发给你们！ 为什么要统计接口耗时 先说为什么要统计接口耗时。 第一，这是性能优化的基石。没有耗时数据，你优化就是盲人摸象，根本不知道瓶颈在哪。 第二，这是监控告警的源头。通过耗时趋势，你能提前发现慢SQL、资源竞争这些隐藏问题。 第三，这是用户体验的晴雨表。响应时间直接影响用户满意度，毫秒级的延迟都可能让用户流失。 所以说，会统计耗时，是每个后端开发的必修课。 方法1 - System.currentTimeMillis() 第一种方法，System.currentTimeMillis()，这是最基础的。 逻辑很简单：记录开始时间，执行业务逻辑，记录结束时间，最后算个差值就行。 这个方法返回的是毫秒级时间戳，适合快速调试和本地测试，而且完全不需要任何第三方依赖。 优点就是简单易用、快速有效、零依赖。 但缺点也很明显：精度有限，而且会受系统时间影响。如果服务器时间被调整了，你的统计数据就不准了。另外代码侵入性比较强，每个方法都要手动加计时代码。 所以这个方法，我一般只在开发阶段用来快速定位问题。 方法2 - System.nanoTime() 第二种方法，System.nanoTime()，这是高精度版本。 它提供纳秒级的测量精度，专门用来计算时间间隔，而且不受系统时间调整的影响。 流程跟第一种类似，只不过精度更高，特别适合算法性能优化这种对时间要求很严格的场景。 优点是纳秒级精度，不受时钟同步影响。 缺点是需要做单位转换，而且代码侵入性还是存在。 如果你要优化一个复杂算法，需要精确到微秒级别，那就用这个方法。但日常接口统计，其实第一种就够了。 方法3 - Spring AOP切面 第三种方法，Spring AOP切面，这个就开始专业了。 它的核心思想是面向切面编程，关注点分离。你先定义一个自定义注解，比如叫TimeCost，然后编写切面拦截逻辑，最后在需要统计的方法上加这个注解就行。 整个过程通过动态代理自动拦截执行，业务代码完全零侵入。 优点非常明显：无侵入、解耦优雅、统一管理。你想统计哪个方法，加个注解就完事。 缺点是只能用在Spring Bean上，而且有一定的代理开销。 这个方法我在公司项目里用得最多，特别适合需要统计多个Service方法耗时的场景。面试的时候你要是能说出AOP这个方案，基本就能体现你的技术深度了。 方法4 - 拦截器Interceptor 第四种方法，拦截器Intercept"
+    },
+    {
+      "slug": "ss1vfir7grizfcxr",
+      "title": "Java面试：备战金九银十，快问快答第一期",
+      "url": "/tulingzhouyu/db22bv/ss1vfir7grizfcxr",
+      "toc_path": [
+        "高频面试问题",
+        "楼兰老师",
+        "Java面试：备战金九银十，快问快答第一期"
+      ],
+      "toc_level": 2,
+      "toc_index": 1168,
+      "word_count": 1106,
+      "updated_at": "2025-09-23T07:09:46.000Z",
+      "primary_category": "spring-core",
+      "primary_category_name": "Spring核心",
+      "related_categories": [
+        "spring-core",
+        "spring-boot",
+        "java-core",
+        "spring-cloud",
+        "mysql-index-transaction"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "Spring",
+        "AOP",
+        "Spring Boot",
+        "Java",
+        "IO",
+        "Spring Cloud",
+        "注册中心",
+        "配置中心",
+        "MySQL",
+        "索引",
+        "事务",
+        "锁"
+      ],
+      "summary": "总有朋友担心面试要准备到什么程度才能有信心。这次就来拿一位朋友真实的Java面试经历，来一次快问快答，看看你能坚持到哪一个。Java面试快问快答Spring Boot 和 Spring Cloud 有什么区别？简单说，Spring Boot 是为了让单个应用开发更简单，它整合了各种常用的Spr...",
+      "excerpt": "​ 总有朋友担心面试要准备到什么程度才能有信心。这次就来拿一位朋友真实的Java面试经历，来一次快问快答，看看你能坚持到哪一个。 Java面试快问快答 Spring Boot 和 Spring Cloud 有什么区别？ 简单说，Spring Boot 是为了让单个应用开发更简单，它整合了各种常用的Spring系列框架，主打一个开箱即用。Spring Cloud 是基于 Spring Boot 的微服务治理框架，负责管好注册中心、配置中心、服务调用这些分布式的事。 HashMap 的底层原理是什么？ 底层是数组加链表的结构， JDK 8 之后为了优化，链表过长会转成红黑树 。 它通过 key 的哈希值快速定位到数组位置，如果位置上已经有数据了，就挂在后面的链表或红黑树上 ，一般查找和插入都是常数级的效率。 关于 Spring 里的 AOP，谈谈你的理解。 AOP 即面向切面编程，把通用逻辑（如日志记录、事务管理、权限校验等）从业务代码中提取出来放到切面中，通过动态代理，在方法执行前后插入这些逻辑。 BIO、NIO、AIO有什么区别？ 他们都是Java中常用的I\\O模型。 BIO是阻塞式IO，会一直阻塞线程等待操作完成。采用一个线程处理一个请求的方式，面对高并发时线程数量增多，容易导致系统崩溃。 NIO是非阻塞式IO，IO线程可以去做其他任务，当IO操作完成时收到通知回来和处理。采用多路复用来监听多个客户端请求，减少线程数量，提高系统性能。 AIO是异步非阻塞式IO，不需要用户线程关注IO事件，由操作系统通知回调机制处理。依靠操作系统完成IO操作，不需要额外的线程池或多路复用。因此对操作系统有要求。 如果一张千万级大表，访问速度变慢了，你的优化思路是什么？ 首先，必须考虑加索引，这是最直接的。如果还不行，就上分库分表，把数据压力分散开。同时，把访问最频繁的热点数据，放进 Redis 缓存。最后，对不常用的历史数据做冷热分离，归档处理。 MySQL 的隔离级别有哪几种？为什么线上常用‘读已提交’？ 有读未提交、读已提交、可重复读和串行化四个隔离级别。 读未提交会出现脏读；读已提交解决了脏读，但会有不可重复读；可重复读解决了不可重复读；串行化最安全但性能最差。 MySQL 默认是可重复读，公司一般用读已提交，因为它没有间隙锁，性能更好。 怎么设计一个分布式锁？你有什么思路？ 有几种常见的方法：第一种用数据库，比如靠唯一索引实现悲观锁；第二种用 Redis，通过 setnx 命令加过期时间来实现，但要注意指令原子性。或者直接用Redisson封装好的锁；第三种用 Zookeeper，利用它创建临时有序节点的特性，天然就支持锁和自动释放。 如果 Redis 宕机了，怎么保证服务高可用？ 上高可用方案。要么用主从复制加哨兵来监控和自动切换，要么直接上 Redis 集群模式"
+    },
+    {
+      "slug": "xgawq91i6u3c2wlg",
+      "title": "Spring AI Alibaba：Java生态的AI原生开发框架深度解析（附从0开始新建一个项目）",
+      "url": "/tulingzhouyu/db22bv/xgawq91i6u3c2wlg",
+      "toc_path": [
+        "高频面试问题",
+        "鹏宇老师",
+        "Spring AI Alibaba：Java生态的AI原生开发框架深度解析（附从0开始新建一个项目）"
+      ],
+      "toc_level": 2,
+      "toc_index": 1183,
+      "word_count": 5833,
+      "updated_at": "2025-12-26T05:56:13.000Z",
+      "primary_category": "spring-core",
+      "primary_category_name": "Spring核心",
+      "related_categories": [
+        "spring-core",
+        "ai-llm",
+        "java-core",
+        "spring-boot",
+        "resume-project"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "campus",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "校招/应届生",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "Spring",
+        "AI",
+        "大模型",
+        "Ollama",
+        "RAG",
+        "Prompt",
+        "Java",
+        "String",
+        "注解",
+        "Spring Boot",
+        "自动配置",
+        "项目"
+      ],
+      "summary": "一、技术定位与演进路径Spring AI Alibaba 是阿里云与Spring社区联合打造的AI原生开发框架，其设计目标是解决Java开发者在AI应用开发中的三大痛点：模型集成复杂性：传统方式需要处理不同模型API的差异性开发范式割裂：AI能力与业务逻辑分离导致的维护成本企业级特性缺失",
+      "excerpt": "一、技术定位与演进路径 Spring AI Alibaba 是阿里云与Spring社区联合打造的AI原生开发框架，其设计目标是解决Java开发者在AI应用开发中的三大痛点： 模型集成复杂性 ：传统方式需要处理不同模型API的差异性 开发范式割裂 ：AI能力与业务逻辑分离导致的维护成本 企业级特性缺失 ：缺乏可观测性、分布式支持等生产环境要求 该框架在Spring AI基础上进行了深度增强，形成了独特的三层架构体系： 二、核心架构解析 2.1 模块化设计 项目采用Maven多模块结构，关键模块包括： spring-ai-alibaba-core ：核心抽象层，提供统一的ChatModel/EmbeddingModel接口 spring-ai-alibaba-graph-core ：基于LangGraph思想的Java实现，支持复杂工作流编排 spring-ai-alibaba-mcp ：模型上下文协议实现，支持模型状态持久化 spring-ai-alibaba-observation ：集成OpenTelemetry的可观测性扩展 spring-ai-alibaba-starter-dashscope ：百炼平台专属starter 2.2 关键设计模式 适配器模式 ：通过 DashScopeChatModel 实现ChatModel接口，屏蔽不同模型API差异 责任链模式 ：Advisor链式处理RAG流程（检索→重排序→记忆增强） 观察者模式 ：自动埋点OpenTelemetry追踪数据 模板方法模式 ：标准化工具调用流程（参数验证→执行→结果解析） 三、企业级特性实现 3.1 多模型支持体系 框架支持主流大模型的灵活集成： 阿里云系 ：通义千问全系列、百炼平台 开源社区 ：Llama系列、Ollama本地模型 国际厂商 ：OpenAI GPT系列、Anthropic Claude 国内厂商 ：百度文心一言、讯飞星火 通过统一的ChatClient接口实现模型切换： 3.2 工作流引擎（Graph） 基于LangGraph的Java实现，支持： 状态管理 ：通过State类定义流程状态 节点编排 ：内置ReAct Agent、Supervisor等智能体模式 流式处理 ：SSE流式响应支持 人类介入 ：通过HumanLoopNode实现人工确认节点 示例工作流定义： 3.3 可观测性体系 集成OpenTelemetry的完整可观测方案： 自动埋点 ：模型调用、工具执行、RAG流程等关键节点 分布式追踪 ：支持Jaeger/Grafana等主流追踪系统 指标监控 ：请求延迟、Token消耗量、错误率等核心指标 日志增强 ：结构化日志包含模型参数、响应内容等元数据 四、典型应用场景 4.1 智能客服系统 4.2 企业知识库问答 4.3 自动化运维 五、与Lang"
+    },
+    {
+      "slug": "nieioyltn02ee0tq",
+      "title": "面试官问：你是怎么统计接口耗时的？",
+      "url": "/tulingzhouyu/db22bv/nieioyltn02ee0tq",
+      "toc_path": [
+        "高频面试问题",
+        "鹏宇老师",
+        "面试官问：你是怎么统计接口耗时的？"
+      ],
+      "toc_level": 2,
+      "toc_index": 1203,
+      "word_count": 5023,
+      "updated_at": "2025-11-25T07:18:57.000Z",
+      "primary_category": "spring-core",
+      "primary_category_name": "Spring核心",
+      "related_categories": [
+        "spring-core",
+        "spring-boot",
+        "observability-troubleshooting",
+        "performance-optimization",
+        "java-core"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "campus",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "校招/应届生",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "Spring",
+        "AOP",
+        "Bean",
+        "Spring Boot",
+        "排查",
+        "故障",
+        "监控",
+        "告警",
+        "日志",
+        "链路",
+        "性能",
+        "优化",
+        "Java"
+      ],
+      "summary": "其实面试官问这个问题，核心是考察你 “性能优化的闭环思维”—— 光说优化效果不够，得说清你怎么量化出这个效果，这才是技术人的严谨性。今天就用一篇详细文章，把统计接口耗时的 6 种核心方法讲透，不仅包含原理、代码实现，还附上适用场景和选型建议，不管是面试还是工作都能用得上。一、为什么统计接口耗时...",
+      "excerpt": "其实面试官问这个问题，核心是考察你 “性能优化的闭环思维”—— 光说优化效果不够，得说清你怎么量化出这个效果，这才是技术人的严谨性。今天就用一篇详细文章，把统计接口耗时的 6 种核心方法讲透，不仅包含原理、代码实现，还附上适用场景和选型建议，不管是面试还是工作都能用得上。 一、为什么统计接口耗时是性能优化的 “第一步”？ 在聊具体方法前，我们必须先明确：统计接口耗时不是 “多此一举”，而是性能优化的前提和基础，核心价值体现在三个方面： 性能优化的基石 ：没有具体的耗时数据，优化就是 “盲人摸象”。你以为是数据库慢，但可能是 Redis 缓存穿透；你觉得是代码冗余，但实际是网络调用延迟 —— 只有量化耗时，才能精准定位瓶颈。 监控告警的源头 ：通过耗时趋势分析，能提前发现系统异常。比如某接口耗时从 200ms 突增至 1s，可能是慢 SQL、资源竞争或依赖服务故障，及时告警能避免故障扩大。 用户体验的晴雨表 ：用户对响应时间的感知极其敏感，行业内有明确的体验分级标准： 响应时间 < 200ms：用户无感知，体验优秀； 200ms~500ms：体验良好，用户操作流畅； 500ms~1s：用户能感知到延迟，但可接受； 超过 1s：用户明显觉得卡顿，可能直接放弃操作。 毫秒级的差异，可能就是用户留存率的分水岭。 二、6 种接口耗时统计方法（从基础到生产级，附代码实现） 接下来进入核心部分，6 种统计方法按 “基础→进阶→生产级” 排序，每种方法都包含原理、代码实现、优缺点和适用场景，方便你按需选择。 方法 1：System.currentTimeMillis ()—— 最基础的 “手动埋点” 这是 Java 开发者最熟悉的基础方法，核心逻辑是 “记录前后时间戳，计算差值”。 核心原理 通过 System.currentTimeMillis() 获取当前时间戳（毫秒级），在业务逻辑执行前后各调用一次，差值即为接口耗时。 代码实现 优缺点 优点 ：零学习成本、无任何依赖、资源消耗极小（几乎可忽略）； 缺点 ：精度仅毫秒级、代码侵入性强（需手动嵌入业务代码）、不支持大规模监控（需逐个方法添加）。 适用场景 本地开发调试、简单验证某个方法的执行时间、临时统计非核心接口耗时。 方法 2：System.nanoTime ()—— 高精度场景的 “进阶选择” 如果需要更精细的耗时统计（如微服务间调用、算法性能对比）， System.nanoTime() 是更好的选择。 核心原理 与 System.currentTimeMillis() 类似，但返回 纳秒级 时间戳（1 纳秒 = 10⁻⁹秒），且基于系统计时器，不受系统时间调整（如 NTP 同步）影响，测量更稳定。 代码实现 优缺点 优点 ：纳秒级精度（比毫秒精确 1000 倍）、测量稳定（不受系统时间影响）、适合短时间间隔统计；"
+    },
+    {
+      "slug": "hyw3iq8z31cgkicg",
+      "title": "17、面试官：如何设计一个通用的“方法耗时监控”切面，但要求对业务代码零侵入？",
+      "url": "/tulingzhouyu/db22bv/hyw3iq8z31cgkicg",
+      "toc_path": [
+        "高频面试问题",
+        "赋文老师",
+        "17、面试官：如何设计一个通用的“方法耗时监控”切面，但要求对业务代码零侵入？"
+      ],
+      "toc_level": 2,
+      "toc_index": 1287,
+      "word_count": 3797,
+      "updated_at": "2025-11-16T13:35:39.000Z",
+      "primary_category": "spring-core",
+      "primary_category_name": "Spring核心",
+      "related_categories": [
+        "spring-core",
+        "observability-troubleshooting",
+        "java-core",
+        "resume-project",
+        "jvm-classloading"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "campus",
+        "middle"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "校招/应届生",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "Spring",
+        "AOP",
+        "Bean",
+        "线上",
+        "监控",
+        "告警",
+        "日志",
+        "Java",
+        "注解",
+        "异常",
+        "面试官",
+        "类加载"
+      ],
+      "summary": "开篇：凌晨三点的噩梦凌晨三点，线上告警疯狂轰炸。\"订单接口响应时间从 200ms 飙到了 3 秒！快查！\"你火速登录监控平台，却发现监控粒度太粗：只能看到整个接口的耗时，根本不知道是哪个环节慢了。是数据库查询？还是第三方服务调用？还是某个复杂计算逻辑？你心想：\"要是每个关键方法都有耗时监控就好...",
+      "excerpt": "开篇：凌晨三点的噩梦 凌晨三点，线上告警疯狂轰炸。 &quot;订单接口响应时间从 200ms 飙到了 3 秒！快查！&quot; 你火速登录监控平台，却发现监控粒度太粗：只能看到整个接口的耗时，根本不知道是哪个环节慢了。是数据库查询？还是第三方服务调用？还是某个复杂计算逻辑？ 你心想：&quot;要是每个关键方法都有耗时监控就好了。&quot; 但转念一想，如果在每个方法里手动加上这样的代码： 那得改多少代码？几百个方法？而且这些监控代码和业务逻辑混在一起，丑陋、难维护，一旦需要调整监控策略，又得全部重构一遍。 面试场景重现 第二天面试，面试官似乎看穿了你昨晚的痛苦经历： &quot;假设你负责设计一个通用的方法耗时监控系统，要求对所有标注了 @Monitor 注解的方法自动进行耗时统计，并上报到监控平台。**核心要求是：业务代码零侵入，不允许在业务方法里写任何监控相关的代码。**你会怎么设计？&quot; 这个问题看似简单，实则暗藏玄机。面试官真正想考察的，远不止&quot;会不会用 Spring AOP&quot;那么肤浅。 面试官的真实意图：他在考察什么？ 遇到这种题，千万别一上来就写 @Around 注解。面试官想看的是： 1. 对&quot;零侵入&quot;的深刻理解 什么叫&quot;零侵入&quot;？不是&quot;少侵入&quot;，而是 业务代码完全感知不到监控逻辑的存在 。 ❌ 错误理解 ：在每个方法里调用一个 MonitorUtil.start() 和 MonitorUtil.end() ，虽然封装了，但仍然侵入了业务逻辑。 ✅ 正确理解 ：通过元编程（如 AOP、字节码增强），让监控逻辑在编译期或运行期自动织入，业务开发者只需要专注写业务，甚至可以不知道监控的存在。 对比示例： 2. 对 AOP 原理和边界的清晰认知 Spring AOP 很好用，但它有局限性： 只能拦截 Spring Bean 的方法 无法拦截 private 方法、 final 方法、 static 方法 基于代理机制（JDK 动态代理或 CGLIB），会有微小的性能开销 面试官想知道 ：你是否清楚这些边界？遇到边界问题，你有没有 Plan B（比如用 Java Agent + 字节码增强）？ 3. 工程化思维：不只是&quot;能跑&quot;，还要&quot;好用&quot; 一个生产级的监控系统，不能只会打印日志。面试官期待你考虑到： 性能 ：如何避免监控本身成为瓶颈？（异步上报、采样、限流） 灵活性 ：如何支持动态开关？如何针对不同方法设置不同阈值？ 可观测性 ：如何与公司现有的监控体系（如 Prometheus、SkyWalking）集成？ 异常处理 ：如果监控代码自己出错了，能不能保证业务不受影响？ 第一层回答：Spring AOP + 自定义注"
+    },
+    {
+      "slug": "pvz87ndcrb45r30l",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/pvz87ndcrb45r30l",
+      "toc_path": [
+        "高频面试问题",
+        "赋文老师",
+        "17、面试官：如何设计一个通用的“方法耗时监控”切面，但要求对业务代码零侵入？",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1288,
+      "word_count": 2385,
+      "updated_at": "2025-11-20T09:02:20.000Z",
+      "primary_category": "spring-core",
+      "primary_category_name": "Spring核心",
+      "related_categories": [
+        "spring-core",
+        "observability-troubleshooting",
+        "java-core",
+        "resume-project",
+        "computer-network"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior",
+        "middle",
+        "expert"
+      ],
+      "level_names": [
+        "高级/5-8年",
+        "中级/3-5年",
+        "专家/P7+"
+      ],
+      "keywords": [
+        "Spring",
+        "AOP",
+        "Bean",
+        "监控",
+        "告警",
+        "日志",
+        "链路",
+        "Java",
+        "注解",
+        "异常",
+        "面试官",
+        "HTTP"
+      ],
+      "summary": "📎index.html面试官：如何设计一个对业务代码零侵入的通用“方法耗时监控”链接: https://pan.baidu.com/s/1V2r6454aHgvaRxtQEK25eg?pwd=7wy4 提取码: 7wy4 兄弟们，凌晨三点被生产事故叫醒是什么感觉？订单接口从 200 毫秒飙到...",
+      "excerpt": "面试官：如何设计一个对业务代码零侵入的通用“方法耗时监控” 链接: https://pan.baidu.com/s/1V2r6454aHgvaRxtQEK25eg?pwd=7wy4 提取码: 7wy4 ​ 兄弟们，凌晨三点被生产事故叫醒是什么感觉？ 订单接口从 200 毫秒飙到 3 秒，监控平台只告诉你&quot;接口慢了&quot;，但 具体是哪里慢？数据库？还是第三方接口超时？完全看不出来！ 今天我就教你如何设计一套 生产级的零侵入监控系统 ，这可是阿里 P7 面试必考题！大家一定要看到最后！ 【第1页：问题引入 - 30秒】 （切换到第1页） 先来看两种监控方案，你会选哪个？ 左边这种（指向左边） ，你要在每个方法里手写监控代码： long start = 开始时间 ， try-catch-finally ，然后打日志。哥们儿，你们公司有多少个方法？几百个？每个都这么改？ 改到怀疑人生！ 再看右边（指向右边） ，只需要加一个 @Monitor 注解，业务代码保持纯净，啥都不用改！监控逻辑自动生效！ 这就是 零侵入 的威力！但是，面试官可不会让你这么轻松过关... 【第2页：深入理解 - 25秒】 （切换到第2页） 面试官真正想考察的是什么？三个点！ 第一，你真的理解&quot;零侵入&quot;吗？ 不是少侵入，而是业务代码 完全感知不到 监控的存在！ 第二，你知道 Spring AOP 的边界在哪吗？ 什么场景能用，什么场景不能用？ 第三，这是工程化思维的考验！ 不只是&quot;能跑&quot;，还要考虑性能、异常、动态配置！ 你看左边这个错误理解（指向左边），业务方法里还要调用 MonitorUtil.start() ，这叫零侵入吗？这叫 换了个地方侵入！ 真正的零侵入（指向右边） ，业务代码里连监控的影子都看不到！ 【第3页：第一层回答 - 35秒】 （切换到第3页） 好，那我们来看第一层回答，也就是及格线！ 三步走： 第一步，定义注解 （指向步骤1），就是一个简单的 @Monitor 注解； 第二步，写切面 （指向步骤2），用 Spring AOP 的 @Around 环绕通知，记录开始时间，执行业务方法，计算耗时； 第三步，加注解 （指向步骤3），在业务方法上加 @Monitor ，搞定！ 你看这个流程图（指向流程图），就是 调用方法 → AOP 拦截 → 记录时间 → 执行业务 → 计算耗时 → 上报监控 ，一气呵成！ 但是！面试官会追问（指向问题卡片）： 如果要监控 static 方法呢？第三方 jar 包呢？高并发下直接打日志会不会拖垮 I/O？ 【第4页：AOP的局限性 - 25秒】 （切换到第4页） 来看这个表格（指向表格），Spring AOP 只能拦截 Spring Bean 的 public 方法 ！ private 方法？"
+    },
+    {
+      "slug": "dh09g2gfy7zb18qd",
+      "title": "SpringBoot + Spring AI Alibaba 整合阿里云百炼DeepSeek大模型，小白也能轻松上手",
+      "url": "/tulingzhouyu/db22bv/dh09g2gfy7zb18qd",
+      "toc_path": [
+        "AI大模型",
+        "SpringBoot + Spring AI Alibaba 整合阿里云百炼DeepSeek大模型，小白也能轻松上手"
+      ],
+      "toc_level": 1,
+      "toc_index": 1500,
+      "word_count": 751,
+      "updated_at": "2025-09-24T07:04:19.000Z",
+      "primary_category": "spring-core",
+      "primary_category_name": "Spring核心",
+      "related_categories": [
+        "spring-core",
+        "ai-llm",
+        "spring-boot",
+        "java-core",
+        "resume-project"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "Spring",
+        "Bean",
+        "AI",
+        "大模型",
+        "DeepSeek",
+        "Prompt",
+        "Spring Boot",
+        "SpringBoot",
+        "Java",
+        "项目"
+      ],
+      "summary": "Spring 官方开源了 Spring AI 框架，用来简化 Spring 开发者开发智能体应用的过程。随后阿里巴巴开源了 Spring AI Alibaba，它基于 Spring AI，同时与阿里云百炼大模型服务、通义系列大模型做了深度集成与最佳实践。基于 Spring AI Alibaba...",
+      "excerpt": "Spring 官方开源了 Spring AI 框架，用来简化 Spring 开发者开发智能体应用的过程。随后阿里巴巴开源了 Spring AI Alibaba，它基于 Spring AI，同时与阿里云百炼大模型服务、通义系列大模型做了深度集成与最佳实践。基于 Spring AI Alibaba，Java 开发者可以非常方便地开发 AI 智能体应用。 开通阿里云百炼账号，获取API-KEY 官网卡顿怎么办？亲测有效！6种DeepSeek-R1满血模型替代方案分享 https://bailian.console.aliyun.com/#/model-market 其中 deepseek-r1 与 deepseek-v3 分别有 100 万的免费 Token，部分蒸馏模型限时免费体验。 SpringBoot接入deepseek实战 使用 Spring AI Alibaba 开发应用与使用普通 Spring Boot 没有什么区别，只需要增加 spring-ai-alibaba-starter 依赖，将 ChatClient Bean 注入就可以实现与模型聊天了。 注意：因为 Spring AI Alibaba 基于 Spring Boot 3.x 开发，因此本地 JDK 版本要求为 17 及以上。 添加依赖 首先，需要在项目中添加 spring-ai-alibaba-starter 依赖，它将通过 Spring Boot 自动装配机制初始化与阿里云通义大模型通信的 ChatClient 、 ChatModel 相关实例。 注意：由于 spring-ai 相关依赖包还没有发布到中央仓库，如出现 spring-ai-core 等相关依赖解析问题，请在您项目的 pom.xml 依赖中加入如下仓库配置。 完整的pom文件如下 2.配置 application.yml 指定 API-KEY（可通过访问阿里云百炼模型服务平台获取，有免费额度可用） 3.注入智能体代理 ChatClient 接下来，在普通 Controller Bean 中注入 ChatClient 实例，这样你的 Bean 就具备与 AI 大模型智能对话的能力了。 以上示例中，ChatClient 使用默认参数调用大模型，Spring AI Alibaba 还支持通过 DashScopeChatOptions 调整与模型对话时的参数， DashScopeChatOptions 支持两种不同维度的配置方式： 全局默认值，即 ChatClient 实例初始化参数 可以在 application.yml 文件中指定 spring.ai.dashscope.chat.options.* 或调用构造函数 ChatClient.Builder.defaultOptions(options) 完成配置初始化。 每次 Pro"
+    }
+  ]
+}

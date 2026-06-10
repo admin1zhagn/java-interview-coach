@@ -1,0 +1,466 @@
+{
+  "id": "jvm-classloading",
+  "name": "JVM类加载",
+  "aliases": [
+    "类加载",
+    "双亲委派",
+    "ClassLoader",
+    "字节码"
+  ],
+  "count": 10,
+  "total_word_count": 31937,
+  "articles": [
+    {
+      "slug": "gu4keuyemo2sfi71",
+      "title": "JVM篇",
+      "url": "/tulingzhouyu/db22bv/gu4keuyemo2sfi71",
+      "toc_path": [
+        "面试必看",
+        "大厂真题",
+        "阿里面试真题",
+        "JVM篇"
+      ],
+      "toc_level": 3,
+      "toc_index": 49,
+      "word_count": 12442,
+      "updated_at": "2024-04-29T12:09:02.000Z",
+      "primary_category": "jvm-classloading",
+      "primary_category_name": "JVM类加载",
+      "related_categories": [
+        "jvm-classloading",
+        "jvm-memory-gc",
+        "os-linux",
+        "java-core",
+        "java-concurrency"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "类加载",
+        "双亲委派",
+        "ClassLoader",
+        "字节码",
+        "JVM",
+        "GC",
+        "垃圾回收",
+        "OOM",
+        "堆",
+        "栈",
+        "元空间",
+        "线程",
+        "Java"
+      ],
+      "summary": "JVM内存划分1、JVM运行时数据区域堆、方法区（元空间）、虚拟机栈、本地方法栈、程序计数器。Heap(堆)：对象的实例以及数组的内存都是要在堆上进行分配的，堆是线程共享的一块区域，用来存放对象实例，也是垃圾回收（GC）的主要区域；开启逃逸分析后，某些未逃逸的对象可以通过标量替换的方式在栈中分...",
+      "excerpt": "JVM内存划分 1、JVM运行时数据区域 堆、方法区（元空间）、虚拟机栈、本地方法栈、程序计数器。 Heap(堆)： 对象的实例以及数组的内存都是要在堆上进行分配的，堆是线程共享的一块区域，用来存放对象实例，也是垃圾回收（GC）的主要区域；开启逃逸分析后，某些未逃逸的对象可以通过标量替换的方式在栈中分配。 堆细分：新生代、老年代，对于新生代又分为： Eden 区 和 Surviver1 和 Surviver2区 。 方法区： 对于JVM的方法区也可以称之为永久区，它储存的是已经被java虚拟机加载的类信息、常量、静态变量；Jdk1.8以后取消了方法区这个概念，称之为元空间（MetaSpace）； 当应用中的 Java 类过多时，比如 Spring 等一些使用动态代理的框架生成了很多类 ，如果占用空间超出了我们的设定值，就会发生 元空间溢出。 虚拟机栈： 虚拟机栈 是线程私有的 ，他的生命周期和线程的生命周期是一致的。里面装的是一个一个的 栈帧 ，每一个方法在执行的时候都会创建一个栈帧，栈帧中用来存放（ 局部变量表、操作数栈 、动态链接 、返回地址 ）；在Java虚拟机规范中，对此区域规定了两种异常状况：如果线程请求的栈深度大于虚拟机所允许的深度，将会抛出 StackOverflowError 异常；如果虚拟机栈动态扩展时无法申请到足够的内存，就会抛出 OutOfMemoryError 异常。 局部变量表： 局部变量表是一组变量值存储空间，用来存放方法参数、方法内部定义的局部变量。底层是变量槽（variable slot） 操作数栈： 是用来记录一个方法在执行的过程中，字节码指令向操作数栈中进行入栈和出栈的过程。大小在编译的时候已经确定了，当一个方法刚开始执行的时候，操作数栈中是空发的，在方法执行的过程中会有各种字节码指令往操作数栈中入栈和出栈。 动态链接： 因为字节码文件中有很多符号的引用，这些符号引用一部分会在类加载的解析阶段或第一次使用的时候转化成直接引用，这种称为静态解析；另一部分会在运行期间转化为直接引用，称为动态链接。 返回地址（returnAddress） ：类型（指向了一条字节码指令的地址） JIT即时编译器（Just In Time Compiler） ，简称 JIT 编译器: 为了提高热点代码的执行效率，在运行时，虚拟机将会把这些代码编译成与本地平台相关的机器码，并进行各种层次的优化，比如锁粗化等。 本地方法栈： 本地方法栈和虚拟机栈类似，不同的是虚拟机栈服务的是Java方法，而本地方法栈服务的是Native方法。在HotSpot虚拟机实现中是把本地方法栈和虚拟机栈合二为一的，同理它也会抛出StackOverflowError和OOM异常。 PC程序计数器： PC，指的是存放下一条指令的位置的一个指针。它是一块较小的内存空间，且是线程私有的"
+    },
+    {
+      "slug": "qpirnvr2l4h7mvq0",
+      "title": "💎 2025最新突击学员面经",
+      "url": "/tulingzhouyu/db22bv/qpirnvr2l4h7mvq0",
+      "toc_path": [
+        "Java基础",
+        "💎 2025最新突击学员面经"
+      ],
+      "toc_level": 1,
+      "toc_index": 169,
+      "word_count": 7757,
+      "updated_at": "2025-12-11T07:09:35.000Z",
+      "primary_category": "jvm-classloading",
+      "primary_category_name": "JVM类加载",
+      "related_categories": [
+        "jvm-classloading",
+        "java-core",
+        "os-linux",
+        "docker-k8s",
+        "java-collections"
+      ],
+      "question_type": "algorithm",
+      "question_type_name": "算法编程题",
+      "levels": [
+        "middle",
+        "campus"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "校招/应届生"
+      ],
+      "keywords": [
+        "类加载",
+        "双亲委派",
+        "ClassLoader",
+        "字节码",
+        "Java",
+        "String",
+        "equals",
+        "泛型",
+        "反射",
+        "异常",
+        "序列化",
+        "线程",
+        "集合"
+      ],
+      "summary": "一、Object对象方法有哪些？（高御科技）非常常规的问题，打开IDEA直接瞧一眼getClass() - 获取运行是的Class对象，属于反射的内一套，获取运行是的一些数据。hashCode() - 返回对象的hash值。目的是为了更好的支持哈希表，比如基于Java中的HashMap使用eq...",
+      "excerpt": "一、Object对象方法有哪些？（高御科技） 非常常规的问题，打开IDEA直接瞧一眼 getClass() - 获取运行是的Class对象，属于反射的内一套，获取运行是的一些数据。 hashCode() - 返回对象的hash值。目的是为了更好的支持哈希表，比如基于Java中的HashMap使用 equals() - 比较两个对象是否相等，默认 == clone() - 创建对象的副本。深拷贝和浅拷贝的内容 默认是浅拷贝，将当前对象复制一份，其中的基本数据类型直接复用值，引用数据类型是复用地址值。 深拷贝，将当前对象复制一份，其中的基本数据类型直接复用值，引用数据类型会重新的创建一个，不会复制之前的地址。 深拷贝要自己编写克隆内部的引用类型对象。 toString - 返回一个以字符串形式表示当前对象的信息。 wait - 当某个线程持有当前对象锁时，可以执行对象锁.wait，将持有对象锁的线程挂起等待。 notify - 当某个线程持有当前对象锁时，可以执行对象锁.notify，唤醒之前基于wait挂起的一个线程。 notifyAll - 当某个线程持有当前对象锁时，可以执行对象锁.notifyAll方法，唤醒之前所有基于wait挂起的线程。 finalize - 当触发垃圾回收时，如果当前对象无法基于可达性分析定位到，就会被垃圾回收器回收掉，在回收之前，如果这个对象重写了finalize，那就会触发finalize方法执行。可以执行一些其他的清理工作。（Finalize在JVM中，他不保证一定执行，他用的守护线程） 二、创建对象的方式？（高御科技） 首先，这个问题意义不大，更多的跟前面的Object类似，是一个引导向的问题。 new 关键字。 Construct，利用Construct的newInstance去构建对象。 （引导Spring~） 反序列化方式： 流反序列化。 JSON字符串反序列化等等…… clone，克隆也是ok的。 工厂模式去构建对象。 （引导Spring~） 三、为啥要有clone？(深/浅拷贝)（高御科技） Java中提供的clone方法主要是允许将一个对象进行copy，做到快速的复制一个对象。 而不需要new一个空对象，然后自己慢慢导入数据，开发效率太低。 这可以减少内存分配和垃圾回收的压力，尤其是在创建大量对象时。 默认的 clone 方法实现是浅拷贝。如果需要深拷贝，必须重写 clone 方法，并在其中实现深拷贝的逻辑。 如果再问clone，基本就是聊聊深拷贝，和浅拷贝。 默认是浅拷贝，将当前对象复制一份，其中的基本数据类型直接复用值，引用数据类型是复用地址值。 深拷贝，将当前对象复制一份，其中的基本数据类型直接复用值，引用数据类型会重新的创建一个，不会复制之前的地址。 深拷贝要自己编写克隆内部的引用类型对象。 四、构造器是"
+    },
+    {
+      "slug": "hyzhgg3366rb7q1h",
+      "title": "反射中，Class.forName和ClassLoader的区别",
+      "url": "/tulingzhouyu/db22bv/hyzhgg3366rb7q1h",
+      "toc_path": [
+        "Java基础",
+        "反射中，Class.forName和ClassLoader的区别"
+      ],
+      "toc_level": 1,
+      "toc_index": 215,
+      "word_count": 301,
+      "updated_at": "2023-09-05T11:57:01.000Z",
+      "primary_category": "jvm-classloading",
+      "primary_category_name": "JVM类加载",
+      "related_categories": [
+        "jvm-classloading",
+        "java-core",
+        "os-linux",
+        "computer-network"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "类加载",
+        "ClassLoader",
+        "Java",
+        "反射",
+        "异常",
+        "文件",
+        "网络"
+      ],
+      "summary": "Class.forName和ClassLoader是Java反射中用于加载类的两种不同方式。Class.forName是一个静态方法，通过提供类的完全限定名，在运行时加载类。此方法还会执行类的静态初始化块。如果类名不存在或无法访问，将抛出ClassNotFoundException异常。Cla...",
+      "excerpt": "Class.forName和ClassLoader是Java反射中用于加载类的两种不同方式。 Class.forName是一个静态方法 ，通过提供类的完全限定名，在运行时加载类。此方法还会执行类的静态初始化块。如果类名不存在或无法访问，将抛出ClassNotFoundException异常。 ClassLoader是一个抽象类，用于加载类的工具 。每个Java类都有关联的ClassLoader对象，负责将类文件加载到Java虚拟机中。ClassLoader可以动态加载类，从不同来源加载类文件，如本地文件系统、网络等。 两者区别如下： Class.forName 方法由 java.lang.Class 类调用，负责根据类名加载类，并执行静态初始化。 ClassLoader 是抽象类，提供了更灵活的类加载机制，可以自定义类加载过程，从不同来源加载类文件。 一般情况下，推荐使用 ClassLoader 来加载和使用类，因为它更灵活，并避免执行静态初始化的副作用。 Class.forName 主要用于特定场景，如加载数据库驱动程序。"
+    },
+    {
+      "slug": "hgkf3zbuut09l7ig",
+      "title": "说下类加载器机制与双亲委派",
+      "url": "/tulingzhouyu/db22bv/hgkf3zbuut09l7ig",
+      "toc_path": [
+        "JVM",
+        "说下类加载器机制与双亲委派"
+      ],
+      "toc_level": 1,
+      "toc_index": 331,
+      "word_count": 826,
+      "updated_at": "2024-08-09T08:01:44.000Z",
+      "primary_category": "jvm-classloading",
+      "primary_category_name": "JVM类加载",
+      "related_categories": [
+        "jvm-classloading",
+        "java-core",
+        "jvm-memory-gc",
+        "security-auth",
+        "os-linux"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "类加载",
+        "双亲委派",
+        "ClassLoader",
+        "字节码",
+        "Java",
+        "JVM",
+        "安全",
+        "文件"
+      ],
+      "summary": "Java 的类加载器机制与双亲委派模型是 Java 虚拟机（JVM）加载类文件时采用的一种体系结构。它用于确保 Java 应用程序中类的单一性、安全性和加载顺序。类加载器机制Java 的类加载器机制负责将类的字节码从各种来源（例如本地文件系统、网络等）加载到 JVM 中。主要的类加载器包括：B...",
+      "excerpt": "Java 的类加载器机制与双亲委派模型是 Java 虚拟机（JVM）加载类文件时采用的一种体系结构。它用于确保 Java 应用程序中类的单一性、安全性和加载顺序。 类加载器机制 Java 的类加载器机制负责将类的字节码从各种来源（例如本地文件系统、网络等）加载到 JVM 中。主要的类加载器包括： Bootstrap ClassLoader ：引导类加载器，负责加载核心 Java 库，由 JVM 自身实现（如 rt.jar ）。 Extension ClassLoader ：扩展类加载器，加载扩展库，通常从 java.ext.dirs 系统属性指定的目录中加载。 Application ClassLoader ：系统类加载器，加载用户类路径（ classpath ）中定义的类。 双亲委派模型 双亲委派模型是类加载机制的一种实现策略，确保类的唯一性和安全性。其工作流程如下： 当一个类加载器接收到类加载请求时，它首先将请求委派给它的父类加载器去加载。 只有当父加载器无法完成加载任务时，子加载器才会尝试自己去加载该类。 这种机制确保了 Java 核心类始终由 Bootstrap ClassLoader 加载，防止重复加载和安全漏洞。 代码示例 以下是一个简单的示例，展示如何自定义类加载器并观察双亲委派模型的工作： 解释 自定义类加载器 ： CustomClassLoader 实现了从给定路径加载类的逻辑，通过重写 findClass 方法实现。 双亲委派 ：当 loadClass 调用时，首先会尝试委托给父类加载器加载类。 类路径加载 ：通过 loadClassData 方法实现从文件系统读取类数据。 总结 安全性 ：双亲委派模型帮助防止加载非法类或重复类，保证核心库的安全。 扩展性 ：自定义类加载器允许开发者改变类加载行为（如从数据库、网络等加载类），在插件系统中非常有用。 单一性 ：确保核心类由一个统一的类加载器进行加载，避免冲突和不一致。在大多数情况下，开发者不需要实现自己的类加载器，但了解它的机制对于深入理解 Java 执行环境是十分有益的。"
+    },
+    {
+      "slug": "ugx1wuy09dufgn61",
+      "title": "短视频",
+      "url": "/tulingzhouyu/db22bv/ugx1wuy09dufgn61",
+      "toc_path": [
+        "JVM",
+        "说下类加载器机制与双亲委派",
+        "短视频"
+      ],
+      "toc_level": 2,
+      "toc_index": 332,
+      "word_count": 421,
+      "updated_at": "2024-06-06T14:34:09.000Z",
+      "primary_category": "jvm-classloading",
+      "primary_category_name": "JVM类加载",
+      "related_categories": [
+        "jvm-classloading",
+        "java-core",
+        "security-auth",
+        "jvm-memory-gc"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "类加载",
+        "双亲委派",
+        "Java",
+        "安全",
+        "JVM"
+      ],
+      "summary": "没想到啊，现在还有人不知道  什么是双亲委派机制？哈喽， 大家好，我是 JJ，双亲委派机制是 Java 类加载器的一种工作机制，用于保证 Java 类的安全性和一致性。它基于一种层次结构的加载器体系，按照一定的规则从顶层到底层依次加载类，如果某个类需要被加载，首先会委托给顶层的类加载器进行加载...",
+      "excerpt": "没想到啊，现在还有人不知道 什么是双亲委派机制？哈喽， 大家好，我是 JJ， ​ 双亲委派机制 是 Java 类加载器的一种工作机制，用于 保证 Java 类的安全性和一致性 。 ​ 它基于一种 层次结构 的加载器体系，按照一定的规则 从顶层到底层依次加载类 ，如果某个类需要被加载， ​ 首先会委托给顶层的类加载器进行加载，如果顶层加载器无法加载，就会依次向下委托，直到找到能够加载该类的类加载器为止。 ​ 具体来说，就是当一个类加载器收到加载类的请求时，它会 先检查 是否已经加载了该类，如果没有就将请求 委托给其父加载器 。 ​ 父加载器接着会 重复相同的过程 ， 直到顶层的 启动类加载器。 ​ 如果顶层的启动类加载器仍无法加载该类，那么会 回溯到发起请求的类加载器 ，由该类加载器尝试加载。 ​ 双亲委派机制的好处在于可以 确保 Java 类的唯一性和一致性 ， 避免了 同名类的冲突，同时也 防止了 恶意代码的加载。 ​ 比如说，Java 核心类库中的类都是由启动类加载器加载的，而自定义的类通常是由自定义的类加载器加载，这样就能够确保自定义的类不会覆盖核心类库中的类。"
+    },
+    {
+      "slug": "eoeqgzkyw3c05wic",
+      "title": "可以打破双亲委派机制吗",
+      "url": "/tulingzhouyu/db22bv/eoeqgzkyw3c05wic",
+      "toc_path": [
+        "JVM",
+        "可以打破双亲委派机制吗"
+      ],
+      "toc_level": 1,
+      "toc_index": 334,
+      "word_count": 699,
+      "updated_at": "2024-08-09T07:57:27.000Z",
+      "primary_category": "jvm-classloading",
+      "primary_category_name": "JVM类加载",
+      "related_categories": [
+        "jvm-classloading",
+        "java-core",
+        "os-linux",
+        "security-auth",
+        "jvm-memory-gc"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "general"
+      ],
+      "level_names": [
+        "通用"
+      ],
+      "keywords": [
+        "类加载",
+        "双亲委派",
+        "ClassLoader",
+        "字节码",
+        "Java",
+        "文件",
+        "安全",
+        "JVM"
+      ],
+      "summary": "是的，Java中的双亲委派机制（Parent Delegation Model）可以被打破。双亲委派机制默认的加载类逻辑是：当一个类加载器需要加载某个类时，先请求它的父类加载器进行加载，只有在父加载器找不到该类时，它才会尝试自己加载。为了打破这一机制，通常需要自定义一个类加载器。通过覆盖Cla...",
+      "excerpt": "是的，Java中的双亲委派机制（Parent Delegation Model）可以被打破。双亲委派机制默认的加载类逻辑是：当一个类加载器需要加载某个类时，先请求它的父类加载器进行加载，只有在父加载器找不到该类时，它才会尝试自己加载。 为了打破这一机制，通常需要自定义一个类加载器。通过覆盖 ClassLoader 类的 findClass 方法，可以实现自己的类加载逻辑。那么，这个机制在某些情况下灵活运用于插件系统、运行时动态模块加载等领域。 自定义类加载器的例子 以下是一个简单示例，通过自定义类加载器打破双亲委派机制，例如从特定的路径加载类： 解释 类加载路径 ： CustomClassLoader 需要一个路径，用于找到目标类文件。在这个示例中， classPath 是类文件存储的目录路径。 覆盖 findClass 方法 ：重写 findClass 方法来实现自定义的类加载行为，直接从文件系统读取字节码，从而打破了双亲委派的默认行为。 加载类过程 ：尝试直接在 findClass 中调用 defineClass 方法，通过读取字节码并定义其为新类。 打破双亲委派机制的风险 安全性 ：可能加载未经授权或恶意的代码，破坏应用程序的安全性。 兼容性问题 ：自定义类加载器与标准Java库可能存在兼容性问题。 维护负担 ：复杂的类加载逻辑需要额外的代码维护和管理。 使用建议 ：只有在特定需求下才考虑打破这一机制，如实现自定义插件系统或支持模块化运行时功能。在构建严肃的应用程序时，务必仔细考虑潜在的安全风险和兼容性问题。"
+    },
+    {
+      "slug": "zogk255go4e3062f",
+      "title": "11、Tomcat骚操作：Log4j两个版本打架，它凭啥能劝和？| 面试官深度揭秘",
+      "url": "/tulingzhouyu/db22bv/zogk255go4e3062f",
+      "toc_path": [
+        "高频面试问题",
+        "赋文老师",
+        "11、Tomcat骚操作：Log4j两个版本打架，它凭啥能劝和？| 面试官深度揭秘"
+      ],
+      "toc_level": 2,
+      "toc_index": 1296,
+      "word_count": 2827,
+      "updated_at": "2025-10-28T11:05:17.000Z",
+      "primary_category": "jvm-classloading",
+      "primary_category_name": "JVM类加载",
+      "related_categories": [
+        "jvm-classloading",
+        "java-core",
+        "jvm-memory-gc",
+        "resume-project",
+        "devops-release"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "campus",
+        "senior",
+        "middle"
+      ],
+      "level_names": [
+        "校招/应届生",
+        "高级/5-8年",
+        "中级/3-5年"
+      ],
+      "keywords": [
+        "类加载",
+        "双亲委派",
+        "ClassLoader",
+        "字节码",
+        "Java",
+        "异常",
+        "JVM",
+        "简历",
+        "项目",
+        "面试官",
+        "部署"
+      ],
+      "summary": "前两天我面试一位候选人，小伙子简历不错，基础也扎实。聊得差不多了，我抛出了一个压轴题：“在一个Tomcat服务器上，我们部署了两个Web应用，WebApp-A依赖了Log4j 1.2，WebApp-B依赖了Log4j 2.5。这两个版本API完全不兼容，如果同时加载肯定‘打架’。但诡异的是，两...",
+      "excerpt": "前两天我面试一位候选人，小伙子简历不错，基础也扎实。聊得差不多了，我抛出了一个压轴题： “在一个Tomcat服务器上，我们部署了两个Web应用，WebApp-A依赖了Log4j 1.2，WebApp-B依赖了Log4j 2.5。这两个版本API完全不兼容，如果同时加载肯定‘打架’。但诡异的是，两个应用都能正常跑，Tomcat是怎么做到的？” 小伙子愣了一下，开始从“Maven依赖范围”、“类库加载顺序”这些角度去解释，但始终没说到点子上。 最后，我只能遗憾地告诉他：“你说的这些，只是冰山一角。你没有看到冰山下面的东西—— 面试官真正想考察的是什么？ ” 这篇文章，我就带你潜入冰山之下，从面试官的视角，彻底拆解这个问题。看完，你不仅能收获一个“满分答案”，更能洞悉大型中间件设计的核心精髓。 我们先来构建一个冲突现场。在一个普通的Java项目里，如果你敢这么干，不出三秒，程序就会用一个 NoSuchMethodError 或者 LinkageError 异常来“回报”你。 为什么一定会报错？ 因为在标准的Java应用中，通常只有一个 AppClassLoader （应用类加载器）。它会扫描 CLASSPATH 下的所有jar包。当它加载 org.apache.logging.log4j.Logger 这个类时，它到底该加载哪个版本呢？ 如果加载了1.2版本，那么WebApp-B中调用Log4j 2.x特有API的代码就会立刻抛出 NoSuchMethodError 。 如果加载了2.5版本，那么WebApp-A的配置文件和API调用就会完全失效。 这就是典型的 类冲突 ——同一个JVM进程中，一个类的全限定名（Fully Qualified Class Name）只能对应一个 Class 定义。 这就像一个房间里，有两个都叫“张伟”的人，你要找“张伟”办事，到底该找谁？系统直接懵圈了。 既然标准Java应用做不到，那为什么Tomcat就可以？它用了什么“魔法”，让两个水火不容的应用，在同一个JVM里“相安无事”呢？ 面试官内心OS： 我问这个问题，根本不是想听你背Tomcat的配置。我是想考察你对Java的根基—— 类加载机制 ——的理解有多深。你知不知道JVM是如何判定“两个类是否相同”的？你懂不懂“类加载器隔离”这个概念？这才是问题的核心！ JVM判定两个类“相同”的铁律是什么？ 答案是： 同一个类加载器实例 + 同一个类的全限定名。 这两个条件，必须同时满足，JVM才会认为它们是同一个 Class 对象。只要其中任意一个条件不满足，哪怕类的字节码内容一模一样，JVM也认为它们是两个完全不同的类。 抓到重点了吗？ Tomcat的“魔法”就藏在这条铁律里。它并没有改变类的全限定名，而是巧妙地改变了 加载这些类的类加载器实例 。 那么，核心问题来了：Tomcat"
+    },
+    {
+      "slug": "sxwt4ul7k4mfl6r5",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/sxwt4ul7k4mfl6r5",
+      "toc_path": [
+        "高频面试问题",
+        "赋文老师",
+        "11、Tomcat骚操作：Log4j两个版本打架，它凭啥能劝和？| 面试官深度揭秘",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1297,
+      "word_count": 2142,
+      "updated_at": "2025-11-06T14:47:37.000Z",
+      "primary_category": "jvm-classloading",
+      "primary_category_name": "JVM类加载",
+      "related_categories": [
+        "jvm-classloading",
+        "computer-network",
+        "jvm-memory-gc",
+        "resume-project",
+        "java-core"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "类加载",
+        "双亲委派",
+        "ClassLoader",
+        "JVM",
+        "简历",
+        "项目",
+        "面试官",
+        "Java"
+      ],
+      "summary": "📎index.htmlTomcat骚操作Log4j两个版本打架它凭啥能劝和？链接: https://pan.baidu.com/s/1KIXNjr9TVv3g5yjnB70Ldg?pwd=54as 提取码: 54as《Tomcat骚操作：它凭啥能劝和两个打架的Log4j？》口播稿(BGM: ...",
+      "excerpt": "Tomcat骚操作Log4j两个版本打架它凭啥能劝和？ 链接: https://pan.baidu.com/s/1KIXNjr9TVv3g5yjnB70Ldg?pwd=54as 提取码: 54as ​ 《Tomcat骚操作：它凭啥能劝和两个打架的Log4j？》口播稿 (BGM: 轻快、有科技感的背景音乐) 【开场：抛出痛点，引发好奇】 (0:00 - 0:25) (屏幕显示PPT第1页 - 封面) “各位同学，大家好，我是赋文老师” “前两天有一个面试，小伙子的简历写得非常好，于是我问了个压轴题，把小伙子给问住了。这个问题特别经典，能一下看出你对Java底层的理解程度。” “来，今天我就把这道题拆开了、揉碎了，讲给你听。 看完这个视频，你不仅能拿到满分答案，还能洞悉大型中间件设计的核心精髓 。想get完整版PPT和文章的朋友，一定要到最后哦！” “好，我们直接上题！” 【第1页 → 第2页：还原冲突现场】 (0:25 - 0:55) (画面切换到PPT第2页 - 冲突现场) “大家看这个场景，是不是很熟悉？” “在一个Tomcat服务器上，我们部署了两个Web应用： WebApp-A ，用的是老版本的 Log4j 1.2 WebApp-B ，用的是新版本的 Log4j 2.5 ” “大家都知道，这两个版本的API完全不兼容，对吧？要是放在一个普通项目里，不用三秒， NoSuchMethodError的错误 就直接糊你脸上了！” “但诡异的是，在Tomcat里，这两个应用居然都能正常跑！ 问题来了：Tomcat到底用了什么魔法，劝和了这两个打架的版本？ ” 【第2页 → 第3页：分析冲突根源】 (0:55 - 1:20) (画面切换到PPT第3页 - 为什么会冲突) “咱们先来分析一下，为啥普通应用一定会报错。” “你看，在标准的Java应用里，通常只有 一个AppClassLoader（应用类加载器） 。当它要去加载 Logger 这个类的时候，它就懵了：两个版本怎么选择？” “加载1.2版本？那WebApp-B就得挂！加载2.5版本？那WebApp-A就得崩！” “ 这就是典型的类冲突 。这就好比一个房间里，有两个都叫“张伟”的人，你喊一声“张伟”，到底该谁答应呢？系统直接懵圈了！” 【第3页 → 第4页：揭示核心法则】 (1:20 - 1:50) (画面切换到PPT第4页 - JVM的铁律) “既然标准的路子走不通，那Tomcat的魔法到底是什么？” “答案，就藏在JVM判定两个类是否相同的 终极铁律 里。大家注意看这个公式，这可是关键！” （用手指着屏幕上的公式） “ 类加载器实例 + 类的全限定名 = 唯一确定一个类 ” “什么意思呢？就是说，只要这两个条件里，有 任意一个不同 ，哪怕代码一模一样，JVM都会认为它们是两个完全不同的类！” “get到"
+    },
+    {
+      "slug": "tepaylgacpp2nk65",
+      "title": "10、把.class文件加密后，JVM是如何运行的？面试官：给我秀一下操作",
+      "url": "/tulingzhouyu/db22bv/tepaylgacpp2nk65",
+      "toc_path": [
+        "高频面试问题",
+        "赋文老师",
+        "10、把.class文件加密后，JVM是如何运行的？面试官：给我秀一下操作"
+      ],
+      "toc_level": 2,
+      "toc_index": 1298,
+      "word_count": 2564,
+      "updated_at": "2025-10-28T10:52:30.000Z",
+      "primary_category": "jvm-classloading",
+      "primary_category_name": "JVM类加载",
+      "related_categories": [
+        "jvm-classloading",
+        "jvm-memory-gc",
+        "os-linux",
+        "security-auth",
+        "java-core"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "campus"
+      ],
+      "level_names": [
+        "校招/应届生"
+      ],
+      "keywords": [
+        "类加载",
+        "ClassLoader",
+        "字节码",
+        "JVM",
+        "堆",
+        "内存",
+        "文件",
+        "安全",
+        "加密",
+        "Java",
+        "String",
+        "反射"
+      ],
+      "summary": "前几天有个粉丝在群里吐槽，说面试被虐了。面试官问他：“如果我把一个.class文件用AES加密了，你有什么办法让JVM正常加载运行它？”他当场就懵了，支支吾吾半天，最后只说了句“可能需要自定义ClassLoader吧”，然后就没然后了。其实，这道题看似刁钻，实则直指Java一个极其强大但常被忽...",
+      "excerpt": "前几天有个粉丝在群里吐槽，说面试被虐了。面试官问他：“如果我把一个 .class 文件用AES加密了，你有什么办法让JVM正常加载运行它？” 他当场就懵了，支支吾吾半天，最后只说了句“可能需要自定义 ClassLoader 吧”，然后就没然后了。 其实，这道题看似刁钻，实则直指Java一个极其强大但常被忽视的特性。它想考察的，绝不仅仅是你知不知道 ClassLoader 这个名词，而是： 你是否理解 类加载的本质 ——它就是个搬运和解析字节码的过程？ 你是否知道** ClassLoader 是这个过程中唯一可以干预的“关卡”**？ 你是否具备 动手实现一个自定义加载器 来解决实际问题的能力？ 今天，带你把这个“关卡”给打通。我们会从零开始，设计并实现一个能够加载加密 .class 文件的“解密加载器”，让你在下次遇到这个问题时，能反过来给面试官秀一波操作。 “皇帝的新衣”：透明的.class文件 我们先来看一个残酷的现实：你辛辛苦苦写的Java代码，在黑客面前几乎是“裸体”的。 编译后的 .class 文件，虽然是二进制格式，但它的结构是公开的、有规范的。使用 javap 命令或者一些常见的反编译工具（如JD-GUI、Fernflower），可以轻而易举地将你的字节码变回几乎一模一样的Java源代码。 对于一些包含核心算法、商业逻辑、授权计费等敏感信息的代码来说，这无异于将商业机密公之于众。 这会带来什么问题？ 轻则代码被抄袭，重则软件被破解，授权机制被绕过，造成巨大的经济损失。就像我们开篇提到的面试题场景，如果计费算法被破解，公司的商业模式可能直接崩溃。 JVM的“一根筋”：不认加密文件 好了，现在我们有了冲突点。为了保护代码，我们决定耍个花招：在打包发布前，先把核心的 .class 文件用AES加密一下。 现在，反编译工具对着这个加密文件，只能看到一堆乱码，我们的代码安全了。 但是，新的问题来了：JVM也不认识它了！ 当你尝试运行这个程序时，JVM的类加载器兴冲冲地跑去加载 BillingServiceImpl.class ，结果发现文件内容根本不符合 .class 文件规范（不是以 0xCAFEBABE 开头），它会毫不留情地给你一个 ClassFormatError 。 这就陷入了一个两难的境地： 不加密 -> 代码被破解，公司哭。 加密 -> JVM不认，程序崩，老板哭。 怎么办？有没有办法让JVM在加载这个文件时，能“智能”地先给它解个密呢？ 唯一的“关卡”：自定义ClassLoader 当然有！这个“智能”的重任，就要落在**自定义类加载器（Custom Class Loader）**的肩上。 为什么必须是它？ 因为类加载器是字节码进入JVM虚拟机的 唯一入口 。它就像一个海关，负责检查和搬运货物（字节码）。默认的海关关员（如 AppClass"
+    },
+    {
+      "slug": "qpes57b1gmeb97zn",
+      "title": "无标题文档",
+      "url": "/tulingzhouyu/db22bv/qpes57b1gmeb97zn",
+      "toc_path": [
+        "高频面试问题",
+        "赋文老师",
+        "10、把.class文件加密后，JVM是如何运行的？面试官：给我秀一下操作",
+        "无标题文档"
+      ],
+      "toc_level": 3,
+      "toc_index": 1299,
+      "word_count": 1958,
+      "updated_at": "2025-11-05T05:03:52.000Z",
+      "primary_category": "jvm-classloading",
+      "primary_category_name": "JVM类加载",
+      "related_categories": [
+        "jvm-classloading",
+        "jvm-memory-gc",
+        "security-auth",
+        "os-linux",
+        "resume-project"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "expert",
+        "campus",
+        "senior"
+      ],
+      "level_names": [
+        "专家/P7+",
+        "校招/应届生",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "类加载",
+        "ClassLoader",
+        "字节码",
+        "JVM",
+        "堆",
+        "安全",
+        "加密",
+        "内存",
+        "文件",
+        "面试官"
+      ],
+      "summary": "📎白板讲稿：加载加密的Java类.html链接: https://pan.baidu.com/s/18fJp3c5ljICneHDxQl8Qqg?pwd=5h64 提取码: 5h64 (视频时长：约5分钟)【视频开头",
+      "excerpt": "链接: https://pan.baidu.com/s/18fJp3c5ljICneHDxQl8Qqg?pwd=5h64 提取码: 5h64 (视频时长：约5分钟) 【视频开头 - 强力钩子】 (快速剪辑画面：程序员在敲代码 -> “禁止”符号盖在代码上 -> 一个大大的问号) 主播 (我): (面向镜头，表情略带神秘) 嘿，兄弟们！前几天粉丝群里有个哥们去大厂面试，直接被一道题干懵了。 (用手比划，模拟面试场景) 面试官问他：“如果我把一个 .class 文件用AES加密了，你有什么办法让JVM正常加载运行它？” (模仿粉丝当时懵圈的表情) 他当场就懵了，支支吾吾半天，憋出一句&quot;自定义ClassLoader&quot;，然后...就没然后了。面试官追问&quot;怎么个自定义法？&quot;，他直接卡壳。 (镜头拉近，语气变得肯定) 今天，我就带你把这道题彻底吃透！保证你下次遇到，能在面试官前好好的秀一把！ 【第1部分 - 提出矛盾】 (转场，切换到PPT第1、2页的视觉元素) 主播: 首先啊，咱们得承认一个残酷的现实： 你辛辛苦苦写的Java代码，编译成 .class 文件以后，用个反编译工具，几分钟，源码就全出来了！你的核心算法、商业机密，在黑客面前就像脱光了一样，一览无余！ 那咋办呢？简单啊，加密呗！ 在打包上线之前，咱们用AES或者其他加密算法，把关键的 .class 文件给它加个密。这样反编译工具打开一看，哎，全是乱码！黑客抓瞎了，安全了，对吧？ (话锋一转，摊开手，做出无奈表情) 但是！新的问题也来了！你把文件加密了，可是JVM它也不认识了啊！JVM兴冲冲跑去加载，结果一看，文件头不是 CAFEBABE ，直接一个 ClassFormatError 错误甩出来，程序当场崩溃！ 这就尴尬了： 不加密 -> 代码被破解，公司损失惨重，老板哭死了。 加了密 -> JVM不认，程序跑不起来，你该哭了。 这不就死循环了吗？别急，接下来我告诉你怎么破局！ 【第2部分 - 给出核心方案】 (转场，切换到PPT第3页的核心图示：加密文件 -> 特工 -> JVM) 主播: 破局的关键，就是咱们开头提到的 自定义ClassLoader（类加载器） ！ 但是，为啥必须是它？这里方便大家理解，咱们打个比方你就明白了。你可以把JVM想象成一个国家，所有外部的 .class 文件要想进来运行，都必须经过一个叫“海关”的地方，这个海关就是 ClassLoader 。默认的海关关员（比如 AppClassLoader ）特别死板，只认标准格式的“包裹”。你拿个加密的过来，它就直接给你“拒绝入境”。 而自定义ClassLoader，就相当于咱们自己派了个“特工”去当海关关员！ (做出一个“特工”的手势，比如手指在眼前比个框) 这个特工，懂咱们的“接头暗号”，也就是解"
+    }
+  ]
+}

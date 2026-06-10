@@ -1,0 +1,832 @@
+{
+  "generated_at": "2026-06-05T01:07:12.501Z",
+  "source_article_count": 1416,
+  "category_count": 36,
+  "design": "细粒度分类 JSON 分片。默认检索只加载命中的技术分类和候选人级别分片，必要时再按 slug 回查原始 articles.json。",
+  "categories": [
+    {
+      "id": "mysql-index-transaction",
+      "name": "MySQL索引与事务",
+      "aliases": [
+        "MySQL",
+        "索引",
+        "事务",
+        "MVCC",
+        "锁",
+        "InnoDB",
+        "隔离级别",
+        "B+树"
+      ],
+      "file": "categories/mysql-index-transaction.json",
+      "count": 145,
+      "total_word_count": 318222
+    },
+    {
+      "id": "computer-network",
+      "name": "计算机网络",
+      "aliases": [
+        "TCP",
+        "UDP",
+        "HTTP",
+        "HTTPS",
+        "DNS",
+        "三次握手",
+        "四次挥手",
+        "网络"
+      ],
+      "file": "categories/computer-network.json",
+      "count": 126,
+      "total_word_count": 66991
+    },
+    {
+      "id": "redis-cache",
+      "name": "Redis缓存",
+      "aliases": [
+        "Redis",
+        "缓存",
+        "缓存一致性",
+        "穿透",
+        "击穿",
+        "雪崩",
+        "热key",
+        "大key"
+      ],
+      "file": "categories/redis-cache.json",
+      "count": 112,
+      "total_word_count": 299691
+    },
+    {
+      "id": "java-concurrency",
+      "name": "Java并发",
+      "aliases": [
+        "并发",
+        "多线程",
+        "线程",
+        "锁",
+        "AQS",
+        "volatile",
+        "synchronized",
+        "CAS",
+        "ThreadLocal",
+        "CompletableFuture"
+      ],
+      "file": "categories/java-concurrency.json",
+      "count": 87,
+      "total_word_count": 173760
+    },
+    {
+      "id": "java-core",
+      "name": "Java基础",
+      "aliases": [
+        "Java",
+        "String",
+        "equals",
+        "泛型",
+        "反射",
+        "注解",
+        "异常",
+        "IO",
+        "序列化"
+      ],
+      "file": "categories/java-core.json",
+      "count": 85,
+      "total_word_count": 233796
+    },
+    {
+      "id": "project-system-design",
+      "name": "项目场景与系统设计",
+      "aliases": [
+        "系统设计",
+        "架构设计",
+        "方案",
+        "高并发",
+        "秒杀",
+        "订单",
+        "支付",
+        "库存",
+        "抽奖",
+        "限流",
+        "降级",
+        "熔断",
+        "幂等"
+      ],
+      "file": "categories/project-system-design.json",
+      "count": 81,
+      "total_word_count": 244560
+    },
+    {
+      "id": "ai-llm",
+      "name": "AI与大模型",
+      "aliases": [
+        "AI",
+        "大模型",
+        "LLM",
+        "DeepSeek",
+        "Ollama",
+        "RAG",
+        "MCP",
+        "Prompt"
+      ],
+      "file": "categories/ai-llm.json",
+      "count": 62,
+      "total_word_count": 139890
+    },
+    {
+      "id": "performance-optimization",
+      "name": "性能优化与压测",
+      "aliases": [
+        "性能",
+        "优化",
+        "调优",
+        "压测",
+        "QPS",
+        "RT",
+        "吞吐",
+        "容量",
+        "瓶颈"
+      ],
+      "file": "categories/performance-optimization.json",
+      "count": 57,
+      "total_word_count": 94694
+    },
+    {
+      "id": "spring-core",
+      "name": "Spring核心",
+      "aliases": [
+        "Spring",
+        "IOC",
+        "AOP",
+        "Bean",
+        "循环依赖",
+        "事务传播",
+        "Bean生命周期"
+      ],
+      "file": "categories/spring-core.json",
+      "count": 53,
+      "total_word_count": 95779
+    },
+    {
+      "id": "algorithm",
+      "name": "算法与数据结构",
+      "aliases": [
+        "算法",
+        "LeetCode",
+        "数组",
+        "链表",
+        "二叉树",
+        "动态规划",
+        "排序",
+        "查找"
+      ],
+      "file": "categories/algorithm.json",
+      "count": 51,
+      "total_word_count": 43113
+    },
+    {
+      "id": "os-linux",
+      "name": "操作系统与Linux",
+      "aliases": [
+        "操作系统",
+        "Linux",
+        "进程",
+        "线程",
+        "内存",
+        "文件",
+        "上下文切换"
+      ],
+      "file": "categories/os-linux.json",
+      "count": 50,
+      "total_word_count": 83323
+    },
+    {
+      "id": "resume-project",
+      "name": "简历与项目表达",
+      "aliases": [
+        "简历",
+        "项目",
+        "亮点",
+        "难点",
+        "如何回答",
+        "面试官",
+        "STAR",
+        "CRUD",
+        "包装",
+        "面经"
+      ],
+      "file": "categories/resume-project.json",
+      "count": 45,
+      "total_word_count": 60861
+    },
+    {
+      "id": "jvm-memory-gc",
+      "name": "JVM内存与GC",
+      "aliases": [
+        "JVM",
+        "GC",
+        "垃圾回收",
+        "OOM",
+        "内存模型",
+        "堆",
+        "栈",
+        "元空间",
+        "调优"
+      ],
+      "file": "categories/jvm-memory-gc.json",
+      "count": 41,
+      "total_word_count": 48492
+    },
+    {
+      "id": "security-auth",
+      "name": "安全认证与权限",
+      "aliases": [
+        "安全",
+        "认证",
+        "鉴权",
+        "JWT",
+        "权限",
+        "RBAC",
+        "加密",
+        "SQL注入",
+        "XSS",
+        "CSRF"
+      ],
+      "file": "categories/security-auth.json",
+      "count": 39,
+      "total_word_count": 59972
+    },
+    {
+      "id": "docker-k8s",
+      "name": "Docker与Kubernetes",
+      "aliases": [
+        "Docker",
+        "Kubernetes",
+        "K8s",
+        "容器",
+        "Pod",
+        "Deployment",
+        "Service"
+      ],
+      "file": "categories/docker-k8s.json",
+      "count": 37,
+      "total_word_count": 36545
+    },
+    {
+      "id": "observability-troubleshooting",
+      "name": "线上排障与可观测性",
+      "aliases": [
+        "线上",
+        "排查",
+        "故障",
+        "监控",
+        "告警",
+        "日志",
+        "链路",
+        "CPU",
+        "OOM",
+        "死锁",
+        "堆积",
+        "变慢"
+      ],
+      "file": "categories/observability-troubleshooting.json",
+      "count": 32,
+      "total_word_count": 54947
+    },
+    {
+      "id": "mq-rocketmq",
+      "name": "RocketMQ",
+      "aliases": [
+        "RocketMQ",
+        "事务消息",
+        "顺序消息",
+        "延迟消息",
+        "消息堆积",
+        "重复消费"
+      ],
+      "file": "categories/mq-rocketmq.json",
+      "count": 30,
+      "total_word_count": 47096
+    },
+    {
+      "id": "mybatis",
+      "name": "MyBatis",
+      "aliases": [
+        "MyBatis",
+        "Mapper",
+        "一级缓存",
+        "二级缓存",
+        "动态SQL"
+      ],
+      "file": "categories/mybatis.json",
+      "count": 29,
+      "total_word_count": 16795
+    },
+    {
+      "id": "mysql-sharding",
+      "name": "分库分表",
+      "aliases": [
+        "分库分表",
+        "分片",
+        "ShardingSphere",
+        "读写分离",
+        "主从",
+        "分片键"
+      ],
+      "file": "categories/mysql-sharding.json",
+      "count": 27,
+      "total_word_count": 31347
+    },
+    {
+      "id": "spring-cloud",
+      "name": "Spring Cloud与微服务",
+      "aliases": [
+        "Spring Cloud",
+        "SpringCloud",
+        "Feign",
+        "Gateway",
+        "Sentinel",
+        "注册中心",
+        "配置中心",
+        "Nacos"
+      ],
+      "file": "categories/spring-cloud.json",
+      "count": 26,
+      "total_word_count": 54982
+    },
+    {
+      "id": "netty-network",
+      "name": "Netty与网络编程",
+      "aliases": [
+        "Netty",
+        "BIO",
+        "NIO",
+        "AIO",
+        "TCP",
+        "HTTP",
+        "WebSocket",
+        "网络编程"
+      ],
+      "file": "categories/netty-network.json",
+      "count": 25,
+      "total_word_count": 47746
+    },
+    {
+      "id": "redis-persistence-cluster",
+      "name": "Redis持久化与集群",
+      "aliases": [
+        "RDB",
+        "AOF",
+        "哨兵",
+        "Cluster",
+        "集群",
+        "主从复制"
+      ],
+      "file": "categories/redis-persistence-cluster.json",
+      "count": 18,
+      "total_word_count": 20405
+    },
+    {
+      "id": "mq-kafka",
+      "name": "Kafka",
+      "aliases": [
+        "Kafka",
+        "Topic",
+        "Partition",
+        "Consumer",
+        "ISR",
+        "高水位"
+      ],
+      "file": "categories/mq-kafka.json",
+      "count": 18,
+      "total_word_count": 78977
+    },
+    {
+      "id": "java-collections",
+      "name": "Java集合",
+      "aliases": [
+        "集合",
+        "HashMap",
+        "ConcurrentHashMap",
+        "ArrayList",
+        "LinkedList",
+        "HashSet",
+        "TreeMap"
+      ],
+      "file": "categories/java-collections.json",
+      "count": 17,
+      "total_word_count": 222275
+    },
+    {
+      "id": "spring-boot",
+      "name": "Spring Boot",
+      "aliases": [
+        "Spring Boot",
+        "SpringBoot",
+        "自动配置",
+        "启动速度",
+        "Starter"
+      ],
+      "file": "categories/spring-boot.json",
+      "count": 15,
+      "total_word_count": 25001
+    },
+    {
+      "id": "java-thread-pool",
+      "name": "线程池",
+      "aliases": [
+        "线程池",
+        "ThreadPoolExecutor",
+        "核心线程",
+        "拒绝策略",
+        "阻塞队列"
+      ],
+      "file": "categories/java-thread-pool.json",
+      "count": 14,
+      "total_word_count": 23502
+    },
+    {
+      "id": "mq-rabbitmq",
+      "name": "RabbitMQ",
+      "aliases": [
+        "RabbitMQ",
+        "交换机",
+        "队列",
+        "死信",
+        "确认机制"
+      ],
+      "file": "categories/mq-rabbitmq.json",
+      "count": 14,
+      "total_word_count": 20020
+    },
+    {
+      "id": "microservices-governance",
+      "name": "服务治理",
+      "aliases": [
+        "服务治理",
+        "限流",
+        "熔断",
+        "降级",
+        "重试",
+        "超时",
+        "负载均衡",
+        "链路追踪"
+      ],
+      "file": "categories/microservices-governance.json",
+      "count": 12,
+      "total_word_count": 11459
+    },
+    {
+      "id": "mysql-optimization",
+      "name": "SQL优化与慢查询",
+      "aliases": [
+        "SQL优化",
+        "慢查询",
+        "Explain",
+        "执行计划",
+        "count",
+        "优化器"
+      ],
+      "file": "categories/mysql-optimization.json",
+      "count": 11,
+      "total_word_count": 9115
+    },
+    {
+      "id": "devops-release",
+      "name": "发布部署与DevOps",
+      "aliases": [
+        "DevOps",
+        "灰度",
+        "发布",
+        "部署",
+        "回滚",
+        "CI",
+        "CD"
+      ],
+      "file": "categories/devops-release.json",
+      "count": 11,
+      "total_word_count": 20912
+    },
+    {
+      "id": "other",
+      "name": "其他",
+      "aliases": [],
+      "file": "categories/other.json",
+      "count": 11,
+      "total_word_count": 2827
+    },
+    {
+      "id": "jvm-classloading",
+      "name": "JVM类加载",
+      "aliases": [
+        "类加载",
+        "双亲委派",
+        "ClassLoader",
+        "字节码"
+      ],
+      "file": "categories/jvm-classloading.json",
+      "count": 10,
+      "total_word_count": 31937
+    },
+    {
+      "id": "distributed-transaction",
+      "name": "分布式事务",
+      "aliases": [
+        "分布式事务",
+        "最终一致性",
+        "本地消息表",
+        "TCC",
+        "Saga",
+        "事务消息"
+      ],
+      "file": "categories/distributed-transaction.json",
+      "count": 10,
+      "total_word_count": 21230
+    },
+    {
+      "id": "distributed-lock-id",
+      "name": "分布式锁与ID",
+      "aliases": [
+        "分布式ID",
+        "雪花算法",
+        "UUID",
+        "分布式锁",
+        "唯一ID"
+      ],
+      "file": "categories/distributed-lock-id.json",
+      "count": 7,
+      "total_word_count": 20688
+    },
+    {
+      "id": "redis-lock",
+      "name": "Redis分布式锁",
+      "aliases": [
+        "分布式锁",
+        "Redisson",
+        "锁续期",
+        "看门狗",
+        "Lua"
+      ],
+      "file": "categories/redis-lock.json",
+      "count": 5,
+      "total_word_count": 3096
+    },
+    {
+      "id": "mq-general",
+      "name": "消息队列通用",
+      "aliases": [
+        "MQ",
+        "消息队列",
+        "可靠消息",
+        "幂等消费",
+        "削峰",
+        "异步解耦"
+      ],
+      "file": "categories/mq-general.json",
+      "count": 3,
+      "total_word_count": 45322
+    }
+  ],
+  "levels": [
+    {
+      "id": "senior",
+      "name": "高级/5-8年",
+      "aliases": [
+        "高级",
+        "5-8年",
+        "5到8年",
+        "工作5年",
+        "工作6年",
+        "工作7年",
+        "工作8年",
+        "架构",
+        "高并发",
+        "高可用",
+        "分布式",
+        "性能优化",
+        "系统设计",
+        "技术负责人"
+      ],
+      "file": "levels/senior.json",
+      "count": 740,
+      "total_word_count": 1850516
+    },
+    {
+      "id": "middle",
+      "name": "中级/3-5年",
+      "aliases": [
+        "中级",
+        "3-5年",
+        "3到5年",
+        "工作3年",
+        "工作4年",
+        "工作5年",
+        "项目经验",
+        "独立负责",
+        "缓存",
+        "MQ",
+        "事务",
+        "线上问题"
+      ],
+      "file": "levels/middle.json",
+      "count": 550,
+      "total_word_count": 1547134
+    },
+    {
+      "id": "general",
+      "name": "通用",
+      "aliases": [],
+      "file": "levels/general.json",
+      "count": 391,
+      "total_word_count": 451063
+    },
+    {
+      "id": "campus",
+      "name": "校招/应届生",
+      "aliases": [
+        "校招",
+        "应届",
+        "应届生",
+        "实习",
+        "秋招",
+        "春招",
+        "毕业生",
+        "校园招聘",
+        "学生",
+        "0-1年",
+        "0到1年",
+        "基础",
+        "入门"
+      ],
+      "file": "levels/campus.json",
+      "count": 358,
+      "total_word_count": 1174952
+    },
+    {
+      "id": "expert",
+      "name": "专家/P7+",
+      "aliases": [
+        "专家",
+        "P7",
+        "P8",
+        "年薪百万",
+        "8年以上",
+        "8年",
+        "资深",
+        "负责人",
+        "架构师",
+        "技术规划",
+        "稳定性治理",
+        "复杂系统",
+        "团队"
+      ],
+      "file": "levels/expert.json",
+      "count": 163,
+      "total_word_count": 434047
+    },
+    {
+      "id": "junior",
+      "name": "初级/1-3年",
+      "aliases": [
+        "初级",
+        "1-3年",
+        "1到3年",
+        "工作1年",
+        "工作2年",
+        "工作3年",
+        "2-5年",
+        "增删改查",
+        "CRUD",
+        "基础题",
+        "常见面试题"
+      ],
+      "file": "levels/junior.json",
+      "count": 41,
+      "total_word_count": 157810
+    }
+  ],
+  "question_types": [
+    {
+      "id": "resume_project",
+      "name": "简历项目题",
+      "aliases": [
+        "简历",
+        "项目",
+        "亮点",
+        "难点",
+        "如何回答",
+        "CRUD",
+        "包装"
+      ]
+    },
+    {
+      "id": "scenario_design",
+      "name": "场景设计题",
+      "aliases": [
+        "设计",
+        "实现",
+        "方案",
+        "系统",
+        "架构",
+        "秒杀",
+        "订单",
+        "支付",
+        "库存",
+        "高并发",
+        "一致性"
+      ]
+    },
+    {
+      "id": "principle",
+      "name": "原理八股题",
+      "aliases": [
+        "原理",
+        "底层",
+        "机制",
+        "为什么",
+        "什么是",
+        "说说",
+        "区别",
+        "面试题",
+        "解析"
+      ]
+    },
+    {
+      "id": "troubleshooting",
+      "name": "故障排查题",
+      "aliases": [
+        "排查",
+        "故障",
+        "线上",
+        "变慢",
+        "OOM",
+        "CPU",
+        "死锁",
+        "阻塞",
+        "超时",
+        "堆积",
+        "慢查询"
+      ]
+    },
+    {
+      "id": "optimization",
+      "name": "性能优化题",
+      "aliases": [
+        "优化",
+        "调优",
+        "性能",
+        "启动速度",
+        "QPS",
+        "RT",
+        "吞吐",
+        "压测"
+      ]
+    },
+    {
+      "id": "tutorial",
+      "name": "实战教程题",
+      "aliases": [
+        "安装",
+        "教程",
+        "入门",
+        "实战",
+        "部署",
+        "使用",
+        "快速",
+        "接入",
+        "搭建"
+      ]
+    },
+    {
+      "id": "algorithm",
+      "name": "算法编程题",
+      "aliases": [
+        "算法",
+        "LeetCode",
+        "手写",
+        "代码题",
+        "数组",
+        "链表",
+        "二叉树",
+        "动态规划"
+      ]
+    },
+    {
+      "id": "collection",
+      "name": "面经题库合集",
+      "aliases": [
+        "面经",
+        "合集",
+        "大全",
+        "资料",
+        "笔记",
+        "100道",
+        "高频",
+        "突击"
+      ]
+    },
+    {
+      "id": "other",
+      "name": "其他问题",
+      "aliases": []
+    }
+  ]
+}

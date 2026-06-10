@@ -1,0 +1,215 @@
+{
+  "id": "redis-lock",
+  "name": "Redis分布式锁",
+  "aliases": [
+    "分布式锁",
+    "Redisson",
+    "锁续期",
+    "看门狗",
+    "Lua"
+  ],
+  "count": 5,
+  "total_word_count": 3096,
+  "articles": [
+    {
+      "slug": "pg9hdtvg17f1o6mq",
+      "title": "Redisson 如果续锁失败怎么办",
+      "url": "/tulingzhouyu/db22bv/pg9hdtvg17f1o6mq",
+      "toc_path": [
+        "Redis",
+        "Redisson 如果续锁失败怎么办"
+      ],
+      "toc_level": 1,
+      "toc_index": 531,
+      "word_count": 1200,
+      "updated_at": "2025-04-24T12:02:06.000Z",
+      "primary_category": "redis-lock",
+      "primary_category_name": "Redis分布式锁",
+      "related_categories": [
+        "redis-lock",
+        "java-concurrency",
+        "mysql-index-transaction",
+        "redis-cache",
+        "distributed-lock-id"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "分布式锁",
+        "Redisson",
+        "锁续期",
+        "看门狗",
+        "并发",
+        "线程",
+        "锁",
+        "Redis"
+      ],
+      "summary": "我们在使用 Redisson 实现分布式锁时，通常会依赖它的看门狗机制进行锁续命，避免业务执行期间锁提前释放，但如果说续锁失败了，就可能会影响系统的正确性。因此，我们需要了解续锁失败的原因以及相应的应对措施，以确保系统健壮性。什么是 Redisson 锁续期？Redisson分布式锁默认用“看...",
+      "excerpt": "我们在使用 Redisson 实现分布式锁时，通常会依赖它的看门狗机制进行锁续命，避免业务执行期间锁提前释放，但如果说续锁失败了，就可能会影响系统的正确性。因此，我们需要了解续锁失败的原因以及相应的应对措施，以确保系统健壮性。 什么是 Redisson 锁续期？ Redisson分布式锁默认用“看门狗”机制守护锁。加锁成功后，如果业务执行时间超过锁的默认过期时间（30秒），看门狗会周期性自动为锁续期（一般每10秒续一次，每次续到30秒），避免锁被提前释放。 续锁失败的可能原因 Redisson客户端与Redis连接断开，心跳保活失败。 客户端宕机、崩溃或进程被kill，看门狗失效。 网络抖动，导致心跳和续期命令执行失败。 续锁失败后的后果 锁到期释放问题 如果锁对应资源尚未完成操作，而锁提前释放，可能被其他线程或节点获得，导致资源出现并发访问问题（违反互斥性）。 数据不一致 因锁失效，多个线程可能同时修改同一资源，导致数据不一致风险。例如在订单库存扣减的场景中，可能会导致库存被错误扣减。 死锁风险（特定场景） 如果业务设计不当，例如未正确释放锁，而续锁又失败，资源可能被永久锁住（死锁问题）。 如何应对 Redisson 续锁失败问题？ 1. 设置合理的锁过期时间 在使用 Redisson 获取锁时，可以显式指定一个锁的过期时间，而不是完全依赖看门狗机制。 例如，在业务完成操作所需的最大时间范围内设置一个过期时间（如 60 秒）。这样即使续锁失败，也可以避免锁永久不释放。 2. 增加容错机制 在业务代码中，做好锁释放、业务回滚的逻辑处理。如果因续锁失败导致锁丢失，无法完成操作时，可以通过补偿方式进行修正。 3. 监控 Redisson 的锁状态 通过 Redis 的命令（如： TTL 和 KEYS ），监控锁的状态和TTL，及时发现续锁失败的问题。 配合日志记录锁的获取、续锁与释放操作，方便问题排查。 4. 使用多副本 Redis 以提升可靠性 如果 Redis 发生单点故障，续锁会失败。将 Redis 部署为高可用架构（如 Redis Sentinel 或 Redis Cluster）可以减少因 Redis 故障导致续锁失败的概率。 5. 提高服务性能 防止因 GC 或线程池资源不足，导致看门狗线程阻塞，从而续锁失败。可以通过以下方式优化 Redisson 客户端的实现： 调优 JVM：如减少 Full GC 或优化分布式锁的内存占用。 增加线程池资源：确保 Redisson 的内部线程池有足够的线程处理续锁操作。 6. 异地多活与锁竞争 涉及分布式环境或多节点时，设计分布式锁竞争策略（如加锁失败后的退避重试、限流等），避免因为续锁失败导致分布式冲突。 实战处理流程示例 代码示意：补偿机制 假设业务场景是对库存进行扣减操作，可以在锁续约失败时添加补偿机制，比"
+    },
+    {
+      "slug": "mrruu3vgm8w73fm2",
+      "title": "Zookeeper 的典型应用场景",
+      "url": "/tulingzhouyu/db22bv/mrruu3vgm8w73fm2",
+      "toc_path": [
+        "Zookeeper",
+        "Zookeeper 的典型应用场景"
+      ],
+      "toc_level": 1,
+      "toc_index": 649,
+      "word_count": 267,
+      "updated_at": "2023-09-04T08:02:56.000Z",
+      "primary_category": "redis-lock",
+      "primary_category_name": "Redis分布式锁",
+      "related_categories": [
+        "redis-lock",
+        "distributed-lock-id",
+        "java-concurrency",
+        "devops-release",
+        "mysql-index-transaction"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "分布式锁",
+        "线程",
+        "锁",
+        "发布"
+      ],
+      "summary": "Zookeeper 的典型应用场景包括：数据发布与订阅：这是 Zookeeper 的一种典型应用场景。发布者将数据发布到 ZooKeeper 节点上，供订阅者动态获取数据，实现配置信息的集中式管理和动态更新。分布式锁：Zookeeper 可以用来实现分布式锁。利用 ZooKeeper 的节点唯...",
+      "excerpt": "Zookeeper 的典型应用场景包括： 数据发布与订阅：这是 Zookeeper 的一种典型应用场景。发布者将数据发布到 ZooKeeper 节点上，供订阅者动态获取数据，实现配置信息的集中式管理和动态更新。 分布式锁：Zookeeper 可以用来实现分布式锁。利用 ZooKeeper 的节点唯一性和顺序性特点，可以保证多个线程在尝试获取锁时按照一定的顺序进行。 集群管理：Zookeeper 可以帮助构建分布式系统，提供集群管理的功能，包括节点监控、异常处理、状态同步等。 分布式协调：Zookeeper 可以为分布式系统中的各个参与者提供一个协调器，处理各种协调操作，例如任务分配、等待与通知等。 命名服务：Zookeeper 可以作为一个分布式命名服务，为网络中的对象提供唯一的名称。 ​"
+    },
+    {
+      "slug": "sair4hkilvqh9i8g",
+      "title": "Zookeeper 的通知机制是什么",
+      "url": "/tulingzhouyu/db22bv/sair4hkilvqh9i8g",
+      "toc_path": [
+        "Zookeeper",
+        "Zookeeper 的通知机制是什么"
+      ],
+      "toc_level": 1,
+      "toc_index": 654,
+      "word_count": 270,
+      "updated_at": "2023-09-04T06:56:23.000Z",
+      "primary_category": "redis-lock",
+      "primary_category_name": "Redis分布式锁",
+      "related_categories": [
+        "redis-lock",
+        "distributed-lock-id",
+        "java-concurrency",
+        "mysql-index-transaction",
+        "devops-release"
+      ],
+      "question_type": "principle",
+      "question_type_name": "原理八股题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "分布式锁",
+        "锁",
+        "发布"
+      ],
+      "summary": "Zookeeper的机制可以感知某些事件的发生，并将这些事件通知给客户端。这种通知机制是异步的，也就是说，当事件发生时，Zookeeper会选择一种方式将事件通知给客户端，而不需要等待客户端的回应。具体来说，Zookeeper允许客户端向服务端的某个Znode注册一个Watcher监听，当这个...",
+      "excerpt": "Zookeeper的机制可以感知某些事件的发生，并将这些事件通知给客户端。这种通知机制是异步的，也就是说，当事件发生时，Zookeeper会选择一种方式将事件通知给客户端，而不需要等待客户端的回应。 具体来说，Zookeeper允许客户端向服务端的某个Znode注册一个Watcher监听，当这个Znode的一些指定事件（如数据改变、节点删除、子节点状态变更等）发生时，Zookeeper就会通知客户端。这种Watcher机制使得Zookeeper能够实现分布式锁、发布订阅等功能。 另外，Zookeeper的机制也允许客户端在每个Znode节点上设置一个观察，如果被观察的Znode节点有变更，那么这个观察就会被触发，然后Zookeeper就会将这个观察所属的客户端接收一个通知包，告知节点已经发生了什么事件。"
+    },
+    {
+      "slug": "dcainqvsgh5g0qk9",
+      "title": "什么是Lua模块？你会如何使用NGINX的Lua模块来定制请求处理流程？",
+      "url": "/tulingzhouyu/db22bv/dcainqvsgh5g0qk9",
+      "toc_path": [
+        "Nginx",
+        "什么是Lua模块？你会如何使用NGINX的Lua模块来定制请求处理流程？"
+      ],
+      "toc_level": 1,
+      "toc_index": 706,
+      "word_count": 678,
+      "updated_at": "2023-09-04T11:36:41.000Z",
+      "primary_category": "redis-lock",
+      "primary_category_name": "Redis分布式锁",
+      "related_categories": [
+        "redis-lock",
+        "redis-cache",
+        "performance-optimization",
+        "os-linux"
+      ],
+      "question_type": "tutorial",
+      "question_type_name": "实战教程题",
+      "levels": [
+        "middle",
+        "senior"
+      ],
+      "level_names": [
+        "中级/3-5年",
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "Lua",
+        "缓存",
+        "性能",
+        "优化",
+        "文件"
+      ],
+      "summary": "Lua模块是NGINX的一个扩展，允许你使用Lua编程语言在NGINX配置中嵌入自定义的脚本逻辑。通过使用Lua模块，你可以在请求处理过程中执行自定义的操作，从而实现灵活的定制和扩展。Lua模块在NGINX中提供了以下功能： 请求处理：你可以使用Lua脚本来修改请求头部、查询参数、请求体等，从...",
+      "excerpt": "Lua模块是NGINX的一个扩展，允许你使用Lua编程语言在NGINX配置中嵌入自定义的脚本逻辑。通过使用Lua模块，你可以在请求处理过程中执行自定义的操作，从而实现灵活的定制和扩展。 Lua模块在NGINX中提供了以下功能： 请求处理 ：你可以使用Lua脚本来修改请求头部、查询参数、请求体等，从而在请求处理过程中进行自定义操作。 响应处理 ：你可以使用Lua脚本来处理服务器的响应，修改响应内容、响应头部等。 访问控制 ：通过Lua脚本，你可以实现基于复杂条件的访问控制，例如IP白名单、黑名单，自定义的访问规则等。 缓存控制 ：使用Lua脚本，你可以实现自定义的缓存控制逻辑，以满足特定的缓存需求。 复杂重定向 ：Lua模块可以处理更复杂的重定向逻辑，根据请求条件进行不同的重定向操作。 使用NGINX的Lua模块来定制请求处理流程的步骤如下： 安装Lua模块 ： 首先，确保你已经安装了支持Lua的NGINX模块。你可以通过编译NGINX时启用Lua模块，或者使用预编译的版本，如OpenResty。 在配置中加载Lua模块 ： 在NGINX配置文件中，使用 lua_package_path 和 lua_package_cpath 配置项指定Lua模块的搜索路径。然后使用 lua_include 指令加载Lua文件。 编写Lua脚本 ： 编写Lua脚本文件，其中包含你想要在请求处理过程中执行的自定义逻辑。在Lua脚本中，你可以使用NGINX提供的Lua API来访问请求、响应对象，修改头部信息，执行条件判断等操作。 在配置中调用Lua脚本 ： 使用 content_by_lua_file 或 access_by_lua_file 指令将Lua脚本嵌入到特定的请求处理阶段。这样，在请求到达该阶段时，NGINX会执行Lua脚本中的逻辑。 通过使用NGINX的Lua模块，你可以实现高度定制化的请求处理逻辑，处理复杂的场景，以满足特定的业务需求。需要注意的是，使用Lua模块可能会对性能产生影响，因此在使用时要进行充分的测试和性能优化。"
+    },
+    {
+      "slug": "ghv4xgmcy8qn9qh9",
+      "title": "Java五年经验压力面看你能撑到第几轮",
+      "url": "/tulingzhouyu/db22bv/ghv4xgmcy8qn9qh9",
+      "toc_path": [
+        "高频面试问题",
+        "诸葛老师",
+        "Java五年经验压力面看你能撑到第几轮"
+      ],
+      "toc_level": 2,
+      "toc_index": 1360,
+      "word_count": 681,
+      "updated_at": "2025-09-17T14:07:17.000Z",
+      "primary_category": "redis-lock",
+      "primary_category_name": "Redis分布式锁",
+      "related_categories": [
+        "redis-lock",
+        "java-concurrency",
+        "distributed-lock-id",
+        "mysql-index-transaction",
+        "redis-cache"
+      ],
+      "question_type": "scenario_design",
+      "question_type_name": "场景设计题",
+      "levels": [
+        "senior"
+      ],
+      "level_names": [
+        "高级/5-8年"
+      ],
+      "keywords": [
+        "分布式锁",
+        "锁续期",
+        "看门狗",
+        "Lua",
+        "线程",
+        "锁",
+        "UUID",
+        "Redis"
+      ],
+      "summary": "我看你项目中写到用了分布式锁，具体是什么场景要用分布式锁？秒杀抢库存。那你们分布式锁怎么实现的？用redis的setnx命令结合lua脚本。那用 Redis 的 setnx 命令实现分布式锁时，抢到锁的线程挂了，锁该怎么释放？加过期时间。那给 Redis 分布式锁加了过期时间后，解锁时能直接删...",
+      "excerpt": "我看你项目中写到用了分布式锁，具体是什么场景要用分布式锁？秒杀抢库存。那你们分布式锁怎么实现的？用redis的setnx命令结合lua脚本。那用 Redis 的 setnx 命令实现分布式锁时，抢到锁的线程挂了，锁该怎么释放？加过期时间。那给 Redis 分布式锁加了过期时间后，解锁时能直接删除锁 key 吗？为什么？存储 Redis 分布式锁时，value 为什么要用 “线程 ID+UUID”，仅用线程 ID 不行吗？解锁时 “先查锁的 value 是否为自己的，再删除锁” 这两步操作存在什么问题？原子性问题。那怎么解决这两步操作的原子性问题？Redis 执行 Lua 脚本为什么是原子性的？“业务没执行完但 Redis 分布式锁已过期” 的问题怎么解决？加看门狗线程定时延期。那看门狗线程怎么保证 Redis 分布式锁的过期时间总比业务执行时间长？怎么防止看门狗在业务线程挂了之后还一直给 Redis 分布式锁续期？你们设计的分布式锁支持可重入吗？什么业务场景需要支持加锁可重入？怎么实现分布式锁的可重入性？在 Redis 中用 Hash 结构实现可重入分布式锁时，key、field、value 分别是什么？如何进行加锁和解锁操作？没抢到分布式锁的线程是直接返回还是等一会儿再试？如果是等一会再试，那怎么实现才能避免线程自旋导致的 CPU 消耗过高和 Redis 压力过大问题？如何利用 Redis 的发布订阅功能实现高效的阻塞式分布式锁？Redis 主从架构下，锁丢失的具体场景是什么？红锁（Redlock）方案是怎么解决 Redis 主从架构锁丢失问题的？红锁方案中，加锁成功的条件是什么？红锁方案存在什么问题？大部分公司不用红锁时，是怎么处理 Redis 主从架构锁丢失风险的？ZooKeeper 的分布式锁相比 Redis 分布式锁，在主从问题上有什么优势？性能上有什么差异？设计跨多节点加锁的分布式锁时，需要考虑时钟同步问题吗？为什么？Java 的 GC 卡顿会对分布式锁造成什么影响？"
+    }
+  ]
+}
